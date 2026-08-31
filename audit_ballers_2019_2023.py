@@ -1,52 +1,114 @@
-import json, urllib.request
+import base64,gzip,json,re,unicodedata,urllib.request
+from pathlib import Path
 
-BALLERS_TOP50={"2019":{"QB":[421.68,348.78,335.36,333.6,332.48,297.56,297.28,292.04,282.86,282.38,281.34,271.68,263.52,260.32,255.5,254.46,252.36,250.42,250.18,235.24,230.18,228.76,226.98,223.18,217.16,212.82,202.16,193.48,171.56,117.8,108.48,92.7,92.46,89.88,87.02,83.7,71.0,61.6,60.86,59.38,59.32,42.26,39.74,34.5,33.9,28.0,26.66,25.08,22.98,18.0],"RB":[413.2,290.3,285.6,284.7,265.9,263.0,237.2,229.5,221.4,218.1,214.1,208.02,207.9,203.9,193.7,189.2,182.0,181.6,180.2,174.3,168.1,164.2,159.8,158.2,157.9,150.8,148.2,146.6,140.2,138.5,133.4,132.0,128.5,126.8,126.1,124.9,124.4,123.5,120.7,108.5,106.4,104.6,103.9,95.9,93.8,89.1,88.4,87.6,84.9,82.9],"WR":[300.1,233.1,224.6,223.5,217.54,215.5,210.2,209.5,207.0,206.28,205.9,199.2,195.9,194.2,191.1,189.3,187.9,187.0,186.42,183.82,180.6,179.7,177.9,171.2,165.5,164.3,162.9,162.9,160.6,159.3,158.7,158.1,157.3,151.3,146.0,144.7,139.9,136.8,136.3,134.2,133.6,133.0,127.7,127.4,123.7,123.4,122.1,120.1,114.8,113.3],"TE":[205.8,180.0,176.0,175.2,171.6,154.2,146.0,125.9,122.7,115.7,110.5,108.4,97.7,94.2,93.1,91.0,90.3,87.4,87.2,85.1,81.7,81.0,73.4,73.1,71.8,71.3,71.0,70.0,66.9,65.7,64.7,64.5,62.4,61.9,61.1,60.3,59.6,57.9,53.1,51.9,49.7,44.0,43.1,42.4,38.7,34.3,33.7,33.4,31.7,31.3]},"2020":{"QB":[405.54,390.74,387.76,379.8,376.32,372.78,350.78,349.92,342.84,341.78,319.2,291.44,281.08,277.16,270.56,269.98,256.12,252.94,252.26,250.96,215.48,213.4,196.32,190.02,178.72,165.16,161.8,161.24,154.82,145.02,144.36,140.46,139.14,128.28,112.94,112.18,79.58,75.16,69.34,65.58,57.76,53.7,52.28,46.0,34.26,32.08,26.84,23.72,21.16,20.58],"RB":[336.3,323.6,315.8,237.8,235.4,234.8,225.9,214.7,199.7,199.5,197.7,184.2,182.4,179.7,177.0,172.3,169.3,166.8,163.0,162.2,159.5,158.0,156.4,151.4,150.7,147.0,143.7,141.5,138.3,135.8,134.6,126.1,124.7,124.6,123.7,122.4,118.5,114.0,111.6,109.7,106.7,97.6,96.3,95.1,94.6,92.2,92.1,91.7,89.1,88.8],"WR":[300.9,285.4,265.1,236.5,230.3,230.2,229.8,217.0,215.4,213.6,212.3,211.9,200.1,195.1,191.5,190.8,189.8,185.6,183.9,180.7,180.3,178.5,177.9,176.7,173.6,166.5,162.7,162.4,161.6,161.1,158.9,158.5,154.5,154.0,153.14,151.96,145.06,143.8,142.52,136.2,135.7,134.8,134.3,131.6,129.7,129.5,128.1,127.9,127.1,122.4],"TE":[260.26,225.0,150.6,141.8,141.1,140.62,132.8,126.8,121.1,119.7,118.6,118.3,115.3,115.0,113.8,109.5,108.9,106.2,101.1,93.4,90.5,83.5,81.3,72.4,69.3,65.7,65.2,64.9,64.9,64.2,60.1,59.5,58.9,58.5,58.2,55.0,54.2,53.4,52.6,51.4,49.8,49.1,48.0,45.8,42.8,41.9,40.2,40.0,39.0,38.9]},"2021":{"QB":[417.58,395.76,386.74,374.66,346.74,336.8,330.56,328.24,320.96,310.48,307.34,282.36,270.96,265.02,252.98,248.82,239.5,237.98,237.36,234.92,228.1,216.04,209.68,202.5,193.9,190.92,174.02,170.24,166.96,162.86,136.8,124.72,120.4,93.2,93.16,91.36,86.74,86.64,76.32,66.92,55.28,53.38,52.02,48.32,42.3,40.9,34.66,30.34,29.68,25.08],"RB":[353.1,308.8,266.9,263.7,239.2,228.56,221.0,211.2,208.6,208.1,205.3,203.0,201.1,199.0,189.3,184.3,183.4,181.2,177.9,177.8,175.0,172.5,168.6,158.4,155.5,149.1,148.9,143.1,136.4,135.8,129.6,128.1,125.1,124.1,121.8,118.7,116.2,109.9,109.0,108.1,107.8,106.9,106.8,106.4,104.2,103.6,100.0,99.0,98.6,95.1],"WR":[367.0,300.46,282.8,276.4,264.1,241.0,234.0,225.5,220.9,208.6,207.6,206.8,204.9,204.8,194.6,193.8,193.4,193.3,191.0,186.8,182.3,182.1,180.8,179.2,175.0,169.12,168.5,166.3,153.6,153.0,150.34,149.4,144.9,143.7,143.2,142.3,137.1,133.5,130.0,129.9,129.8,128.8,126.2,125.32,122.5,121.24,118.3,116.7,114.7,112.0],"TE":[247.6,216.8,169.8,162.5,143.7,143.7,142.6,139.6,139.3,137.0,128.5,125.0,121.7,116.5,114.8,108.4,107.8,106.0,103.8,93.8,91.2,89.6,79.5,73.5,70.3,67.6,64.7,63.5,62.1,59.5,58.3,54.5,54.1,53.4,53.0,51.8,51.6,51.1,49.8,49.0,49.0,46.7,46.4,45.8,44.6,43.7,43.1,41.5,41.4,40.9]},"2022":{"QB":[428.9,409.52,384.04,362.7,314.88,306.98,305.58,303.62,294.0,290.82,290.26,280.66,251.2,243.08,238.92,236.26,233.08,213.6,207.52,205.56,196.52,183.2,181.04,174.62,168.78,168.28,167.24,158.86,129.42,121.96,121.8,116.38,110.26,105.42,90.58,89.32,78.88,60.58,59.64,53.02,51.34,48.92,45.64,42.14,42.14,42.02,39.82,38.72,38.62,35.8],"RB":[319.2,313.86,301.8,286.26,267.9,255.5,229.3,219.9,219.1,218.3,214.6,209.5,206.7,203.36,190.6,189.1,187.6,183.3,177.3,177.2,168.3,167.1,160.7,158.9,153.6,152.8,151.4,151.4,147.5,144.2,142.9,140.7,134.8,132.4,128.5,128.5,123.1,114.1,113.4,109.3,108.2,105.6,105.5,95.6,95.2,89.8,83.1,82.5,80.9,80.7],"WR":[304.66,287.7,285.5,262.6,255.6,248.1,221.7,214.6,208.0,207.1,199.9,198.9,195.3,190.5,188.8,186.9,183.9,181.8,174.2,170.8,170.7,167.6,167.0,163.9,162.2,157.1,147.6,146.7,146.3,145.0,145.0,144.8,144.3,143.6,142.6,140.5,140.4,138.12,137.7,136.6,133.3,131.0,127.4,125.66,125.6,122.5,119.7,117.6,117.1,113.1],"TE":[261.3,172.4,170.5,154.0,141.2,140.4,122.3,116.7,116.0,114.2,113.8,113.7,113.0,111.7,110.5,102.5,98.0,97.6,92.1,85.5,83.4,82.2,81.2,79.4,76.9,73.3,72.1,70.8,69.9,69.6,68.7,61.7,61.6,60.0,57.8,56.7,56.0,54.6,47.0,47.0,46.2,45.7,45.7,44.4,42.9,42.7,38.9,38.5,35.7,35.5]},"2023":{"QB":[410.64,371.82,351.84,338.22,330.06,306.6,303.1,294.26,284.36,284.06,280.52,278.0,276.54,264.9,254.1,249.12,240.66,239.18,235.76,210.66,205.2,188.64,166.38,154.74,153.16,151.36,150.94,132.82,126.94,118.4,114.2,108.84,106.02,96.54,90.8,90.34,87.04,78.18,74.74,73.68,73.1,70.0,68.56,62.96,59.26,53.68,39.56,32.12,30.96,27.64],"RB":[357.8,255.2,253.4,252.5,241.0,239.0,235.9,232.66,217.3,216.1,210.7,202.7,199.2,195.5,195.1,191.9,189.2,188.0,184.9,181.0,181.0,180.0,179.8,177.2,165.9,163.0,162.6,159.9,156.1,155.7,152.34,149.0,146.9,128.6,127.8,126.7,119.9,118.2,111.0,106.6,103.4,102.5,96.3,95.3,90.5,90.5,89.6,85.7,85.1,83.0],"WR":[335.7,316.9,271.4,246.0,243.0,238.5,236.6,224.86,220.4,220.3,213.9,213.7,212.72,211.7,195.7,192.4,191.9,191.0,187.8,187.1,186.3,186.1,185.2,183.08,179.5,177.3,173.0,169.7,168.2,167.9,167.7,165.7,162.9,162.6,160.7,146.2,144.9,141.5,139.88,138.9,134.9,132.6,127.2,126.2,126.0,123.1,121.76,118.3,116.6,114.8],"TE":[196.3,173.3,172.9,171.5,170.7,160.7,144.6,141.6,141.0,127.02,121.0,113.8,112.9,110.8,106.8,99.3,99.2,98.9,93.0,92.6,87.2,86.4,86.1,85.6,85.0,79.3,66.0,63.0,60.8,60.7,58.2,58.0,57.9,57.4,56.6,54.1,50.9,49.4,49.2,48.9,43.6,42.6,42.4,42.3,39.3,38.2,38.0,35.9,35.8,33.4]}}
+DATA=json.loads(gzip.decompress(base64.b64decode(Path('ballers_exports_2019_2023.json.gz.b64').read_text())).decode())
+POSITIONS={'QB','RB','WR','TE'}
+ALIASES={
+ 'gabrieldavis':'gabedavis','dwayneeskridge':'deeeskridge','joshpalmer':'joshuapalmer',
+ 'kenwalkeriii':'kennethwalkeriii','nathanieldell':'tankdell','terracemarshall':'terracemarshalljr',
+ 'brianrobinson':'brianrobinsonjr','jaelondarden':'jaleondarden','devontasmith':'devontasmith',
+ 'laviskashenault':'laviskashenaultjr','irvsmith':'irvsmithjr','mikewilliams':'mikewilliams',
+ 'odellbeckham':'odellbeckhamjr','djchark':'djcharkjr','marvinjones':'marvinjonesjr',
+ 'ronaldjones':'ronaldjonesii','melvingordon':'melvingordoniii','willfuller':'willfullerv',
+}
 
-def n(v):
-    try:return float(v or 0)
-    except:return 0.0
+def norm(x):
+ s=unicodedata.normalize('NFD',str(x or '').lower())
+ s=''.join(c for c in s if unicodedata.category(c)!='Mn')
+ return re.sub(r'[^a-z0-9]','',s)
 
-def ffb_points(s):
-    # Fantasy Footballers historical Half-PPR baseline: 4 pass TD, -1 INT.
-    # Use Sleeper raw stat fields rather than Sleeper's precomputed fantasy total.
-    st = s.get('st_td')
-    if st is None:
-        st = n(s.get('kick_ret_td')) + n(s.get('punt_ret_td'))
-    return (
-        n(s.get('pass_yd'))*.04 + n(s.get('pass_td'))*4 - n(s.get('pass_int'))
-        + n(s.get('pass_2pt'))*2 + n(s.get('rush_yd'))*.1 + n(s.get('rush_td'))*6
-        + n(s.get('rush_2pt'))*2 + n(s.get('rec'))*.5 + n(s.get('rec_yd'))*.1
-        + n(s.get('rec_td'))*6 + n(s.get('rec_2pt'))*2 - n(s.get('fum_lost'))*2
-        + n(s.get('fum_rec_td'))*6 + n(st)*6
-    )
+def strip_suffix(n):
+ for suf in ('junior','senior','jr','sr','iii','ii','iv','v'):
+  if n.endswith(suf) and len(n)>len(suf)+3:return n[:-len(suf)]
+ return n
+
+def num(x):
+ try:return float(x or 0)
+ except:return 0.0
+
+def raw_ffb(s):
+ # Historical Fantasy Footballers exports used half-PPR, 4-point passing TDs and -1 INT.
+ # Score only from Sleeper raw stats so this is an independent check of our formula.
+ special=num(s.get('st_td'))
+ if not special:
+  special=num(s.get('kick_ret_td'))+num(s.get('punt_ret_td'))
+ return (
+  num(s.get('pass_yd'))*.04+num(s.get('pass_td'))*4-num(s.get('pass_int'))+num(s.get('pass_2pt'))*2+
+  num(s.get('rush_yd'))*.1+num(s.get('rush_td'))*6+num(s.get('rush_2pt'))*2+
+  num(s.get('rec'))*.5+num(s.get('rec_yd'))*.1+num(s.get('rec_td'))*6+num(s.get('rec_2pt'))*2-
+  num(s.get('fum_lost'))*2+num(s.get('fum_rec_td'))*6+special*6
+ )
 
 def fetch(year):
-    req=urllib.request.Request(f'https://api.sleeper.com/stats/nfl/{year}?season_type=regular',headers={'User-Agent':'Mozilla/5.0 Dynasty-Plebs audit'})
-    return json.load(urllib.request.urlopen(req,timeout=45))
+ req=urllib.request.Request(f'https://api.sleeper.com/stats/nfl/{year}?season_type=regular',headers={'User-Agent':'Mozilla/5.0 Dynasty-Plebs audit'})
+ return json.load(urllib.request.urlopen(req,timeout=45))
 
-exact=0; total=0; absdiff=0.0; worst=[]
+def pname(r):
+ p=r.get('player') or {}
+ return (p.get('full_name') or ' '.join(x for x in (p.get('first_name'),p.get('last_name')) if x) or r.get('player_name') or '').strip()
+
+def ppos(r):
+ p=r.get('player') or {}
+ return (p.get('position') or r.get('position') or '').upper()
+
+def build_lookup(rows):
+ out={}
+ for r in rows:
+  if ppos(r) not in POSITIONS:continue
+  name=pname(r)
+  if not name:continue
+  k=norm(name); score=raw_ffb(r.get('stats') or {})
+  # Same named player can appear in stale/duplicate Sleeper rows. Keep the row with more GP,
+  # then more absolute fantasy output.
+  gp=num((r.get('stats') or {}).get('gp') or (r.get('stats') or {}).get('gms_active'))
+  old=out.get(k)
+  if old is None or (gp,abs(score))>(old['gp'],abs(old['score'])):
+   out[k]={'record':r,'name':name,'pos':ppos(r),'score':score,'gp':gp}
+ return out
+
+def resolve(name,pos,lookup):
+ n=norm(name); candidates=[n,ALIASES.get(n),strip_suffix(n)]
+ if ALIASES.get(n): candidates.append(strip_suffix(ALIASES[n]))
+ for c in candidates:
+  if c in lookup and lookup[c]['pos']==pos:return lookup[c]
+ base=strip_suffix(n)
+ matches=[v for k,v in lookup.items() if v['pos']==pos and strip_suffix(k)==base]
+ return matches[0] if len(matches)==1 else None
+
+total=matched=exact=near=0; absdiff=0.0; diffs=[]; unmatch=[]
 for year in range(2019,2024):
-    rows=fetch(year)
-    groups={p:[] for p in ('QB','RB','WR','TE')}
-    for r in rows:
-        p=r.get('player') or {}
-        pos=(r.get('position') or p.get('position') or '').upper()
-        if pos not in groups: continue
-        pts=round(ffb_points(r.get('stats') or {}),2)
-        groups[pos].append(pts)
-    for pos in groups:
-        got=sorted(groups[pos],reverse=True)[:50]
-        exp=BALLERS_TOP50[str(year)][pos]
-        diffs=[round(g-e,2) for g,e in zip(got,exp)]
-        matches=sum(abs(d)<=.11 for d in diffs)
-        mae=sum(abs(d) for d in diffs)/len(diffs)
-        mx=max(abs(d) for d in diffs)
-        exact+=matches; total+=len(diffs); absdiff+=sum(abs(d) for d in diffs)
-        print(f'{year} {pos}: {matches}/50 within 0.11 | MAE {mae:.3f} | max {mx:.2f}')
-        for i,d in enumerate(diffs):
-            if abs(d)>.11: worst.append((abs(d),year,pos,i+1,exp[i],got[i],d))
-print(f'OVERALL: {exact}/{total} within 0.11 ({exact/total:.1%}); MAE {absdiff/total:.4f}')
-print('Largest rank-sequence discrepancies:')
-for item in sorted(worst,reverse=True)[:30]:
-    _,year,pos,rank,exp,got,d=item
-    print(f'  {year} {pos} rank {rank}: Ballers {exp:.2f}, Sleeper-formula {got:.2f}, diff {d:+.2f}')
+ lookup=build_lookup(fetch(year))
+ print(f'\n=== {year} ===')
+ for pos in ('QB','RB','WR','TE'):
+  rows=DATA[str(year)][pos]; ymatch=yexact=0; yabs=0.0; yd=[]
+  for x in rows:
+   total+=1
+   hit=resolve(x['player'],pos,lookup)
+   if not hit:
+    unmatch.append((year,pos,x['player'],x['points'])); continue
+   matched+=1; ymatch+=1
+   got=round(hit['score'],2); exp=round(float(x['points']),2); d=round(got-exp,2)
+   absdiff+=abs(d); yabs+=abs(d)
+   if abs(d)<=.11: exact+=1; yexact+=1
+   elif abs(d)<=.25: near+=1
+   else: diffs.append((abs(d),year,pos,x['player'],hit['name'],exp,got,d,hit['record'].get('stats') or {})); yd.append(d)
+  print(f'{pos}: matched {ymatch}/{len(rows)} | exact {yexact}/{ymatch or 1} | MAE {yabs/(ymatch or 1):.3f} | material {sum(abs(d)>.25 for d in yd)}')
+
+print('\n=== OVERALL ===')
+print(f'Rows in uploaded exports: {total}')
+print(f'Name matched: {matched}/{total} ({matched/total:.2%})')
+print(f'Exact within 0.11: {exact}/{matched} ({exact/(matched or 1):.2%})')
+print(f'Additional within 0.25: {near}')
+print(f'MAE across matched rows: {absdiff/(matched or 1):.4f}')
+print(f'Material discrepancies >0.25: {len(diffs)}')
+print(f'Unmatched names: {len(unmatch)}')
+
+print('\nLargest discrepancies:')
+for _,year,pos,csvname,sname,exp,got,d,s in sorted(diffs,reverse=True)[:80]:
+ keys=('pass_yd','pass_td','pass_int','pass_2pt','rush_yd','rush_td','rush_2pt','rec','rec_yd','rec_td','rec_2pt','fum_lost','fum_rec_td','st_td','kick_ret_td','punt_ret_td')
+ stats={k:s.get(k) for k in keys if num(s.get(k))}
+ print(f'{year} {pos} {csvname} -> {sname}: export {exp:.2f}, raw {got:.2f}, diff {d:+.2f} | {stats}')
+
+if unmatch:
+ print('\nUnmatched:')
+ for x in unmatch: print(*x)
