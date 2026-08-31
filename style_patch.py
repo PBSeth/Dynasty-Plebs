@@ -15,7 +15,11 @@ repls = {
     '<p>Year-by-year regular-season performance. Every manager uses the same scale for each metric.</p>':
     '<p>Year-by-year regular-season performance.</p>',
     '<div class="scale-note">Fixed league-wide scale · identical for every manager</div>':
-    ''
+    '',
+    "pf:{label:'Points For',get:s=>s.pf":
+    "pf:{label:'PF',get:s=>s.pf",
+    "pa:{label:'Points Against',get:s=>s.pa":
+    "pa:{label:'PA',get:s=>s.pa"
 }
 
 for old, new in repls.items():
