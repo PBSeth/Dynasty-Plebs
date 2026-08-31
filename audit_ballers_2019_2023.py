@@ -1,15 +1,16 @@
-import base64,gzip,json,re,unicodedata,urllib.request
+import json,re,unicodedata,urllib.request
 from pathlib import Path
 
-DATA=json.loads(gzip.decompress(base64.b64decode(Path('ballers_exports_2019_2023.json.gz.b64').read_text())).decode())
+DATA=json.loads(Path('ballers_audit_sample_240.json').read_text())
 POSITIONS={'QB','RB','WR','TE'}
 ALIASES={
  'gabrieldavis':'gabedavis','dwayneeskridge':'deeeskridge','joshpalmer':'joshuapalmer',
  'kenwalkeriii':'kennethwalkeriii','nathanieldell':'tankdell','terracemarshall':'terracemarshalljr',
- 'brianrobinson':'brianrobinsonjr','jaelondarden':'jaleondarden','devontasmith':'devontasmith',
- 'laviskashenault':'laviskashenaultjr','irvsmith':'irvsmithjr','mikewilliams':'mikewilliams',
- 'odellbeckham':'odellbeckhamjr','djchark':'djcharkjr','marvinjones':'marvinjonesjr',
- 'ronaldjones':'ronaldjonesii','melvingordon':'melvingordoniii','willfuller':'willfullerv',
+ 'brianrobinson':'brianrobinsonjr','jaelondarden':'jaleondarden','laviskashenault':'laviskashenaultjr',
+ 'irvsmith':'irvsmithjr','odellbeckham':'odellbeckhamjr','djchark':'djcharkjr',
+ 'marvinjones':'marvinjonesjr','ronaldjones':'ronaldjonesii','melvingordon':'melvingordoniii',
+ 'willfuller':'willfullerv','hollywoodbrown':'marquisebrown','jeffwilsonjr':'jefferywilsonjr',
+ 'mikeglennon':'michaelglennon','mattstafford':'matthewstafford'
 }
 
 def norm(x):
@@ -27,8 +28,8 @@ def num(x):
  except:return 0.0
 
 def raw_ffb(s):
- # Historical Fantasy Footballers exports used half-PPR, 4-point passing TDs and -1 INT.
- # Score only from Sleeper raw stats so this is an independent check of our formula.
+ # Historical Fantasy Footballers exports supplied by the league: half-PPR,
+ # 4-point passing TD and -1 INT. This reconstructs that score from Sleeper raw stats.
  special=num(s.get('st_td'))
  if not special:
   special=num(s.get('kick_ret_td'))+num(s.get('punt_ret_td'))
@@ -58,8 +59,6 @@ def build_lookup(rows):
   name=pname(r)
   if not name:continue
   k=norm(name); score=raw_ffb(r.get('stats') or {})
-  # Same named player can appear in stale/duplicate Sleeper rows. Keep the row with more GP,
-  # then more absolute fantasy output.
   gp=num((r.get('stats') or {}).get('gp') or (r.get('stats') or {}).get('gms_active'))
   old=out.get(k)
   if old is None or (gp,abs(score))>(old['gp'],abs(old['score'])):
@@ -68,7 +67,7 @@ def build_lookup(rows):
 
 def resolve(name,pos,lookup):
  n=norm(name); candidates=[n,ALIASES.get(n),strip_suffix(n)]
- if ALIASES.get(n): candidates.append(strip_suffix(ALIASES[n]))
+ if ALIASES.get(n):candidates.append(strip_suffix(ALIASES[n]))
  for c in candidates:
   if c in lookup and lookup[c]['pos']==pos:return lookup[c]
  base=strip_suffix(n)
@@ -80,22 +79,22 @@ for year in range(2019,2024):
  lookup=build_lookup(fetch(year))
  print(f'\n=== {year} ===')
  for pos in ('QB','RB','WR','TE'):
-  rows=DATA[str(year)][pos]; ymatch=yexact=0; yabs=0.0; yd=[]
+  rows=DATA[str(year)][pos]; ymatch=yexact=0; yabs=0.0; ymaterial=0
   for x in rows:
-   total+=1
-   hit=resolve(x['player'],pos,lookup)
+   total+=1; hit=resolve(x['player'],pos,lookup)
    if not hit:
-    unmatch.append((year,pos,x['player'],x['points'])); continue
-   matched+=1; ymatch+=1
-   got=round(hit['score'],2); exp=round(float(x['points']),2); d=round(got-exp,2)
-   absdiff+=abs(d); yabs+=abs(d)
-   if abs(d)<=.11: exact+=1; yexact+=1
-   elif abs(d)<=.25: near+=1
-   else: diffs.append((abs(d),year,pos,x['player'],hit['name'],exp,got,d,hit['record'].get('stats') or {})); yd.append(d)
-  print(f'{pos}: matched {ymatch}/{len(rows)} | exact {yexact}/{ymatch or 1} | MAE {yabs/(ymatch or 1):.3f} | material {sum(abs(d)>.25 for d in yd)}')
+    unmatch.append((year,pos,x['player'],x['points']));continue
+   matched+=1;ymatch+=1
+   got=round(hit['score'],2);exp=round(float(x['points']),2);d=round(got-exp,2)
+   absdiff+=abs(d);yabs+=abs(d)
+   if abs(d)<=.11:exact+=1;yexact+=1
+   elif abs(d)<=.25:near+=1
+   else:
+    ymaterial+=1;diffs.append((abs(d),year,pos,x['player'],hit['name'],exp,got,d,hit['record'].get('stats') or {}))
+  print(f'{pos}: matched {ymatch}/{len(rows)} | exact {yexact}/{ymatch or 1} | MAE {yabs/(ymatch or 1):.3f} | material {ymaterial}')
 
 print('\n=== OVERALL ===')
-print(f'Rows in uploaded exports: {total}')
+print(f'Rows sampled directly from uploaded CSVs: {total}')
 print(f'Name matched: {matched}/{total} ({matched/total:.2%})')
 print(f'Exact within 0.11: {exact}/{matched} ({exact/(matched or 1):.2%})')
 print(f'Additional within 0.25: {near}')
@@ -108,7 +107,6 @@ for _,year,pos,csvname,sname,exp,got,d,s in sorted(diffs,reverse=True)[:80]:
  keys=('pass_yd','pass_td','pass_int','pass_2pt','rush_yd','rush_td','rush_2pt','rec','rec_yd','rec_td','rec_2pt','fum_lost','fum_rec_td','st_td','kick_ret_td','punt_ret_td')
  stats={k:s.get(k) for k in keys if num(s.get(k))}
  print(f'{year} {pos} {csvname} -> {sname}: export {exp:.2f}, raw {got:.2f}, diff {d:+.2f} | {stats}')
-
 if unmatch:
  print('\nUnmatched:')
- for x in unmatch: print(*x)
+ for x in unmatch:print(*x)
