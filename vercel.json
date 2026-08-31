@@ -1,4 +1,5 @@
 {
   "buildCommand": "mkdir -p dist && cp index.html dist/index.html",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "cleanUrls": false
 }
