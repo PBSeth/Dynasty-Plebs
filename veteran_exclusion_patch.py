@@ -173,9 +173,10 @@ if old_badge in html:
 elif 'Veteran · excluded' not in html:
     raise RuntimeError('rookie card PPG badge pattern not found')
 
-old_desc='Complete recovered rookie-draft history with career-to-date Dynasty Plebs scoring.'
-new_desc='Complete recovered rookie-draft history with career-to-date Dynasty Plebs scoring. Veteran selections stay in the archive but are excluded from rookie-draft grading.'
-if old_desc in html: html=html.replace(old_desc,new_desc,1)
+base_desc='Complete recovered rookie-draft history with career-to-date Dynasty Plebs scoring.'
+veteran_note='Veteran selections stay in the archive but are excluded from rookie-draft grading.'
+html,n=re.subn(re.escape(base_desc)+r'(?: '+re.escape(veteran_note)+r')*',base_desc+' '+veteran_note,html,count=1)
+if n!=1: raise RuntimeError('Rookie draft description not found')
 
 INDEX.write_text(html,encoding='utf-8')
 print(f'Veteran selections excluded from rookie-draft scoring: {len(veterans)}')
