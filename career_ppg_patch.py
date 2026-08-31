@@ -2,7 +2,6 @@ import json
 import re
 import time
 import unicodedata
-import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -53,38 +52,28 @@ def as_num(value):
         return 0.0
 
 
-def raw_half_ppr(stats):
-    # Fallback only. Sleeper's own pts_half_ppr is preferred because it preserves
-    # its official stat corrections and all ordinary half-PPR scoring details.
-    return (
-        as_num(stats.get("pass_yd")) * 0.04
-        + as_num(stats.get("pass_td")) * 4
-        - as_num(stats.get("pass_int"))
-        + as_num(stats.get("pass_2pt")) * 2
-        + as_num(stats.get("rush_yd")) * 0.1
-        + as_num(stats.get("rush_td")) * 6
-        + as_num(stats.get("rush_2pt")) * 2
-        + as_num(stats.get("rec")) * 0.5
-        + as_num(stats.get("rec_yd")) * 0.1
-        + as_num(stats.get("rec_td")) * 6
-        + as_num(stats.get("rec_2pt")) * 2
-        - as_num(stats.get("fum_lost")) * 2
-        + as_num(stats.get("fum_rec_td")) * 6
-        + as_num(stats.get("kick_ret_td")) * 6
-        + as_num(stats.get("punt_ret_td")) * 6
-    )
-
-
 def plebs_points(record):
-    stats = record.get("stats") or {}
-    base = stats.get("pts_half_ppr")
-    if base is None:
-        base = record.get("pts_half_ppr")
-    if base is None:
-        base = raw_half_ppr(stats)
-    # Sleeper standard half-PPR uses 4-point passing TDs and -1 interceptions.
-    # Dynasty Plebs is 6/-4, so this exact delta converts every passer.
-    return as_num(base) + 2 * as_num(stats.get("pass_td")) - 3 * as_num(stats.get("pass_int"))
+    # Score Sleeper's raw regular-season stat line directly with the league's rules.
+    # This deliberately ignores every precomputed fantasy-points field, so the
+    # Fantasy Footballers yardage bonuses that appeared in 2024/2025 cannot leak in.
+    s = record.get("stats") or {}
+    return (
+        as_num(s.get("pass_yd")) * 0.04
+        + as_num(s.get("pass_td")) * 6
+        - as_num(s.get("pass_int")) * 4
+        + as_num(s.get("pass_2pt")) * 2
+        + as_num(s.get("rush_yd")) * 0.1
+        + as_num(s.get("rush_td")) * 6
+        + as_num(s.get("rush_2pt")) * 2
+        + as_num(s.get("rec")) * 0.5
+        + as_num(s.get("rec_yd")) * 0.1
+        + as_num(s.get("rec_td")) * 6
+        + as_num(s.get("rec_2pt")) * 2
+        - as_num(s.get("fum_lost")) * 2
+        + as_num(s.get("fum_rec_td")) * 6
+        + as_num(s.get("kick_ret_td")) * 6
+        + as_num(s.get("punt_ret_td")) * 6
+    )
 
 
 def player_name(record):
@@ -122,8 +111,7 @@ if not boards_match:
     raise SystemExit("rookieBoards not found in index.html")
 boards = json.loads(boards_match.group(1))
 
-# Fetch Sleeper regular-season player statistics. Sleeper, not Fantasy Footballers,
-# is the scoring source of truth; this also avoids the 2024/2025 FFB yardage bonuses.
+# Sleeper is the scoring source of truth. Fantasy Footballers remains an audit source.
 season_data = {}
 for season in SEASONS:
     url = f"https://api.sleeper.com/stats/nfl/{season}?season_type=regular"
@@ -177,7 +165,7 @@ for season, name, expected_points, expected_games in checks:
 print(f"Sleeper scoring calibration passed: {len(checks)}/{len(checks)} checks")
 
 # One outcome per league draft event, not merely per NFL player name. A veteran can
-# be drafted in multiple rookie/free-agent classes and each pick starts its clock then.
+# be drafted in multiple league draft classes and each pick starts its clock then.
 draft_entries = []
 for year_text, board in boards.items():
     draft_year = int(year_text)
@@ -185,7 +173,6 @@ for year_text, board in boards.items():
         for player in round_players:
             if player:
                 draft_entries.append((draft_year, player))
-# 2025 source board has an explicit 3.13 outside the 12-column board.
 draft_entries.append((2025, "Don'te Thornton"))
 
 career = {}
@@ -221,7 +208,6 @@ for draft_year, drafted_name in draft_entries:
             "pos": position,
         }
     elif matched_any:
-        # A Sleeper player row with zero games is intentionally left unscored.
         unmatched.append(f"{draft_year} {drafted_name} (0 GP)")
     elif draft_year <= LAST_COMPLETE_SEASON:
         unmatched.append(f"{draft_year} {drafted_name}")
@@ -265,8 +251,8 @@ new_intel = r'''function renderDraftIntel(){
  const managerMetrics=allManagers.map(m=>{const d=getScored(m);if(!d.length)return null;const rounds={};[1,2,3,4].forEach(r=>rounds[r]=avg(d.filter(p=>bucket(p)===r)));const deltas=d.map(p=>p.ppg-leagueRound[bucket(p)]).filter(Number.isFinite);return{m,avg:avg(d),adj:deltas.length?deltas.reduce((a,v)=>a+v,0)/deltas.length:null,rounds,n:d.length}}).filter(Boolean);
  const me=managerMetrics.find(x=>x.m===selectedManager),rank=(value,values)=>{const valid=values.filter(Number.isFinite).sort((a,b)=>b-a);if(!Number.isFinite(value)||!valid.length)return'';return`Rank ${1+valid.filter(v=>v>value+1e-9).length} of ${valid.length}`};
  const best=[...scored].sort((a,b)=>b.ppg-a.ppg)[0],worst=[...scored].sort((a,b)=>a.ppg-b.ppg)[0],roundCards=[1,2,3,4].map(r=>{const d=scored.filter(p=>bucket(p)===r),value=avg(d),label=r===4?'Round 4+':`Round ${r}`,ranking=rank(value,managerMetrics.map(x=>x.rounds[r]));return`<div class="intel-card"><small>${label} Avg Career PPG</small><b>${value==null?'—':value.toFixed(1)}</b><strong>${ranking||'No scored picks'}</strong><span>${d.length} scored pick${d.length===1?'':'s'}</span></div>`}).join('');
- box.innerHTML=`<div class="intel-card"><small>Avg Career PPG / Pick</small><b>${me.avg.toFixed(1)}</b><strong>${rank(me.avg,managerMetrics.map(x=>x.avg))}</strong><span>${me.n} scored picks</span></div><div class="intel-card"><small>Round-Adjusted PPG</small><b>${me.adj==null?'—':(me.adj>=0?'+':'')+me.adj.toFixed(1)}</b><strong>${rank(me.adj,managerMetrics.map(x=>x.adj))}</strong><span>vs league avg at same round</span></div><div class="intel-card"><small>Best Pick</small><strong>${best.player}</strong><span>${best.year} · ${best.pick} · ${best.ppg.toFixed(1)} PPG · ${best.games} G</span></div><div class="intel-card"><small>Worst Pick</small><strong>${worst.player}</strong><span>${worst.year} · ${worst.pick} · ${worst.ppg.toFixed(1)} PPG · ${worst.games} G</span></div>${roundCards}<div class="intel-note">Career PPG uses every NFL regular-season game from that league draft year through ${LAST_COMPLETE_SEASON}, under Dynasty Plebs scoring. New seasons roll into the same totals and retroactively update these draft outcomes.</div>`;
-}'''.replace("${LAST_COMPLETE_SEASON}", str(LAST_COMPLETE_SEASON))
+ box.innerHTML=`<div class="intel-card"><small>Avg Career PPG / Pick</small><b>${me.avg.toFixed(1)}</b><strong>${rank(me.avg,managerMetrics.map(x=>x.avg))}</strong><span>${me.n} scored picks</span></div><div class="intel-card"><small>Round-Adjusted PPG</small><b>${me.adj==null?'—':(me.adj>=0?'+':'')+me.adj.toFixed(1)}</b><strong>${rank(me.adj,managerMetrics.map(x=>x.adj))}</strong><span>vs league avg at same round</span></div><div class="intel-card"><small>Best Pick</small><strong>${best.player}</strong><span>${best.year} · ${best.pick} · ${best.ppg.toFixed(1)} PPG · ${best.games} G</span></div><div class="intel-card"><small>Worst Pick</small><strong>${worst.player}</strong><span>${worst.year} · ${worst.pick} · ${worst.ppg.toFixed(1)} PPG · ${worst.games} G</span></div>${roundCards}<div class="intel-note">Career PPG uses every NFL regular-season game from that league draft year through 2025, under Dynasty Plebs scoring. New seasons roll into the same totals and retroactively update these draft outcomes.</div>`;
+}'''
 
 intel_start = html.find("function renderDraftIntel(){")
 rookie_start = html.find("function renderRookies(){", intel_start)
