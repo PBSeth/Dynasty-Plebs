@@ -8,6 +8,7 @@ from pathlib import Path
 INDEX = Path("index.html")
 LAST_COMPLETE_SEASON = 2025
 SEASONS = range(2019, LAST_COMPLETE_SEASON + 1)
+OFFENSIVE_POSITIONS = {"QB", "RB", "WR", "TE"}
 
 
 def norm_name(value):
@@ -30,6 +31,14 @@ ALIASES = {
     "jaelondarden": "jaleondarden",
     "terracemarshall": "terracemarshalljr",
     "brianrobinson": "brianrobinsonjr",
+    "zachmoss": "zackmoss",
+    "gabrieldavis": "gabedavis",
+    "kennethgainwell": "kennygainwell",
+    "dwayneeskridge": "deeeskridge",
+    "joshpalmer": "joshuapalmer",
+    "jamarithrash": "jamarithrash",
+    "jamarthrash": "jamarithrash",
+    "jamatthrash": "jamarithrash",
 }
 
 
@@ -121,19 +130,25 @@ for season in SEASONS:
     lookup = {}
     for rec in records:
         name = player_name(rec)
-        if not name:
+        position = player_position(rec)
+        if not name or position not in OFFENSIVE_POSITIONS:
             continue
         n = norm_name(name)
         stats = rec.get("stats") or {}
         gp = int(as_num(stats.get("gp") or stats.get("gms_active")))
-        lookup[n] = {
+        row = {
             "name": name,
-            "position": player_position(rec),
+            "position": position,
             "games": gp,
             "points": plebs_points(rec),
         }
+        old = lookup.get(n)
+        # Sleeper can contain multiple people with the same full name. Prefer the
+        # offensive record that actually played the most games that season.
+        if old is None or (row["games"], abs(row["points"])) > (old["games"], abs(old["points"])):
+            lookup[n] = row
     season_data[season] = lookup
-    print(f"Sleeper {season}: {len(lookup)} player stat rows")
+    print(f"Sleeper {season}: {len(lookup)} offensive player stat rows")
     time.sleep(0.15)
 
 # Hard calibration against Dynasty Plebs Sleeper screenshots supplied by the league.
@@ -219,15 +234,24 @@ if unmatched:
         print(" -", item)
 
 career_json = json.dumps(career, separators=(",", ":"), ensure_ascii=False)
-html, n = re.subn(
-    r"const first3PPG=\{.*?\};\n",
-    f"const careerDraftStats={career_json};\n",
-    html,
-    count=1,
-    flags=re.S,
-)
+if "const first3PPG=" in html:
+    html, n = re.subn(
+        r"const first3PPG=\{.*?\};\n",
+        f"const careerDraftStats={career_json};\n",
+        html,
+        count=1,
+        flags=re.S,
+    )
+else:
+    html, n = re.subn(
+        r"const careerDraftStats=\{.*?\};\n",
+        f"const careerDraftStats={career_json};\n",
+        html,
+        count=1,
+        flags=re.S,
+    )
 if n != 1:
-    raise RuntimeError("first3PPG constant was not replaced")
+    raise RuntimeError("career draft stat constant was not replaced")
 html = re.sub(r"const first3ByNorm=.*?;\n", "", html, count=1)
 
 start = html.find("function addPick(manager,year,round,slot,player)")
