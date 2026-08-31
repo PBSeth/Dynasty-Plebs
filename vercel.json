@@ -1,4 +1,4 @@
 {
-  "buildCommand": "python run_patch.py && python style_patch.py && mkdir -p dist && cp index.html dist/index.html",
+  "buildCommand": "python run_patch.py && python style_patch.py && python ui_patch.py && mkdir -p dist && cp index.html dist/index.html",
   "outputDirectory": "dist"
 }
