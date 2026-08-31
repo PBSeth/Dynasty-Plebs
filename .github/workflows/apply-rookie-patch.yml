@@ -6,6 +6,7 @@ on:
       - '.github/workflows/apply-rookie-patch.yml'
       - 'patch_rookies.py'
       - 'career_ppg_patch.py'
+      - 'position_adjusted_draft_grade.py'
 permissions:
   contents: write
 jobs:
@@ -45,6 +46,8 @@ jobs:
           PY
       - name: Build Sleeper-scored career draft outcomes
         run: python career_ppg_patch.py
+      - name: Apply position-adjusted manager draft grading
+        run: python position_adjusted_draft_grade.py
       - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
@@ -53,6 +56,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Apply Sleeper-scored career draft intel"
+            git commit -m "Apply position-adjusted manager draft grading"
             git push
           fi
