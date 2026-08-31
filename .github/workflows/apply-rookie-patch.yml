@@ -27,6 +27,22 @@ jobs:
           PY
       - name: Correct rookie ownership
         run: python patch_rookies.py
+      - name: Audit Sleeper sample stat fields
+        run: |
+          python - <<'PY'
+          import json, urllib.request
+          names={'A.J. Brown','Jonathan Taylor','Kyle Pitts'}
+          for year in range(2019,2026):
+              req=urllib.request.Request(f'https://api.sleeper.com/stats/nfl/{year}?season_type=regular',headers={'User-Agent':'Mozilla/5.0'})
+              rows=json.load(urllib.request.urlopen(req,timeout=45))
+              for r in rows:
+                  p=r.get('player') or {}
+                  name=p.get('full_name') or ' '.join(x for x in (p.get('first_name'),p.get('last_name')) if x)
+                  if name not in names: continue
+                  s=r.get('stats') or {}
+                  keep={k:s[k] for k in sorted(s) if (k in {'gp','gms_active','pts_half_ppr','rec','rec_yd','rec_td','rec_2pt','rush_yd','rush_td','rush_2pt','fum_lost','fum_rec_td','kick_ret_td','punt_ret_td'} or '2pt' in k or 'bonus' in k) and s[k]}
+                  print(year,name,p.get('position'),keep)
+          PY
       - name: Build Sleeper-scored career draft outcomes
         run: python career_ppg_patch.py
       - name: Commit updated site data
