@@ -1,17 +1,69 @@
 import collections
 import json
 import re
-import urllib.error
 import urllib.request
 from pathlib import Path
 
 INDEX = Path('index.html')
-ESPN_LEAGUE_ID = 30017097
 SLEEPER_BASE = 'https://api.sleeper.app/v1'
 
-# Locked Dynasty Plebs formula from the league sheet/history:
-# Legacy = Reg-season Win% + .05*seasons + .05*playoff wins + .50*championships
-# Playoff byes count as playoff wins.
+# Dynasty Plebs uses the exact Fantasy Ranch Legacy Score formula:
+# Score = RegSeasonWinPct * (1 + .05*ServiceTime + .05*PlayoffWins + .50*Championships) * 1000
+# Playoff bye weeks count as playoff wins.
+#
+# ESPN 2019-2023 is locked from the supplied Final Standings. In a six-team playoff,
+# final playoff place determines wins including byes: champion=3, runner-up=2,
+# semifinal losers (3rd/4th)=1, quarterfinal losers (5th/6th)=0.
+
+ESPN_PLAYOFF_WINS = {
+    2019: {
+        'David Carnes': 3,
+        'Bo Tiller': 2,
+        'Matt Metz': 1,
+        'Travis Page': 1,
+    },
+    2020: {
+        'Matthew Piontek': 3,
+        'Seth Miller': 2,
+        'David Carnes': 1,
+        'Mason Good': 1,
+    },
+    2021: {
+        'Matthew Piontek': 3,
+        'Seth Miller': 2,
+        'Alex Agueros': 1,
+        'Bo Tiller': 1,
+    },
+    2022: {
+        'Seth Miller': 3,
+        'Matt Metz': 2,
+        'Tim Bell': 1,
+        'Bo Tiller': 1,
+    },
+    2023: {
+        'Jordan Martin': 3,
+        'Seth Miller': 2,
+        'Travis Page': 1,
+        'Payton Docheff': 1,
+    },
+}
+
+SLEEPER_CANON = {
+    'mcnutted86': 'Jordan Martin',
+    'peedawg': 'Payton Docheff',
+    'justintreyreed': 'Bo Tiller',
+    'sharkmoons': 'Bo Tiller',
+    'mrplows': 'Clint Hudson',
+    'pbseth': 'Seth Miller',
+    'tomahawkchop6': 'Travis Page',
+    'matthewmetz1985': 'Matt Metz',
+    'abogueros': 'Alex Agueros',
+    'imjustluke': 'Luke Miller',
+    'shuturmuth': 'David Carnes',
+    'rjlipkin': 'Ryan Lipkin',
+    'clawdaddy69': 'Matt Clawson',
+}
+
 
 def norm(value):
     return re.sub(r'[^a-z0-9]', '', str(value or '').lower())
@@ -37,130 +89,19 @@ def parse_site(src):
 src = INDEX.read_text(encoding='utf-8')
 seasons, champions = parse_site(src)
 canonical_names = {norm(row[0]): row[0] for s in seasons for row in s['r']}
-team_owner = {(s['y'], norm(row[1])): row[0] for s in seasons for row in s['r']}
-
-# A few historical ESPN account-display variants can differ from the canonical site name.
-name_aliases = {
-    'matthewmetz': 'Matt Metz',
-    'mattmetz': 'Matt Metz',
-    'matthewpiontek': 'Matthew Piontek',
-    'davidcarnes': 'David Carnes',
-    'mattclawson': 'Matt Clawson',
-    'paytondocheff': 'Payton Docheff',
-}
 
 
 def canon_person(value):
     n = norm(value)
-    return canonical_names.get(n) or name_aliases.get(n)
-
-
-def espn_payload(year):
-    urls = [
-        f'https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{ESPN_LEAGUE_ID}?view=mMatchupScore&view=mTeam',
-        f'https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/leagueHistory/{ESPN_LEAGUE_ID}?seasonId={year}&view=mMatchupScore&view=mTeam',
-        f'https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{ESPN_LEAGUE_ID}?view=mMatchupScore&view=mTeam',
-    ]
-    errors = []
-    for url in urls:
-        try:
-            data = get_json(url)
-            if isinstance(data, list):
-                data = data[0]
-            if isinstance(data, dict) and data.get('schedule'):
-                return data
-        except Exception as exc:
-            errors.append(f'{type(exc).__name__}: {exc}')
-    raise RuntimeError(f'ESPN {year} playoff data unavailable: ' + ' | '.join(errors))
-
-
-def espn_manager_map(year, data):
-    members = {str(m.get('id')): m for m in data.get('members', [])}
-    out = {}
-    for team in data.get('teams', []):
-        tid = team.get('id')
-        manager = None
-        for owner_id in team.get('owners') or []:
-            m = members.get(str(owner_id), {})
-            for field in ('displayName', 'firstName', 'lastName'):
-                manager = canon_person(m.get(field)) or manager
-            if manager:
-                break
-        if not manager:
-            candidates = [
-                team.get('name'),
-                ' '.join(x for x in (team.get('location'), team.get('nickname')) if x),
-            ]
-            for candidate in candidates:
-                manager = team_owner.get((year, norm(candidate)))
-                if manager:
-                    break
-        if manager:
-            out[tid] = manager
-    return out
-
-
-def espn_playoff_wins(year):
-    data = espn_payload(year)
-    manager_by_team = espn_manager_map(year, data)
-    playoff = [g for g in data.get('schedule', []) if str(g.get('playoffTierType', '')).upper() == 'WINNERS_BRACKET']
-    if not playoff:
-        raise RuntimeError(f'ESPN {year}: no WINNERS_BRACKET games found')
-
-    wins = collections.Counter()
-    appearances = collections.defaultdict(list)
-    periods = sorted({int(g.get('matchupPeriodId') or 0) for g in playoff if g.get('matchupPeriodId') is not None})
-    period_rank = {p: i + 1 for i, p in enumerate(periods)}
-
-    for game in playoff:
-        period = int(game.get('matchupPeriodId') or periods[0])
-        sides = [game.get('home'), game.get('away')]
-        present = [s for s in sides if isinstance(s, dict) and s.get('teamId') in manager_by_team]
-        for side in present:
-            appearances[side['teamId']].append(period_rank[period])
-        if len(present) == 1:
-            # ESPN can encode a bye as a one-sided winners-bracket matchup.
-            wins[manager_by_team[present[0]['teamId']]] += 1
-        elif len(present) == 2:
-            winner = str(game.get('winner') or '').upper()
-            if winner == 'HOME':
-                winning_team = game['home'].get('teamId')
-            elif winner == 'AWAY':
-                winning_team = game['away'].get('teamId')
-            else:
-                hp = float(game['home'].get('totalPoints') or 0)
-                ap = float(game['away'].get('totalPoints') or 0)
-                if abs(hp - ap) < 1e-9:
-                    raise RuntimeError(f'ESPN {year}: unresolved playoff tie {game}')
-                winning_team = game['home'].get('teamId') if hp > ap else game['away'].get('teamId')
-            wins[manager_by_team[winning_team]] += 1
-
-    # Some ESPN brackets omit a bye matchup entirely. First appearance in a later
-    # winners-bracket round therefore represents one or more earned playoff byes.
-    for team_id, rounds in appearances.items():
-        first = min(rounds)
-        if first > 1:
-            wins[manager_by_team[team_id]] += first - 1
-
-    print(f'ESPN {year} playoff wins incl byes:', dict(sorted(wins.items())))
-    return wins
-
-
-SLEEPER_CANON = {
-    'mcnutted86': 'Jordan Martin',
-    'peedawg': 'Payton Docheff',
-    'justintreyreed': 'Bo Tiller',
-    'sharkmoons': 'Bo Tiller',
-    'mrplows': 'Clint Hudson',
-    'pbseth': 'Seth Miller',
-    'tomahawkchop6': 'Travis Page',
-    'matthewmetz1985': 'Matt Metz',
-    'abogueros': 'Alex Agueros',
-    'imjustluke': 'Luke Miller',
-    'shuturmuth': 'David Carnes',
-    'rjlipkin': 'Ryan Lipkin',
-    'clawdaddy69': 'Matt Clawson',
-}
+    aliases = {
+        'matthewmetz': 'Matt Metz',
+        'mattmetz': 'Matt Metz',
+        'matthewpiontek': 'Matthew Piontek',
+        'davidcarnes': 'David Carnes',
+        'mattclawson': 'Matt Clawson',
+        'paytondocheff': 'Payton Docheff',
+    }
+    return canonical_names.get(n) or aliases.get(n)
 
 
 def sleeper_playoff_wins(year):
@@ -194,8 +135,8 @@ def sleeper_playoff_wins(year):
         if winner in manager_by_roster:
             wins[manager_by_roster[winner]] += 1
 
-    # Sleeper commonly starts bye teams in Round 2 rather than emitting a Round 1
-    # bye object. Count that missing round as the required playoff win/bye credit.
+    # Sleeper normally omits a Round 1 object for bye teams. The missing first round
+    # therefore earns one playoff-win credit, matching the locked league formula.
     for rid, r in first_round.items():
         if r > 1:
             wins[manager_by_roster[rid]] += r - 1
@@ -205,8 +146,9 @@ def sleeper_playoff_wins(year):
 
 
 playoff_wins = collections.Counter()
-for year in range(2019, 2024):
-    playoff_wins.update(espn_playoff_wins(year))
+for year, values in ESPN_PLAYOFF_WINS.items():
+    playoff_wins.update(values)
+    print(f'ESPN {year} playoff wins incl byes:', values)
 for year in (2024, 2025):
     playoff_wins.update(sleeper_playoff_wins(year))
 
@@ -223,15 +165,18 @@ legacy_inputs = {}
 for manager, reg in regular.items():
     games = reg['w'] + reg['l']
     win_pct = reg['w'] / games if games else 0
+    service_time = reg['seasons']
     p_wins = int(playoff_wins.get(manager, 0))
     titles = int(champ_count.get(manager, 0))
-    score = win_pct + reg['seasons'] * 0.05 + p_wins * 0.05 + titles * 0.50
-    legacy[manager] = round(score, 6)
+    multiplier = 1 + (service_time * 0.05) + (p_wins * 0.05) + (titles * 0.50)
+    score = win_pct * multiplier * 1000
+    legacy[manager] = round(score, 3)
     legacy_inputs[manager] = {
         'winPct': round(win_pct, 6),
-        'seasons': reg['seasons'],
+        'serviceTime': service_time,
         'playoffWins': p_wins,
         'titles': titles,
+        'multiplier': round(multiplier, 3),
     }
 
 print('Dynasty Plebs legacy scores:')
