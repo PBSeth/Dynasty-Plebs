@@ -11,6 +11,8 @@ on:
       - 'position_adjusted_draft_grade.py'
       - 'site_ui_patch.py'
       - 'graph_polish_patch.py'
+      - 'legacy_score_patch.py'
+      - 'final_user_notes_patch.py'
 permissions:
   contents: write
 jobs:
@@ -60,6 +62,10 @@ jobs:
         run: python site_ui_patch.py
       - name: Polish manager graph readability
         run: python graph_polish_patch.py
+      - name: Build exact Dynasty Plebs legacy scores
+        run: python legacy_score_patch.py
+      - name: Apply recovered final UI and grading instructions
+        run: python final_user_notes_patch.py
       - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
@@ -68,6 +74,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Exclude veteran selections from rookie draft grading"
+            git commit -m "Apply recovered Dynasty Plebs manager and rookie updates"
             git push
           fi
