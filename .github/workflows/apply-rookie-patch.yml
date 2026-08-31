@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/apply-rookie-patch.yml'
       - 'patch_rookies.py'
+      - 'audit_2025_ownership.py'
       - 'career_ppg_patch.py'
       - 'position_adjusted_draft_grade.py'
       - 'site_ui_patch.py'
@@ -30,6 +31,8 @@ jobs:
           PY
       - name: Correct rookie ownership
         run: python patch_rookies.py
+      - name: Apply audited 2025 ownership
+        run: python audit_2025_ownership.py
       - name: Audit Sleeper sample stat fields
         run: |
           python - <<'PY'
@@ -62,6 +65,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Polish manager graph readability"
+            git commit -m "Apply audited 2025 rookie ownership"
             git push
           fi
