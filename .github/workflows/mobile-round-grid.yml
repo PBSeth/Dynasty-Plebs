@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/mobile-round-grid.yml'
       - 'mobile_round_grid_fix.py'
+      - 'final_user_notes_patch.py'
+      - 'index.html'
 permissions:
   contents: write
 jobs:
@@ -18,7 +20,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add index.html final_user_notes_patch.py
           if git diff --cached --quiet; then
             echo "No changes"
           else
