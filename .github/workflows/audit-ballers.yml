@@ -1,0 +1,16 @@
+name: Audit Ballers vs Sleeper
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'audit_ballers_2019_2023.py'
+      - '.github/workflows/audit-ballers.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare 2019-2023 top-50 scoring sequences
+        run: python audit_ballers_2019_2023.py
