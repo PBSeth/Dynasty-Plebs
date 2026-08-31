@@ -58,7 +58,6 @@ def discover_champion(year):
     username = str(owner.get('username') or owner.get('display_name') or '').lower()
     manager = CANON.get(username)
     if not manager:
-        # Exact fallback against canonical manager names via display name.
         display = str(owner.get('display_name') or '')
         canon_names = set(CANON.values())
         manager = next((n for n in canon_names if norm(n) == norm(display)), display)
@@ -84,7 +83,6 @@ def team_for(seasons, year, manager):
 src = INDEX.read_text()
 seasons = parse_seasons(src)
 
-# Preserve verified archive champions and fetch the two missing Sleeper-era winners.
 champions = [
     {'year': 2019, 'manager': 'David Carnes', 'team': 'Turn Down for WATT'},
     {'year': 2020, 'manager': 'Matthew Piontek', 'team': "Mott's Applesauce"},
@@ -101,14 +99,21 @@ src, n = re.subn(r'const champions=\[.*?\];', champ_line, src, count=1, flags=re
 if n != 1:
     raise RuntimeError('Champions block replacement failed')
 
-# All-Time: active managers first, sorted by the selected metric; former managers follow,
-# also sorted by that metric. Show the complete archive rather than truncating to 12.
+# Keep 7 champion cards centered instead of leaving the final row left-aligned.
+old_grid = '.champion-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;max-width:920px;margin-inline:auto}'
+new_grid = '.champion-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:920px;margin-inline:auto}'
+if old_grid in src:
+    src = src.replace(old_grid, new_grid, 1)
+old_card = '.champion-card{position:relative;overflow:hidden;'
+new_card = '.champion-card{flex:1 1 160px;max-width:176px;position:relative;overflow:hidden;'
+if old_card in src:
+    src = src.replace(old_card, new_card, 1)
+
 new_draw_chart = r'''function drawChart(){const m=metrics[metric],d=[...careers].sort((a,b)=>{const aa=currentManagers.has(a.m)?0:1,bb=currentManagers.has(b.m)?0:1;return aa-bb||m.get(b)-m.get(a)||b.s-a.s||b.pf-a.pf}),max=Math.max(...d.map(m.get));document.getElementById('chart').innerHTML=d.map((x,i)=>`<div class="bar"><div><strong>${i+1}. ${x.m}</strong><small>${m.sub(x)}${currentManagers.has(x.m)?'':' · Former'}</small></div><div class="track"><div class="fill" style="width:${Math.max(4,m.get(x)/max*100)}%"></div></div><div class="val">${m.fmt(m.get(x))}</div></div>`).join('')}'''
 src, n = re.subn(r'function drawChart\(\)\{.*?\}\n(?=function showView)', new_draw_chart + '\n', src, count=1, flags=re.S)
 if n != 1:
     raise RuntimeError('All-Time drawChart replacement failed')
 
-# Manager timeline: PF and PA share one fixed-scale overlay. Keep labels compact for mobile.
 new_timeline_metrics = r'''const timelineMetrics={wins:{label:'Season Wins',get:s=>s.w,fmt:v=>String(Math.round(v)),axis:v=>String(Math.round(v)),min:0,max:14,ticks:[0,3.5,7,10.5,14]},pct:{label:'Win %',get:s=>s.w/(s.w+s.l),fmt:v=>winDec(v),axis:v=>v.toFixed(2).replace(/^0/,''),min:0,max:1,ticks:[0,.25,.5,.75,1]},points:{label:'PF / PA',axis:v=>Math.round(v).toLocaleString(),min:900,max:2200,ticks:[900,1225,1550,1875,2200]}};'''
 src, n = re.subn(r'const timelineMetrics=\{.*?\};\n(?=const tc=)', new_timeline_metrics + '\n', src, count=1, flags=re.S)
 if n != 1:
@@ -119,7 +124,6 @@ src, n = re.subn(r'function drawTimeline\(\)\{.*?\}\n(?=function )', new_draw_ti
 if n != 1:
     raise RuntimeError('drawTimeline replacement failed')
 
-# Add a visually distinct PA series and compact inline legend without changing the manager PF color.
 css_anchor = '.point-label{font-size:8px;fill:#5d5244;font-weight:800;text-anchor:middle}.scale-note{padding:8px 12px 0;color:var(--muted);font-size:10px;text-align:right}'
 css_new = '.point-label{font-size:8px;fill:#5d5244;font-weight:800;text-anchor:middle}.series-line.pa{stroke:#8a6b3b}.series-dot.pa{stroke:#8a6b3b}.point-label.pa{fill:#7b6648}.timeline-legend{display:flex;justify-content:flex-end;gap:12px;padding:7px 12px 0;color:var(--muted);font-size:9px;font-weight:900}.timeline-legend span{display:flex;align-items:center;gap:4px}.timeline-legend i{display:inline-block;width:15px;height:3px;border-radius:3px;background:var(--manager-color,#7a3023)}.timeline-legend i.legend-pa{background:#8a6b3b}.scale-note{padding:8px 12px 0;color:var(--muted);font-size:10px;text-align:right}'
 if css_anchor in src:
@@ -129,4 +133,4 @@ elif '.series-line.pa{' not in src:
 
 INDEX.write_text(src)
 print('Updated champions:', champions)
-print('Applied active-first All-Time sorting and combined PF / PA manager timeline.')
+print('Applied centered champions, active-first All-Time sorting, and combined PF / PA manager timeline.')
