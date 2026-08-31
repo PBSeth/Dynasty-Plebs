@@ -7,6 +7,7 @@ on:
       - 'patch_rookies.py'
       - 'audit_2025_ownership.py'
       - 'career_ppg_patch.py'
+      - 'veteran_exclusion_patch.py'
       - 'position_adjusted_draft_grade.py'
       - 'site_ui_patch.py'
       - 'graph_polish_patch.py'
@@ -31,7 +32,7 @@ jobs:
           PY
       - name: Correct rookie ownership
         run: python patch_rookies.py
-      - name: Apply audited 2025 ownership
+      - name: Apply canonical 2019-2026 draft archive
         run: python audit_2025_ownership.py
       - name: Audit Sleeper sample stat fields
         run: |
@@ -51,6 +52,8 @@ jobs:
           PY
       - name: Build Sleeper-scored career draft outcomes
         run: python career_ppg_patch.py
+      - name: Detect and exclude veteran selections
+        run: python veteran_exclusion_patch.py
       - name: Apply position-adjusted manager draft grading
         run: python position_adjusted_draft_grade.py
       - name: Apply champions, All-Time ordering, and PF/PA timeline
@@ -65,6 +68,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Apply audited 2025 rookie ownership"
+            git commit -m "Exclude veteran selections from rookie draft grading"
             git push
           fi
