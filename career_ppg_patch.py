@@ -80,8 +80,7 @@ def plebs_points(record):
         + as_num(s.get("rec_2pt")) * 2
         - as_num(s.get("fum_lost")) * 2
         + as_num(s.get("fum_rec_td")) * 6
-        + as_num(s.get("kick_ret_td")) * 6
-        + as_num(s.get("punt_ret_td")) * 6
+        + (as_num(s.get("st_td")) if as_num(s.get("st_td")) else as_num(s.get("kick_ret_td")) + as_num(s.get("punt_ret_td"))) * 6
     )
 
 
@@ -158,6 +157,18 @@ checks = [
     (2021, "Kyler Murray", 328.48, 14),
     (2022, "Kyler Murray", 214.52, 11),
     (2023, "Kyler Murray", 156.36, 8),
+    (2019, "A.J. Brown", 191.10, 16),
+    (2020, "A.J. Brown", 212.50, 14),
+    (2021, "A.J. Brown", 149.40, 13),
+    (2022, "A.J. Brown", 255.60, 17),
+    (2023, "A.J. Brown", 236.60, 17),
+    (2020, "Jonathan Taylor", 234.80, 15),
+    (2021, "Jonathan Taylor", 353.10, 17),
+    (2022, "Jonathan Taylor", 132.40, 11),
+    (2023, "Jonathan Taylor", 146.90, 10),
+    (2021, "Kyle Pitts", 142.60, 17),
+    (2022, "Kyle Pitts", 61.60, 10),
+    (2023, "Kyle Pitts", 110.80, 17),
     (2024, "Kyler Murray", 317.24, 17),
     (2025, "Kyler Murray", 83.78, 5),
     (2024, "A.J. Brown", 183.40, 13),
