@@ -13,6 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare ownership patch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('patch_rookies.py')
+          s=p.read_text()
+          old='if s2==s: raise SystemExit("renderDraftIntel not replaced")\np.write_text(s2)'
+          new='if s2==s:\n    p.write_text(s)\nelse:\n    p.write_text(s2)'
+          if old not in s:
+              raise SystemExit('Expected patch_rookies guard not found')
+          p.write_text(s.replace(old,new))
+          PY
       - name: Correct rookie ownership
         run: python patch_rookies.py
       - name: Build Sleeper-scored career draft outcomes
