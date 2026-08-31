@@ -1,0 +1,27 @@
+name: Apply Dynasty Plebs legacy score
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-legacy.yml'
+      - 'legacy_score_patch.py'
+permissions:
+  contents: write
+jobs:
+  legacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build exact Dynasty Plebs legacy scores
+        run: python legacy_score_patch.py
+      - name: Commit legacy scores
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Add exact Dynasty Plebs legacy scores"
+            git push
+          fi
