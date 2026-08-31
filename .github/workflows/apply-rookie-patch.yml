@@ -11,7 +11,6 @@ on:
       - 'position_adjusted_draft_grade.py'
       - 'site_ui_patch.py'
       - 'graph_polish_patch.py'
-      - 'legacy_score_patch.py'
       - 'final_user_notes_patch.py'
 permissions:
   contents: write
@@ -52,7 +51,7 @@ jobs:
                   keep={k:s[k] for k in sorted(s) if (k in {'gp','gms_active','pts_half_ppr','rec','rec_yd','rec_td','rec_2pt','rush_yd','rush_td','rush_2pt','fum_lost','fum_rec_td','kick_ret_td','punt_ret_td'} or '2pt' in k or 'bonus' in k) and s[k]}
                   print(year,name,p.get('position'),keep)
           PY
-      - name: Build Sleeper-scored career draft outcomes
+      - name: Build Sleeper-scored draft outcomes
         run: python career_ppg_patch.py
       - name: Detect and exclude veteran selections
         run: python veteran_exclusion_patch.py
@@ -62,8 +61,6 @@ jobs:
         run: python site_ui_patch.py
       - name: Polish manager graph readability
         run: python graph_polish_patch.py
-      - name: Build exact Dynasty Plebs legacy scores
-        run: python legacy_score_patch.py
       - name: Apply recovered final UI and grading instructions
         run: python final_user_notes_patch.py
       - name: Commit updated site data
