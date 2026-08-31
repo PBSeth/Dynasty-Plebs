@@ -1,9 +1,11 @@
-name: Apply rookie ownership patch
+name: Apply Dynasty Plebs data patches
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/apply-rookie-patch.yml'
+      - 'patch_rookies.py'
+      - 'career_ppg_patch.py'
 permissions:
   contents: write
 jobs:
@@ -11,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Apply patch
+      - name: Correct rookie ownership
         run: python patch_rookies.py
-      - name: Commit corrected index
+      - name: Build Sleeper-scored career draft outcomes
+        run: python career_ppg_patch.py
+      - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -21,6 +25,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Correct rookie ownership and add round-adjusted draft intel"
+            git commit -m "Apply Sleeper-scored career draft intel"
             git push
           fi
