@@ -6,6 +6,9 @@ from pathlib import Path
 
 INDEX = Path('index.html')
 LAST_COMPLETE_SEASON = 2025
+NAME_ALIASES = {
+    'kennethgainwell': 'kennygainwell',
+}
 
 
 def norm_name(value):
@@ -81,18 +84,26 @@ for key, stat in career.items():
     if year <= LAST_COMPLETE_SEASON:
         veteran_events.append((year, name_norm, key))
 
+candidate_to_canonical = {}
+for _, name_norm, _ in veteran_events:
+    candidate_to_canonical[name_norm] = name_norm
+    alias = NAME_ALIASES.get(name_norm)
+    if alias:
+        candidate_to_canonical[alias] = name_norm
+
 season_points = {}
-needed_norms = {name_norm for _, name_norm, _ in veteran_events}
 for season in range(2019, LAST_COMPLETE_SEASON + 1):
     rows = fetch_json(f'https://api.sleeper.com/stats/nfl/{season}?season_type=regular')
     lookup = {}
     for rec in rows:
-        n = norm_name(player_name(rec))
-        if n in needed_norms:
-            pts = plebs_points(rec)
-            old = lookup.get(n)
-            if old is None or abs(pts) > abs(old):
-                lookup[n] = pts
+        seen_norm = norm_name(player_name(rec))
+        canonical = candidate_to_canonical.get(seen_norm)
+        if not canonical:
+            continue
+        pts = plebs_points(rec)
+        old = lookup.get(canonical)
+        if old is None or abs(pts) > abs(old):
+            lookup[canonical] = pts
     season_points[season] = lookup
 
 for draft_year, name_norm, key in veteran_events:
