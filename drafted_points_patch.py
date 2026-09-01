@@ -133,10 +133,25 @@ def manager_pick_count(manager, through=LAST_COMPLETE_SEASON):
         count += n
     return count, by_year
 
+
 seth_count, seth_by_year = manager_pick_count('Seth Miller')
 print('Seth completed draft-pick count:', seth_count, seth_by_year)
 if seth_count != 50:
     raise RuntimeError(f'Expected Seth Miller to have 50 draft selections from 2019-2025, found {seth_count}: {seth_by_year}')
+
+# final_user_notes_patch.py intentionally reintroduces its rookie-only helper before
+# this patch runs. Older versions of this patch left the previous completedDraftPicks
+# helper behind on every rebuild, eventually creating duplicate const declarations and
+# stopping all client-side JavaScript. Remove every prior drafted-points helper first so
+# this patch is safe to run repeatedly.
+html, removed_helpers = re.subn(
+    r"^const completedDraftPicks=.*?;\n",
+    '',
+    html,
+    flags=re.M,
+)
+if removed_helpers:
+    print(f'Removed {removed_helpers} stale completedDraftPicks helper declaration(s)')
 
 # 2026 is deliberately excluded until that NFL regular season has a completed outcome.
 new_metrics = r'''const completedDraftPicks=m=>(rookiePicks[m]||[]).filter(p=>p.year<=2025),draftedPointTotal=m=>completedDraftPicks(m).reduce((a,p)=>a+(Number.isFinite(p.points)?p.points:0),0),draftPickCount=m=>completedDraftPicks(m).length,draftedAvgPoints=m=>draftPickCount(m)?draftedPointTotal(m)/draftPickCount(m):0;
@@ -150,6 +165,12 @@ html, n = re.subn(
 )
 if n != 1:
     raise RuntimeError(f'Drafted metrics replacement count={n}')
+
+# Hard client-JS regression guard: duplicate const declarations here blank the entire
+# dynamic All-Time/Managers UI, so never publish a build containing more than one.
+helper_count = html.count('const completedDraftPicks=')
+if helper_count != 1:
+    raise RuntimeError(f'Expected exactly one completedDraftPicks helper, found {helper_count}')
 
 INDEX.write_text(html, encoding='utf-8')
 print(f'Rehydrated post-draft points for {len(veteran_events)} completed veteran draft events')
