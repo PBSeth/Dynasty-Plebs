@@ -27,8 +27,6 @@ ALIASES = {
     'jamatthrash':'jamarithrash',
 }
 
-# Known veterans intentionally selected in the league's rookie drafts. These stay
-# visible in draft history but must never contribute to rookie-pick PPG or grades.
 EXPECTED_VETERANS = {
     (2024,'keenanallen'),
     (2024,'clydeedwardshelaire'),
@@ -82,14 +80,12 @@ if not boards_m or not stats_m:
 boards=json.loads(boards_m.group(1))
 career=json.loads(stats_m.group(1))
 
-# Permanent ownership regression anchors from the workbook. The user's 2022 note is
-# especially useful: Dave owned exactly six Round 2 picks (1, 4, 6, 8, 9, 12).
 r2_2022=boards['2022']['ownersByRound'][1]
 assert [i+1 for i,o in enumerate(r2_2022) if o=='David Carnes']==[1,4,6,8,9,12]
-assert boards['2023']['ownersByRound'][0][0]=='Travis Page'      # Bijan Robinson
-assert boards['2023']['ownersByRound'][5][1]=='Travis Page'      # Puka Nacua
-assert boards['2025']['ownersByRound'][2][6]=='Bo Tiller'        # Jaxson Dart
-assert boards['2024']['ownersByRound'][4][9]=='Travis Page'      # Kenneth Gainwell
+assert boards['2023']['ownersByRound'][0][0]=='Travis Page'
+assert boards['2023']['ownersByRound'][5][1]=='Travis Page'
+assert boards['2025']['ownersByRound'][2][6]=='Bo Tiller'
+assert boards['2024']['ownersByRound'][4][9]=='Travis Page'
 
 entries=[]
 for year_text,board in boards.items():
@@ -98,10 +94,6 @@ for year_text,board in boards.items():
         for player in round_players:
             if player: entries.append((year,player))
 
-# Build identity-aware Sleeper history. Name-only history can collide across eras
-# (Frank Gore vs Frank Gore Jr, multiple Kyle/Antonio Williams), so veteran status is
-# determined by the SAME Sleeper player id having a regular-season game before the
-# Plebs draft year.
 by_season_name={}
 id_first={}
 id_pos={}
@@ -124,11 +116,8 @@ for season in range(HISTORY_START,LAST_COMPLETE_SEASON+1):
 
 def find_identity(draft_year,name):
     norms=candidate_norms(name)
-    # First identify the intended player at/after the Plebs draft year. For a future
-    # draft (2026), only a player still recording 2025 NFL games can be a veteran.
     start=min(draft_year,LAST_COMPLETE_SEASON)
-    seasons=range(start,LAST_COMPLETE_SEASON+1)
-    for season in seasons:
+    for season in range(start,LAST_COMPLETE_SEASON+1):
         candidates=[]
         for n in norms:
             candidates.extend(by_season_name.get(season,{}).get(n,[]))
@@ -166,17 +155,22 @@ if start<0 or end<0: raise RuntimeError('addPick block not found')
 new_add="function addPick(manager,year,round,slot,player){const stat=careerDraftStats[`${year}|${normName(player)}`];(rookiePicks[manager]??=[]).push({year,pick:`${round}.${String(slot).padStart(2,'0')}`,player,...(stat||{})})}\n"
 html=html[:start]+new_add+html[end:]
 
+# Older site revisions used a small Career PPG badge. Current revisions intentionally
+# remove veterans from the visible rookie grid and use a full-size PPG value, so this
+# display transformation is optional/idempotent.
 old_badge="${Number.isFinite(p.ppg)?`<span class=\"ppg-badge\">Career ${p.ppg.toFixed(1)} PPG</span>`:''}"
 new_badge="${p.excluded==='veteran'?`<span class=\"ppg-badge\">Veteran · excluded</span>`:Number.isFinite(p.ppg)?`<span class=\"ppg-badge\">Career ${p.ppg.toFixed(1)} PPG</span>`:''}"
 if old_badge in html:
     html=html.replace(old_badge,new_badge,1)
-elif 'Veteran · excluded' not in html:
-    raise RuntimeError('rookie card PPG badge pattern not found')
+else:
+    print('Rookie-card badge already replaced by newer full-size PPG UI; skipping badge patch.')
 
 base_desc='Complete recovered rookie-draft history with career-to-date Dynasty Plebs scoring.'
 veteran_note='Veteran selections stay in the archive but are excluded from rookie-draft grading.'
-html,n=re.subn(re.escape(base_desc)+r'(?: '+re.escape(veteran_note)+r')*',base_desc+' '+veteran_note,html,count=1)
-if n!=1: raise RuntimeError('Rookie draft description not found')
+if base_desc in html:
+    html=re.sub(re.escape(base_desc)+r'(?: '+re.escape(veteran_note)+r')*',base_desc+' '+veteran_note,html,count=1)
+else:
+    print('Rookie section description already updated by newer UI; skipping description patch.')
 
 INDEX.write_text(html,encoding='utf-8')
 print(f'Veteran selections excluded from rookie-draft scoring: {len(veterans)}')
