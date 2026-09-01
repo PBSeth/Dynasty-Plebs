@@ -1,5 +1,5 @@
 {
-  "buildCommand": "mkdir -p dist && cp index.html site-v2.css app-v2.js data-v3-*.js dist/",
+  "buildCommand": "mkdir -p dist && cp index.html site-v2.css app-v2.js preview-upgrade.css preview-upgrade.js data-v3-*.js dist/ && sed -i 's#</head>#<link rel=\"stylesheet\" href=\"/preview-upgrade.css\"></head>#' dist/index.html && sed -i 's#</body>#<script src=\"/data-v3-01.js\"></script><script src=\"/data-v3-02.js\"></script><script src=\"/data-v3-03.js\"></script><script src=\"/data-v3-04.js\"></script><script src=\"/data-v3-05.js\"></script><script src=\"/data-v3-06.js\"></script><script src=\"/data-v3-07.js\"></script><script src=\"/preview-upgrade.js\"></script></body>#' dist/index.html",
   "outputDirectory": "dist",
   "cleanUrls": false
 }
