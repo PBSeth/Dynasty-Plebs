@@ -1,5 +1,5 @@
 {
-  "buildCommand": "mkdir -p dist && cp index.html dist/index.html",
+  "buildCommand": "mkdir -p dist && cp index.html site-v2.css app-v2.js data-v3-*.js dist/",
   "outputDirectory": "dist",
   "cleanUrls": false
 }
