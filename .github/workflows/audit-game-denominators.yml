@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'audit_game_denominators_v4.py'
+      - 'audit_game_denominators_v5.py'
       - '.github/workflows/audit-game-denominators.yml'
 permissions:
   contents: write
@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Audit official player-game denominators
-        run: python audit_game_denominators_v4.py
+      - name: Audit PFR snap-count denominators
+        run: python audit_game_denominators_v5.py
       - name: Commit audit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add game_denominator_audit_v4.txt
+          git add game_denominator_audit_v5.txt
           if git diff --cached --quiet; then
             echo "No report changes"
           else
-            git commit -m "Record stable denominator audit"
+            git commit -m "Record PFR denominator audit"
             git push
           fi
