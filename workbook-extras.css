@@ -1,11 +1,14 @@
-.champ .champ-team{display:block;margin-top:6px;color:#756247;font-size:11px;line-height:1.2}
-.archive-controls{display:flex;gap:7px;flex-wrap:wrap;padding:12px;border-bottom:1px solid #dfd0b6;background:#f0e5cf}
+.hero{padding:20px 22px}
+.hero h1{font-size:clamp(38px,6vw,60px)}
+.section-head{margin-bottom:9px}
+.section-head h2{font-size:clamp(27px,3.5vw,38px)}
+.subhead{padding:12px 15px}
+.archive-controls{display:flex;gap:7px;flex-wrap:wrap;padding:10px 12px;border-bottom:1px solid #dfd0b6;background:#f0e5cf}
 .archive-controls button{border:1px solid #cbb891;background:#fff9ed;color:#62543f;border-radius:8px;padding:8px 10px;font-size:11px;font-weight:900;cursor:pointer}
 .archive-controls button.on{background:var(--dark);border-color:var(--dark);color:#fff}
-.archive-chart{padding:9px 14px 16px}
+.archive-chart{padding:8px 14px 14px}
 .archive-bar{display:grid;grid-template-columns:minmax(130px,205px) 1fr 84px;gap:11px;align-items:center;padding:8px 0}
 .archive-bar strong{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.archive-bar small{display:block;margin-top:2px;color:var(--muted);font-size:10px}
 .archive-track{height:11px;border-radius:999px;background:#ddcfb6;overflow:hidden;box-shadow:inset 0 1px 2px rgba(35,27,17,.08)}
 .archive-fill{height:100%;min-width:4px;border-radius:999px;background:linear-gradient(90deg,var(--red),var(--gold))}
 .archive-value{text-align:right;font:900 16px Georgia,serif;font-variant-numeric:tabular-nums}
@@ -16,8 +19,8 @@
 .timeline-line{fill:none;stroke:var(--mc,var(--red));stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
 .timeline-dot{fill:#fff9ed;stroke:var(--mc,var(--red));stroke-width:3}
 .timeline-label{font-size:9px;fill:#4f4538;font-weight:900;text-anchor:middle}
-.timeline-empty{padding:25px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:680px){
-  .archive-bar{grid-template-columns:105px 1fr 66px;gap:7px}.archive-bar strong{font-size:12px}.archive-bar small{font-size:9px}.archive-value{font-size:14px}
+  .hero{padding:17px 15px}.hero h1{font-size:40px}
+  .archive-bar{grid-template-columns:105px 1fr 66px;gap:7px}.archive-bar strong{font-size:12px}.archive-value{font-size:14px}
   .timeline-svg{height:245px}.timeline-axis{font-size:9px}.timeline-label{font-size:8px}
 }
