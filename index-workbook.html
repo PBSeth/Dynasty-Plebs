@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#17130e">
 <title>Dynasty Plebs</title>
 <link rel="stylesheet" href="site-v2.css">
+<link rel="stylesheet" href="workbook-extras.css">
 </head>
 <body>
 <header>
@@ -40,6 +41,17 @@
 
     <div class="section">
       <div class="section-head">
+        <div><h2>League History</h2><p>Compare all-time Legacy Score, regular-season wins, win rate and average finish.</p></div>
+        <span class="source">Active managers first</span>
+      </div>
+      <div class="panel">
+        <div class="archive-controls" id="historyMetricBtns"></div>
+        <div class="archive-chart" id="historyChart"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
         <div><h2>Legacy Board</h2><p>Regular-season success, longevity, playoff wins and championships combined.</p></div>
         <span class="source">Locked formula</span>
       </div>
@@ -66,6 +78,13 @@
         <div class="season-list" id="seasonHistory"></div>
       </div>
     </div>
+
+    <div class="section panel">
+      <div class="subhead"><h3>Career Timeline</h3><p>Year-by-year season wins, win percentage and final finish.</p></div>
+      <div class="archive-controls" id="timelineMetricBtns"></div>
+      <div id="managerTimeline"></div>
+    </div>
+
     <div class="section panel">
       <div class="subhead"><h3>Rookie Picks</h3><p>Recorded picks by current owner at the time of selection.</p></div>
       <div class="draft-rounds" id="managerPicks"></div>
@@ -105,7 +124,7 @@
 
   <section class="view" id="trades">
     <div class="section-head">
-      <div><h2>Trade Log</h2><p>The recorded Dynasty Plebs transaction archive.</p></div>
+      <div><h2>Trade Log</h2><p>The complete 165-entry Dynasty Plebs transaction archive.</p></div>
       <span class="source">Workbook ledger</span>
     </div>
     <div class="panel">
@@ -133,5 +152,6 @@
   delete window.__PLEBS_DATA_SRC;
 </script>
 <script src="app-v2.js"></script>
+<script src="workbook-extras.js"></script>
 </body>
 </html>
