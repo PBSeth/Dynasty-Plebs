@@ -16,34 +16,23 @@
       <button class="on" data-view="history">History</button>
       <button data-view="managers">Managers</button>
       <button data-view="drafts">Drafts</button>
-      <button data-view="future">2027</button>
-      <button data-view="trades">Trades</button>
     </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="view on" id="history">
-    <div class="hero">
-      <h1>Dynasty Plebs</h1>
-      <p>The league ledger: champions, career records, Legacy Score, rookie drafts, future pick ownership and the trade archive. Historical league data is verified against the Dynasty Plebs workbook.</p>
-    </div>
+    <div class="hero"><h1>Dynasty Plebs</h1></div>
 
     <div class="kpi-grid" id="kpis"></div>
 
     <div class="section">
-      <div class="section-head">
-        <div><h2>Champions</h2><p>The crown holders since the league began.</p></div>
-        <span class="source">Workbook verified</span>
-      </div>
+      <div class="section-head"><h2>Champions</h2></div>
       <div class="champ-grid" id="champions"></div>
     </div>
 
     <div class="section">
-      <div class="section-head">
-        <div><h2>League History</h2><p>Compare all-time Legacy Score, regular-season wins, win rate and average finish.</p></div>
-        <span class="source">Active managers first</span>
-      </div>
+      <div class="section-head"><h2>League History</h2></div>
       <div class="panel">
         <div class="archive-controls" id="historyMetricBtns"></div>
         <div class="archive-chart" id="historyChart"></div>
@@ -51,93 +40,53 @@
     </div>
 
     <div class="section">
-      <div class="section-head">
-        <div><h2>Legacy Board</h2><p>Regular-season success, longevity, playoff wins and championships combined.</p></div>
-        <span class="source">Locked formula</span>
-      </div>
+      <div class="section-head"><h2>Legacy Board</h2></div>
       <div class="panel">
-        <div style="overflow:auto">
-          <table class="rank-table" id="legacyTable"></table>
-        </div>
+        <div style="overflow:auto"><table class="rank-table" id="legacyTable"></table></div>
       </div>
     </div>
   </section>
 
   <section class="view" id="managers">
-    <div class="section-head">
-      <div><h2>Managers</h2><p>Career record, Legacy Score, finishes and rookie-draft history.</p></div>
-    </div>
+    <div class="section-head"><h2>Managers</h2></div>
     <div class="toolbar">
       <label for="managerSelect">Manager</label>
       <select id="managerSelect"></select>
     </div>
+
     <div class="manager-grid">
       <div class="panel manager-card" id="managerProfile"></div>
       <div class="panel">
-        <div class="subhead"><h3>Season History</h3><p>Regular season, playoffs and final finish.</p></div>
+        <div class="subhead"><h3>Season History</h3></div>
         <div class="season-list" id="seasonHistory"></div>
       </div>
     </div>
 
     <div class="section panel">
-      <div class="subhead"><h3>Career Timeline</h3><p>Year-by-year season wins, win percentage and final finish.</p></div>
+      <div class="subhead"><h3>Career Timeline</h3></div>
       <div class="archive-controls" id="timelineMetricBtns"></div>
       <div id="managerTimeline"></div>
     </div>
 
     <div class="section panel">
-      <div class="subhead"><h3>Rookie Picks</h3><p>Recorded picks by current owner at the time of selection.</p></div>
+      <div class="subhead"><h3>Rookie Picks</h3></div>
       <div class="draft-rounds" id="managerPicks"></div>
     </div>
   </section>
 
   <section class="view" id="drafts">
-    <div class="section-head">
-      <div><h2>Rookie Draft Archive</h2><p>League rookie drafts from 2019 forward.</p></div>
-      <span class="source">Historical ledger</span>
-    </div>
+    <div class="section-head"><h2>Rookie Drafts</h2></div>
     <div class="panel">
       <div class="toolbar">
-        <label for="draftYear">Draft year</label>
+        <label for="draftYear">Year</label>
         <select id="draftYear"></select>
       </div>
       <div class="draft-rounds" id="draftBoard"></div>
     </div>
   </section>
-
-  <section class="view" id="future">
-    <div class="section-head">
-      <div><h2>2027 Pick Ownership</h2><p>Projected draft order and currently recorded pick ownership.</p></div>
-      <span class="source">Workbook verified</span>
-    </div>
-    <div class="panel future-table-wrap">
-      <table class="future-table" id="futureTable"></table>
-    </div>
-
-    <div class="section">
-      <div class="section-head">
-        <div><h2>Potential Comp Picks</h2><p>Players currently listed in the league workbook as possible compensation triggers.</p></div>
-      </div>
-      <div class="panel"><div class="comp-grid" id="compGrid"></div></div>
-    </div>
-  </section>
-
-  <section class="view" id="trades">
-    <div class="section-head">
-      <div><h2>Trade Log</h2><p>The complete 165-entry Dynasty Plebs transaction archive.</p></div>
-      <span class="source">Workbook ledger</span>
-    </div>
-    <div class="panel">
-      <div class="toolbar">
-        <input id="tradeSearch" type="search" placeholder="Search manager, player, year or pick" aria-label="Search trade log">
-        <span class="source" id="tradeCount"></span>
-      </div>
-      <div class="trade-list" id="tradeList"></div>
-    </div>
-  </section>
 </main>
 
-<footer>Dynasty Plebs • Est. 2019 • Workbook-verified league history</footer>
+<footer>Dynasty Plebs • Est. 2019</footer>
 
 <script src="data-v3-01.js"></script>
 <script src="data-v3-02.js"></script>
