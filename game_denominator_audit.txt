@@ -1,0 +1,7 @@
+Dynasty Plebs rookie career PPG denominator audit
+Rule: explicit gp=0 must remain 0; do not fall through to gms_active.
+Affected draft events: 0
+Affected player-seasons: 0
+
+
+All changed player-seasons above are caused specifically by Python `gp or gms_active` treating an explicit 0 GP as missing.
