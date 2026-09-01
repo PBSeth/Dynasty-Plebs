@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'restore_classic_ui.py'
+      - 'classic_ui_cleanup_patch.py'
       - '.github/workflows/restore-classic-ui.yml'
 permissions:
   contents: write
@@ -16,6 +17,8 @@ jobs:
           fetch-depth: 0
       - name: Restore established Plebs UI over canonical data repo
         run: python restore_classic_ui.py
+      - name: Trim manager-page subtext and Legacy hero
+        run: python classic_ui_cleanup_patch.py
       - name: Commit restored site
         run: |
           git config user.name "github-actions[bot]"
