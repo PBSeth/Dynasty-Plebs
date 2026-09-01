@@ -117,7 +117,7 @@ required = [
     'data-view="drafts">Drafts</button>',
     '<h3>Career Timeline</h3>',
     '<h3>Rookie Picks</h3>',
-    'Round 4+ Avg PPG',
+    "label=r===4?'Round 4+'",
     "label:'Legacy Score'",
     'Josh Ponath',
     '2024|frankgorejr',
