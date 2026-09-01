@@ -14,6 +14,7 @@ on:
       - 'legacy_score_patch.py'
       - 'final_user_notes_patch.py'
       - 'mobile_round_grid_fix.py'
+      - 'legacy_hero_patch.py'
 permissions:
   contents: write
 jobs:
@@ -69,6 +70,8 @@ jobs:
         run: python final_user_notes_patch.py
       - name: Restore compact mobile round grid
         run: python mobile_round_grid_fix.py
+      - name: Put Legacy Score in manager hero
+        run: python legacy_hero_patch.py
       - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
@@ -77,6 +80,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Add exact Dynasty Plebs legacy scores"
+            git commit -m "Put Dynasty Plebs Legacy Score in manager hero"
             git push
           fi
