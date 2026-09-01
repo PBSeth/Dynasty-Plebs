@@ -28,6 +28,18 @@ s = s.replace(
     '''if(!scored.length){box.innerHTML=`<div class="intel-note">No eligible scored rookie picks.</div>`;return}'''
 )
 
+# The old Legacy hero patch forced four stat columns. There are now exactly three
+# manager summary cards, so explicitly restore a balanced three-column layout at
+# every width where the cards are shown side-by-side.
+layout_fix = '''
+/* CLASSIC_MANAGER_GRID_20260901 */
+.profile-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media(max-width:620px){.profile-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+/* END_CLASSIC_MANAGER_GRID_20260901 */
+'''
+if '/* CLASSIC_MANAGER_GRID_20260901 */' not in s:
+    s = s.replace('</style>', layout_fix + '</style>', 1)
+
 # Regression guards: requested structure and copy.
 required = [
     "legacy:{label:'Legacy Score'",
@@ -35,6 +47,7 @@ required = [
     '<small>Pos + Round Draft Value</small>',
     '<h3>Career Timeline</h3>',
     '<h3>Rookie Picks</h3>',
+    'grid-template-columns:repeat(3,minmax(0,1fr))!important',
 ]
 for needle in required:
     if needle not in s:
@@ -49,4 +62,4 @@ for stale in [
         raise RuntimeError(f'Stale manager-page subtext/Legacy UI remains: {stale}')
 
 p.write_text(s, encoding='utf-8')
-print('Manager page trimmed: Career Record hero restored, Legacy kept only as History metric, Pos + Round subtext removed.')
+print('Manager page trimmed: Career Record hero restored, Legacy kept only as History metric, Pos + Round subtext removed, three-card summary grid restored.')
