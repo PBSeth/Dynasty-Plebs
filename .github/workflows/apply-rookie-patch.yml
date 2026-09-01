@@ -19,6 +19,7 @@ on:
       - 'drafted_points_patch.py'
       - 'mobile_round_grid_fix.py'
       - 'legacy_hero_patch.py'
+      - 'history_ui_cleanup_patch.py'
 permissions:
   contents: write
 jobs:
@@ -68,7 +69,7 @@ jobs:
         run: python position_adjusted_draft_grade.py
       - name: Correct manager tenure before aggregate calculations
         run: python manager_history_patch.py
-      - name: Enforce Google Sheet manager-history north star
+      - name: Enforce current manager-history guard
         run: python audit_manager_history.py
       - name: Apply champions, All-Time ordering, and PF/PA timeline
         run: python site_ui_patch.py
@@ -82,12 +83,14 @@ jobs:
         run: python drafted_points_patch.py
       - name: Reapply compact PF/PA labels and season grammar
         run: python manager_history_patch.py
-      - name: Recheck Google Sheet manager-history north star
+      - name: Recheck current manager-history guard
         run: python audit_manager_history.py
       - name: Restore compact mobile round grid
         run: python mobile_round_grid_fix.py
       - name: Put Legacy Score in manager hero
         run: python legacy_hero_patch.py
+      - name: Apply History UI cleanup and completed zero-game rookie outcomes
+        run: python history_ui_cleanup_patch.py
       - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
@@ -96,6 +99,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Update Dynasty Plebs manager history and labels"
+            git commit -m "Polish Dynasty Plebs History and rookie counts"
             git push
           fi
