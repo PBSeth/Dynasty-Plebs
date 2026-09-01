@@ -7,6 +7,7 @@ on:
       - 'patch_rookies.py'
       - 'audit_2025_ownership.py'
       - 'career_ppg_patch.py'
+      - 'correct_game_denominators.py'
       - 'veteran_exclusion_patch.py'
       - 'position_adjusted_draft_grade.py'
       - 'site_ui_patch.py'
@@ -56,6 +57,8 @@ jobs:
           PY
       - name: Build Sleeper-scored draft outcomes
         run: python career_ppg_patch.py
+      - name: Correct games-played denominators
+        run: python correct_game_denominators.py
       - name: Detect and exclude veteran selections
         run: python veteran_exclusion_patch.py
       - name: Apply position-adjusted manager draft grading
@@ -80,6 +83,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Put Dynasty Plebs Legacy Score in manager hero"
+            git commit -m "Correct Dynasty Plebs games-played denominators"
             git push
           fi
