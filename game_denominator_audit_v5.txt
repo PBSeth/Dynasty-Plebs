@@ -1,0 +1,282 @@
+Dynasty Plebs denominator audit — PFR game-level snap counts
+Points: Sleeper raw regular-season stats scored with Plebs rules.
+Games: nflverse/PFR snap_counts, REG only, unique game_id per PFR player id (name fallback only when needed).
+Rule: only actual regular-season appearances count; IR/inactive/practice-squad weeks and 0-game seasons do not.
+Completed draft entries audited: 398 | unresolved players.csv identities: 12
+Player-season denominator differences: 144 | career draft-event changes: 105
+
+SANITY CHECKS
+Travis Etienne 2021: 0 expected 0 => PASS
+Travis Etienne 2022: 17 expected 17 => PASS
+Travis Etienne 2023: 17 expected 17 => PASS
+Travis Etienne 2024: 15 expected 15 => PASS
+Travis Etienne 2025: 17 expected 17 => PASS
+Joe Burrow 2022: 16 expected 16 => PASS
+Ja'Marr Chase 2022: 12 expected 12 => PASS
+
+UNRESOLVED PLAYERS.CSV IDENTITIES (snap-name fallback still attempted)
+  Cedric Tillman
+  Charlie Jones
+  Frank Gore Jr
+  Irv Smith Jr
+  Joe Reed
+  Kyle Williams
+  Marvin Harrison Jr
+  Michael Pittman
+  Oronde Gadsden
+  Tamorrion Terry
+  Travis Hunter
+  Zach Kuntz
+
+SEASON DIFFERENCES
+2019 pick | Alexander Mattison | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Andy Isabella | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Darrell Henderson | 2021: Sleeper denom 13 (raw gp=13.0, active=16.0) -> PFR games 12 via pfr:HendDa00; Plebs pts 148.90
+2019 pick | Darwin Thompson | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Darwin Thompson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Dawson Knox | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> PFR games 15 via pfr:KnoxDa00; Plebs pts 111.70
+2019 pick | Devin Singletary | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> PFR games 16 via pfr:SingDe00; Plebs pts 159.20
+2019 pick | Dexter Williams | 2021: Sleeper denom 9 (raw gp=None, active=9.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Drew Lock | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Dwayne Haskins | 2021: Sleeper denom 1 (raw gp=1.0, active=2.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Irv Smith Jr | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Irv Smith Jr | 2025: Sleeper denom 4 (raw gp=None, active=4.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | JJ Arcega-Whiteside | 2022: Sleeper denom 8 (raw gp=None, active=8.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Jace Sternberger | 2021: Sleeper denom 11 (raw gp=None, active=11.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Jalen Hurd | 2021: Sleeper denom 8 (raw gp=None, active=8.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | James Williams | 2024: Sleeper denom 0 (no Sleeper row) -> PFR games 13 via name:jameswilliams; Plebs pts 0.00
+2019 pick | James Williams | 2025: Sleeper denom 0 (no Sleeper row) -> PFR games 16 via name:jameswilliams; Plebs pts 0.00
+2019 pick | Justice Hill | 2021: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Kelvin Harmon | 2021: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Kelvin Harmon | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Miles Boykin | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Miles Boykin | 2025: Sleeper denom 8 (raw gp=None, active=8.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | N'Keal Harry | 2021: Sleeper denom 13 (raw gp=13.0, active=15.0) -> PFR games 12 via pfr:HarrNK00; Plebs pts 22.40
+2019 pick | N'Keal Harry | 2024: Sleeper denom 9 (raw gp=None, active=9.0) -> PFR games 0 via none; Plebs pts 0.00
+2019 pick | Qadree Ollison | 2023: Sleeper denom 2 (raw gp=2.0, active=13.0) -> PFR games 1 via pfr:OlliQa00; Plebs pts 0.00
+2019 pick | Trayveon Williams | 2022: Sleeper denom 9 (raw gp=9.0, active=9.0) -> PFR games 8 via pfr:WillTr06; Plebs pts 7.00
+2020 pick | AJ Dillon | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Albert Okwuegbunam | 2024: Sleeper denom 11 (raw gp=None, active=11.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Brandon Aiyuk | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Cam Akers | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> PFR games 13 via pfr:AkerCa00; Plebs pts 96.30
+2020 pick | Collin Johnson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Denzel Mims | 2023: Sleeper denom 13 (raw gp=None, active=13.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Donovan Peoples-Jones | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Eno Benjamin | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Gabriel Davis | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> PFR games 15 via pfr:DaviGa01; Plebs pts 147.60
+2020 pick | J.K. Dobbins | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Jalen Reagor | 2025: Sleeper denom 2 (raw gp=None, active=2.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Joe Burrow | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> PFR games 16 via pfr:BurrJo01; Plebs pts 404.98
+2020 pick | Joe Reed | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Joe Reed | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | KJ Hamler | 2023: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | KJ Hamler | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | La'Mical Perine | 2022: Sleeper denom 11 (raw gp=None, active=11.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | La'Mical Perine | 2023: Sleeper denom 3 (raw gp=3.0, active=16.0) -> PFR games 5 via pfr:PeriLa00; Plebs pts 12.50
+2020 pick | La'Mical Perine | 2024: Sleeper denom 5 (raw gp=None, active=5.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Lynn Bowden Jr | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Quintez Cephus | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Quintez Cephus | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2020 pick | Tee Higgins | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> PFR games 16 via pfr:HiggTe00; Plebs pts 185.70
+2021 pick | Anthony Schwartz | 2023: Sleeper denom 9 (raw gp=None, active=9.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Anthony Schwartz | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Brevin Jordan | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Cornell Powell | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Cornell Powell | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Cornell Powell | 2024: Sleeper denom 10 (raw gp=None, active=10.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Cornell Powell | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Ja'Marr Chase | 2022: Sleeper denom 13 (raw gp=13.0, active=13.0) -> PFR games 12 via pfr:ChasJa00; Plebs pts 198.90
+2021 pick | Javian Hawkins | 2021: Sleeper denom 15 (raw gp=None, active=15.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Jermar Jefferson | 2022: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Jermar Jefferson | 2023: Sleeper denom 10 (raw gp=None, active=10.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Kellen Mond | 2023: Sleeper denom 12 (raw gp=None, active=12.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Larry Rountree | 2023: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Michael Strachan | 2021: Sleeper denom 6 (raw gp=6.0, active=6.0) -> PFR games 0 via none; Plebs pts 3.60
+2021 pick | Michael Strachan | 2022: Sleeper denom 13 (raw gp=13.0, active=14.0) -> PFR games 0 via none; Plebs pts 7.40
+2021 pick | Michael Strachan | 2023: Sleeper denom 4 (raw gp=4.0, active=13.0) -> PFR games 0 via none; Plebs pts 5.00
+2021 pick | Michael Strachan | 2024: Sleeper denom 4 (raw gp=None, active=4.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Rondale Moore | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Rondale Moore | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Seth Williams | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Seth Williams | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Seth Williams | 2024: Sleeper denom 12 (raw gp=None, active=12.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Terrace Marshall | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Travis Etienne | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Zach Davidson | 2021: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Zach Davidson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Zach Davidson | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2021 pick | Zach Davidson | 2024: Sleeper denom 2 (raw gp=2.0, active=17.0) -> PFR games 3 via pfr:DaviZa00; Plebs pts 1.00
+2022 pick | Calvin Austin III | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Danny Gray | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Danny Gray | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Danny Gray | 2025: Sleeper denom 9 (raw gp=None, active=9.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | David Bell | 2025: Sleeper denom 6 (raw gp=None, active=6.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Desmond Ridder | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Hassan Haskins | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Isaiah Spiller | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | James Cook | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> PFR games 16 via pfr:CookJa01; Plebs pts 97.00
+2022 pick | Jelani Woods | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Jelani Woods | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | John Metchie III | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Justyn Ross | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Keaontay Ingram | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Kevin Harris | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Khalil Shakir | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> PFR games 14 via pfr:ShakKh00; Plebs pts 29.10
+2022 pick | Kyle Philips | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Pierre Strong | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2022 pick | Tyler Badie | 2023: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | A.T. Perry | 2024: Sleeper denom 12 (raw gp=None, active=12.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | A.T. Perry | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | DeWayne McBride | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Deneric Prince | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Deneric Prince | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Deuce Vaughn | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Hendon Hooker | 2023: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Hendon Hooker | 2025: Sleeper denom 12 (raw gp=None, active=12.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Israel Abanikanda | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Israel Abanikanda | 2025: Sleeper denom 6 (raw gp=None, active=6.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Jake Haener | 2023: Sleeper denom 7 (raw gp=None, active=7.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Jake Haener | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Justin Shorter | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Kenny McIntosh | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Lew Nichols III | 2023: Sleeper denom 11 (raw gp=None, active=11.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Lew Nichols III | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Nathaniel Dell | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Rakim Jarrett | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Stetson Bennett | 2023: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Stetson Bennett | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Stetson Bennett | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Trey Palmer | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Tyler Scott | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Will Levis | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Xazavian Valladay | 2024: Sleeper denom 9 (raw gp=None, active=9.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Xazavian Valladay | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2023 pick | Zach Evans | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Ainias Smith | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Blake Watson | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Brenden Rice | 2025: Sleeper denom 8 (raw gp=None, active=8.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Bub Means | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Cornelius Johnson | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Cornelius Johnson | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Erick All | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Frank Gore Jr | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Frank Gore Jr | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | JJ McCarthy | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Ja'Lynn Polk | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Jacob Cowing | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Javon Baker | 2025: Sleeper denom 10 (raw gp=None, active=10.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Jawhar Jordan | 2024: Sleeper denom 10 (raw gp=None, active=10.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Johnny Wilson | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Jonathon Brooks | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Jordan Travis | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2024 pick | Marshawn Lloyd | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> PFR games 0 via none; Plebs pts 0.00
+2025 pick | Damien Martinez | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> PFR games 0 via none; Plebs pts 0.00
+2025 pick | Quinshon Judkins | 2025: Sleeper denom 15 (raw gp=15.0, active=17.0) -> PFR games 14 via pfr:JudkQu00; Plebs pts 156.80
+2025 pick | Will Howard | 2025: Sleeper denom 10 (raw gp=None, active=10.0) -> PFR games 0 via none; Plebs pts 0.00
+
+CAREER CHANGES
+2019|alexandermattison: games 106 -> 89; PPG 5.398 -> 6.429; points 572.20 -> 572.20
+2019|andyisabella: games 44 -> 43; PPG 1.823 -> 1.865; points 80.20 -> 80.20
+2019|darrellhenderson: games 55 -> 54; PPG 7.184 -> 7.317; points 395.10 -> 395.10
+2019|darwinthompson: games 60 -> 26; PPG 0.955 -> 2.204; points 57.30 -> 57.30
+2019|dawsonknox: games 103 -> 102; PPG 5.332 -> 5.384; points 549.20 -> 549.20
+2019|devinsingletary: games 111 -> 110; PPG 8.426 -> 8.502; points 935.24 -> 935.24
+2019|dexterwilliams: games 16 -> 7; PPG 0.119 -> 0.271; points 1.90 -> 1.90
+2019|drewlock: games 58 -> 41; PPG 7.277 -> 10.294; points 422.06 -> 422.06
+2019|dwaynehaskins: games 17 -> 16; PPG 8.286 -> 8.804; points 140.86 -> 140.86
+2019|irvsmithjr: games 75 -> 54; PPG 2.824 -> 3.922; points 211.80 -> 211.80
+2019|jacesternberger: games 29 -> 18; PPG 0.807 -> 1.300; points 23.40 -> 23.40
+2019|jalenhurd: current outcome should be removed; 0 PFR regular-season appearances
+2019|jameswilliams: NEW games 29; PPG 0.000; points 0.00
+2019|jjarcegawhiteside: games 48 -> 40; PPG 1.062 -> 1.275; points 51.00 -> 51.00
+2019|justicehill: games 85 -> 84; PPG 4.095 -> 4.144; points 348.10 -> 348.10
+2019|kelvinharmon: games 47 -> 16; PPG 1.105 -> 3.246; points 51.94 -> 51.94
+2019|milesboykin: games 96 -> 73; PPG 1.154 -> 1.518; points 110.80 -> 110.80
+2019|nkealharry: games 59 -> 49; PPG 2.276 -> 2.741; points 134.30 -> 134.30
+2019|qadreeollison: games 24 -> 23; PPG 2.008 -> 2.096; points 48.20 -> 48.20
+2019|trayveonwilliams: games 76 -> 75; PPG 0.746 -> 0.756; points 56.70 -> 56.70
+2020|ajdillon: games 84 -> 67; PPG 5.663 -> 7.100; points 475.70 -> 475.70
+2020|albertokwuegbunam: games 42 -> 31; PPG 2.612 -> 3.539; points 109.70 -> 109.70
+2020|brandonaiyuk: games 86 -> 69; PPG 8.688 -> 10.829; points 747.20 -> 747.20
+2020|camakers: games 58 -> 59; PPG 6.388 -> 6.279; points 370.48 -> 370.48
+2020|collinjohnson: games 55 -> 38; PPG 1.253 -> 1.813; points 68.90 -> 68.90
+2020|denzelmims: games 43 -> 30; PPG 2.107 -> 3.020; points 90.60 -> 90.60
+2020|donovanpeoplesjones: games 75 -> 58; PPG 4.036 -> 5.219; points 302.70 -> 302.70
+2020|enobenjamin: games 41 -> 24; PPG 2.490 -> 4.254; points 102.10 -> 102.10
+2020|gabrieldavis: games 81 -> 80; PPG 7.199 -> 7.289; points 583.10 -> 583.10
+2020|jalenreagor: games 66 -> 64; PPG 2.915 -> 3.006; points 192.40 -> 192.40
+2020|jkdobbins: games 64 -> 47; PPG 8.345 -> 11.364; points 534.10 -> 534.10
+2020|joeburrow: games 78 -> 77; PPG 21.966 -> 22.252; points 1713.38 -> 1713.38
+2020|joereed: games 45 -> 11; PPG 0.198 -> 0.809; points 8.90 -> 8.90
+2020|kjhamler: games 53 -> 23; PPG 2.025 -> 4.665; points 107.30 -> 107.30
+2020|lamicalperine: games 33 -> 19; PPG 1.897 -> 3.295; points 62.60 -> 62.60
+2020|lynnbowdenjr: games 43 -> 26; PPG 1.316 -> 2.176; points 56.58 -> 56.58
+2020|quintezcephus: games 51 -> 22; PPG 1.986 -> 4.605; points 101.30 -> 101.30
+2020|teehiggins: games 86 -> 85; PPG 11.781 -> 11.920; points 1013.20 -> 1013.20
+2021|anthonyschwartz: games 51 -> 25; PPG 0.886 -> 1.808; points 45.20 -> 45.20
+2021|brevinjordan: games 53 -> 36; PPG 2.070 -> 3.047; points 109.70 -> 109.70
+2021|cornellpowell: games 48 -> 3; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2021|jamarrchase: games 79 -> 78; PPG 16.029 -> 16.235; points 1266.32 -> 1266.32
+2021|javianhawkins: current outcome should be removed; 0 PFR regular-season appearances
+2021|jermarjefferson: games 37 -> 11; PPG 0.741 -> 2.491; points 27.40 -> 27.40
+2021|kellenmond: games 13 -> 1; PPG 0.015 -> 0.200; points 0.20 -> 0.20
+2021|larryrountree: games 17 -> 16; PPG 1.141 -> 1.213; points 19.40 -> 19.40
+2021|michaelstrachan: current outcome should be removed; 0 PFR regular-season appearances
+2021|rondalemoore: games 73 -> 39; PPG 3.212 -> 6.013; points 234.50 -> 234.50
+2021|sethwilliams: games 48 -> 2; PPG 0.081 -> 1.950; points 3.90 -> 3.90
+2021|terracemarshall: games 56 -> 43; PPG 2.184 -> 2.844; points 122.30 -> 122.30
+2021|travisetienne: games 83 -> 66; PPG 9.489 -> 11.933; points 787.60 -> 787.60
+2021|zachdavidson: games 53 -> 4; PPG 0.019 -> 0.250; points 1.00 -> 1.00
+2022|calvinaustiniii: games 65 -> 48; PPG 3.318 -> 4.494; points 215.70 -> 215.70
+2022|dannygray: games 55 -> 13; PPG 0.044 -> 0.185; points 2.40 -> 2.40
+2022|davidbell: games 38 -> 32; PPG 2.087 -> 2.478; points 79.30 -> 79.30
+2022|desmondridder: games 28 -> 25; PPG 8.617 -> 9.651; points 241.28 -> 241.28
+2022|hassanhaskins: games 61 -> 44; PPG 0.980 -> 1.359; points 59.80 -> 59.80
+2022|isaiahspiller: games 18 -> 15; PPG 1.272 -> 1.527; points 22.90 -> 22.90
+2022|jamescook: games 67 -> 66; PPG 12.599 -> 12.789; points 844.10 -> 844.10
+2022|jelaniwoods: games 52 -> 19; PPG 1.242 -> 3.400; points 64.60 -> 64.60
+2022|johnmetchieiii: games 62 -> 45; PPG 1.984 -> 2.733; points 123.00 -> 123.00
+2022|justynross: games 29 -> 12; PPG 0.286 -> 0.692; points 8.30 -> 8.30
+2022|keaontayingram: games 38 -> 21; PPG 0.739 -> 1.338; points 28.10 -> 28.10
+2022|kevinharris: games 26 -> 9; PPG 1.192 -> 3.444; points 31.00 -> 31.00
+2022|khalilshakir: games 63 -> 62; PPG 6.311 -> 6.413; points 397.60 -> 397.60
+2022|kylephilips: games 29 -> 13; PPG 1.083 -> 2.415; points 31.40 -> 31.40
+2022|pierrestrong: games 60 -> 46; PPG 1.537 -> 2.004; points 92.20 -> 92.20
+2022|tylerbadie: games 36 -> 20; PPG 1.186 -> 2.135; points 42.70 -> 42.70
+2023|atperry: games 39 -> 10; PPG 1.400 -> 5.460; points 54.60 -> 54.60
+2023|denericprince: games 36 -> 2; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2023|deucevaughn: games 30 -> 14; PPG 0.727 -> 1.557; points 21.80 -> 21.80
+2023|dewaynemcbride: current outcome should be removed; 0 PFR regular-season appearances
+2023|hendonhooker: games 29 -> 3; PPG 0.092 -> 0.893; points 2.68 -> 2.68
+2023|israelabanikanda: games 13 -> 6; PPG 0.985 -> 2.133; points 12.80 -> 12.80
+2023|jakehaener: games 31 -> 8; PPG 0.427 -> 1.655; points 13.24 -> 13.24
+2023|justinshorter: games 34 -> 17; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2023|kennymcintosh: games 37 -> 20; PPG 0.565 -> 1.045; points 20.90 -> 20.90
+2023|lewnicholsiii: games 13 -> 1; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2023|nathanieldell: games 42 -> 25; PPG 6.095 -> 10.240; points 256.00 -> 256.00
+2023|rakimjarrett: games 21 -> 20; PPG 1.186 -> 1.245; points 24.90 -> 24.90
+2023|stetsonbennett: current outcome should be removed; 0 PFR regular-season appearances
+2023|treypalmer: games 45 -> 32; PPG 2.342 -> 3.294; points 105.40 -> 105.40
+2023|tylerscott: games 42 -> 28; PPG 0.676 -> 1.014; points 28.40 -> 28.40
+2023|willlevis: games 38 -> 21; PPG 6.104 -> 11.046; points 231.96 -> 231.96
+2023|xazavianvalladay: games 13 -> 1; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2023|zachevans: games 13 -> 10; PPG 0.146 -> 0.190; points 1.90 -> 1.90
+2024|ainiassmith: games 24 -> 7; PPG 0.592 -> 2.029; points 14.20 -> 14.20
+2024|blakewatson: games 15 -> 2; PPG 0.187 -> 1.400; points 2.80 -> 2.80
+2024|brendenrice: games 11 -> 3; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2024|bubmeans: games 24 -> 7; PPG 0.929 -> 3.186; points 22.30 -> 22.30
+2024|corneliusjohnson: current outcome should be removed; 0 PFR regular-season appearances
+2024|erickall: games 26 -> 9; PPG 0.992 -> 2.867; points 25.80 -> 25.80
+2024|frankgorejr: current outcome should be removed; 0 PFR regular-season appearances
+2024|jacobcowing: games 32 -> 15; PPG 0.272 -> 0.580; points 8.70 -> 8.70
+2024|jalynnpolk: games 32 -> 15; PPG 0.834 -> 1.780; points 26.70 -> 26.70
+2024|javonbaker: games 21 -> 11; PPG 0.081 -> 0.155; points 1.70 -> 1.70
+2024|jawharjordan: games 14 -> 4; PPG 1.871 -> 6.550; points 26.20 -> 26.20
+2024|jjmccarthy: games 27 -> 10; PPG 4.570 -> 12.338; points 123.38 -> 123.38
+2024|johnnywilson: games 33 -> 16; PPG 0.373 -> 0.769; points 12.30 -> 12.30
+2024|jonathonbrooks: games 20 -> 3; PPG 0.300 -> 2.000; points 6.00 -> 6.00
+2024|jordantravis: current outcome should be removed; 0 PFR regular-season appearances
+2024|marshawnlloyd: games 18 -> 1; PPG 0.128 -> 2.300; points 2.30 -> 2.30
+2025|damienmartinez: current outcome should be removed; 0 PFR regular-season appearances
+2025|quinshonjudkins: games 15 -> 14; PPG 10.453 -> 11.200; points 156.80 -> 156.80
+2025|willhoward: current outcome should be removed; 0 PFR regular-season appearances
