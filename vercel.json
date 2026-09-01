@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node verify-workbook-data.js && mkdir -p dist && cp site-v2.css workbook-extras.css app-v2.js workbook-extras.js data-v3-*.js dist/ && cp index-workbook.html dist/index.html",
+  "buildCommand": "node verify-workbook-data.js && mkdir -p dist && node extract-draft-outcomes.js && cp site-v2.css workbook-extras.css production-upgrade.css app-v2.js workbook-extras.js production-upgrade.js data-v3-*.js dist/ && cp index-workbook.html dist/index.html",
   "outputDirectory": "dist",
   "cleanUrls": false
 }
