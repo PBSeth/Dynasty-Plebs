@@ -1,0 +1,27 @@
+name: Audit rookie game denominators
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'audit_game_denominators.py'
+      - '.github/workflows/audit-game-denominators.yml'
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit Sleeper GP denominators
+        run: python audit_game_denominators.py
+      - name: Commit audit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add game_denominator_audit.txt
+          if git diff --cached --quiet; then
+            echo "No report changes"
+          else
+            git commit -m "Record rookie game denominator audit"
+            git push
+          fi
