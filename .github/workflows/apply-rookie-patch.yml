@@ -14,6 +14,7 @@ on:
       - 'graph_polish_patch.py'
       - 'legacy_score_patch.py'
       - 'final_user_notes_patch.py'
+      - 'drafted_points_patch.py'
       - 'mobile_round_grid_fix.py'
       - 'legacy_hero_patch.py'
 permissions:
@@ -71,6 +72,8 @@ jobs:
         run: python legacy_score_patch.py
       - name: Apply recovered final UI and grading instructions
         run: python final_user_notes_patch.py
+      - name: Build all-time drafted-points metrics
+        run: python drafted_points_patch.py
       - name: Restore compact mobile round grid
         run: python mobile_round_grid_fix.py
       - name: Put Legacy Score in manager hero
@@ -78,11 +81,11 @@ jobs:
       - name: Commit updated site data
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "418982c+github-actions[bot]@users.noreply.github.com"
           git add index.html
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Correct Dynasty Plebs games-played denominators"
+            git commit -m "Update Dynasty Plebs drafted-points metrics"
             git push
           fi
