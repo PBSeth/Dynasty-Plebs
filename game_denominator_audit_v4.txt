@@ -1,0 +1,1214 @@
+Dynasty Plebs denominator audit — stable GSIS identity + official player-game rows
+Points: Sleeper raw regular-season stats scored with Plebs rules.
+Games: nflverse weekly player_stats, REG only, unique game_id by GSIS player_id.
+Rule: only actual regular-season appearances count; IR/inactive/practice-squad weeks and 0-game seasons do not.
+Draft entries: 458 | resolved unique player ids: 437 | unresolved names: 15
+Player-season denominator differences: 803 | career draft-event changes: 382 | official appearances with no matched Sleeper row: 0
+
+UNRESOLVED NAMES
+  Antonio Williams
+  Cedric Tillman
+  Charlie Jones
+  Chris Brazzell
+  Frank Gore Jr
+  Irv Smith Jr
+  Joe Reed
+  Kyle Williams
+  Marvin Harrison Jr
+  Matt Hibner
+  Michael Pittman
+  Oronde Gadsden
+  Tamorrion Terry
+  Travis Hunter
+  Zach Kuntz
+
+SEASON DIFFERENCES
+2019 pick | A.J. Brown | 2025: Sleeper denom 15 (raw gp=15.0, active=16.0) -> official 0; Plebs pts 181.30
+2019 pick | Alexander Mattison | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Andy Isabella | 2019: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 9; Plebs pts 30.90
+2019 pick | Andy Isabella | 2020: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 11; Plebs pts 44.30
+2019 pick | Andy Isabella | 2021: Sleeper denom 8 (raw gp=8.0, active=10.0) -> official 1; Plebs pts 1.80
+2019 pick | Andy Isabella | 2022: Sleeper denom 5 (raw gp=5.0, active=16.0) -> official 3; Plebs pts 3.20
+2019 pick | Andy Isabella | 2023: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Andy Isabella | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2019 pick | Benny Snell | 2019: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 11; Plebs pts 56.40
+2019 pick | Benny Snell | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 69.90
+2019 pick | Benny Snell | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 12.10
+2019 pick | Benny Snell | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 3; Plebs pts 17.70
+2019 pick | DK Metcalf | 2025: Sleeper denom 15 (raw gp=15.0, active=17.0) -> official 0; Plebs pts 157.70
+2019 pick | Damien Harris | 2019: Sleeper denom 2 (raw gp=2.0, active=2.0) -> official 1; Plebs pts 1.20
+2019 pick | Daniel Jones | 2025: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 0; Plebs pts 248.44
+2019 pick | Darrell Henderson | 2019: Sleeper denom 13 (raw gp=13.0, active=15.0) -> official 7; Plebs pts 20.40
+2019 pick | Darrell Henderson | 2021: Sleeper denom 13 (raw gp=13.0, active=16.0) -> official 12; Plebs pts 148.90
+2019 pick | Darwin Thompson | 2019: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 10; Plebs pts 27.60
+2019 pick | Darwin Thompson | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 5; Plebs pts 29.70
+2019 pick | Darwin Thompson | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Darwin Thompson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | David Montgomery | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 156.92
+2019 pick | Dawson Knox | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 11; Plebs pts 54.80
+2019 pick | Dawson Knox | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 111.70
+2019 pick | Dawson Knox | 2023: Sleeper denom 12 (raw gp=12.0, active=17.0) -> official 10; Plebs pts 43.60
+2019 pick | Dawson Knox | 2024: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 14; Plebs pts 48.10
+2019 pick | Dawson Knox | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 85.70
+2019 pick | Deebo Samuel | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 14; Plebs pts 128.10
+2019 pick | Deebo Samuel | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 152.20
+2019 pick | Devin Singletary | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 159.20
+2019 pick | Devin Singletary | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 99.80
+2019 pick | Devine Ozigbo | 2019: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 1; Plebs pts 6.50
+2019 pick | Devine Ozigbo | 2020: Sleeper denom 8 (raw gp=8.0, active=8.0) -> official 4; Plebs pts 8.80
+2019 pick | Devine Ozigbo | 2021: Sleeper denom 3 (raw gp=3.0, active=12.0) -> official 1; Plebs pts 0.90
+2019 pick | Devine Ozigbo | 2022: Sleeper denom 4 (raw gp=4.0, active=15.0) -> official 3; Plebs pts 1.20
+2019 pick | Devine Ozigbo | 2023: Sleeper denom 3 (raw gp=3.0, active=7.0) -> official 1; Plebs pts 1.80
+2019 pick | Dexter Williams | 2019: Sleeper denom 4 (raw gp=4.0, active=4.0) -> official 2; Plebs pts 1.10
+2019 pick | Dexter Williams | 2020: Sleeper denom 3 (raw gp=3.0, active=3.0) -> official 1; Plebs pts 0.80
+2019 pick | Dexter Williams | 2021: Sleeper denom 9 (raw gp=None, active=9.0) -> official 0; Plebs pts 0.00
+2019 pick | Diontae Johnson | 2024: Sleeper denom 12 (raw gp=12.0, active=14.0) -> official 11; Plebs pts 72.60
+2019 pick | Drew Lock | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Drew Lock | 2024: Sleeper denom 8 (raw gp=8.0, active=16.0) -> official 7; Plebs pts 82.14
+2019 pick | Drew Lock | 2025: Sleeper denom 5 (raw gp=5.0, active=17.0) -> official 0; Plebs pts 0.10
+2019 pick | Dwayne Haskins | 2021: Sleeper denom 1 (raw gp=1.0, active=2.0) -> official 0; Plebs pts 0.00
+2019 pick | Hakeem Butler | 2020: Sleeper denom 2 (raw gp=2.0, active=2.0) -> official 1; Plebs pts 0.00
+2019 pick | Hunter Renfrow | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 36.00
+2019 pick | Hunter Renfrow | 2025: Sleeper denom 6 (raw gp=6.0, active=6.0) -> official 0; Plebs pts 28.40
+2019 pick | JJ Arcega-Whiteside | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 8; Plebs pts 27.90
+2019 pick | JJ Arcega-Whiteside | 2020: Sleeper denom 8 (raw gp=8.0, active=9.0) -> official 5; Plebs pts 18.50
+2019 pick | JJ Arcega-Whiteside | 2021: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 3; Plebs pts 4.60
+2019 pick | JJ Arcega-Whiteside | 2022: Sleeper denom 8 (raw gp=None, active=8.0) -> official 0; Plebs pts 0.00
+2019 pick | Jace Sternberger | 2019: Sleeper denom 6 (raw gp=6.0, active=6.0) -> official 1; Plebs pts 0.00
+2019 pick | Jace Sternberger | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 8; Plebs pts 23.40
+2019 pick | Jace Sternberger | 2021: Sleeper denom 11 (raw gp=None, active=11.0) -> official 0; Plebs pts 0.00
+2019 pick | Jalen Hurd | 2021: Sleeper denom 8 (raw gp=None, active=8.0) -> official 0; Plebs pts 0.00
+2019 pick | Jordan Scarlett | 2019: Sleeper denom 9 (raw gp=9.0, active=11.0) -> official 1; Plebs pts 0.90
+2019 pick | Jordan Scarlett | 2021: Sleeper denom 1 (raw gp=1.0, active=4.0) -> official 0; Plebs pts 0.00
+2019 pick | Josh Jacobs | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 219.10
+2019 pick | Justice Hill | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 45.50
+2019 pick | Justice Hill | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 6; Plebs pts 10.50
+2019 pick | Justice Hill | 2021: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2019 pick | Justice Hill | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 13; Plebs pts 36.00
+2019 pick | Justice Hill | 2025: Sleeper denom 10 (raw gp=10.0, active=16.0) -> official 0; Plebs pts 54.70
+2019 pick | Kahale Warring | 2020: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 4; Plebs pts 5.00
+2019 pick | Kahale Warring | 2021: Sleeper denom 2 (raw gp=2.0, active=16.0) -> official 0; Plebs pts 0.00
+2019 pick | Kelvin Harmon | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 51.94
+2019 pick | Kelvin Harmon | 2021: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2019 pick | Kelvin Harmon | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Kyler Murray | 2025: Sleeper denom 5 (raw gp=5.0, active=14.0) -> official 0; Plebs pts 83.78
+2019 pick | Marquise Brown | 2023: Sleeper denom 14 (raw gp=14.0, active=16.0) -> official 13; Plebs pts 109.20
+2019 pick | Marquise Brown | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 113.20
+2019 pick | Mecole Hardman | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 106.50
+2019 pick | Mecole Hardman | 2023: Sleeper denom 11 (raw gp=11.0, active=16.0) -> official 7; Plebs pts 18.20
+2019 pick | Mecole Hardman | 2024: Sleeper denom 12 (raw gp=12.0, active=17.0) -> official 7; Plebs pts 27.20
+2019 pick | Mecole Hardman | 2025: Sleeper denom 2 (raw gp=2.0, active=10.0) -> official 0; Plebs pts -2.00
+2019 pick | Miles Boykin | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 12; Plebs pts 44.30
+2019 pick | Miles Boykin | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 60.10
+2019 pick | Miles Boykin | 2021: Sleeper denom 8 (raw gp=8.0, active=12.0) -> official 1; Plebs pts 1.10
+2019 pick | Miles Boykin | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 3; Plebs pts 2.10
+2019 pick | Miles Boykin | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 4; Plebs pts 3.20
+2019 pick | Miles Boykin | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> official 0; Plebs pts 0.00
+2019 pick | Miles Boykin | 2025: Sleeper denom 8 (raw gp=None, active=8.0) -> official 0; Plebs pts 0.00
+2019 pick | Miles Sanders | 2025: Sleeper denom 4 (raw gp=4.0, active=16.0) -> official 0; Plebs pts 22.70
+2019 pick | Myles Gaskin | 2022: Sleeper denom 4 (raw gp=4.0, active=6.0) -> official 2; Plebs pts 7.40
+2019 pick | Myles Gaskin | 2023: Sleeper denom 3 (raw gp=3.0, active=14.0) -> official 0; Plebs pts 0.00
+2019 pick | Myles Gaskin | 2024: Sleeper denom 5 (raw gp=5.0, active=14.0) -> official 2; Plebs pts 1.50
+2019 pick | Myles Gaskin | 2025: Sleeper denom 1 (raw gp=1.0, active=9.0) -> official 0; Plebs pts 0.60
+2019 pick | N'Keal Harry | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 13; Plebs pts 57.40
+2019 pick | N'Keal Harry | 2021: Sleeper denom 13 (raw gp=13.0, active=15.0) -> official 9; Plebs pts 22.40
+2019 pick | N'Keal Harry | 2022: Sleeper denom 7 (raw gp=7.0, active=12.0) -> official 6; Plebs pts 21.10
+2019 pick | N'Keal Harry | 2023: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | N'Keal Harry | 2024: Sleeper denom 9 (raw gp=None, active=9.0) -> official 0; Plebs pts 0.00
+2019 pick | Noah Fant | 2020: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 14; Plebs pts 118.30
+2019 pick | Noah Fant | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 57.40
+2019 pick | Noah Fant | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 57.80
+2019 pick | Parris Campbell | 2023: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 8; Plebs pts 20.40
+2019 pick | Parris Campbell | 2024: Sleeper denom 5 (raw gp=5.0, active=17.0) -> official 4; Plebs pts 12.00
+2019 pick | Parris Campbell | 2025: Sleeper denom 1 (raw gp=1.0, active=13.0) -> official 0; Plebs pts 0.00
+2019 pick | Qadree Ollison | 2019: Sleeper denom 8 (raw gp=8.0, active=8.0) -> official 6; Plebs pts 30.20
+2019 pick | Qadree Ollison | 2020: Sleeper denom 3 (raw gp=3.0, active=3.0) -> official 1; Plebs pts 0.30
+2019 pick | Qadree Ollison | 2021: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 6; Plebs pts 17.70
+2019 pick | Qadree Ollison | 2022: Sleeper denom 3 (raw gp=3.0, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Qadree Ollison | 2023: Sleeper denom 2 (raw gp=2.0, active=13.0) -> official 0; Plebs pts 0.00
+2019 pick | Riley Ridley | 2019: Sleeper denom 5 (raw gp=5.0, active=6.0) -> official 3; Plebs pts 9.90
+2019 pick | Riley Ridley | 2020: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 2; Plebs pts 5.90
+2019 pick | Ryquell Armstead | 2019: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 44.20
+2019 pick | T.J. Hockenson | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 87.30
+2019 pick | Terry McLaurin | 2025: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 0; Plebs pts 95.20
+2019 pick | Tony Pollard | 2019: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 14; Plebs pts 81.70
+2019 pick | Tony Pollard | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 169.30
+2019 pick | Trayveon Williams | 2019: Sleeper denom 11 (raw gp=11.0, active=12.0) -> official 0; Plebs pts 0.00
+2019 pick | Trayveon Williams | 2020: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 6; Plebs pts 19.20
+2019 pick | Trayveon Williams | 2021: Sleeper denom 5 (raw gp=5.0, active=14.0) -> official 2; Plebs pts 6.00
+2019 pick | Trayveon Williams | 2022: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 4; Plebs pts 7.00
+2019 pick | Trayveon Williams | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 11.40
+2019 pick | Trayveon Williams | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 0.00
+2019 pick | Trayveon Williams | 2025: Sleeper denom 7 (raw gp=7.0, active=11.0) -> official 0; Plebs pts 13.10
+2020 pick | AJ Dillon | 2020: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 9; Plebs pts 39.30
+2020 pick | AJ Dillon | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | AJ Dillon | 2025: Sleeper denom 7 (raw gp=7.0, active=8.0) -> official 0; Plebs pts 7.60
+2020 pick | Adam Trautman | 2020: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 10; Plebs pts 30.60
+2020 pick | Adam Trautman | 2021: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 11; Plebs pts 49.80
+2020 pick | Adam Trautman | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 12; Plebs pts 35.70
+2020 pick | Adam Trautman | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 49.40
+2020 pick | Adam Trautman | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 37.30
+2020 pick | Adam Trautman | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 35.50
+2020 pick | Albert Okwuegbunam | 2021: Sleeper denom 14 (raw gp=14.0, active=17.0) -> official 13; Plebs pts 59.50
+2020 pick | Albert Okwuegbunam | 2022: Sleeper denom 8 (raw gp=8.0, active=10.0) -> official 6; Plebs pts 20.50
+2020 pick | Albert Okwuegbunam | 2023: Sleeper denom 4 (raw gp=4.0, active=7.0) -> official 1; Plebs pts 0.00
+2020 pick | Albert Okwuegbunam | 2024: Sleeper denom 11 (raw gp=None, active=11.0) -> official 0; Plebs pts 0.00
+2020 pick | Albert Okwuegbunam | 2025: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 6.10
+2020 pick | Anthony McFarland | 2023: Sleeper denom 3 (raw gp=3.0, active=12.0) -> official 1; Plebs pts 2.10
+2020 pick | Antonio Gandy-Golden | 2020: Sleeper denom 6 (raw gp=6.0, active=7.0) -> official 4; Plebs pts 3.00
+2020 pick | Antonio Gandy-Golden | 2021: Sleeper denom 4 (raw gp=4.0, active=9.0) -> official 0; Plebs pts 0.00
+2020 pick | Antonio Gibson | 2025: Sleeper denom 5 (raw gp=5.0, active=17.0) -> official 0; Plebs pts 22.20
+2020 pick | Brandon Aiyuk | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 142.30
+2020 pick | Brandon Aiyuk | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Bryan Edwards | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 9; Plebs pts 30.80
+2020 pick | Bryan Edwards | 2022: Sleeper denom 7 (raw gp=7.0, active=12.0) -> official 4; Plebs pts 3.00
+2020 pick | Cam Akers | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 11; Plebs pts 96.30
+2020 pick | Cam Akers | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 86.20
+2020 pick | Cam Akers | 2025: Sleeper denom 6 (raw gp=6.0, active=12.0) -> official 0; Plebs pts 9.18
+2020 pick | CeeDee Lamb | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 163.40
+2020 pick | Chase Claypool | 2023: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 7; Plebs pts 17.70
+2020 pick | Clyde Edwards-Helaire | 2025: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 0; Plebs pts 3.20
+2020 pick | Cole Kmet | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 48.00
+2020 pick | Cole Kmet | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 144.60
+2020 pick | Cole Kmet | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 96.90
+2020 pick | Cole Kmet | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 63.70
+2020 pick | Collin Johnson | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 10; Plebs pts 50.20
+2020 pick | Collin Johnson | 2021: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 7; Plebs pts 16.00
+2020 pick | Collin Johnson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Collin Johnson | 2023: Sleeper denom 3 (raw gp=3.0, active=11.0) -> official 1; Plebs pts 1.60
+2020 pick | Collin Johnson | 2024: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 2; Plebs pts 1.10
+2020 pick | D'Andre Swift | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 211.60
+2020 pick | Darnell Mooney | 2022: Sleeper denom 12 (raw gp=12.0, active=17.0) -> official 11; Plebs pts 81.50
+2020 pick | Darnell Mooney | 2023: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 14; Plebs pts 63.40
+2020 pick | Darnell Mooney | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 66.30
+2020 pick | Darrynton Evans | 2020: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 4; Plebs pts 15.10
+2020 pick | Darrynton Evans | 2022: Sleeper denom 6 (raw gp=6.0, active=15.0) -> official 3; Plebs pts 10.20
+2020 pick | Darrynton Evans | 2023: Sleeper denom 7 (raw gp=7.0, active=16.0) -> official 6; Plebs pts 26.50
+2020 pick | Darrynton Evans | 2024: Sleeper denom 5 (raw gp=5.0, active=17.0) -> official 1; Plebs pts 0.30
+2020 pick | DeeJay Dallas | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 8; Plebs pts 48.40
+2020 pick | DeeJay Dallas | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 11; Plebs pts 49.60
+2020 pick | DeeJay Dallas | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 11; Plebs pts 35.70
+2020 pick | DeeJay Dallas | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 10; Plebs pts 5.20
+2020 pick | DeeJay Dallas | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 7; Plebs pts 19.50
+2020 pick | DeeJay Dallas | 2025: Sleeper denom 6 (raw gp=6.0, active=14.0) -> official 0; Plebs pts 2.10
+2020 pick | Denzel Mims | 2021: Sleeper denom 11 (raw gp=11.0, active=15.0) -> official 10; Plebs pts 17.30
+2020 pick | Denzel Mims | 2022: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 9; Plebs pts 24.10
+2020 pick | Denzel Mims | 2023: Sleeper denom 13 (raw gp=None, active=13.0) -> official 0; Plebs pts 0.00
+2020 pick | Devin Duvernay | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 43.10
+2020 pick | Devin Duvernay | 2021: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 66.70
+2020 pick | Devin Duvernay | 2023: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 6; Plebs pts 5.30
+2020 pick | Devin Duvernay | 2024: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 10; Plebs pts 13.70
+2020 pick | Devin Duvernay | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 3.60
+2020 pick | Donovan Peoples-Jones | 2020: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 7; Plebs pts 51.40
+2020 pick | Donovan Peoples-Jones | 2021: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 13; Plebs pts 92.70
+2020 pick | Donovan Peoples-Jones | 2023: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 12; Plebs pts 22.00
+2020 pick | Donovan Peoples-Jones | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Eno Benjamin | 2021: Sleeper denom 9 (raw gp=9.0, active=10.0) -> official 7; Plebs pts 25.00
+2020 pick | Eno Benjamin | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 12; Plebs pts 77.10
+2020 pick | Eno Benjamin | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Gabriel Davis | 2021: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 15; Plebs pts 108.40
+2020 pick | Gabriel Davis | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 147.60
+2020 pick | Gabriel Davis | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 138.90
+2020 pick | Gabriel Davis | 2024: Sleeper denom 10 (raw gp=10.0, active=16.0) -> official 9; Plebs pts 43.90
+2020 pick | Gabriel Davis | 2025: Sleeper denom 6 (raw gp=6.0, active=15.0) -> official 0; Plebs pts 24.90
+2020 pick | J.K. Dobbins | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | J.K. Dobbins | 2025: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 0; Plebs pts 110.40
+2020 pick | Jalen Reagor | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 10; Plebs pts 22.90
+2020 pick | Jalen Reagor | 2023: Sleeper denom 11 (raw gp=11.0, active=16.0) -> official 9; Plebs pts 25.00
+2020 pick | Jalen Reagor | 2024: Sleeper denom 8 (raw gp=8.0, active=16.0) -> official 7; Plebs pts 11.20
+2020 pick | Jalen Reagor | 2025: Sleeper denom 2 (raw gp=None, active=2.0) -> official 0; Plebs pts 0.00
+2020 pick | James Proche | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 3; Plebs pts 1.90
+2020 pick | James Proche | 2021: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 7; Plebs pts 28.20
+2020 pick | James Proche | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 7; Plebs pts 6.20
+2020 pick | James Proche | 2023: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 2; Plebs pts -2.00
+2020 pick | James Proche | 2024: Sleeper denom 9 (raw gp=9.0, active=16.0) -> official 2; Plebs pts 1.60
+2020 pick | James Proche | 2025: Sleeper denom 9 (raw gp=9.0, active=16.0) -> official 0; Plebs pts 9.50
+2020 pick | Jerry Jeudy | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 95.70
+2020 pick | Joe Burrow | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 404.98
+2020 pick | Joe Burrow | 2025: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 0; Plebs pts 158.46
+2020 pick | Jonathan Taylor | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 339.30
+2020 pick | Jordan Love | 2025: Sleeper denom 15 (raw gp=15.0, active=16.0) -> official 0; Plebs pts 269.14
+2020 pick | Joshua Kelley | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 13; Plebs pts 69.70
+2020 pick | Joshua Kelley | 2021: Sleeper denom 10 (raw gp=10.0, active=11.0) -> official 8; Plebs pts 14.50
+2020 pick | Joshua Kelley | 2022: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 12; Plebs pts 57.80
+2020 pick | Joshua Kelley | 2024: Sleeper denom 3 (raw gp=3.0, active=6.0) -> official 1; Plebs pts 0.20
+2020 pick | Justin Herbert | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 312.88
+2020 pick | Justin Jefferson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 159.50
+2020 pick | KJ Hamler | 2020: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 12; Plebs pts 75.10
+2020 pick | KJ Hamler | 2022: Sleeper denom 7 (raw gp=7.0, active=13.0) -> official 6; Plebs pts 22.30
+2020 pick | KJ Hamler | 2023: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2020 pick | KJ Hamler | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2020 pick | KJ Hill | 2020: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 5; Plebs pts 8.80
+2020 pick | KJ Hill | 2021: Sleeper denom 6 (raw gp=6.0, active=16.0) -> official 1; Plebs pts 4.50
+2020 pick | Ke'Shawn Vaughn | 2020: Sleeper denom 10 (raw gp=10.0, active=11.0) -> official 6; Plebs pts 20.80
+2020 pick | Ke'Shawn Vaughn | 2021: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 6; Plebs pts 34.60
+2020 pick | Ke'Shawn Vaughn | 2022: Sleeper denom 15 (raw gp=15.0, active=16.0) -> official 5; Plebs pts 8.70
+2020 pick | Ke'Shawn Vaughn | 2023: Sleeper denom 6 (raw gp=6.0, active=9.0) -> official 5; Plebs pts 5.40
+2020 pick | Ke'Shawn Vaughn | 2024: Sleeper denom 3 (raw gp=3.0, active=14.0) -> official 1; Plebs pts 0.40
+2020 pick | La'Mical Perine | 2020: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 9; Plebs pts 47.00
+2020 pick | La'Mical Perine | 2021: Sleeper denom 4 (raw gp=4.0, active=4.0) -> official 2; Plebs pts 3.10
+2020 pick | La'Mical Perine | 2022: Sleeper denom 11 (raw gp=None, active=11.0) -> official 0; Plebs pts 0.00
+2020 pick | La'Mical Perine | 2023: Sleeper denom 3 (raw gp=3.0, active=16.0) -> official 2; Plebs pts 12.50
+2020 pick | La'Mical Perine | 2024: Sleeper denom 5 (raw gp=None, active=5.0) -> official 0; Plebs pts 0.00
+2020 pick | Laviska Shenault | 2024: Sleeper denom 12 (raw gp=12.0, active=16.0) -> official 6; Plebs pts 8.20
+2020 pick | Lynn Bowden Jr | 2020: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 9; Plebs pts 39.58
+2020 pick | Lynn Bowden Jr | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Lynn Bowden Jr | 2022: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2020 pick | Lynn Bowden Jr | 2023: Sleeper denom 15 (raw gp=15.0, active=17.0) -> official 8; Plebs pts 17.00
+2020 pick | Quintez Cephus | 2020: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 11; Plebs pts 56.90
+2020 pick | Quintez Cephus | 2022: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 1; Plebs pts 2.50
+2020 pick | Quintez Cephus | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> official 0; Plebs pts 0.00
+2020 pick | Quintez Cephus | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2020 pick | Tee Higgins | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 161.10
+2020 pick | Tee Higgins | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 185.70
+2020 pick | Tee Higgins | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 182.10
+2020 pick | Tua Tagovailoa | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 170.70
+2020 pick | Tyler Johnson | 2020: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 10; Plebs pts 34.90
+2020 pick | Tyler Johnson | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 54.00
+2020 pick | Tyler Johnson | 2022: Sleeper denom 2 (raw gp=2.0, active=11.0) -> official 0; Plebs pts 0.00
+2020 pick | Tyler Johnson | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 11; Plebs pts 48.10
+2020 pick | Tyler Johnson | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 31.70
+2020 pick | Van Jefferson | 2020: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 37.40
+2020 pick | Van Jefferson | 2022: Sleeper denom 11 (raw gp=11.0, active=15.0) -> official 10; Plebs pts 66.90
+2020 pick | Van Jefferson | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 31.30
+2020 pick | Van Jefferson | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 51.60
+2020 pick | Van Jefferson | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 55.50
+2021 pick | Amari Rodgers | 2021: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 4; Plebs pts 7.60
+2021 pick | Amari Rodgers | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 9; Plebs pts 31.10
+2021 pick | Amari Rodgers | 2023: Sleeper denom 3 (raw gp=3.0, active=6.0) -> official 1; Plebs pts 0.00
+2021 pick | Amon-Ra St. Brown | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 182.30
+2021 pick | Amon-Ra St. Brown | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 265.50
+2021 pick | Anthony Schwartz | 2021: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 12; Plebs pts 28.40
+2021 pick | Anthony Schwartz | 2022: Sleeper denom 11 (raw gp=11.0, active=16.0) -> official 6; Plebs pts 16.80
+2021 pick | Anthony Schwartz | 2023: Sleeper denom 9 (raw gp=None, active=9.0) -> official 0; Plebs pts 0.00
+2021 pick | Anthony Schwartz | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Brevin Jordan | 2021: Sleeper denom 9 (raw gp=9.0, active=10.0) -> official 8; Plebs pts 45.80
+2021 pick | Brevin Jordan | 2022: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 9; Plebs pts 19.80
+2021 pick | Brevin Jordan | 2023: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 9; Plebs pts 42.40
+2021 pick | Brevin Jordan | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Chuba Hubbard | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 125.10
+2021 pick | Chuba Hubbard | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 12; Plebs pts 80.70
+2021 pick | Chuba Hubbard | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 110.40
+2021 pick | Cornell Powell | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Cornell Powell | 2022: Sleeper denom 3 (raw gp=3.0, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Cornell Powell | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Cornell Powell | 2024: Sleeper denom 10 (raw gp=None, active=10.0) -> official 0; Plebs pts 0.00
+2021 pick | Cornell Powell | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2021 pick | D'Wayne Eskridge | 2021: Sleeper denom 10 (raw gp=10.0, active=14.0) -> official 8; Plebs pts 23.30
+2021 pick | D'Wayne Eskridge | 2022: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 8; Plebs pts 10.30
+2021 pick | D'Wayne Eskridge | 2023: Sleeper denom 4 (raw gp=4.0, active=12.0) -> official 3; Plebs pts 0.50
+2021 pick | D'Wayne Eskridge | 2024: Sleeper denom 6 (raw gp=6.0, active=10.0) -> official 3; Plebs pts 5.90
+2021 pick | D'Wayne Eskridge | 2025: Sleeper denom 13 (raw gp=13.0, active=15.0) -> official 0; Plebs pts 6.20
+2021 pick | Devonta Smith | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 163.30
+2021 pick | Dez Fitzpatrick | 2021: Sleeper denom 4 (raw gp=4.0, active=15.0) -> official 3; Plebs pts 13.40
+2021 pick | Dez Fitzpatrick | 2022: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Dez Fitzpatrick | 2023: Sleeper denom 1 (raw gp=1.0, active=15.0) -> official 0; Plebs pts 0.00
+2021 pick | Dez Fitzpatrick | 2024: Sleeper denom 1 (raw gp=1.0, active=16.0) -> official 0; Plebs pts 0.00
+2021 pick | Dyami Brown | 2021: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 9; Plebs pts 22.10
+2021 pick | Dyami Brown | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 7; Plebs pts 30.30
+2021 pick | Dyami Brown | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 28.96
+2021 pick | Dyami Brown | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 52.40
+2021 pick | Dyami Brown | 2025: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 0; Plebs pts 39.70
+2021 pick | Elijah Moore | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 69.60
+2021 pick | Elijah Moore | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 102.60
+2021 pick | Elijah Moore | 2025: Sleeper denom 9 (raw gp=9.0, active=14.0) -> official 0; Plebs pts 24.10
+2021 pick | Hunter Long | 2021: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 3; Plebs pts 1.30
+2021 pick | Hunter Long | 2022: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 0; Plebs pts 0.00
+2021 pick | Hunter Long | 2023: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Hunter Long | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 7; Plebs pts 15.50
+2021 pick | Hunter Long | 2025: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 0; Plebs pts 26.50
+2021 pick | Ja'Marr Chase | 2022: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 12; Plebs pts 198.90
+2021 pick | Ja'Marr Chase | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 251.10
+2021 pick | Jaelon Darden | 2021: Sleeper denom 9 (raw gp=9.0, active=11.0) -> official 7; Plebs pts 8.40
+2021 pick | Jaelon Darden | 2022: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 3; Plebs pts 3.80
+2021 pick | Jaelon Darden | 2023: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Jaelon Darden | 2024: Sleeper denom 12 (raw gp=12.0, active=15.0) -> official 1; Plebs pts 1.10
+2021 pick | Javian Hawkins | 2021: Sleeper denom 15 (raw gp=None, active=15.0) -> official 0; Plebs pts 0.00
+2021 pick | Javonte Williams | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 225.30
+2021 pick | Jaylen Waddle | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 162.12
+2021 pick | Jermar Jefferson | 2021: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 4; Plebs pts 23.70
+2021 pick | Jermar Jefferson | 2022: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2021 pick | Jermar Jefferson | 2023: Sleeper denom 10 (raw gp=None, active=10.0) -> official 0; Plebs pts 0.00
+2021 pick | Jermar Jefferson | 2025: Sleeper denom 2 (raw gp=2.0, active=13.0) -> official 0; Plebs pts 0.00
+2021 pick | Josh Palmer | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 76.40
+2021 pick | Josh Palmer | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 41.30
+2021 pick | Justin Fields | 2025: Sleeper denom 9 (raw gp=9.0, active=13.0) -> official 0; Plebs pts 154.66
+2021 pick | Kadarius Toney | 2021: Sleeper denom 10 (raw gp=10.0, active=11.0) -> official 9; Plebs pts 62.86
+2021 pick | Kadarius Toney | 2024: Sleeper denom 3 (raw gp=3.0, active=12.0) -> official 2; Plebs pts -2.40
+2021 pick | Kellen Mond | 2023: Sleeper denom 12 (raw gp=None, active=12.0) -> official 0; Plebs pts 0.00
+2021 pick | Kene Nwangwu | 2021: Sleeper denom 11 (raw gp=11.0, active=17.0) -> official 6; Plebs pts 21.00
+2021 pick | Kene Nwangwu | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 3; Plebs pts 10.50
+2021 pick | Kene Nwangwu | 2023: Sleeper denom 9 (raw gp=9.0, active=15.0) -> official 3; Plebs pts 1.30
+2021 pick | Kene Nwangwu | 2024: Sleeper denom 2 (raw gp=2.0, active=16.0) -> official 1; Plebs pts 6.00
+2021 pick | Kene Nwangwu | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 10.90
+2021 pick | Kenneth Gainwell | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 54.60
+2021 pick | Kenneth Gainwell | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 184.80
+2021 pick | Khalil Herbert | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 71.90
+2021 pick | Khalil Herbert | 2024: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 8; Plebs pts 26.50
+2021 pick | Khalil Herbert | 2025: Sleeper denom 7 (raw gp=7.0, active=9.0) -> official 0; Plebs pts 6.10
+2021 pick | Kyle Pitts | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 166.80
+2021 pick | Larry Rountree | 2021: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 8; Plebs pts 15.10
+2021 pick | Larry Rountree | 2022: Sleeper denom 4 (raw gp=4.0, active=15.0) -> official 2; Plebs pts 4.30
+2021 pick | Larry Rountree | 2023: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2021 pick | Mac Jones | 2025: Sleeper denom 11 (raw gp=11.0, active=17.0) -> official 0; Plebs pts 144.04
+2021 pick | Michael Carter | 2025: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 0; Plebs pts 82.50
+2021 pick | Michael Strachan | 2021: Sleeper denom 6 (raw gp=6.0, active=6.0) -> official 0; Plebs pts 3.60
+2021 pick | Michael Strachan | 2022: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 0; Plebs pts 7.40
+2021 pick | Michael Strachan | 2023: Sleeper denom 4 (raw gp=4.0, active=13.0) -> official 0; Plebs pts 5.00
+2021 pick | Michael Strachan | 2024: Sleeper denom 4 (raw gp=None, active=4.0) -> official 0; Plebs pts 0.00
+2021 pick | Najee Harris | 2025: Sleeper denom 3 (raw gp=3.0, active=17.0) -> official 0; Plebs pts 10.10
+2021 pick | Nico Collins | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 190.70
+2021 pick | Noah Gray | 2021: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 7; Plebs pts 13.10
+2021 pick | Noah Gray | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 56.60
+2021 pick | Noah Gray | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 93.30
+2021 pick | Noah Gray | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 28.30
+2021 pick | Pat Freiermuth | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 116.70
+2021 pick | Pat Freiermuth | 2023: Sleeper denom 12 (raw gp=12.0, active=16.0) -> official 11; Plebs pts 60.80
+2021 pick | Pat Freiermuth | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 93.10
+2021 pick | Rashod Bateman | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 60.50
+2021 pick | Rashod Bateman | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 152.10
+2021 pick | Rashod Bateman | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 45.90
+2021 pick | Rhamondre Stevenson | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 162.80
+2021 pick | Rondale Moore | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Rondale Moore | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Seth Williams | 2021: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 1; Plebs pts 3.90
+2021 pick | Seth Williams | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Seth Williams | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Seth Williams | 2024: Sleeper denom 12 (raw gp=None, active=12.0) -> official 0; Plebs pts 0.00
+2021 pick | Terrace Marshall | 2021: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 12; Plebs pts 24.30
+2021 pick | Terrace Marshall | 2022: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 13; Plebs pts 69.00
+2021 pick | Terrace Marshall | 2023: Sleeper denom 9 (raw gp=9.0, active=10.0) -> official 8; Plebs pts 23.40
+2021 pick | Terrace Marshall | 2024: Sleeper denom 7 (raw gp=7.0, active=16.0) -> official 5; Plebs pts 5.60
+2021 pick | Terrace Marshall | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> official 0; Plebs pts 0.00
+2021 pick | Travis Etienne | 2021: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Travis Etienne | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 235.90
+2021 pick | Trevor Lawrence | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 372.18
+2021 pick | Trey Lance | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 11.54
+2021 pick | Trey Sermon | 2021: Sleeper denom 9 (raw gp=9.0, active=15.0) -> official 5; Plebs pts 26.80
+2021 pick | Trey Sermon | 2022: Sleeper denom 2 (raw gp=2.0, active=2.0) -> official 1; Plebs pts 1.90
+2021 pick | Trey Sermon | 2023: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 8; Plebs pts 18.80
+2021 pick | Trey Sermon | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 45.80
+2021 pick | Trey Sermon | 2025: Sleeper denom 4 (raw gp=4.0, active=16.0) -> official 0; Plebs pts 0.00
+2021 pick | Tutu Atwell | 2021: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Tutu Atwell | 2022: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 12; Plebs pts 54.20
+2021 pick | Tutu Atwell | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 92.90
+2021 pick | Tutu Atwell | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 77.90
+2021 pick | Tutu Atwell | 2025: Sleeper denom 10 (raw gp=10.0, active=16.0) -> official 0; Plebs pts 28.20
+2021 pick | Tylan Wallace | 2021: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 4; Plebs pts 3.30
+2021 pick | Tylan Wallace | 2022: Sleeper denom 9 (raw gp=9.0, active=14.0) -> official 5; Plebs pts 5.30
+2021 pick | Tylan Wallace | 2023: Sleeper denom 11 (raw gp=11.0, active=15.0) -> official 2; Plebs pts 7.60
+2021 pick | Tylan Wallace | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 8; Plebs pts 30.80
+2021 pick | Tylan Wallace | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 12.50
+2021 pick | Zach Davidson | 2021: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2021 pick | Zach Davidson | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Zach Davidson | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2021 pick | Zach Davidson | 2025: Sleeper denom 1 (raw gp=1.0, active=7.0) -> official 0; Plebs pts 0.00
+2021 pick | Zach Wilson | 2025: Sleeper denom 4 (raw gp=4.0, active=16.0) -> official 0; Plebs pts 1.38
+2022 pick | Alec Pierce | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 159.80
+2022 pick | Breece Hall | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 191.66
+2022 pick | Brian Robinson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 58.50
+2022 pick | Calvin Austin III | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Calvin Austin III | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 44.20
+2022 pick | Calvin Austin III | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 70.70
+2022 pick | Chris Olave | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 216.00
+2022 pick | Christian Watson | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 14; Plebs pts 90.80
+2022 pick | Christian Watson | 2025: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 0; Plebs pts 114.90
+2022 pick | Dameon Pierce | 2023: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 13; Plebs pts 76.20
+2022 pick | Dameon Pierce | 2024: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 9; Plebs pts 42.50
+2022 pick | Dameon Pierce | 2025: Sleeper denom 5 (raw gp=5.0, active=9.0) -> official 0; Plebs pts 3.60
+2022 pick | Danny Gray | 2022: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 5; Plebs pts 2.40
+2022 pick | Danny Gray | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Danny Gray | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2022 pick | Danny Gray | 2025: Sleeper denom 9 (raw gp=None, active=9.0) -> official 0; Plebs pts 0.00
+2022 pick | David Bell | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 33.40
+2022 pick | David Bell | 2023: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 9; Plebs pts 41.70
+2022 pick | David Bell | 2025: Sleeper denom 6 (raw gp=None, active=6.0) -> official 0; Plebs pts 0.00
+2022 pick | Desmond Ridder | 2024: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 5; Plebs pts 21.92
+2022 pick | Desmond Ridder | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2022 pick | Drake London | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 167.90
+2022 pick | Garrett Wilson | 2025: Sleeper denom 7 (raw gp=7.0, active=15.0) -> official 0; Plebs pts 81.50
+2022 pick | George Pickens | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 245.40
+2022 pick | Greg Dulcich | 2024: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 3; Plebs pts 5.30
+2022 pick | Greg Dulcich | 2025: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 0; Plebs pts 49.80
+2022 pick | Hassan Haskins | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 7; Plebs pts 20.50
+2022 pick | Hassan Haskins | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Hassan Haskins | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 11; Plebs pts 31.30
+2022 pick | Hassan Haskins | 2025: Sleeper denom 12 (raw gp=12.0, active=16.0) -> official 0; Plebs pts 8.00
+2022 pick | Isaiah Spiller | 2022: Sleeper denom 6 (raw gp=6.0, active=8.0) -> official 5; Plebs pts 6.90
+2022 pick | Isaiah Spiller | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2022 pick | Isiah Pacheco | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 77.80
+2022 pick | Jahan Dotson | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 32.40
+2022 pick | Jahan Dotson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 41.20
+2022 pick | Jalen Nailor | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 5; Plebs pts 28.40
+2022 pick | Jalen Nailor | 2023: Sleeper denom 6 (raw gp=6.0, active=13.0) -> official 2; Plebs pts 4.40
+2022 pick | Jalen Nailor | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 89.00
+2022 pick | Jalen Nailor | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 86.20
+2022 pick | Jalen Tolbert | 2022: Sleeper denom 8 (raw gp=8.0, active=9.0) -> official 2; Plebs pts 2.20
+2022 pick | Jalen Tolbert | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 47.80
+2022 pick | Jalen Tolbert | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 37.30
+2022 pick | James Cook | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 97.00
+2022 pick | James Cook | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 285.70
+2022 pick | Jameson Williams | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 187.40
+2022 pick | Jelani Woods | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 12; Plebs pts 61.70
+2022 pick | Jelani Woods | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Jelani Woods | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2022 pick | Jelani Woods | 2025: Sleeper denom 4 (raw gp=4.0, active=5.0) -> official 0; Plebs pts 2.90
+2022 pick | Jerome Ford | 2022: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 2; Plebs pts 1.20
+2022 pick | Jerome Ford | 2025: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 0; Plebs pts 30.60
+2022 pick | John Metchie III | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | John Metchie III | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 24.20
+2022 pick | John Metchie III | 2024: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 10; Plebs pts 43.40
+2022 pick | John Metchie III | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 55.40
+2022 pick | Justyn Ross | 2022: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Justyn Ross | 2023: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 5; Plebs pts 8.30
+2022 pick | Justyn Ross | 2024: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 1; Plebs pts 0.00
+2022 pick | Keaontay Ingram | 2022: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 10; Plebs pts 16.10
+2022 pick | Keaontay Ingram | 2023: Sleeper denom 8 (raw gp=8.0, active=15.0) -> official 7; Plebs pts 12.00
+2022 pick | Keaontay Ingram | 2024: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Keaontay Ingram | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Ken Walker III | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 176.40
+2022 pick | Kenny Pickett | 2025: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 0; Plebs pts 5.72
+2022 pick | Kevin Harris | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Khalil Shakir | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 10; Plebs pts 29.10
+2022 pick | Khalil Shakir | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 93.60
+2022 pick | Khalil Shakir | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 130.40
+2022 pick | Kyle Philips | 2023: Sleeper denom 9 (raw gp=9.0, active=13.0) -> official 8; Plebs pts 23.60
+2022 pick | Kyle Philips | 2024: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2022 pick | Kyren Williams | 2022: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 8; Plebs pts 26.00
+2022 pick | Kyren Williams | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 245.30
+2022 pick | Malik Willis | 2022: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 7; Plebs pts 13.34
+2022 pick | Malik Willis | 2023: Sleeper denom 3 (raw gp=3.0, active=11.0) -> official 2; Plebs pts 3.06
+2022 pick | Malik Willis | 2024: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 6; Plebs pts 57.80
+2022 pick | Malik Willis | 2025: Sleeper denom 4 (raw gp=4.0, active=16.0) -> official 0; Plebs pts 57.18
+2022 pick | Montrell Washington | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 9; Plebs pts 3.20
+2022 pick | Montrell Washington | 2023: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 0; Plebs pts 0.00
+2022 pick | Montrell Washington | 2024: Sleeper denom 1 (raw gp=1.0, active=16.0) -> official 0; Plebs pts 0.00
+2022 pick | Pierre Strong | 2022: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 4; Plebs pts 23.70
+2022 pick | Pierre Strong | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 40.30
+2022 pick | Pierre Strong | 2024: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 11; Plebs pts 28.20
+2022 pick | Pierre Strong | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2022 pick | Rachaad White | 2022: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 114.10
+2022 pick | Rachaad White | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 174.10
+2022 pick | Rachaad White | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 123.00
+2022 pick | Romeo Doubs | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 137.90
+2022 pick | Skyy Moore | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 32.40
+2022 pick | Skyy Moore | 2023: Sleeper denom 14 (raw gp=14.0, active=17.0) -> official 13; Plebs pts 43.20
+2022 pick | Skyy Moore | 2024: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 2; Plebs pts 0.00
+2022 pick | Skyy Moore | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 12.30
+2022 pick | Trey McBride | 2022: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 9; Plebs pts 47.00
+2022 pick | Trey McBride | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 252.90
+2022 pick | Treylon Burks | 2023: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 9; Plebs pts 31.90
+2022 pick | Treylon Burks | 2025: Sleeper denom 8 (raw gp=8.0, active=15.0) -> official 0; Plebs pts 24.00
+2022 pick | Tyler Allgeier | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 116.00
+2022 pick | Tyler Badie | 2023: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2022 pick | Tyler Badie | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 25.90
+2022 pick | Tyquan Thornton | 2022: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 12; Plebs pts 55.30
+2022 pick | Tyquan Thornton | 2024: Sleeper denom 6 (raw gp=6.0, active=13.0) -> official 4; Plebs pts 6.70
+2022 pick | Tyquan Thornton | 2025: Sleeper denom 14 (raw gp=14.0, active=16.0) -> official 0; Plebs pts 71.30
+2022 pick | Tyrion Davis-Price | 2022: Sleeper denom 6 (raw gp=6.0, active=9.0) -> official 5; Plebs pts 9.90
+2022 pick | Velus Jones | 2022: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 9; Plebs pts 30.50
+2022 pick | Velus Jones | 2023: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 10; Plebs pts 9.10
+2022 pick | Velus Jones | 2024: Sleeper denom 3 (raw gp=3.0, active=8.0) -> official 2; Plebs pts 0.40
+2022 pick | Velus Jones | 2025: Sleeper denom 8 (raw gp=8.0, active=14.0) -> official 0; Plebs pts 3.20
+2022 pick | Wan'Dale Robinson | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 171.90
+2022 pick | Zamir White | 2022: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 11; Plebs pts 7.00
+2022 pick | Zamir White | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 66.40
+2022 pick | Zamir White | 2025: Sleeper denom 6 (raw gp=6.0, active=6.0) -> official 0; Plebs pts 7.60
+2023 pick | A.T. Perry | 2023: Sleeper denom 10 (raw gp=10.0, active=11.0) -> official 8; Plebs pts 54.60
+2023 pick | A.T. Perry | 2024: Sleeper denom 12 (raw gp=None, active=12.0) -> official 0; Plebs pts 0.00
+2023 pick | A.T. Perry | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Aidan O'Connell | 2025: Sleeper denom 1 (raw gp=1.0, active=12.0) -> official 0; Plebs pts 4.78
+2023 pick | Andrei Iosivas | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 9; Plebs pts 43.10
+2023 pick | Andrei Iosivas | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 73.40
+2023 pick | Anthony Richardson | 2025: Sleeper denom 2 (raw gp=2.0, active=16.0) -> official 0; Plebs pts 1.66
+2023 pick | Bijan Robinson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 331.30
+2023 pick | Brenton Strange | 2023: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 5; Plebs pts 12.00
+2023 pick | Brenton Strange | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 71.10
+2023 pick | Brenton Strange | 2025: Sleeper denom 12 (raw gp=12.0, active=17.0) -> official 0; Plebs pts 95.00
+2023 pick | Bryce Young | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 242.04
+2023 pick | CJ Stroud | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 230.54
+2023 pick | Chase Brown | 2023: Sleeper denom 12 (raw gp=12.0, active=16.0) -> official 10; Plebs pts 46.50
+2023 pick | Chase Brown | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 248.10
+2023 pick | Chris Rodriguez Jr | 2023: Sleeper denom 13 (raw gp=13.0, active=15.0) -> official 8; Plebs pts 36.90
+2023 pick | Chris Rodriguez Jr | 2024: Sleeper denom 9 (raw gp=9.0, active=15.0) -> official 6; Plebs pts 31.00
+2023 pick | Chris Rodriguez Jr | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 90.50
+2023 pick | Clayton Tune | 2023: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 6; Plebs pts 3.48
+2023 pick | Clayton Tune | 2024: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 5; Plebs pts -2.08
+2023 pick | Clayton Tune | 2025: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 0; Plebs pts -0.02
+2023 pick | Dalton Kincaid | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 106.60
+2023 pick | Darnell Washington | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 8; Plebs pts 9.60
+2023 pick | Darnell Washington | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 35.50
+2023 pick | Darnell Washington | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 57.90
+2023 pick | DeWayne McBride | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Deneric Prince | 2023: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Deneric Prince | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Deneric Prince | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Derius Davis | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 28.20
+2023 pick | Derius Davis | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 11; Plebs pts 33.60
+2023 pick | Derius Davis | 2025: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 0; Plebs pts 0.50
+2023 pick | Deuce Vaughn | 2023: Sleeper denom 7 (raw gp=7.0, active=8.0) -> official 6; Plebs pts 11.50
+2023 pick | Deuce Vaughn | 2024: Sleeper denom 7 (raw gp=7.0, active=8.0) -> official 5; Plebs pts 10.30
+2023 pick | Deuce Vaughn | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2023 pick | Devon Achane | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 289.30
+2023 pick | Dontayvion Wicks | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 60.80
+2023 pick | Elijah Higgins | 2023: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 9; Plebs pts 29.30
+2023 pick | Elijah Higgins | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 39.20
+2023 pick | Elijah Higgins | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 43.10
+2023 pick | Eric Gray | 2023: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 5; Plebs pts 10.00
+2023 pick | Eric Gray | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 10; Plebs pts 12.30
+2023 pick | Eric Gray | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Evan Hull | 2024: Sleeper denom 1 (raw gp=1.0, active=16.0) -> official 0; Plebs pts 0.00
+2023 pick | Evan Hull | 2025: Sleeper denom 6 (raw gp=6.0, active=9.0) -> official 0; Plebs pts 5.90
+2023 pick | Hendon Hooker | 2023: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2023 pick | Hendon Hooker | 2025: Sleeper denom 12 (raw gp=None, active=12.0) -> official 0; Plebs pts 0.00
+2023 pick | Israel Abanikanda | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2023 pick | Israel Abanikanda | 2025: Sleeper denom 6 (raw gp=None, active=6.0) -> official 0; Plebs pts 0.00
+2023 pick | Jahmyr Gibbs | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 328.40
+2023 pick | Jake Haener | 2023: Sleeper denom 7 (raw gp=None, active=7.0) -> official 0; Plebs pts 0.00
+2023 pick | Jake Haener | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2023 pick | Jalen Brooks | 2023: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 3; Plebs pts 9.40
+2023 pick | Jalen Brooks | 2024: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 12; Plebs pts 29.70
+2023 pick | Jalen Brooks | 2025: Sleeper denom 6 (raw gp=6.0, active=17.0) -> official 0; Plebs pts 4.60
+2023 pick | Jalin Hyatt | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 48.80
+2023 pick | Jalin Hyatt | 2024: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 10; Plebs pts 10.20
+2023 pick | Jalin Hyatt | 2025: Sleeper denom 8 (raw gp=8.0, active=12.0) -> official 0; Plebs pts 6.00
+2023 pick | Jaxon Smith-Njigba | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 300.40
+2023 pick | Jayden Reed | 2025: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 0; Plebs pts 39.00
+2023 pick | Jonathan Mingo | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 23.70
+2023 pick | Jonathan Mingo | 2025: Sleeper denom 6 (raw gp=6.0, active=14.0) -> official 0; Plebs pts 3.00
+2023 pick | Jordan Addison | 2025: Sleeper denom 14 (raw gp=14.0, active=17.0) -> official 0; Plebs pts 114.10
+2023 pick | Josh Downs | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 107.40
+2023 pick | Josh Whyle | 2023: Sleeper denom 11 (raw gp=11.0, active=14.0) -> official 8; Plebs pts 19.90
+2023 pick | Josh Whyle | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 46.80
+2023 pick | Josh Whyle | 2025: Sleeper denom 8 (raw gp=8.0, active=16.0) -> official 0; Plebs pts 12.10
+2023 pick | Justin Shorter | 2023: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Justin Shorter | 2024: Sleeper denom 10 (raw gp=10.0, active=16.0) -> official 0; Plebs pts 0.00
+2023 pick | Justin Shorter | 2025: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Kayshon Boutte | 2023: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 3; Plebs pts 2.90
+2023 pick | Kayshon Boutte | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 107.60
+2023 pick | Keaton Mitchell | 2023: Sleeper denom 8 (raw gp=8.0, active=16.0) -> official 7; Plebs pts 65.40
+2023 pick | Keaton Mitchell | 2024: Sleeper denom 5 (raw gp=5.0, active=14.0) -> official 2; Plebs pts 6.30
+2023 pick | Keaton Mitchell | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 50.90
+2023 pick | Kendre Miller | 2023: Sleeper denom 8 (raw gp=8.0, active=9.0) -> official 7; Plebs pts 38.30
+2023 pick | Kendre Miller | 2025: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 0; Plebs pts 30.80
+2023 pick | Kenny McIntosh | 2023: Sleeper denom 3 (raw gp=3.0, active=12.0) -> official 0; Plebs pts 0.00
+2023 pick | Kenny McIntosh | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 7; Plebs pts 20.90
+2023 pick | Kenny McIntosh | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Lew Nichols III | 2023: Sleeper denom 11 (raw gp=None, active=11.0) -> official 0; Plebs pts 0.00
+2023 pick | Lew Nichols III | 2024: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2023 pick | Lew Nichols III | 2025: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Luke Musgrave | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 37.20
+2023 pick | Luke Schoonmaker | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 11; Plebs pts 22.50
+2023 pick | Luke Schoonmaker | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 10; Plebs pts 43.60
+2023 pick | Luke Schoonmaker | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 20.20
+2023 pick | Marvin Mims Jr | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 59.70
+2023 pick | Marvin Mims Jr | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 110.00
+2023 pick | Marvin Mims Jr | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 74.50
+2023 pick | Michael Mayer | 2023: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 12; Plebs pts 57.90
+2023 pick | Michael Mayer | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 56.30
+2023 pick | Michael Wilson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 181.60
+2023 pick | Mohamed Ibrahim | 2023: Sleeper denom 1 (raw gp=1.0, active=11.0) -> official 0; Plebs pts 0.00
+2023 pick | Nathaniel Dell | 2023: Sleeper denom 11 (raw gp=11.0, active=16.0) -> official 10; Plebs pts 141.50
+2023 pick | Nathaniel Dell | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Parker Washington | 2023: Sleeper denom 9 (raw gp=9.0, active=14.0) -> official 6; Plebs pts 31.20
+2023 pick | Parker Washington | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 81.00
+2023 pick | Parker Washington | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 155.70
+2023 pick | Puka Nacua | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 310.50
+2023 pick | Quentin Johnston | 2025: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 0; Plebs pts 145.70
+2023 pick | Rakim Jarrett | 2023: Sleeper denom 10 (raw gp=10.0, active=16.0) -> official 6; Plebs pts 8.00
+2023 pick | Rakim Jarrett | 2024: Sleeper denom 10 (raw gp=10.0, active=17.0) -> official 6; Plebs pts 16.90
+2023 pick | Rakim Jarrett | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2023 pick | Rashee Rice | 2024: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 3; Plebs pts 52.90
+2023 pick | Rashee Rice | 2025: Sleeper denom 8 (raw gp=8.0, active=16.0) -> official 0; Plebs pts 123.60
+2023 pick | Ronnie Bell | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 8; Plebs pts 27.80
+2023 pick | Ronnie Bell | 2024: Sleeper denom 9 (raw gp=9.0, active=14.0) -> official 3; Plebs pts 3.20
+2023 pick | Ronnie Bell | 2025: Sleeper denom 2 (raw gp=2.0, active=16.0) -> official 0; Plebs pts 9.30
+2023 pick | Roschon Johnson | 2024: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 12; Plebs pts 69.40
+2023 pick | Roschon Johnson | 2025: Sleeper denom 7 (raw gp=7.0, active=14.0) -> official 0; Plebs pts 1.70
+2023 pick | Sam LaPorta | 2025: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 0; Plebs pts 86.90
+2023 pick | Sean Tucker | 2023: Sleeper denom 11 (raw gp=11.0, active=15.0) -> official 3; Plebs pts 4.20
+2023 pick | Sean Tucker | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 11; Plebs pts 64.20
+2023 pick | Sean Tucker | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 87.40
+2023 pick | Stetson Bennett | 2023: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2023 pick | Stetson Bennett | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2023 pick | Stetson Bennett | 2025: Sleeper denom 1 (raw gp=None, active=1.0) -> official 0; Plebs pts 0.00
+2023 pick | Tank Bigsby | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 22.30
+2023 pick | Tank Bigsby | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 125.50
+2023 pick | Tank Bigsby | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 52.30
+2023 pick | Tre Tucker | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 62.30
+2023 pick | Tre Tucker | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 133.20
+2023 pick | Trey Palmer | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 10; Plebs pts 29.20
+2023 pick | Trey Palmer | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> official 0; Plebs pts 0.00
+2023 pick | Tucker Kraft | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 10; Plebs pts 63.00
+2023 pick | Tucker Kraft | 2025: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 0; Plebs pts 101.20
+2023 pick | Tyjae Spears | 2025: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 0; Plebs pts 89.20
+2023 pick | Tyler Scott | 2023: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 13; Plebs pts 27.40
+2023 pick | Tyler Scott | 2024: Sleeper denom 11 (raw gp=11.0, active=13.0) -> official 1; Plebs pts 1.00
+2023 pick | Tyler Scott | 2025: Sleeper denom 14 (raw gp=None, active=14.0) -> official 0; Plebs pts 0.00
+2023 pick | Will Levis | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Xavier Hutchinson | 2023: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 11; Plebs pts 17.90
+2023 pick | Xavier Hutchinson | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 14; Plebs pts 17.70
+2023 pick | Xavier Hutchinson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 80.50
+2023 pick | Xazavian Valladay | 2023: Sleeper denom 1 (raw gp=1.0, active=17.0) -> official 0; Plebs pts 0.00
+2023 pick | Xazavian Valladay | 2024: Sleeper denom 9 (raw gp=None, active=9.0) -> official 0; Plebs pts 0.00
+2023 pick | Xazavian Valladay | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2023 pick | Zach Charbonnet | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 171.40
+2023 pick | Zach Evans | 2023: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 4; Plebs pts 1.90
+2023 pick | Zach Evans | 2024: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2023 pick | Zay Flowers | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 200.30
+2024 pick | Adonai Mitchell | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 71.40
+2024 pick | Ainias Smith | 2024: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 3; Plebs pts 14.20
+2024 pick | Ainias Smith | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Audric Estime | 2025: Sleeper denom 7 (raw gp=7.0, active=15.0) -> official 0; Plebs pts 42.10
+2024 pick | Ben Sinnott | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 4; Plebs pts 11.30
+2024 pick | Ben Sinnott | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 22.90
+2024 pick | Blake Corum | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 14; Plebs pts 30.00
+2024 pick | Blake Corum | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 118.20
+2024 pick | Blake Watson | 2024: Sleeper denom 2 (raw gp=2.0, active=10.0) -> official 1; Plebs pts 2.80
+2024 pick | Blake Watson | 2025: Sleeper denom 13 (raw gp=None, active=13.0) -> official 0; Plebs pts 0.00
+2024 pick | Bo Nix | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 332.84
+2024 pick | Braelon Allen | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 14.30
+2024 pick | Brenden Rice | 2024: Sleeper denom 3 (raw gp=3.0, active=14.0) -> official 0; Plebs pts 0.00
+2024 pick | Brenden Rice | 2025: Sleeper denom 8 (raw gp=None, active=8.0) -> official 0; Plebs pts 0.00
+2024 pick | Brian Thomas Jr | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 114.80
+2024 pick | Brock Bowers | 2025: Sleeper denom 12 (raw gp=12.0, active=14.0) -> official 0; Plebs pts 144.20
+2024 pick | Bub Means | 2024: Sleeper denom 7 (raw gp=7.0, active=16.0) -> official 4; Plebs pts 22.30
+2024 pick | Bub Means | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Bucky Irving | 2025: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 0; Plebs pts 123.50
+2024 pick | Cade Stover | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 13; Plebs pts 26.80
+2024 pick | Cade Stover | 2025: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 0; Plebs pts 13.90
+2024 pick | Caleb Williams | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 357.18
+2024 pick | Casey Washington | 2024: Sleeper denom 8 (raw gp=8.0, active=12.0) -> official 2; Plebs pts 1.90
+2024 pick | Casey Washington | 2025: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 0; Plebs pts 12.40
+2024 pick | Clyde Edwards-Helaire | 2025: Sleeper denom 2 (raw gp=2.0, active=17.0) -> official 0; Plebs pts 3.20
+2024 pick | Cody Schrader | 2025: Sleeper denom 1 (raw gp=1.0, active=4.0) -> official 0; Plebs pts 0.00
+2024 pick | Colby Parkinson | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 50.40
+2024 pick | Colby Parkinson | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 108.30
+2024 pick | Cornelius Johnson | 2024: Sleeper denom 15 (raw gp=None, active=15.0) -> official 0; Plebs pts 0.00
+2024 pick | Cornelius Johnson | 2025: Sleeper denom 16 (raw gp=None, active=16.0) -> official 0; Plebs pts 0.00
+2024 pick | Devontez Walker | 2024: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 2; Plebs pts 8.60
+2024 pick | Devontez Walker | 2025: Sleeper denom 12 (raw gp=12.0, active=12.0) -> official 0; Plebs pts 34.60
+2024 pick | Drake Maye | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 397.46
+2024 pick | Dylan Laube | 2024: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 1; Plebs pts -2.00
+2024 pick | Dylan Laube | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 2.20
+2024 pick | Erick All | 2024: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 8; Plebs pts 25.80
+2024 pick | Erick All | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Isaac Guerendo | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 13; Plebs pts 86.70
+2024 pick | Isaac Guerendo | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 0.00
+2024 pick | Isaiah Davis | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 9; Plebs pts 41.40
+2024 pick | Isaiah Davis | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 60.70
+2024 pick | JJ McCarthy | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | JJ McCarthy | 2025: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 0; Plebs pts 123.38
+2024 pick | Ja'Lynn Polk | 2024: Sleeper denom 15 (raw gp=15.0, active=16.0) -> official 13; Plebs pts 26.70
+2024 pick | Ja'Lynn Polk | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Ja'Tavion Sanders | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 56.70
+2024 pick | Ja'Tavion Sanders | 2025: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 0; Plebs pts 39.50
+2024 pick | Jacob Cowing | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 3; Plebs pts 8.70
+2024 pick | Jacob Cowing | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Jalen McMillan | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 23.90
+2024 pick | Jamari Thrash | 2024: Sleeper denom 9 (raw gp=9.0, active=11.0) -> official 6; Plebs pts 3.70
+2024 pick | Jamari Thrash | 2025: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 0; Plebs pts 15.70
+2024 pick | Jared Wiley | 2024: Sleeper denom 7 (raw gp=7.0, active=17.0) -> official 1; Plebs pts 1.20
+2024 pick | Jared Wiley | 2025: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 0; Plebs pts 0.90
+2024 pick | Javon Baker | 2024: Sleeper denom 11 (raw gp=11.0, active=12.0) -> official 4; Plebs pts 1.70
+2024 pick | Javon Baker | 2025: Sleeper denom 10 (raw gp=None, active=10.0) -> official 0; Plebs pts 0.00
+2024 pick | Jawhar Jordan | 2024: Sleeper denom 10 (raw gp=None, active=10.0) -> official 0; Plebs pts 0.00
+2024 pick | Jawhar Jordan | 2025: Sleeper denom 4 (raw gp=4.0, active=16.0) -> official 0; Plebs pts 26.20
+2024 pick | Jayden Daniels | 2025: Sleeper denom 7 (raw gp=7.0, active=7.0) -> official 0; Plebs pts 124.28
+2024 pick | Jaylen Wright | 2024: Sleeper denom 15 (raw gp=15.0, active=16.0) -> official 13; Plebs pts 25.20
+2024 pick | Jaylen Wright | 2025: Sleeper denom 10 (raw gp=10.0, active=12.0) -> official 0; Plebs pts 45.70
+2024 pick | Jermaine Burton | 2024: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 4; Plebs pts 12.70
+2024 pick | Johnny Wilson | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 9; Plebs pts 12.30
+2024 pick | Johnny Wilson | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Jonathon Brooks | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Jordan Travis | 2024: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Jordan Whittington | 2024: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 6; Plebs pts 41.50
+2024 pick | Jordan Whittington | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 27.30
+2024 pick | Keenan Allen | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 142.20
+2024 pick | Kenneth Gainwell | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 54.60
+2024 pick | Kenneth Gainwell | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 184.80
+2024 pick | Keon Coleman | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 83.40
+2024 pick | Kimani Vidal | 2024: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 9; Plebs pts 30.20
+2024 pick | Kimani Vidal | 2025: Sleeper denom 13 (raw gp=13.0, active=16.0) -> official 0; Plebs pts 109.90
+2024 pick | Ladd McConkey | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 147.90
+2024 pick | Luke McCaffrey | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 12; Plebs pts 25.80
+2024 pick | Luke McCaffrey | 2025: Sleeper denom 9 (raw gp=9.0, active=17.0) -> official 0; Plebs pts 45.80
+2024 pick | Malachi Corley | 2024: Sleeper denom 9 (raw gp=9.0, active=12.0) -> official 5; Plebs pts 3.70
+2024 pick | Malachi Corley | 2025: Sleeper denom 13 (raw gp=13.0, active=17.0) -> official 0; Plebs pts 26.10
+2024 pick | Malik Nabers | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 48.10
+2024 pick | Malik Washington | 2024: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 12; Plebs pts 41.80
+2024 pick | Malik Washington | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 93.70
+2024 pick | Marshawn Lloyd | 2025: Sleeper denom 17 (raw gp=None, active=17.0) -> official 0; Plebs pts 0.00
+2024 pick | Michael Penix | 2025: Sleeper denom 9 (raw gp=9.0, active=16.0) -> official 0; Plebs pts 132.28
+2024 pick | Rasheen Ali | 2024: Sleeper denom 6 (raw gp=6.0, active=11.0) -> official 4; Plebs pts 3.10
+2024 pick | Rasheen Ali | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 19.70
+2024 pick | Ray Davis | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 107.60
+2024 pick | Ray Davis | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 59.10
+2024 pick | Ricky Pearsall | 2024: Sleeper denom 11 (raw gp=11.0, active=17.0) -> official 10; Plebs pts 78.00
+2024 pick | Ricky Pearsall | 2025: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 0; Plebs pts 70.60
+2024 pick | Roman Wilson | 2024: Sleeper denom 1 (raw gp=1.0, active=11.0) -> official 0; Plebs pts 0.00
+2024 pick | Roman Wilson | 2025: Sleeper denom 13 (raw gp=13.0, active=13.0) -> official 0; Plebs pts 32.60
+2024 pick | Rome Odunze | 2025: Sleeper denom 12 (raw gp=12.0, active=13.0) -> official 0; Plebs pts 124.10
+2024 pick | Sam Darnold | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 257.42
+2024 pick | Sione Vaki | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 4; Plebs pts 6.60
+2024 pick | Sione Vaki | 2025: Sleeper denom 11 (raw gp=11.0, active=11.0) -> official 0; Plebs pts 0.40
+2024 pick | Spencer Rattler | 2025: Sleeper denom 9 (raw gp=9.0, active=16.0) -> official 0; Plebs pts 104.64
+2024 pick | Theo Johnson | 2024: Sleeper denom 12 (raw gp=12.0, active=17.0) -> official 10; Plebs pts 53.60
+2024 pick | Theo Johnson | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 105.30
+2024 pick | Trey Benson | 2024: Sleeper denom 13 (raw gp=13.0, active=15.0) -> official 12; Plebs pts 44.00
+2024 pick | Trey Benson | 2025: Sleeper denom 4 (raw gp=4.0, active=17.0) -> official 0; Plebs pts 28.90
+2024 pick | Troy Franklin | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 144.60
+2024 pick | Tyrone Tracy | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 142.80
+2024 pick | Van Jefferson | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 15; Plebs pts 51.60
+2024 pick | Van Jefferson | 2025: Sleeper denom 16 (raw gp=16.0, active=17.0) -> official 0; Plebs pts 55.50
+2024 pick | Will Shipley | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 5; Plebs pts 13.70
+2024 pick | Will Shipley | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 13.00
+2024 pick | Xavier Legette | 2024: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 15; Plebs pts 100.60
+2024 pick | Xavier Legette | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 71.80
+2024 pick | Xavier Worthy | 2024: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 16; Plebs pts 157.70
+2024 pick | Xavier Worthy | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 88.90
+2025 pick | Arian Smith | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 10.00
+2025 pick | Ashton Jeanty | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 217.60
+2025 pick | Bhayshul Tuten | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 83.60
+2025 pick | Brashard Smith | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 50.80
+2025 pick | Cam Skattebo | 2025: Sleeper denom 8 (raw gp=8.0, active=17.0) -> official 0; Plebs pts 115.70
+2025 pick | Cam Ward | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 202.66
+2025 pick | Chimere Dike | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 102.10
+2025 pick | Colston Loveland | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 136.10
+2025 pick | DJ Giddens | 2025: Sleeper denom 9 (raw gp=9.0, active=9.0) -> official 0; Plebs pts 9.60
+2025 pick | Damien Martinez | 2025: Sleeper denom 3 (raw gp=None, active=3.0) -> official 0; Plebs pts 0.00
+2025 pick | Devin Neal | 2025: Sleeper denom 10 (raw gp=10.0, active=14.0) -> official 0; Plebs pts 51.50
+2025 pick | Dillon Gabriel | 2025: Sleeper denom 10 (raw gp=10.0, active=15.0) -> official 0; Plebs pts 80.08
+2025 pick | Don'te Thornton | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 18.50
+2025 pick | Dont'e Thornton | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 18.50
+2025 pick | Dylan Sampson | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 71.10
+2025 pick | Elic Ayomanor | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 96.00
+2025 pick | Elijah Arroyo | 2025: Sleeper denom 13 (raw gp=13.0, active=16.0) -> official 0; Plebs pts 29.40
+2025 pick | Emeka Egbuka | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 164.20
+2025 pick | Harold Fannin | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 150.40
+2025 pick | Isaac TeSlaa | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 67.90
+2025 pick | Isaiah Bond | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 45.70
+2025 pick | Jack Bech | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 32.40
+2025 pick | Jacory Croskey-Merritt | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 135.80
+2025 pick | Jalen Milroe | 2025: Sleeper denom 3 (raw gp=3.0, active=4.0) -> official 0; Plebs pts -1.60
+2025 pick | Jalen Royals | 2025: Sleeper denom 7 (raw gp=7.0, active=9.0) -> official 0; Plebs pts 1.40
+2025 pick | Jarquez Hunter | 2025: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 0; Plebs pts 0.00
+2025 pick | Jaxson Dart | 2025: Sleeper denom 14 (raw gp=14.0, active=15.0) -> official 0; Plebs pts 261.58
+2025 pick | Jayden Higgins | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 109.00
+2025 pick | Jaydon Blue | 2025: Sleeper denom 5 (raw gp=5.0, active=5.0) -> official 0; Plebs pts 19.90
+2025 pick | Jaylin Lane | 2025: Sleeper denom 15 (raw gp=15.0, active=17.0) -> official 0; Plebs pts 41.20
+2025 pick | Jaylin Noel | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 55.40
+2025 pick | Jordan James | 2025: Sleeper denom 3 (raw gp=3.0, active=3.0) -> official 0; Plebs pts 0.00
+2025 pick | Kaleb Johnson | 2025: Sleeper denom 10 (raw gp=10.0, active=14.0) -> official 0; Plebs pts 8.30
+2025 pick | KeAndre Lambert-Smith | 2025: Sleeper denom 10 (raw gp=10.0, active=10.0) -> official 0; Plebs pts 13.60
+2025 pick | Khalil Herbert | 2025: Sleeper denom 7 (raw gp=7.0, active=9.0) -> official 0; Plebs pts 6.10
+2025 pick | Kyle Monangai | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 137.70
+2025 pick | Luther Burden | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 104.40
+2025 pick | Mason Taylor | 2025: Sleeper denom 13 (raw gp=13.0, active=14.0) -> official 0; Plebs pts 66.90
+2025 pick | Matthew Golden | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 55.50
+2025 pick | Ollie Gordon | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 50.60
+2025 pick | Omarion Hampton | 2025: Sleeper denom 9 (raw gp=9.0, active=16.0) -> official 0; Plebs pts 119.70
+2025 pick | Pat Bryant | 2025: Sleeper denom 15 (raw gp=15.0, active=15.0) -> official 0; Plebs pts 59.30
+2025 pick | Quinshon Judkins | 2025: Sleeper denom 15 (raw gp=15.0, active=17.0) -> official 0; Plebs pts 156.80
+2025 pick | RJ Harvey | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 183.10
+2025 pick | Raheim Sanders | 2025: Sleeper denom 4 (raw gp=4.0, active=6.0) -> official 0; Plebs pts 18.80
+2025 pick | Savion Williams | 2025: Sleeper denom 12 (raw gp=12.0, active=13.0) -> official 0; Plebs pts 20.50
+2025 pick | Shedeur Sanders | 2025: Sleeper denom 8 (raw gp=8.0, active=11.0) -> official 0; Plebs pts 78.90
+2025 pick | Tahj Brooks | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 5.90
+2025 pick | Tai Felton | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 4.00
+2025 pick | Terrance Ferguson | 2025: Sleeper denom 14 (raw gp=14.0, active=14.0) -> official 0; Plebs pts 46.60
+2025 pick | Tetairoa McMillan | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 176.40
+2025 pick | Tory Horton | 2025: Sleeper denom 8 (raw gp=8.0, active=15.0) -> official 0; Plebs pts 58.60
+2025 pick | Tre Harris | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 54.40
+2025 pick | TreVeyon Henderson | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 188.70
+2025 pick | Trevor Etienne | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 10.20
+2025 pick | Tyler Shough | 2025: Sleeper denom 11 (raw gp=11.0, active=17.0) -> official 0; Plebs pts 165.96
+2025 pick | Tyler Warren | 2025: Sleeper denom 17 (raw gp=17.0, active=17.0) -> official 0; Plebs pts 150.50
+2025 pick | Will Howard | 2025: Sleeper denom 10 (raw gp=None, active=10.0) -> official 0; Plebs pts 0.00
+2025 pick | Woody Marks | 2025: Sleeper denom 16 (raw gp=16.0, active=16.0) -> official 0; Plebs pts 139.10
+
+CAREER CHANGES
+2019|ajbrown: games 105 -> 90; PPG 13.428 -> 13.651; points 1409.90 -> 1228.60
+2019|alexandermattison: games 106 -> 89; PPG 5.398 -> 6.429; points 572.20 -> 572.20
+2019|andyisabella: games 44 -> 24; PPG 1.823 -> 3.342; points 80.20 -> 80.20
+2019|bennysnell: games 63 -> 42; PPG 2.478 -> 3.717; points 156.10 -> 156.10
+2019|damienharris: games 44 -> 43; PPG 8.898 -> 9.105; points 391.50 -> 391.50
+2019|danieljones: games 83 -> 70; PPG 16.117 -> 15.561; points 1337.72 -> 1089.28
+2019|darrellhenderson: games 55 -> 48; PPG 7.184 -> 8.231; points 395.10 -> 395.10
+2019|darwinthompson: games 60 -> 15; PPG 0.955 -> 3.820; points 57.30 -> 57.30
+2019|davidmontgomery: games 105 -> 88; PPG 12.288 -> 12.879; points 1290.24 -> 1133.32
+2019|dawsonknox: games 103 -> 80; PPG 5.332 -> 5.794; points 549.20 -> 463.50
+2019|deebosamuel: games 97 -> 80; PPG 11.976 -> 12.618; points 1161.66 -> 1009.46
+2019|devineozigbo: games 28 -> 10; PPG 0.686 -> 1.920; points 19.20 -> 19.20
+2019|devinsingletary: games 111 -> 93; PPG 8.426 -> 8.983; points 935.24 -> 835.44
+2019|dexterwilliams: games 16 -> 3; PPG 0.119 -> 0.633; points 1.90 -> 1.90
+2019|diontaejohnson: games 89 -> 88; PPG 9.773 -> 9.884; points 869.80 -> 869.80
+2019|dkmetcalf: games 112 -> 97; PPG 11.471 -> 11.620; points 1284.80 -> 1127.10
+2019|drewlock: games 58 -> 35; PPG 7.277 -> 12.056; points 422.06 -> 421.96
+2019|dwaynehaskins: games 17 -> 16; PPG 8.286 -> 8.804; points 140.86 -> 140.86
+2019|hakeembutler: games 2 -> 1; PPG 0.000 -> 0.000; points 0.00 -> 0.00
+2019|hunterrenfrow: games 79 -> 69; PPG 6.906 -> 7.496; points 545.60 -> 517.20
+2019|irvsmithjr: current outcome should be removed; 0 official appearances
+2019|jacesternberger: games 29 -> 9; PPG 0.807 -> 2.600; points 23.40 -> 23.40
+2019|jalenhurd: current outcome should be removed; 0 official appearances
+2019|jjarcegawhiteside: games 48 -> 16; PPG 1.062 -> 3.188; points 51.00 -> 51.00
+2019|jordanscarlett: games 10 -> 1; PPG 0.090 -> 0.900; points 0.90 -> 0.90
+2019|joshjacobs: games 105 -> 90; PPG 14.800 -> 14.832; points 1554.00 -> 1334.90
+2019|justicehill: games 85 -> 65; PPG 4.095 -> 4.514; points 348.10 -> 293.40
+2019|kahalewarring: games 9 -> 4; PPG 0.556 -> 1.250; points 5.00 -> 5.00
+2019|kelvinharmon: games 47 -> 13; PPG 1.105 -> 3.995; points 51.94 -> 51.94
+2019|kylermurray: games 87 -> 82; PPG 20.786 -> 21.032; points 1808.40 -> 1724.62
+2019|marquisebrown: games 90 -> 73; PPG 9.074 -> 9.637; points 816.70 -> 703.50
+2019|mecolehardman: games 82 -> 70; PPG 5.490 -> 6.460; points 450.20 -> 452.20
+2019|milesboykin: games 96 -> 33; PPG 1.154 -> 3.358; points 110.80 -> 110.80
+2019|milessanders: games 88 -> 84; PPG 9.353 -> 9.529; points 823.10 -> 800.40
+2019|mylesgaskin: games 47 -> 38; PPG 7.026 -> 8.674; points 330.20 -> 329.60
+2019|nkealharry: games 59 -> 35; PPG 2.276 -> 3.837; points 134.30 -> 134.30
+2019|noahfant: games 110 -> 91; PPG 5.701 -> 6.256; points 627.10 -> 569.30
+2019|parriscampbell: games 50 -> 44; PPG 4.360 -> 4.955; points 218.00 -> 218.00
+2019|qadreeollison: games 24 -> 13; PPG 2.008 -> 3.708; points 48.20 -> 48.20
+2019|rileyridley: games 10 -> 5; PPG 1.580 -> 3.160; points 15.80 -> 15.80
+2019|ryquellarmstead: games 18 -> 16; PPG 3.072 -> 3.456; points 55.30 -> 55.30
+2019|terrymclaurin: games 107 -> 97; PPG 11.219 -> 11.394; points 1200.40 -> 1105.20
+2019|tjhockenson: games 97 -> 82; PPG 8.438 -> 8.917; points 818.50 -> 731.20
+2019|tonypollard: games 112 -> 94; PPG 9.870 -> 9.959; points 1105.40 -> 936.10
+2019|trayveonwilliams: games 76 -> 26; PPG 0.746 -> 1.677; points 56.70 -> 43.60
+2020|adamtrautman: games 94 -> 62; PPG 2.535 -> 3.271; points 238.30 -> 202.80
+2020|ajdillon: games 84 -> 58; PPG 5.663 -> 8.071; points 475.70 -> 468.10
+2020|albertokwuegbunam: games 42 -> 24; PPG 2.612 -> 4.317; points 109.70 -> 103.60
+2020|anthonymcfarland: games 17 -> 15; PPG 1.694 -> 1.920; points 28.80 -> 28.80
+2020|antoniogandygolden: games 10 -> 4; PPG 0.300 -> 0.750; points 3.00 -> 3.00
+2020|antoniogibson: games 83 -> 78; PPG 9.069 -> 9.365; points 752.70 -> 730.50
+2020|brandonaiyuk: games 86 -> 68; PPG 8.688 -> 10.988; points 747.20 -> 747.20
+2020|bryanedwards: games 35 -> 29; PPG 3.597 -> 4.341; points 125.90 -> 125.90
+2020|camakers: games 58 -> 49; PPG 6.388 -> 7.373; points 370.48 -> 361.30
+2020|ceedeelamb: games 95 -> 81; PPG 14.043 -> 14.453; points 1334.10 -> 1170.70
+2020|chaseclaypool: games 58 -> 53; PPG 7.289 -> 7.976; points 422.74 -> 422.74
+2020|clydeedwardshelaire: games 52 -> 50; PPG 8.254 -> 8.520; points 429.20 -> 426.00
+2020|colekmet: games 100 -> 76; PPG 5.667 -> 6.618; points 566.70 -> 503.00
+2020|collinjohnson: games 55 -> 20; PPG 1.253 -> 3.445; points 68.90 -> 68.90
+2020|dandreswift: games 89 -> 73; PPG 12.322 -> 12.125; points 1096.70 -> 885.10
+2020|darnellmooney: games 91 -> 74; PPG 7.398 -> 8.201; points 673.20 -> 606.90
+2020|darryntonevans: games 24 -> 15; PPG 2.288 -> 3.660; points 54.90 -> 54.90
+2020|deejaydallas: games 84 -> 47; PPG 1.911 -> 3.370; points 160.50 -> 158.40
+2020|denzelmims: games 43 -> 28; PPG 2.107 -> 3.236; points 90.60 -> 90.60
+2020|devinduvernay: games 89 -> 59; PPG 2.584 -> 3.837; points 230.00 -> 226.40
+2020|donovanpeoplesjones: games 75 -> 49; PPG 4.036 -> 6.178; points 302.70 -> 302.70
+2020|enobenjamin: games 41 -> 19; PPG 2.490 -> 5.374; points 102.10 -> 102.10
+2020|gabrieldavis: games 81 -> 71; PPG 7.199 -> 7.862; points 583.10 -> 558.20
+2020|jalenreagor: games 66 -> 54; PPG 2.915 -> 3.563; points 192.40 -> 192.40
+2020|jamesproche: games 71 -> 21; PPG 0.639 -> 1.710; points 45.40 -> 35.90
+2020|jerryjeudy: games 91 -> 74; PPG 8.513 -> 9.176; points 774.70 -> 679.00
+2020|jkdobbins: games 64 -> 37; PPG 8.345 -> 11.451; points 534.10 -> 423.70
+2020|joeburrow: games 78 -> 69; PPG 21.966 -> 22.535; points 1713.38 -> 1554.92
+2020|joereed: current outcome should be removed; 0 official appearances
+2020|jonathantaylor: games 84 -> 67; PPG 17.169 -> 16.461; points 1442.20 -> 1102.90
+2020|jordanlove: games 57 -> 42; PPG 16.226 -> 15.613; points 924.90 -> 655.76
+2020|joshuakelley: games 57 -> 51; PPG 3.507 -> 3.920; points 199.90 -> 199.90
+2020|justinherbert: games 95 -> 79; PPG 21.156 -> 21.480; points 2009.80 -> 1696.92
+2020|justinjefferson: games 94 -> 77; PPG 14.946 -> 16.175; points 1404.94 -> 1245.44
+2020|keshawnvaughn: games 46 -> 23; PPG 1.520 -> 3.039; points 69.90 -> 69.90
+2020|kjhamler: games 53 -> 21; PPG 2.025 -> 5.110; points 107.30 -> 107.30
+2020|kjhill: games 21 -> 6; PPG 0.633 -> 2.217; points 13.30 -> 13.30
+2020|lamicalperine: games 33 -> 13; PPG 1.897 -> 4.815; points 62.60 -> 62.60
+2020|laviskashenault: games 63 -> 57; PPG 4.881 -> 5.395; points 307.50 -> 307.50
+2020|lynnbowdenjr: games 43 -> 17; PPG 1.316 -> 3.328; points 56.58 -> 56.58
+2020|michaelpittman: current outcome should be removed; 0 official appearances
+2020|quintezcephus: games 51 -> 17; PPG 1.986 -> 5.959; points 101.30 -> 101.30
+2020|teehiggins: games 86 -> 67; PPG 11.781 -> 12.404; points 1013.20 -> 831.10
+2020|tuatagovailoa: games 78 -> 64; PPG 16.435 -> 17.363; points 1281.94 -> 1111.24
+2020|tylerjohnson: games 61 -> 37; PPG 2.893 -> 3.914; points 176.50 -> 144.80
+2020|vanjefferson: games 94 -> 69; PPG 4.105 -> 4.788; points 385.90 -> 330.40
+2021|amarirodgers: games 35 -> 14; PPG 1.106 -> 2.764; points 38.70 -> 38.70
+2021|amonrastbrown: games 83 -> 65; PPG 14.391 -> 14.292; points 1194.48 -> 928.98
+2021|anthonyschwartz: games 51 -> 18; PPG 0.886 -> 2.511; points 45.20 -> 45.20
+2021|brevinjordan: games 53 -> 28; PPG 2.070 -> 3.918; points 109.70 -> 109.70
+2021|chubahubbard: games 79 -> 60; PPG 8.852 -> 9.815; points 699.30 -> 588.90
+2021|cornellpowell: current outcome should be removed; 0 official appearances
+2021|devontasmith: games 80 -> 63; PPG 10.956 -> 11.321; points 876.50 -> 713.20
+2021|dezfitzpatrick: games 7 -> 3; PPG 1.914 -> 4.467; points 13.40 -> 13.40
+2021|dwayneeskridge: games 43 -> 22; PPG 1.074 -> 1.818; points 46.20 -> 40.00
+2021|dyamibrown: games 77 -> 44; PPG 2.253 -> 3.040; points 173.46 -> 133.76
+2021|elijahmoore: games 70 -> 58; PPG 5.763 -> 6.540; points 403.40 -> 379.30
+2021|hunterlong: games 46 -> 10; PPG 0.941 -> 1.680; points 43.30 -> 16.80
+2021|jaelondarden: games 36 -> 11; PPG 0.369 -> 1.209; points 13.30 -> 13.30
+2021|jamarrchase: games 79 -> 62; PPG 16.029 -> 16.375; points 1266.32 -> 1015.22
+2021|javianhawkins: current outcome should be removed; 0 official appearances
+2021|javontewilliams: games 70 -> 54; PPG 10.433 -> 9.352; points 730.30 -> 505.00
+2021|jaylenwaddle: games 78 -> 62; PPG 11.036 -> 11.269; points 860.82 -> 698.70
+2021|jermarjefferson: games 37 -> 6; PPG 0.741 -> 4.567; points 27.40 -> 27.40
+2021|joshpalmer: games 70 -> 56; PPG 6.094 -> 6.880; points 426.60 -> 385.30
+2021|justinfields: games 59 -> 50; PPG 16.182 -> 16.002; points 954.76 -> 800.10
+2021|kadariustoney: games 35 -> 33; PPG 4.265 -> 4.523; points 149.26 -> 149.26
+2021|kellenmond: games 13 -> 1; PPG 0.015 -> 0.200; points 0.20 -> 0.20
+2021|kenenwangwu: games 51 -> 13; PPG 0.975 -> 2.985; points 49.70 -> 38.80
+2021|kennethgainwell: games 83 -> 65; PPG 6.085 -> 4.927; points 505.08 -> 320.28
+2021|khalilherbert: games 63 -> 47; PPG 5.084 -> 6.685; points 320.30 -> 314.20
+2021|kylepitts: games 78 -> 61; PPG 7.558 -> 6.930; points 589.50 -> 422.70
+2021|larryrountree: games 17 -> 10; PPG 1.141 -> 1.940; points 19.40 -> 19.40
+2021|macjones: games 63 -> 52; PPG 12.088 -> 11.875; points 761.54 -> 617.50
+2021|michaelcarter: games 61 -> 48; PPG 6.582 -> 6.646; points 401.50 -> 319.00
+2021|michaelstrachan: current outcome should be removed; 0 official appearances
+2021|najeeharris: games 71 -> 68; PPG 11.898 -> 12.274; points 844.76 -> 834.66
+2021|nicocollins: games 66 -> 51; PPG 11.112 -> 10.641; points 733.40 -> 542.70
+2021|noahgray: games 83 -> 56; PPG 2.980 -> 3.911; points 247.30 -> 219.00
+2021|patfreiermuth: games 78 -> 59; PPG 6.771 -> 7.373; points 528.10 -> 435.00
+2021|rashodbateman: games 64 -> 49; PPG 6.016 -> 6.920; points 385.00 -> 339.10
+2021|rhamondrestevenson: games 70 -> 56; PPG 11.020 -> 10.868; points 771.40 -> 608.60
+2021|rondalemoore: games 73 -> 39; PPG 3.212 -> 6.013; points 234.50 -> 234.50
+2021|sethwilliams: games 48 -> 1; PPG 0.081 -> 3.900; points 3.90 -> 3.90
+2021|terracemarshall: games 56 -> 38; PPG 2.184 -> 3.218; points 122.30 -> 122.30
+2021|travisetienne: games 83 -> 49; PPG 9.489 -> 11.259; points 787.60 -> 551.70
+2021|trevorlawrence: games 77 -> 60; PPG 17.150 -> 15.807; points 1320.58 -> 948.40
+2021|treylance: games 16 -> 12; PPG 6.479 -> 7.677; points 103.66 -> 92.12
+2021|treysermon: games 46 -> 28; PPG 2.028 -> 3.332; points 93.30 -> 93.30
+2021|tutuatwell: games 64 -> 41; PPG 3.956 -> 5.488; points 253.20 -> 225.00
+2021|tylanwallace: games 68 -> 19; PPG 0.875 -> 2.474; points 59.50 -> 47.00
+2021|zachdavidson: games 53 -> 2; PPG 0.019 -> 0.500; points 1.00 -> 1.00
+2021|zachwilson: games 38 -> 34; PPG 9.674 -> 10.771; points 367.60 -> 366.22
+2022|alecpierce: games 64 -> 49; PPG 7.405 -> 6.410; points 473.90 -> 314.10
+2022|breecehall: games 56 -> 40; PPG 13.610 -> 14.262; points 762.16 -> 570.50
+2022|brianrobinson: games 58 -> 41; PPG 8.562 -> 10.685; points 496.60 -> 438.10
+2022|calvinaustiniii: games 65 -> 31; PPG 3.318 -> 4.677; points 215.70 -> 145.00
+2022|chrisolave: games 55 -> 39; PPG 11.395 -> 10.531; points 626.70 -> 410.70
+2022|christianwatson: games 48 -> 37; PPG 9.096 -> 8.695; points 436.60 -> 321.70
+2022|dameonpierce: games 43 -> 35; PPG 6.365 -> 7.717; points 273.70 -> 270.10
+2022|dannygray: games 55 -> 5; PPG 0.044 -> 0.480; points 2.40 -> 2.40
+2022|davidbell: games 38 -> 24; PPG 2.087 -> 3.304; points 79.30 -> 79.30
+2022|desmondridder: games 28 -> 24; PPG 8.617 -> 10.053; points 241.28 -> 241.28
+2022|drakelondon: games 62 -> 50; PPG 10.987 -> 10.266; points 681.18 -> 513.28
+2022|garrettwilson: games 58 -> 51; PPG 10.738 -> 10.614; points 622.80 -> 541.30
+2022|georgepickens: games 65 -> 48; PPG 10.740 -> 9.431; points 698.10 -> 452.70
+2022|gregdulcich: games 31 -> 15; PPG 4.152 -> 5.260; points 128.70 -> 78.90
+2022|hassanhaskins: games 61 -> 18; PPG 0.980 -> 2.878; points 59.80 -> 51.80
+2022|isaiahspiller: games 18 -> 14; PPG 1.272 -> 1.636; points 22.90 -> 22.90
+2022|isiahpacheco: games 51 -> 38; PPG 8.806 -> 9.771; points 449.10 -> 371.30
+2022|jahandotson: games 63 -> 43; PPG 4.556 -> 5.716; points 287.00 -> 245.80
+2022|jalennailor: games 55 -> 22; PPG 3.782 -> 5.536; points 208.00 -> 121.80
+2022|jalentolbert: games 55 -> 32; PPG 3.905 -> 5.547; points 214.80 -> 177.50
+2022|jamescook: games 67 -> 49; PPG 12.599 -> 11.396; points 844.10 -> 558.40
+2022|jamesonwilliams: games 50 -> 33; PPG 9.070 -> 8.064; points 453.50 -> 266.10
+2022|jelaniwoods: games 52 -> 12; PPG 1.242 -> 5.142; points 64.60 -> 61.70
+2022|jeromeford: games 57 -> 33; PPG 5.904 -> 9.270; points 336.50 -> 305.90
+2022|johnmetchieiii: games 62 -> 24; PPG 1.984 -> 2.817; points 123.00 -> 67.60
+2022|justynross: games 29 -> 6; PPG 0.286 -> 1.383; points 8.30 -> 8.30
+2022|keaontayingram: games 38 -> 17; PPG 0.739 -> 1.653; points 28.10 -> 28.10
+2022|kennypickett: games 36 -> 30; PPG 8.137 -> 9.573; points 292.92 -> 287.20
+2022|kenwalkeriii: games 58 -> 41; PPG 12.216 -> 12.978; points 708.50 -> 532.10
+2022|kevinharris: games 26 -> 9; PPG 1.192 -> 3.444; points 31.00 -> 31.00
+2022|khalilshakir: games 63 -> 41; PPG 6.311 -> 6.517; points 397.60 -> 267.20
+2022|kylephilips: games 29 -> 12; PPG 1.083 -> 2.617; points 31.40 -> 31.40
+2022|kyrenwilliams: games 55 -> 36; PPG 13.916 -> 14.447; points 765.40 -> 520.10
+2022|malikwillis: games 22 -> 15; PPG 5.972 -> 4.947; points 131.38 -> 74.20
+2022|montrellwashington: games 22 -> 9; PPG 0.145 -> 0.356; points 3.20 -> 3.20
+2022|pierrestrong: games 60 -> 28; PPG 1.537 -> 3.293; points 92.20 -> 92.20
+2022|rachaadwhite: games 67 -> 48; PPG 9.658 -> 10.919; points 647.10 -> 524.10
+2022|romeodoubs: games 59 -> 43; PPG 8.008 -> 7.781; points 472.50 -> 334.60
+2022|skyymoore: games 53 -> 29; PPG 1.658 -> 2.607; points 87.90 -> 75.60
+2022|treylonburks: games 35 -> 25; PPG 3.971 -> 4.600; points 139.00 -> 115.00
+2022|treymcbride: games 66 -> 42; PPG 9.624 -> 9.102; points 635.20 -> 382.30
+2022|tylerallgeier: games 67 -> 50; PPG 7.399 -> 7.594; points 495.70 -> 379.70
+2022|tylerbadie: games 36 -> 4; PPG 1.186 -> 4.200; points 42.70 -> 16.80
+2022|tyquanthornton: games 42 -> 25; PPG 3.667 -> 3.308; points 154.00 -> 82.70
+2022|tyriondavisprice: games 8 -> 7; PPG 1.587 -> 1.814; points 12.70 -> 12.70
+2022|velusjones: games 37 -> 21; PPG 1.168 -> 1.905; points 43.20 -> 40.00
+2022|wandalerobinson: games 54 -> 38; PPG 8.359 -> 7.355; points 451.40 -> 279.50
+2022|zamirwhite: games 45 -> 32; PPG 2.384 -> 3.116; points 107.30 -> 99.70
+2023|aidanoconnell: games 21 -> 20; PPG 11.528 -> 11.865; points 242.08 -> 237.30
+2023|andreiiosivas: games 50 -> 26; PPG 4.368 -> 5.577; points 218.40 -> 145.00
+2023|anthonyrichardson: games 17 -> 15; PPG 13.718 -> 15.436; points 233.20 -> 231.54
+2023|atperry: games 39 -> 8; PPG 1.400 -> 6.825; points 54.60 -> 54.60
+2023|bijanrobinson: games 51 -> 34; PPG 16.859 -> 15.544; points 859.80 -> 528.50
+2023|brentonstrange: games 43 -> 19; PPG 4.142 -> 4.374; points 178.10 -> 83.10
+2023|bryceyoung: games 46 -> 30; PPG 13.205 -> 12.180; points 607.44 -> 365.40
+2023|cedrictillman: current outcome should be removed; 0 official appearances
+2023|charliejones: current outcome should be removed; 0 official appearances
+2023|chasebrown: games 45 -> 26; PPG 11.613 -> 10.558; points 522.60 -> 274.50
+2023|chrisrodriguezjr: games 35 -> 14; PPG 4.526 -> 4.850; points 158.40 -> 67.90
+2023|cjstroud: games 46 -> 32; PPG 16.923 -> 17.122; points 778.44 -> 547.90
+2023|claytontune: games 15 -> 11; PPG 0.092 -> 0.127; points 1.38 -> 1.40
+2023|daltonkincaid: games 41 -> 29; PPG 7.298 -> 6.641; points 299.20 -> 192.60
+2023|darnellwashington: games 50 -> 21; PPG 2.060 -> 2.148; points 103.00 -> 45.10
+2023|denericprince: current outcome should be removed; 0 official appearances
+2023|deriusdavis: games 43 -> 25; PPG 1.449 -> 2.472; points 62.30 -> 61.80
+2023|deucevaughn: games 30 -> 11; PPG 0.727 -> 1.982; points 21.80 -> 21.80
+2023|devonachane: games 44 -> 28; PPG 16.532 -> 15.646; points 727.40 -> 438.10
+2023|dewaynemcbride: current outcome should be removed; 0 official appearances
+2023|dontayvionwicks: games 46 -> 32; PPG 5.480 -> 5.977; points 252.06 -> 191.26
+2023|elijahhiggins: games 45 -> 23; PPG 2.480 -> 2.978; points 111.60 -> 68.50
+2023|ericgray: games 34 -> 15; PPG 0.656 -> 1.487; points 22.30 -> 22.30
+2023|evanhull: games 8 -> 1; PPG 0.887 -> 1.200; points 7.10 -> 1.20
+2023|hendonhooker: games 29 -> 3; PPG 0.092 -> 0.893; points 2.68 -> 2.68
+2023|israelabanikanda: games 13 -> 6; PPG 0.985 -> 2.133; points 12.80 -> 12.80
+2023|jahmyrgibbs: games 49 -> 32; PPG 17.988 -> 17.281; points 881.40 -> 553.00
+2023|jakehaener: games 31 -> 8; PPG 0.427 -> 1.655; points 13.24 -> 13.24
+2023|jalenbrooks: games 27 -> 15; PPG 1.619 -> 2.607; points 43.70 -> 39.10
+2023|jalinhyatt: games 41 -> 23; PPG 1.585 -> 2.565; points 65.00 -> 59.00
+2023|jaxonsmithnjigba: games 51 -> 34; PPG 12.190 -> 9.450; points 621.70 -> 321.30
+2023|jaydenreed: games 40 -> 33; PPG 9.842 -> 10.748; points 393.70 -> 354.70
+2023|jonathanmingo: games 38 -> 29; PPG 2.368 -> 3.000; points 90.00 -> 87.00
+2023|jordanaddison: games 46 -> 32; PPG 10.465 -> 11.478; points 481.40 -> 367.30
+2023|joshdowns: games 47 -> 31; PPG 8.043 -> 8.729; points 378.00 -> 270.60
+2023|joshwhyle: games 36 -> 22; PPG 2.189 -> 3.032; points 78.80 -> 66.70
+2023|justinshorter: current outcome should be removed; 0 official appearances
+2023|kayshonboutte: games 34 -> 18; PPG 6.203 -> 5.739; points 210.90 -> 103.30
+2023|keatonmitchell: games 26 -> 9; PPG 4.715 -> 7.967; points 122.60 -> 71.70
+2023|kendremiller: games 21 -> 13; PPG 4.557 -> 4.992; points 95.70 -> 64.90
+2023|kennymcintosh: games 37 -> 7; PPG 0.565 -> 2.986; points 20.90 -> 20.90
+2023|lewnicholsiii: current outcome should be removed; 0 official appearances
+2023|lukemusgrave: games 35 -> 18; PPG 2.954 -> 3.678; points 103.40 -> 66.20
+2023|lukeschoonmaker: games 51 -> 21; PPG 1.692 -> 3.148; points 86.30 -> 66.10
+2023|marvinmimsjr: games 48 -> 31; PPG 5.088 -> 5.474; points 244.20 -> 169.70
+2023|michaelmayer: games 38 -> 23; PPG 3.692 -> 3.652; points 140.30 -> 84.00
+2023|michaelwilson: games 46 -> 29; PPG 8.220 -> 6.776; points 378.10 -> 196.50
+2023|mohamedibrahim: current outcome should be removed; 0 official appearances
+2023|nathanieldell: games 42 -> 24; PPG 6.095 -> 10.667; points 256.00 -> 256.00
+2023|parkerwashington: games 42 -> 19; PPG 6.379 -> 5.905; points 267.90 -> 112.20
+2023|pukanacua: games 44 -> 28; PPG 16.445 -> 14.754; points 723.60 -> 413.10
+2023|quentinjohnston: games 46 -> 32; PPG 7.998 -> 6.944; points 367.90 -> 222.20
+2023|rakimjarrett: games 21 -> 12; PPG 1.186 -> 2.075; points 24.90 -> 24.90
+2023|rasheerice: games 28 -> 19; PPG 12.482 -> 11.889; points 349.50 -> 225.90
+2023|ronniebell: games 28 -> 11; PPG 1.439 -> 2.818; points 40.30 -> 31.00
+2023|roschonjohnson: games 36 -> 27; PPG 4.339 -> 5.722; points 156.20 -> 154.50
+2023|samlaporta: games 42 -> 33; PPG 10.186 -> 10.330; points 427.80 -> 340.90
+2023|seantucker: games 45 -> 14; PPG 3.462 -> 4.886; points 155.80 -> 68.40
+2023|stetsonbennett: current outcome should be removed; 0 official appearances
+2023|tankbigsby: games 50 -> 28; PPG 4.002 -> 5.279; points 200.10 -> 147.80
+2023|tretucker: games 50 -> 30; PPG 6.026 -> 5.603; points 301.30 -> 168.10
+2023|treypalmer: games 45 -> 27; PPG 2.342 -> 3.904; points 105.40 -> 105.40
+2023|tuckerkraft: games 42 -> 27; PPG 7.202 -> 7.456; points 302.50 -> 201.30
+2023|tyjaespears: games 42 -> 29; PPG 7.514 -> 7.807; points 315.60 -> 226.40
+2023|tylerscott: games 42 -> 14; PPG 0.676 -> 2.029; points 28.40 -> 28.40
+2023|willlevis: games 38 -> 21; PPG 6.104 -> 11.046; points 231.96 -> 231.96
+2023|xavierhutchinson: games 49 -> 25; PPG 2.369 -> 1.424; points 116.10 -> 35.60
+2023|xazavianvalladay: current outcome should be removed; 0 official appearances
+2023|zachcharbonnet: games 49 -> 33; PPG 8.712 -> 7.742; points 426.90 -> 255.50
+2023|zachevans: games 13 -> 4; PPG 0.146 -> 0.475; points 1.90 -> 1.90
+2023|zayflowers: games 50 -> 33; PPG 10.814 -> 10.315; points 540.70 -> 340.40
+2024|adonaimitchell: games 33 -> 17; PPG 3.444 -> 2.486; points 113.66 -> 42.26
+2024|ainiassmith: games 24 -> 3; PPG 0.592 -> 4.733; points 14.20 -> 14.20
+2024|audricestime: games 20 -> 13; PPG 4.415 -> 3.554; points 88.30 -> 46.20
+2024|bensinnott: games 33 -> 4; PPG 1.036 -> 2.825; points 34.20 -> 11.30
+2024|blakecorum: games 34 -> 14; PPG 4.359 -> 2.143; points 148.20 -> 30.00
+2024|blakewatson: games 15 -> 1; PPG 0.187 -> 2.800; points 2.80 -> 2.80
+2024|bonix: games 34 -> 17; PPG 20.104 -> 20.629; points 683.54 -> 350.70
+2024|braelonallen: games 21 -> 17; PPG 4.286 -> 4.453; points 90.00 -> 75.70
+2024|brendenrice: current outcome should be removed; 0 official appearances
+2024|brianthomasjr: games 31 -> 17; PPG 11.461 -> 14.147; points 355.30 -> 240.50
+2024|brockbowers: games 29 -> 17; PPG 12.100 -> 12.159; points 350.90 -> 206.70
+2024|bubmeans: games 24 -> 4; PPG 0.929 -> 5.575; points 22.30 -> 22.30
+2024|buckyirving: games 27 -> 17; PPG 12.756 -> 12.994; points 344.40 -> 220.90
+2024|cadestover: games 24 -> 13; PPG 1.696 -> 2.062; points 40.70 -> 26.80
+2024|calebwilliams: games 34 -> 17; PPG 18.815 -> 16.620; points 639.72 -> 282.54
+2024|caseywashington: games 15 -> 2; PPG 0.953 -> 0.950; points 14.30 -> 1.90
+2024|codyschrader: games 2 -> 1; PPG 0.700 -> 1.400; points 1.40 -> 1.40
+2024|corneliusjohnson: current outcome should be removed; 0 official appearances
+2024|devontezwalker: games 21 -> 2; PPG 2.057 -> 4.300; points 43.20 -> 8.60
+2024|drakemaye: games 30 -> 13; PPG 19.487 -> 14.395; points 584.60 -> 187.14
+2024|dylanlaube: games 27 -> 1; PPG 0.007 -> -2.000; points 0.20 -> -2.00
+2024|erickall: games 26 -> 8; PPG 0.992 -> 3.225; points 25.80 -> 25.80
+2024|frankgorejr: current outcome should be removed; 0 official appearances
+2024|isaacguerendo: games 30 -> 13; PPG 2.890 -> 6.669; points 86.70 -> 86.70
+2024|isaiahdavis: games 33 -> 9; PPG 3.094 -> 4.600; points 102.10 -> 41.40
+2024|jacobcowing: games 32 -> 3; PPG 0.272 -> 2.900; points 8.70 -> 8.70
+2024|jalenmcmillan: games 17 -> 13; PPG 8.282 -> 8.992; points 140.80 -> 116.90
+2024|jalynnpolk: games 32 -> 13; PPG 0.834 -> 2.054; points 26.70 -> 26.70
+2024|jamarithrash: games 18 -> 6; PPG 1.078 -> 0.617; points 19.40 -> 3.70
+2024|jaredwiley: games 12 -> 1; PPG 0.175 -> 1.200; points 2.10 -> 1.20
+2024|jatavionsanders: games 29 -> 15; PPG 3.317 -> 3.780; points 96.20 -> 56.70
+2024|javonbaker: games 21 -> 4; PPG 0.081 -> 0.425; points 1.70 -> 1.70
+2024|jawharjordan: current outcome should be removed; 0 official appearances
+2024|jaydendaniels: games 24 -> 17; PPG 21.337 -> 22.813; points 512.10 -> 387.82
+2024|jaylenwright: games 25 -> 13; PPG 2.836 -> 1.938; points 70.90 -> 25.20
+2024|jermaineburton: games 14 -> 4; PPG 0.907 -> 3.175; points 12.70 -> 12.70
+2024|jjmccarthy: current outcome should be removed; 0 official appearances
+2024|johnnywilson: games 33 -> 9; PPG 0.373 -> 1.367; points 12.30 -> 12.30
+2024|jonathonbrooks: games 20 -> 3; PPG 0.300 -> 2.000; points 6.00 -> 6.00
+2024|jordantravis: current outcome should be removed; 0 official appearances
+2024|jordanwhittington: games 32 -> 6; PPG 2.150 -> 6.917; points 68.80 -> 41.50
+2024|keoncoleman: games 26 -> 13; PPG 6.938 -> 7.462; points 180.40 -> 97.00
+2024|kimanividal: games 23 -> 9; PPG 6.091 -> 3.356; points 140.10 -> 30.20
+2024|laddmcconkey: games 32 -> 16; PPG 10.869 -> 12.494; points 347.80 -> 199.90
+2024|lukemccaffrey: games 26 -> 12; PPG 2.754 -> 2.150; points 71.60 -> 25.80
+2024|malachicorley: games 22 -> 5; PPG 1.355 -> 0.740; points 29.80 -> 3.70
+2024|maliknabers: games 19 -> 15; PPG 14.063 -> 14.607; points 267.20 -> 219.10
+2024|malikwashington: games 31 -> 12; PPG 4.371 -> 3.483; points 135.50 -> 41.80
+2024|marshawnlloyd: games 18 -> 1; PPG 0.128 -> 2.300; points 2.30 -> 2.30
+2024|marvinharrisonjr: current outcome should be removed; 0 official appearances
+2024|michaelpenix: games 14 -> 5; PPG 12.599 -> 8.820; points 176.38 -> 44.10
+2024|rasheenali: games 21 -> 4; PPG 1.086 -> 0.775; points 22.80 -> 3.10
+2024|raydavis: games 34 -> 16; PPG 4.903 -> 6.725; points 166.70 -> 107.60
+2024|rickypearsall: games 20 -> 10; PPG 7.430 -> 7.800; points 148.60 -> 78.00
+2024|romanwilson: current outcome should be removed; 0 official appearances
+2024|romeodunze: games 29 -> 17; PPG 8.345 -> 6.935; points 242.00 -> 117.90
+2024|sionevaki: games 27 -> 4; PPG 0.259 -> 1.650; points 7.00 -> 6.60
+2024|spencerrattler: games 16 -> 7; PPG 10.620 -> 9.326; points 169.92 -> 65.28
+2024|theojohnson: games 27 -> 10; PPG 5.885 -> 5.360; points 158.90 -> 53.60
+2024|treybenson: games 17 -> 12; PPG 4.288 -> 3.667; points 72.90 -> 44.00
+2024|troyfranklin: games 33 -> 16; PPG 5.991 -> 3.319; points 197.70 -> 53.10
+2024|tyronetracy: games 32 -> 17; PPG 9.566 -> 9.606; points 306.10 -> 163.30
+2024|willshipley: games 31 -> 5; PPG 0.861 -> 2.740; points 26.70 -> 13.70
+2024|xavierlegette: games 31 -> 15; PPG 5.561 -> 6.707; points 172.40 -> 100.60
+2024|xavierworthy: games 31 -> 16; PPG 7.955 -> 9.856; points 246.60 -> 157.70
+2025|ariansmith: current outcome should be removed; 0 official appearances
+2025|ashtonjeanty: current outcome should be removed; 0 official appearances
+2025|bhayshultuten: current outcome should be removed; 0 official appearances
+2025|brashardsmith: current outcome should be removed; 0 official appearances
+2025|camskattebo: current outcome should be removed; 0 official appearances
+2025|camward: current outcome should be removed; 0 official appearances
+2025|chimeredike: current outcome should be removed; 0 official appearances
+2025|colstonloveland: current outcome should be removed; 0 official appearances
+2025|damienmartinez: current outcome should be removed; 0 official appearances
+2025|devinneal: current outcome should be removed; 0 official appearances
+2025|dillongabriel: current outcome should be removed; 0 official appearances
+2025|djgiddens: current outcome should be removed; 0 official appearances
+2025|dontethornton: current outcome should be removed; 0 official appearances
+2025|dylansampson: current outcome should be removed; 0 official appearances
+2025|elicayomanor: current outcome should be removed; 0 official appearances
+2025|elijaharroyo: current outcome should be removed; 0 official appearances
+2025|emekaegbuka: current outcome should be removed; 0 official appearances
+2025|haroldfannin: current outcome should be removed; 0 official appearances
+2025|isaacteslaa: current outcome should be removed; 0 official appearances
+2025|isaiahbond: current outcome should be removed; 0 official appearances
+2025|jackbech: current outcome should be removed; 0 official appearances
+2025|jacorycroskeymerritt: current outcome should be removed; 0 official appearances
+2025|jalenmilroe: current outcome should be removed; 0 official appearances
+2025|jalenroyals: current outcome should be removed; 0 official appearances
+2025|jarquezhunter: current outcome should be removed; 0 official appearances
+2025|jaxsondart: current outcome should be removed; 0 official appearances
+2025|jaydenhiggins: current outcome should be removed; 0 official appearances
+2025|jaydonblue: current outcome should be removed; 0 official appearances
+2025|jaylinlane: current outcome should be removed; 0 official appearances
+2025|jaylinnoel: current outcome should be removed; 0 official appearances
+2025|jordanjames: current outcome should be removed; 0 official appearances
+2025|kalebjohnson: current outcome should be removed; 0 official appearances
+2025|keandrelambertsmith: current outcome should be removed; 0 official appearances
+2025|kylemonangai: current outcome should be removed; 0 official appearances
+2025|kylewilliams: current outcome should be removed; 0 official appearances
+2025|lutherburden: current outcome should be removed; 0 official appearances
+2025|masontaylor: current outcome should be removed; 0 official appearances
+2025|matthewgolden: current outcome should be removed; 0 official appearances
+2025|olliegordon: current outcome should be removed; 0 official appearances
+2025|omarionhampton: current outcome should be removed; 0 official appearances
+2025|orondegadsden: current outcome should be removed; 0 official appearances
+2025|patbryant: current outcome should be removed; 0 official appearances
+2025|quinshonjudkins: current outcome should be removed; 0 official appearances
+2025|raheimsanders: current outcome should be removed; 0 official appearances
+2025|rjharvey: current outcome should be removed; 0 official appearances
+2025|savionwilliams: current outcome should be removed; 0 official appearances
+2025|shedeursanders: current outcome should be removed; 0 official appearances
+2025|tahjbrooks: current outcome should be removed; 0 official appearances
+2025|taifelton: current outcome should be removed; 0 official appearances
+2025|terranceferguson: current outcome should be removed; 0 official appearances
+2025|tetairoamcmillan: current outcome should be removed; 0 official appearances
+2025|toryhorton: current outcome should be removed; 0 official appearances
+2025|travishunter: current outcome should be removed; 0 official appearances
+2025|treharris: current outcome should be removed; 0 official appearances
+2025|treveyonhenderson: current outcome should be removed; 0 official appearances
+2025|trevoretienne: current outcome should be removed; 0 official appearances
+2025|tylershough: current outcome should be removed; 0 official appearances
+2025|tylerwarren: current outcome should be removed; 0 official appearances
+2025|willhoward: current outcome should be removed; 0 official appearances
+2025|woodymarks: current outcome should be removed; 0 official appearances
+
+MISSING SLEEPER SCORING ROWS FOR OFFICIAL APPEARANCES
