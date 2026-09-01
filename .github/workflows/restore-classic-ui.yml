@@ -1,0 +1,29 @@
+name: Restore Dynasty Plebs classic UI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'restore_classic_ui.py'
+      - '.github/workflows/restore-classic-ui.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore established Plebs UI over canonical data repo
+        run: python restore_classic_ui.py
+      - name: Commit restored site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "418982c+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Restore Dynasty Plebs classic history and manager UI"
+            git push
+          fi
