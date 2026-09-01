@@ -11,6 +11,7 @@ on:
       - 'veteran_exclusion_patch.py'
       - 'position_adjusted_draft_grade.py'
       - 'manager_history_patch.py'
+      - 'audit_manager_history.py'
       - 'site_ui_patch.py'
       - 'graph_polish_patch.py'
       - 'legacy_score_patch.py'
@@ -67,6 +68,8 @@ jobs:
         run: python position_adjusted_draft_grade.py
       - name: Correct manager tenure before aggregate calculations
         run: python manager_history_patch.py
+      - name: Enforce Google Sheet manager-history north star
+        run: python audit_manager_history.py
       - name: Apply champions, All-Time ordering, and PF/PA timeline
         run: python site_ui_patch.py
       - name: Polish manager graph readability
@@ -79,6 +82,8 @@ jobs:
         run: python drafted_points_patch.py
       - name: Reapply compact PF/PA labels and season grammar
         run: python manager_history_patch.py
+      - name: Recheck Google Sheet manager-history north star
+        run: python audit_manager_history.py
       - name: Restore compact mobile round grid
         run: python mobile_round_grid_fix.py
       - name: Put Legacy Score in manager hero
