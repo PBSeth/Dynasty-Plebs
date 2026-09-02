@@ -1,6 +1,6 @@
 {
   "description": "Normalized FFC 12-team Dynasty Rookie ADP rows resolved to Plebs-scored Sleeper career outcomes.",
-  "generated_at": "2026-09-02T18:37:42+00:00",
+  "generated_at": "2026-09-02T18:40:06+00:00",
   "last_complete_outcome_season": 2025,
   "removed_as_nonrookie": [
     {
@@ -1367,6 +1367,22 @@
       "sleeper_player_id": "3225",
       "stdev": 1.5,
       "times_drafted": 59,
+      "year": 2016
+    },
+    {
+      "adp": 9.5,
+      "adp_formatted": "1.10",
+      "career_games": 55,
+      "career_points": 572.7,
+      "career_ppg": 10.412727,
+      "high": 2,
+      "low": 13,
+      "name": "Will Fuller",
+      "position": "WR",
+      "sleeper_first_game_season": 2016,
+      "sleeper_player_id": "3157",
+      "stdev": 2.7,
+      "times_drafted": 38,
       "year": 2016
     },
     {
@@ -5376,17 +5392,6 @@
       "stdev": 2.0,
       "times_drafted": 3,
       "year": 2014
-    },
-    {
-      "adp": 9.5,
-      "adp_formatted": "1.10",
-      "high": 2,
-      "low": 13,
-      "name": "Will Fuller",
-      "position": "WR",
-      "stdev": 2.7,
-      "times_drafted": 38,
-      "year": 2016
     },
     {
       "adp": 20.5,
