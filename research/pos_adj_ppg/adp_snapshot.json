@@ -1,6 +1,6 @@
 {
   "description": "Normalized FFC 12-team Dynasty Rookie ADP rows resolved to Plebs-scored Sleeper career outcomes.",
-  "generated_at": "2026-09-02T18:40:06+00:00",
+  "generated_at": "2026-09-02T18:44:02+00:00",
   "last_complete_outcome_season": 2025,
   "removed_as_nonrookie": [
     {
@@ -2730,6 +2730,22 @@
       "year": 2018
     },
     {
+      "adp": 17.0,
+      "adp_formatted": "2.05",
+      "career_games": 120,
+      "career_points": 545.8,
+      "career_ppg": 4.548333,
+      "high": 12,
+      "low": 21,
+      "name": "Nyheim Hines",
+      "position": "RB",
+      "sleeper_first_game_season": 2018,
+      "sleeper_player_id": "5347",
+      "stdev": 3.0,
+      "times_drafted": 8,
+      "year": 2018
+    },
+    {
       "adp": 17.4,
       "adp_formatted": "2.05",
       "career_games": 89,
@@ -5451,17 +5467,6 @@
       "stdev": 3.3,
       "times_drafted": 8,
       "year": 2017
-    },
-    {
-      "adp": 17.0,
-      "adp_formatted": "2.05",
-      "high": 12,
-      "low": 21,
-      "name": "Nyheim Hines",
-      "position": "RB",
-      "stdev": 3.0,
-      "times_drafted": 8,
-      "year": 2018
     },
     {
       "adp": 33.6,

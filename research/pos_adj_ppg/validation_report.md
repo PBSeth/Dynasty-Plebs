@@ -1,6 +1,6 @@
 # POS ADJ PPG validation report
 
-Generated: `2026-09-02T18:40:06+00:00`
+Generated: `2026-09-02T18:44:02+00:00`
 
 ## Locked definition
 
@@ -11,12 +11,12 @@ No career-age adjustment is applied. No Dynasty Plebs manager or result data is 
 ## Source / identity audit
 
 - FFC source rows (QB/RB/WR/TE): **346**
-- Resolved rows with an NFL regular-season outcome: **333**
+- Resolved rows with an NFL regular-season outcome: **334**
 - Historical rows removed because the player had already played before the listed ADP year: **3**
-- Unresolved or zero-game rows (not fitted): **10**
-- Match/outcome rate for source rows with ADP <= 96: **96.2%**
-- Core fitted sample (2014-2022, >= 5 human mock selections, ADP <= 96): **314**
-- Core position counts: QB 38, RB 113, WR 136, TE 27
+- Unresolved or zero-game rows (not fitted): **9**
+- Match/outcome rate for source rows with ADP <= 96: **96.5%**
+- Core fitted sample (2014-2022, >= 5 human mock selections, ADP <= 96): **315**
+- Core position counts: QB 38, RB 114, WR 136, TE 27
 - Exact Plebs scoring calibration: **25/25 passed**
 
 The non-rookie filter is intentional: archived source anomalies such as a prior-year NFL player appearing on a later rookie board cannot leak into the expectation sample.
@@ -28,7 +28,7 @@ Bandwidth is selected independently by position against the final monotone, supp
 | Pos | N | Selected bandwidth | Exact-slot support-aware MAE | Pos+round MAE | Pos-only MAE |
 |---|---:|---:|---:|---:|---:|
 | QB | 38 | 8.0 | 5.405 | 5.254 | 5.480 |
-| RB | 113 | 5.0 | 3.038 | 3.124 | 3.612 |
+| RB | 114 | 5.0 | 3.028 | 3.114 | 3.602 |
 | WR | 136 | 5.0 | 3.049 | 2.988 | 3.384 |
 | TE | 27 | 10.0 | 1.676 | 1.665 | 1.991 |
 
@@ -52,15 +52,15 @@ Bandwidth is selected independently by position against the final monotone, supp
 
 | Bandwidth | Observation-weighted LOSO MAE | SE |
 |---:|---:|---:|
-| 3.0 | 3.010 | 0.132 |
-| 4.0 | 3.026 | 0.135 |
-| 5.0 **selected** | 3.038 | 0.140 |
-| 6.0 | 3.049 | 0.147 |
-| 8.0 | 3.069 | 0.162 |
-| 10.0 | 3.102 | 0.175 |
-| 12.0 | 3.150 | 0.188 |
-| 16.0 | 3.265 | 0.201 |
-| 20.0 | 3.355 | 0.207 |
+| 3.0 | 3.003 | 0.128 |
+| 4.0 | 3.017 | 0.132 |
+| 5.0 **selected** | 3.028 | 0.139 |
+| 6.0 | 3.039 | 0.147 |
+| 8.0 | 3.060 | 0.163 |
+| 10.0 | 3.095 | 0.177 |
+| 12.0 | 3.143 | 0.190 |
+| 16.0 | 3.260 | 0.203 |
+| 20.0 | 3.349 | 0.209 |
 
 **WR**
 
@@ -113,13 +113,13 @@ Expected career PPG at exact overall rookie slots; `n_eff` is the kernel's effec
 | Slot | Expected PPG | n_eff |
 |---:|---:|---:|
 | 1 | 10.91 | 36.8 |
-| 6 | 9.65 | 50.1 |
-| 12 | 7.77 | 53.1 |
-| 18 | 6.21 | 50.8 |
-| 24 | 5.05 | 55.2 |
+| 6 | 9.63 | 50.3 |
+| 12 | 7.72 | 54.0 |
+| 18 | 6.17 | 51.6 |
+| 24 | 5.04 | 56.0 |
 | 36 | 3.85 | 28.5 |
 | 48 | 3.42 | 13.6 |
-| 60 | 3.42 | 21.5 |
+| 60 | 3.42 | 21.6 |
 | 72 | 3.23 | 13.0 |
 
 **WR**
@@ -156,21 +156,21 @@ Mean absolute change in the fitted expectation curve over slots 1-48 versus the 
 
 | Test | Status | QB | RB | WR | TE |
 |---|---|---:|---:|---:|---:|
-| min_mock_selections_3 | ok | 0.4646 | 0.2724 | 0.1272 | 0.046 |
-| min_mock_selections_10 | ok | 1.2522 | 0.1878 | 0.2098 | 0.6159 |
-| drop_2022_class | ok | 1.1267 | 0.1795 | 0.0758 | 0.1201 |
+| min_mock_selections_3 | ok | 0.4646 | 0.352 | 0.1272 | 0.046 |
+| min_mock_selections_10 | ok | 1.2522 | 0.2012 | 0.2098 | 0.6159 |
+| drop_2022_class | ok | 1.1267 | 0.1674 | 0.0758 | 0.1201 |
 
 ## Production gate
 
 This report does **not** deploy the metric. Before production, audit the unresolved/non-rookie lists, inspect curve stability/support, and test every historical Plebs pick against the frozen table. Production should consume the committed table rather than refit in the browser.
 
-### V3 support audit
+### V4 identity + support audit
 
-Every published position/slot expectation from 1 through 72 has `n_eff >= 12`. The bandwidth is allowed to widen only where the historical neighborhood is too sparse; exact slot remains the prediction coordinate.
+Nyheim Hines is explicitly bridged to Sleeper's later `Nyheim Miller-Hines` identity. Every published position/slot expectation from 1 through 72 must retain `n_eff >= 12`.
 
 | Pos | Slot 48 n_eff / bw | Slot 60 n_eff / bw | Slot 72 n_eff / bw |
 |---|---:|---:|---:|
 | QB | 17.6 / 12.5 | 17.7 / 15.6 | 13.2 / 15.6 |
-| RB | 13.6 / 6.2 | 21.5 / 9.8 | 13.0 / 9.8 |
+| RB | 13.6 / 6.2 | 21.6 / 9.8 | 13.0 / 9.8 |
 | WR | 16.8 / 5.0 | 14.3 / 6.2 | 16.3 / 7.8 |
 | TE | 12.2 / 10.0 | 12.2 / 12.5 | 13.0 / 15.6 |

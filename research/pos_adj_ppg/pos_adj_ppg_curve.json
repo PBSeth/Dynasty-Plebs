@@ -438,183 +438,183 @@
     "RB": {
       "1": {
         "bandwidth": 5.0,
-        "effective_n": 36.81,
-        "expected_ppg": 10.9101,
-        "raw_smoothed_ppg": 10.9101
+        "effective_n": 36.82,
+        "expected_ppg": 10.9088,
+        "raw_smoothed_ppg": 10.9088
       },
       "10": {
         "bandwidth": 5.0,
-        "effective_n": 54.64,
-        "expected_ppg": 8.3896,
-        "raw_smoothed_ppg": 8.3896
+        "effective_n": 55.43,
+        "expected_ppg": 8.3516,
+        "raw_smoothed_ppg": 8.3516
       },
       "11": {
         "bandwidth": 5.0,
-        "effective_n": 54.06,
-        "expected_ppg": 8.0756,
-        "raw_smoothed_ppg": 8.0756
+        "effective_n": 54.98,
+        "expected_ppg": 8.0297,
+        "raw_smoothed_ppg": 8.0297
       },
       "12": {
         "bandwidth": 5.0,
-        "effective_n": 53.06,
-        "expected_ppg": 7.7723,
-        "raw_smoothed_ppg": 7.7723
+        "effective_n": 54.05,
+        "expected_ppg": 7.7192,
+        "raw_smoothed_ppg": 7.7192
       },
       "13": {
         "bandwidth": 5.0,
-        "effective_n": 51.88,
-        "expected_ppg": 7.4825,
-        "raw_smoothed_ppg": 7.4825
+        "effective_n": 52.88,
+        "expected_ppg": 7.4239,
+        "raw_smoothed_ppg": 7.4239
       },
       "14": {
         "bandwidth": 5.0,
-        "effective_n": 50.81,
-        "expected_ppg": 7.2069,
-        "raw_smoothed_ppg": 7.2069
+        "effective_n": 51.77,
+        "expected_ppg": 7.1452,
+        "raw_smoothed_ppg": 7.1452
       },
       "15": {
         "bandwidth": 5.0,
-        "effective_n": 50.06,
-        "expected_ppg": 6.9441,
-        "raw_smoothed_ppg": 6.9441
+        "effective_n": 50.96,
+        "expected_ppg": 6.8823,
+        "raw_smoothed_ppg": 6.8823
       },
       "16": {
         "bandwidth": 5.0,
-        "effective_n": 49.78,
-        "expected_ppg": 6.6919,
-        "raw_smoothed_ppg": 6.6919
+        "effective_n": 50.63,
+        "expected_ppg": 6.6331,
+        "raw_smoothed_ppg": 6.6331
       },
       "17": {
         "bandwidth": 5.0,
-        "effective_n": 50.03,
-        "expected_ppg": 6.4482,
-        "raw_smoothed_ppg": 6.4482
+        "effective_n": 50.84,
+        "expected_ppg": 6.395,
+        "raw_smoothed_ppg": 6.395
       },
       "18": {
         "bandwidth": 5.0,
-        "effective_n": 50.77,
-        "expected_ppg": 6.2119,
-        "raw_smoothed_ppg": 6.2119
+        "effective_n": 51.6,
+        "expected_ppg": 6.1664,
+        "raw_smoothed_ppg": 6.1664
       },
       "19": {
         "bandwidth": 5.0,
-        "effective_n": 51.88,
-        "expected_ppg": 5.9835,
-        "raw_smoothed_ppg": 5.9835
+        "effective_n": 52.76,
+        "expected_ppg": 5.9469,
+        "raw_smoothed_ppg": 5.9469
       },
       "2": {
         "bandwidth": 5.0,
-        "effective_n": 39.37,
-        "expected_ppg": 10.6934,
-        "raw_smoothed_ppg": 10.6934
+        "effective_n": 39.39,
+        "expected_ppg": 10.6913,
+        "raw_smoothed_ppg": 10.6913
       },
       "20": {
         "bandwidth": 5.0,
-        "effective_n": 53.18,
-        "expected_ppg": 5.7651,
-        "raw_smoothed_ppg": 5.7651
+        "effective_n": 54.12,
+        "expected_ppg": 5.7373,
+        "raw_smoothed_ppg": 5.7373
       },
       "21": {
         "bandwidth": 5.0,
-        "effective_n": 54.39,
-        "expected_ppg": 5.5597,
-        "raw_smoothed_ppg": 5.5597
+        "effective_n": 55.39,
+        "expected_ppg": 5.5399,
+        "raw_smoothed_ppg": 5.5399
       },
       "22": {
         "bandwidth": 5.0,
-        "effective_n": 55.26,
-        "expected_ppg": 5.3703,
-        "raw_smoothed_ppg": 5.3703
+        "effective_n": 56.25,
+        "expected_ppg": 5.3571,
+        "raw_smoothed_ppg": 5.3571
       },
       "23": {
         "bandwidth": 5.0,
-        "effective_n": 55.57,
-        "expected_ppg": 5.1989,
-        "raw_smoothed_ppg": 5.1989
+        "effective_n": 56.48,
+        "expected_ppg": 5.1907,
+        "raw_smoothed_ppg": 5.1907
       },
       "24": {
         "bandwidth": 5.0,
-        "effective_n": 55.19,
-        "expected_ppg": 5.0461,
-        "raw_smoothed_ppg": 5.0461
+        "effective_n": 55.97,
+        "expected_ppg": 5.0413,
+        "raw_smoothed_ppg": 5.0413
       },
       "25": {
         "bandwidth": 5.0,
-        "effective_n": 54.16,
-        "expected_ppg": 4.9107,
-        "raw_smoothed_ppg": 4.9107
+        "effective_n": 54.77,
+        "expected_ppg": 4.9082,
+        "raw_smoothed_ppg": 4.9082
       },
       "26": {
         "bandwidth": 5.0,
-        "effective_n": 52.61,
-        "expected_ppg": 4.7905,
-        "raw_smoothed_ppg": 4.7905
+        "effective_n": 53.06,
+        "expected_ppg": 4.7894,
+        "raw_smoothed_ppg": 4.7894
       },
       "27": {
         "bandwidth": 5.0,
-        "effective_n": 50.71,
-        "expected_ppg": 4.6824,
-        "raw_smoothed_ppg": 4.6824
+        "effective_n": 51.02,
+        "expected_ppg": 4.682,
+        "raw_smoothed_ppg": 4.682
       },
       "28": {
         "bandwidth": 5.0,
-        "effective_n": 48.57,
-        "expected_ppg": 4.5832,
-        "raw_smoothed_ppg": 4.5832
+        "effective_n": 48.78,
+        "expected_ppg": 4.5831,
+        "raw_smoothed_ppg": 4.5831
       },
       "29": {
         "bandwidth": 5.0,
-        "effective_n": 46.3,
-        "expected_ppg": 4.4898,
-        "raw_smoothed_ppg": 4.4898
+        "effective_n": 46.43,
+        "expected_ppg": 4.4899,
+        "raw_smoothed_ppg": 4.4899
       },
       "3": {
         "bandwidth": 5.0,
-        "effective_n": 42.07,
-        "expected_ppg": 10.4589,
-        "raw_smoothed_ppg": 10.4589
+        "effective_n": 42.12,
+        "expected_ppg": 10.4556,
+        "raw_smoothed_ppg": 10.4556
       },
       "30": {
         "bandwidth": 5.0,
-        "effective_n": 43.92,
-        "expected_ppg": 4.3998,
-        "raw_smoothed_ppg": 4.3998
+        "effective_n": 44.0,
+        "expected_ppg": 4.4,
+        "raw_smoothed_ppg": 4.4
       },
       "31": {
         "bandwidth": 5.0,
-        "effective_n": 41.46,
-        "expected_ppg": 4.3111,
-        "raw_smoothed_ppg": 4.3111
+        "effective_n": 41.51,
+        "expected_ppg": 4.3113,
+        "raw_smoothed_ppg": 4.3113
       },
       "32": {
         "bandwidth": 5.0,
-        "effective_n": 38.94,
-        "expected_ppg": 4.2223,
-        "raw_smoothed_ppg": 4.2223
+        "effective_n": 38.96,
+        "expected_ppg": 4.2224,
+        "raw_smoothed_ppg": 4.2224
       },
       "33": {
         "bandwidth": 5.0,
-        "effective_n": 36.35,
-        "expected_ppg": 4.1324,
-        "raw_smoothed_ppg": 4.1324
+        "effective_n": 36.37,
+        "expected_ppg": 4.1325,
+        "raw_smoothed_ppg": 4.1325
       },
       "34": {
         "bandwidth": 5.0,
-        "effective_n": 33.73,
-        "expected_ppg": 4.0407,
-        "raw_smoothed_ppg": 4.0407
+        "effective_n": 33.74,
+        "expected_ppg": 4.0408,
+        "raw_smoothed_ppg": 4.0408
       },
       "35": {
         "bandwidth": 5.0,
-        "effective_n": 31.09,
-        "expected_ppg": 3.947,
-        "raw_smoothed_ppg": 3.947
+        "effective_n": 31.1,
+        "expected_ppg": 3.9471,
+        "raw_smoothed_ppg": 3.9471
       },
       "36": {
         "bandwidth": 5.0,
         "effective_n": 28.46,
-        "expected_ppg": 3.8513,
-        "raw_smoothed_ppg": 3.8513
+        "expected_ppg": 3.8514,
+        "raw_smoothed_ppg": 3.8514
       },
       "37": {
         "bandwidth": 5.0,
@@ -636,9 +636,9 @@
       },
       "4": {
         "bandwidth": 5.0,
-        "effective_n": 44.84,
-        "expected_ppg": 10.206,
-        "raw_smoothed_ppg": 10.206
+        "effective_n": 44.92,
+        "expected_ppg": 10.2008,
+        "raw_smoothed_ppg": 10.2008
       },
       "40": {
         "bandwidth": 5.0,
@@ -668,11 +668,11 @@
         "bandwidth": 6.25,
         "effective_n": 19.69,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.5128
+        "raw_smoothed_ppg": 3.5129
       },
       "45": {
         "bandwidth": 6.25,
-        "effective_n": 18.02,
+        "effective_n": 18.03,
         "expected_ppg": 3.4237,
         "raw_smoothed_ppg": 3.4437
       },
@@ -698,19 +698,19 @@
         "bandwidth": 6.25,
         "effective_n": 12.36,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.17
+        "raw_smoothed_ppg": 3.1701
       },
       "5": {
         "bandwidth": 5.0,
-        "effective_n": 47.57,
-        "expected_ppg": 9.9348,
-        "raw_smoothed_ppg": 9.9348
+        "effective_n": 47.7,
+        "expected_ppg": 9.927,
+        "raw_smoothed_ppg": 9.927
       },
       "50": {
         "bandwidth": 7.812,
         "effective_n": 21.02,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.571
+        "raw_smoothed_ppg": 3.5711
       },
       "51": {
         "bandwidth": 7.812,
@@ -722,7 +722,7 @@
         "bandwidth": 7.812,
         "effective_n": 18.63,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.4773
+        "raw_smoothed_ppg": 3.4774
       },
       "53": {
         "bandwidth": 7.812,
@@ -734,7 +734,7 @@
         "bandwidth": 7.812,
         "effective_n": 16.44,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.3844
+        "raw_smoothed_ppg": 3.3845
       },
       "55": {
         "bandwidth": 7.812,
@@ -746,7 +746,7 @@
         "bandwidth": 7.812,
         "effective_n": 14.47,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.2924
+        "raw_smoothed_ppg": 3.2925
       },
       "57": {
         "bandwidth": 7.812,
@@ -762,51 +762,51 @@
       },
       "59": {
         "bandwidth": 9.766,
-        "effective_n": 22.42,
+        "effective_n": 22.43,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.6275
+        "raw_smoothed_ppg": 3.6277
       },
       "6": {
         "bandwidth": 5.0,
-        "effective_n": 50.09,
-        "expected_ppg": 9.6465,
-        "raw_smoothed_ppg": 9.6465
+        "effective_n": 50.3,
+        "expected_ppg": 9.635,
+        "raw_smoothed_ppg": 9.635
       },
       "60": {
         "bandwidth": 9.766,
-        "effective_n": 21.54,
+        "effective_n": 21.55,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.5957
+        "raw_smoothed_ppg": 3.5959
       },
       "61": {
         "bandwidth": 9.766,
-        "effective_n": 20.69,
+        "effective_n": 20.7,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.5641
+        "raw_smoothed_ppg": 3.5643
       },
       "62": {
         "bandwidth": 9.766,
-        "effective_n": 19.86,
+        "effective_n": 19.87,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.5327
+        "raw_smoothed_ppg": 3.5328
       },
       "63": {
         "bandwidth": 9.766,
-        "effective_n": 19.06,
+        "effective_n": 19.07,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.5014
+        "raw_smoothed_ppg": 3.5015
       },
       "64": {
         "bandwidth": 9.766,
         "effective_n": 18.29,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.4702
+        "raw_smoothed_ppg": 3.4703
       },
       "65": {
         "bandwidth": 9.766,
         "effective_n": 17.54,
         "expected_ppg": 3.4237,
-        "raw_smoothed_ppg": 3.4392
+        "raw_smoothed_ppg": 3.4393
       },
       "66": {
         "bandwidth": 9.766,
@@ -816,9 +816,9 @@
       },
       "67": {
         "bandwidth": 9.766,
-        "effective_n": 16.11,
-        "expected_ppg": 3.3776,
-        "raw_smoothed_ppg": 3.3776
+        "effective_n": 16.12,
+        "expected_ppg": 3.3777,
+        "raw_smoothed_ppg": 3.3777
       },
       "68": {
         "bandwidth": 9.766,
@@ -829,14 +829,14 @@
       "69": {
         "bandwidth": 9.766,
         "effective_n": 14.79,
-        "expected_ppg": 3.3166,
-        "raw_smoothed_ppg": 3.3166
+        "expected_ppg": 3.3167,
+        "raw_smoothed_ppg": 3.3167
       },
       "7": {
         "bandwidth": 5.0,
-        "effective_n": 52.21,
-        "expected_ppg": 9.3435,
-        "raw_smoothed_ppg": 9.3435
+        "effective_n": 52.54,
+        "expected_ppg": 9.327,
+        "raw_smoothed_ppg": 9.327
       },
       "70": {
         "bandwidth": 9.766,
@@ -853,20 +853,20 @@
       "72": {
         "bandwidth": 9.766,
         "effective_n": 12.99,
-        "expected_ppg": 3.2263,
-        "raw_smoothed_ppg": 3.2263
+        "expected_ppg": 3.2264,
+        "raw_smoothed_ppg": 3.2264
       },
       "8": {
         "bandwidth": 5.0,
-        "effective_n": 53.75,
-        "expected_ppg": 9.0294,
-        "raw_smoothed_ppg": 9.0294
+        "effective_n": 54.22,
+        "expected_ppg": 9.0067,
+        "raw_smoothed_ppg": 9.0067
       },
       "9": {
         "bandwidth": 5.0,
-        "effective_n": 54.56,
-        "expected_ppg": 8.7095,
-        "raw_smoothed_ppg": 8.7095
+        "effective_n": 55.2,
+        "expected_ppg": 8.6795,
+        "raw_smoothed_ppg": 8.6795
       }
     },
     "TE": {
@@ -1739,13 +1739,13 @@
     }
   },
   "definition": "Career PPG minus expected career PPG for a rookie of the same position at the exact draft slot.",
-  "generated_at": "2026-09-02T18:40:06+00:00",
+  "generated_at": "2026-09-02T18:44:02+00:00",
   "max_adaptive_bandwidth": 30.0,
   "max_curve_slot": 72,
   "max_training_adp": 96.0,
   "min_times_drafted": 5,
   "minimum_effective_n": 12.0,
-  "model_selection": "LOSO final monotone adaptive-kernel MAE; 1% base-bandwidth tie band",
+  "model_selection": "LOSO final monotone adaptive-kernel MAE; 1% base-bandwidth tie band; >=12 effective local observations",
   "outcomes_through": 2025,
   "selected_bandwidth": {
     "QB": 8.0,
@@ -1759,5 +1759,5 @@
     2014,
     2022
   ],
-  "version": "pos-adj-ppg-v3-research"
+  "version": "pos-adj-ppg-v4-research"
 }

@@ -152,10 +152,10 @@
   "core_filter": {
     "max_adp": 96.0,
     "min_times_drafted": 5,
-    "n": 314,
+    "n": 315,
     "position_counts": {
       "QB": 38,
-      "RB": 113,
+      "RB": 114,
       "TE": 27,
       "WR": 136
     },
@@ -166,13 +166,14 @@
   },
   "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
   "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
-  "generated_at": "2026-09-02T18:40:06+00:00",
-  "identity_resolution": "normalized name + explicit historical variants + position + rookie-year context; prior NFL debut removed as non-rookie",
+  "generated_at": "2026-09-02T18:44:02+00:00",
+  "identity_resolution": "normalized name + explicit historical variants/renames + position + rookie-year context; prior NFL debut removed as non-rookie",
   "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
-  "match_rate_within_adp_96": 0.9624,
+  "match_rate_within_adp_96": 0.9653,
   "minimum_effective_n": 12.0,
   "model_selection": "LOSO final monotone adaptive kernel; >=12 effective local historical observations at every published slot",
   "nonrookie_rows_removed": 3,
+  "notable_identity_bridge": "Nyheim Hines -> Sleeper Nyheim Miller-Hines",
   "outcome_sources": [
     {
       "bytes": 6513118,
@@ -271,7 +272,7 @@
       "year": 2025
     }
   ],
-  "resolved_outcome_rows": 333,
+  "resolved_outcome_rows": 334,
   "scoring": {
     "fum_lost": -2,
     "fum_rec_td": 6,
@@ -289,6 +290,6 @@
     "rush_yd": 0.1
   },
   "source_rows": 346,
-  "unresolved_or_no_game_rows": 10,
-  "version": "pos-adj-ppg-research-v3"
+  "unresolved_or_no_game_rows": 9,
+  "version": "pos-adj-ppg-research-v4"
 }
