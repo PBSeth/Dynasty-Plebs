@@ -35,8 +35,8 @@ jobs:
       - name: Apply frozen curve to complete Plebs draft history
         run: python research/pos_adj_ppg/audit_plebs_application.py
 
-      - name: Lock rookie-time position and production artifact
-        run: python research/pos_adj_ppg/finalize_draft_adjusted_ppg.py
+      - name: Finalize position-at-draft audit and production artifact
+        run: python research/pos_adj_ppg/finalize_draft_adjusted_ppg_v2.py
 
       - name: Verify generated files
         run: |
@@ -57,8 +57,10 @@ jobs:
           grep -Fq 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
           grep -Fq 'Compensatory selections detected: **1**' research/pos_adj_ppg/plebs_application_report.md
           grep -Fq 'Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'FFC vs NFL draft position conflicts on overlapping identities: **0**.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
           grep -Fq "N'Keal Harry" research/pos_adj_ppg/draft_adjusted_ppg_report.md
           grep -Fq 'Hakeem Butler' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Antonio Gandy-Golden' research/pos_adj_ppg/draft_adjusted_ppg_report.md
           grep -Fq 'window.DRAFT_ADJUSTED_PPG=' research/pos_adj_ppg/draft-adjusted-ppg.js
           git diff --check
 
@@ -80,5 +82,5 @@ jobs:
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate final audited Draft-Adjusted PPG artifacts"
+          git commit -m "Generate secondary-audited Draft-Adjusted PPG artifacts"
           git push origin HEAD:pos-adj-ppg-research
