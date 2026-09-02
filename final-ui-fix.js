@@ -14,6 +14,8 @@
     #managerTimeline .dp-dot:not(.champ){stroke:${PRIMARY}!important}
     #managerTimeline .dp-pf-line{stroke:${PRIMARY}!important}
     #managerTimeline .dp-pf-point{stroke:${PRIMARY}!important}
+    #kpis .dp-rookie-wall{display:flex;flex-direction:column;min-height:152px}
+    #kpis .dp-rookie-wall .dp-wall-qualifier{margin-top:auto;padding-top:8px;border-top:1px solid #dfd0b6;color:#8a775b;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
   `;
   document.head.appendChild(style);
 
@@ -85,8 +87,8 @@
     const avgClasses=[...new Set(r.topAverages.map(x=>x.classes))];
     const avgSub=avgClasses.length===1?`${avgClasses[0]} class${avgClasses[0]===1?'':'es'}`:'Career';
     wall.insertAdjacentHTML('beforeend',
-      `<div class="kpi"><small>Highest-Scoring Rookie Class</small><b>${fmt(r.top)}</b><span><strong>${esc(highNames)}</strong><em>${esc(highYears)}</em></span></div>`+
-      `<div class="kpi"><small>Avg Rookie Pts / Class</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span></div>`
+      `<div class="kpi dp-rookie-wall"><small>Best Rookie Class</small><b>${fmt(r.top)}</b><span><strong>${esc(highNames)}</strong><em>${esc(highYears)}</em></span><div class="dp-wall-qualifier">Career points to date</div></div>`+
+      `<div class="kpi dp-rookie-wall"><small>Draft Class Average</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span><div class="dp-wall-qualifier">Career points per class</div></div>`
     );
     wall.dataset.rookieClassRecords='1';
   }
