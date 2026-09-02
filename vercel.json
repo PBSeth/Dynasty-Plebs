@@ -1,5 +1,5 @@
 {
-  "buildCommand": "sh build-vercel.sh",
+  "buildCommand": "sh build-vercel-draft-adjusted.sh",
   "outputDirectory": "dist",
   "cleanUrls": false
 }

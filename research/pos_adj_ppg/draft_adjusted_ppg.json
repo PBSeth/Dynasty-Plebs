@@ -1,0 +1,3505 @@
+{
+  "curveVersion": "pos-adj-ppg-v4-research",
+  "definition": "Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.",
+  "picks": {
+    "2019|ajbrown": {
+      "draftAdjPpg": 5.865619,
+      "expectedPpg": 7.562,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|alexandermattison": {
+      "draftAdjPpg": 1.639813,
+      "expectedPpg": 4.7894,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|andyisabella": {
+      "draftAdjPpg": -4.869084,
+      "expectedPpg": 6.7342,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|bennysnell": {
+      "draftAdjPpg": -2.712922,
+      "expectedPpg": 5.1907,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|brycelove": {
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "RB",
+      "status": "unscored"
+    },
+    "2019|damienharris": {
+      "draftAdjPpg": 3.540627,
+      "expectedPpg": 5.3571,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|danieljones": {
+      "draftAdjPpg": 4.247608,
+      "expectedPpg": 11.8695,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2019|darrellhenderson": {
+      "draftAdjPpg": -0.402533,
+      "expectedPpg": 7.7192,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|darwinthompson": {
+      "draftAdjPpg": -2.478154,
+      "expectedPpg": 4.682,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|davidmontgomery": {
+      "draftAdjPpg": 2.0872,
+      "expectedPpg": 10.2008,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|dawsonknox": {
+      "draftAdjPpg": 1.883214,
+      "expectedPpg": 3.5011,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|deebosamuel": {
+      "draftAdjPpg": 4.609176,
+      "expectedPpg": 7.3667,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|devineozigbo": {
+      "draftAdjPpg": -3.261386,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|devinsingletary": {
+      "draftAdjPpg": 1.356982,
+      "expectedPpg": 7.1452,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|dexterwilliams": {
+      "draftAdjPpg": -3.579971,
+      "expectedPpg": 3.8514,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|diontaejohnson": {
+      "draftAdjPpg": 1.873634,
+      "expectedPpg": 7.8994,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|dkmetcalf": {
+      "draftAdjPpg": 3.434229,
+      "expectedPpg": 8.0372,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|drewlock": {
+      "draftAdjPpg": -0.252054,
+      "expectedPpg": 10.5462,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2019|dwaynehaskins": {
+      "draftAdjPpg": -4.608418,
+      "expectedPpg": 12.8943,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2019|hakeembutler": {
+      "draftAdjPpg": -5.6462,
+      "expectedPpg": 5.6462,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|hunterrenfrow": {
+      "draftAdjPpg": 2.658729,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|irvsmithjr": {
+      "draftAdjPpg": -1.409478,
+      "expectedPpg": 5.3317,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|jacesternberger": {
+      "draftAdjPpg": -2.428,
+      "expectedPpg": 3.728,
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|jalenhurd": {
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "WR",
+      "status": "unscored"
+    },
+    "2019|jameswilliams": {
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2019|jjarcegawhiteside": {
+      "draftAdjPpg": -4.7386,
+      "expectedPpg": 6.0136,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|jordanscarlett": {
+      "draftAdjPpg": -3.6638,
+      "expectedPpg": 3.7538,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|joshjacobs": {
+      "draftAdjPpg": 3.8912,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|justicehill": {
+      "draftAdjPpg": -1.395852,
+      "expectedPpg": 5.5399,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|kahalewarring": {
+      "draftAdjPpg": -2.945544,
+      "expectedPpg": 3.5011,
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|kelvinharmon": {
+      "draftAdjPpg": -1.08765,
+      "expectedPpg": 4.3339,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|kylermurray": {
+      "draftAdjPpg": 6.847007,
+      "expectedPpg": 13.9392,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2019|marquisebrown": {
+      "draftAdjPpg": 1.915044,
+      "expectedPpg": 7.1594,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|mecolehardman": {
+      "draftAdjPpg": -2.250356,
+      "expectedPpg": 7.7406,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|milesboykin": {
+      "draftAdjPpg": -3.698692,
+      "expectedPpg": 5.2165,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|milessanders": {
+      "draftAdjPpg": -0.573591,
+      "expectedPpg": 9.927,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|mylesgaskin": {
+      "draftAdjPpg": 3.601832,
+      "expectedPpg": 3.4237,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|nkealharry": {
+      "draftAdjPpg": -5.591784,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|noahfant": {
+      "draftAdjPpg": 0.265009,
+      "expectedPpg": 5.4359,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|parriscampbell": {
+      "draftAdjPpg": -4.0384,
+      "expectedPpg": 8.3984,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|qadreeollison": {
+      "draftAdjPpg": -1.328048,
+      "expectedPpg": 3.4237,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|rileyridley": {
+      "draftAdjPpg": -2.9466,
+      "expectedPpg": 4.5266,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|rodneyanderson": {
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "RB",
+      "status": "unscored"
+    },
+    "2019|ryquellarmstead": {
+      "draftAdjPpg": -1.417678,
+      "expectedPpg": 4.4899,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|terrymclaurin": {
+      "draftAdjPpg": 6.473392,
+      "expectedPpg": 4.7453,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2019|tjhockenson": {
+      "draftAdjPpg": 2.800644,
+      "expectedPpg": 5.6375,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2019|tonypollard": {
+      "draftAdjPpg": 6.445943,
+      "expectedPpg": 3.4237,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2019|trayveonwilliams": {
+      "draftAdjPpg": -2.6677,
+      "expectedPpg": 3.4237,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|adamtrautman": {
+      "draftAdjPpg": -1.297694,
+      "expectedPpg": 3.8328,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2020|ajdillon": {
+      "draftAdjPpg": -0.9297,
+      "expectedPpg": 8.0297,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|albertokwuegbunam": {
+      "draftAdjPpg": 0.03761,
+      "expectedPpg": 3.5011,
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2020|anthonymcfarland": {
+      "draftAdjPpg": -3.214082,
+      "expectedPpg": 4.9082,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|antoniogandygolden": {
+      "draftAdjPpg": -4.0339,
+      "expectedPpg": 4.3339,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|antoniogibson": {
+      "draftAdjPpg": 1.923475,
+      "expectedPpg": 7.1452,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|brandonaiyuk": {
+      "draftAdjPpg": 4.661686,
+      "expectedPpg": 6.1673,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|bryanedwards": {
+      "draftAdjPpg": -2.742857,
+      "expectedPpg": 6.34,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|camakers": {
+      "draftAdjPpg": -3.647678,
+      "expectedPpg": 9.927,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|ceedeelamb": {
+      "draftAdjPpg": 6.143758,
+      "expectedPpg": 7.8994,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|chaseclaypool": {
+      "draftAdjPpg": 2.426621,
+      "expectedPpg": 4.862,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|clydeedwardshelaire": {
+      "draftAdjPpg": -2.201754,
+      "expectedPpg": 10.4556,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|colekmet": {
+      "draftAdjPpg": 1.939,
+      "expectedPpg": 3.728,
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2020|collinjohnson": {
+      "draftAdjPpg": -1.838442,
+      "expectedPpg": 3.6516,
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|dandreswift": {
+      "draftAdjPpg": 1.631172,
+      "expectedPpg": 10.6913,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|darnellmooney": {
+      "draftAdjPpg": 3.604202,
+      "expectedPpg": 3.7936,
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|darryntonevans": {
+      "draftAdjPpg": -3.2524,
+      "expectedPpg": 5.5399,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|deejaydallas": {
+      "draftAdjPpg": -2.036386,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|denzelmims": {
+      "draftAdjPpg": -3.9262,
+      "expectedPpg": 6.9462,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|devinduvernay": {
+      "draftAdjPpg": -2.16103,
+      "expectedPpg": 4.7453,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|donovanpeoplesjones": {
+      "draftAdjPpg": 1.475066,
+      "expectedPpg": 3.7439,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|enobenjamin": {
+      "draftAdjPpg": 0.699767,
+      "expectedPpg": 3.5544,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|gabrieldavis": {
+      "draftAdjPpg": 3.72245,
+      "expectedPpg": 3.5663,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|henryruggsiii": {
+      "draftAdjPpg": -0.1867,
+      "expectedPpg": 7.3667,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|jalenreagor": {
+      "draftAdjPpg": -4.55575,
+      "expectedPpg": 7.562,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|jamesproche": {
+      "draftAdjPpg": -2.846663,
+      "expectedPpg": 3.4861,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|jerryjeudy": {
+      "draftAdjPpg": 0.772587,
+      "expectedPpg": 7.7406,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|jkdobbins": {
+      "draftAdjPpg": 1.16303,
+      "expectedPpg": 10.2008,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|joeburrow": {
+      "draftAdjPpg": 8.922888,
+      "expectedPpg": 13.3288,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2020|joereed": {
+      "draftAdjPpg": -3.152309,
+      "expectedPpg": 3.9614,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|jonathantaylor": {
+      "draftAdjPpg": 6.260248,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|jordanlove": {
+      "draftAdjPpg": 5.680116,
+      "expectedPpg": 10.5462,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2020|joshuakelley": {
+      "draftAdjPpg": -1.683682,
+      "expectedPpg": 5.1907,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|justinherbert": {
+      "draftAdjPpg": 10.609589,
+      "expectedPpg": 10.5462,
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2020|justinjefferson": {
+      "draftAdjPpg": 6.90897,
+      "expectedPpg": 8.0372,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|keshawnvaughn": {
+      "draftAdjPpg": -5.904335,
+      "expectedPpg": 7.4239,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|kjhamler": {
+      "draftAdjPpg": -0.315983,
+      "expectedPpg": 4.9812,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|kjhill": {
+      "draftAdjPpg": -2.851067,
+      "expectedPpg": 3.4844,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|lamicalperine": {
+      "draftAdjPpg": -1.105263,
+      "expectedPpg": 4.4,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2020|laviskashenault": {
+      "draftAdjPpg": -0.765248,
+      "expectedPpg": 5.6462,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|lynnbowdenjr": {
+      "draftAdjPpg": -2.250646,
+      "expectedPpg": 4.4268,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|michaelpittman": {
+      "draftAdjPpg": 4.031621,
+      "expectedPpg": 5.7568,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|quintezcephus": {
+      "draftAdjPpg": 0.356945,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|teehiggins": {
+      "draftAdjPpg": 5.9064,
+      "expectedPpg": 6.0136,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|tuatagovailoa": {
+      "draftAdjPpg": 3.387528,
+      "expectedPpg": 13.0476,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2020|tylerjohnson": {
+      "draftAdjPpg": -1.274357,
+      "expectedPpg": 4.1678,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|vanjefferson": {
+      "draftAdjPpg": -0.527681,
+      "expectedPpg": 4.633,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2020|zachmoss": {
+      "draftAdjPpg": 1.600813,
+      "expectedPpg": 6.1664,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|amarirodgers": {
+      "draftAdjPpg": -4.110786,
+      "expectedPpg": 5.2165,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|amonrastbrown": {
+      "draftAdjPpg": 8.224025,
+      "expectedPpg": 6.1673,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|anthonyschwartz": {
+      "draftAdjPpg": -2.6188,
+      "expectedPpg": 4.4268,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|brevinjordan": {
+      "draftAdjPpg": -0.453878,
+      "expectedPpg": 3.5011,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|chubahubbard": {
+      "draftAdjPpg": 3.311999,
+      "expectedPpg": 5.5399,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|cornellpowell": {
+      "draftAdjPpg": -4.2476,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|devontasmith": {
+      "draftAdjPpg": 2.80195,
+      "expectedPpg": 8.1543,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|dezfitzpatrick": {
+      "draftAdjPpg": -2.831014,
+      "expectedPpg": 4.7453,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|dwayneeskridge": {
+      "draftAdjPpg": -4.361681,
+      "expectedPpg": 5.4361,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|dyamibrown": {
+      "draftAdjPpg": -3.504073,
+      "expectedPpg": 5.7568,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|elijahmoore": {
+      "draftAdjPpg": -1.603843,
+      "expectedPpg": 7.3667,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|hunterlong": {
+      "draftAdjPpg": -2.559796,
+      "expectedPpg": 3.5011,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|jaelondarden": {
+      "draftAdjPpg": -3.798356,
+      "expectedPpg": 4.1678,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|jamarrchase": {
+      "draftAdjPpg": 7.902272,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|javianhawkins": {
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "RB",
+      "status": "unscored"
+    },
+    "2021|javontewilliams": {
+      "draftAdjPpg": 0.232057,
+      "expectedPpg": 10.2008,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|jaylenwaddle": {
+      "draftAdjPpg": 3.136754,
+      "expectedPpg": 7.8994,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|jermarjefferson": {
+      "draftAdjPpg": -1.063491,
+      "expectedPpg": 3.5544,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|joshpalmer": {
+      "draftAdjPpg": 1.760386,
+      "expectedPpg": 4.3339,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|justinfields": {
+      "draftAdjPpg": 2.352473,
+      "expectedPpg": 13.8299,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2021|kadariustoney": {
+      "draftAdjPpg": -2.265629,
+      "expectedPpg": 6.5302,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|kellenmond": {
+      "draftAdjPpg": -10.3462,
+      "expectedPpg": 10.5462,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2021|kenenwangwu": {
+      "draftAdjPpg": -2.97259,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|kennethgainwell": {
+      "draftAdjPpg": 0.348001,
+      "expectedPpg": 5.7373,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|khalilherbert": {
+      "draftAdjPpg": 1.630627,
+      "expectedPpg": 3.4535,
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|kylepitts": {
+      "draftAdjPpg": 1.157192,
+      "expectedPpg": 6.4005,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|larryrountree": {
+      "draftAdjPpg": -2.2112,
+      "expectedPpg": 3.4237,
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|macjones": {
+      "draftAdjPpg": 0.039737,
+      "expectedPpg": 12.0482,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2021|michaelcarter": {
+      "draftAdjPpg": 0.415567,
+      "expectedPpg": 6.1664,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|michaelstrachan": {
+      "draftAdjPpg": -3.265748,
+      "expectedPpg": 3.9614,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|najeeharris": {
+      "draftAdjPpg": 0.989228,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|nicocollins": {
+      "draftAdjPpg": 5.783521,
+      "expectedPpg": 5.3286,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|noahgray": {
+      "draftAdjPpg": -0.542682,
+      "expectedPpg": 3.5222,
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|patfreiermuth": {
+      "draftAdjPpg": 2.442513,
+      "expectedPpg": 4.328,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|rashodbateman": {
+      "draftAdjPpg": -1.724975,
+      "expectedPpg": 7.7406,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|rhamondrestevenson": {
+      "draftAdjPpg": 6.1118,
+      "expectedPpg": 4.9082,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|rondalemoore": {
+      "draftAdjPpg": -0.933379,
+      "expectedPpg": 6.9462,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|sethwilliams": {
+      "draftAdjPpg": -1.7939,
+      "expectedPpg": 3.7439,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|tamorrionterry": {
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2021|terracemarshall": {
+      "draftAdjPpg": -4.315214,
+      "expectedPpg": 7.1594,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|travisetienne": {
+      "draftAdjPpg": 1.242033,
+      "expectedPpg": 10.6913,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|trevorlawrence": {
+      "draftAdjPpg": 3.14759,
+      "expectedPpg": 14.0028,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2021|treylance": {
+      "draftAdjPpg": -7.46045,
+      "expectedPpg": 13.9392,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2021|treysermon": {
+      "draftAdjPpg": -6.651239,
+      "expectedPpg": 8.6795,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2021|tutuatwell": {
+      "draftAdjPpg": -1.02495,
+      "expectedPpg": 4.9812,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|tylanwallace": {
+      "draftAdjPpg": -3.1502,
+      "expectedPpg": 4.0252,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2021|zachdavidson": {
+      "draftAdjPpg": -3.2511,
+      "expectedPpg": 3.5011,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2021|zachwilson": {
+      "draftAdjPpg": -2.894716,
+      "expectedPpg": 12.5684,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2022|alecpierce": {
+      "draftAdjPpg": 1.863887,
+      "expectedPpg": 5.5408,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|breecehall": {
+      "draftAdjPpg": 2.7012,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|brianrobinson": {
+      "draftAdjPpg": 3.653869,
+      "expectedPpg": 4.9082,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|calvinaustiniii": {
+      "draftAdjPpg": -0.72275,
+      "expectedPpg": 5.2165,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|chrisolave": {
+      "draftAdjPpg": 3.495145,
+      "expectedPpg": 7.8994,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|christianwatson": {
+      "draftAdjPpg": 1.936433,
+      "expectedPpg": 7.1594,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|dameonpierce": {
+      "draftAdjPpg": -1.986484,
+      "expectedPpg": 8.3516,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|dannygray": {
+      "draftAdjPpg": -3.776785,
+      "expectedPpg": 3.9614,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|davidbell": {
+      "draftAdjPpg": -3.399675,
+      "expectedPpg": 5.8778,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|desmondridder": {
+      "draftAdjPpg": -1.6726,
+      "expectedPpg": 11.3238,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2022|drakelondon": {
+      "draftAdjPpg": 2.734674,
+      "expectedPpg": 8.2521,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|garrettwilson": {
+      "draftAdjPpg": 2.405331,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|georgepickens": {
+      "draftAdjPpg": 2.9994,
+      "expectedPpg": 7.7406,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|gregdulcich": {
+      "draftAdjPpg": 0.318813,
+      "expectedPpg": 3.8328,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2022|hassanhaskins": {
+      "draftAdjPpg": -3.224009,
+      "expectedPpg": 4.5831,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|isaiahspiller": {
+      "draftAdjPpg": -5.355633,
+      "expectedPpg": 6.8823,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|isiahpacheco": {
+      "draftAdjPpg": 5.382182,
+      "expectedPpg": 3.4237,
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|jahandotson": {
+      "draftAdjPpg": -2.178644,
+      "expectedPpg": 6.7342,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|jalennailor": {
+      "draftAdjPpg": 0.295718,
+      "expectedPpg": 3.4861,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|jalentolbert": {
+      "draftAdjPpg": -1.851345,
+      "expectedPpg": 5.7568,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|jamescook": {
+      "draftAdjPpg": 4.109894,
+      "expectedPpg": 8.6795,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|jamesonwilliams": {
+      "draftAdjPpg": 0.9157,
+      "expectedPpg": 8.1543,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|jelaniwoods": {
+      "draftAdjPpg": -0.4908,
+      "expectedPpg": 3.8908,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2022|jeromeford": {
+      "draftAdjPpg": 2.479809,
+      "expectedPpg": 3.4237,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|johnmetchieiii": {
+      "draftAdjPpg": -2.912867,
+      "expectedPpg": 5.6462,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|justynross": {
+      "draftAdjPpg": -4.170333,
+      "expectedPpg": 4.862,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|keaontayingram": {
+      "draftAdjPpg": -2.085605,
+      "expectedPpg": 3.4237,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|kennypickett": {
+      "draftAdjPpg": -5.192133,
+      "expectedPpg": 13.3288,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2022|kenwalkeriii": {
+      "draftAdjPpg": 1.524217,
+      "expectedPpg": 10.6913,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|kevinharris": {
+      "draftAdjPpg": 0.020744,
+      "expectedPpg": 3.4237,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|khalilshakir": {
+      "draftAdjPpg": 2.165303,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|kylephilips": {
+      "draftAdjPpg": -1.110315,
+      "expectedPpg": 3.5257,
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|kyrenwilliams": {
+      "draftAdjPpg": 10.492664,
+      "expectedPpg": 3.4237,
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|malikwillis": {
+      "draftAdjPpg": -5.717282,
+      "expectedPpg": 11.6891,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2022|montrellwashington": {
+      "draftAdjPpg": -3.462745,
+      "expectedPpg": 3.6082,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|pierrestrong": {
+      "draftAdjPpg": -3.186352,
+      "expectedPpg": 5.1907,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|rachaadwhite": {
+      "draftAdjPpg": 2.513009,
+      "expectedPpg": 7.1452,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|romeodoubs": {
+      "draftAdjPpg": 4.106575,
+      "expectedPpg": 3.9019,
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|skyymoore": {
+      "draftAdjPpg": -5.287709,
+      "expectedPpg": 6.9462,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|treylonburks": {
+      "draftAdjPpg": -4.065771,
+      "expectedPpg": 8.0372,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|treymcbride": {
+      "draftAdjPpg": 5.459342,
+      "expectedPpg": 4.1649,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2022|tylerallgeier": {
+      "draftAdjPpg": 0.765407,
+      "expectedPpg": 6.6331,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|tylerbadie": {
+      "draftAdjPpg": -2.3549,
+      "expectedPpg": 4.4899,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|tyquanthornton": {
+      "draftAdjPpg": -0.859933,
+      "expectedPpg": 4.5266,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|tyriondavisprice": {
+      "draftAdjPpg": -1.9669,
+      "expectedPpg": 3.5544,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2022|velusjones": {
+      "draftAdjPpg": -2.626032,
+      "expectedPpg": 3.7936,
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|wandalerobinson": {
+      "draftAdjPpg": 3.378059,
+      "expectedPpg": 4.9812,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2022|zamirwhite": {
+      "draftAdjPpg": -4.010556,
+      "expectedPpg": 6.395,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|aidanoconnell": {
+      "draftAdjPpg": 1.120819,
+      "expectedPpg": 10.4068,
+      "overall": 68,
+      "pick": "6.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|andreiiosivas": {
+      "draftAdjPpg": 0.8963,
+      "expectedPpg": 3.4717,
+      "overall": 63,
+      "pick": "6.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|anthonyrichardson": {
+      "draftAdjPpg": -0.333553,
+      "expectedPpg": 14.0512,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|atperry": {
+      "draftAdjPpg": 1.4348,
+      "expectedPpg": 4.0252,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|bijanrobinson": {
+      "draftAdjPpg": 5.950024,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|brentonstrange": {
+      "draftAdjPpg": 0.64606,
+      "expectedPpg": 3.4958,
+      "overall": 61,
+      "pick": "6.01",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|bryceyoung": {
+      "draftAdjPpg": -0.797583,
+      "expectedPpg": 14.0028,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|cedrictillman": {
+      "draftAdjPpg": -0.938316,
+      "expectedPpg": 4.862,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|charliejones": {
+      "draftAdjPpg": -2.631555,
+      "expectedPpg": 3.4861,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|chasebrown": {
+      "draftAdjPpg": 6.422633,
+      "expectedPpg": 5.1907,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|chrisrodriguezjr": {
+      "draftAdjPpg": 1.072214,
+      "expectedPpg": 3.4535,
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|cjstroud": {
+      "draftAdjPpg": 2.882909,
+      "expectedPpg": 14.0397,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|claytontune": {
+      "draftAdjPpg": -10.4542,
+      "expectedPpg": 10.5462,
+      "overall": 64,
+      "pick": "6.04",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|daltonkincaid": {
+      "draftAdjPpg": 1.564061,
+      "expectedPpg": 5.7335,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|darnellwashington": {
+      "draftAdjPpg": -2.1049,
+      "expectedPpg": 4.1649,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|denericprince": {
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
+      "overall": 65,
+      "pick": "6.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|deriusdavis": {
+      "draftAdjPpg": -2.022863,
+      "expectedPpg": 3.4717,
+      "overall": 67,
+      "pick": "6.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|deucevaughn": {
+      "draftAdjPpg": -2.389957,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|devonachane": {
+      "draftAdjPpg": 7.852318,
+      "expectedPpg": 8.6795,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|dewaynemcbride": {
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2023|dontayvionwicks": {
+      "draftAdjPpg": 2.007865,
+      "expectedPpg": 3.4717,
+      "overall": 58,
+      "pick": "5.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|elijahhiggins": {
+      "draftAdjPpg": -1.0158,
+      "expectedPpg": 3.4958,
+      "overall": 57,
+      "pick": "5.09",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|ericgray": {
+      "draftAdjPpg": -3.097918,
+      "expectedPpg": 3.7538,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|evanhull": {
+      "draftAdjPpg": -3.1533,
+      "expectedPpg": 4.0408,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|hendonhooker": {
+      "draftAdjPpg": -10.795767,
+      "expectedPpg": 11.6891,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|israelabanikanda": {
+      "draftAdjPpg": -2.266667,
+      "expectedPpg": 4.4,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|jahmyrgibbs": {
+      "draftAdjPpg": 7.296455,
+      "expectedPpg": 10.6913,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|jakehaener": {
+      "draftAdjPpg": -8.4968,
+      "expectedPpg": 10.1518,
+      "overall": 72,
+      "pick": "6.12",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|jalenbrooks": {
+      "draftAdjPpg": -1.853181,
+      "expectedPpg": 3.4717,
+      "overall": 59,
+      "pick": "5.11",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|jalinhyatt": {
+      "draftAdjPpg": -4.171434,
+      "expectedPpg": 5.7568,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|jaxonsmithnjigba": {
+      "draftAdjPpg": 3.857596,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|jaydenreed": {
+      "draftAdjPpg": 4.626,
+      "expectedPpg": 5.2165,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|jonathanmingo": {
+      "draftAdjPpg": -3.645179,
+      "expectedPpg": 6.0136,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|jordanaddison": {
+      "draftAdjPpg": 2.213117,
+      "expectedPpg": 8.2521,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|joshdowns": {
+      "draftAdjPpg": 2.501753,
+      "expectedPpg": 5.5408,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|joshwhyle": {
+      "draftAdjPpg": -1.306911,
+      "expectedPpg": 3.4958,
+      "overall": 66,
+      "pick": "6.06",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|justinshorter": {
+      "draftAdjPpg": -3.4844,
+      "expectedPpg": 3.4844,
+      "overall": 53,
+      "pick": "5.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|kayshonboutte": {
+      "draftAdjPpg": 1.955341,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|keatonmitchell": {
+      "draftAdjPpg": 1.291685,
+      "expectedPpg": 3.4237,
+      "overall": 52,
+      "pick": "5.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|kendremiller": {
+      "draftAdjPpg": -3.472557,
+      "expectedPpg": 8.0297,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|kennymcintosh": {
+      "draftAdjPpg": -2.3787,
+      "expectedPpg": 3.4237,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|lewnicholsiii": {
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
+      "overall": 55,
+      "pick": "5.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|lukemusgrave": {
+      "draftAdjPpg": -0.773714,
+      "expectedPpg": 3.728,
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|lukeschoonmaker": {
+      "draftAdjPpg": -1.808943,
+      "expectedPpg": 3.5011,
+      "overall": 50,
+      "pick": "5.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|marvinmimsjr": {
+      "draftAdjPpg": -0.3486,
+      "expectedPpg": 5.4361,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|michaelmayer": {
+      "draftAdjPpg": -1.533895,
+      "expectedPpg": 5.226,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|michaelwilson": {
+      "draftAdjPpg": 4.373465,
+      "expectedPpg": 3.8461,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|mohamedibrahim": {
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
+      "overall": 56,
+      "pick": "5.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|nathanieldell": {
+      "draftAdjPpg": 5.607,
+      "expectedPpg": 4.633,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|parkerwashington": {
+      "draftAdjPpg": 2.812271,
+      "expectedPpg": 3.5663,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|pukanacua": {
+      "draftAdjPpg": 12.973755,
+      "expectedPpg": 3.4717,
+      "overall": 62,
+      "pick": "6.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|quentinjohnston": {
+      "draftAdjPpg": -0.156474,
+      "expectedPpg": 8.1543,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|rakimjarrett": {
+      "draftAdjPpg": -2.2267,
+      "expectedPpg": 3.4717,
+      "overall": 69,
+      "pick": "6.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|rasheerice": {
+      "draftAdjPpg": 6.314843,
+      "expectedPpg": 6.1673,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|ronniebell": {
+      "draftAdjPpg": -2.032414,
+      "expectedPpg": 3.4717,
+      "overall": 70,
+      "pick": "6.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|roschonjohnson": {
+      "draftAdjPpg": -3.380311,
+      "expectedPpg": 7.7192,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|samlaporta": {
+      "draftAdjPpg": 5.483214,
+      "expectedPpg": 4.7025,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|seantucker": {
+      "draftAdjPpg": 0.038522,
+      "expectedPpg": 3.4237,
+      "overall": 49,
+      "pick": "5.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|stetsonbennett": {
+      "overall": 60,
+      "pick": "5.12",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2023|tankbigsby": {
+      "draftAdjPpg": -3.1432,
+      "expectedPpg": 7.1452,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|tretucker": {
+      "draftAdjPpg": 2.5416,
+      "expectedPpg": 3.4844,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|treypalmer": {
+      "draftAdjPpg": -0.40295,
+      "expectedPpg": 3.6967,
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|tuckerkraft": {
+      "draftAdjPpg": 3.701281,
+      "expectedPpg": 3.5011,
+      "overall": 51,
+      "pick": "5.03",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2023|tyjaespears": {
+      "draftAdjPpg": 1.347886,
+      "expectedPpg": 6.1664,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|tylerscott": {
+      "draftAdjPpg": -2.511414,
+      "expectedPpg": 3.5257,
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|willlevis": {
+      "draftAdjPpg": -1.352586,
+      "expectedPpg": 12.3983,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2023|xavierhutchinson": {
+      "draftAdjPpg": -1.374512,
+      "expectedPpg": 3.7439,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2023|xazavianvalladay": {
+      "draftAdjPpg": -3.2563,
+      "expectedPpg": 3.2563,
+      "overall": 71,
+      "pick": "6.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|zachcharbonnet": {
+      "draftAdjPpg": -0.922755,
+      "expectedPpg": 9.635,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|zachevans": {
+      "draftAdjPpg": -4.5994,
+      "expectedPpg": 4.7894,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2023|zachkuntz": {
+      "overall": 54,
+      "pick": "5.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2023|zayflowers": {
+      "draftAdjPpg": 3.0734,
+      "expectedPpg": 7.7406,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|adonaimitchell": {
+      "draftAdjPpg": -3.085958,
+      "expectedPpg": 6.5302,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|ainiassmith": {
+      "draftAdjPpg": -1.443129,
+      "expectedPpg": 3.4717,
+      "overall": 69,
+      "pick": "6.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|audricestime": {
+      "draftAdjPpg": 0.2825,
+      "expectedPpg": 4.1325,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|bensinnott": {
+      "draftAdjPpg": -3.871736,
+      "expectedPpg": 4.9081,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|blakecorum": {
+      "draftAdjPpg": -1.807576,
+      "expectedPpg": 6.1664,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|blakewatson": {
+      "draftAdjPpg": -2.0237,
+      "expectedPpg": 3.4237,
+      "overall": 59,
+      "pick": "5.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|bonix": {
+      "draftAdjPpg": 9.151218,
+      "expectedPpg": 10.9529,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|braelonallen": {
+      "draftAdjPpg": 0.862014,
+      "expectedPpg": 3.4237,
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|brendenrice": {
+      "draftAdjPpg": -3.4844,
+      "expectedPpg": 3.4844,
+      "overall": 53,
+      "pick": "5.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|brianthomasjr": {
+      "draftAdjPpg": 3.56189,
+      "expectedPpg": 7.8994,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|brockbowers": {
+      "draftAdjPpg": 5.6477,
+      "expectedPpg": 6.4523,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|bubmeans": {
+      "draftAdjPpg": -0.298686,
+      "expectedPpg": 3.4844,
+      "overall": 51,
+      "pick": "5.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|buckyirving": {
+      "draftAdjPpg": 8.808456,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|cadestover": {
+      "draftAdjPpg": -1.805267,
+      "expectedPpg": 3.5011,
+      "overall": 50,
+      "pick": "5.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|calebwilliams": {
+      "draftAdjPpg": 4.768194,
+      "expectedPpg": 14.0471,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|caseywashington": {
+      "draftAdjPpg": -2.518367,
+      "expectedPpg": 3.4717,
+      "overall": 70,
+      "pick": "6.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|clydeedwardshelaire": {
+      "overall": 55,
+      "pick": "5.07",
+      "pos": "RB",
+      "status": "veteran_excluded"
+    },
+    "2024|codyschrader": {
+      "draftAdjPpg": -2.7237,
+      "expectedPpg": 3.4237,
+      "overall": 61,
+      "pick": "6.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|colbyparkinson": {
+      "overall": 63,
+      "pick": "6.03",
+      "pos": "TE",
+      "status": "veteran_excluded"
+    },
+    "2024|corneliusjohnson": {
+      "overall": 72,
+      "pick": "6.12",
+      "pos": "WR",
+      "status": "unscored"
+    },
+    "2024|devontezwalker": {
+      "draftAdjPpg": -2.110657,
+      "expectedPpg": 4.1678,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|drakemaye": {
+      "draftAdjPpg": 5.919267,
+      "expectedPpg": 13.5674,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|dylanlaube": {
+      "draftAdjPpg": -3.416293,
+      "expectedPpg": 3.4237,
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|erickall": {
+      "draftAdjPpg": -0.634433,
+      "expectedPpg": 3.5011,
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|frankgorejr": {
+      "draftAdjPpg": -3.2563,
+      "expectedPpg": 3.2563,
+      "overall": 71,
+      "pick": "6.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|isaacguerendo": {
+      "draftAdjPpg": -0.5337,
+      "expectedPpg": 3.4237,
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|isaiahdavis": {
+      "draftAdjPpg": -0.329761,
+      "expectedPpg": 3.4237,
+      "overall": 57,
+      "pick": "5.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|jacobcowing": {
+      "draftAdjPpg": -2.9863,
+      "expectedPpg": 3.5663,
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jalenmcmillan": {
+      "draftAdjPpg": 3.948453,
+      "expectedPpg": 4.3339,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jalynnpolk": {
+      "draftAdjPpg": -5.1662,
+      "expectedPpg": 6.9462,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jamarithrash": {
+      "draftAdjPpg": -2.393922,
+      "expectedPpg": 3.4717,
+      "overall": 60,
+      "pick": "5.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jaredwiley": {
+      "draftAdjPpg": -3.3261,
+      "expectedPpg": 3.5011,
+      "overall": 49,
+      "pick": "5.01",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|jasemcclellan": {
+      "draftAdjPpg": -1.8237,
+      "expectedPpg": 3.4237,
+      "overall": 52,
+      "pick": "5.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|jatavionsanders": {
+      "draftAdjPpg": -1.098759,
+      "expectedPpg": 4.416,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|javonbaker": {
+      "draftAdjPpg": -4.372055,
+      "expectedPpg": 4.5266,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jawharjordan": {
+      "draftAdjPpg": 3.1263,
+      "expectedPpg": 3.4237,
+      "overall": 65,
+      "pick": "6.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|jaydendaniels": {
+      "draftAdjPpg": 7.3983,
+      "expectedPpg": 13.9392,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|jaylenwright": {
+      "draftAdjPpg": -3.1109,
+      "expectedPpg": 5.9469,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|jermaineburton": {
+      "draftAdjPpg": -4.528957,
+      "expectedPpg": 5.4361,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jjmccarthy": {
+      "draftAdjPpg": -0.5563,
+      "expectedPpg": 12.8943,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|johnnywilson": {
+      "draftAdjPpg": -2.71565,
+      "expectedPpg": 3.4844,
+      "overall": 54,
+      "pick": "5.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|jonathonbrooks": {
+      "draftAdjPpg": -7.635,
+      "expectedPpg": 9.635,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|jordantravis": {
+      "overall": 64,
+      "pick": "6.04",
+      "pos": "QB",
+      "status": "unscored"
+    },
+    "2024|jordanwhittington": {
+      "draftAdjPpg": -1.3217,
+      "expectedPpg": 3.4717,
+      "overall": 68,
+      "pick": "6.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|keenanallen": {
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "WR",
+      "status": "veteran_excluded"
+    },
+    "2024|kennethgainwell": {
+      "overall": 58,
+      "pick": "5.10",
+      "pos": "RB",
+      "status": "veteran_excluded"
+    },
+    "2024|keoncoleman": {
+      "draftAdjPpg": 0.204262,
+      "expectedPpg": 6.7342,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|kimanividal": {
+      "draftAdjPpg": 2.436604,
+      "expectedPpg": 3.6547,
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|laddmcconkey": {
+      "draftAdjPpg": 3.30675,
+      "expectedPpg": 7.562,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|lukemccaffrey": {
+      "draftAdjPpg": -1.879154,
+      "expectedPpg": 4.633,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|malachicorley": {
+      "draftAdjPpg": -4.659055,
+      "expectedPpg": 6.0136,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|maliknabers": {
+      "draftAdjPpg": 5.664758,
+      "expectedPpg": 8.3984,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|malikwashington": {
+      "draftAdjPpg": 0.674268,
+      "expectedPpg": 3.6967,
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|marshawnlloyd": {
+      "draftAdjPpg": -4.3331,
+      "expectedPpg": 6.6331,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|marvinharrisonjr": {
+      "draftAdjPpg": 0.955197,
+      "expectedPpg": 8.4517,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|michaelpenix": {
+      "draftAdjPpg": 2.052371,
+      "expectedPpg": 10.5462,
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|rasheenali": {
+      "draftAdjPpg": -2.337986,
+      "expectedPpg": 3.4237,
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|raydavis": {
+      "draftAdjPpg": 0.591641,
+      "expectedPpg": 4.3113,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|rickypearsall": {
+      "draftAdjPpg": 0.0633,
+      "expectedPpg": 7.3667,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|romanwilson": {
+      "draftAdjPpg": -2.652629,
+      "expectedPpg": 4.9812,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|romeodunze": {
+      "draftAdjPpg": 0.012228,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|samdarnold": {
+      "overall": 67,
+      "pick": "6.07",
+      "pos": "QB",
+      "status": "veteran_excluded"
+    },
+    "2024|sionevaki": {
+      "draftAdjPpg": -3.149141,
+      "expectedPpg": 3.4084,
+      "overall": 66,
+      "pick": "6.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|spencerrattler": {
+      "draftAdjPpg": 0.0738,
+      "expectedPpg": 10.5462,
+      "overall": 56,
+      "pick": "5.08",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2024|theojohnson": {
+      "draftAdjPpg": 2.384085,
+      "expectedPpg": 3.5011,
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2024|treybenson": {
+      "draftAdjPpg": -3.741465,
+      "expectedPpg": 8.0297,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|troyfranklin": {
+      "draftAdjPpg": 0.774409,
+      "expectedPpg": 5.2165,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|tyronetracy": {
+      "draftAdjPpg": 5.811825,
+      "expectedPpg": 3.7538,
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|vanjefferson": {
+      "overall": 62,
+      "pick": "6.02",
+      "pos": "WR",
+      "status": "veteran_excluded"
+    },
+    "2024|willshipley": {
+      "draftAdjPpg": -2.59221,
+      "expectedPpg": 3.4535,
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2024|xavierlegette": {
+      "draftAdjPpg": 0.02049,
+      "expectedPpg": 5.5408,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2024|xavierworthy": {
+      "draftAdjPpg": -0.297261,
+      "expectedPpg": 8.2521,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|ariansmith": {
+      "draftAdjPpg": -2.8594,
+      "expectedPpg": 3.4844,
+      "overall": 55,
+      "pick": "5.06",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|ashtonjeanty": {
+      "draftAdjPpg": 1.8912,
+      "expectedPpg": 10.9088,
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|bhayshultuten": {
+      "draftAdjPpg": 0.216233,
+      "expectedPpg": 5.3571,
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|brashardsmith": {
+      "draftAdjPpg": -0.435465,
+      "expectedPpg": 3.4237,
+      "overall": 47,
+      "pick": "4.10",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|camskattebo": {
+      "draftAdjPpg": 6.4328,
+      "expectedPpg": 8.0297,
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|camward": {
+      "draftAdjPpg": -2.136324,
+      "expectedPpg": 14.0575,
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|chimeredike": {
+      "draftAdjPpg": 2.521482,
+      "expectedPpg": 3.4844,
+      "overall": 51,
+      "pick": "5.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|colstonloveland": {
+      "draftAdjPpg": 2.77275,
+      "expectedPpg": 5.7335,
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|damienmartinez": {
+      "overall": 46,
+      "pick": "4.09",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2025|devinneal": {
+      "draftAdjPpg": 0.9276,
+      "expectedPpg": 4.2224,
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|dillongabriel": {
+      "draftAdjPpg": -2.5382,
+      "expectedPpg": 10.5462,
+      "overall": 56,
+      "pick": "5.07",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|djgiddens": {
+      "draftAdjPpg": -2.880433,
+      "expectedPpg": 3.9471,
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|dontethornton": {
+      "draftAdjPpg": -2.728067,
+      "expectedPpg": 3.9614,
+      "overall": 37,
+      "pick": "3.13",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|dylansampson": {
+      "draftAdjPpg": -0.1682,
+      "expectedPpg": 4.9082,
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|elicayomanor": {
+      "draftAdjPpg": 1.7524,
+      "expectedPpg": 4.2476,
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|elijaharroyo": {
+      "draftAdjPpg": -1.239562,
+      "expectedPpg": 3.5011,
+      "overall": 44,
+      "pick": "4.07",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|emekaegbuka": {
+      "draftAdjPpg": 2.292124,
+      "expectedPpg": 7.3667,
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|haroldfannin": {
+      "draftAdjPpg": 5.5672,
+      "expectedPpg": 3.8328,
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|isaacteslaa": {
+      "draftAdjPpg": -0.173682,
+      "expectedPpg": 4.1678,
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|isaiahbond": {
+      "draftAdjPpg": -0.61545,
+      "expectedPpg": 3.4717,
+      "overall": 57,
+      "pick": "5.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jackbech": {
+      "draftAdjPpg": -4.1423,
+      "expectedPpg": 6.1673,
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jacorycroskeymerritt": {
+      "draftAdjPpg": 4.564535,
+      "expectedPpg": 3.4237,
+      "overall": 50,
+      "pick": "5.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|jalenmilroe": {
+      "draftAdjPpg": -11.079533,
+      "expectedPpg": 10.5462,
+      "overall": 41,
+      "pick": "4.04",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|jalenroyals": {
+      "draftAdjPpg": -5.3408,
+      "expectedPpg": 5.5408,
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jarquezhunter": {
+      "draftAdjPpg": -4.4,
+      "expectedPpg": 4.4,
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|jaxsondart": {
+      "draftAdjPpg": 6.814786,
+      "expectedPpg": 11.8695,
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|jaydenhiggins": {
+      "draftAdjPpg": -0.322435,
+      "expectedPpg": 6.7342,
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jaydonblue": {
+      "draftAdjPpg": -1.2107,
+      "expectedPpg": 5.1907,
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|jaylinlane": {
+      "draftAdjPpg": -0.737733,
+      "expectedPpg": 3.4844,
+      "overall": 54,
+      "pick": "5.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jaylinnoel": {
+      "draftAdjPpg": -1.603176,
+      "expectedPpg": 4.862,
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|jordanjames": {
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
+      "overall": 43,
+      "pick": "4.06",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|kalebjohnson": {
+      "draftAdjPpg": -8.1767,
+      "expectedPpg": 9.0067,
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|keandrelambertsmith": {
+      "draftAdjPpg": -2.1117,
+      "expectedPpg": 3.4717,
+      "overall": 59,
+      "pick": "5.10",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|khalilherbert": {
+      "overall": 60,
+      "pick": "5.11",
+      "pos": "RB",
+      "status": "veteran_excluded"
+    },
+    "2025|kylemonangai": {
+      "draftAdjPpg": 4.6763,
+      "expectedPpg": 3.4237,
+      "overall": 52,
+      "pick": "5.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|kylewilliams": {
+      "draftAdjPpg": -3.0462,
+      "expectedPpg": 5.6462,
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|lutherburden": {
+      "draftAdjPpg": 0.4298,
+      "expectedPpg": 6.5302,
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|masontaylor": {
+      "draftAdjPpg": 0.542554,
+      "expectedPpg": 4.6036,
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|matthewgolden": {
+      "draftAdjPpg": -2.981914,
+      "expectedPpg": 6.9462,
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|olliegordon": {
+      "draftAdjPpg": -0.577929,
+      "expectedPpg": 3.5544,
+      "overall": 39,
+      "pick": "4.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|omarionhampton": {
+      "draftAdjPpg": 2.6087,
+      "expectedPpg": 10.6913,
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|orondegadsden": {
+      "draftAdjPpg": 3.630867,
+      "expectedPpg": 3.4958,
+      "overall": 58,
+      "pick": "5.09",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|patbryant": {
+      "draftAdjPpg": -0.791967,
+      "expectedPpg": 4.7453,
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|quinshonjudkins": {
+      "draftAdjPpg": 1.273,
+      "expectedPpg": 9.927,
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|raheimsanders": {
+      "draftAdjPpg": 1.2763,
+      "expectedPpg": 3.4237,
+      "overall": 61,
+      "pick": "5.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|rjharvey": {
+      "draftAdjPpg": 2.091088,
+      "expectedPpg": 8.6795,
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|savionwilliams": {
+      "draftAdjPpg": -1.857967,
+      "expectedPpg": 3.5663,
+      "overall": 45,
+      "pick": "4.08",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|shedeursanders": {
+      "draftAdjPpg": -0.6837,
+      "expectedPpg": 10.5462,
+      "overall": 48,
+      "pick": "4.11",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|tahjbrooks": {
+      "draftAdjPpg": -3.28595,
+      "expectedPpg": 3.6547,
+      "overall": 38,
+      "pick": "4.01",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|taifelton": {
+      "draftAdjPpg": -3.249106,
+      "expectedPpg": 3.4844,
+      "overall": 49,
+      "pick": "4.12",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|terranceferguson": {
+      "draftAdjPpg": -0.999429,
+      "expectedPpg": 4.328,
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|tetairoamcmillan": {
+      "draftAdjPpg": 2.043871,
+      "expectedPpg": 8.3326,
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|toryhorton": {
+      "draftAdjPpg": 3.6283,
+      "expectedPpg": 3.6967,
+      "overall": 42,
+      "pick": "4.05",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|travishunter": {
+      "draftAdjPpg": -1.137814,
+      "expectedPpg": 8.2521,
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|treharris": {
+      "draftAdjPpg": -2.5568,
+      "expectedPpg": 5.7568,
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "WR",
+      "status": "scored"
+    },
+    "2025|treveyonhenderson": {
+      "draftAdjPpg": 1.773,
+      "expectedPpg": 9.327,
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|trevoretienne": {
+      "draftAdjPpg": -2.8535,
+      "expectedPpg": 3.4535,
+      "overall": 40,
+      "pick": "4.03",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2025|tylershough": {
+      "draftAdjPpg": 1.331573,
+      "expectedPpg": 13.7557,
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "QB",
+      "status": "scored"
+    },
+    "2025|tylerwarren": {
+      "draftAdjPpg": 3.314841,
+      "expectedPpg": 5.5381,
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "TE",
+      "status": "scored"
+    },
+    "2025|willhoward": {
+      "overall": 53,
+      "pick": "5.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2025|woodymarks": {
+      "draftAdjPpg": 3.65245,
+      "expectedPpg": 5.0413,
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "RB",
+      "status": "scored"
+    },
+    "2026|adamrandall": {
+      "overall": 33,
+      "pick": "3.09",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|antoniowilliams": {
+      "overall": 12,
+      "pick": "1.12",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|barionbrown": {
+      "overall": 53,
+      "pick": "5.05",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|brenenthompson": {
+      "overall": 37,
+      "pick": "4.01",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|brycelance": {
+      "overall": 34,
+      "pick": "3.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|calebdouglas": {
+      "overall": 32,
+      "pick": "3.08",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|carnelltate": {
+      "overall": 2,
+      "pick": "1.02",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|carsonbeck": {
+      "overall": 51,
+      "pick": "5.03",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|chrisbell": {
+      "overall": 16,
+      "pick": "2.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|chrisbrazzell": {
+      "overall": 25,
+      "pick": "3.01",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|cjdaniels": {
+      "overall": 39,
+      "pick": "4.03",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|cyrusallen": {
+      "overall": 41,
+      "pick": "4.05",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|deionburks": {
+      "overall": 42,
+      "pick": "4.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|demondclaiborne": {
+      "overall": 29,
+      "pick": "3.05",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|denzelboston": {
+      "overall": 11,
+      "pick": "1.11",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|dezhaunstribling": {
+      "overall": 18,
+      "pick": "2.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|drewallar": {
+      "overall": 50,
+      "pick": "5.02",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|eliheidenreich": {
+      "overall": 43,
+      "pick": "4.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|elijahsarratt": {
+      "overall": 26,
+      "pick": "3.02",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|eliraridon": {
+      "overall": 46,
+      "pick": "4.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|elistowers": {
+      "overall": 10,
+      "pick": "1.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|emmettjohnson": {
+      "overall": 17,
+      "pick": "2.05",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|fernandomendoza": {
+      "overall": 8,
+      "pick": "1.08",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|germiebernard": {
+      "overall": 14,
+      "pick": "2.02",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jadarianprice": {
+      "overall": 5,
+      "pick": "1.05",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jakobilane": {
+      "overall": 31,
+      "pick": "3.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jalennailor": {
+      "overall": 57,
+      "pick": "5.09",
+      "pos": "WR",
+      "status": "veteran_excluded"
+    },
+    "2026|jammiller": {
+      "overall": 44,
+      "pick": "4.08",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jauanjennings": {
+      "overall": 45,
+      "pick": "4.09",
+      "pos": "WR",
+      "status": "veteran_excluded"
+    },
+    "2026|jaydnott": {
+      "overall": 60,
+      "pick": "5.12",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jeffcaldwell": {
+      "overall": 58,
+      "pick": "5.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jeremiyahlove": {
+      "overall": 1,
+      "pick": "1.01",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jmaritaylor": {
+      "overall": 55,
+      "pick": "5.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|johnmichaelgyllenborg": {
+      "overall": 49,
+      "pick": "5.01",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jonahcoleman": {
+      "overall": 13,
+      "pick": "2.01",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|jordyntyson": {
+      "overall": 4,
+      "pick": "1.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|joshcameron": {
+      "overall": 54,
+      "pick": "5.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|justinjoly": {
+      "overall": 48,
+      "pick": "4.12",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|kaelonblack": {
+      "overall": 20,
+      "pick": "2.08",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|kaytronallen": {
+      "overall": 27,
+      "pick": "3.03",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|kcconcepcion": {
+      "overall": 7,
+      "pick": "1.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|kenyonsadiq": {
+      "overall": 9,
+      "pick": "1.09",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|kevincoleman": {
+      "overall": 52,
+      "pick": "5.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|makailemon": {
+      "overall": 3,
+      "pick": "1.03",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|malachifields": {
+      "overall": 21,
+      "pick": "2.09",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|matthibner": {
+      "overall": 59,
+      "pick": "5.11",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|maxklare": {
+      "overall": 35,
+      "pick": "3.11",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|mikewashingtonjr": {
+      "overall": 15,
+      "pick": "2.03",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|nicholassingleton": {
+      "overall": 22,
+      "pick": "2.10",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|omarcooper": {
+      "overall": 6,
+      "pick": "1.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|oscardelp": {
+      "overall": 30,
+      "pick": "3.06",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|reggievirgil": {
+      "overall": 47,
+      "pick": "4.11",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|sethmcgowan": {
+      "overall": 40,
+      "pick": "4.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|skylerbell": {
+      "overall": 24,
+      "pick": "2.12",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|tannerkoziol": {
+      "overall": 56,
+      "pick": "5.08",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|taylengreen": {
+      "overall": 38,
+      "pick": "4.02",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|tedhurst": {
+      "overall": 19,
+      "pick": "2.07",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|tysimpson": {
+      "overall": 28,
+      "pick": "3.04",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|zachariahbranch": {
+      "overall": 23,
+      "pick": "2.11",
+      "pos": "",
+      "status": "unscored"
+    },
+    "2026|zavionthomas": {
+      "overall": 36,
+      "pick": "3.12",
+      "pos": "",
+      "status": "unscored"
+    }
+  },
+  "positionAudit": "same-year FFC rookie ADP, then historical NFL draft position, then Plebs/Sleeper fallback",
+  "throughSeason": 2025,
+  "version": "draft-adjusted-ppg-v1"
+}

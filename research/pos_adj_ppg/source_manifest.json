@@ -1,0 +1,295 @@
+{
+  "adp_source": "Fantasy Football Calculator standard 12-team Dynasty Rookie ADP REST API (separate from FFC 2-QB ADP).",
+  "adp_sources": [
+    {
+      "bytes": 7741,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2014-09-01",
+        "rounds": 15,
+        "start_date": "2014-08-18",
+        "teams": 12,
+        "total_drafts": 272,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 41,
+      "sha256": "b0563137622077779015faa40008c05b51e2ecd8e554e1d5031792b7a7ccc004",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2014",
+      "year": 2014
+    },
+    {
+      "bytes": 6445,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2015-09-09",
+        "rounds": 15,
+        "start_date": "2015-08-20",
+        "teams": 12,
+        "total_drafts": 223,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 34,
+      "sha256": "6642f5f6335e0ee04b4a9c4d03ad69fc4f4cde233b5132385de3a03a8cb11b0c",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2015",
+      "year": 2015
+    },
+    {
+      "bytes": 7759,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2016-09-02",
+        "rounds": 15,
+        "start_date": "2016-05-25",
+        "teams": 12,
+        "total_drafts": 2551,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 41,
+      "sha256": "cc70b7e914f3d8b6fee0fc4f861dc6ae5947c456137533a79607b87a87ec5715",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2016",
+      "year": 2016
+    },
+    {
+      "bytes": 8273,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2017-09-04",
+        "rounds": 15,
+        "start_date": "2017-08-21",
+        "teams": 12,
+        "total_drafts": 815,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 44,
+      "sha256": "d3fa9da4f3aacf21f281cd980871afd37f5faece943a4c0fd2603c7f9d99d065",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2017",
+      "year": 2017
+    },
+    {
+      "bytes": 7358,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2018-09-04",
+        "rounds": 15,
+        "start_date": "2018-08-25",
+        "teams": 12,
+        "total_drafts": 384,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 39,
+      "sha256": "c08e777bfc65c39f456db0310cb41166dd86e8d001fc9fed82c4b70ad4992e9c",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2018",
+      "year": 2018
+    },
+    {
+      "bytes": 8691,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2019-09-04",
+        "rounds": 15,
+        "start_date": "2019-08-07",
+        "teams": 12,
+        "total_drafts": 1362,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 46,
+      "sha256": "9428183a687ab0446acf9d9de695dc2d10df5c606e1654a4a531a9af1088348f",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2019",
+      "year": 2019
+    },
+    {
+      "bytes": 6280,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2020-09-01",
+        "rounds": 15,
+        "start_date": "2020-06-15",
+        "teams": 12,
+        "total_drafts": 1451,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 33,
+      "sha256": "33c3453e87633e5f58c6a48584965aa1823ef5082ceb03e1340c450c8288fb01",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2020",
+      "year": 2020
+    },
+    {
+      "bytes": 6081,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2021-09-01",
+        "rounds": 15,
+        "start_date": "2021-08-20",
+        "teams": 12,
+        "total_drafts": 388,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 32,
+      "sha256": "d48c9abb151414db921cfd49877db21a94082e8b76abca7a12355d2eedd0b65c",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2021",
+      "year": 2021
+    },
+    {
+      "bytes": 7555,
+      "kind": "ffc_dynasty_rookie_adp",
+      "meta": {
+        "end_date": "2022-09-04",
+        "rounds": 15,
+        "start_date": "2022-07-26",
+        "teams": 12,
+        "total_drafts": 948,
+        "type": "Dynasty Rookie"
+      },
+      "rows": 40,
+      "sha256": "fa407ac9b7390a52ec442c70c3e0d69ca511654c208e685e8364ae137317b7e8",
+      "url": "https://fantasyfootballcalculator.com/api/v1/adp/rookie?position=all&teams=12&year=2022",
+      "year": 2022
+    }
+  ],
+  "attribution": "ADP data courtesy of Fantasy Football Calculator.",
+  "calibration_checks": 25,
+  "career_age_adjustment": false,
+  "core_filter": {
+    "max_adp": 96.0,
+    "min_times_drafted": 5,
+    "n": 315,
+    "position_counts": {
+      "QB": 38,
+      "RB": 114,
+      "TE": 27,
+      "WR": 136
+    },
+    "years": [
+      2014,
+      2022
+    ]
+  },
+  "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
+  "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
+  "generated_at": "2026-09-02T19:07:40+00:00",
+  "identity_resolution": "normalized name + explicit historical variants/renames + position + rookie-year context; prior NFL debut removed as non-rookie",
+  "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
+  "match_rate_within_adp_96": 0.9653,
+  "minimum_effective_n": 12.0,
+  "model_selection": "LOSO final monotone adaptive kernel; >=12 effective local historical observations at every published slot",
+  "nonrookie_rows_removed": 3,
+  "notable_identity_bridge": "Nyheim Hines -> Sleeper Nyheim Miller-Hines",
+  "outcome_sources": [
+    {
+      "bytes": 6513118,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 9092,
+      "sha256": "d75e86173b28034b409b84f6680123430eac0ca4a68967721539067a8ced26aa",
+      "url": "https://api.sleeper.com/stats/nfl/2014?season_type=regular",
+      "year": 2014
+    },
+    {
+      "bytes": 6614903,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 9133,
+      "sha256": "b79910915524fe46eae50f6eaf0c221981f9a7b6d26c29a026c2b8e3a475be1c",
+      "url": "https://api.sleeper.com/stats/nfl/2015?season_type=regular",
+      "year": 2015
+    },
+    {
+      "bytes": 6505489,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8935,
+      "sha256": "8c83712e29f82a075cf1a83d5d2190c2380d88ebc57ee59c0a7091fd5d824eb8",
+      "url": "https://api.sleeper.com/stats/nfl/2016?season_type=regular",
+      "year": 2016
+    },
+    {
+      "bytes": 6382008,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8704,
+      "sha256": "e5b206c2e6e49f7ccd6ab7de9e4aea5676421b8f2855ed95b8d93cb1c899d0b5",
+      "url": "https://api.sleeper.com/stats/nfl/2017?season_type=regular",
+      "year": 2017
+    },
+    {
+      "bytes": 6253653,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8446,
+      "sha256": "927d01bd3a1ce96f65d20ca339a5f99c408c57274c2fcfbf52ea612b67f64f0c",
+      "url": "https://api.sleeper.com/stats/nfl/2018?season_type=regular",
+      "year": 2018
+    },
+    {
+      "bytes": 6086782,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8129,
+      "sha256": "0ca8e2a3e87314d708e05f3bfbfbccae865e75cb3e915c2edfbfc68aa4b37868",
+      "url": "https://api.sleeper.com/stats/nfl/2019?season_type=regular",
+      "year": 2019
+    },
+    {
+      "bytes": 6184821,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8163,
+      "sha256": "0853f92feaa714b1d23da23e90e35017fa90aaefd0cdc99c9de791d63ce5bfe2",
+      "url": "https://api.sleeper.com/stats/nfl/2020?season_type=regular",
+      "year": 2020
+    },
+    {
+      "bytes": 6355547,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8251,
+      "sha256": "6fe3ac510b87309f711ba313153666c00cf3ba03244739dbee7041c3f0dd9eb5",
+      "url": "https://api.sleeper.com/stats/nfl/2021?season_type=regular",
+      "year": 2021
+    },
+    {
+      "bytes": 6347553,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8237,
+      "sha256": "e1d67be7695e291c6bd2cdb9fa395649b3bc64ac1c8f1929a2cbdb26ec404781",
+      "url": "https://api.sleeper.com/stats/nfl/2022?season_type=regular",
+      "year": 2022
+    },
+    {
+      "bytes": 6362092,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8234,
+      "sha256": "ffc46e3b1dd426c85ed30f39c8dedde43c213fe45f1521d5c9eb528e7d18413a",
+      "url": "https://api.sleeper.com/stats/nfl/2023?season_type=regular",
+      "year": 2023
+    },
+    {
+      "bytes": 6394796,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8249,
+      "sha256": "7aa96387530dc4cea968d5fb8dd58fdb9d68a9a6b640067c53e3e7c65b11b313",
+      "url": "https://api.sleeper.com/stats/nfl/2024?season_type=regular",
+      "year": 2024
+    },
+    {
+      "bytes": 6392866,
+      "kind": "sleeper_regular_season_stats",
+      "rows": 8248,
+      "sha256": "cb3e913fac1375dddb6c973e4e3ba1f38a7b69bd02d7d19127512ecae1dad4e8",
+      "url": "https://api.sleeper.com/stats/nfl/2025?season_type=regular",
+      "year": 2025
+    }
+  ],
+  "resolved_outcome_rows": 334,
+  "scoring": {
+    "fum_lost": -2,
+    "fum_rec_td": 6,
+    "pass_2pt": 2,
+    "pass_int": -4,
+    "pass_td": 6,
+    "pass_yd": 0.04,
+    "rec_2pt": 2,
+    "rec_td": 6,
+    "rec_yd": 0.1,
+    "reception": 0.5,
+    "return_td": 6,
+    "rush_2pt": 2,
+    "rush_td": 6,
+    "rush_yd": 0.1
+  },
+  "source_rows": 346,
+  "unresolved_or_no_game_rows": 9,
+  "version": "pos-adj-ppg-research-v4"
+}
