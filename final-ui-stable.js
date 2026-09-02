@@ -25,6 +25,9 @@
     #historyChart .dp-history-qualifier{padding:14px 16px 15px;border-top:1px solid #dfd0b6;color:#8a775b;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;text-align:center}
     #history .dp-centered-history-head{justify-content:center!important;text-align:center!important;align-items:center!important}
     #history .dp-centered-history-head h2{width:100%;text-align:center!important}
+    #managers>.section-head,#drafts>.section-head{justify-content:center!important;text-align:center!important;align-items:center!important}
+    #managers>.section-head h2,#drafts>.section-head h2{width:100%;text-align:center!important}
+    #managerPicks .round>h3,#managerPicks .round h3{width:100%;text-align:center!important}
     .dp-draft-intel .dp-intel-card>b,.dp-draft-intel .dp-intel-card>strong{text-align:center!important}
   `;
   document.head.appendChild(style);
