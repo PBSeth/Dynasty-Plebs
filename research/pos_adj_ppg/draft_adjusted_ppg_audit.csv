@@ -32,16 +32,16 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2019,3.07,31,Jordan Martin,Daniel Jones,QB,FFC same-year rookie ADP,16.117108,11.869500,4.247608,83,2025,scored
 2019,3.08,32,Matt Metz,Kelvin Harmon,WR,FFC same-year rookie ADP,3.246250,4.333900,-1.087650,16,2019,scored
 2019,3.09,33,Mason Good,Hunter Renfrow,WR,FFC same-year rookie ADP,6.906329,4.247600,2.658729,79,2025,scored
-2019,3.10,34,David Carnes,Jalen Hurd,WR,FFC same-year rookie ADP,,,,,,unscored
+2019,3.10,34,David Carnes,Jalen Hurd,WR,FFC same-year rookie ADP,0.000000,4.167800,-4.167800,,2025,scored
 2019,3.11,35,Payton Docheff,Devine Ozigbo,RB,Plebs/Sleeper fallback,0.685714,3.947100,-3.261386,28,2023,scored
 2019,3.12,36,Seth Miller,Dexter Williams,RB,FFC same-year rookie ADP,0.271429,3.851400,-3.579971,7,2020,scored
 2019,4.01,37,Seth Miller,Jordan Scarlett,RB,NFL draft history (PFR/nfldata),0.090000,3.753800,-3.663800,10,2021,scored
 2019,4.02,38,Matt Metz,Jace Sternberger,TE,FFC same-year rookie ADP,1.300000,3.728000,-2.428000,18,2020,scored
 2019,4.03,39,Matt Clawson,Drew Lock,QB,FFC same-year rookie ADP,10.294146,10.546200,-0.252054,41,2025,scored
-2019,4.04,40,David Carnes,Bryce Love,RB,NFL draft history (PFR/nfldata),,,,,,unscored
+2019,4.04,40,David Carnes,Bryce Love,RB,NFL draft history (PFR/nfldata),0.000000,3.453500,-3.453500,,2025,scored
 2019,4.05,41,Kevin Long,Myles Gaskin,RB,FFC same-year rookie ADP,7.025532,3.423700,3.601832,47,2025,scored
-2019,4.06,42,Matt Clawson,James Williams,,Plebs/Sleeper fallback,,,,,,unscored
-2019,4.07,43,Matt Metz,Rodney Anderson,RB,NFL draft history (PFR/nfldata),,,,,,unscored
+2019,4.06,42,Matt Clawson,James Williams,RB,manual historical rookie-position audit,0.000000,3.423700,-3.423700,,2025,scored
+2019,4.07,43,Matt Metz,Rodney Anderson,RB,NFL draft history (PFR/nfldata),0.000000,3.423700,-3.423700,,2025,scored
 2019,4.08,44,Jordan Martin,Qadree Ollison,RB,NFL draft history (PFR/nfldata),2.095652,3.423700,-1.328048,23,2023,scored
 2019,4.09,45,David Carnes,Dawson Knox,TE,NFL draft history (PFR/nfldata),5.384314,3.501100,1.883214,102,2025,scored
 2019,4.10,46,Mason Good,Kahale Warring,TE,NFL draft history (PFR/nfldata),0.555556,3.501100,-2.945544,9,2021,scored
@@ -132,7 +132,7 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2021,3.11,35,Matt Clawson,Kene Nwangwu,RB,NFL draft history (PFR/nfldata),0.974510,3.947100,-2.972590,51,2025,scored
 2021,3.12,36,Matthew Piontek,Tylan Wallace,WR,NFL draft history (PFR/nfldata),0.875000,4.025200,-3.150200,68,2025,scored
 2021,4.01,37,Payton Docheff,Michael Strachan,WR,Plebs/Sleeper fallback,0.695652,3.961400,-3.265748,23,2023,scored
-2021,4.02,38,Alex Agueros,Javian Hawkins,RB,FFC same-year rookie ADP,,,,,,unscored
+2021,4.02,38,Alex Agueros,Javian Hawkins,RB,FFC same-year rookie ADP,0.000000,3.654700,-3.654700,,2025,scored
 2021,4.03,39,Matt Clawson,Jermar Jefferson,RB,NFL draft history (PFR/nfldata),2.490909,3.554400,-1.063491,11,2025,scored
 2021,4.04,40,Matt Metz,Khalil Herbert,RB,NFL draft history (PFR/nfldata),5.084127,3.453500,1.630627,63,2025,scored
 2021,4.05,41,Luke Miller,Seth Williams,WR,FFC same-year rookie ADP,1.950000,3.743900,-1.793900,2,2021,scored
@@ -140,7 +140,7 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2021,4.07,43,Matthew Piontek,Noah Gray,TE,NFL draft history (PFR/nfldata),2.979518,3.522200,-0.542682,83,2025,scored
 2021,4.08,44,Bo Tiller,Brevin Jordan,TE,NFL draft history (PFR/nfldata),3.047222,3.501100,-0.453878,36,2024,scored
 2021,4.09,45,Mason Good,Zach Davidson,TE,NFL draft history (PFR/nfldata),0.250000,3.501100,-3.251100,4,2025,scored
-2021,4.10,46,Matthew Piontek,Tamorrion Terry,,Plebs/Sleeper fallback,,,,,,unscored
+2021,4.10,46,Matthew Piontek,Tamorrion Terry,WR,manual historical rookie-position audit,0.000000,3.525700,-3.525700,,2025,scored
 2021,4.11,47,Matt Clawson,Hunter Long,TE,FFC same-year rookie ADP,0.941304,3.501100,-2.559796,46,2025,scored
 2021,4.12,48,Matthew Piontek,Kellen Mond,QB,NFL draft history (PFR/nfldata),0.200000,10.546200,-10.346200,1,2021,scored
 2022,1.01,1,Seth Miller,Breece Hall,RB,FFC same-year rookie ADP,13.610000,10.908800,2.701200,56,2025,scored
@@ -233,7 +233,7 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2023,4.04,40,Mason Good,Chris Rodriguez Jr,RB,Plebs/Sleeper fallback,4.525714,3.453500,1.072214,35,2025,scored
 2023,4.05,41,Alex Agueros,Xavier Hutchinson,WR,Plebs/Sleeper fallback,2.369388,3.743900,-1.374512,49,2025,scored
 2023,4.06,42,Payton Docheff,Trey Palmer,WR,Plebs/Sleeper fallback,3.293750,3.696700,-0.402950,32,2024,scored
-2023,4.07,43,Luke Miller,DeWayne McBride,,Plebs/Sleeper fallback,,,,,,unscored
+2023,4.07,43,Luke Miller,DeWayne McBride,RB,manual historical rookie-position audit,0.000000,3.423700,-3.423700,,2025,scored
 2023,4.08,44,Matt Clawson,Kenny McIntosh,RB,Plebs/Sleeper fallback,1.045000,3.423700,-2.378700,20,2024,scored
 2023,4.09,45,Luke Miller,Parker Washington,WR,Plebs/Sleeper fallback,6.378571,3.566300,2.812271,42,2025,scored
 2023,4.10,46,Seth Miller,Tyler Scott,WR,Plebs/Sleeper fallback,1.014286,3.525700,-2.511414,28,2024,scored
@@ -244,13 +244,13 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2023,5.03,51,Luke Miller,Tucker Kraft,TE,NFL draft history (PFR/nfldata),7.202381,3.501100,3.701281,42,2025,scored
 2023,5.04,52,Mason Good,Keaton Mitchell,RB,Plebs/Sleeper fallback,4.715385,3.423700,1.291685,26,2025,scored
 2023,5.05,53,Matt Metz,Justin Shorter,WR,Plebs/Sleeper fallback,0.000000,3.484400,-3.484400,17,2025,scored
-2023,5.06,54,Payton Docheff,Zach Kuntz,,Plebs/Sleeper fallback,,,,,,unscored
+2023,5.06,54,Payton Docheff,Zach Kuntz,TE,manual historical rookie-position audit,0.000000,3.495800,-3.495800,,2025,scored
 2023,5.07,55,Alex Agueros,Lew Nichols III,RB,Plebs/Sleeper fallback,0.000000,3.423700,-3.423700,1,2025,scored
 2023,5.08,56,Matt Clawson,Mohamed Ibrahim,RB,Plebs/Sleeper fallback,0.000000,3.423700,-3.423700,1,2023,scored
 2023,5.09,57,Tim Bell,Elijah Higgins,TE,Plebs/Sleeper fallback,2.480000,3.495800,-1.015800,45,2025,scored
 2023,5.10,58,Bo Tiller,Dontayvion Wicks,WR,Plebs/Sleeper fallback,5.479565,3.471700,2.007865,46,2025,scored
 2023,5.11,59,Matt Metz,Jalen Brooks,WR,Plebs/Sleeper fallback,1.618519,3.471700,-1.853181,27,2025,scored
-2023,5.12,60,Bo Tiller,Stetson Bennett,,Plebs/Sleeper fallback,,,,,,unscored
+2023,5.12,60,Bo Tiller,Stetson Bennett,QB,manual historical rookie-position audit,0.000000,10.546200,-10.546200,,2025,scored
 2023,6.01,61,Matt Clawson,Brenton Strange,TE,NFL draft history (PFR/nfldata),4.141860,3.495800,0.646060,43,2025,scored
 2023,6.02,62,Travis Page,Puka Nacua,WR,Plebs/Sleeper fallback,16.445455,3.471700,12.973755,44,2025,scored
 2023,6.03,63,Luke Miller,Andrei Iosivas,WR,Plebs/Sleeper fallback,4.368000,3.471700,0.896300,50,2025,scored
@@ -326,7 +326,7 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2024,6.01,61,Matt Clawson,Cody Schrader,RB,Plebs/Sleeper fallback,0.700000,3.423700,-2.723700,2,2025,scored
 2024,6.02,62,Luke Miller,Van Jefferson,WR,Plebs/Sleeper fallback,,,,,,veteran_excluded
 2024,6.03,63,Seth Miller,Colby Parkinson,TE,Plebs/Sleeper fallback,,,,,,veteran_excluded
-2024,6.04,64,Ryan Lipkin,Jordan Travis,QB,NFL draft history (PFR/nfldata),,,,,,unscored
+2024,6.04,64,Ryan Lipkin,Jordan Travis,QB,NFL draft history (PFR/nfldata),0.000000,10.546200,-10.546200,,2025,scored
 2024,6.05,65,Seth Miller,Jawhar Jordan,RB,NFL draft history (PFR/nfldata),6.550000,3.423700,3.126300,4,2025,scored
 2024,6.06,66,Seth Miller,Sione Vaki,RB,Plebs/Sleeper fallback,0.259259,3.408400,-3.149141,27,2025,scored
 2024,6.07,67,Seth Miller,Sam Darnold,QB,Plebs/Sleeper fallback,,,,,,veteran_excluded
@@ -334,7 +334,7 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2024,6.09,69,Matt Metz,Ainias Smith,WR,NFL draft history (PFR/nfldata),2.028571,3.471700,-1.443129,7,2024,scored
 2024,6.10,70,Seth Miller,Casey Washington,WR,NFL draft history (PFR/nfldata),0.953333,3.471700,-2.518367,15,2025,scored
 2024,6.11,71,Seth Miller,Frank Gore Jr,RB,Plebs/Sleeper fallback,0.000000,3.256300,-3.256300,0,2025,scored
-2024,6.12,72,Jordan Martin,Cornelius Johnson,WR,NFL draft history (PFR/nfldata),,,,,,unscored
+2024,6.12,72,Jordan Martin,Cornelius Johnson,WR,NFL draft history (PFR/nfldata),0.000000,3.445500,-3.445500,,2025,scored
 2025,1.01,1,Seth Miller,Ashton Jeanty,RB,Plebs/Sleeper fallback,12.800000,10.908800,1.891200,17,2025,scored
 2025,1.02,2,David Carnes,Omarion Hampton,RB,Plebs/Sleeper fallback,13.300000,10.691300,2.608700,9,2025,scored
 2025,1.03,3,Alex Agueros,Tetairoa McMillan,WR,Plebs/Sleeper fallback,10.376471,8.332600,2.043871,17,2025,scored
@@ -380,14 +380,14 @@ year,pick,overall_slot,manager,player,position,position_source,career_ppg,expect
 2025,4.06,43,Clint Hudson,Jordan James,RB,Plebs/Sleeper fallback,0.000000,3.423700,-3.423700,3,2025,scored
 2025,4.07,44,Bo Tiller,Elijah Arroyo,TE,Plebs/Sleeper fallback,2.261538,3.501100,-1.239562,13,2025,scored
 2025,4.08,45,Payton Docheff,Savion Williams,WR,Plebs/Sleeper fallback,1.708333,3.566300,-1.857967,12,2025,scored
-2025,4.09,46,Matt Metz,Damien Martinez,,Plebs/Sleeper fallback,,,,,,unscored
+2025,4.09,46,Matt Metz,Damien Martinez,RB,manual historical rookie-position audit,0.000000,3.423700,-3.423700,,2025,scored
 2025,4.10,47,Seth Miller,Brashard Smith,RB,Plebs/Sleeper fallback,2.988235,3.423700,-0.435465,17,2025,scored
 2025,4.11,48,Matt Metz,Shedeur Sanders,QB,Plebs/Sleeper fallback,9.862500,10.546200,-0.683700,8,2025,scored
 2025,4.12,49,Matt Metz,Tai Felton,WR,Plebs/Sleeper fallback,0.235294,3.484400,-3.249106,17,2025,scored
 2025,5.01,50,Seth Miller,Jacory Croskey-Merritt,RB,Plebs/Sleeper fallback,7.988235,3.423700,4.564535,17,2025,scored
 2025,5.02,51,Alex Agueros,Chimere Dike,WR,Plebs/Sleeper fallback,6.005882,3.484400,2.521482,17,2025,scored
 2025,5.03,52,Alex Agueros,Kyle Monangai,RB,Plebs/Sleeper fallback,8.100000,3.423700,4.676300,17,2025,scored
-2025,5.04,53,Luke Miller,Will Howard,,Plebs/Sleeper fallback,,,,,,unscored
+2025,5.04,53,Luke Miller,Will Howard,QB,manual historical rookie-position audit,0.000000,10.546200,-10.546200,,2025,scored
 2025,5.05,54,Travis Page,Jaylin Lane,WR,Plebs/Sleeper fallback,2.746667,3.484400,-0.737733,15,2025,scored
 2025,5.06,55,Clint Hudson,Arian Smith,WR,Plebs/Sleeper fallback,0.625000,3.484400,-2.859400,16,2025,scored
 2025,5.07,56,Bo Tiller,Dillon Gabriel,QB,Plebs/Sleeper fallback,8.008000,10.546200,-2.538200,10,2025,scored

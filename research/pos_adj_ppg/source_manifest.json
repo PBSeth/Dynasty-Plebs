@@ -166,7 +166,7 @@
   },
   "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
   "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
-  "generated_at": "2026-09-02T19:16:15+00:00",
+  "generated_at": "2026-09-02T19:23:25+00:00",
   "identity_resolution": "normalized name + explicit historical variants/renames + position + rookie-year context; prior NFL debut removed as non-rookie",
   "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
   "match_rate_within_adp_96": 0.9653,
@@ -240,10 +240,10 @@
       "year": 2021
     },
     {
-      "bytes": 6347553,
+      "bytes": 6347557,
       "kind": "sleeper_regular_season_stats",
       "rows": 8237,
-      "sha256": "e1d67be7695e291c6bd2cdb9fa395649b3bc64ac1c8f1929a2cbdb26ec404781",
+      "sha256": "cc133763494f24b4b08d9079a310d2ef93d5f3cd9d07b310701a46c95c70cd1a",
       "url": "https://api.sleeper.com/stats/nfl/2022?season_type=regular",
       "year": 2022
     },

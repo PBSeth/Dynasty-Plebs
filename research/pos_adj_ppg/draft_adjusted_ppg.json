@@ -1,8 +1,10 @@
 {
   "curveVersion": "pos-adj-ppg-v4-research",
   "definition": "Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.",
+  "outcomeRule": "every true rookie pick in a completed class counts; no NFL fantasy production equals 0.0 Career PPG",
   "picks": {
     "2019|ajbrown": {
+      "careerPpg": 13.427619,
       "draftAdjPpg": 5.865619,
       "expectedPpg": 7.562,
       "overall": 9,
@@ -11,6 +13,7 @@
       "status": "scored"
     },
     "2019|alexandermattison": {
+      "careerPpg": 6.429213,
       "draftAdjPpg": 1.639813,
       "expectedPpg": 4.7894,
       "overall": 26,
@@ -19,6 +22,7 @@
       "status": "scored"
     },
     "2019|andyisabella": {
+      "careerPpg": 1.865116,
       "draftAdjPpg": -4.869084,
       "expectedPpg": 6.7342,
       "overall": 13,
@@ -27,6 +31,7 @@
       "status": "scored"
     },
     "2019|bennysnell": {
+      "careerPpg": 2.477778,
       "draftAdjPpg": -2.712922,
       "expectedPpg": 5.1907,
       "overall": 23,
@@ -35,12 +40,16 @@
       "status": "scored"
     },
     "2019|brycelove": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4535,
+      "expectedPpg": 3.4535,
       "overall": 40,
       "pick": "4.04",
       "pos": "RB",
-      "status": "unscored"
+      "status": "scored"
     },
     "2019|damienharris": {
+      "careerPpg": 8.897727,
       "draftAdjPpg": 3.540627,
       "expectedPpg": 5.3571,
       "overall": 22,
@@ -49,6 +58,7 @@
       "status": "scored"
     },
     "2019|danieljones": {
+      "careerPpg": 16.117108,
       "draftAdjPpg": 4.247608,
       "expectedPpg": 11.8695,
       "overall": 31,
@@ -57,6 +67,7 @@
       "status": "scored"
     },
     "2019|darrellhenderson": {
+      "careerPpg": 7.316667,
       "draftAdjPpg": -0.402533,
       "expectedPpg": 7.7192,
       "overall": 12,
@@ -65,6 +76,7 @@
       "status": "scored"
     },
     "2019|darwinthompson": {
+      "careerPpg": 2.203846,
       "draftAdjPpg": -2.478154,
       "expectedPpg": 4.682,
       "overall": 27,
@@ -73,6 +85,7 @@
       "status": "scored"
     },
     "2019|davidmontgomery": {
+      "careerPpg": 12.288,
       "draftAdjPpg": 2.0872,
       "expectedPpg": 10.2008,
       "overall": 4,
@@ -81,6 +94,7 @@
       "status": "scored"
     },
     "2019|dawsonknox": {
+      "careerPpg": 5.384314,
       "draftAdjPpg": 1.883214,
       "expectedPpg": 3.5011,
       "overall": 45,
@@ -89,6 +103,7 @@
       "status": "scored"
     },
     "2019|deebosamuel": {
+      "careerPpg": 11.975876,
       "draftAdjPpg": 4.609176,
       "expectedPpg": 7.3667,
       "overall": 10,
@@ -97,6 +112,7 @@
       "status": "scored"
     },
     "2019|devineozigbo": {
+      "careerPpg": 0.685714,
       "draftAdjPpg": -3.261386,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -105,6 +121,7 @@
       "status": "scored"
     },
     "2019|devinsingletary": {
+      "careerPpg": 8.502182,
       "draftAdjPpg": 1.356982,
       "expectedPpg": 7.1452,
       "overall": 14,
@@ -113,6 +130,7 @@
       "status": "scored"
     },
     "2019|dexterwilliams": {
+      "careerPpg": 0.271429,
       "draftAdjPpg": -3.579971,
       "expectedPpg": 3.8514,
       "overall": 36,
@@ -121,6 +139,7 @@
       "status": "scored"
     },
     "2019|diontaejohnson": {
+      "careerPpg": 9.773034,
       "draftAdjPpg": 1.873634,
       "expectedPpg": 7.8994,
       "overall": 7,
@@ -129,6 +148,7 @@
       "status": "scored"
     },
     "2019|dkmetcalf": {
+      "careerPpg": 11.471429,
       "draftAdjPpg": 3.434229,
       "expectedPpg": 8.0372,
       "overall": 6,
@@ -137,6 +157,7 @@
       "status": "scored"
     },
     "2019|drewlock": {
+      "careerPpg": 10.294146,
       "draftAdjPpg": -0.252054,
       "expectedPpg": 10.5462,
       "overall": 39,
@@ -145,6 +166,7 @@
       "status": "scored"
     },
     "2019|dwaynehaskins": {
+      "careerPpg": 8.285882,
       "draftAdjPpg": -4.608418,
       "expectedPpg": 12.8943,
       "overall": 25,
@@ -153,6 +175,7 @@
       "status": "scored"
     },
     "2019|hakeembutler": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -5.6462,
       "expectedPpg": 5.6462,
       "overall": 20,
@@ -161,6 +184,7 @@
       "status": "scored"
     },
     "2019|hunterrenfrow": {
+      "careerPpg": 6.906329,
       "draftAdjPpg": 2.658729,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -169,6 +193,7 @@
       "status": "scored"
     },
     "2019|irvsmithjr": {
+      "careerPpg": 3.922222,
       "draftAdjPpg": -1.409478,
       "expectedPpg": 5.3317,
       "overall": 19,
@@ -177,6 +202,7 @@
       "status": "scored"
     },
     "2019|jacesternberger": {
+      "careerPpg": 1.3,
       "draftAdjPpg": -2.428,
       "expectedPpg": 3.728,
       "overall": 38,
@@ -185,18 +211,25 @@
       "status": "scored"
     },
     "2019|jalenhurd": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -4.1678,
+      "expectedPpg": 4.1678,
       "overall": 34,
       "pick": "3.10",
       "pos": "WR",
-      "status": "unscored"
+      "status": "scored"
     },
     "2019|jameswilliams": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
       "overall": 42,
       "pick": "4.06",
-      "pos": "",
-      "status": "unscored"
+      "pos": "RB",
+      "status": "scored"
     },
     "2019|jjarcegawhiteside": {
+      "careerPpg": 1.275,
       "draftAdjPpg": -4.7386,
       "expectedPpg": 6.0136,
       "overall": 17,
@@ -205,6 +238,7 @@
       "status": "scored"
     },
     "2019|jordanscarlett": {
+      "careerPpg": 0.09,
       "draftAdjPpg": -3.6638,
       "expectedPpg": 3.7538,
       "overall": 37,
@@ -213,6 +247,7 @@
       "status": "scored"
     },
     "2019|joshjacobs": {
+      "careerPpg": 14.8,
       "draftAdjPpg": 3.8912,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -221,6 +256,7 @@
       "status": "scored"
     },
     "2019|justicehill": {
+      "careerPpg": 4.144048,
       "draftAdjPpg": -1.395852,
       "expectedPpg": 5.5399,
       "overall": 21,
@@ -229,6 +265,7 @@
       "status": "scored"
     },
     "2019|kahalewarring": {
+      "careerPpg": 0.555556,
       "draftAdjPpg": -2.945544,
       "expectedPpg": 3.5011,
       "overall": 46,
@@ -237,6 +274,7 @@
       "status": "scored"
     },
     "2019|kelvinharmon": {
+      "careerPpg": 3.24625,
       "draftAdjPpg": -1.08765,
       "expectedPpg": 4.3339,
       "overall": 32,
@@ -245,6 +283,7 @@
       "status": "scored"
     },
     "2019|kylermurray": {
+      "careerPpg": 20.786207,
       "draftAdjPpg": 6.847007,
       "expectedPpg": 13.9392,
       "overall": 15,
@@ -253,6 +292,7 @@
       "status": "scored"
     },
     "2019|marquisebrown": {
+      "careerPpg": 9.074444,
       "draftAdjPpg": 1.915044,
       "expectedPpg": 7.1594,
       "overall": 11,
@@ -261,6 +301,7 @@
       "status": "scored"
     },
     "2019|mecolehardman": {
+      "careerPpg": 5.490244,
       "draftAdjPpg": -2.250356,
       "expectedPpg": 7.7406,
       "overall": 8,
@@ -269,6 +310,7 @@
       "status": "scored"
     },
     "2019|milesboykin": {
+      "careerPpg": 1.517808,
       "draftAdjPpg": -3.698692,
       "expectedPpg": 5.2165,
       "overall": 24,
@@ -277,6 +319,7 @@
       "status": "scored"
     },
     "2019|milessanders": {
+      "careerPpg": 9.353409,
       "draftAdjPpg": -0.573591,
       "expectedPpg": 9.927,
       "overall": 5,
@@ -285,6 +328,7 @@
       "status": "scored"
     },
     "2019|mylesgaskin": {
+      "careerPpg": 7.025532,
       "draftAdjPpg": 3.601832,
       "expectedPpg": 3.4237,
       "overall": 41,
@@ -293,6 +337,7 @@
       "status": "scored"
     },
     "2019|nkealharry": {
+      "careerPpg": 2.740816,
       "draftAdjPpg": -5.591784,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -301,6 +346,7 @@
       "status": "scored"
     },
     "2019|noahfant": {
+      "careerPpg": 5.700909,
       "draftAdjPpg": 0.265009,
       "expectedPpg": 5.4359,
       "overall": 18,
@@ -309,6 +355,7 @@
       "status": "scored"
     },
     "2019|parriscampbell": {
+      "careerPpg": 4.36,
       "draftAdjPpg": -4.0384,
       "expectedPpg": 8.3984,
       "overall": 2,
@@ -317,6 +364,7 @@
       "status": "scored"
     },
     "2019|qadreeollison": {
+      "careerPpg": 2.095652,
       "draftAdjPpg": -1.328048,
       "expectedPpg": 3.4237,
       "overall": 44,
@@ -325,6 +373,7 @@
       "status": "scored"
     },
     "2019|rileyridley": {
+      "careerPpg": 1.58,
       "draftAdjPpg": -2.9466,
       "expectedPpg": 4.5266,
       "overall": 30,
@@ -333,12 +382,16 @@
       "status": "scored"
     },
     "2019|rodneyanderson": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
       "overall": 43,
       "pick": "4.07",
       "pos": "RB",
-      "status": "unscored"
+      "status": "scored"
     },
     "2019|ryquellarmstead": {
+      "careerPpg": 3.072222,
       "draftAdjPpg": -1.417678,
       "expectedPpg": 4.4899,
       "overall": 29,
@@ -347,6 +400,7 @@
       "status": "scored"
     },
     "2019|terrymclaurin": {
+      "careerPpg": 11.218692,
       "draftAdjPpg": 6.473392,
       "expectedPpg": 4.7453,
       "overall": 28,
@@ -355,6 +409,7 @@
       "status": "scored"
     },
     "2019|tjhockenson": {
+      "careerPpg": 8.438144,
       "draftAdjPpg": 2.800644,
       "expectedPpg": 5.6375,
       "overall": 16,
@@ -363,6 +418,7 @@
       "status": "scored"
     },
     "2019|tonypollard": {
+      "careerPpg": 9.869643,
       "draftAdjPpg": 6.445943,
       "expectedPpg": 3.4237,
       "overall": 48,
@@ -371,6 +427,7 @@
       "status": "scored"
     },
     "2019|trayveonwilliams": {
+      "careerPpg": 0.756,
       "draftAdjPpg": -2.6677,
       "expectedPpg": 3.4237,
       "overall": 47,
@@ -379,6 +436,7 @@
       "status": "scored"
     },
     "2020|adamtrautman": {
+      "careerPpg": 2.535106,
       "draftAdjPpg": -1.297694,
       "expectedPpg": 3.8328,
       "overall": 36,
@@ -387,6 +445,7 @@
       "status": "scored"
     },
     "2020|ajdillon": {
+      "careerPpg": 7.1,
       "draftAdjPpg": -0.9297,
       "expectedPpg": 8.0297,
       "overall": 11,
@@ -395,6 +454,7 @@
       "status": "scored"
     },
     "2020|albertokwuegbunam": {
+      "careerPpg": 3.53871,
       "draftAdjPpg": 0.03761,
       "expectedPpg": 3.5011,
       "overall": 46,
@@ -403,6 +463,7 @@
       "status": "scored"
     },
     "2020|anthonymcfarland": {
+      "careerPpg": 1.694118,
       "draftAdjPpg": -3.214082,
       "expectedPpg": 4.9082,
       "overall": 25,
@@ -411,6 +472,7 @@
       "status": "scored"
     },
     "2020|antoniogandygolden": {
+      "careerPpg": 0.3,
       "draftAdjPpg": -4.0339,
       "expectedPpg": 4.3339,
       "overall": 32,
@@ -419,6 +481,7 @@
       "status": "scored"
     },
     "2020|antoniogibson": {
+      "careerPpg": 9.068675,
       "draftAdjPpg": 1.923475,
       "expectedPpg": 7.1452,
       "overall": 14,
@@ -427,6 +490,7 @@
       "status": "scored"
     },
     "2020|brandonaiyuk": {
+      "careerPpg": 10.828986,
       "draftAdjPpg": 4.661686,
       "expectedPpg": 6.1673,
       "overall": 16,
@@ -435,6 +499,7 @@
       "status": "scored"
     },
     "2020|bryanedwards": {
+      "careerPpg": 3.597143,
       "draftAdjPpg": -2.742857,
       "expectedPpg": 6.34,
       "overall": 15,
@@ -443,6 +508,7 @@
       "status": "scored"
     },
     "2020|camakers": {
+      "careerPpg": 6.279322,
       "draftAdjPpg": -3.647678,
       "expectedPpg": 9.927,
       "overall": 5,
@@ -451,6 +517,7 @@
       "status": "scored"
     },
     "2020|ceedeelamb": {
+      "careerPpg": 14.043158,
       "draftAdjPpg": 6.143758,
       "expectedPpg": 7.8994,
       "overall": 7,
@@ -459,6 +526,7 @@
       "status": "scored"
     },
     "2020|chaseclaypool": {
+      "careerPpg": 7.288621,
       "draftAdjPpg": 2.426621,
       "expectedPpg": 4.862,
       "overall": 27,
@@ -467,6 +535,7 @@
       "status": "scored"
     },
     "2020|clydeedwardshelaire": {
+      "careerPpg": 8.253846,
       "draftAdjPpg": -2.201754,
       "expectedPpg": 10.4556,
       "overall": 3,
@@ -475,6 +544,7 @@
       "status": "scored"
     },
     "2020|colekmet": {
+      "careerPpg": 5.667,
       "draftAdjPpg": 1.939,
       "expectedPpg": 3.728,
       "overall": 38,
@@ -483,6 +553,7 @@
       "status": "scored"
     },
     "2020|collinjohnson": {
+      "careerPpg": 1.813158,
       "draftAdjPpg": -1.838442,
       "expectedPpg": 3.6516,
       "overall": 43,
@@ -491,6 +562,7 @@
       "status": "scored"
     },
     "2020|dandreswift": {
+      "careerPpg": 12.322472,
       "draftAdjPpg": 1.631172,
       "expectedPpg": 10.6913,
       "overall": 2,
@@ -499,6 +571,7 @@
       "status": "scored"
     },
     "2020|darnellmooney": {
+      "careerPpg": 7.397802,
       "draftAdjPpg": 3.604202,
       "expectedPpg": 3.7936,
       "overall": 40,
@@ -507,6 +580,7 @@
       "status": "scored"
     },
     "2020|darryntonevans": {
+      "careerPpg": 2.2875,
       "draftAdjPpg": -3.2524,
       "expectedPpg": 5.5399,
       "overall": 21,
@@ -515,6 +589,7 @@
       "status": "scored"
     },
     "2020|deejaydallas": {
+      "careerPpg": 1.910714,
       "draftAdjPpg": -2.036386,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -523,6 +598,7 @@
       "status": "scored"
     },
     "2020|denzelmims": {
+      "careerPpg": 3.02,
       "draftAdjPpg": -3.9262,
       "expectedPpg": 6.9462,
       "overall": 12,
@@ -531,6 +607,7 @@
       "status": "scored"
     },
     "2020|devinduvernay": {
+      "careerPpg": 2.58427,
       "draftAdjPpg": -2.16103,
       "expectedPpg": 4.7453,
       "overall": 28,
@@ -539,6 +616,7 @@
       "status": "scored"
     },
     "2020|donovanpeoplesjones": {
+      "careerPpg": 5.218966,
       "draftAdjPpg": 1.475066,
       "expectedPpg": 3.7439,
       "overall": 41,
@@ -547,6 +625,7 @@
       "status": "scored"
     },
     "2020|enobenjamin": {
+      "careerPpg": 4.254167,
       "draftAdjPpg": 0.699767,
       "expectedPpg": 3.5544,
       "overall": 39,
@@ -555,6 +634,7 @@
       "status": "scored"
     },
     "2020|gabrieldavis": {
+      "careerPpg": 7.28875,
       "draftAdjPpg": 3.72245,
       "expectedPpg": 3.5663,
       "overall": 45,
@@ -563,6 +643,7 @@
       "status": "scored"
     },
     "2020|henryruggsiii": {
+      "careerPpg": 7.18,
       "draftAdjPpg": -0.1867,
       "expectedPpg": 7.3667,
       "overall": 10,
@@ -571,6 +652,7 @@
       "status": "scored"
     },
     "2020|jalenreagor": {
+      "careerPpg": 3.00625,
       "draftAdjPpg": -4.55575,
       "expectedPpg": 7.562,
       "overall": 9,
@@ -579,6 +661,7 @@
       "status": "scored"
     },
     "2020|jamesproche": {
+      "careerPpg": 0.639437,
       "draftAdjPpg": -2.846663,
       "expectedPpg": 3.4861,
       "overall": 47,
@@ -587,6 +670,7 @@
       "status": "scored"
     },
     "2020|jerryjeudy": {
+      "careerPpg": 8.513187,
       "draftAdjPpg": 0.772587,
       "expectedPpg": 7.7406,
       "overall": 8,
@@ -595,6 +679,7 @@
       "status": "scored"
     },
     "2020|jkdobbins": {
+      "careerPpg": 11.36383,
       "draftAdjPpg": 1.16303,
       "expectedPpg": 10.2008,
       "overall": 4,
@@ -603,6 +688,7 @@
       "status": "scored"
     },
     "2020|joeburrow": {
+      "careerPpg": 22.251688,
       "draftAdjPpg": 8.922888,
       "expectedPpg": 13.3288,
       "overall": 22,
@@ -611,6 +697,7 @@
       "status": "scored"
     },
     "2020|joereed": {
+      "careerPpg": 0.809091,
       "draftAdjPpg": -3.152309,
       "expectedPpg": 3.9614,
       "overall": 37,
@@ -619,6 +706,7 @@
       "status": "scored"
     },
     "2020|jonathantaylor": {
+      "careerPpg": 17.169048,
       "draftAdjPpg": 6.260248,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -627,6 +715,7 @@
       "status": "scored"
     },
     "2020|jordanlove": {
+      "careerPpg": 16.226316,
       "draftAdjPpg": 5.680116,
       "expectedPpg": 10.5462,
       "overall": 44,
@@ -635,6 +724,7 @@
       "status": "scored"
     },
     "2020|joshuakelley": {
+      "careerPpg": 3.507018,
       "draftAdjPpg": -1.683682,
       "expectedPpg": 5.1907,
       "overall": 23,
@@ -643,6 +733,7 @@
       "status": "scored"
     },
     "2020|justinherbert": {
+      "careerPpg": 21.155789,
       "draftAdjPpg": 10.609589,
       "expectedPpg": 10.5462,
       "overall": 42,
@@ -651,6 +742,7 @@
       "status": "scored"
     },
     "2020|justinjefferson": {
+      "careerPpg": 14.94617,
       "draftAdjPpg": 6.90897,
       "expectedPpg": 8.0372,
       "overall": 6,
@@ -659,6 +751,7 @@
       "status": "scored"
     },
     "2020|keshawnvaughn": {
+      "careerPpg": 1.519565,
       "draftAdjPpg": -5.904335,
       "expectedPpg": 7.4239,
       "overall": 13,
@@ -667,6 +760,7 @@
       "status": "scored"
     },
     "2020|kjhamler": {
+      "careerPpg": 4.665217,
       "draftAdjPpg": -0.315983,
       "expectedPpg": 4.9812,
       "overall": 26,
@@ -675,6 +769,7 @@
       "status": "scored"
     },
     "2020|kjhill": {
+      "careerPpg": 0.633333,
       "draftAdjPpg": -2.851067,
       "expectedPpg": 3.4844,
       "overall": 48,
@@ -683,6 +778,7 @@
       "status": "scored"
     },
     "2020|lamicalperine": {
+      "careerPpg": 3.294737,
       "draftAdjPpg": -1.105263,
       "expectedPpg": 4.4,
       "overall": 30,
@@ -691,6 +787,7 @@
       "status": "scored"
     },
     "2020|laviskashenault": {
+      "careerPpg": 4.880952,
       "draftAdjPpg": -0.765248,
       "expectedPpg": 5.6462,
       "overall": 20,
@@ -699,6 +796,7 @@
       "status": "scored"
     },
     "2020|lynnbowdenjr": {
+      "careerPpg": 2.176154,
       "draftAdjPpg": -2.250646,
       "expectedPpg": 4.4268,
       "overall": 31,
@@ -707,6 +805,7 @@
       "status": "scored"
     },
     "2020|michaelpittman": {
+      "careerPpg": 9.788421,
       "draftAdjPpg": 4.031621,
       "expectedPpg": 5.7568,
       "overall": 19,
@@ -715,6 +814,7 @@
       "status": "scored"
     },
     "2020|quintezcephus": {
+      "careerPpg": 4.604545,
       "draftAdjPpg": 0.356945,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -723,6 +823,7 @@
       "status": "scored"
     },
     "2020|teehiggins": {
+      "careerPpg": 11.92,
       "draftAdjPpg": 5.9064,
       "expectedPpg": 6.0136,
       "overall": 17,
@@ -731,6 +832,7 @@
       "status": "scored"
     },
     "2020|tuatagovailoa": {
+      "careerPpg": 16.435128,
       "draftAdjPpg": 3.387528,
       "expectedPpg": 13.0476,
       "overall": 24,
@@ -739,6 +841,7 @@
       "status": "scored"
     },
     "2020|tylerjohnson": {
+      "careerPpg": 2.893443,
       "draftAdjPpg": -1.274357,
       "expectedPpg": 4.1678,
       "overall": 34,
@@ -747,6 +850,7 @@
       "status": "scored"
     },
     "2020|vanjefferson": {
+      "careerPpg": 4.105319,
       "draftAdjPpg": -0.527681,
       "expectedPpg": 4.633,
       "overall": 29,
@@ -755,6 +859,7 @@
       "status": "scored"
     },
     "2020|zachmoss": {
+      "careerPpg": 7.767213,
       "draftAdjPpg": 1.600813,
       "expectedPpg": 6.1664,
       "overall": 18,
@@ -763,6 +868,7 @@
       "status": "scored"
     },
     "2021|amarirodgers": {
+      "careerPpg": 1.105714,
       "draftAdjPpg": -4.110786,
       "expectedPpg": 5.2165,
       "overall": 24,
@@ -771,6 +877,7 @@
       "status": "scored"
     },
     "2021|amonrastbrown": {
+      "careerPpg": 14.391325,
       "draftAdjPpg": 8.224025,
       "expectedPpg": 6.1673,
       "overall": 16,
@@ -779,6 +886,7 @@
       "status": "scored"
     },
     "2021|anthonyschwartz": {
+      "careerPpg": 1.808,
       "draftAdjPpg": -2.6188,
       "expectedPpg": 4.4268,
       "overall": 31,
@@ -787,6 +895,7 @@
       "status": "scored"
     },
     "2021|brevinjordan": {
+      "careerPpg": 3.047222,
       "draftAdjPpg": -0.453878,
       "expectedPpg": 3.5011,
       "overall": 44,
@@ -795,6 +904,7 @@
       "status": "scored"
     },
     "2021|chubahubbard": {
+      "careerPpg": 8.851899,
       "draftAdjPpg": 3.311999,
       "expectedPpg": 5.5399,
       "overall": 21,
@@ -803,6 +913,7 @@
       "status": "scored"
     },
     "2021|cornellpowell": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -4.2476,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -811,6 +922,7 @@
       "status": "scored"
     },
     "2021|devontasmith": {
+      "careerPpg": 10.95625,
       "draftAdjPpg": 2.80195,
       "expectedPpg": 8.1543,
       "overall": 5,
@@ -819,6 +931,7 @@
       "status": "scored"
     },
     "2021|dezfitzpatrick": {
+      "careerPpg": 1.914286,
       "draftAdjPpg": -2.831014,
       "expectedPpg": 4.7453,
       "overall": 28,
@@ -827,6 +940,7 @@
       "status": "scored"
     },
     "2021|dwayneeskridge": {
+      "careerPpg": 1.074419,
       "draftAdjPpg": -4.361681,
       "expectedPpg": 5.4361,
       "overall": 22,
@@ -835,6 +949,7 @@
       "status": "scored"
     },
     "2021|dyamibrown": {
+      "careerPpg": 2.252727,
       "draftAdjPpg": -3.504073,
       "expectedPpg": 5.7568,
       "overall": 19,
@@ -843,6 +958,7 @@
       "status": "scored"
     },
     "2021|elijahmoore": {
+      "careerPpg": 5.762857,
       "draftAdjPpg": -1.603843,
       "expectedPpg": 7.3667,
       "overall": 10,
@@ -851,6 +967,7 @@
       "status": "scored"
     },
     "2021|hunterlong": {
+      "careerPpg": 0.941304,
       "draftAdjPpg": -2.559796,
       "expectedPpg": 3.5011,
       "overall": 47,
@@ -859,6 +976,7 @@
       "status": "scored"
     },
     "2021|jaelondarden": {
+      "careerPpg": 0.369444,
       "draftAdjPpg": -3.798356,
       "expectedPpg": 4.1678,
       "overall": 34,
@@ -867,6 +985,7 @@
       "status": "scored"
     },
     "2021|jamarrchase": {
+      "careerPpg": 16.234872,
       "draftAdjPpg": 7.902272,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -875,12 +994,16 @@
       "status": "scored"
     },
     "2021|javianhawkins": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.6547,
+      "expectedPpg": 3.6547,
       "overall": 38,
       "pick": "4.02",
       "pos": "RB",
-      "status": "unscored"
+      "status": "scored"
     },
     "2021|javontewilliams": {
+      "careerPpg": 10.432857,
       "draftAdjPpg": 0.232057,
       "expectedPpg": 10.2008,
       "overall": 4,
@@ -889,6 +1012,7 @@
       "status": "scored"
     },
     "2021|jaylenwaddle": {
+      "careerPpg": 11.036154,
       "draftAdjPpg": 3.136754,
       "expectedPpg": 7.8994,
       "overall": 7,
@@ -897,6 +1021,7 @@
       "status": "scored"
     },
     "2021|jermarjefferson": {
+      "careerPpg": 2.490909,
       "draftAdjPpg": -1.063491,
       "expectedPpg": 3.5544,
       "overall": 39,
@@ -905,6 +1030,7 @@
       "status": "scored"
     },
     "2021|joshpalmer": {
+      "careerPpg": 6.094286,
       "draftAdjPpg": 1.760386,
       "expectedPpg": 4.3339,
       "overall": 32,
@@ -913,6 +1039,7 @@
       "status": "scored"
     },
     "2021|justinfields": {
+      "careerPpg": 16.182373,
       "draftAdjPpg": 2.352473,
       "expectedPpg": 13.8299,
       "overall": 17,
@@ -921,6 +1048,7 @@
       "status": "scored"
     },
     "2021|kadariustoney": {
+      "careerPpg": 4.264571,
       "draftAdjPpg": -2.265629,
       "expectedPpg": 6.5302,
       "overall": 14,
@@ -929,6 +1057,7 @@
       "status": "scored"
     },
     "2021|kellenmond": {
+      "careerPpg": 0.2,
       "draftAdjPpg": -10.3462,
       "expectedPpg": 10.5462,
       "overall": 48,
@@ -937,6 +1066,7 @@
       "status": "scored"
     },
     "2021|kenenwangwu": {
+      "careerPpg": 0.97451,
       "draftAdjPpg": -2.97259,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -945,6 +1075,7 @@
       "status": "scored"
     },
     "2021|kennethgainwell": {
+      "careerPpg": 6.085301,
       "draftAdjPpg": 0.348001,
       "expectedPpg": 5.7373,
       "overall": 20,
@@ -953,6 +1084,7 @@
       "status": "scored"
     },
     "2021|khalilherbert": {
+      "careerPpg": 5.084127,
       "draftAdjPpg": 1.630627,
       "expectedPpg": 3.4535,
       "overall": 40,
@@ -961,6 +1093,7 @@
       "status": "scored"
     },
     "2021|kylepitts": {
+      "careerPpg": 7.557692,
       "draftAdjPpg": 1.157192,
       "expectedPpg": 6.4005,
       "overall": 6,
@@ -969,6 +1102,7 @@
       "status": "scored"
     },
     "2021|larryrountree": {
+      "careerPpg": 1.2125,
       "draftAdjPpg": -2.2112,
       "expectedPpg": 3.4237,
       "overall": 42,
@@ -977,6 +1111,7 @@
       "status": "scored"
     },
     "2021|macjones": {
+      "careerPpg": 12.087937,
       "draftAdjPpg": 0.039737,
       "expectedPpg": 12.0482,
       "overall": 30,
@@ -985,6 +1120,7 @@
       "status": "scored"
     },
     "2021|michaelcarter": {
+      "careerPpg": 6.581967,
       "draftAdjPpg": 0.415567,
       "expectedPpg": 6.1664,
       "overall": 18,
@@ -993,6 +1129,7 @@
       "status": "scored"
     },
     "2021|michaelstrachan": {
+      "careerPpg": 0.695652,
       "draftAdjPpg": -3.265748,
       "expectedPpg": 3.9614,
       "overall": 37,
@@ -1001,6 +1138,7 @@
       "status": "scored"
     },
     "2021|najeeharris": {
+      "careerPpg": 11.898028,
       "draftAdjPpg": 0.989228,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -1009,6 +1147,7 @@
       "status": "scored"
     },
     "2021|nicocollins": {
+      "careerPpg": 11.112121,
       "draftAdjPpg": 5.783521,
       "expectedPpg": 5.3286,
       "overall": 23,
@@ -1017,6 +1156,7 @@
       "status": "scored"
     },
     "2021|noahgray": {
+      "careerPpg": 2.979518,
       "draftAdjPpg": -0.542682,
       "expectedPpg": 3.5222,
       "overall": 43,
@@ -1025,6 +1165,7 @@
       "status": "scored"
     },
     "2021|patfreiermuth": {
+      "careerPpg": 6.770513,
       "draftAdjPpg": 2.442513,
       "expectedPpg": 4.328,
       "overall": 29,
@@ -1033,6 +1174,7 @@
       "status": "scored"
     },
     "2021|rashodbateman": {
+      "careerPpg": 6.015625,
       "draftAdjPpg": -1.724975,
       "expectedPpg": 7.7406,
       "overall": 8,
@@ -1041,6 +1183,7 @@
       "status": "scored"
     },
     "2021|rhamondrestevenson": {
+      "careerPpg": 11.02,
       "draftAdjPpg": 6.1118,
       "expectedPpg": 4.9082,
       "overall": 25,
@@ -1049,6 +1192,7 @@
       "status": "scored"
     },
     "2021|rondalemoore": {
+      "careerPpg": 6.012821,
       "draftAdjPpg": -0.933379,
       "expectedPpg": 6.9462,
       "overall": 12,
@@ -1057,6 +1201,7 @@
       "status": "scored"
     },
     "2021|sethwilliams": {
+      "careerPpg": 1.95,
       "draftAdjPpg": -1.7939,
       "expectedPpg": 3.7439,
       "overall": 41,
@@ -1065,12 +1210,16 @@
       "status": "scored"
     },
     "2021|tamorrionterry": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.5257,
+      "expectedPpg": 3.5257,
       "overall": 46,
       "pick": "4.10",
-      "pos": "",
-      "status": "unscored"
+      "pos": "WR",
+      "status": "scored"
     },
     "2021|terracemarshall": {
+      "careerPpg": 2.844186,
       "draftAdjPpg": -4.315214,
       "expectedPpg": 7.1594,
       "overall": 11,
@@ -1079,6 +1228,7 @@
       "status": "scored"
     },
     "2021|travisetienne": {
+      "careerPpg": 11.933333,
       "draftAdjPpg": 1.242033,
       "expectedPpg": 10.6913,
       "overall": 2,
@@ -1087,6 +1237,7 @@
       "status": "scored"
     },
     "2021|trevorlawrence": {
+      "careerPpg": 17.15039,
       "draftAdjPpg": 3.14759,
       "expectedPpg": 14.0028,
       "overall": 13,
@@ -1095,6 +1246,7 @@
       "status": "scored"
     },
     "2021|treylance": {
+      "careerPpg": 6.47875,
       "draftAdjPpg": -7.46045,
       "expectedPpg": 13.9392,
       "overall": 15,
@@ -1103,6 +1255,7 @@
       "status": "scored"
     },
     "2021|treysermon": {
+      "careerPpg": 2.028261,
       "draftAdjPpg": -6.651239,
       "expectedPpg": 8.6795,
       "overall": 9,
@@ -1111,6 +1264,7 @@
       "status": "scored"
     },
     "2021|tutuatwell": {
+      "careerPpg": 3.95625,
       "draftAdjPpg": -1.02495,
       "expectedPpg": 4.9812,
       "overall": 26,
@@ -1119,6 +1273,7 @@
       "status": "scored"
     },
     "2021|tylanwallace": {
+      "careerPpg": 0.875,
       "draftAdjPpg": -3.1502,
       "expectedPpg": 4.0252,
       "overall": 36,
@@ -1127,6 +1282,7 @@
       "status": "scored"
     },
     "2021|zachdavidson": {
+      "careerPpg": 0.25,
       "draftAdjPpg": -3.2511,
       "expectedPpg": 3.5011,
       "overall": 45,
@@ -1135,6 +1291,7 @@
       "status": "scored"
     },
     "2021|zachwilson": {
+      "careerPpg": 9.673684,
       "draftAdjPpg": -2.894716,
       "expectedPpg": 12.5684,
       "overall": 27,
@@ -1143,6 +1300,7 @@
       "status": "scored"
     },
     "2022|alecpierce": {
+      "careerPpg": 7.404687,
       "draftAdjPpg": 1.863887,
       "expectedPpg": 5.5408,
       "overall": 21,
@@ -1151,6 +1309,7 @@
       "status": "scored"
     },
     "2022|breecehall": {
+      "careerPpg": 13.61,
       "draftAdjPpg": 2.7012,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -1159,6 +1318,7 @@
       "status": "scored"
     },
     "2022|brianrobinson": {
+      "careerPpg": 8.562069,
       "draftAdjPpg": 3.653869,
       "expectedPpg": 4.9082,
       "overall": 25,
@@ -1167,6 +1327,7 @@
       "status": "scored"
     },
     "2022|calvinaustiniii": {
+      "careerPpg": 4.49375,
       "draftAdjPpg": -0.72275,
       "expectedPpg": 5.2165,
       "overall": 24,
@@ -1175,6 +1336,7 @@
       "status": "scored"
     },
     "2022|chrisolave": {
+      "careerPpg": 11.394545,
       "draftAdjPpg": 3.495145,
       "expectedPpg": 7.8994,
       "overall": 7,
@@ -1183,6 +1345,7 @@
       "status": "scored"
     },
     "2022|christianwatson": {
+      "careerPpg": 9.095833,
       "draftAdjPpg": 1.936433,
       "expectedPpg": 7.1594,
       "overall": 11,
@@ -1191,6 +1354,7 @@
       "status": "scored"
     },
     "2022|dameonpierce": {
+      "careerPpg": 6.365116,
       "draftAdjPpg": -1.986484,
       "expectedPpg": 8.3516,
       "overall": 10,
@@ -1199,6 +1363,7 @@
       "status": "scored"
     },
     "2022|dannygray": {
+      "careerPpg": 0.184615,
       "draftAdjPpg": -3.776785,
       "expectedPpg": 3.9614,
       "overall": 37,
@@ -1207,6 +1372,7 @@
       "status": "scored"
     },
     "2022|davidbell": {
+      "careerPpg": 2.478125,
       "draftAdjPpg": -3.399675,
       "expectedPpg": 5.8778,
       "overall": 18,
@@ -1215,6 +1381,7 @@
       "status": "scored"
     },
     "2022|desmondridder": {
+      "careerPpg": 9.6512,
       "draftAdjPpg": -1.6726,
       "expectedPpg": 11.3238,
       "overall": 34,
@@ -1223,6 +1390,7 @@
       "status": "scored"
     },
     "2022|drakelondon": {
+      "careerPpg": 10.986774,
       "draftAdjPpg": 2.734674,
       "expectedPpg": 8.2521,
       "overall": 4,
@@ -1231,6 +1399,7 @@
       "status": "scored"
     },
     "2022|garrettwilson": {
+      "careerPpg": 10.737931,
       "draftAdjPpg": 2.405331,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -1239,6 +1408,7 @@
       "status": "scored"
     },
     "2022|georgepickens": {
+      "careerPpg": 10.74,
       "draftAdjPpg": 2.9994,
       "expectedPpg": 7.7406,
       "overall": 8,
@@ -1247,6 +1417,7 @@
       "status": "scored"
     },
     "2022|gregdulcich": {
+      "careerPpg": 4.151613,
       "draftAdjPpg": 0.318813,
       "expectedPpg": 3.8328,
       "overall": 36,
@@ -1255,6 +1426,7 @@
       "status": "scored"
     },
     "2022|hassanhaskins": {
+      "careerPpg": 1.359091,
       "draftAdjPpg": -3.224009,
       "expectedPpg": 4.5831,
       "overall": 28,
@@ -1263,6 +1435,7 @@
       "status": "scored"
     },
     "2022|isaiahspiller": {
+      "careerPpg": 1.526667,
       "draftAdjPpg": -5.355633,
       "expectedPpg": 6.8823,
       "overall": 15,
@@ -1271,6 +1444,7 @@
       "status": "scored"
     },
     "2022|isiahpacheco": {
+      "careerPpg": 8.805882,
       "draftAdjPpg": 5.382182,
       "expectedPpg": 3.4237,
       "overall": 42,
@@ -1279,6 +1453,7 @@
       "status": "scored"
     },
     "2022|jahandotson": {
+      "careerPpg": 4.555556,
       "draftAdjPpg": -2.178644,
       "expectedPpg": 6.7342,
       "overall": 13,
@@ -1287,6 +1462,7 @@
       "status": "scored"
     },
     "2022|jalennailor": {
+      "careerPpg": 3.781818,
       "draftAdjPpg": 0.295718,
       "expectedPpg": 3.4861,
       "overall": 47,
@@ -1295,6 +1471,7 @@
       "status": "scored"
     },
     "2022|jalentolbert": {
+      "careerPpg": 3.905455,
       "draftAdjPpg": -1.851345,
       "expectedPpg": 5.7568,
       "overall": 19,
@@ -1303,6 +1480,7 @@
       "status": "scored"
     },
     "2022|jamescook": {
+      "careerPpg": 12.789394,
       "draftAdjPpg": 4.109894,
       "expectedPpg": 8.6795,
       "overall": 9,
@@ -1311,6 +1489,7 @@
       "status": "scored"
     },
     "2022|jamesonwilliams": {
+      "careerPpg": 9.07,
       "draftAdjPpg": 0.9157,
       "expectedPpg": 8.1543,
       "overall": 5,
@@ -1319,6 +1498,7 @@
       "status": "scored"
     },
     "2022|jelaniwoods": {
+      "careerPpg": 3.4,
       "draftAdjPpg": -0.4908,
       "expectedPpg": 3.8908,
       "overall": 35,
@@ -1327,6 +1507,7 @@
       "status": "scored"
     },
     "2022|jeromeford": {
+      "careerPpg": 5.903509,
       "draftAdjPpg": 2.479809,
       "expectedPpg": 3.4237,
       "overall": 45,
@@ -1335,6 +1516,7 @@
       "status": "scored"
     },
     "2022|johnmetchieiii": {
+      "careerPpg": 2.733333,
       "draftAdjPpg": -2.912867,
       "expectedPpg": 5.6462,
       "overall": 20,
@@ -1343,6 +1525,7 @@
       "status": "scored"
     },
     "2022|justynross": {
+      "careerPpg": 0.691667,
       "draftAdjPpg": -4.170333,
       "expectedPpg": 4.862,
       "overall": 27,
@@ -1351,6 +1534,7 @@
       "status": "scored"
     },
     "2022|keaontayingram": {
+      "careerPpg": 1.338095,
       "draftAdjPpg": -2.085605,
       "expectedPpg": 3.4237,
       "overall": 41,
@@ -1359,6 +1543,7 @@
       "status": "scored"
     },
     "2022|kennypickett": {
+      "careerPpg": 8.136667,
       "draftAdjPpg": -5.192133,
       "expectedPpg": 13.3288,
       "overall": 22,
@@ -1367,6 +1552,7 @@
       "status": "scored"
     },
     "2022|kenwalkeriii": {
+      "careerPpg": 12.215517,
       "draftAdjPpg": 1.524217,
       "expectedPpg": 10.6913,
       "overall": 2,
@@ -1375,6 +1561,7 @@
       "status": "scored"
     },
     "2022|kevinharris": {
+      "careerPpg": 3.444444,
       "draftAdjPpg": 0.020744,
       "expectedPpg": 3.4237,
       "overall": 48,
@@ -1383,6 +1570,7 @@
       "status": "scored"
     },
     "2022|khalilshakir": {
+      "careerPpg": 6.412903,
       "draftAdjPpg": 2.165303,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -1391,6 +1579,7 @@
       "status": "scored"
     },
     "2022|kylephilips": {
+      "careerPpg": 2.415385,
       "draftAdjPpg": -1.110315,
       "expectedPpg": 3.5257,
       "overall": 46,
@@ -1399,6 +1588,7 @@
       "status": "scored"
     },
     "2022|kyrenwilliams": {
+      "careerPpg": 13.916364,
       "draftAdjPpg": 10.492664,
       "expectedPpg": 3.4237,
       "overall": 43,
@@ -1407,6 +1597,7 @@
       "status": "scored"
     },
     "2022|malikwillis": {
+      "careerPpg": 5.971818,
       "draftAdjPpg": -5.717282,
       "expectedPpg": 11.6891,
       "overall": 32,
@@ -1415,6 +1606,7 @@
       "status": "scored"
     },
     "2022|montrellwashington": {
+      "careerPpg": 0.145455,
       "draftAdjPpg": -3.462745,
       "expectedPpg": 3.6082,
       "overall": 44,
@@ -1423,6 +1615,7 @@
       "status": "scored"
     },
     "2022|pierrestrong": {
+      "careerPpg": 2.004348,
       "draftAdjPpg": -3.186352,
       "expectedPpg": 5.1907,
       "overall": 23,
@@ -1431,6 +1624,7 @@
       "status": "scored"
     },
     "2022|rachaadwhite": {
+      "careerPpg": 9.658209,
       "draftAdjPpg": 2.513009,
       "expectedPpg": 7.1452,
       "overall": 14,
@@ -1439,6 +1633,7 @@
       "status": "scored"
     },
     "2022|romeodoubs": {
+      "careerPpg": 8.008475,
       "draftAdjPpg": 4.106575,
       "expectedPpg": 3.9019,
       "overall": 38,
@@ -1447,6 +1642,7 @@
       "status": "scored"
     },
     "2022|skyymoore": {
+      "careerPpg": 1.658491,
       "draftAdjPpg": -5.287709,
       "expectedPpg": 6.9462,
       "overall": 12,
@@ -1455,6 +1651,7 @@
       "status": "scored"
     },
     "2022|treylonburks": {
+      "careerPpg": 3.971429,
       "draftAdjPpg": -4.065771,
       "expectedPpg": 8.0372,
       "overall": 6,
@@ -1463,6 +1660,7 @@
       "status": "scored"
     },
     "2022|treymcbride": {
+      "careerPpg": 9.624242,
       "draftAdjPpg": 5.459342,
       "expectedPpg": 4.1649,
       "overall": 31,
@@ -1471,6 +1669,7 @@
       "status": "scored"
     },
     "2022|tylerallgeier": {
+      "careerPpg": 7.398507,
       "draftAdjPpg": 0.765407,
       "expectedPpg": 6.6331,
       "overall": 16,
@@ -1479,6 +1678,7 @@
       "status": "scored"
     },
     "2022|tylerbadie": {
+      "careerPpg": 2.135,
       "draftAdjPpg": -2.3549,
       "expectedPpg": 4.4899,
       "overall": 29,
@@ -1487,6 +1687,7 @@
       "status": "scored"
     },
     "2022|tyquanthornton": {
+      "careerPpg": 3.666667,
       "draftAdjPpg": -0.859933,
       "expectedPpg": 4.5266,
       "overall": 30,
@@ -1495,6 +1696,7 @@
       "status": "scored"
     },
     "2022|tyriondavisprice": {
+      "careerPpg": 1.5875,
       "draftAdjPpg": -1.9669,
       "expectedPpg": 3.5544,
       "overall": 39,
@@ -1503,6 +1705,7 @@
       "status": "scored"
     },
     "2022|velusjones": {
+      "careerPpg": 1.167568,
       "draftAdjPpg": -2.626032,
       "expectedPpg": 3.7936,
       "overall": 40,
@@ -1511,6 +1714,7 @@
       "status": "scored"
     },
     "2022|wandalerobinson": {
+      "careerPpg": 8.359259,
       "draftAdjPpg": 3.378059,
       "expectedPpg": 4.9812,
       "overall": 26,
@@ -1519,6 +1723,7 @@
       "status": "scored"
     },
     "2022|zamirwhite": {
+      "careerPpg": 2.384444,
       "draftAdjPpg": -4.010556,
       "expectedPpg": 6.395,
       "overall": 17,
@@ -1527,6 +1732,7 @@
       "status": "scored"
     },
     "2023|aidanoconnell": {
+      "careerPpg": 11.527619,
       "draftAdjPpg": 1.120819,
       "expectedPpg": 10.4068,
       "overall": 68,
@@ -1535,6 +1741,7 @@
       "status": "scored"
     },
     "2023|andreiiosivas": {
+      "careerPpg": 4.368,
       "draftAdjPpg": 0.8963,
       "expectedPpg": 3.4717,
       "overall": 63,
@@ -1543,6 +1750,7 @@
       "status": "scored"
     },
     "2023|anthonyrichardson": {
+      "careerPpg": 13.717647,
       "draftAdjPpg": -0.333553,
       "expectedPpg": 14.0512,
       "overall": 7,
@@ -1551,6 +1759,7 @@
       "status": "scored"
     },
     "2023|atperry": {
+      "careerPpg": 5.46,
       "draftAdjPpg": 1.4348,
       "expectedPpg": 4.0252,
       "overall": 36,
@@ -1559,6 +1768,7 @@
       "status": "scored"
     },
     "2023|bijanrobinson": {
+      "careerPpg": 16.858824,
       "draftAdjPpg": 5.950024,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -1567,6 +1777,7 @@
       "status": "scored"
     },
     "2023|brentonstrange": {
+      "careerPpg": 4.14186,
       "draftAdjPpg": 0.64606,
       "expectedPpg": 3.4958,
       "overall": 61,
@@ -1575,6 +1786,7 @@
       "status": "scored"
     },
     "2023|bryceyoung": {
+      "careerPpg": 13.205217,
       "draftAdjPpg": -0.797583,
       "expectedPpg": 14.0028,
       "overall": 13,
@@ -1583,6 +1795,7 @@
       "status": "scored"
     },
     "2023|cedrictillman": {
+      "careerPpg": 3.923684,
       "draftAdjPpg": -0.938316,
       "expectedPpg": 4.862,
       "overall": 27,
@@ -1591,6 +1804,7 @@
       "status": "scored"
     },
     "2023|charliejones": {
+      "careerPpg": 0.854545,
       "draftAdjPpg": -2.631555,
       "expectedPpg": 3.4861,
       "overall": 47,
@@ -1599,6 +1813,7 @@
       "status": "scored"
     },
     "2023|chasebrown": {
+      "careerPpg": 11.613333,
       "draftAdjPpg": 6.422633,
       "expectedPpg": 5.1907,
       "overall": 23,
@@ -1607,6 +1822,7 @@
       "status": "scored"
     },
     "2023|chrisrodriguezjr": {
+      "careerPpg": 4.525714,
       "draftAdjPpg": 1.072214,
       "expectedPpg": 3.4535,
       "overall": 40,
@@ -1615,6 +1831,7 @@
       "status": "scored"
     },
     "2023|cjstroud": {
+      "careerPpg": 16.922609,
       "draftAdjPpg": 2.882909,
       "expectedPpg": 14.0397,
       "overall": 10,
@@ -1623,6 +1840,7 @@
       "status": "scored"
     },
     "2023|claytontune": {
+      "careerPpg": 0.092,
       "draftAdjPpg": -10.4542,
       "expectedPpg": 10.5462,
       "overall": 64,
@@ -1631,6 +1849,7 @@
       "status": "scored"
     },
     "2023|daltonkincaid": {
+      "careerPpg": 7.297561,
       "draftAdjPpg": 1.564061,
       "expectedPpg": 5.7335,
       "overall": 15,
@@ -1639,6 +1858,7 @@
       "status": "scored"
     },
     "2023|darnellwashington": {
+      "careerPpg": 2.06,
       "draftAdjPpg": -2.1049,
       "expectedPpg": 4.1649,
       "overall": 31,
@@ -1647,6 +1867,7 @@
       "status": "scored"
     },
     "2023|denericprince": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4237,
       "expectedPpg": 3.4237,
       "overall": 65,
@@ -1655,6 +1876,7 @@
       "status": "scored"
     },
     "2023|deriusdavis": {
+      "careerPpg": 1.448837,
       "draftAdjPpg": -2.022863,
       "expectedPpg": 3.4717,
       "overall": 67,
@@ -1663,6 +1885,7 @@
       "status": "scored"
     },
     "2023|deucevaughn": {
+      "careerPpg": 1.557143,
       "draftAdjPpg": -2.389957,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -1671,6 +1894,7 @@
       "status": "scored"
     },
     "2023|devonachane": {
+      "careerPpg": 16.531818,
       "draftAdjPpg": 7.852318,
       "expectedPpg": 8.6795,
       "overall": 9,
@@ -1679,12 +1903,16 @@
       "status": "scored"
     },
     "2023|dewaynemcbride": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
       "overall": 43,
       "pick": "4.07",
-      "pos": "",
-      "status": "unscored"
+      "pos": "RB",
+      "status": "scored"
     },
     "2023|dontayvionwicks": {
+      "careerPpg": 5.479565,
       "draftAdjPpg": 2.007865,
       "expectedPpg": 3.4717,
       "overall": 58,
@@ -1693,6 +1921,7 @@
       "status": "scored"
     },
     "2023|elijahhiggins": {
+      "careerPpg": 2.48,
       "draftAdjPpg": -1.0158,
       "expectedPpg": 3.4958,
       "overall": 57,
@@ -1701,6 +1930,7 @@
       "status": "scored"
     },
     "2023|ericgray": {
+      "careerPpg": 0.655882,
       "draftAdjPpg": -3.097918,
       "expectedPpg": 3.7538,
       "overall": 37,
@@ -1709,6 +1939,7 @@
       "status": "scored"
     },
     "2023|evanhull": {
+      "careerPpg": 0.8875,
       "draftAdjPpg": -3.1533,
       "expectedPpg": 4.0408,
       "overall": 34,
@@ -1717,6 +1948,7 @@
       "status": "scored"
     },
     "2023|hendonhooker": {
+      "careerPpg": 0.893333,
       "draftAdjPpg": -10.795767,
       "expectedPpg": 11.6891,
       "overall": 32,
@@ -1725,6 +1957,7 @@
       "status": "scored"
     },
     "2023|israelabanikanda": {
+      "careerPpg": 2.133333,
       "draftAdjPpg": -2.266667,
       "expectedPpg": 4.4,
       "overall": 30,
@@ -1733,6 +1966,7 @@
       "status": "scored"
     },
     "2023|jahmyrgibbs": {
+      "careerPpg": 17.987755,
       "draftAdjPpg": 7.296455,
       "expectedPpg": 10.6913,
       "overall": 2,
@@ -1741,6 +1975,7 @@
       "status": "scored"
     },
     "2023|jakehaener": {
+      "careerPpg": 1.655,
       "draftAdjPpg": -8.4968,
       "expectedPpg": 10.1518,
       "overall": 72,
@@ -1749,6 +1984,7 @@
       "status": "scored"
     },
     "2023|jalenbrooks": {
+      "careerPpg": 1.618519,
       "draftAdjPpg": -1.853181,
       "expectedPpg": 3.4717,
       "overall": 59,
@@ -1757,6 +1993,7 @@
       "status": "scored"
     },
     "2023|jalinhyatt": {
+      "careerPpg": 1.585366,
       "draftAdjPpg": -4.171434,
       "expectedPpg": 5.7568,
       "overall": 19,
@@ -1765,6 +2002,7 @@
       "status": "scored"
     },
     "2023|jaxonsmithnjigba": {
+      "careerPpg": 12.190196,
       "draftAdjPpg": 3.857596,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -1773,6 +2011,7 @@
       "status": "scored"
     },
     "2023|jaydenreed": {
+      "careerPpg": 9.8425,
       "draftAdjPpg": 4.626,
       "expectedPpg": 5.2165,
       "overall": 24,
@@ -1781,6 +2020,7 @@
       "status": "scored"
     },
     "2023|jonathanmingo": {
+      "careerPpg": 2.368421,
       "draftAdjPpg": -3.645179,
       "expectedPpg": 6.0136,
       "overall": 17,
@@ -1789,6 +2029,7 @@
       "status": "scored"
     },
     "2023|jordanaddison": {
+      "careerPpg": 10.465217,
       "draftAdjPpg": 2.213117,
       "expectedPpg": 8.2521,
       "overall": 4,
@@ -1797,6 +2038,7 @@
       "status": "scored"
     },
     "2023|joshdowns": {
+      "careerPpg": 8.042553,
       "draftAdjPpg": 2.501753,
       "expectedPpg": 5.5408,
       "overall": 21,
@@ -1805,6 +2047,7 @@
       "status": "scored"
     },
     "2023|joshwhyle": {
+      "careerPpg": 2.188889,
       "draftAdjPpg": -1.306911,
       "expectedPpg": 3.4958,
       "overall": 66,
@@ -1813,6 +2056,7 @@
       "status": "scored"
     },
     "2023|justinshorter": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4844,
       "expectedPpg": 3.4844,
       "overall": 53,
@@ -1821,6 +2065,7 @@
       "status": "scored"
     },
     "2023|kayshonboutte": {
+      "careerPpg": 6.202941,
       "draftAdjPpg": 1.955341,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -1829,6 +2074,7 @@
       "status": "scored"
     },
     "2023|keatonmitchell": {
+      "careerPpg": 4.715385,
       "draftAdjPpg": 1.291685,
       "expectedPpg": 3.4237,
       "overall": 52,
@@ -1837,6 +2083,7 @@
       "status": "scored"
     },
     "2023|kendremiller": {
+      "careerPpg": 4.557143,
       "draftAdjPpg": -3.472557,
       "expectedPpg": 8.0297,
       "overall": 11,
@@ -1845,6 +2092,7 @@
       "status": "scored"
     },
     "2023|kennymcintosh": {
+      "careerPpg": 1.045,
       "draftAdjPpg": -2.3787,
       "expectedPpg": 3.4237,
       "overall": 44,
@@ -1853,6 +2101,7 @@
       "status": "scored"
     },
     "2023|lewnicholsiii": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4237,
       "expectedPpg": 3.4237,
       "overall": 55,
@@ -1861,6 +2110,7 @@
       "status": "scored"
     },
     "2023|lukemusgrave": {
+      "careerPpg": 2.954286,
       "draftAdjPpg": -0.773714,
       "expectedPpg": 3.728,
       "overall": 38,
@@ -1869,6 +2119,7 @@
       "status": "scored"
     },
     "2023|lukeschoonmaker": {
+      "careerPpg": 1.692157,
       "draftAdjPpg": -1.808943,
       "expectedPpg": 3.5011,
       "overall": 50,
@@ -1877,6 +2128,7 @@
       "status": "scored"
     },
     "2023|marvinmimsjr": {
+      "careerPpg": 5.0875,
       "draftAdjPpg": -0.3486,
       "expectedPpg": 5.4361,
       "overall": 22,
@@ -1885,6 +2137,7 @@
       "status": "scored"
     },
     "2023|michaelmayer": {
+      "careerPpg": 3.692105,
       "draftAdjPpg": -1.533895,
       "expectedPpg": 5.226,
       "overall": 20,
@@ -1893,6 +2146,7 @@
       "status": "scored"
     },
     "2023|michaelwilson": {
+      "careerPpg": 8.219565,
       "draftAdjPpg": 4.373465,
       "expectedPpg": 3.8461,
       "overall": 39,
@@ -1901,6 +2155,7 @@
       "status": "scored"
     },
     "2023|mohamedibrahim": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4237,
       "expectedPpg": 3.4237,
       "overall": 56,
@@ -1909,6 +2164,7 @@
       "status": "scored"
     },
     "2023|nathanieldell": {
+      "careerPpg": 10.24,
       "draftAdjPpg": 5.607,
       "expectedPpg": 4.633,
       "overall": 29,
@@ -1917,6 +2173,7 @@
       "status": "scored"
     },
     "2023|parkerwashington": {
+      "careerPpg": 6.378571,
       "draftAdjPpg": 2.812271,
       "expectedPpg": 3.5663,
       "overall": 45,
@@ -1925,6 +2182,7 @@
       "status": "scored"
     },
     "2023|pukanacua": {
+      "careerPpg": 16.445455,
       "draftAdjPpg": 12.973755,
       "expectedPpg": 3.4717,
       "overall": 62,
@@ -1933,6 +2191,7 @@
       "status": "scored"
     },
     "2023|quentinjohnston": {
+      "careerPpg": 7.997826,
       "draftAdjPpg": -0.156474,
       "expectedPpg": 8.1543,
       "overall": 5,
@@ -1941,6 +2200,7 @@
       "status": "scored"
     },
     "2023|rakimjarrett": {
+      "careerPpg": 1.245,
       "draftAdjPpg": -2.2267,
       "expectedPpg": 3.4717,
       "overall": 69,
@@ -1949,6 +2209,7 @@
       "status": "scored"
     },
     "2023|rasheerice": {
+      "careerPpg": 12.482143,
       "draftAdjPpg": 6.314843,
       "expectedPpg": 6.1673,
       "overall": 16,
@@ -1957,6 +2218,7 @@
       "status": "scored"
     },
     "2023|ronniebell": {
+      "careerPpg": 1.439286,
       "draftAdjPpg": -2.032414,
       "expectedPpg": 3.4717,
       "overall": 70,
@@ -1965,6 +2227,7 @@
       "status": "scored"
     },
     "2023|roschonjohnson": {
+      "careerPpg": 4.338889,
       "draftAdjPpg": -3.380311,
       "expectedPpg": 7.7192,
       "overall": 12,
@@ -1973,6 +2236,7 @@
       "status": "scored"
     },
     "2023|samlaporta": {
+      "careerPpg": 10.185714,
       "draftAdjPpg": 5.483214,
       "expectedPpg": 4.7025,
       "overall": 25,
@@ -1981,6 +2245,7 @@
       "status": "scored"
     },
     "2023|seantucker": {
+      "careerPpg": 3.462222,
       "draftAdjPpg": 0.038522,
       "expectedPpg": 3.4237,
       "overall": 49,
@@ -1989,12 +2254,16 @@
       "status": "scored"
     },
     "2023|stetsonbennett": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -10.5462,
+      "expectedPpg": 10.5462,
       "overall": 60,
       "pick": "5.12",
-      "pos": "",
-      "status": "unscored"
+      "pos": "QB",
+      "status": "scored"
     },
     "2023|tankbigsby": {
+      "careerPpg": 4.002,
       "draftAdjPpg": -3.1432,
       "expectedPpg": 7.1452,
       "overall": 14,
@@ -2003,6 +2272,7 @@
       "status": "scored"
     },
     "2023|tretucker": {
+      "careerPpg": 6.026,
       "draftAdjPpg": 2.5416,
       "expectedPpg": 3.4844,
       "overall": 48,
@@ -2011,6 +2281,7 @@
       "status": "scored"
     },
     "2023|treypalmer": {
+      "careerPpg": 3.29375,
       "draftAdjPpg": -0.40295,
       "expectedPpg": 3.6967,
       "overall": 42,
@@ -2019,6 +2290,7 @@
       "status": "scored"
     },
     "2023|tuckerkraft": {
+      "careerPpg": 7.202381,
       "draftAdjPpg": 3.701281,
       "expectedPpg": 3.5011,
       "overall": 51,
@@ -2027,6 +2299,7 @@
       "status": "scored"
     },
     "2023|tyjaespears": {
+      "careerPpg": 7.514286,
       "draftAdjPpg": 1.347886,
       "expectedPpg": 6.1664,
       "overall": 18,
@@ -2035,6 +2308,7 @@
       "status": "scored"
     },
     "2023|tylerscott": {
+      "careerPpg": 1.014286,
       "draftAdjPpg": -2.511414,
       "expectedPpg": 3.5257,
       "overall": 46,
@@ -2043,6 +2317,7 @@
       "status": "scored"
     },
     "2023|willlevis": {
+      "careerPpg": 11.045714,
       "draftAdjPpg": -1.352586,
       "expectedPpg": 12.3983,
       "overall": 28,
@@ -2051,6 +2326,7 @@
       "status": "scored"
     },
     "2023|xavierhutchinson": {
+      "careerPpg": 2.369388,
       "draftAdjPpg": -1.374512,
       "expectedPpg": 3.7439,
       "overall": 41,
@@ -2059,6 +2335,7 @@
       "status": "scored"
     },
     "2023|xazavianvalladay": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.2563,
       "expectedPpg": 3.2563,
       "overall": 71,
@@ -2067,6 +2344,7 @@
       "status": "scored"
     },
     "2023|zachcharbonnet": {
+      "careerPpg": 8.712245,
       "draftAdjPpg": -0.922755,
       "expectedPpg": 9.635,
       "overall": 6,
@@ -2075,6 +2353,7 @@
       "status": "scored"
     },
     "2023|zachevans": {
+      "careerPpg": 0.19,
       "draftAdjPpg": -4.5994,
       "expectedPpg": 4.7894,
       "overall": 26,
@@ -2083,12 +2362,16 @@
       "status": "scored"
     },
     "2023|zachkuntz": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4958,
+      "expectedPpg": 3.4958,
       "overall": 54,
       "pick": "5.06",
-      "pos": "",
-      "status": "unscored"
+      "pos": "TE",
+      "status": "scored"
     },
     "2023|zayflowers": {
+      "careerPpg": 10.814,
       "draftAdjPpg": 3.0734,
       "expectedPpg": 7.7406,
       "overall": 8,
@@ -2097,6 +2380,7 @@
       "status": "scored"
     },
     "2024|adonaimitchell": {
+      "careerPpg": 3.444242,
       "draftAdjPpg": -3.085958,
       "expectedPpg": 6.5302,
       "overall": 14,
@@ -2105,6 +2389,7 @@
       "status": "scored"
     },
     "2024|ainiassmith": {
+      "careerPpg": 2.028571,
       "draftAdjPpg": -1.443129,
       "expectedPpg": 3.4717,
       "overall": 69,
@@ -2113,6 +2398,7 @@
       "status": "scored"
     },
     "2024|audricestime": {
+      "careerPpg": 4.415,
       "draftAdjPpg": 0.2825,
       "expectedPpg": 4.1325,
       "overall": 33,
@@ -2121,6 +2407,7 @@
       "status": "scored"
     },
     "2024|bensinnott": {
+      "careerPpg": 1.036364,
       "draftAdjPpg": -3.871736,
       "expectedPpg": 4.9081,
       "overall": 23,
@@ -2129,6 +2416,7 @@
       "status": "scored"
     },
     "2024|blakecorum": {
+      "careerPpg": 4.358824,
       "draftAdjPpg": -1.807576,
       "expectedPpg": 6.1664,
       "overall": 18,
@@ -2137,6 +2425,7 @@
       "status": "scored"
     },
     "2024|blakewatson": {
+      "careerPpg": 1.4,
       "draftAdjPpg": -2.0237,
       "expectedPpg": 3.4237,
       "overall": 59,
@@ -2145,6 +2434,7 @@
       "status": "scored"
     },
     "2024|bonix": {
+      "careerPpg": 20.104118,
       "draftAdjPpg": 9.151218,
       "expectedPpg": 10.9529,
       "overall": 36,
@@ -2153,6 +2443,7 @@
       "status": "scored"
     },
     "2024|braelonallen": {
+      "careerPpg": 4.285714,
       "draftAdjPpg": 0.862014,
       "expectedPpg": 3.4237,
       "overall": 41,
@@ -2161,6 +2452,7 @@
       "status": "scored"
     },
     "2024|brendenrice": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4844,
       "expectedPpg": 3.4844,
       "overall": 53,
@@ -2169,6 +2461,7 @@
       "status": "scored"
     },
     "2024|brianthomasjr": {
+      "careerPpg": 11.46129,
       "draftAdjPpg": 3.56189,
       "expectedPpg": 7.8994,
       "overall": 7,
@@ -2177,6 +2470,7 @@
       "status": "scored"
     },
     "2024|brockbowers": {
+      "careerPpg": 12.1,
       "draftAdjPpg": 5.6477,
       "expectedPpg": 6.4523,
       "overall": 5,
@@ -2185,6 +2479,7 @@
       "status": "scored"
     },
     "2024|bubmeans": {
+      "careerPpg": 3.185714,
       "draftAdjPpg": -0.298686,
       "expectedPpg": 3.4844,
       "overall": 51,
@@ -2193,6 +2488,7 @@
       "status": "scored"
     },
     "2024|buckyirving": {
+      "careerPpg": 12.755556,
       "draftAdjPpg": 8.808456,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -2201,6 +2497,7 @@
       "status": "scored"
     },
     "2024|cadestover": {
+      "careerPpg": 1.695833,
       "draftAdjPpg": -1.805267,
       "expectedPpg": 3.5011,
       "overall": 50,
@@ -2209,6 +2506,7 @@
       "status": "scored"
     },
     "2024|calebwilliams": {
+      "careerPpg": 18.815294,
       "draftAdjPpg": 4.768194,
       "expectedPpg": 14.0471,
       "overall": 8,
@@ -2217,6 +2515,7 @@
       "status": "scored"
     },
     "2024|caseywashington": {
+      "careerPpg": 0.953333,
       "draftAdjPpg": -2.518367,
       "expectedPpg": 3.4717,
       "overall": 70,
@@ -2231,6 +2530,7 @@
       "status": "veteran_excluded"
     },
     "2024|codyschrader": {
+      "careerPpg": 0.7,
       "draftAdjPpg": -2.7237,
       "expectedPpg": 3.4237,
       "overall": 61,
@@ -2245,12 +2545,16 @@
       "status": "veteran_excluded"
     },
     "2024|corneliusjohnson": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4455,
+      "expectedPpg": 3.4455,
       "overall": 72,
       "pick": "6.12",
       "pos": "WR",
-      "status": "unscored"
+      "status": "scored"
     },
     "2024|devontezwalker": {
+      "careerPpg": 2.057143,
       "draftAdjPpg": -2.110657,
       "expectedPpg": 4.1678,
       "overall": 34,
@@ -2259,6 +2563,7 @@
       "status": "scored"
     },
     "2024|drakemaye": {
+      "careerPpg": 19.486667,
       "draftAdjPpg": 5.919267,
       "expectedPpg": 13.5674,
       "overall": 20,
@@ -2267,6 +2572,7 @@
       "status": "scored"
     },
     "2024|dylanlaube": {
+      "careerPpg": 0.007407,
       "draftAdjPpg": -3.416293,
       "expectedPpg": 3.4237,
       "overall": 44,
@@ -2275,6 +2581,7 @@
       "status": "scored"
     },
     "2024|erickall": {
+      "careerPpg": 2.866667,
       "draftAdjPpg": -0.634433,
       "expectedPpg": 3.5011,
       "overall": 46,
@@ -2283,6 +2590,7 @@
       "status": "scored"
     },
     "2024|frankgorejr": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.2563,
       "expectedPpg": 3.2563,
       "overall": 71,
@@ -2291,6 +2599,7 @@
       "status": "scored"
     },
     "2024|isaacguerendo": {
+      "careerPpg": 2.89,
       "draftAdjPpg": -0.5337,
       "expectedPpg": 3.4237,
       "overall": 43,
@@ -2299,6 +2608,7 @@
       "status": "scored"
     },
     "2024|isaiahdavis": {
+      "careerPpg": 3.093939,
       "draftAdjPpg": -0.329761,
       "expectedPpg": 3.4237,
       "overall": 57,
@@ -2307,6 +2617,7 @@
       "status": "scored"
     },
     "2024|jacobcowing": {
+      "careerPpg": 0.58,
       "draftAdjPpg": -2.9863,
       "expectedPpg": 3.5663,
       "overall": 45,
@@ -2315,6 +2626,7 @@
       "status": "scored"
     },
     "2024|jalenmcmillan": {
+      "careerPpg": 8.282353,
       "draftAdjPpg": 3.948453,
       "expectedPpg": 4.3339,
       "overall": 32,
@@ -2323,6 +2635,7 @@
       "status": "scored"
     },
     "2024|jalynnpolk": {
+      "careerPpg": 1.78,
       "draftAdjPpg": -5.1662,
       "expectedPpg": 6.9462,
       "overall": 12,
@@ -2331,6 +2644,7 @@
       "status": "scored"
     },
     "2024|jamarithrash": {
+      "careerPpg": 1.077778,
       "draftAdjPpg": -2.393922,
       "expectedPpg": 3.4717,
       "overall": 60,
@@ -2339,6 +2653,7 @@
       "status": "scored"
     },
     "2024|jaredwiley": {
+      "careerPpg": 0.175,
       "draftAdjPpg": -3.3261,
       "expectedPpg": 3.5011,
       "overall": 49,
@@ -2347,6 +2662,7 @@
       "status": "scored"
     },
     "2024|jasemcclellan": {
+      "careerPpg": 1.6,
       "draftAdjPpg": -1.8237,
       "expectedPpg": 3.4237,
       "overall": 52,
@@ -2355,6 +2671,7 @@
       "status": "scored"
     },
     "2024|jatavionsanders": {
+      "careerPpg": 3.317241,
       "draftAdjPpg": -1.098759,
       "expectedPpg": 4.416,
       "overall": 28,
@@ -2363,6 +2680,7 @@
       "status": "scored"
     },
     "2024|javonbaker": {
+      "careerPpg": 0.154545,
       "draftAdjPpg": -4.372055,
       "expectedPpg": 4.5266,
       "overall": 30,
@@ -2371,6 +2689,7 @@
       "status": "scored"
     },
     "2024|jawharjordan": {
+      "careerPpg": 6.55,
       "draftAdjPpg": 3.1263,
       "expectedPpg": 3.4237,
       "overall": 65,
@@ -2379,6 +2698,7 @@
       "status": "scored"
     },
     "2024|jaydendaniels": {
+      "careerPpg": 21.3375,
       "draftAdjPpg": 7.3983,
       "expectedPpg": 13.9392,
       "overall": 15,
@@ -2387,6 +2707,7 @@
       "status": "scored"
     },
     "2024|jaylenwright": {
+      "careerPpg": 2.836,
       "draftAdjPpg": -3.1109,
       "expectedPpg": 5.9469,
       "overall": 19,
@@ -2395,6 +2716,7 @@
       "status": "scored"
     },
     "2024|jermaineburton": {
+      "careerPpg": 0.907143,
       "draftAdjPpg": -4.528957,
       "expectedPpg": 5.4361,
       "overall": 22,
@@ -2403,6 +2725,7 @@
       "status": "scored"
     },
     "2024|jjmccarthy": {
+      "careerPpg": 12.338,
       "draftAdjPpg": -0.5563,
       "expectedPpg": 12.8943,
       "overall": 25,
@@ -2411,6 +2734,7 @@
       "status": "scored"
     },
     "2024|johnnywilson": {
+      "careerPpg": 0.76875,
       "draftAdjPpg": -2.71565,
       "expectedPpg": 3.4844,
       "overall": 54,
@@ -2419,6 +2743,7 @@
       "status": "scored"
     },
     "2024|jonathonbrooks": {
+      "careerPpg": 2.0,
       "draftAdjPpg": -7.635,
       "expectedPpg": 9.635,
       "overall": 6,
@@ -2427,12 +2752,16 @@
       "status": "scored"
     },
     "2024|jordantravis": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -10.5462,
+      "expectedPpg": 10.5462,
       "overall": 64,
       "pick": "6.04",
       "pos": "QB",
-      "status": "unscored"
+      "status": "scored"
     },
     "2024|jordanwhittington": {
+      "careerPpg": 2.15,
       "draftAdjPpg": -1.3217,
       "expectedPpg": 3.4717,
       "overall": 68,
@@ -2453,6 +2782,7 @@
       "status": "veteran_excluded"
     },
     "2024|keoncoleman": {
+      "careerPpg": 6.938462,
       "draftAdjPpg": 0.204262,
       "expectedPpg": 6.7342,
       "overall": 13,
@@ -2461,6 +2791,7 @@
       "status": "scored"
     },
     "2024|kimanividal": {
+      "careerPpg": 6.091304,
       "draftAdjPpg": 2.436604,
       "expectedPpg": 3.6547,
       "overall": 38,
@@ -2469,6 +2800,7 @@
       "status": "scored"
     },
     "2024|laddmcconkey": {
+      "careerPpg": 10.86875,
       "draftAdjPpg": 3.30675,
       "expectedPpg": 7.562,
       "overall": 9,
@@ -2477,6 +2809,7 @@
       "status": "scored"
     },
     "2024|lukemccaffrey": {
+      "careerPpg": 2.753846,
       "draftAdjPpg": -1.879154,
       "expectedPpg": 4.633,
       "overall": 29,
@@ -2485,6 +2818,7 @@
       "status": "scored"
     },
     "2024|malachicorley": {
+      "careerPpg": 1.354545,
       "draftAdjPpg": -4.659055,
       "expectedPpg": 6.0136,
       "overall": 17,
@@ -2493,6 +2827,7 @@
       "status": "scored"
     },
     "2024|maliknabers": {
+      "careerPpg": 14.063158,
       "draftAdjPpg": 5.664758,
       "expectedPpg": 8.3984,
       "overall": 2,
@@ -2501,6 +2836,7 @@
       "status": "scored"
     },
     "2024|malikwashington": {
+      "careerPpg": 4.370968,
       "draftAdjPpg": 0.674268,
       "expectedPpg": 3.6967,
       "overall": 42,
@@ -2509,6 +2845,7 @@
       "status": "scored"
     },
     "2024|marshawnlloyd": {
+      "careerPpg": 2.3,
       "draftAdjPpg": -4.3331,
       "expectedPpg": 6.6331,
       "overall": 16,
@@ -2517,6 +2854,7 @@
       "status": "scored"
     },
     "2024|marvinharrisonjr": {
+      "careerPpg": 9.406897,
       "draftAdjPpg": 0.955197,
       "expectedPpg": 8.4517,
       "overall": 1,
@@ -2525,6 +2863,7 @@
       "status": "scored"
     },
     "2024|michaelpenix": {
+      "careerPpg": 12.598571,
       "draftAdjPpg": 2.052371,
       "expectedPpg": 10.5462,
       "overall": 39,
@@ -2533,6 +2872,7 @@
       "status": "scored"
     },
     "2024|rasheenali": {
+      "careerPpg": 1.085714,
       "draftAdjPpg": -2.337986,
       "expectedPpg": 3.4237,
       "overall": 48,
@@ -2541,6 +2881,7 @@
       "status": "scored"
     },
     "2024|raydavis": {
+      "careerPpg": 4.902941,
       "draftAdjPpg": 0.591641,
       "expectedPpg": 4.3113,
       "overall": 31,
@@ -2549,6 +2890,7 @@
       "status": "scored"
     },
     "2024|rickypearsall": {
+      "careerPpg": 7.43,
       "draftAdjPpg": 0.0633,
       "expectedPpg": 7.3667,
       "overall": 10,
@@ -2557,6 +2899,7 @@
       "status": "scored"
     },
     "2024|romanwilson": {
+      "careerPpg": 2.328571,
       "draftAdjPpg": -2.652629,
       "expectedPpg": 4.9812,
       "overall": 26,
@@ -2565,6 +2908,7 @@
       "status": "scored"
     },
     "2024|romeodunze": {
+      "careerPpg": 8.344828,
       "draftAdjPpg": 0.012228,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -2579,6 +2923,7 @@
       "status": "veteran_excluded"
     },
     "2024|sionevaki": {
+      "careerPpg": 0.259259,
       "draftAdjPpg": -3.149141,
       "expectedPpg": 3.4084,
       "overall": 66,
@@ -2587,6 +2932,7 @@
       "status": "scored"
     },
     "2024|spencerrattler": {
+      "careerPpg": 10.62,
       "draftAdjPpg": 0.0738,
       "expectedPpg": 10.5462,
       "overall": 56,
@@ -2595,6 +2941,7 @@
       "status": "scored"
     },
     "2024|theojohnson": {
+      "careerPpg": 5.885185,
       "draftAdjPpg": 2.384085,
       "expectedPpg": 3.5011,
       "overall": 47,
@@ -2603,6 +2950,7 @@
       "status": "scored"
     },
     "2024|treybenson": {
+      "careerPpg": 4.288235,
       "draftAdjPpg": -3.741465,
       "expectedPpg": 8.0297,
       "overall": 11,
@@ -2611,6 +2959,7 @@
       "status": "scored"
     },
     "2024|troyfranklin": {
+      "careerPpg": 5.990909,
       "draftAdjPpg": 0.774409,
       "expectedPpg": 5.2165,
       "overall": 24,
@@ -2619,6 +2968,7 @@
       "status": "scored"
     },
     "2024|tyronetracy": {
+      "careerPpg": 9.565625,
       "draftAdjPpg": 5.811825,
       "expectedPpg": 3.7538,
       "overall": 37,
@@ -2633,6 +2983,7 @@
       "status": "veteran_excluded"
     },
     "2024|willshipley": {
+      "careerPpg": 0.86129,
       "draftAdjPpg": -2.59221,
       "expectedPpg": 3.4535,
       "overall": 40,
@@ -2641,6 +2992,7 @@
       "status": "scored"
     },
     "2024|xavierlegette": {
+      "careerPpg": 5.56129,
       "draftAdjPpg": 0.02049,
       "expectedPpg": 5.5408,
       "overall": 21,
@@ -2649,6 +3001,7 @@
       "status": "scored"
     },
     "2024|xavierworthy": {
+      "careerPpg": 7.954839,
       "draftAdjPpg": -0.297261,
       "expectedPpg": 8.2521,
       "overall": 4,
@@ -2657,6 +3010,7 @@
       "status": "scored"
     },
     "2025|ariansmith": {
+      "careerPpg": 0.625,
       "draftAdjPpg": -2.8594,
       "expectedPpg": 3.4844,
       "overall": 55,
@@ -2665,6 +3019,7 @@
       "status": "scored"
     },
     "2025|ashtonjeanty": {
+      "careerPpg": 12.8,
       "draftAdjPpg": 1.8912,
       "expectedPpg": 10.9088,
       "overall": 1,
@@ -2673,6 +3028,7 @@
       "status": "scored"
     },
     "2025|bhayshultuten": {
+      "careerPpg": 5.573333,
       "draftAdjPpg": 0.216233,
       "expectedPpg": 5.3571,
       "overall": 22,
@@ -2681,6 +3037,7 @@
       "status": "scored"
     },
     "2025|brashardsmith": {
+      "careerPpg": 2.988235,
       "draftAdjPpg": -0.435465,
       "expectedPpg": 3.4237,
       "overall": 47,
@@ -2689,6 +3046,7 @@
       "status": "scored"
     },
     "2025|camskattebo": {
+      "careerPpg": 14.4625,
       "draftAdjPpg": 6.4328,
       "expectedPpg": 8.0297,
       "overall": 11,
@@ -2697,6 +3055,7 @@
       "status": "scored"
     },
     "2025|camward": {
+      "careerPpg": 11.921176,
       "draftAdjPpg": -2.136324,
       "expectedPpg": 14.0575,
       "overall": 6,
@@ -2705,6 +3064,7 @@
       "status": "scored"
     },
     "2025|chimeredike": {
+      "careerPpg": 6.005882,
       "draftAdjPpg": 2.521482,
       "expectedPpg": 3.4844,
       "overall": 51,
@@ -2713,6 +3073,7 @@
       "status": "scored"
     },
     "2025|colstonloveland": {
+      "careerPpg": 8.50625,
       "draftAdjPpg": 2.77275,
       "expectedPpg": 5.7335,
       "overall": 15,
@@ -2721,12 +3082,16 @@
       "status": "scored"
     },
     "2025|damienmartinez": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -3.4237,
+      "expectedPpg": 3.4237,
       "overall": 46,
       "pick": "4.09",
-      "pos": "",
-      "status": "unscored"
+      "pos": "RB",
+      "status": "scored"
     },
     "2025|devinneal": {
+      "careerPpg": 5.15,
       "draftAdjPpg": 0.9276,
       "expectedPpg": 4.2224,
       "overall": 32,
@@ -2735,6 +3100,7 @@
       "status": "scored"
     },
     "2025|dillongabriel": {
+      "careerPpg": 8.008,
       "draftAdjPpg": -2.5382,
       "expectedPpg": 10.5462,
       "overall": 56,
@@ -2743,6 +3109,7 @@
       "status": "scored"
     },
     "2025|djgiddens": {
+      "careerPpg": 1.066667,
       "draftAdjPpg": -2.880433,
       "expectedPpg": 3.9471,
       "overall": 35,
@@ -2751,6 +3118,7 @@
       "status": "scored"
     },
     "2025|dontethornton": {
+      "careerPpg": 1.233333,
       "draftAdjPpg": -2.728067,
       "expectedPpg": 3.9614,
       "overall": 37,
@@ -2759,6 +3127,7 @@
       "status": "scored"
     },
     "2025|dylansampson": {
+      "careerPpg": 4.74,
       "draftAdjPpg": -0.1682,
       "expectedPpg": 4.9082,
       "overall": 25,
@@ -2767,6 +3136,7 @@
       "status": "scored"
     },
     "2025|elicayomanor": {
+      "careerPpg": 6.0,
       "draftAdjPpg": 1.7524,
       "expectedPpg": 4.2476,
       "overall": 33,
@@ -2775,6 +3145,7 @@
       "status": "scored"
     },
     "2025|elijaharroyo": {
+      "careerPpg": 2.261538,
       "draftAdjPpg": -1.239562,
       "expectedPpg": 3.5011,
       "overall": 44,
@@ -2783,6 +3154,7 @@
       "status": "scored"
     },
     "2025|emekaegbuka": {
+      "careerPpg": 9.658824,
       "draftAdjPpg": 2.292124,
       "expectedPpg": 7.3667,
       "overall": 10,
@@ -2791,6 +3163,7 @@
       "status": "scored"
     },
     "2025|haroldfannin": {
+      "careerPpg": 9.4,
       "draftAdjPpg": 5.5672,
       "expectedPpg": 3.8328,
       "overall": 36,
@@ -2799,6 +3172,7 @@
       "status": "scored"
     },
     "2025|isaacteslaa": {
+      "careerPpg": 3.994118,
       "draftAdjPpg": -0.173682,
       "expectedPpg": 4.1678,
       "overall": 34,
@@ -2807,6 +3181,7 @@
       "status": "scored"
     },
     "2025|isaiahbond": {
+      "careerPpg": 2.85625,
       "draftAdjPpg": -0.61545,
       "expectedPpg": 3.4717,
       "overall": 57,
@@ -2815,6 +3190,7 @@
       "status": "scored"
     },
     "2025|jackbech": {
+      "careerPpg": 2.025,
       "draftAdjPpg": -4.1423,
       "expectedPpg": 6.1673,
       "overall": 16,
@@ -2823,6 +3199,7 @@
       "status": "scored"
     },
     "2025|jacorycroskeymerritt": {
+      "careerPpg": 7.988235,
       "draftAdjPpg": 4.564535,
       "expectedPpg": 3.4237,
       "overall": 50,
@@ -2831,6 +3208,7 @@
       "status": "scored"
     },
     "2025|jalenmilroe": {
+      "careerPpg": -0.533333,
       "draftAdjPpg": -11.079533,
       "expectedPpg": 10.5462,
       "overall": 41,
@@ -2839,6 +3217,7 @@
       "status": "scored"
     },
     "2025|jalenroyals": {
+      "careerPpg": 0.2,
       "draftAdjPpg": -5.3408,
       "expectedPpg": 5.5408,
       "overall": 21,
@@ -2847,6 +3226,7 @@
       "status": "scored"
     },
     "2025|jarquezhunter": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -4.4,
       "expectedPpg": 4.4,
       "overall": 30,
@@ -2855,6 +3235,7 @@
       "status": "scored"
     },
     "2025|jaxsondart": {
+      "careerPpg": 18.684286,
       "draftAdjPpg": 6.814786,
       "expectedPpg": 11.8695,
       "overall": 31,
@@ -2863,6 +3244,7 @@
       "status": "scored"
     },
     "2025|jaydenhiggins": {
+      "careerPpg": 6.411765,
       "draftAdjPpg": -0.322435,
       "expectedPpg": 6.7342,
       "overall": 13,
@@ -2871,6 +3253,7 @@
       "status": "scored"
     },
     "2025|jaydonblue": {
+      "careerPpg": 3.98,
       "draftAdjPpg": -1.2107,
       "expectedPpg": 5.1907,
       "overall": 23,
@@ -2879,6 +3262,7 @@
       "status": "scored"
     },
     "2025|jaylinlane": {
+      "careerPpg": 2.746667,
       "draftAdjPpg": -0.737733,
       "expectedPpg": 3.4844,
       "overall": 54,
@@ -2887,6 +3271,7 @@
       "status": "scored"
     },
     "2025|jaylinnoel": {
+      "careerPpg": 3.258824,
       "draftAdjPpg": -1.603176,
       "expectedPpg": 4.862,
       "overall": 27,
@@ -2895,6 +3280,7 @@
       "status": "scored"
     },
     "2025|jordanjames": {
+      "careerPpg": 0.0,
       "draftAdjPpg": -3.4237,
       "expectedPpg": 3.4237,
       "overall": 43,
@@ -2903,6 +3289,7 @@
       "status": "scored"
     },
     "2025|kalebjohnson": {
+      "careerPpg": 0.83,
       "draftAdjPpg": -8.1767,
       "expectedPpg": 9.0067,
       "overall": 8,
@@ -2911,6 +3298,7 @@
       "status": "scored"
     },
     "2025|keandrelambertsmith": {
+      "careerPpg": 1.36,
       "draftAdjPpg": -2.1117,
       "expectedPpg": 3.4717,
       "overall": 59,
@@ -2925,6 +3313,7 @@
       "status": "veteran_excluded"
     },
     "2025|kylemonangai": {
+      "careerPpg": 8.1,
       "draftAdjPpg": 4.6763,
       "expectedPpg": 3.4237,
       "overall": 52,
@@ -2933,6 +3322,7 @@
       "status": "scored"
     },
     "2025|kylewilliams": {
+      "careerPpg": 2.6,
       "draftAdjPpg": -3.0462,
       "expectedPpg": 5.6462,
       "overall": 20,
@@ -2941,6 +3331,7 @@
       "status": "scored"
     },
     "2025|lutherburden": {
+      "careerPpg": 6.96,
       "draftAdjPpg": 0.4298,
       "expectedPpg": 6.5302,
       "overall": 14,
@@ -2949,6 +3340,7 @@
       "status": "scored"
     },
     "2025|masontaylor": {
+      "careerPpg": 5.146154,
       "draftAdjPpg": 0.542554,
       "expectedPpg": 4.6036,
       "overall": 26,
@@ -2957,6 +3349,7 @@
       "status": "scored"
     },
     "2025|matthewgolden": {
+      "careerPpg": 3.964286,
       "draftAdjPpg": -2.981914,
       "expectedPpg": 6.9462,
       "overall": 12,
@@ -2965,6 +3358,7 @@
       "status": "scored"
     },
     "2025|olliegordon": {
+      "careerPpg": 2.976471,
       "draftAdjPpg": -0.577929,
       "expectedPpg": 3.5544,
       "overall": 39,
@@ -2973,6 +3367,7 @@
       "status": "scored"
     },
     "2025|omarionhampton": {
+      "careerPpg": 13.3,
       "draftAdjPpg": 2.6087,
       "expectedPpg": 10.6913,
       "overall": 2,
@@ -2981,6 +3376,7 @@
       "status": "scored"
     },
     "2025|orondegadsden": {
+      "careerPpg": 7.126667,
       "draftAdjPpg": 3.630867,
       "expectedPpg": 3.4958,
       "overall": 58,
@@ -2989,6 +3385,7 @@
       "status": "scored"
     },
     "2025|patbryant": {
+      "careerPpg": 3.953333,
       "draftAdjPpg": -0.791967,
       "expectedPpg": 4.7453,
       "overall": 28,
@@ -2997,6 +3394,7 @@
       "status": "scored"
     },
     "2025|quinshonjudkins": {
+      "careerPpg": 11.2,
       "draftAdjPpg": 1.273,
       "expectedPpg": 9.927,
       "overall": 5,
@@ -3005,6 +3403,7 @@
       "status": "scored"
     },
     "2025|raheimsanders": {
+      "careerPpg": 4.7,
       "draftAdjPpg": 1.2763,
       "expectedPpg": 3.4237,
       "overall": 61,
@@ -3013,6 +3412,7 @@
       "status": "scored"
     },
     "2025|rjharvey": {
+      "careerPpg": 10.770588,
       "draftAdjPpg": 2.091088,
       "expectedPpg": 8.6795,
       "overall": 9,
@@ -3021,6 +3421,7 @@
       "status": "scored"
     },
     "2025|savionwilliams": {
+      "careerPpg": 1.708333,
       "draftAdjPpg": -1.857967,
       "expectedPpg": 3.5663,
       "overall": 45,
@@ -3029,6 +3430,7 @@
       "status": "scored"
     },
     "2025|shedeursanders": {
+      "careerPpg": 9.8625,
       "draftAdjPpg": -0.6837,
       "expectedPpg": 10.5462,
       "overall": 48,
@@ -3037,6 +3439,7 @@
       "status": "scored"
     },
     "2025|tahjbrooks": {
+      "careerPpg": 0.36875,
       "draftAdjPpg": -3.28595,
       "expectedPpg": 3.6547,
       "overall": 38,
@@ -3045,6 +3448,7 @@
       "status": "scored"
     },
     "2025|taifelton": {
+      "careerPpg": 0.235294,
       "draftAdjPpg": -3.249106,
       "expectedPpg": 3.4844,
       "overall": 49,
@@ -3053,6 +3457,7 @@
       "status": "scored"
     },
     "2025|terranceferguson": {
+      "careerPpg": 3.328571,
       "draftAdjPpg": -0.999429,
       "expectedPpg": 4.328,
       "overall": 29,
@@ -3061,6 +3466,7 @@
       "status": "scored"
     },
     "2025|tetairoamcmillan": {
+      "careerPpg": 10.376471,
       "draftAdjPpg": 2.043871,
       "expectedPpg": 8.3326,
       "overall": 3,
@@ -3069,6 +3475,7 @@
       "status": "scored"
     },
     "2025|toryhorton": {
+      "careerPpg": 7.325,
       "draftAdjPpg": 3.6283,
       "expectedPpg": 3.6967,
       "overall": 42,
@@ -3077,6 +3484,7 @@
       "status": "scored"
     },
     "2025|travishunter": {
+      "careerPpg": 7.114286,
       "draftAdjPpg": -1.137814,
       "expectedPpg": 8.2521,
       "overall": 4,
@@ -3085,6 +3493,7 @@
       "status": "scored"
     },
     "2025|treharris": {
+      "careerPpg": 3.2,
       "draftAdjPpg": -2.5568,
       "expectedPpg": 5.7568,
       "overall": 19,
@@ -3093,6 +3502,7 @@
       "status": "scored"
     },
     "2025|treveyonhenderson": {
+      "careerPpg": 11.1,
       "draftAdjPpg": 1.773,
       "expectedPpg": 9.327,
       "overall": 7,
@@ -3101,6 +3511,7 @@
       "status": "scored"
     },
     "2025|trevoretienne": {
+      "careerPpg": 0.6,
       "draftAdjPpg": -2.8535,
       "expectedPpg": 3.4535,
       "overall": 40,
@@ -3109,6 +3520,7 @@
       "status": "scored"
     },
     "2025|tylershough": {
+      "careerPpg": 15.087273,
       "draftAdjPpg": 1.331573,
       "expectedPpg": 13.7557,
       "overall": 18,
@@ -3117,6 +3529,7 @@
       "status": "scored"
     },
     "2025|tylerwarren": {
+      "careerPpg": 8.852941,
       "draftAdjPpg": 3.314841,
       "expectedPpg": 5.5381,
       "overall": 17,
@@ -3125,12 +3538,16 @@
       "status": "scored"
     },
     "2025|willhoward": {
+      "careerPpg": 0.0,
+      "draftAdjPpg": -10.5462,
+      "expectedPpg": 10.5462,
       "overall": 53,
       "pick": "5.04",
-      "pos": "",
-      "status": "unscored"
+      "pos": "QB",
+      "status": "scored"
     },
     "2025|woodymarks": {
+      "careerPpg": 8.69375,
       "draftAdjPpg": 3.65245,
       "expectedPpg": 5.0413,
       "overall": 24,
@@ -3499,7 +3916,7 @@
       "status": "unscored"
     }
   },
-  "positionAudit": "same-year FFC rookie ADP, then historical NFL draft position, then Plebs/Sleeper fallback",
+  "positionAudit": "same-year FFC rookie ADP, historical NFL draft position, then manual audited rookie-position fallback",
   "throughSeason": 2025,
-  "version": "draft-adjusted-ppg-v1"
+  "version": "draft-adjusted-ppg-v2"
 }
