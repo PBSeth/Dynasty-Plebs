@@ -5,7 +5,7 @@ set -eu
 # frozen, audited Draft-Adjusted PPG artifact and the stable final presentation layer.
 sh build-vercel.sh
 
-cp draft-adjusted-ppg.js draft-adjusted-ui.js final-ui-stable.js legacy-axis-fix.js manifest.webmanifest plebs-icon.svg dist/
+cp draft-adjusted-ppg.js draft-adjusted-ui.js final-ui-stable.js legacy-axis-fix.js workbook-ownership-fixes.js manifest.webmanifest plebs-icon.svg dist/
 
 node <<'NODE'
 const fs=require('fs');
@@ -17,6 +17,9 @@ if((html.match(new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]
 }
 const layered='<script src="draft-adjusted-ppg.js?v=2"></script>\n'+needle+'\n<script src="draft-adjusted-ui.js?v=2"></script>';
 html=html.replace(needle,layered);
+const ownershipNeedle='<script src="app-v2.js"></script>';
+if(!html.includes(ownershipNeedle))throw new Error('Expected app-v2 script tag');
+html=html.replace(ownershipNeedle,'<script src="workbook-ownership-fixes.js?v=1"></script>\n'+ownershipNeedle);
 const headLayers='\n<link rel="manifest" href="/manifest.webmanifest?v=1">\n<link rel="icon" type="image/svg+xml" href="/plebs-icon.svg?v=1">\n<meta name="apple-mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-title" content="Dynasty Plebs">\n';
 if(!html.includes('</head>'))throw new Error('Expected closing head tag');
 html=html.replace('</head>',headLayers+'</head>');
@@ -30,8 +33,10 @@ node --check dist/draft-adjusted-ppg.js
 node --check dist/draft-adjusted-ui.js
 node --check dist/final-ui-stable.js
 node --check dist/legacy-axis-fix.js
+node --check dist/workbook-ownership-fixes.js
 grep -Fq 'draft-adjusted-ppg.js?v=2' dist/index.html
 grep -Fq 'draft-adjusted-ui.js?v=2' dist/index.html
+grep -Fq 'workbook-ownership-fixes.js?v=1' dist/index.html
 grep -Fq 'final-ui-stable.js?v=2' dist/index.html
 grep -Fq 'legacy-axis-fix.js?v=1' dist/index.html
 grep -Fq 'manifest.webmanifest?v=1' dist/index.html
@@ -45,3 +50,4 @@ grep -Fq 'Draft Class Average' dist/final-ui-stable.js
 grep -Fq 'activeFirstSort' dist/final-ui-stable.js
 grep -Fq 'dp-intel-card>b' dist/final-ui-stable.js
 grep -Fq 'STEP=500' dist/legacy-axis-fix.js
+grep -Fq "jefferson.owner='Seth Miller'" dist/workbook-ownership-fixes.js
