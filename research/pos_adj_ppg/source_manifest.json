@@ -152,12 +152,12 @@
   "core_filter": {
     "max_adp": 96.0,
     "min_times_drafted": 5,
-    "n": 310,
+    "n": 313,
     "position_counts": {
       "QB": 38,
-      "RB": 112,
+      "RB": 113,
       "TE": 27,
-      "WR": 133
+      "WR": 135
     },
     "years": [
       2014,
@@ -166,9 +166,11 @@
   },
   "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
   "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
-  "generated_at": "2026-09-02T18:34:35+00:00",
+  "generated_at": "2026-09-02T18:37:42+00:00",
+  "identity_resolution": "normalized name + position + rookie-year context; prior NFL debut explicitly removed as non-rookie",
   "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
-  "match_rate_within_adp_96": 0.9509,
+  "match_rate_within_adp_96": 0.9595,
+  "model_selection": "LOSO final-monotone MAE; 1% smoothness tie band",
   "nonrookie_rows_removed": 3,
   "outcome_sources": [
     {
@@ -268,7 +270,7 @@
       "year": 2025
     }
   ],
-  "resolved_outcome_rows": 329,
+  "resolved_outcome_rows": 332,
   "scoring": {
     "fum_lost": -2,
     "fum_rec_td": 6,
@@ -286,6 +288,6 @@
     "rush_yd": 0.1
   },
   "source_rows": 346,
-  "unresolved_or_no_game_rows": 14,
-  "version": "pos-adj-ppg-research-v1"
+  "unresolved_or_no_game_rows": 11,
+  "version": "pos-adj-ppg-research-v2"
 }

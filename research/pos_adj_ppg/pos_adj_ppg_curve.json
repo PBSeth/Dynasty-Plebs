@@ -3,1464 +3,1465 @@
   "curve": {
     "QB": {
       "1": {
-        "effective_n": 33.98,
-        "expected_ppg": 13.6537,
-        "raw_smoothed_ppg": 13.6537
+        "effective_n": 30.25,
+        "expected_ppg": 13.8374,
+        "raw_smoothed_ppg": 13.8374
       },
       "10": {
-        "effective_n": 36.78,
-        "expected_ppg": 13.4542,
-        "raw_smoothed_ppg": 13.4542
+        "effective_n": 35.43,
+        "expected_ppg": 13.5953,
+        "raw_smoothed_ppg": 13.5953
       },
       "11": {
-        "effective_n": 36.98,
-        "expected_ppg": 13.4298,
-        "raw_smoothed_ppg": 13.4298
+        "effective_n": 35.84,
+        "expected_ppg": 13.5636,
+        "raw_smoothed_ppg": 13.5636
       },
       "12": {
-        "effective_n": 37.16,
-        "expected_ppg": 13.405,
-        "raw_smoothed_ppg": 13.405
+        "effective_n": 36.2,
+        "expected_ppg": 13.5309,
+        "raw_smoothed_ppg": 13.5309
       },
       "13": {
-        "effective_n": 37.32,
-        "expected_ppg": 13.3797,
-        "raw_smoothed_ppg": 13.3797
+        "effective_n": 36.52,
+        "expected_ppg": 13.4972,
+        "raw_smoothed_ppg": 13.4972
       },
       "14": {
-        "effective_n": 37.45,
-        "expected_ppg": 13.354,
-        "raw_smoothed_ppg": 13.354
+        "effective_n": 36.79,
+        "expected_ppg": 13.4624,
+        "raw_smoothed_ppg": 13.4624
       },
       "15": {
-        "effective_n": 37.55,
-        "expected_ppg": 13.3278,
-        "raw_smoothed_ppg": 13.3278
+        "effective_n": 37.01,
+        "expected_ppg": 13.4265,
+        "raw_smoothed_ppg": 13.4265
       },
       "16": {
-        "effective_n": 37.63,
-        "expected_ppg": 13.3012,
-        "raw_smoothed_ppg": 13.3012
+        "effective_n": 37.17,
+        "expected_ppg": 13.3895,
+        "raw_smoothed_ppg": 13.3895
       },
       "17": {
-        "effective_n": 37.68,
-        "expected_ppg": 13.2741,
-        "raw_smoothed_ppg": 13.2741
+        "effective_n": 37.28,
+        "expected_ppg": 13.3515,
+        "raw_smoothed_ppg": 13.3515
       },
       "18": {
-        "effective_n": 37.71,
-        "expected_ppg": 13.2466,
-        "raw_smoothed_ppg": 13.2466
+        "effective_n": 37.34,
+        "expected_ppg": 13.3124,
+        "raw_smoothed_ppg": 13.3124
       },
       "19": {
-        "effective_n": 37.71,
-        "expected_ppg": 13.2186,
-        "raw_smoothed_ppg": 13.2186
+        "effective_n": 37.35,
+        "expected_ppg": 13.2723,
+        "raw_smoothed_ppg": 13.2723
       },
       "2": {
-        "effective_n": 34.36,
-        "expected_ppg": 13.6332,
-        "raw_smoothed_ppg": 13.6332
+        "effective_n": 30.91,
+        "expected_ppg": 13.814,
+        "raw_smoothed_ppg": 13.814
       },
       "20": {
-        "effective_n": 37.69,
-        "expected_ppg": 13.1902,
-        "raw_smoothed_ppg": 13.1902
+        "effective_n": 37.3,
+        "expected_ppg": 13.2311,
+        "raw_smoothed_ppg": 13.2311
       },
       "21": {
-        "effective_n": 37.64,
-        "expected_ppg": 13.1613,
-        "raw_smoothed_ppg": 13.1613
+        "effective_n": 37.2,
+        "expected_ppg": 13.1889,
+        "raw_smoothed_ppg": 13.1889
       },
       "22": {
-        "effective_n": 37.57,
-        "expected_ppg": 13.132,
-        "raw_smoothed_ppg": 13.132
+        "effective_n": 37.05,
+        "expected_ppg": 13.1456,
+        "raw_smoothed_ppg": 13.1456
       },
       "23": {
-        "effective_n": 37.47,
-        "expected_ppg": 13.1023,
-        "raw_smoothed_ppg": 13.1023
+        "effective_n": 36.86,
+        "expected_ppg": 13.1013,
+        "raw_smoothed_ppg": 13.1013
       },
       "24": {
-        "effective_n": 37.35,
-        "expected_ppg": 13.0722,
-        "raw_smoothed_ppg": 13.0722
+        "effective_n": 36.62,
+        "expected_ppg": 13.0561,
+        "raw_smoothed_ppg": 13.0561
       },
       "25": {
-        "effective_n": 37.2,
-        "expected_ppg": 13.0416,
-        "raw_smoothed_ppg": 13.0416
+        "effective_n": 36.33,
+        "expected_ppg": 13.0099,
+        "raw_smoothed_ppg": 13.0099
       },
       "26": {
-        "effective_n": 37.04,
-        "expected_ppg": 13.0106,
-        "raw_smoothed_ppg": 13.0106
+        "effective_n": 36.01,
+        "expected_ppg": 12.9627,
+        "raw_smoothed_ppg": 12.9627
       },
       "27": {
-        "effective_n": 36.85,
-        "expected_ppg": 12.9792,
-        "raw_smoothed_ppg": 12.9792
+        "effective_n": 35.65,
+        "expected_ppg": 12.9146,
+        "raw_smoothed_ppg": 12.9146
       },
       "28": {
-        "effective_n": 36.64,
-        "expected_ppg": 12.9474,
-        "raw_smoothed_ppg": 12.9474
+        "effective_n": 35.26,
+        "expected_ppg": 12.8657,
+        "raw_smoothed_ppg": 12.8657
       },
       "29": {
-        "effective_n": 36.42,
-        "expected_ppg": 12.9152,
-        "raw_smoothed_ppg": 12.9152
+        "effective_n": 34.83,
+        "expected_ppg": 12.8158,
+        "raw_smoothed_ppg": 12.8158
       },
       "3": {
-        "effective_n": 34.73,
-        "expected_ppg": 13.6124,
-        "raw_smoothed_ppg": 13.6124
+        "effective_n": 31.57,
+        "expected_ppg": 13.7898,
+        "raw_smoothed_ppg": 13.7898
       },
       "30": {
-        "effective_n": 36.17,
-        "expected_ppg": 12.8827,
-        "raw_smoothed_ppg": 12.8827
+        "effective_n": 34.38,
+        "expected_ppg": 12.7652,
+        "raw_smoothed_ppg": 12.7652
       },
       "31": {
-        "effective_n": 35.91,
-        "expected_ppg": 12.8497,
-        "raw_smoothed_ppg": 12.8497
+        "effective_n": 33.9,
+        "expected_ppg": 12.7137,
+        "raw_smoothed_ppg": 12.7137
       },
       "32": {
-        "effective_n": 35.63,
-        "expected_ppg": 12.8164,
-        "raw_smoothed_ppg": 12.8164
+        "effective_n": 33.4,
+        "expected_ppg": 12.6615,
+        "raw_smoothed_ppg": 12.6615
       },
       "33": {
-        "effective_n": 35.34,
-        "expected_ppg": 12.7827,
-        "raw_smoothed_ppg": 12.7827
+        "effective_n": 32.88,
+        "expected_ppg": 12.6085,
+        "raw_smoothed_ppg": 12.6085
       },
       "34": {
-        "effective_n": 35.03,
-        "expected_ppg": 12.7487,
-        "raw_smoothed_ppg": 12.7487
+        "effective_n": 32.35,
+        "expected_ppg": 12.5549,
+        "raw_smoothed_ppg": 12.5549
       },
       "35": {
-        "effective_n": 34.71,
-        "expected_ppg": 12.7143,
-        "raw_smoothed_ppg": 12.7143
+        "effective_n": 31.8,
+        "expected_ppg": 12.5006,
+        "raw_smoothed_ppg": 12.5006
       },
       "36": {
-        "effective_n": 34.38,
-        "expected_ppg": 12.6796,
-        "raw_smoothed_ppg": 12.6796
+        "effective_n": 31.24,
+        "expected_ppg": 12.4456,
+        "raw_smoothed_ppg": 12.4456
       },
       "37": {
-        "effective_n": 34.04,
-        "expected_ppg": 12.6445,
-        "raw_smoothed_ppg": 12.6445
+        "effective_n": 30.67,
+        "expected_ppg": 12.3901,
+        "raw_smoothed_ppg": 12.3901
       },
       "38": {
-        "effective_n": 33.68,
-        "expected_ppg": 12.6092,
-        "raw_smoothed_ppg": 12.6092
+        "effective_n": 30.1,
+        "expected_ppg": 12.334,
+        "raw_smoothed_ppg": 12.334
       },
       "39": {
-        "effective_n": 33.32,
-        "expected_ppg": 12.5735,
-        "raw_smoothed_ppg": 12.5735
+        "effective_n": 29.52,
+        "expected_ppg": 12.2774,
+        "raw_smoothed_ppg": 12.2774
       },
       "4": {
-        "effective_n": 35.08,
-        "expected_ppg": 13.5911,
-        "raw_smoothed_ppg": 13.5911
+        "effective_n": 32.2,
+        "expected_ppg": 13.7647,
+        "raw_smoothed_ppg": 13.7647
       },
       "40": {
-        "effective_n": 32.95,
-        "expected_ppg": 12.5376,
-        "raw_smoothed_ppg": 12.5376
+        "effective_n": 28.94,
+        "expected_ppg": 12.2203,
+        "raw_smoothed_ppg": 12.2203
       },
       "41": {
-        "effective_n": 32.57,
-        "expected_ppg": 12.5013,
-        "raw_smoothed_ppg": 12.5013
+        "effective_n": 28.36,
+        "expected_ppg": 12.1627,
+        "raw_smoothed_ppg": 12.1627
       },
       "42": {
-        "effective_n": 32.19,
-        "expected_ppg": 12.4648,
-        "raw_smoothed_ppg": 12.4648
+        "effective_n": 27.78,
+        "expected_ppg": 12.1047,
+        "raw_smoothed_ppg": 12.1047
       },
       "43": {
-        "effective_n": 31.8,
-        "expected_ppg": 12.428,
-        "raw_smoothed_ppg": 12.428
+        "effective_n": 27.2,
+        "expected_ppg": 12.0463,
+        "raw_smoothed_ppg": 12.0463
       },
       "44": {
-        "effective_n": 31.41,
-        "expected_ppg": 12.3909,
-        "raw_smoothed_ppg": 12.3909
+        "effective_n": 26.63,
+        "expected_ppg": 11.9875,
+        "raw_smoothed_ppg": 11.9875
       },
       "45": {
-        "effective_n": 31.01,
-        "expected_ppg": 12.3536,
-        "raw_smoothed_ppg": 12.3536
+        "effective_n": 26.06,
+        "expected_ppg": 11.9283,
+        "raw_smoothed_ppg": 11.9283
       },
       "46": {
-        "effective_n": 30.61,
-        "expected_ppg": 12.3161,
-        "raw_smoothed_ppg": 12.3161
+        "effective_n": 25.49,
+        "expected_ppg": 11.8689,
+        "raw_smoothed_ppg": 11.8689
       },
       "47": {
-        "effective_n": 30.21,
-        "expected_ppg": 12.2783,
-        "raw_smoothed_ppg": 12.2783
+        "effective_n": 24.94,
+        "expected_ppg": 11.8092,
+        "raw_smoothed_ppg": 11.8092
       },
       "48": {
-        "effective_n": 29.8,
-        "expected_ppg": 12.2403,
-        "raw_smoothed_ppg": 12.2403
+        "effective_n": 24.38,
+        "expected_ppg": 11.7492,
+        "raw_smoothed_ppg": 11.7492
       },
       "49": {
-        "effective_n": 29.4,
-        "expected_ppg": 12.2021,
-        "raw_smoothed_ppg": 12.2021
+        "effective_n": 23.84,
+        "expected_ppg": 11.689,
+        "raw_smoothed_ppg": 11.689
       },
       "5": {
-        "effective_n": 35.42,
-        "expected_ppg": 13.5694,
-        "raw_smoothed_ppg": 13.5694
+        "effective_n": 32.81,
+        "expected_ppg": 13.7388,
+        "raw_smoothed_ppg": 13.7388
       },
       "50": {
-        "effective_n": 28.99,
-        "expected_ppg": 12.1637,
-        "raw_smoothed_ppg": 12.1637
+        "effective_n": 23.3,
+        "expected_ppg": 11.6286,
+        "raw_smoothed_ppg": 11.6286
       },
       "51": {
-        "effective_n": 28.59,
-        "expected_ppg": 12.1251,
-        "raw_smoothed_ppg": 12.1251
+        "effective_n": 22.77,
+        "expected_ppg": 11.568,
+        "raw_smoothed_ppg": 11.568
       },
       "52": {
-        "effective_n": 28.18,
-        "expected_ppg": 12.0864,
-        "raw_smoothed_ppg": 12.0864
+        "effective_n": 22.25,
+        "expected_ppg": 11.5072,
+        "raw_smoothed_ppg": 11.5072
       },
       "53": {
-        "effective_n": 27.78,
-        "expected_ppg": 12.0474,
-        "raw_smoothed_ppg": 12.0474
+        "effective_n": 21.74,
+        "expected_ppg": 11.4463,
+        "raw_smoothed_ppg": 11.4463
       },
       "54": {
-        "effective_n": 27.37,
-        "expected_ppg": 12.0083,
-        "raw_smoothed_ppg": 12.0083
+        "effective_n": 21.24,
+        "expected_ppg": 11.3853,
+        "raw_smoothed_ppg": 11.3853
       },
       "55": {
-        "effective_n": 26.97,
-        "expected_ppg": 11.9691,
-        "raw_smoothed_ppg": 11.9691
+        "effective_n": 20.75,
+        "expected_ppg": 11.3241,
+        "raw_smoothed_ppg": 11.3241
       },
       "56": {
-        "effective_n": 26.57,
-        "expected_ppg": 11.9297,
-        "raw_smoothed_ppg": 11.9297
+        "effective_n": 20.27,
+        "expected_ppg": 11.2629,
+        "raw_smoothed_ppg": 11.2629
       },
       "57": {
-        "effective_n": 26.18,
-        "expected_ppg": 11.8901,
-        "raw_smoothed_ppg": 11.8901
+        "effective_n": 19.8,
+        "expected_ppg": 11.2015,
+        "raw_smoothed_ppg": 11.2015
       },
       "58": {
-        "effective_n": 25.79,
-        "expected_ppg": 11.8504,
-        "raw_smoothed_ppg": 11.8504
+        "effective_n": 19.33,
+        "expected_ppg": 11.1402,
+        "raw_smoothed_ppg": 11.1402
       },
       "59": {
-        "effective_n": 25.4,
-        "expected_ppg": 11.8106,
-        "raw_smoothed_ppg": 11.8106
+        "effective_n": 18.88,
+        "expected_ppg": 11.0787,
+        "raw_smoothed_ppg": 11.0787
       },
       "6": {
-        "effective_n": 35.73,
-        "expected_ppg": 13.5472,
-        "raw_smoothed_ppg": 13.5472
+        "effective_n": 33.4,
+        "expected_ppg": 13.712,
+        "raw_smoothed_ppg": 13.712
       },
       "60": {
-        "effective_n": 25.01,
-        "expected_ppg": 11.7707,
-        "raw_smoothed_ppg": 11.7707
+        "effective_n": 18.44,
+        "expected_ppg": 11.0173,
+        "raw_smoothed_ppg": 11.0173
       },
       "61": {
-        "effective_n": 24.63,
-        "expected_ppg": 11.7307,
-        "raw_smoothed_ppg": 11.7307
+        "effective_n": 18.0,
+        "expected_ppg": 10.9558,
+        "raw_smoothed_ppg": 10.9558
       },
       "62": {
-        "effective_n": 24.25,
-        "expected_ppg": 11.6906,
-        "raw_smoothed_ppg": 11.6906
+        "effective_n": 17.58,
+        "expected_ppg": 10.8943,
+        "raw_smoothed_ppg": 10.8943
       },
       "63": {
-        "effective_n": 23.87,
-        "expected_ppg": 11.6504,
-        "raw_smoothed_ppg": 11.6504
+        "effective_n": 17.17,
+        "expected_ppg": 10.8328,
+        "raw_smoothed_ppg": 10.8328
       },
       "64": {
-        "effective_n": 23.5,
-        "expected_ppg": 11.6101,
-        "raw_smoothed_ppg": 11.6101
+        "effective_n": 16.76,
+        "expected_ppg": 10.7714,
+        "raw_smoothed_ppg": 10.7714
       },
       "65": {
-        "effective_n": 23.13,
-        "expected_ppg": 11.5697,
-        "raw_smoothed_ppg": 11.5697
+        "effective_n": 16.37,
+        "expected_ppg": 10.7099,
+        "raw_smoothed_ppg": 10.7099
       },
       "66": {
-        "effective_n": 22.77,
-        "expected_ppg": 11.5293,
-        "raw_smoothed_ppg": 11.5293
+        "effective_n": 15.98,
+        "expected_ppg": 10.6485,
+        "raw_smoothed_ppg": 10.6485
       },
       "67": {
-        "effective_n": 22.41,
-        "expected_ppg": 11.4888,
-        "raw_smoothed_ppg": 11.4888
+        "effective_n": 15.6,
+        "expected_ppg": 10.5871,
+        "raw_smoothed_ppg": 10.5871
       },
       "68": {
-        "effective_n": 22.06,
-        "expected_ppg": 11.4482,
-        "raw_smoothed_ppg": 11.4482
+        "effective_n": 15.23,
+        "expected_ppg": 10.5257,
+        "raw_smoothed_ppg": 10.5257
       },
       "69": {
-        "effective_n": 21.71,
-        "expected_ppg": 11.4076,
-        "raw_smoothed_ppg": 11.4076
+        "effective_n": 14.88,
+        "expected_ppg": 10.4644,
+        "raw_smoothed_ppg": 10.4644
       },
       "7": {
-        "effective_n": 36.03,
-        "expected_ppg": 13.5246,
-        "raw_smoothed_ppg": 13.5246
+        "effective_n": 33.96,
+        "expected_ppg": 13.6843,
+        "raw_smoothed_ppg": 13.6843
       },
       "70": {
-        "effective_n": 21.37,
-        "expected_ppg": 11.3669,
-        "raw_smoothed_ppg": 11.3669
+        "effective_n": 14.52,
+        "expected_ppg": 10.4032,
+        "raw_smoothed_ppg": 10.4032
       },
       "71": {
-        "effective_n": 21.03,
-        "expected_ppg": 11.3262,
-        "raw_smoothed_ppg": 11.3262
+        "effective_n": 14.18,
+        "expected_ppg": 10.342,
+        "raw_smoothed_ppg": 10.342
       },
       "72": {
-        "effective_n": 20.69,
-        "expected_ppg": 11.2855,
-        "raw_smoothed_ppg": 11.2855
+        "effective_n": 13.85,
+        "expected_ppg": 10.2809,
+        "raw_smoothed_ppg": 10.2809
       },
       "8": {
-        "effective_n": 36.3,
-        "expected_ppg": 13.5016,
-        "raw_smoothed_ppg": 13.5016
+        "effective_n": 34.49,
+        "expected_ppg": 13.6556,
+        "raw_smoothed_ppg": 13.6556
       },
       "9": {
-        "effective_n": 36.55,
-        "expected_ppg": 13.4781,
-        "raw_smoothed_ppg": 13.4781
+        "effective_n": 34.98,
+        "expected_ppg": 13.626,
+        "raw_smoothed_ppg": 13.626
       }
     },
     "RB": {
       "1": {
-        "effective_n": 69.82,
-        "expected_ppg": 9.1825,
-        "raw_smoothed_ppg": 9.1825
+        "effective_n": 41.54,
+        "expected_ppg": 10.6027,
+        "raw_smoothed_ppg": 10.6027
       },
       "10": {
-        "effective_n": 94.46,
-        "expected_ppg": 7.9222,
-        "raw_smoothed_ppg": 7.9222
+        "effective_n": 62.77,
+        "expected_ppg": 8.4353,
+        "raw_smoothed_ppg": 8.4353
       },
       "11": {
-        "effective_n": 96.85,
-        "expected_ppg": 7.7674,
-        "raw_smoothed_ppg": 7.7674
+        "effective_n": 63.34,
+        "expected_ppg": 8.1468,
+        "raw_smoothed_ppg": 8.1468
       },
       "12": {
-        "effective_n": 98.97,
-        "expected_ppg": 7.6113,
-        "raw_smoothed_ppg": 7.6113
+        "effective_n": 63.4,
+        "expected_ppg": 7.8579,
+        "raw_smoothed_ppg": 7.8579
       },
       "13": {
-        "effective_n": 100.77,
-        "expected_ppg": 7.4546,
-        "raw_smoothed_ppg": 7.4546
+        "effective_n": 63.14,
+        "expected_ppg": 7.5715,
+        "raw_smoothed_ppg": 7.5715
       },
       "14": {
-        "effective_n": 102.19,
-        "expected_ppg": 7.2981,
-        "raw_smoothed_ppg": 7.2981
+        "effective_n": 62.76,
+        "expected_ppg": 7.2903,
+        "raw_smoothed_ppg": 7.2903
       },
       "15": {
-        "effective_n": 103.18,
-        "expected_ppg": 7.1423,
-        "raw_smoothed_ppg": 7.1423
+        "effective_n": 62.49,
+        "expected_ppg": 7.0164,
+        "raw_smoothed_ppg": 7.0164
       },
       "16": {
-        "effective_n": 103.73,
-        "expected_ppg": 6.9879,
-        "raw_smoothed_ppg": 6.9879
+        "effective_n": 62.44,
+        "expected_ppg": 6.7517,
+        "raw_smoothed_ppg": 6.7517
       },
       "17": {
-        "effective_n": 103.8,
-        "expected_ppg": 6.8357,
-        "raw_smoothed_ppg": 6.8357
+        "effective_n": 62.7,
+        "expected_ppg": 6.4975,
+        "raw_smoothed_ppg": 6.4975
       },
       "18": {
-        "effective_n": 103.39,
-        "expected_ppg": 6.6862,
-        "raw_smoothed_ppg": 6.6862
+        "effective_n": 63.21,
+        "expected_ppg": 6.2551,
+        "raw_smoothed_ppg": 6.2551
       },
       "19": {
-        "effective_n": 102.54,
-        "expected_ppg": 6.5402,
-        "raw_smoothed_ppg": 6.5402
+        "effective_n": 63.85,
+        "expected_ppg": 6.026,
+        "raw_smoothed_ppg": 6.026
       },
       "2": {
-        "effective_n": 72.39,
-        "expected_ppg": 9.0581,
-        "raw_smoothed_ppg": 9.0581
+        "effective_n": 44.03,
+        "expected_ppg": 10.4146,
+        "raw_smoothed_ppg": 10.4146
       },
       "20": {
-        "effective_n": 101.27,
-        "expected_ppg": 6.398,
-        "raw_smoothed_ppg": 6.398
+        "effective_n": 64.42,
+        "expected_ppg": 5.8113,
+        "raw_smoothed_ppg": 5.8113
       },
       "21": {
-        "effective_n": 99.62,
-        "expected_ppg": 6.2603,
-        "raw_smoothed_ppg": 6.2603
+        "effective_n": 64.71,
+        "expected_ppg": 5.6123,
+        "raw_smoothed_ppg": 5.6123
       },
       "22": {
-        "effective_n": 97.65,
-        "expected_ppg": 6.1274,
-        "raw_smoothed_ppg": 6.1274
+        "effective_n": 64.51,
+        "expected_ppg": 5.4298,
+        "raw_smoothed_ppg": 5.4298
       },
       "23": {
-        "effective_n": 95.43,
-        "expected_ppg": 5.9995,
-        "raw_smoothed_ppg": 5.9995
+        "effective_n": 63.75,
+        "expected_ppg": 5.2639,
+        "raw_smoothed_ppg": 5.2639
       },
       "24": {
-        "effective_n": 93.0,
-        "expected_ppg": 5.8771,
-        "raw_smoothed_ppg": 5.8771
+        "effective_n": 62.4,
+        "expected_ppg": 5.1143,
+        "raw_smoothed_ppg": 5.1143
       },
       "25": {
-        "effective_n": 90.42,
-        "expected_ppg": 5.7601,
-        "raw_smoothed_ppg": 5.7601
+        "effective_n": 60.58,
+        "expected_ppg": 4.98,
+        "raw_smoothed_ppg": 4.98
       },
       "26": {
-        "effective_n": 87.76,
-        "expected_ppg": 5.6488,
-        "raw_smoothed_ppg": 5.6488
+        "effective_n": 58.4,
+        "expected_ppg": 4.8594,
+        "raw_smoothed_ppg": 4.8594
       },
       "27": {
-        "effective_n": 85.05,
-        "expected_ppg": 5.543,
-        "raw_smoothed_ppg": 5.543
+        "effective_n": 56.0,
+        "expected_ppg": 4.7506,
+        "raw_smoothed_ppg": 4.7506
       },
       "28": {
-        "effective_n": 82.33,
-        "expected_ppg": 5.4428,
-        "raw_smoothed_ppg": 5.4428
+        "effective_n": 53.5,
+        "expected_ppg": 4.6517,
+        "raw_smoothed_ppg": 4.6517
       },
       "29": {
-        "effective_n": 79.64,
-        "expected_ppg": 5.3481,
-        "raw_smoothed_ppg": 5.3481
+        "effective_n": 50.97,
+        "expected_ppg": 4.5607,
+        "raw_smoothed_ppg": 4.5607
       },
       "3": {
-        "effective_n": 75.06,
-        "expected_ppg": 8.9294,
-        "raw_smoothed_ppg": 8.9294
+        "effective_n": 46.69,
+        "expected_ppg": 10.213,
+        "raw_smoothed_ppg": 10.213
       },
       "30": {
-        "effective_n": 77.0,
-        "expected_ppg": 5.2586,
-        "raw_smoothed_ppg": 5.2586
+        "effective_n": 48.45,
+        "expected_ppg": 4.4759,
+        "raw_smoothed_ppg": 4.4759
       },
       "31": {
-        "effective_n": 74.43,
-        "expected_ppg": 5.1743,
-        "raw_smoothed_ppg": 5.1743
+        "effective_n": 45.98,
+        "expected_ppg": 4.3958,
+        "raw_smoothed_ppg": 4.3958
       },
       "32": {
-        "effective_n": 71.94,
-        "expected_ppg": 5.0948,
-        "raw_smoothed_ppg": 5.0948
+        "effective_n": 43.54,
+        "expected_ppg": 4.3189,
+        "raw_smoothed_ppg": 4.3189
       },
       "33": {
-        "effective_n": 69.54,
-        "expected_ppg": 5.02,
-        "raw_smoothed_ppg": 5.02
+        "effective_n": 41.15,
+        "expected_ppg": 4.2442,
+        "raw_smoothed_ppg": 4.2442
       },
       "34": {
-        "effective_n": 67.24,
-        "expected_ppg": 4.9495,
-        "raw_smoothed_ppg": 4.9495
+        "effective_n": 38.8,
+        "expected_ppg": 4.1709,
+        "raw_smoothed_ppg": 4.1709
       },
       "35": {
-        "effective_n": 65.03,
-        "expected_ppg": 4.8831,
-        "raw_smoothed_ppg": 4.8831
+        "effective_n": 36.49,
+        "expected_ppg": 4.0983,
+        "raw_smoothed_ppg": 4.0983
       },
       "36": {
-        "effective_n": 62.93,
-        "expected_ppg": 4.8206,
-        "raw_smoothed_ppg": 4.8206
+        "effective_n": 34.22,
+        "expected_ppg": 4.026,
+        "raw_smoothed_ppg": 4.026
       },
       "37": {
-        "effective_n": 60.92,
-        "expected_ppg": 4.7617,
-        "raw_smoothed_ppg": 4.7617
+        "effective_n": 31.98,
+        "expected_ppg": 3.9536,
+        "raw_smoothed_ppg": 3.9536
       },
       "38": {
-        "effective_n": 59.01,
-        "expected_ppg": 4.7061,
-        "raw_smoothed_ppg": 4.7061
+        "effective_n": 29.79,
+        "expected_ppg": 3.881,
+        "raw_smoothed_ppg": 3.881
       },
       "39": {
-        "effective_n": 57.18,
-        "expected_ppg": 4.6535,
-        "raw_smoothed_ppg": 4.6535
+        "effective_n": 27.65,
+        "expected_ppg": 3.8079,
+        "raw_smoothed_ppg": 3.8079
       },
       "4": {
-        "effective_n": 77.81,
-        "expected_ppg": 8.7964,
-        "raw_smoothed_ppg": 8.7964
+        "effective_n": 49.46,
+        "expected_ppg": 9.9974,
+        "raw_smoothed_ppg": 9.9974
       },
       "40": {
-        "effective_n": 55.44,
-        "expected_ppg": 4.6037,
-        "raw_smoothed_ppg": 4.6037
+        "effective_n": 25.56,
+        "expected_ppg": 3.7346,
+        "raw_smoothed_ppg": 3.7346
       },
       "41": {
-        "effective_n": 53.78,
-        "expected_ppg": 4.5566,
-        "raw_smoothed_ppg": 4.5566
+        "effective_n": 23.53,
+        "expected_ppg": 3.6608,
+        "raw_smoothed_ppg": 3.6608
       },
       "42": {
-        "effective_n": 52.2,
-        "expected_ppg": 4.5118,
-        "raw_smoothed_ppg": 4.5118
+        "effective_n": 21.58,
+        "expected_ppg": 3.5868,
+        "raw_smoothed_ppg": 3.5868
       },
       "43": {
-        "effective_n": 50.68,
-        "expected_ppg": 4.4692,
-        "raw_smoothed_ppg": 4.4692
+        "effective_n": 19.71,
+        "expected_ppg": 3.5126,
+        "raw_smoothed_ppg": 3.5126
       },
       "44": {
-        "effective_n": 49.24,
-        "expected_ppg": 4.4286,
-        "raw_smoothed_ppg": 4.4286
+        "effective_n": 17.94,
+        "expected_ppg": 3.4384,
+        "raw_smoothed_ppg": 3.4384
       },
       "45": {
-        "effective_n": 47.85,
-        "expected_ppg": 4.3898,
-        "raw_smoothed_ppg": 4.3898
+        "effective_n": 16.28,
+        "expected_ppg": 3.3643,
+        "raw_smoothed_ppg": 3.3643
       },
       "46": {
-        "effective_n": 46.52,
-        "expected_ppg": 4.3526,
-        "raw_smoothed_ppg": 4.3526
+        "effective_n": 14.72,
+        "expected_ppg": 3.2906,
+        "raw_smoothed_ppg": 3.2906
       },
       "47": {
-        "effective_n": 45.25,
-        "expected_ppg": 4.317,
-        "raw_smoothed_ppg": 4.317
+        "effective_n": 13.28,
+        "expected_ppg": 3.2173,
+        "raw_smoothed_ppg": 3.2173
       },
       "48": {
-        "effective_n": 44.02,
-        "expected_ppg": 4.2827,
-        "raw_smoothed_ppg": 4.2827
+        "effective_n": 11.96,
+        "expected_ppg": 3.1448,
+        "raw_smoothed_ppg": 3.1448
       },
       "49": {
-        "effective_n": 42.84,
-        "expected_ppg": 4.2496,
-        "raw_smoothed_ppg": 4.2496
+        "effective_n": 10.76,
+        "expected_ppg": 3.0731,
+        "raw_smoothed_ppg": 3.0731
       },
       "5": {
-        "effective_n": 80.63,
-        "expected_ppg": 8.6593,
-        "raw_smoothed_ppg": 8.6593
+        "effective_n": 52.28,
+        "expected_ppg": 9.7674,
+        "raw_smoothed_ppg": 9.7674
       },
       "50": {
-        "effective_n": 41.69,
-        "expected_ppg": 4.2176,
-        "raw_smoothed_ppg": 4.2176
+        "effective_n": 9.68,
+        "expected_ppg": 3.0025,
+        "raw_smoothed_ppg": 3.0025
       },
       "51": {
-        "effective_n": 40.59,
-        "expected_ppg": 4.1867,
-        "raw_smoothed_ppg": 4.1867
+        "effective_n": 8.7,
+        "expected_ppg": 2.9332,
+        "raw_smoothed_ppg": 2.9332
       },
       "52": {
-        "effective_n": 39.53,
-        "expected_ppg": 4.1567,
-        "raw_smoothed_ppg": 4.1567
+        "effective_n": 7.83,
+        "expected_ppg": 2.8652,
+        "raw_smoothed_ppg": 2.8652
       },
       "53": {
-        "effective_n": 38.5,
-        "expected_ppg": 4.1276,
-        "raw_smoothed_ppg": 4.1276
+        "effective_n": 7.06,
+        "expected_ppg": 2.7988,
+        "raw_smoothed_ppg": 2.7988
       },
       "54": {
-        "effective_n": 37.5,
-        "expected_ppg": 4.0992,
-        "raw_smoothed_ppg": 4.0992
+        "effective_n": 6.37,
+        "expected_ppg": 2.7341,
+        "raw_smoothed_ppg": 2.7341
       },
       "55": {
-        "effective_n": 36.53,
-        "expected_ppg": 4.0714,
-        "raw_smoothed_ppg": 4.0714
+        "effective_n": 5.77,
+        "expected_ppg": 2.6713,
+        "raw_smoothed_ppg": 2.6713
       },
       "56": {
-        "effective_n": 35.58,
-        "expected_ppg": 4.0443,
-        "raw_smoothed_ppg": 4.0443
+        "effective_n": 5.24,
+        "expected_ppg": 2.6104,
+        "raw_smoothed_ppg": 2.6104
       },
       "57": {
-        "effective_n": 34.67,
-        "expected_ppg": 4.0178,
-        "raw_smoothed_ppg": 4.0178
+        "effective_n": 4.77,
+        "expected_ppg": 2.5517,
+        "raw_smoothed_ppg": 2.5517
       },
       "58": {
-        "effective_n": 33.77,
-        "expected_ppg": 3.9918,
-        "raw_smoothed_ppg": 3.9918
+        "effective_n": 4.36,
+        "expected_ppg": 2.495,
+        "raw_smoothed_ppg": 2.495
       },
       "59": {
-        "effective_n": 32.9,
-        "expected_ppg": 3.9662,
-        "raw_smoothed_ppg": 3.9662
+        "effective_n": 3.99,
+        "expected_ppg": 2.4406,
+        "raw_smoothed_ppg": 2.4406
       },
       "6": {
-        "effective_n": 83.48,
-        "expected_ppg": 8.5183,
-        "raw_smoothed_ppg": 8.5183
+        "effective_n": 55.05,
+        "expected_ppg": 9.5236,
+        "raw_smoothed_ppg": 9.5236
       },
       "60": {
-        "effective_n": 32.06,
-        "expected_ppg": 3.9411,
-        "raw_smoothed_ppg": 3.9411
+        "effective_n": 3.68,
+        "expected_ppg": 2.3884,
+        "raw_smoothed_ppg": 2.3884
       },
       "61": {
-        "effective_n": 31.23,
-        "expected_ppg": 3.9164,
-        "raw_smoothed_ppg": 3.9164
+        "effective_n": 3.39,
+        "expected_ppg": 2.3385,
+        "raw_smoothed_ppg": 2.3385
       },
       "62": {
-        "effective_n": 30.42,
-        "expected_ppg": 3.892,
-        "raw_smoothed_ppg": 3.892
+        "effective_n": 3.15,
+        "expected_ppg": 2.2909,
+        "raw_smoothed_ppg": 2.2909
       },
       "63": {
-        "effective_n": 29.63,
-        "expected_ppg": 3.8679,
-        "raw_smoothed_ppg": 3.8679
+        "effective_n": 2.93,
+        "expected_ppg": 2.2457,
+        "raw_smoothed_ppg": 2.2457
       },
       "64": {
-        "effective_n": 28.86,
-        "expected_ppg": 3.8441,
-        "raw_smoothed_ppg": 3.8441
+        "effective_n": 2.74,
+        "expected_ppg": 2.2027,
+        "raw_smoothed_ppg": 2.2027
       },
       "65": {
-        "effective_n": 28.11,
-        "expected_ppg": 3.8205,
-        "raw_smoothed_ppg": 3.8205
+        "effective_n": 2.57,
+        "expected_ppg": 2.162,
+        "raw_smoothed_ppg": 2.162
       },
       "66": {
-        "effective_n": 27.37,
-        "expected_ppg": 3.7972,
-        "raw_smoothed_ppg": 3.7972
+        "effective_n": 2.42,
+        "expected_ppg": 2.1235,
+        "raw_smoothed_ppg": 2.1235
       },
       "67": {
-        "effective_n": 26.65,
-        "expected_ppg": 3.7742,
-        "raw_smoothed_ppg": 3.7742
+        "effective_n": 2.28,
+        "expected_ppg": 2.0872,
+        "raw_smoothed_ppg": 2.0872
       },
       "68": {
-        "effective_n": 25.94,
-        "expected_ppg": 3.7513,
-        "raw_smoothed_ppg": 3.7513
+        "effective_n": 2.16,
+        "expected_ppg": 2.053,
+        "raw_smoothed_ppg": 2.053
       },
       "69": {
-        "effective_n": 25.25,
-        "expected_ppg": 3.7286,
-        "raw_smoothed_ppg": 3.7286
+        "effective_n": 2.06,
+        "expected_ppg": 2.0208,
+        "raw_smoothed_ppg": 2.0208
       },
       "7": {
-        "effective_n": 86.33,
-        "expected_ppg": 8.3738,
-        "raw_smoothed_ppg": 8.3738
+        "effective_n": 57.63,
+        "expected_ppg": 9.2667,
+        "raw_smoothed_ppg": 9.2667
       },
       "70": {
-        "effective_n": 24.58,
-        "expected_ppg": 3.7061,
-        "raw_smoothed_ppg": 3.7061
+        "effective_n": 1.96,
+        "expected_ppg": 1.9906,
+        "raw_smoothed_ppg": 1.9906
       },
       "71": {
-        "effective_n": 23.92,
-        "expected_ppg": 3.6837,
-        "raw_smoothed_ppg": 3.6837
+        "effective_n": 1.87,
+        "expected_ppg": 1.9622,
+        "raw_smoothed_ppg": 1.9622
       },
       "72": {
-        "effective_n": 23.27,
-        "expected_ppg": 3.6615,
-        "raw_smoothed_ppg": 3.6615
+        "effective_n": 1.8,
+        "expected_ppg": 1.9357,
+        "raw_smoothed_ppg": 1.9357
       },
       "8": {
-        "effective_n": 89.15,
-        "expected_ppg": 8.2259,
-        "raw_smoothed_ppg": 8.2259
+        "effective_n": 59.87,
+        "expected_ppg": 8.9981,
+        "raw_smoothed_ppg": 8.9981
       },
       "9": {
-        "effective_n": 91.88,
-        "expected_ppg": 8.0753,
-        "raw_smoothed_ppg": 8.0753
+        "effective_n": 61.61,
+        "expected_ppg": 8.7201,
+        "raw_smoothed_ppg": 8.7201
       }
     },
     "TE": {
       "1": {
-        "effective_n": 23.27,
-        "expected_ppg": 5.6951,
-        "raw_smoothed_ppg": 5.6951
+        "effective_n": 11.47,
+        "expected_ppg": 6.6234,
+        "raw_smoothed_ppg": 6.6234
       },
       "10": {
-        "effective_n": 25.74,
-        "expected_ppg": 5.4219,
-        "raw_smoothed_ppg": 5.4219
+        "effective_n": 18.19,
+        "expected_ppg": 6.1504,
+        "raw_smoothed_ppg": 6.1504
       },
       "11": {
-        "effective_n": 25.94,
-        "expected_ppg": 5.3907,
-        "raw_smoothed_ppg": 5.3907
+        "effective_n": 19.01,
+        "expected_ppg": 6.0763,
+        "raw_smoothed_ppg": 6.0763
       },
       "12": {
-        "effective_n": 26.12,
-        "expected_ppg": 5.3593,
-        "raw_smoothed_ppg": 5.3593
+        "effective_n": 19.83,
+        "expected_ppg": 5.9974,
+        "raw_smoothed_ppg": 5.9974
       },
       "13": {
-        "effective_n": 26.28,
-        "expected_ppg": 5.3279,
-        "raw_smoothed_ppg": 5.3279
+        "effective_n": 20.64,
+        "expected_ppg": 5.9138,
+        "raw_smoothed_ppg": 5.9138
       },
       "14": {
-        "effective_n": 26.41,
-        "expected_ppg": 5.2964,
-        "raw_smoothed_ppg": 5.2964
+        "effective_n": 21.43,
+        "expected_ppg": 5.8258,
+        "raw_smoothed_ppg": 5.8258
       },
       "15": {
-        "effective_n": 26.53,
-        "expected_ppg": 5.2648,
-        "raw_smoothed_ppg": 5.2648
+        "effective_n": 22.19,
+        "expected_ppg": 5.7335,
+        "raw_smoothed_ppg": 5.7335
       },
       "16": {
-        "effective_n": 26.63,
-        "expected_ppg": 5.2332,
-        "raw_smoothed_ppg": 5.2332
+        "effective_n": 22.9,
+        "expected_ppg": 5.6375,
+        "raw_smoothed_ppg": 5.6375
       },
       "17": {
-        "effective_n": 26.71,
-        "expected_ppg": 5.2015,
-        "raw_smoothed_ppg": 5.2015
+        "effective_n": 23.54,
+        "expected_ppg": 5.5381,
+        "raw_smoothed_ppg": 5.5381
       },
       "18": {
-        "effective_n": 26.77,
-        "expected_ppg": 5.1699,
-        "raw_smoothed_ppg": 5.1699
+        "effective_n": 24.08,
+        "expected_ppg": 5.4359,
+        "raw_smoothed_ppg": 5.4359
       },
       "19": {
-        "effective_n": 26.8,
-        "expected_ppg": 5.1383,
-        "raw_smoothed_ppg": 5.1383
+        "effective_n": 24.52,
+        "expected_ppg": 5.3317,
+        "raw_smoothed_ppg": 5.3317
       },
       "2": {
-        "effective_n": 23.6,
-        "expected_ppg": 5.6656,
-        "raw_smoothed_ppg": 5.6656
+        "effective_n": 12.14,
+        "expected_ppg": 6.5854,
+        "raw_smoothed_ppg": 6.5854
       },
       "20": {
-        "effective_n": 26.82,
-        "expected_ppg": 5.1067,
-        "raw_smoothed_ppg": 5.1067
+        "effective_n": 24.81,
+        "expected_ppg": 5.226,
+        "raw_smoothed_ppg": 5.226
       },
       "21": {
-        "effective_n": 26.81,
-        "expected_ppg": 5.0751,
-        "raw_smoothed_ppg": 5.0751
+        "effective_n": 24.96,
+        "expected_ppg": 5.1197,
+        "raw_smoothed_ppg": 5.1197
       },
       "22": {
-        "effective_n": 26.79,
-        "expected_ppg": 5.0437,
-        "raw_smoothed_ppg": 5.0437
+        "effective_n": 24.95,
+        "expected_ppg": 5.0135,
+        "raw_smoothed_ppg": 5.0135
       },
       "23": {
-        "effective_n": 26.75,
-        "expected_ppg": 5.0123,
-        "raw_smoothed_ppg": 5.0123
+        "effective_n": 24.79,
+        "expected_ppg": 4.9081,
+        "raw_smoothed_ppg": 4.9081
       },
       "24": {
-        "effective_n": 26.68,
-        "expected_ppg": 4.981,
-        "raw_smoothed_ppg": 4.981
+        "effective_n": 24.48,
+        "expected_ppg": 4.8042,
+        "raw_smoothed_ppg": 4.8042
       },
       "25": {
-        "effective_n": 26.6,
-        "expected_ppg": 4.9499,
-        "raw_smoothed_ppg": 4.9499
+        "effective_n": 24.03,
+        "expected_ppg": 4.7025,
+        "raw_smoothed_ppg": 4.7025
       },
       "26": {
-        "effective_n": 26.5,
-        "expected_ppg": 4.9188,
-        "raw_smoothed_ppg": 4.9188
+        "effective_n": 23.48,
+        "expected_ppg": 4.6036,
+        "raw_smoothed_ppg": 4.6036
       },
       "27": {
-        "effective_n": 26.38,
-        "expected_ppg": 4.888,
-        "raw_smoothed_ppg": 4.888
+        "effective_n": 22.85,
+        "expected_ppg": 4.508,
+        "raw_smoothed_ppg": 4.508
       },
       "28": {
-        "effective_n": 26.25,
-        "expected_ppg": 4.8573,
-        "raw_smoothed_ppg": 4.8573
+        "effective_n": 22.16,
+        "expected_ppg": 4.416,
+        "raw_smoothed_ppg": 4.416
       },
       "29": {
-        "effective_n": 26.1,
-        "expected_ppg": 4.8268,
-        "raw_smoothed_ppg": 4.8268
+        "effective_n": 21.43,
+        "expected_ppg": 4.328,
+        "raw_smoothed_ppg": 4.328
       },
       "3": {
-        "effective_n": 23.91,
-        "expected_ppg": 5.6359,
-        "raw_smoothed_ppg": 5.6359
+        "effective_n": 12.83,
+        "expected_ppg": 6.5444,
+        "raw_smoothed_ppg": 6.5444
       },
       "30": {
-        "effective_n": 25.94,
-        "expected_ppg": 4.7965,
-        "raw_smoothed_ppg": 4.7965
+        "effective_n": 20.69,
+        "expected_ppg": 4.2443,
+        "raw_smoothed_ppg": 4.2443
       },
       "31": {
-        "effective_n": 25.77,
-        "expected_ppg": 4.7665,
-        "raw_smoothed_ppg": 4.7665
+        "effective_n": 19.95,
+        "expected_ppg": 4.1649,
+        "raw_smoothed_ppg": 4.1649
       },
       "32": {
-        "effective_n": 25.58,
-        "expected_ppg": 4.7366,
-        "raw_smoothed_ppg": 4.7366
+        "effective_n": 19.23,
+        "expected_ppg": 4.0899,
+        "raw_smoothed_ppg": 4.0899
       },
       "33": {
-        "effective_n": 25.38,
-        "expected_ppg": 4.707,
-        "raw_smoothed_ppg": 4.707
+        "effective_n": 18.54,
+        "expected_ppg": 4.0192,
+        "raw_smoothed_ppg": 4.0192
       },
       "34": {
-        "effective_n": 25.17,
-        "expected_ppg": 4.6777,
-        "raw_smoothed_ppg": 4.6777
+        "effective_n": 17.88,
+        "expected_ppg": 3.9529,
+        "raw_smoothed_ppg": 3.9529
       },
       "35": {
-        "effective_n": 24.96,
-        "expected_ppg": 4.6486,
-        "raw_smoothed_ppg": 4.6486
+        "effective_n": 17.26,
+        "expected_ppg": 3.8908,
+        "raw_smoothed_ppg": 3.8908
       },
       "36": {
-        "effective_n": 24.73,
-        "expected_ppg": 4.6198,
-        "raw_smoothed_ppg": 4.6198
+        "effective_n": 16.68,
+        "expected_ppg": 3.8328,
+        "raw_smoothed_ppg": 3.8328
       },
       "37": {
-        "effective_n": 24.5,
-        "expected_ppg": 4.5913,
-        "raw_smoothed_ppg": 4.5913
+        "effective_n": 16.14,
+        "expected_ppg": 3.7786,
+        "raw_smoothed_ppg": 3.7786
       },
       "38": {
-        "effective_n": 24.26,
-        "expected_ppg": 4.5631,
-        "raw_smoothed_ppg": 4.5631
+        "effective_n": 15.63,
+        "expected_ppg": 3.728,
+        "raw_smoothed_ppg": 3.728
       },
       "39": {
-        "effective_n": 24.02,
-        "expected_ppg": 4.5352,
-        "raw_smoothed_ppg": 4.5352
+        "effective_n": 15.16,
+        "expected_ppg": 3.6809,
+        "raw_smoothed_ppg": 3.6809
       },
       "4": {
-        "effective_n": 24.21,
-        "expected_ppg": 5.606,
-        "raw_smoothed_ppg": 5.606
+        "effective_n": 13.55,
+        "expected_ppg": 6.5001,
+        "raw_smoothed_ppg": 6.5001
       },
       "40": {
-        "effective_n": 23.77,
-        "expected_ppg": 4.5077,
-        "raw_smoothed_ppg": 4.5077
+        "effective_n": 14.72,
+        "expected_ppg": 3.637,
+        "raw_smoothed_ppg": 3.637
       },
       "41": {
-        "effective_n": 23.52,
-        "expected_ppg": 4.4804,
-        "raw_smoothed_ppg": 4.4804
+        "effective_n": 14.32,
+        "expected_ppg": 3.596,
+        "raw_smoothed_ppg": 3.596
       },
       "42": {
-        "effective_n": 23.26,
-        "expected_ppg": 4.4535,
-        "raw_smoothed_ppg": 4.4535
+        "effective_n": 13.94,
+        "expected_ppg": 3.5578,
+        "raw_smoothed_ppg": 3.5578
       },
       "43": {
-        "effective_n": 23.01,
-        "expected_ppg": 4.427,
-        "raw_smoothed_ppg": 4.427
+        "effective_n": 13.6,
+        "expected_ppg": 3.5222,
+        "raw_smoothed_ppg": 3.5222
       },
       "44": {
-        "effective_n": 22.75,
-        "expected_ppg": 4.4007,
-        "raw_smoothed_ppg": 4.4007
+        "effective_n": 13.27,
+        "expected_ppg": 3.4889,
+        "raw_smoothed_ppg": 3.4889
       },
       "45": {
-        "effective_n": 22.49,
-        "expected_ppg": 4.3749,
-        "raw_smoothed_ppg": 4.3749
+        "effective_n": 12.97,
+        "expected_ppg": 3.4577,
+        "raw_smoothed_ppg": 3.4577
       },
       "46": {
-        "effective_n": 22.24,
-        "expected_ppg": 4.3493,
-        "raw_smoothed_ppg": 4.3493
+        "effective_n": 12.69,
+        "expected_ppg": 3.4285,
+        "raw_smoothed_ppg": 3.4285
       },
       "47": {
-        "effective_n": 21.98,
-        "expected_ppg": 4.3242,
-        "raw_smoothed_ppg": 4.3242
+        "effective_n": 12.43,
+        "expected_ppg": 3.4011,
+        "raw_smoothed_ppg": 3.4011
       },
       "48": {
-        "effective_n": 21.72,
-        "expected_ppg": 4.2994,
-        "raw_smoothed_ppg": 4.2994
+        "effective_n": 12.19,
+        "expected_ppg": 3.3753,
+        "raw_smoothed_ppg": 3.3753
       },
       "49": {
-        "effective_n": 21.47,
-        "expected_ppg": 4.275,
-        "raw_smoothed_ppg": 4.275
+        "effective_n": 11.96,
+        "expected_ppg": 3.351,
+        "raw_smoothed_ppg": 3.351
       },
       "5": {
-        "effective_n": 24.5,
-        "expected_ppg": 5.5758,
-        "raw_smoothed_ppg": 5.5758
+        "effective_n": 14.28,
+        "expected_ppg": 6.4523,
+        "raw_smoothed_ppg": 6.4523
       },
       "50": {
-        "effective_n": 21.21,
-        "expected_ppg": 4.2509,
-        "raw_smoothed_ppg": 4.2509
+        "effective_n": 11.74,
+        "expected_ppg": 3.3281,
+        "raw_smoothed_ppg": 3.3281
       },
       "51": {
-        "effective_n": 20.96,
-        "expected_ppg": 4.2273,
-        "raw_smoothed_ppg": 4.2273
+        "effective_n": 11.54,
+        "expected_ppg": 3.3064,
+        "raw_smoothed_ppg": 3.3064
       },
       "52": {
-        "effective_n": 20.71,
-        "expected_ppg": 4.204,
-        "raw_smoothed_ppg": 4.204
+        "effective_n": 11.35,
+        "expected_ppg": 3.2857,
+        "raw_smoothed_ppg": 3.2857
       },
       "53": {
-        "effective_n": 20.47,
-        "expected_ppg": 4.181,
-        "raw_smoothed_ppg": 4.181
+        "effective_n": 11.17,
+        "expected_ppg": 3.2661,
+        "raw_smoothed_ppg": 3.2661
       },
       "54": {
-        "effective_n": 20.23,
-        "expected_ppg": 4.1585,
-        "raw_smoothed_ppg": 4.1585
+        "effective_n": 11.0,
+        "expected_ppg": 3.2474,
+        "raw_smoothed_ppg": 3.2474
       },
       "55": {
-        "effective_n": 19.99,
-        "expected_ppg": 4.1363,
-        "raw_smoothed_ppg": 4.1363
+        "effective_n": 10.83,
+        "expected_ppg": 3.2295,
+        "raw_smoothed_ppg": 3.2295
       },
       "56": {
-        "effective_n": 19.75,
-        "expected_ppg": 4.1145,
-        "raw_smoothed_ppg": 4.1145
+        "effective_n": 10.68,
+        "expected_ppg": 3.2124,
+        "raw_smoothed_ppg": 3.2124
       },
       "57": {
-        "effective_n": 19.52,
-        "expected_ppg": 4.0931,
-        "raw_smoothed_ppg": 4.0931
+        "effective_n": 10.53,
+        "expected_ppg": 3.1959,
+        "raw_smoothed_ppg": 3.1959
       },
       "58": {
-        "effective_n": 19.29,
-        "expected_ppg": 4.072,
-        "raw_smoothed_ppg": 4.072
+        "effective_n": 10.38,
+        "expected_ppg": 3.18,
+        "raw_smoothed_ppg": 3.18
       },
       "59": {
-        "effective_n": 19.07,
-        "expected_ppg": 4.0513,
-        "raw_smoothed_ppg": 4.0513
+        "effective_n": 10.25,
+        "expected_ppg": 3.1647,
+        "raw_smoothed_ppg": 3.1647
       },
       "6": {
-        "effective_n": 24.78,
-        "expected_ppg": 5.5454,
-        "raw_smoothed_ppg": 5.5454
+        "effective_n": 15.03,
+        "expected_ppg": 6.4005,
+        "raw_smoothed_ppg": 6.4005
       },
       "60": {
-        "effective_n": 18.85,
-        "expected_ppg": 4.031,
-        "raw_smoothed_ppg": 4.031
+        "effective_n": 10.12,
+        "expected_ppg": 3.1499,
+        "raw_smoothed_ppg": 3.1499
       },
       "61": {
-        "effective_n": 18.63,
-        "expected_ppg": 4.011,
-        "raw_smoothed_ppg": 4.011
+        "effective_n": 9.99,
+        "expected_ppg": 3.1356,
+        "raw_smoothed_ppg": 3.1356
       },
       "62": {
-        "effective_n": 18.42,
-        "expected_ppg": 3.9914,
-        "raw_smoothed_ppg": 3.9914
+        "effective_n": 9.87,
+        "expected_ppg": 3.1217,
+        "raw_smoothed_ppg": 3.1217
       },
       "63": {
-        "effective_n": 18.21,
-        "expected_ppg": 3.9722,
-        "raw_smoothed_ppg": 3.9722
+        "effective_n": 9.75,
+        "expected_ppg": 3.1081,
+        "raw_smoothed_ppg": 3.1081
       },
       "64": {
-        "effective_n": 18.01,
-        "expected_ppg": 3.9533,
-        "raw_smoothed_ppg": 3.9533
+        "effective_n": 9.64,
+        "expected_ppg": 3.0949,
+        "raw_smoothed_ppg": 3.0949
       },
       "65": {
-        "effective_n": 17.81,
-        "expected_ppg": 3.9348,
-        "raw_smoothed_ppg": 3.9348
+        "effective_n": 9.53,
+        "expected_ppg": 3.082,
+        "raw_smoothed_ppg": 3.082
       },
       "66": {
-        "effective_n": 17.62,
-        "expected_ppg": 3.9166,
-        "raw_smoothed_ppg": 3.9166
+        "effective_n": 9.42,
+        "expected_ppg": 3.0694,
+        "raw_smoothed_ppg": 3.0694
       },
       "67": {
-        "effective_n": 17.42,
-        "expected_ppg": 3.8988,
-        "raw_smoothed_ppg": 3.8988
+        "effective_n": 9.32,
+        "expected_ppg": 3.057,
+        "raw_smoothed_ppg": 3.057
       },
       "68": {
-        "effective_n": 17.24,
-        "expected_ppg": 3.8813,
-        "raw_smoothed_ppg": 3.8813
+        "effective_n": 9.22,
+        "expected_ppg": 3.0449,
+        "raw_smoothed_ppg": 3.0449
       },
       "69": {
-        "effective_n": 17.06,
-        "expected_ppg": 3.8642,
-        "raw_smoothed_ppg": 3.8642
+        "effective_n": 9.12,
+        "expected_ppg": 3.033,
+        "raw_smoothed_ppg": 3.033
       },
       "7": {
-        "effective_n": 25.05,
-        "expected_ppg": 5.5148,
-        "raw_smoothed_ppg": 5.5148
+        "effective_n": 15.8,
+        "expected_ppg": 6.3447,
+        "raw_smoothed_ppg": 6.3447
       },
       "70": {
-        "effective_n": 16.88,
-        "expected_ppg": 3.8474,
-        "raw_smoothed_ppg": 3.8474
+        "effective_n": 9.03,
+        "expected_ppg": 3.0212,
+        "raw_smoothed_ppg": 3.0212
       },
       "71": {
-        "effective_n": 16.7,
-        "expected_ppg": 3.8309,
-        "raw_smoothed_ppg": 3.8309
+        "effective_n": 8.94,
+        "expected_ppg": 3.0097,
+        "raw_smoothed_ppg": 3.0097
       },
       "72": {
-        "effective_n": 16.53,
-        "expected_ppg": 3.8147,
-        "raw_smoothed_ppg": 3.8147
+        "effective_n": 8.85,
+        "expected_ppg": 2.9983,
+        "raw_smoothed_ppg": 2.9983
       },
       "8": {
-        "effective_n": 25.29,
-        "expected_ppg": 5.484,
-        "raw_smoothed_ppg": 5.484
+        "effective_n": 16.59,
+        "expected_ppg": 6.2845,
+        "raw_smoothed_ppg": 6.2845
       },
       "9": {
-        "effective_n": 25.53,
-        "expected_ppg": 5.453,
-        "raw_smoothed_ppg": 5.453
+        "effective_n": 17.38,
+        "expected_ppg": 6.2198,
+        "raw_smoothed_ppg": 6.2198
       }
     },
     "WR": {
       "1": {
-        "effective_n": 103.74,
-        "expected_ppg": 6.9879,
-        "raw_smoothed_ppg": 6.9879
+        "effective_n": 35.3,
+        "expected_ppg": 8.4322,
+        "raw_smoothed_ppg": 8.4322
       },
       "10": {
-        "effective_n": 122.71,
-        "expected_ppg": 6.5369,
-        "raw_smoothed_ppg": 6.5369
+        "effective_n": 67.7,
+        "expected_ppg": 7.3066,
+        "raw_smoothed_ppg": 7.3066
       },
       "11": {
-        "effective_n": 124.33,
-        "expected_ppg": 6.4843,
-        "raw_smoothed_ppg": 6.4843
+        "effective_n": 69.38,
+        "expected_ppg": 7.0985,
+        "raw_smoothed_ppg": 7.0985
       },
       "12": {
-        "effective_n": 125.78,
-        "expected_ppg": 6.4314,
-        "raw_smoothed_ppg": 6.4314
+        "effective_n": 70.44,
+        "expected_ppg": 6.8868,
+        "raw_smoothed_ppg": 6.8868
       },
       "13": {
-        "effective_n": 127.06,
-        "expected_ppg": 6.3784,
-        "raw_smoothed_ppg": 6.3784
+        "effective_n": 70.96,
+        "expected_ppg": 6.6783,
+        "raw_smoothed_ppg": 6.6783
       },
       "14": {
-        "effective_n": 128.14,
-        "expected_ppg": 6.3252,
-        "raw_smoothed_ppg": 6.3252
+        "effective_n": 71.03,
+        "expected_ppg": 6.4797,
+        "raw_smoothed_ppg": 6.4797
       },
       "15": {
-        "effective_n": 129.0,
-        "expected_ppg": 6.2719,
-        "raw_smoothed_ppg": 6.2719
+        "effective_n": 70.74,
+        "expected_ppg": 6.2962,
+        "raw_smoothed_ppg": 6.2962
       },
       "16": {
-        "effective_n": 129.65,
-        "expected_ppg": 6.2187,
-        "raw_smoothed_ppg": 6.2187
+        "effective_n": 70.15,
+        "expected_ppg": 6.131,
+        "raw_smoothed_ppg": 6.131
       },
       "17": {
-        "effective_n": 130.06,
-        "expected_ppg": 6.1655,
-        "raw_smoothed_ppg": 6.1655
+        "effective_n": 69.39,
+        "expected_ppg": 5.9848,
+        "raw_smoothed_ppg": 5.9848
       },
       "18": {
-        "effective_n": 130.24,
-        "expected_ppg": 6.1124,
-        "raw_smoothed_ppg": 6.1124
+        "effective_n": 68.63,
+        "expected_ppg": 5.8559,
+        "raw_smoothed_ppg": 5.8559
       },
       "19": {
-        "effective_n": 130.17,
-        "expected_ppg": 6.0595,
-        "raw_smoothed_ppg": 6.0595
+        "effective_n": 68.11,
+        "expected_ppg": 5.7409,
+        "raw_smoothed_ppg": 5.7409
       },
       "2": {
-        "effective_n": 106.04,
-        "expected_ppg": 6.9404,
-        "raw_smoothed_ppg": 6.9404
+        "effective_n": 38.88,
+        "expected_ppg": 8.375,
+        "raw_smoothed_ppg": 8.375
       },
       "20": {
-        "effective_n": 129.87,
-        "expected_ppg": 6.007,
-        "raw_smoothed_ppg": 6.007
+        "effective_n": 68.08,
+        "expected_ppg": 5.6351,
+        "raw_smoothed_ppg": 5.6351
       },
       "21": {
-        "effective_n": 129.32,
-        "expected_ppg": 5.9547,
-        "raw_smoothed_ppg": 5.9547
+        "effective_n": 68.66,
+        "expected_ppg": 5.5335,
+        "raw_smoothed_ppg": 5.5335
       },
       "22": {
-        "effective_n": 128.54,
-        "expected_ppg": 5.9029,
-        "raw_smoothed_ppg": 5.9029
+        "effective_n": 69.75,
+        "expected_ppg": 5.4315,
+        "raw_smoothed_ppg": 5.4315
       },
       "23": {
-        "effective_n": 127.55,
-        "expected_ppg": 5.8516,
-        "raw_smoothed_ppg": 5.8516
+        "effective_n": 70.89,
+        "expected_ppg": 5.3257,
+        "raw_smoothed_ppg": 5.3257
       },
       "24": {
-        "effective_n": 126.34,
-        "expected_ppg": 5.8008,
-        "raw_smoothed_ppg": 5.8008
+        "effective_n": 71.34,
+        "expected_ppg": 5.2149,
+        "raw_smoothed_ppg": 5.2149
       },
       "25": {
-        "effective_n": 124.94,
-        "expected_ppg": 5.7506,
-        "raw_smoothed_ppg": 5.7506
+        "effective_n": 70.44,
+        "expected_ppg": 5.0992,
+        "raw_smoothed_ppg": 5.0992
       },
       "26": {
-        "effective_n": 123.37,
-        "expected_ppg": 5.701,
-        "raw_smoothed_ppg": 5.701
+        "effective_n": 68.02,
+        "expected_ppg": 4.9807,
+        "raw_smoothed_ppg": 4.9807
       },
       "27": {
-        "effective_n": 121.64,
-        "expected_ppg": 5.6522,
-        "raw_smoothed_ppg": 5.6522
+        "effective_n": 64.46,
+        "expected_ppg": 4.8618,
+        "raw_smoothed_ppg": 4.8618
       },
       "28": {
-        "effective_n": 119.76,
-        "expected_ppg": 5.6041,
-        "raw_smoothed_ppg": 5.6041
+        "effective_n": 60.41,
+        "expected_ppg": 4.7451,
+        "raw_smoothed_ppg": 4.7451
       },
       "29": {
-        "effective_n": 117.77,
-        "expected_ppg": 5.5568,
-        "raw_smoothed_ppg": 5.5568
+        "effective_n": 56.39,
+        "expected_ppg": 4.6329,
+        "raw_smoothed_ppg": 4.6329
       },
       "3": {
-        "effective_n": 108.33,
-        "expected_ppg": 6.8921,
-        "raw_smoothed_ppg": 6.8921
+        "effective_n": 42.73,
+        "expected_ppg": 8.3048,
+        "raw_smoothed_ppg": 8.3048
       },
       "30": {
-        "effective_n": 115.68,
-        "expected_ppg": 5.5103,
-        "raw_smoothed_ppg": 5.5103
+        "effective_n": 52.68,
+        "expected_ppg": 4.5265,
+        "raw_smoothed_ppg": 4.5265
       },
       "31": {
-        "effective_n": 113.51,
-        "expected_ppg": 5.4646,
-        "raw_smoothed_ppg": 5.4646
+        "effective_n": 49.38,
+        "expected_ppg": 4.4268,
+        "raw_smoothed_ppg": 4.4268
       },
       "32": {
-        "effective_n": 111.28,
-        "expected_ppg": 5.4199,
-        "raw_smoothed_ppg": 5.4199
+        "effective_n": 46.46,
+        "expected_ppg": 4.3338,
+        "raw_smoothed_ppg": 4.3338
       },
       "33": {
-        "effective_n": 109.01,
-        "expected_ppg": 5.3761,
-        "raw_smoothed_ppg": 5.3761
+        "effective_n": 43.85,
+        "expected_ppg": 4.2476,
+        "raw_smoothed_ppg": 4.2476
       },
       "34": {
-        "effective_n": 106.71,
-        "expected_ppg": 5.3332,
-        "raw_smoothed_ppg": 5.3332
+        "effective_n": 41.49,
+        "expected_ppg": 4.1678,
+        "raw_smoothed_ppg": 4.1678
       },
       "35": {
-        "effective_n": 104.39,
-        "expected_ppg": 5.2913,
-        "raw_smoothed_ppg": 5.2913
+        "effective_n": 39.3,
+        "expected_ppg": 4.0938,
+        "raw_smoothed_ppg": 4.0938
       },
       "36": {
-        "effective_n": 102.08,
-        "expected_ppg": 5.2503,
-        "raw_smoothed_ppg": 5.2503
+        "effective_n": 37.24,
+        "expected_ppg": 4.0252,
+        "raw_smoothed_ppg": 4.0252
       },
       "37": {
-        "effective_n": 99.78,
-        "expected_ppg": 5.2103,
-        "raw_smoothed_ppg": 5.2103
+        "effective_n": 35.27,
+        "expected_ppg": 3.9614,
+        "raw_smoothed_ppg": 3.9614
       },
       "38": {
-        "effective_n": 97.5,
-        "expected_ppg": 5.1713,
-        "raw_smoothed_ppg": 5.1713
+        "effective_n": 33.36,
+        "expected_ppg": 3.9019,
+        "raw_smoothed_ppg": 3.9019
       },
       "39": {
-        "effective_n": 95.26,
-        "expected_ppg": 5.1333,
-        "raw_smoothed_ppg": 5.1333
+        "effective_n": 31.51,
+        "expected_ppg": 3.8461,
+        "raw_smoothed_ppg": 3.8461
       },
       "4": {
-        "effective_n": 110.59,
-        "expected_ppg": 6.8431,
-        "raw_smoothed_ppg": 6.8431
+        "effective_n": 46.79,
+        "expected_ppg": 8.2193,
+        "raw_smoothed_ppg": 8.2193
       },
       "40": {
-        "effective_n": 93.05,
-        "expected_ppg": 5.0963,
-        "raw_smoothed_ppg": 5.0963
+        "effective_n": 29.69,
+        "expected_ppg": 3.7936,
+        "raw_smoothed_ppg": 3.7936
       },
       "41": {
-        "effective_n": 90.89,
-        "expected_ppg": 5.0602,
-        "raw_smoothed_ppg": 5.0602
+        "effective_n": 27.9,
+        "expected_ppg": 3.7439,
+        "raw_smoothed_ppg": 3.7439
       },
       "42": {
-        "effective_n": 88.79,
-        "expected_ppg": 5.0251,
-        "raw_smoothed_ppg": 5.0251
+        "effective_n": 26.15,
+        "expected_ppg": 3.6967,
+        "raw_smoothed_ppg": 3.6967
       },
       "43": {
-        "effective_n": 86.74,
-        "expected_ppg": 4.991,
-        "raw_smoothed_ppg": 4.991
+        "effective_n": 24.44,
+        "expected_ppg": 3.6516,
+        "raw_smoothed_ppg": 3.6516
       },
       "44": {
-        "effective_n": 84.74,
-        "expected_ppg": 4.9579,
-        "raw_smoothed_ppg": 4.9579
+        "effective_n": 22.78,
+        "expected_ppg": 3.6082,
+        "raw_smoothed_ppg": 3.6082
       },
       "45": {
-        "effective_n": 82.81,
-        "expected_ppg": 4.9256,
-        "raw_smoothed_ppg": 4.9256
+        "effective_n": 21.17,
+        "expected_ppg": 3.5663,
+        "raw_smoothed_ppg": 3.5663
       },
       "46": {
-        "effective_n": 80.94,
-        "expected_ppg": 4.8943,
-        "raw_smoothed_ppg": 4.8943
+        "effective_n": 19.62,
+        "expected_ppg": 3.5257,
+        "raw_smoothed_ppg": 3.5257
       },
       "47": {
-        "effective_n": 79.13,
-        "expected_ppg": 4.8639,
-        "raw_smoothed_ppg": 4.8639
+        "effective_n": 18.15,
+        "expected_ppg": 3.4861,
+        "raw_smoothed_ppg": 3.4861
       },
       "48": {
-        "effective_n": 77.38,
-        "expected_ppg": 4.8344,
-        "raw_smoothed_ppg": 4.8344
+        "effective_n": 16.75,
+        "expected_ppg": 3.4473,
+        "raw_smoothed_ppg": 3.4473
       },
       "49": {
-        "effective_n": 75.69,
-        "expected_ppg": 4.8057,
-        "raw_smoothed_ppg": 4.8057
+        "effective_n": 15.43,
+        "expected_ppg": 3.4093,
+        "raw_smoothed_ppg": 3.4093
       },
       "5": {
-        "effective_n": 112.81,
-        "expected_ppg": 6.7934,
-        "raw_smoothed_ppg": 6.7934
+        "effective_n": 50.95,
+        "expected_ppg": 8.1163,
+        "raw_smoothed_ppg": 8.1163
       },
       "50": {
-        "effective_n": 74.07,
-        "expected_ppg": 4.7778,
-        "raw_smoothed_ppg": 4.7778
+        "effective_n": 14.2,
+        "expected_ppg": 3.3719,
+        "raw_smoothed_ppg": 3.3719
       },
       "51": {
-        "effective_n": 72.5,
-        "expected_ppg": 4.7508,
-        "raw_smoothed_ppg": 4.7508
+        "effective_n": 13.05,
+        "expected_ppg": 3.3351,
+        "raw_smoothed_ppg": 3.3351
       },
       "52": {
-        "effective_n": 70.99,
-        "expected_ppg": 4.7246,
-        "raw_smoothed_ppg": 4.7246
+        "effective_n": 11.99,
+        "expected_ppg": 3.2988,
+        "raw_smoothed_ppg": 3.2988
       },
       "53": {
-        "effective_n": 69.55,
-        "expected_ppg": 4.6991,
-        "raw_smoothed_ppg": 4.6991
+        "effective_n": 11.01,
+        "expected_ppg": 3.263,
+        "raw_smoothed_ppg": 3.263
       },
       "54": {
-        "effective_n": 68.15,
-        "expected_ppg": 4.6744,
-        "raw_smoothed_ppg": 4.6744
+        "effective_n": 10.12,
+        "expected_ppg": 3.2277,
+        "raw_smoothed_ppg": 3.2277
       },
       "55": {
-        "effective_n": 66.81,
-        "expected_ppg": 4.6505,
-        "raw_smoothed_ppg": 4.6505
+        "effective_n": 9.31,
+        "expected_ppg": 3.1929,
+        "raw_smoothed_ppg": 3.1929
       },
       "56": {
-        "effective_n": 65.52,
-        "expected_ppg": 4.6272,
-        "raw_smoothed_ppg": 4.6272
+        "effective_n": 8.56,
+        "expected_ppg": 3.1587,
+        "raw_smoothed_ppg": 3.1587
       },
       "57": {
-        "effective_n": 64.29,
-        "expected_ppg": 4.6046,
-        "raw_smoothed_ppg": 4.6046
+        "effective_n": 7.89,
+        "expected_ppg": 3.125,
+        "raw_smoothed_ppg": 3.125
       },
       "58": {
-        "effective_n": 63.1,
-        "expected_ppg": 4.5826,
-        "raw_smoothed_ppg": 4.5826
+        "effective_n": 7.28,
+        "expected_ppg": 3.092,
+        "raw_smoothed_ppg": 3.092
       },
       "59": {
-        "effective_n": 61.95,
-        "expected_ppg": 4.5613,
-        "raw_smoothed_ppg": 4.5613
+        "effective_n": 6.73,
+        "expected_ppg": 3.0596,
+        "raw_smoothed_ppg": 3.0596
       },
       "6": {
-        "effective_n": 114.97,
-        "expected_ppg": 6.7431,
-        "raw_smoothed_ppg": 6.7431
+        "effective_n": 55.05,
+        "expected_ppg": 7.9938,
+        "raw_smoothed_ppg": 7.9938
       },
       "60": {
-        "effective_n": 60.85,
-        "expected_ppg": 4.5406,
-        "raw_smoothed_ppg": 4.5406
+        "effective_n": 6.24,
+        "expected_ppg": 3.028,
+        "raw_smoothed_ppg": 3.028
       },
       "61": {
-        "effective_n": 59.8,
-        "expected_ppg": 4.5204,
-        "raw_smoothed_ppg": 4.5204
+        "effective_n": 5.79,
+        "expected_ppg": 2.9971,
+        "raw_smoothed_ppg": 2.9971
       },
       "62": {
-        "effective_n": 58.78,
-        "expected_ppg": 4.5009,
-        "raw_smoothed_ppg": 4.5009
+        "effective_n": 5.38,
+        "expected_ppg": 2.9671,
+        "raw_smoothed_ppg": 2.9671
       },
       "63": {
-        "effective_n": 57.8,
-        "expected_ppg": 4.4818,
-        "raw_smoothed_ppg": 4.4818
+        "effective_n": 5.02,
+        "expected_ppg": 2.938,
+        "raw_smoothed_ppg": 2.938
       },
       "64": {
-        "effective_n": 56.86,
-        "expected_ppg": 4.4633,
-        "raw_smoothed_ppg": 4.4633
+        "effective_n": 4.69,
+        "expected_ppg": 2.9099,
+        "raw_smoothed_ppg": 2.9099
       },
       "65": {
-        "effective_n": 55.95,
-        "expected_ppg": 4.4453,
-        "raw_smoothed_ppg": 4.4453
+        "effective_n": 4.39,
+        "expected_ppg": 2.8827,
+        "raw_smoothed_ppg": 2.8827
       },
       "66": {
-        "effective_n": 55.08,
-        "expected_ppg": 4.4278,
-        "raw_smoothed_ppg": 4.4278
+        "effective_n": 4.12,
+        "expected_ppg": 2.8565,
+        "raw_smoothed_ppg": 2.8565
       },
       "67": {
-        "effective_n": 54.24,
-        "expected_ppg": 4.4107,
-        "raw_smoothed_ppg": 4.4107
+        "effective_n": 3.88,
+        "expected_ppg": 2.8314,
+        "raw_smoothed_ppg": 2.8314
       },
       "68": {
-        "effective_n": 53.43,
-        "expected_ppg": 4.3941,
-        "raw_smoothed_ppg": 4.3941
+        "effective_n": 3.66,
+        "expected_ppg": 2.8074,
+        "raw_smoothed_ppg": 2.8074
       },
       "69": {
-        "effective_n": 52.65,
-        "expected_ppg": 4.3779,
-        "raw_smoothed_ppg": 4.3779
+        "effective_n": 3.46,
+        "expected_ppg": 2.7844,
+        "raw_smoothed_ppg": 2.7844
       },
       "7": {
-        "effective_n": 117.06,
-        "expected_ppg": 6.6923,
-        "raw_smoothed_ppg": 6.6923
+        "effective_n": 58.93,
+        "expected_ppg": 7.8507,
+        "raw_smoothed_ppg": 7.8507
       },
       "70": {
-        "effective_n": 51.89,
-        "expected_ppg": 4.3622,
-        "raw_smoothed_ppg": 4.3622
+        "effective_n": 3.28,
+        "expected_ppg": 2.7626,
+        "raw_smoothed_ppg": 2.7626
       },
       "71": {
-        "effective_n": 51.16,
-        "expected_ppg": 4.3468,
-        "raw_smoothed_ppg": 4.3468
+        "effective_n": 3.12,
+        "expected_ppg": 2.7419,
+        "raw_smoothed_ppg": 2.7419
       },
       "72": {
-        "effective_n": 50.46,
-        "expected_ppg": 4.3318,
-        "raw_smoothed_ppg": 4.3318
+        "effective_n": 1.0,
+        "expected_ppg": 2.6032,
+        "raw_smoothed_ppg": 2.6032
       },
       "8": {
-        "effective_n": 119.06,
-        "expected_ppg": 6.6409,
-        "raw_smoothed_ppg": 6.6409
+        "effective_n": 62.42,
+        "expected_ppg": 7.687,
+        "raw_smoothed_ppg": 7.687
       },
       "9": {
-        "effective_n": 120.95,
-        "expected_ppg": 6.5891,
-        "raw_smoothed_ppg": 6.5891
+        "effective_n": 65.37,
+        "expected_ppg": 7.5045,
+        "raw_smoothed_ppg": 7.5045
       }
     }
   },
   "definition": "Career PPG minus expected career PPG for a rookie of the same position at the exact draft slot.",
-  "generated_at": "2026-09-02T18:34:35+00:00",
+  "generated_at": "2026-09-02T18:37:42+00:00",
   "max_curve_slot": 72,
   "max_training_adp": 96.0,
   "min_times_drafted": 5,
+  "model_selection": "LOSO final-monotone MAE; smoother bandwidth wins only inside 1% tie band",
   "outcomes_through": 2025,
   "selected_bandwidth": {
-    "QB": 20.0,
-    "RB": 12.0,
-    "TE": 20.0,
-    "WR": 16.0
+    "QB": 16.0,
+    "RB": 6.0,
+    "TE": 10.0,
+    "WR": 5.0
   },
   "status": "research_not_production",
   "teams": 12,
@@ -1468,5 +1469,5 @@
     2014,
     2022
   ],
-  "version": "pos-adj-ppg-v1-research"
+  "version": "pos-adj-ppg-v2-research"
 }
