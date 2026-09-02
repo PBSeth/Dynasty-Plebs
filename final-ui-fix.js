@@ -3,6 +3,13 @@
   const current=new Set(D.currentManagers||[]);
   const OUT=window.DRAFT_OUTCOMES||{};
   const PRIMARY='#b88b3e';
+  const AVG_PF={
+    'Seth Miller':1642.0514285714287,'Matthew Piontek':1630.2666666666667,'Travis Page':1621.282857142857,
+    'Jordan Martin':1620.4914285714287,'Matt Metz':1593.1542857142856,'Bo Tiller':1534.717142857143,
+    'Clint Hudson':1528.5266666666666,'Payton Docheff':1437.8428571428572,'Tim Bell':1436.28,
+    'Kevin Long':1423.76,'Mason Good':1390.76,'Dave Carnes':1371.52,'Alex Agueros':1370.2628571428572,
+    'Luke Miller':1293.8033333333333,'Matt Clawson':1283.8714285714286,'Ryan Lipkin':1131.74
+  };
   const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fmt=n=>Math.round(Number(n)||0).toLocaleString('en-US');
@@ -15,8 +22,17 @@
     #managerTimeline .dp-pf-line{stroke:${PRIMARY}!important}
     #managerTimeline .dp-pf-point{stroke:${PRIMARY}!important}
     #historyChart .dp-history-qualifier{padding:14px 16px 15px;border-top:1px solid #dfd0b6;color:#8a775b;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+    #history .dp-centered-history-head{justify-content:center!important;text-align:center!important;align-items:center!important}
+    #history .dp-centered-history-head h2{width:100%;text-align:center!important}
   `;
   document.head.appendChild(style);
+
+  function centerHistoryHeads(){
+    [document.getElementById('champions'),document.getElementById('historyChart')].forEach(node=>{
+      const head=node?.closest('.section')?.querySelector('.section-head');
+      if(head)head.classList.add('dp-centered-history-head');
+    });
+  }
 
   function fixDraftOwnerMarkers(){
     document.querySelectorAll('#draftBoard .dp-compact-owner').forEach(node=>{
@@ -92,11 +108,11 @@
     wall.dataset.rookieClassRecords='1';
   }
 
-  let rookieHistoryMode=null;
+  let historyAddonMode=null;
   function ensureHistoryButtons(){
     const controls=document.getElementById('historyMetricBtns');
     if(!controls)return;
-    const defs=[['bestClass','Best Rookie Class'],['avgClass','Draft Class Average']];
+    const defs=[['avgPf','Avg Points For'],['bestClass','Best Rookie Class'],['avgClass','Draft Class Average']];
     defs.forEach(([key,label])=>{
       const existing=controls.querySelector(`[data-rookie-history="${key}"]`);
       if(existing){existing.textContent=label;return;}
@@ -106,25 +122,35 @@
       b.textContent=label;
       controls.appendChild(b);
     });
-    if(rookieHistoryMode){
-      controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory===rookieHistoryMode));
+    if(historyAddonMode){
+      controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory===historyAddonMode));
     }
   }
 
-  function renderRookieHistory(mode){
+  function renderAddonHistory(mode){
     const controls=document.getElementById('historyMetricBtns'),chart=document.getElementById('historyChart');
     if(!controls||!chart)return;
-    const rows=rookieManagerRows().filter(x=>mode==='bestClass'?Number.isFinite(x.best):Number.isFinite(x.avg));
-    rows.sort((a,b)=>mode==='bestClass'?(b.best-a.best||a.manager.localeCompare(b.manager)):(b.avg-a.avg||a.manager.localeCompare(b.manager)));
-    const max=Math.max(1,...rows.map(x=>mode==='bestClass'?x.best:x.avg));
+    let rows=[],qualifier='';
+    if(mode==='avgPf'){
+      rows=Object.keys(D.regular||{}).map(manager=>({manager,value:AVG_PF[manager]})).filter(x=>Number.isFinite(x.value));
+      rows.sort((a,b)=>b.value-a.value||a.manager.localeCompare(b.manager));
+    }else{
+      rows=rookieManagerRows().filter(x=>mode==='bestClass'?Number.isFinite(x.best):Number.isFinite(x.avg)).map(x=>({
+        ...x,value:mode==='bestClass'?x.best:x.avg
+      }));
+      rows.sort((a,b)=>b.value-a.value||a.manager.localeCompare(b.manager));
+      qualifier=mode==='bestClass'?'Career points to date':'Career points per class';
+    }
+    const max=Math.max(1,...rows.map(x=>x.value));
     controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory===mode));
     const bars=rows.map((x,i)=>{
-      const value=mode==='bestClass'?x.best:x.avg;
-      const detail=mode==='bestClass'?`${fmt(x.best)} · ${x.bestYears.join(' / ')}`:`${x.avg.toFixed(1)} · ${x.classes} class${x.classes===1?'':'es'}`;
-      return `<div class="archive-bar"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,value/max*100)}%"></div></div><div class="archive-value">${esc(detail)}</div></div>`;
+      let detail;
+      if(mode==='avgPf')detail=x.value.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+      else if(mode==='bestClass')detail=`${fmt(x.best)} · ${x.bestYears.join(' / ')}`;
+      else detail=`${x.avg.toFixed(1)} · ${x.classes} class${x.classes===1?'':'es'}`;
+      return `<div class="archive-bar"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,x.value/max*100)}%"></div></div><div class="archive-value">${esc(detail)}</div></div>`;
     }).join('');
-    const qualifier=mode==='bestClass'?'Career points to date':'Career points per class';
-    chart.innerHTML=bars+`<div class="dp-history-qualifier">${qualifier}</div>`;
+    chart.innerHTML=bars+(qualifier?`<div class="dp-history-qualifier">${qualifier}</div>`:'');
   }
 
   function bindHistoryMetrics(){
@@ -135,13 +161,13 @@
       const button=e.target.closest('button');
       if(!button)return;
       const mode=button.dataset.rookieHistory;
-      if(!mode){rookieHistoryMode=null;return;}
-      rookieHistoryMode=mode;
-      setTimeout(()=>{ensureHistoryButtons();renderRookieHistory(mode)},1);
+      if(!mode){historyAddonMode=null;return;}
+      historyAddonMode=mode;
+      setTimeout(()=>{ensureHistoryButtons();renderAddonHistory(mode)},1);
     });
     new MutationObserver(()=>setTimeout(()=>{
       ensureHistoryButtons();
-      if(rookieHistoryMode)renderRookieHistory(rookieHistoryMode);
+      if(historyAddonMode)renderAddonHistory(historyAddonMode);
     },0)).observe(controls,{childList:true});
     ensureHistoryButtons();
   }
@@ -150,7 +176,7 @@
   function queue(){
     if(queued)return;
     queued=true;
-    setTimeout(()=>{queued=false;fixDraftOwnerMarkers();addWallRecords();bindHistoryMetrics();ensureHistoryButtons()},0);
+    setTimeout(()=>{queued=false;centerHistoryHeads();fixDraftOwnerMarkers();addWallRecords();bindHistoryMetrics();ensureHistoryButtons()},0);
   }
 
   const draftBoard=document.getElementById('draftBoard');
