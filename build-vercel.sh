@@ -132,3 +132,70 @@ cat >> dist/regression-fix.js <<'EOF'
   setTimeout(fixRookieDisplay,0);
 })();
 EOF
+
+# Queued visual fixes: snap PF/PA championship dots, use an absolute Avg Finish
+# scale, mute former-manager history bars, and make former-manager markers black.
+cat >> dist/regression-fix.js <<'EOF'
+
+(()=>{
+  const D=window.DATA;if(!D)return;
+  const current=new Set(D.currentManagers||[]);
+  const style=document.createElement('style');
+  style.textContent=`
+    #historyChart .archive-bar.dp-former-history .archive-fill{background:#9b968c!important;opacity:.78!important}
+  `;
+  document.head.appendChild(style);
+
+  function snapChampToPf(){
+    const svg=document.querySelector('#managerTimeline svg[data-pfpa-lines="1"]');
+    if(!svg)return;
+    const pf=[...svg.querySelectorAll('circle.dp-pf-point')];
+    const champs=[...svg.querySelectorAll('circle.dp-dot.champ')];
+    if(!pf.length||!champs.length)return;
+    champs.forEach(ch=>{
+      const cx=Number(ch.getAttribute('cx'));
+      const target=pf.reduce((best,p)=>{
+        const d=Math.abs(Number(p.getAttribute('cx'))-cx);
+        return !best||d<best.d?{p,d}:best;
+      },null)?.p;
+      if(!target)return;
+      ch.setAttribute('cx',target.getAttribute('cx'));
+      ch.setAttribute('cy',target.getAttribute('cy'));
+      ch.setAttribute('r','6');
+      ch.dataset.snappedPf='1';
+      svg.appendChild(ch);
+    });
+  }
+
+  function fixHistory(){
+    const chart=document.getElementById('historyChart');if(!chart)return;
+    const avgOn=[...document.querySelectorAll('#historyMetricBtns button')].some(b=>b.classList.contains('on')&&b.textContent.trim()==='Avg Finish');
+    chart.querySelectorAll('.archive-bar').forEach(row=>{
+      const name=(row.querySelector('strong')?.textContent||'').replace(/^\d+\.\s*/, '').trim();
+      row.classList.toggle('dp-former-history',!current.has(name));
+      if(avgOn){
+        const value=Number(row.querySelector('.archive-value')?.textContent);
+        const fill=row.querySelector('.archive-fill');
+        if(fill&&Number.isFinite(value))fill.style.width=`${Math.max(3,Math.min(100,(13-value)/12*100))}%`;
+      }
+    });
+  }
+
+  function fixFormerMarkers(){
+    const manager=document.getElementById('managerSelect')?.value||'Seth Miller';
+    if(current.has(manager))return;
+    document.querySelectorAll('#managerPicks .pick').forEach(card=>card.style.setProperty('--pc','#111111'));
+    document.querySelectorAll('#draftBoard .dp-compact-owner').forEach(node=>{
+      if(node.textContent.trim()===manager)node.style.setProperty('--owner-color','#111111');
+    });
+  }
+
+  const schedule=()=>setTimeout(()=>{snapChampToPf();fixHistory();fixFormerMarkers()},0);
+  const observe=id=>{const node=document.getElementById(id);if(node)new MutationObserver(schedule).observe(node,{childList:true,subtree:true})};
+  observe('managerTimeline');observe('historyChart');observe('managerPicks');observe('draftBoard');
+  document.getElementById('managerSelect')?.addEventListener('change',schedule);
+  document.getElementById('historyMetricBtns')?.addEventListener('click',schedule);
+  document.getElementById('draftYear')?.addEventListener('change',schedule);
+  schedule();
+})();
+EOF
