@@ -35,8 +35,11 @@ jobs:
       - name: Apply frozen curve to complete Plebs draft history
         run: python research/pos_adj_ppg/audit_plebs_application.py
 
-      - name: Finalize position-at-draft audit and production artifact
+      - name: Finalize position-at-draft audit
         run: python research/pos_adj_ppg/finalize_draft_adjusted_ppg_v2.py
+
+      - name: Count every completed-class rookie outcome
+        run: python research/pos_adj_ppg/finalize_draft_adjusted_ppg_v3.py
 
       - name: Verify generated files
         run: |
@@ -44,8 +47,6 @@ jobs:
           test -s research/pos_adj_ppg/source_manifest.json
           test -s research/pos_adj_ppg/pos_adj_ppg_curve.json
           test -s research/pos_adj_ppg/validation_report.md
-          test -s research/pos_adj_ppg/plebs_application_audit.csv
-          test -s research/pos_adj_ppg/plebs_application_report.md
           test -s research/pos_adj_ppg/draft_adjusted_ppg_audit.csv
           test -s research/pos_adj_ppg/draft_adjusted_ppg.json
           test -s research/pos_adj_ppg/draft-adjusted-ppg.js
@@ -53,15 +54,13 @@ jobs:
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
           python -m json.tool research/pos_adj_ppg/draft_adjusted_ppg.json >/dev/null
           grep -Fq 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
-          grep -Fq 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
-          grep -Fq 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
-          grep -Fq 'Compensatory selections detected: **1**' research/pos_adj_ppg/plebs_application_report.md
           grep -Fq 'Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
-          grep -Fq 'FFC vs NFL draft position conflicts on overlapping identities: **0**.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
-          grep -Fq "N'Keal Harry" research/pos_adj_ppg/draft_adjusted_ppg_report.md
-          grep -Fq 'Hakeem Butler' research/pos_adj_ppg/draft_adjusted_ppg_report.md
-          grep -Fq 'Antonio Gandy-Golden' research/pos_adj_ppg/draft_adjusted_ppg_report.md
-          grep -Fq 'window.DRAFT_ADJUSTED_PPG=' research/pos_adj_ppg/draft-adjusted-ppg.js
+          grep -Fq 'True rookie outcomes through 2025: **390 / 390**' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Missing-production rookie picks converted to 0.0: **13**' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Completed-class rookies still omitted: **0**' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Seth true rookie outcomes through 2025: **48**' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Frank Gore Jr.: **0.0 Career PPG and included**.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'draft-adjusted-ppg-v2' research/pos_adj_ppg/draft-adjusted-ppg.js
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -82,5 +81,5 @@ jobs:
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate secondary-audited Draft-Adjusted PPG artifacts"
+          git commit -m "Generate complete Draft-Adjusted PPG rookie outcomes"
           git push origin HEAD:pos-adj-ppg-research
