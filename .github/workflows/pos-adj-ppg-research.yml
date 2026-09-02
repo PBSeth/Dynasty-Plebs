@@ -1,4 +1,4 @@
-name: POS ADJ PPG research audit
+name: Draft-Adjusted PPG research audit
 
 on:
   push:
@@ -44,9 +44,10 @@ jobs:
           test -s research/pos_adj_ppg/plebs_application_audit.csv
           test -s research/pos_adj_ppg/plebs_application_report.md
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
-          grep -q 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
-          grep -q 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
-          grep -q 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
+          grep -Fq 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
+          grep -Fq 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
+          grep -Fq 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
+          grep -Fq 'Compensatory selections detected: **1**' research/pos_adj_ppg/plebs_application_report.md
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -63,5 +64,5 @@ jobs:
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate audited Plebs POS ADJ PPG application"
+          git commit -m "Generate audited Plebs Draft-Adjusted PPG application"
           git push origin HEAD:pos-adj-ppg-research
