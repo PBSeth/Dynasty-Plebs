@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+node verify-workbook-data.js
+mkdir -p dist
+node extract-draft-outcomes.js
+cp site-v2.css workbook-extras.css production-upgrade.css regression-fix.css app-v2.js workbook-extras.js production-upgrade.js regression-fix.js data-v3-*.js dist/
+cp index-workbook.html dist/index.html
