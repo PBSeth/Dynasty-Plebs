@@ -15,13 +15,13 @@
   const style=document.createElement('style');
   style.textContent=`
     .dp-draft-adj-definition{grid-column:1/-1;margin:1px 2px 0;padding:10px 12px;border-top:1px solid #d7c7aa;color:var(--muted);font-size:11px;line-height:1.4;text-align:center}
+    .dp-draft-intel .dp-intel-card{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+    .dp-draft-intel .dp-intel-card small,
+    .dp-draft-intel .dp-intel-card b,
+    .dp-draft-intel .dp-intel-card strong,
+    .dp-draft-intel .dp-intel-card span{display:block;width:100%;text-align:center!important}
     .dp-draft-intel .dp-intel-card[data-draft-adj-main="1"] b{font-variant-numeric:tabular-nums}
     .dp-draft-intel .dp-intel-card .dp-adj-detail{line-height:1.3}
-    .dp-draft-intel .dp-intel-card[data-round-card="1"]{text-align:center!important}
-    .dp-draft-intel .dp-intel-card[data-round-card="1"] small,
-    .dp-draft-intel .dp-intel-card[data-round-card="1"] b,
-    .dp-draft-intel .dp-intel-card[data-round-card="1"] strong,
-    .dp-draft-intel .dp-intel-card[data-round-card="1"] span{display:block;text-align:center!important}
     @media(max-width:680px){.dp-draft-adj-definition{font-size:10px;padding:9px 8px}}
   `;
   document.head.appendChild(style);
