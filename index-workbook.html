@@ -9,6 +9,21 @@
 <link rel="stylesheet" href="workbook-extras.css">
 <link rel="stylesheet" href="production-upgrade.css">
 <link rel="stylesheet" href="regression-fix.css?v=1">
+<style>
+/* audited 2026-09-02 manager pass */
+#historyMetricBtns.archive-controls{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+#historyMetricBtns button{min-width:0!important;white-space:nowrap!important;padding:10px 6px!important}
+.manager-profile-only{grid-template-columns:1fr!important}.career-overview-title{text-align:center!important}.career-overview-title h3{font-size:34px!important}.rookie-picks-head h3{font-size:36px!important}.rookie-picks-head{padding-top:17px!important;padding-bottom:14px!important}
+.dp-career-controls{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:6px!important;padding:11px 12px!important;border-bottom:1px solid #dfd0b6}.dp-career-controls button{min-width:0;border:1px solid #cdb994;background:#fffaf1;color:#5e513f;border-radius:9px;padding:10px 4px;font-size:12px;font-weight:900;line-height:1.12;cursor:pointer}.dp-career-controls button.on{background:#211d18;border-color:#211d18;color:#fff}
+.dp-chart-wrap{position:relative;padding:7px 9px 10px!important}.dp-chart-svg{height:350px!important;border:2px solid #b9a580!important}.dp-axis{font-size:12px!important}.dp-point-label{font-size:12px!important}.dp-series{stroke-width:4!important}.dp-dot{stroke-width:3!important}.dp-dot.champ{fill:#e9bd5b!important;stroke:#a77725!important}.dp-champ-halo{fill:#efd47c;opacity:.24}.dp-pf-bar{fill:var(--mc,#7e3125);opacity:.88}.dp-pa-bar{fill:#9a7b49;opacity:.72}.dp-pfpa-legend{position:absolute;z-index:2;left:70px;top:16px;display:flex;gap:14px;font-size:11px;font-weight:900;color:#625746}.dp-pfpa-legend span{display:flex;align-items:center;gap:5px}.dp-pfpa-legend i{display:inline-block;width:12px;height:12px;border-radius:2px}.dp-pfpa-legend i.pf{background:var(--mc,#7e3125)}.dp-pfpa-legend i.pa{background:#9a7b49}
+.dp-analytics-title{font-size:20px!important;margin-bottom:11px!important}.dp-efficiency-title{font-size:25px!important}.dp-manager-picks .pick .ppg-value{font:900 14px/1 Arial,sans-serif!important;letter-spacing:0!important}.dp-rookie-note{font-size:12px!important}
+@media(max-width:680px){
+ #historyMetricBtns.archive-controls{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:9px!important}#historyMetricBtns button{font-size:11px!important;padding:10px 2px!important}
+ .career-overview-title h3{font-size:31px!important}.rookie-picks-head h3{font-size:36px!important}.dp-career-controls{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;padding:8px!important}.dp-career-controls button{font-size:9.5px!important;padding:9px 1px!important;min-height:44px;white-space:normal!important}
+ .dp-chart-wrap{padding:4px 5px 7px!important}.dp-chart-svg{height:315px!important}.dp-axis{font-size:11px!important}.dp-point-label{font-size:11px!important}.dp-pfpa-legend{left:56px;top:13px;font-size:10px}
+ .dp-analytics-title{font-size:19px!important}.dp-efficiency-title{font-size:24px!important}.dp-manager-picks .pick .ppg-value{font-size:12px!important}.dp-manager-picks .pick small.dp-pick-meta{font-size:11px!important}
+}
+</style>
 </head>
 <body>
 <header>
@@ -33,9 +48,10 @@
   <section class="view" id="managers">
     <div class="section-head"><h2>Managers</h2></div>
     <div class="toolbar"><label for="managerSelect">Manager</label><select id="managerSelect"></select></div>
-    <div class="manager-grid"><div class="panel manager-card" id="managerProfile"></div><div class="panel"><div class="subhead"><h3>Season History</h3></div><div class="season-list" id="seasonHistory"></div></div></div>
-    <div class="section panel"><div class="subhead"><h3>Career Timeline</h3></div><div class="archive-controls" id="timelineMetricBtns"></div><div id="managerTimeline"></div></div>
-    <div class="section panel"><div class="subhead"><h3>Rookie Picks</h3></div><div class="draft-rounds" id="managerPicks"></div></div>
+    <div class="manager-grid manager-profile-only"><div class="panel manager-card" id="managerProfile"></div></div>
+    <div id="seasonHistory" hidden aria-hidden="true"></div>
+    <div class="section panel career-overview-panel"><div class="subhead career-overview-title"><h3>Career Overview</h3></div><div id="timelineMetricBtns"></div><div id="managerTimeline"></div></div>
+    <div class="section panel rookie-picks-panel"><div class="subhead rookie-picks-head"><h3>Rookie Picks</h3></div><div class="draft-rounds" id="managerPicks"></div></div>
   </section>
 
   <section class="view" id="drafts">
@@ -58,9 +74,60 @@
   delete window.__PLEBS_DATA_SRC;
 </script>
 <script src="draft-outcomes.js"></script>
+<script>
+(()=>{
+  const D=window.DATA,O=window.DRAFT_OUTCOMES||{};
+  if(!D)return;
+  const owners2021=[
+    ['Jordan Martin','Payton Docheff','Jordan Martin','Matt Metz','Luke Miller','Seth Miller','Bo Tiller','Payton Docheff','Mason Good','Matt Clawson','Matt Clawson','Matthew Piontek'],
+    ['Jordan Martin','Matt Metz','Seth Miller','Matt Metz','Payton Docheff','Travis Page','Seth Miller','Matt Clawson','Mason Good','Matt Metz','Seth Miller','Jordan Martin'],
+    ['Luke Miller','Matt Clawson','Matt Metz','Payton Docheff','Travis Page','Alex Agueros','Jordan Martin','Bo Tiller','Mason Good','Payton Docheff','Matt Clawson','Matthew Piontek'],
+    ['Payton Docheff','Alex Agueros','Matt Clawson','Matt Metz','Luke Miller','Bo Tiller','Matthew Piontek','Bo Tiller','Mason Good','Matthew Piontek','Matt Clawson','Matthew Piontek']
+  ];
+  owners2021.forEach((owners,ri)=>owners.forEach((owner,si)=>{if(D.drafts?.['2021']?.rounds?.[ri]?.[si])D.drafts['2021'].rounds[ri][si].owner=owner}));
+  const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+  const lev=(a,b)=>{let prev=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){const cur=[i];for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=cur}return prev[b.length]};
+  const byYear={};Object.keys(O).forEach(k=>{const [y,n]=k.split('|');(byYear[y]??=[]).push(n)});
+  Object.entries(D.drafts||{}).forEach(([year,b])=>{if(+year>2025)return;(b.rounds||[]).flat().forEach(p=>{if(!p?.player)return;const key=`${year}|${norm(p.player)}`;if(O[key])return;const c=(byYear[year]||[]).map(n=>[n,lev(norm(p.player),n)]).sort((a,b)=>a[1]-b[1]);if(c[0]&&c[0][1]<=2&&(!c[1]||c[1][1]>c[0][1]))O[key]=O[`${year}|${c[0][0]}`]})});
+})();
+</script>
 <script src="app-v2.js"></script>
 <script src="workbook-extras.js"></script>
 <script src="production-upgrade.js"></script>
 <script src="regression-fix.js?v=1"></script>
+<script>
+(()=>{
+ const D=window.DATA;if(!D)return;const current=new Set(D.currentManagers||[]);
+ const rec=r=>{const [w=0,l=0]=String(r||'0-0').split('-').map(Number);return{w,l}};
+ const fmt=n=>Math.round(Number(n)||0).toLocaleString('en-US');
+ const dec=v=>Number.isFinite(v)?Number(v).toFixed(3).replace(/^0/,''):'—';
+ const scoring={
+  2019:{'Dave Carnes':[1634.22,1424.22],'Bo Tiller':[1549.84,1408.26],'Matt Metz':[1653.98,1405.38],'Travis Page':[1555.96,1411.60],'Matthew Piontek':[1552.62,1376.88],'Jordan Martin':[1479.96,1562.84],'Alex Agueros':[1553.32,1553.96],'Matt Clawson':[1529.12,1558.42],'Mason Good':[1290.28,1556.38],'Seth Miller':[1225.88,1511.52],'Payton Docheff':[1381.42,1585.50],'Kevin Long':[1423.76,1475.40]},
+  2020:{'Matthew Piontek':[1720.50,1535.58],'Seth Miller':[1581.46,1487.78],'Dave Carnes':[1634.26,1542.66],'Mason Good':[1608.36,1434.32],'Travis Page':[1633.16,1433.40],'Bo Tiller':[1517.12,1513.56],'Jordan Martin':[1508.40,1534.50],'Luke Miller':[1499.76,1479.86],'Matt Clawson':[1425.26,1620.28],'Alex Agueros':[1369.38,1497.00],'Matt Metz':[1497.54,1620.08],'Payton Docheff':[1286.52,1582.70]},
+  2021:{'Matthew Piontek':[1617.68,1211.42],'Seth Miller':[1644.60,1239.88],'Alex Agueros':[1282.12,1293.62],'Bo Tiller':[1509.24,1382.32],'Matt Metz':[1477.34,1351.30],'Jordan Martin':[1588.96,1397.92],'Mason Good':[1273.64,1361.76],'Dave Carnes':[1474.28,1331.12],'Matt Clawson':[1224.32,1403.54],'Travis Page':[1097.14,1646.96],'Luke Miller':[1151.58,1389.62],'Payton Docheff':[1065.78,1397.22]},
+  2022:{'Seth Miller':[1594.08,1413.92],'Matt Metz':[1475.34,1412.76],'Tim Bell':[1436.28,1307.50],'Bo Tiller':[1463.24,1314.86],'Jordan Martin':[1369.90,1317.62],'Payton Docheff':[1350.32,1236.36],'Alex Agueros':[1369.66,1363.84],'Luke Miller':[1187.28,1233.46],'Travis Page':[1181.74,1246.32],'Dave Carnes':[1256.54,1357.72],'Matt Clawson':[1010.36,1367.22]},
+  2023:{'Jordan Martin':[1847.98,1454.94],'Seth Miller':[1850.26,1563.10],'Travis Page':[1807.04,1516.92],'Payton Docheff':[1634.10,1423.64],'Matt Metz':[1659.16,1495.42],'Bo Tiller':[1591.26,1541.50],'Matt Clawson':[1062.42,1450.62],'Clint Hudson':[1477.46,1500.02],'Dave Carnes':[1238.48,1512.70],'Alex Agueros':[1512.68,1556.52],'Luke Miller':[1187.16,1600.18]},
+  2024:{'Travis Page':[1961.78,1532.32],'Jordan Martin':[1880.98,1480.14],'Matt Metz':[1800.40,1607.88],'Matt Clawson':[1381.16,1396.98],'Seth Miller':[1652.94,1644.26],'Payton Docheff':[1606.24,1571.56],'Bo Tiller':[1576.52,1614.02],'Clint Hudson':[1471.50,1483.86],'Alex Agueros':[1259.68,1507.12],'Luke Miller':[1367.60,1497.84],'Dave Carnes':[1164.58,1368.80],'Ryan Lipkin':[1052.52,1471.12]},
+  2025:{'Travis Page':[2112.16,1664.58],'Matt Metz':[1588.32,1460.60],'Seth Miller':[1945.14,1586.22],'Jordan Martin':[1667.26,1580.74],'Clint Hudson':[1636.62,1560.46],'Payton Docheff':[1740.52,1612.62],'Bo Tiller':[1535.80,1596.36],'Matt Clawson':[1354.46,1512.70],'Luke Miller':[1369.44,1588.98],'Alex Agueros':[1245.00,1480.78],'Dave Carnes':[1198.28,1424.90],'Ryan Lipkin':[1210.96,1535.02]}
+ };
+ const years=m=>Object.entries(D.regular[m]?.yearly||{}).filter(([,r])=>r).map(([y])=>+y).sort((a,b)=>a-b);
+ const cumulative=(m,y)=>{let w=0,l=0;Object.entries(D.regular[m]?.yearly||{}).forEach(([yr,r])=>{if(+yr<=y&&r){const q=rec(r);w+=q.w;l+=q.l}});return{w,l}};
+ const legacy=(m,y)=>{const ys=years(m);if(!ys.length)return null;if(y>=ys.at(-1))return D.legacy[m]?.score;const r=cumulative(m,y),service=ys.filter(v=>v<=y).length;let pw=0;Object.entries(D.playoffs[m]?.yearly||{}).forEach(([yr,x])=>{if(+yr<=y&&x)pw+=rec(x).w});const titles=(D.champions||[]).filter(c=>c.manager===m&&+c.year<=y).length,pct=(r.w+r.l)?r.w/(r.w+r.l):0;return pct*(1+.05*service+.05*pw+.5*titles)*1000};
+ const champ=(m,y)=>(D.champions||[]).some(c=>c.manager===m&&+c.year===+y);
+ let mode='legacy';const modes=[['legacy','Legacy Score'],['wins','Season Wins'],['pfpa','PF/PA'],['pct','Win%'],['finish','Final Finish']];
+ function lineChart(m){const pts=years(m).map(y=>{let v,label;if(mode==='legacy'){v=legacy(m,y);label=fmt(v)}else if(mode==='wins'){v=rec(D.regular[m].yearly[y]).w;label=String(v)}else if(mode==='pct'){const r=cumulative(m,y);v=r.w/(r.w+r.l);label=dec(v)}else{v=D.legacy[m]?.finish?.[y];label=String(v??'—')}return{y,v,label}}).filter(x=>Number.isFinite(x.v));if(!pts.length)return'';
+  const W=760,H=390,p={l:mode==='pct'?64:54,r:18,t:52,b:40},iw=W-p.l-p.r,ih=H-p.t-p.b,vals=pts.map(x=>x.v);let min,max,inv=mode==='finish';
+  if(mode==='wins'){min=0;max=Math.max(14,...vals)}else if(mode==='pct'){min=Math.max(0,Math.floor((Math.min(...vals)-.08)*20)/20);max=Math.min(1,Math.ceil((Math.max(...vals)+.08)*20)/20)}else if(mode==='finish'){min=1;max=Math.max(12,...vals)}else{const lo=Math.min(...vals),hi=Math.max(...vals),pad=Math.max(100,(hi-lo)*.15);min=Math.max(0,lo-pad);max=hi+pad}if(max<=min)max=min+1;
+  const X=i=>p.l+(pts.length===1?iw/2:i*iw/(pts.length-1)),Y=v=>inv?p.t+(v-min)/(max-min)*ih:p.t+(max-v)/(max-min)*ih,axis=v=>mode==='pct'?dec(v):fmt(v);
+  const ticks=[0,.25,.5,.75,1].map(t=>min+(max-min)*t),grid=ticks.map(t=>`<line class="dp-grid" x1="${p.l}" x2="${W-p.r}" y1="${Y(t)}" y2="${Y(t)}"/><text class="dp-axis" x="${p.l-9}" y="${Y(t)+4}" text-anchor="end">${axis(t)}</text>`).join(''),q=pts.map((d,i)=>({...d,x:X(i),yy:Y(d.v)})),path=q.map((d,i)=>`${i?'L':'M'} ${d.x.toFixed(1)} ${d.yy.toFixed(1)}`).join(' '),base=p.t+ih,area=mode==='finish'?'':`${path} L ${q.at(-1).x} ${base} L ${q[0].x} ${base} Z`;
+  return `<div class="dp-chart-wrap"><svg class="dp-chart-svg" viewBox="0 0 ${W} ${H}">${grid}${area?`<path class="dp-area" d="${area}"/>`:''}<path class="dp-series" d="${path}"/>${q.map(d=>`${champ(m,d.y)?`<circle class="dp-champ-halo" cx="${d.x}" cy="${d.yy}" r="11"/>`:''}<circle class="dp-dot ${champ(m,d.y)?'champ':''}" cx="${d.x}" cy="${d.yy}" r="5.5"/><text class="dp-point-label" x="${d.x}" y="${Math.max(22,d.yy-14)}">${d.label}</text><text class="dp-axis" x="${d.x}" y="${H-11}" text-anchor="middle">${d.y}</text>`).join('')}</svg></div>`;
+ }
+ function pfpa(m){const rows=years(m).map(y=>scoring[y]?.[m]&&{y,pf:scoring[y][m][0],pa:scoring[y][m][1]}).filter(Boolean);if(!rows.length)return'';const W=760,H=390,p={l:58,r:18,t:52,b:40},iw=W-p.l-p.r,ih=H-p.t-p.b,maxRaw=Math.max(...rows.flatMap(x=>[x.pf,x.pa])),step=maxRaw>2000?500:250,max=Math.ceil(maxRaw/step)*step,Y=v=>p.t+(max-v)/max*ih,base=p.t+ih,g=iw/rows.length,gap=5,bw=Math.min(24,Math.max(10,(g-gap*3)/2));let grid='';for(let v=0;v<=max;v+=step){const yy=Y(v);grid+=`<line class="dp-grid" x1="${p.l}" x2="${W-p.r}" y1="${yy}" y2="${yy}"/><text class="dp-axis" x="${p.l-9}" y="${yy+4}" text-anchor="end">${fmt(v)}</text>`}return `<div class="dp-chart-wrap"><div class="dp-pfpa-legend"><span><i class="pf"></i>PF</span><span><i class="pa"></i>PA</span></div><svg class="dp-chart-svg" viewBox="0 0 ${W} ${H}">${grid}${rows.map((d,i)=>{const x=p.l+g*(i+.5),a=x-bw-gap/2,b=x+gap/2,py=Y(d.pf),ay=Y(d.pa),cy=Math.max(24,Math.min(py,ay)-13);return `<rect class="dp-pf-bar" x="${a}" y="${py}" width="${bw}" height="${base-py}" rx="3"/><rect class="dp-pa-bar" x="${b}" y="${ay}" width="${bw}" height="${base-ay}" rx="3"/>${champ(m,d.y)?`<circle class="dp-dot champ" cx="${x}" cy="${cy}" r="5.5"/>`:''}<text class="dp-axis" x="${x}" y="${H-11}" text-anchor="middle">${d.y}</text>`}).join('')}</svg></div>`}
+ function renderCareer(m){const c=document.getElementById('timelineMetricBtns'),box=document.getElementById('managerTimeline');if(!c||!box)return;c.className='dp-career-controls';c.innerHTML=modes.map(([k,l])=>`<button class="${mode===k?'on':''}" data-mode="${k}">${l}</button>`).join('');c.querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;renderCareer(m)});box.innerHTML=mode==='pfpa'?pfpa(m):lineChart(m)}
+ function activeFirst(){const chart=document.getElementById('historyChart');if(!chart)return;const bars=[...chart.children];bars.sort((a,b)=>{const na=a.querySelector('strong')?.textContent.replace(/^\d+\.\s*/,''),nb=b.querySelector('strong')?.textContent.replace(/^\d+\.\s*/,'');return (current.has(na)?0:1)-(current.has(nb)?0:1)});bars.forEach((bar,i)=>{const s=bar.querySelector('strong'),name=s?.textContent.replace(/^\d+\.\s*/,'');if(s)s.textContent=`${i+1}. ${name}`;chart.appendChild(bar)})}
+ const historyBtns=document.getElementById('historyMetricBtns');historyBtns?.addEventListener('click',()=>setTimeout(activeFirst,0));activeFirst();
+ const sel=document.getElementById('managerSelect');const refresh=()=>renderCareer(sel?.value||'Seth Miller');sel?.addEventListener('change',()=>setTimeout(refresh,0));refresh();
+})();
+</script>
 </body>
 </html>
