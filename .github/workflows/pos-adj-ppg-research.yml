@@ -8,6 +8,7 @@ on:
       - 'research/pos_adj_ppg/**'
       - '.github/workflows/pos-adj-ppg-research.yml'
       - 'career_ppg_patch.py'
+      - 'index.html'
   workflow_dispatch:
 
 permissions:
@@ -31,15 +32,21 @@ jobs:
       - name: Build identity-cleaned support-aware expectation curve
         run: python research/pos_adj_ppg/build_pos_adj_ppg_curve_v4.py
 
+      - name: Apply frozen curve to complete Plebs draft history
+        run: python research/pos_adj_ppg/audit_plebs_application.py
+
       - name: Verify generated files
         run: |
           test -s research/pos_adj_ppg/adp_snapshot.json
           test -s research/pos_adj_ppg/source_manifest.json
           test -s research/pos_adj_ppg/pos_adj_ppg_curve.json
           test -s research/pos_adj_ppg/validation_report.md
+          test -s research/pos_adj_ppg/plebs_application_audit.csv
+          test -s research/pos_adj_ppg/plebs_application_report.md
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
           grep -q 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
           grep -q 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
+          grep -q 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -49,10 +56,12 @@ jobs:
           git add research/pos_adj_ppg/adp_snapshot.json \
                   research/pos_adj_ppg/source_manifest.json \
                   research/pos_adj_ppg/pos_adj_ppg_curve.json \
-                  research/pos_adj_ppg/validation_report.md
+                  research/pos_adj_ppg/validation_report.md \
+                  research/pos_adj_ppg/plebs_application_audit.csv \
+                  research/pos_adj_ppg/plebs_application_report.md
           if git diff --cached --quiet; then
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate final POS ADJ PPG research artifacts"
+          git commit -m "Generate audited Plebs POS ADJ PPG application"
           git push origin HEAD:pos-adj-ppg-research
