@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build support-aware external expectation curve
-        run: python research/pos_adj_ppg/build_pos_adj_ppg_curve_v3.py
+      - name: Build identity-cleaned support-aware expectation curve
+        run: python research/pos_adj_ppg/build_pos_adj_ppg_curve_v4.py
 
       - name: Verify generated files
         run: |
@@ -38,8 +38,8 @@ jobs:
           test -s research/pos_adj_ppg/pos_adj_ppg_curve.json
           test -s research/pos_adj_ppg/validation_report.md
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
-          grep -q 'pos-adj-ppg-v3-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
-          grep -q 'Every published position/slot expectation' research/pos_adj_ppg/validation_report.md
+          grep -q 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
+          grep -q 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -54,5 +54,5 @@ jobs:
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate support-aware POS ADJ PPG research artifacts"
+          git commit -m "Generate final POS ADJ PPG research artifacts"
           git push origin HEAD:pos-adj-ppg-research
