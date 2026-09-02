@@ -35,6 +35,9 @@ jobs:
       - name: Apply frozen curve to complete Plebs draft history
         run: python research/pos_adj_ppg/audit_plebs_application.py
 
+      - name: Lock rookie-time position and production artifact
+        run: python research/pos_adj_ppg/finalize_draft_adjusted_ppg.py
+
       - name: Verify generated files
         run: |
           test -s research/pos_adj_ppg/adp_snapshot.json
@@ -43,11 +46,20 @@ jobs:
           test -s research/pos_adj_ppg/validation_report.md
           test -s research/pos_adj_ppg/plebs_application_audit.csv
           test -s research/pos_adj_ppg/plebs_application_report.md
+          test -s research/pos_adj_ppg/draft_adjusted_ppg_audit.csv
+          test -s research/pos_adj_ppg/draft_adjusted_ppg.json
+          test -s research/pos_adj_ppg/draft-adjusted-ppg.js
+          test -s research/pos_adj_ppg/draft_adjusted_ppg_report.md
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
+          python -m json.tool research/pos_adj_ppg/draft_adjusted_ppg.json >/dev/null
           grep -Fq 'pos-adj-ppg-v4-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
           grep -Fq 'Nyheim Hines' research/pos_adj_ppg/validation_report.md
           grep -Fq 'Pick-level residual arithmetic and manager mean re-aggregation: **passed**' research/pos_adj_ppg/plebs_application_report.md
           grep -Fq 'Compensatory selections detected: **1**' research/pos_adj_ppg/plebs_application_report.md
+          grep -Fq 'Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq "N'Keal Harry" research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'Hakeem Butler' research/pos_adj_ppg/draft_adjusted_ppg_report.md
+          grep -Fq 'window.DRAFT_ADJUSTED_PPG=' research/pos_adj_ppg/draft-adjusted-ppg.js
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -59,10 +71,14 @@ jobs:
                   research/pos_adj_ppg/pos_adj_ppg_curve.json \
                   research/pos_adj_ppg/validation_report.md \
                   research/pos_adj_ppg/plebs_application_audit.csv \
-                  research/pos_adj_ppg/plebs_application_report.md
+                  research/pos_adj_ppg/plebs_application_report.md \
+                  research/pos_adj_ppg/draft_adjusted_ppg_audit.csv \
+                  research/pos_adj_ppg/draft_adjusted_ppg.json \
+                  research/pos_adj_ppg/draft-adjusted-ppg.js \
+                  research/pos_adj_ppg/draft_adjusted_ppg_report.md
           if git diff --cached --quiet; then
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate audited Plebs Draft-Adjusted PPG application"
+          git commit -m "Generate final audited Draft-Adjusted PPG artifacts"
           git push origin HEAD:pos-adj-ppg-research
