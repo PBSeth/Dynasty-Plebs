@@ -5,7 +5,7 @@
   const current=new Set(D.currentManagers||[]);
   const definition='Career PPG minus the expected Career PPG for a rookie at the same position and draft slot.';
   const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
   const mean=a=>a.length?a.reduce((s,v)=>s+v,0)/a.length:null;
   const signed=v=>Number.isFinite(v)?`${v>=0?'+':''}${v.toFixed(1)}`:'—';
   const one=v=>Number.isFinite(v)?v.toFixed(1):'—';
@@ -17,6 +17,11 @@
     .dp-draft-adj-definition{grid-column:1/-1;margin:1px 2px 0;padding:10px 12px;border-top:1px solid #d7c7aa;color:var(--muted);font-size:11px;line-height:1.4;text-align:center}
     .dp-draft-intel .dp-intel-card[data-draft-adj-main="1"] b{font-variant-numeric:tabular-nums}
     .dp-draft-intel .dp-intel-card .dp-adj-detail{line-height:1.3}
+    .dp-draft-intel .dp-intel-card[data-round-card="1"]{text-align:center!important}
+    .dp-draft-intel .dp-intel-card[data-round-card="1"] small,
+    .dp-draft-intel .dp-intel-card[data-round-card="1"] b,
+    .dp-draft-intel .dp-intel-card[data-round-card="1"] strong,
+    .dp-draft-intel .dp-intel-card[data-round-card="1"] span{display:block;text-align:center!important}
     @media(max-width:680px){.dp-draft-adj-definition{font-size:10px;padding:9px 8px}}
   `;
   document.head.appendChild(style);
@@ -59,14 +64,14 @@
       worst:worstEligible.length?[...worstEligible].sort((a,b)=>a.adj-b.adj)[0]:null
     };
   }
-  function rank(value,values){
+  function rank(value,values,total=values.length){
     const valid=values.filter(Number.isFinite).sort((a,b)=>b-a);
     if(!Number.isFinite(value)||!valid.length)return null;
-    return{r:1+valid.filter(v=>v>value+1e-9).length,n:valid.length};
+    return{r:1+valid.filter(v=>v>value+1e-9).length,n:total};
   }
   function rankLine(manager,value,values){
     if(!current.has(manager))return'Poxed · not ranked';
-    const x=rank(value,values);
+    const x=rank(value,values,current.size);
     return x?`Rank ${x.r} of ${x.n} active`:'No active-manager rank';
   }
   function bestWorstCard(label,p){
@@ -82,7 +87,7 @@
     const activeMetrics=[...current].map(metrics).filter(x=>x.gradedCount);
     const roundCards=[1,2,3,4].map(r=>{
       const x=me.rounds[r], label=r===4?'Round 4+':`Round ${r}`;
-      return`<div class="dp-intel-card"><small>${label} Draft-Adjusted</small><b>${signed(x.adj)}</b><strong>${rankLine(manager,x.adj,activeMetrics.map(m=>m.rounds[r].adj))}</strong><span>${one(x.raw)} career PPG · ${x.n} rookie pick${x.n===1?'':'s'}</span></div>`;
+      return`<div class="dp-intel-card" data-round-card="1"><small>${label} Draft-Adjusted</small><b>${signed(x.adj)}</b><strong>${rankLine(manager,x.adj,activeMetrics.map(m=>m.rounds[r].adj))}</strong><span>${one(x.raw)} career PPG · ${x.n} rookie pick${x.n===1?'':'s'}</span></div>`;
     }).join('');
     grid.dataset.draftAdjApplied=A.version;
     grid.innerHTML=`
