@@ -1739,7 +1739,7 @@
     }
   },
   "definition": "Career PPG minus expected career PPG for a rookie of the same position at the exact draft slot.",
-  "generated_at": "2026-09-02T18:50:58+00:00",
+  "generated_at": "2026-09-02T19:02:04+00:00",
   "max_adaptive_bandwidth": 30.0,
   "max_curve_slot": 72,
   "max_training_adp": 96.0,

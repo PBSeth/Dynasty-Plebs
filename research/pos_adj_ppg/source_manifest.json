@@ -166,7 +166,7 @@
   },
   "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
   "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
-  "generated_at": "2026-09-02T18:50:58+00:00",
+  "generated_at": "2026-09-02T19:02:04+00:00",
   "identity_resolution": "normalized name + explicit historical variants/renames + position + rookie-year context; prior NFL debut removed as non-rookie",
   "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
   "match_rate_within_adp_96": 0.9653,
@@ -248,10 +248,10 @@
       "year": 2022
     },
     {
-      "bytes": 6362111,
+      "bytes": 6362092,
       "kind": "sleeper_regular_season_stats",
       "rows": 8234,
-      "sha256": "3b2cc3e0db554299f113e3141aa88a163c8c9859152745373eaeec9874aabe4a",
+      "sha256": "ffc46e3b1dd426c85ed30f39c8dedde43c213fe45f1521d5c9eb528e7d18413a",
       "url": "https://api.sleeper.com/stats/nfl/2023?season_type=regular",
       "year": 2023
     },
@@ -264,10 +264,10 @@
       "year": 2024
     },
     {
-      "bytes": 6392885,
+      "bytes": 6392866,
       "kind": "sleeper_regular_season_stats",
       "rows": 8248,
-      "sha256": "a29ceef275244d53540e4e7807e8b9bf21d5b3775f6ecd8cba81f6a578044f6c",
+      "sha256": "cb3e913fac1375dddb6c973e4e3ba1f38a7b69bd02d7d19127512ecae1dad4e8",
       "url": "https://api.sleeper.com/stats/nfl/2025?season_type=regular",
       "year": 2025
     }
