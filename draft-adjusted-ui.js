@@ -47,6 +47,7 @@
       const d=graded.filter(p=>bucket(p)===r);
       rounds[r]={adj:mean(d.map(p=>p.adj)),raw:mean(d.map(p=>p.careerPpg)),n:d.length};
     });
+    const worstEligible=graded.filter(p=>!(p.rec.pos==='QB'&&bucket(p)===4));
     return{
       manager,
       rookieCount:all.length,
@@ -55,7 +56,7 @@
       adj:mean(graded.map(p=>p.adj)),
       rounds,
       best:graded.length?[...graded].sort((a,b)=>b.adj-a.adj)[0]:null,
-      worst:graded.length?[...graded].sort((a,b)=>a.adj-b.adj)[0]:null
+      worst:worstEligible.length?[...worstEligible].sort((a,b)=>a.adj-b.adj)[0]:null
     };
   }
   function rank(value,values){
@@ -64,7 +65,7 @@
     return{r:1+valid.filter(v=>v>value+1e-9).length,n:valid.length};
   }
   function rankLine(manager,value,values){
-    if(!current.has(manager))return'Former manager · not ranked';
+    if(!current.has(manager))return'Poxed · not ranked';
     const x=rank(value,values);
     return x?`Rank ${x.r} of ${x.n} active`:'No active-manager rank';
   }
@@ -112,10 +113,17 @@
     });
   }
 
+  function applyPoxedStatus(){
+    const manager=document.getElementById('managerSelect')?.value||'Seth Miller';
+    if(current.has(manager))return;
+    const badge=document.querySelector('#managerProfile .badge');
+    if(badge)badge.textContent='Poxed';
+  }
+
   let queued=false;
   function queue(){
     if(queued)return; queued=true;
-    setTimeout(()=>{queued=false;applyAnalytics();applyRookieCards()},0);
+    setTimeout(()=>{queued=false;applyAnalytics();applyRookieCards();applyPoxedStatus()},0);
   }
   const analytics=document.getElementById('rookieAnalytics');
   const picks=document.getElementById('managerPicks');
