@@ -1,14 +1,14 @@
-# POS ADJ PPG research
+# Draft-Adjusted PPG research
 
 This directory is the reproducible research layer for Dynasty Plebs rookie-draft grading. It is intentionally isolated from the production site until the benchmark passes validation.
 
 ## Public metric
 
-**POS ADJ PPG = Career PPG - Expected Career PPG(position, rookie draft slot)**
+**Draft-Adjusted PPG = Career PPG - Expected Career PPG(position, actual sequential rookie draft slot)**
 
-A positive value means the rookie produced more career-to-date Dynasty Plebs points per game than the historical expectation for a rookie of the same position taken at that exact 12-team draft cost. A negative value means the opposite.
+A positive value means the rookie produced more career-to-date Dynasty Plebs points per game than the historical expectation for a rookie of the same position taken at that draft cost. A negative value means the opposite.
 
-The public site label is **POS ADJ PPG**. `PAP` may be used only as an internal shorthand.
+The public site label is **Draft-Adjusted PPG**. Internally, older research filenames may still use `pos_adj_ppg` so the audit trail remains stable.
 
 ## Locked decisions
 
@@ -19,14 +19,14 @@ The public site label is **POS ADJ PPG**. `PAP` may be used only as an internal 
 - Training ADP classes are 2014-2022. Outcomes are scored through the last complete NFL season (2025).
 - Only QB/RB/WR/TE are eligible.
 - A row must represent a true rookie in its ADP year. Historical source rows for a player who had already appeared in an NFL regular-season game before that ADP year are removed.
-- The production metric remains consistent with the current site eligibility rule: a rookie must have recorded at least one NFL regular-season game to receive Career PPG / POS ADJ PPG.
+- The production metric remains consistent with the current site eligibility rule: a rookie must have recorded at least one NFL regular-season game to receive Career PPG / Draft-Adjusted PPG.
 - Veteran selections in Dynasty Plebs remain in the historical draft board but are excluded from rookie grading.
-- Draft cost uses the actual Plebs slot: `overall slot = (round - 1) * 12 + pick-in-round`.
+- **Draft cost is chronological, not formulaic.** Overall slot is the actual sequential selection number within that league draft year. Compensatory picks count as real selections and shift every later pick. Example: if Round 3 contains a 3.13 compensatory pick, that selection is overall 37 and the following 4.01 is overall 38.
 - Each position gets its own expectation curve.
 - Nearby draft slots inform one another via smoothing. Exact-slot sample means are not used.
-- Smoothing bandwidth is selected independently by position using leave-one-draft-class-out validation. A one-standard-error rule favors the smoother model when predictive error is effectively tied.
+- Smoothing bandwidth is selected independently by position using leave-one-draft-class-out validation against the final monotone curve. Deep slots widen adaptively until effective local historical support reaches 12 observations.
 - The final expectation curve is constrained to be non-increasing with later draft slots. A later pick cannot have a higher historical expectation merely because of sample noise.
-- Manager POS ADJ PPG is the arithmetic mean of the eligible pick-level residuals. Round cards average those same residuals within the displayed round bucket; Round 4+ is only a display grouping, never the expectation model.
+- Manager Draft-Adjusted PPG is the arithmetic mean of the eligible pick-level residuals. Round cards average those same residuals within the displayed round bucket; Round 4+ is only a display grouping, never the expectation model.
 
 ## Primary external source
 
@@ -40,15 +40,17 @@ Secondary methodological cross-check: Dynasty League Football has described its 
 
 ## Generated artifacts
 
-Running `python research/pos_adj_ppg/build_pos_adj_ppg_curve.py` produces:
+Running `python research/pos_adj_ppg/build_pos_adj_ppg_curve_v4.py` produces the current frozen research inputs/curve. Running `python research/pos_adj_ppg/audit_plebs_application.py` then applies that frozen curve to the complete recovered Plebs draft history.
 
 - `adp_snapshot.json` — normalized FFC observations and source metadata used in the fit.
 - `source_manifest.json` — source URLs, hashes, row counts, exclusions, and scoring definition.
 - `pos_adj_ppg_curve.json` — versioned expected PPG table by position and exact overall rookie slot.
 - `validation_report.md` — matching coverage, scoring calibration, LOSO results, selected bandwidths, baseline comparisons, sensitivity tests, support, and curve anchors.
+- `plebs_application_audit.csv` — one row per recovered Plebs draft selection with chronological overall slot, Career PPG, expected PPG, and Draft-Adjusted PPG.
+- `plebs_application_report.md` — manager-level aggregation and application integrity checks.
 
-The build is fail-closed: scoring calibration, source shape, sample coverage, monotonicity, and validation invariants must pass or no research artifact is accepted.
+The build is fail-closed: scoring calibration, source shape, sample coverage, monotonicity, support, compensatory-pick sequencing, veteran exclusion, residual arithmetic, and validation invariants must pass or no production implementation should be accepted.
 
 ## Production gate
 
-Nothing in this directory changes `index.html` by itself. Production wiring should happen only after the generated report has been reviewed and the fitted table is committed. The eventual site implementation should read a frozen, versioned expectation table rather than recomputing a model in the browser.
+Nothing in this directory changes `index.html` by itself. Production wiring should happen only after the generated reports have been reviewed and the fitted table is committed. The eventual site implementation should read a frozen, versioned expectation table rather than recomputing a model in the browser.
