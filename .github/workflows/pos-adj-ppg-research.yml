@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build external expectation curve
-        run: python research/pos_adj_ppg/build_pos_adj_ppg_curve.py
+      - name: Build refined external expectation curve
+        run: python research/pos_adj_ppg/build_pos_adj_ppg_curve_v2.py
 
       - name: Verify generated files
         run: |
@@ -38,6 +38,7 @@ jobs:
           test -s research/pos_adj_ppg/pos_adj_ppg_curve.json
           test -s research/pos_adj_ppg/validation_report.md
           python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
+          grep -q 'pos-adj-ppg-v2-research' research/pos_adj_ppg/pos_adj_ppg_curve.json
           git diff --check
 
       - name: Commit reproducible research artifacts
@@ -52,5 +53,5 @@ jobs:
             echo "Research artifacts already current."
             exit 0
           fi
-          git commit -m "Generate POS ADJ PPG research artifacts"
+          git commit -m "Generate refined POS ADJ PPG research artifacts"
           git push origin HEAD:pos-adj-ppg-research
