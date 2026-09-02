@@ -20,7 +20,7 @@ html=html.replace(needle,layered);
 const headLayers='\n<link rel="manifest" href="/manifest.webmanifest?v=1">\n<link rel="icon" type="image/svg+xml" href="/plebs-icon.svg?v=1">\n<meta name="apple-mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-title" content="Dynasty Plebs">\n';
 if(!html.includes('</head>'))throw new Error('Expected closing head tag');
 html=html.replace('</head>',headLayers+'</head>');
-const endLayers='<script src="final-ui-stable.js?v=1"></script>\n';
+const endLayers='<script src="final-ui-stable.js?v=2"></script>\n';
 if(!html.includes('</body>'))throw new Error('Expected closing body tag');
 html=html.replace('</body>',endLayers+'</body>');
 fs.writeFileSync(path,html);
@@ -31,7 +31,7 @@ node --check dist/draft-adjusted-ui.js
 node --check dist/final-ui-stable.js
 grep -Fq 'draft-adjusted-ppg.js?v=2' dist/index.html
 grep -Fq 'draft-adjusted-ui.js?v=2' dist/index.html
-grep -Fq 'final-ui-stable.js?v=1' dist/index.html
+grep -Fq 'final-ui-stable.js?v=2' dist/index.html
 grep -Fq 'manifest.webmanifest?v=1' dist/index.html
 grep -Fq 'plebs-icon.svg?v=1' dist/index.html
 grep -Fq 'draft-adjusted-ppg-v2' dist/draft-adjusted-ppg.js
@@ -40,4 +40,5 @@ grep -Fq '#draftBoard .dp-compact-owner' dist/final-ui-stable.js
 grep -Fq '#managerTimeline .dp-series' dist/final-ui-stable.js
 grep -Fq 'Avg PF/Game' dist/final-ui-stable.js
 grep -Fq 'Draft Class Average' dist/final-ui-stable.js
+grep -Fq 'activeFirstSort' dist/final-ui-stable.js
 grep -Fq 'dp-intel-card>b' dist/final-ui-stable.js

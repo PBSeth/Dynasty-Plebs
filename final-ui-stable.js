@@ -114,15 +114,20 @@
     if(historyAddonMode)controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory===historyAddonMode));
   }
 
+  function activeFirstSort(a,b){
+    const activeDelta=(current.has(a.manager)?0:1)-(current.has(b.manager)?0:1);
+    return activeDelta||b.value-a.value||a.manager.localeCompare(b.manager);
+  }
+
   function renderAddonHistory(mode){
     const controls=document.getElementById('historyMetricBtns'),chart=document.getElementById('historyChart');if(!controls||!chart)return;
     let rows=[],qualifier='';
     if(mode==='avgPf'){
       rows=Object.keys(D.regular||{}).map(manager=>({manager,value:AVG_PF_GAME[manager]})).filter(x=>Number.isFinite(x.value));
-      rows.sort((a,b)=>b.value-a.value||a.manager.localeCompare(b.manager));
+      rows.sort(activeFirstSort);
     }else{
       rows=rookieManagerRows().filter(x=>mode==='bestClass'?Number.isFinite(x.best):Number.isFinite(x.avg)).map(x=>({...x,value:mode==='bestClass'?x.best:x.avg}));
-      rows.sort((a,b)=>b.value-a.value||a.manager.localeCompare(b.manager));
+      rows.sort(activeFirstSort);
       qualifier=mode==='bestClass'?'Career points to date':'Career points per class';
     }
     const max=Math.max(1,...rows.map(x=>x.value));
