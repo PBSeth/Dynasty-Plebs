@@ -1,0 +1,56 @@
+name: POS ADJ PPG research audit
+
+on:
+  push:
+    branches:
+      - pos-adj-ppg-research
+    paths:
+      - 'research/pos_adj_ppg/**'
+      - '.github/workflows/pos-adj-ppg-research.yml'
+      - 'career_ppg_patch.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+        with:
+          ref: pos-adj-ppg-research
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build external expectation curve
+        run: python research/pos_adj_ppg/build_pos_adj_ppg_curve.py
+
+      - name: Verify generated files
+        run: |
+          test -s research/pos_adj_ppg/adp_snapshot.json
+          test -s research/pos_adj_ppg/source_manifest.json
+          test -s research/pos_adj_ppg/pos_adj_ppg_curve.json
+          test -s research/pos_adj_ppg/validation_report.md
+          python -m json.tool research/pos_adj_ppg/pos_adj_ppg_curve.json >/dev/null
+          git diff --check
+
+      - name: Commit reproducible research artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/pos_adj_ppg/adp_snapshot.json \
+                  research/pos_adj_ppg/source_manifest.json \
+                  research/pos_adj_ppg/pos_adj_ppg_curve.json \
+                  research/pos_adj_ppg/validation_report.md
+          if git diff --cached --quiet; then
+            echo "Research artifacts already current."
+            exit 0
+          fi
+          git commit -m "Generate POS ADJ PPG research artifacts"
+          git push origin HEAD:pos-adj-ppg-research
