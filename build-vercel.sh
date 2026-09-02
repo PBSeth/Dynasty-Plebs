@@ -71,3 +71,64 @@ cat >> dist/regression-fix.js <<'EOF'
   }
 })();
 EOF
+
+# Rookie-count semantics + card hierarchy. The analytics sample can be smaller than
+# the manager's actual rookie-pick total, so keep those two counts distinct.
+cat >> dist/regression-fix.js <<'EOF'
+
+(()=>{
+  const D=window.DATA, OUT=window.DRAFT_OUTCOMES||{};
+  if(!D)return;
+  const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+
+  const style=document.createElement('style');
+  style.textContent=`
+    .dp-manager-picks .pick .dp-pick-meta{justify-content:flex-start!important}
+    .dp-manager-picks .pick .ppg-value{display:block!important;margin:5px 0 0!important;color:#3e563b!important;font:900 12px/1.1 Arial,sans-serif!important;white-space:nowrap!important}
+    .dp-manager-picks .pick .ppg-value.muted{color:var(--muted)!important}
+    .dp-manager-picks .pick b{margin-top:7px!important}
+    .dp-manager-picks .dp-pick-pos{margin-top:4px!important}
+    @media(max-width:680px){.dp-manager-picks .pick .ppg-value{font-size:11px!important}}
+  `;
+  document.head.appendChild(style);
+
+  function pickCounts(manager){
+    let rookie=0,scored=0;
+    Object.entries(D.drafts||{}).forEach(([year,b])=>{
+      if(+year>2025)return;
+      (b.rounds||[]).flat().forEach(p=>{
+        if(!p||p.owner!==manager||!p.player)return;
+        const stat=OUT[`${year}|${norm(p.player)}`];
+        if(stat?.excluded==='veteran')return;
+        rookie++;
+        if(stat&&Number.isFinite(stat.ppg)&&stat.pos)scored++;
+      });
+    });
+    return{rookie,scored};
+  }
+
+  function fixRookieDisplay(){
+    const manager=document.getElementById('managerSelect')?.value||'Seth Miller';
+    const picks=document.getElementById('managerPicks');
+    if(picks){
+      picks.querySelectorAll('.pick').forEach(card=>{
+        const name=card.querySelector('b'),ppg=card.querySelector('.ppg-value');
+        if(name&&ppg&&ppg.previousElementSibling!==name)name.insertAdjacentElement('afterend',ppg);
+      });
+    }
+    const first=document.querySelector('#rookieAnalytics .dp-draft-intel .dp-intel-card');
+    if(first){
+      const counts=pickCounts(manager),label=first.querySelector('small'),span=first.querySelector('span');
+      if(label&&label.textContent!=='Avg PPG / Scored Pick')label.textContent='Avg PPG / Scored Pick';
+      const text=`${counts.rookie} rookie picks · ${counts.scored} scored`;
+      if(span&&span.textContent!==text)span.textContent=text;
+    }
+  }
+
+  const watch=node=>node&&new MutationObserver(()=>setTimeout(fixRookieDisplay,0)).observe(node,{childList:true,subtree:true});
+  watch(document.getElementById('managerPicks'));
+  watch(document.getElementById('rookieAnalytics'));
+  document.getElementById('managerSelect')?.addEventListener('change',()=>setTimeout(fixRookieDisplay,0));
+  setTimeout(fixRookieDisplay,0);
+})();
+EOF
