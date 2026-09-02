@@ -1,0 +1,17 @@
+{
+  "name": "Dynasty Plebs",
+  "short_name": "Plebs",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#17130e",
+  "theme_color": "#17130e",
+  "icons": [
+    {
+      "src": "/plebs-icon.svg?v=1",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

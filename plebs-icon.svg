@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="92" fill="#17130e"/>
+  <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#b88b3e" stroke-width="16"/>
+  <path d="M256 92 C323 120 362 123 388 126 L375 295 C365 367 315 414 256 442 C197 414 147 367 137 295 L124 126 C150 123 189 120 256 92 Z" fill="#54191a" stroke="#d1a23d" stroke-width="14"/>
+  <path d="M163 155 L190 111 L224 148 L256 96 L288 148 L322 111 L349 155 L334 188 L178 188 Z" fill="#d6aa3f"/>
+  <path d="M189 188 H323 L312 208 H200 Z" fill="#a87620"/>
+  <text x="256" y="319" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" letter-spacing="-5" fill="#f2e2bf">DP</text>
+  <path d="M194 344 H318" stroke="#d1a23d" stroke-width="8" stroke-linecap="round"/>
+  <text x="256" y="382" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="5" fill="#e6cf9f">EST. 2019</text>
+</svg>
