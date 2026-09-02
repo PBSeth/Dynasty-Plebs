@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="site-v2.css">
 <link rel="stylesheet" href="workbook-extras.css">
 <link rel="stylesheet" href="production-upgrade.css">
+<link rel="stylesheet" href="regression-fix.css?v=1">
 </head>
 <body>
 <header>
@@ -23,11 +24,10 @@
 
 <main class="wrap">
   <section class="view on" id="history">
-    <div class="hero"><h1>Dynasty Plebs</h1></div>
-    <div class="kpi-grid" id="kpis"></div>
+    <div class="section dp-wall-section"><div class="section-head"><h2>Wall of Fame</h2></div><div class="kpi-grid" id="kpis"></div></div>
     <div class="section"><div class="section-head"><h2>Champions</h2></div><div class="champ-grid" id="champions"></div></div>
     <div class="section"><div class="section-head"><h2>League History</h2></div><div class="panel"><div class="archive-controls" id="historyMetricBtns"></div><div class="archive-chart" id="historyChart"></div></div></div>
-    <div class="section"><div class="section-head"><h2>Legacy Board</h2></div><div class="panel"><div style="overflow:auto"><table class="rank-table" id="legacyTable"></table></div></div></div>
+    <table id="legacyTable" hidden aria-hidden="true"></table>
   </section>
 
   <section class="view" id="managers">
@@ -61,5 +61,6 @@
 <script src="app-v2.js"></script>
 <script src="workbook-extras.js"></script>
 <script src="production-upgrade.js"></script>
+<script src="regression-fix.js?v=1"></script>
 </body>
 </html>

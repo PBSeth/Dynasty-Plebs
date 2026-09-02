@@ -1,0 +1,93 @@
+/* Dynasty Plebs regression repair — mobile readability + restored manager draft intelligence */
+.dp-wall-section{margin-top:0!important}
+.dp-wall-section .section-head{text-align:center;justify-content:center;margin-bottom:12px}
+.dp-wall-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;margin-top:0!important}
+.dp-wall-grid .kpi{min-height:132px;padding:18px 12px;display:flex;flex-direction:column;justify-content:center}
+.dp-wall-grid .kpi small{font-size:11px;line-height:1.2}
+.dp-wall-grid .kpi b{font-size:34px;margin-top:9px}
+.dp-wall-grid .kpi span{font-size:12px;line-height:1.25;margin-top:7px}
+.dp-wall-grid .kpi span strong{display:block;color:var(--ink);font-size:14px}
+.dp-wall-grid .kpi span em{display:block;margin-top:3px;font-style:normal;color:var(--muted);font-size:11px}
+#historyMetricBtns.archive-controls{padding:11px 13px;gap:8px}
+#historyMetricBtns button{font-size:14px;padding:10px 13px}
+#historyChart.archive-chart{padding:10px 15px 15px}
+#historyChart .archive-bar{padding:10px 0;grid-template-columns:minmax(145px,220px) 1fr 125px;gap:12px}
+#historyChart .archive-bar strong{font-size:15px}
+#historyChart .archive-value{font-size:16px;white-space:nowrap}
+#historyChart .archive-track{height:12px}
+#managers .section-head h2{font-size:clamp(34px,5vw,46px)}
+#managers .toolbar label{font-size:12px}
+#managers .toolbar select{font-size:15px;padding:11px 12px}
+#managers .subhead h3{font-size:28px}
+.dp-legacy-label{font-size:12px!important}
+.dp-profile-stats .stat small{font-size:11px!important;line-height:1.2}
+.dp-profile-stats .stat b{font-size:23px!important}
+.season-row strong{font-size:15px}.season-row span,.season-row small{font-size:13px}.season-row .rec,.season-row .finish{font-size:14px}
+.dp-timeline-controls{padding:11px 13px!important;gap:8px!important}
+.dp-timeline-controls button{font-size:14px!important;padding:10px 14px!important;border-radius:9px!important}
+.dp-chart-wrap{padding:5px 7px 8px!important}
+.dp-chart-svg{height:315px!important;border-width:2px!important;border-color:#b9a580!important}
+.dp-axis{font:800 12px Arial,sans-serif!important}
+.dp-year-axis{font-size:12px!important}
+.dp-point-label{font:900 12px Arial,sans-serif!important}
+.dp-series{stroke-width:4!important}.dp-dot{stroke-width:3!important}
+.dp-rookie-analytics{padding:15px 15px 17px!important}
+.dp-analytics-title,.dp-efficiency-title{text-align:center;font:900 27px/1 Georgia,serif;margin:3px 0 12px}
+.dp-efficiency-title{margin-top:21px}
+.dp-rookie-chart{height:215px!important;gap:9px!important;padding:17px 10px 30px!important}
+.dp-rookie-value{display:block!important;top:-1px!important;font-size:12px!important}
+.dp-rookie-year{bottom:-24px!important;font-size:13px!important}
+.dp-rookie-note{font-size:12px!important;line-height:1.35!important;margin-top:10px!important}
+.dp-rookie-bar{width:min(44px,74%)!important}
+.dp-draft-intel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.dp-intel-card{min-height:126px;padding:14px 13px;border:1px solid #d3c3a4;border-radius:11px;background:#fff9ed}
+.dp-intel-card small{display:block;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;line-height:1.2}
+.dp-intel-card b{display:block;margin-top:8px;font:900 30px/1 Georgia,serif}
+.dp-intel-card b.dp-name-value{font-size:20px;line-height:1.08}
+.dp-intel-card strong{display:block;margin-top:8px;font-size:13px;line-height:1.25}
+.dp-intel-card span{display:block;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.35}
+.dp-manager-picks{padding:14px!important;gap:14px!important}
+.dp-manager-picks .round h3{font-size:23px;margin-bottom:9px}
+.dp-manager-picks .pick{padding:12px 13px;min-height:82px}
+.dp-manager-picks .pick small.dp-pick-meta{align-items:baseline;font-size:12px!important}
+.dp-manager-picks .pick b{font-size:16px;margin-top:7px}
+.dp-manager-picks .pick .ppg-value{margin:0;color:#3e563b;font:900 18px/1 Georgia,serif;white-space:nowrap}
+.dp-manager-picks .pick .ppg-value.muted{color:var(--muted)}
+.dp-manager-picks .dp-pick-pos{font-size:11px;margin-top:4px}
+@media(max-width:900px){.dp-wall-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dp-draft-intel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){
+  main{padding-top:12px!important}
+  .section{margin-top:22px!important}
+  .section-head{margin-bottom:10px!important}
+  .section-head h2{font-size:34px!important}
+  .dp-wall-section{margin-top:0!important}
+  .dp-wall-grid{gap:8px!important}
+  .dp-wall-grid .kpi{min-height:124px;padding:14px 8px}
+  .dp-wall-grid .kpi small{font-size:10.5px}.dp-wall-grid .kpi b{font-size:31px}.dp-wall-grid .kpi span strong{font-size:13px}.dp-wall-grid .kpi span em{font-size:11px}
+  #historyMetricBtns.archive-controls{padding:10px!important}
+  #historyMetricBtns button{font-size:14px!important;padding:10px 12px!important}
+  #historyChart.archive-chart{padding:8px 11px 13px!important}
+  #historyChart .archive-bar{grid-template-columns:minmax(0,1fr) auto;gap:7px 10px;padding:11px 0}
+  #historyChart .archive-bar strong{grid-column:1;grid-row:1;font-size:14px!important;overflow:visible}
+  #historyChart .archive-value{grid-column:2;grid-row:1;font-size:15px!important}
+  #historyChart .archive-track{grid-column:1/-1;grid-row:2;height:13px}
+  .dp-legacy-hero{padding:15px 10px!important}.dp-legacy-score{font-size:57px!important}
+  .dp-profile-stats .stat{padding:10px 5px!important}.dp-profile-stats .stat small{font-size:10px!important}.dp-profile-stats .stat b{font-size:21px!important}
+  #managers .subhead{padding:12px 14px!important}#managers .subhead h3{font-size:27px!important}
+  .dp-timeline-controls{padding:10px!important}.dp-timeline-controls button{font-size:14px!important;padding:10px 13px!important}
+  .dp-chart-wrap{padding:4px 5px 6px!important}
+  .dp-chart-svg{height:280px!important}
+  .dp-axis{font-size:12px!important}.dp-year-axis{font-size:12px!important}.dp-point-label{font-size:12px!important}
+  .dp-rookie-analytics{padding:12px 10px 15px!important}
+  .dp-analytics-title,.dp-efficiency-title{font-size:25px!important}
+  .dp-rookie-chart{height:205px!important;gap:6px!important;padding:18px 7px 30px!important}
+  .dp-rookie-value{font-size:11px!important}.dp-rookie-year{font-size:12px!important}.dp-rookie-note{font-size:12px!important}
+  .dp-draft-intel{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .dp-intel-card{min-height:128px;padding:12px 10px}
+  .dp-intel-card small{font-size:10.5px}.dp-intel-card b{font-size:28px}.dp-intel-card b.dp-name-value{font-size:18px}.dp-intel-card strong{font-size:12px}.dp-intel-card span{font-size:10.5px}
+  .dp-manager-picks{padding:10px!important}.dp-manager-picks .round h3{font-size:22px}
+  .dp-manager-picks .pick-grid{grid-template-columns:1fr 1fr!important;gap:7px!important}
+  .dp-manager-picks .pick{min-height:86px;padding:11px 10px!important}
+  .dp-manager-picks .pick small.dp-pick-meta{font-size:11px!important}.dp-manager-picks .pick .ppg-value{font-size:16px!important}.dp-manager-picks .pick b{font-size:15px!important}.dp-manager-picks .dp-pick-pos{font-size:10px!important}
+  .season-row{grid-template-columns:46px 1fr 72px 52px!important;padding:10px!important}.season-row strong{font-size:14px!important}.season-row span,.season-row small{font-size:12px!important}.season-row .rec,.season-row .finish{font-size:13px!important}
+}
