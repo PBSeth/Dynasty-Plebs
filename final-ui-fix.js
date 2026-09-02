@@ -14,8 +14,7 @@
     #managerTimeline .dp-dot:not(.champ){stroke:${PRIMARY}!important}
     #managerTimeline .dp-pf-line{stroke:${PRIMARY}!important}
     #managerTimeline .dp-pf-point{stroke:${PRIMARY}!important}
-    #kpis .dp-rookie-wall{display:flex;flex-direction:column;min-height:152px}
-    #kpis .dp-rookie-wall .dp-wall-qualifier{margin-top:auto;padding-top:8px;border-top:1px solid #dfd0b6;color:#8a775b;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    #historyChart .dp-history-qualifier{padding:14px 16px 15px;border-top:1px solid #dfd0b6;color:#8a775b;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;text-align:center}
   `;
   document.head.appendChild(style);
 
@@ -87,8 +86,8 @@
     const avgClasses=[...new Set(r.topAverages.map(x=>x.classes))];
     const avgSub=avgClasses.length===1?`${avgClasses[0]} class${avgClasses[0]===1?'':'es'}`:'Career';
     wall.insertAdjacentHTML('beforeend',
-      `<div class="kpi dp-rookie-wall"><small>Best Rookie Class</small><b>${fmt(r.top)}</b><span><strong>${esc(highNames)}</strong><em>${esc(highYears)}</em></span><div class="dp-wall-qualifier">Career points to date</div></div>`+
-      `<div class="kpi dp-rookie-wall"><small>Draft Class Average</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span><div class="dp-wall-qualifier">Career points per class</div></div>`
+      `<div class="kpi"><small>Best Rookie Class</small><b>${fmt(r.top)}</b><span><strong>${esc(highNames)}</strong><em>${esc(highYears)}</em></span></div>`+
+      `<div class="kpi"><small>Draft Class Average</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span></div>`
     );
     wall.dataset.rookieClassRecords='1';
   }
@@ -97,9 +96,10 @@
   function ensureHistoryButtons(){
     const controls=document.getElementById('historyMetricBtns');
     if(!controls)return;
-    const defs=[['bestClass','Best Rookie Class'],['avgClass','Avg Rookie Pts/Class']];
+    const defs=[['bestClass','Best Rookie Class'],['avgClass','Draft Class Average']];
     defs.forEach(([key,label])=>{
-      if(controls.querySelector(`[data-rookie-history="${key}"]`))return;
+      const existing=controls.querySelector(`[data-rookie-history="${key}"]`);
+      if(existing){existing.textContent=label;return;}
       const b=document.createElement('button');
       b.type='button';
       b.dataset.rookieHistory=key;
@@ -118,11 +118,13 @@
     rows.sort((a,b)=>mode==='bestClass'?(b.best-a.best||a.manager.localeCompare(b.manager)):(b.avg-a.avg||a.manager.localeCompare(b.manager)));
     const max=Math.max(1,...rows.map(x=>mode==='bestClass'?x.best:x.avg));
     controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory===mode));
-    chart.innerHTML=rows.map((x,i)=>{
+    const bars=rows.map((x,i)=>{
       const value=mode==='bestClass'?x.best:x.avg;
       const detail=mode==='bestClass'?`${fmt(x.best)} · ${x.bestYears.join(' / ')}`:`${x.avg.toFixed(1)} · ${x.classes} class${x.classes===1?'':'es'}`;
       return `<div class="archive-bar"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,value/max*100)}%"></div></div><div class="archive-value">${esc(detail)}</div></div>`;
     }).join('');
+    const qualifier=mode==='bestClass'?'Career points to date':'Career points per class';
+    chart.innerHTML=bars+`<div class="dp-history-qualifier">${qualifier}</div>`;
   }
 
   function bindHistoryMetrics(){
