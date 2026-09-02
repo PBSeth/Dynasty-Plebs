@@ -166,7 +166,7 @@
   },
   "eligibility": "QB/RB/WR/TE true rookies with >=1 NFL regular-season game; production Plebs veterans remain excluded.",
   "formula": "POS ADJ PPG = career-to-date Plebs PPG - expected Plebs PPG(position, exact 12-team rookie slot)",
-  "generated_at": "2026-09-02T19:02:04+00:00",
+  "generated_at": "2026-09-02T19:07:40+00:00",
   "identity_resolution": "normalized name + explicit historical variants/renames + position + rookie-year context; prior NFL debut removed as non-rookie",
   "independence_rule": "No Dynasty Plebs result or manager data is used to fit expected PPG.",
   "match_rate_within_adp_96": 0.9653,

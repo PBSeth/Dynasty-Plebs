@@ -37,7 +37,7 @@
     "2019|brycelove": {
       "overall": 40,
       "pick": "4.04",
-      "pos": "",
+      "pos": "RB",
       "status": "unscored"
     },
     "2019|damienharris": {
@@ -335,7 +335,7 @@
     "2019|rodneyanderson": {
       "overall": 43,
       "pick": "4.07",
-      "pos": "",
+      "pos": "RB",
       "status": "unscored"
     },
     "2019|ryquellarmstead": {
@@ -2247,7 +2247,7 @@
     "2024|corneliusjohnson": {
       "overall": 72,
       "pick": "6.12",
-      "pos": "",
+      "pos": "WR",
       "status": "unscored"
     },
     "2024|devontezwalker": {
@@ -2429,7 +2429,7 @@
     "2024|jordantravis": {
       "overall": 64,
       "pick": "6.04",
-      "pos": "",
+      "pos": "QB",
       "status": "unscored"
     },
     "2024|jordanwhittington": {
@@ -3499,6 +3499,7 @@
       "status": "unscored"
     }
   },
+  "positionAudit": "same-year FFC rookie ADP, then historical NFL draft position, then Plebs/Sleeper fallback",
   "throughSeason": 2025,
   "version": "draft-adjusted-ppg-v1"
 }

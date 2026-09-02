@@ -11,11 +11,13 @@
 - Veteran selections excluded: **9**
 - Unscored/future rookie picks: **71**
 - Position resolved from same-year FFC rookie ADP: **126** draft events
-- Position fallback to Plebs/Sleeper: **331** draft events
-- Position disagreements corrected: **3**
-- Compensatory-pick sequencing is inherited from and already passed by the base application audit.
+- Position resolved from historical NFL draft data: **147** draft events
+- Remaining Plebs/Sleeper position fallbacks: **184** draft events
+- Position disagreements corrected across external audits: **3**
+- FFC vs NFL draft position conflicts on overlapping identities: **0**.
+- Compensatory-pick sequencing: **passed**.
 - Career-age adjustment: **none**.
-- Current/historical Plebs manager results used to train expectation: **none**.
+- Plebs manager/results data used to train expectation: **none**.
 
 ### Corrected later-position conversions
 
@@ -58,4 +60,4 @@ QB 38, RB 129, WR 168, TE 42
 
 ## Production artifact
 
-`draft-adjusted-ppg.js` is generated only from this audited ledger. The website should consume it directly; the browser must not rebuild peer groups or refit the historical model.
+`draft-adjusted-ppg.js` is generated only from this final audited ledger. The production site consumes the frozen per-pick results directly.
