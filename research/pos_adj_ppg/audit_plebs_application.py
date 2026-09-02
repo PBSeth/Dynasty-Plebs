@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Apply the frozen POS ADJ PPG curve to every Dynasty Plebs rookie pick.
+"""Apply the frozen Draft-Adjusted PPG curve to every Dynasty Plebs rookie pick.
 
 This is an audit only. It reads the site's recovered draft boards and existing
 careerDraftStats, calculates the exact pick-level residual, and emits a complete
 pick ledger + manager summary. It never refits the external expectation curve.
+
+Public definition:
+Draft-Adjusted PPG = Career PPG - expected Career PPG for a rookie at the same
+position and actual sequential draft slot. Compensatory picks therefore shift
+all later overall slots in that draft year.
 """
 from __future__ import annotations
 
@@ -69,12 +74,14 @@ anchors = {
     (2023, 3, 1): ("Sam LaPorta", "Seth Miller"),
     (2024, 3, 12): ("Bo Nix", "Seth Miller"),
     (2025, 1, 6): ("Cam Ward", "Clint Hudson"),
+    (2025, 3, 13): ("Dont'e Thornton", "Ryan Lipkin"),
 }
 
 ledger = []
 shape_errors = []
 owner_errors = []
 anchor_seen = {}
+compensatory_picks = []
 
 for year_text, board in sorted(boards.items(), key=lambda kv: int(kv[0])):
     year = int(year_text)
@@ -83,23 +90,33 @@ for year_text, board in sorted(boards.items(), key=lambda kv: int(kv[0])):
     if len(rounds) != len(owners):
         shape_errors.append(f"{year}: {len(rounds)} player rounds vs {len(owners)} owner rounds")
         continue
+
+    # Overall draft cost is the real chronological pick count, not
+    # (round-1)*12+slot. Compensatory selections can make a round 13+ picks long.
+    overall_counter = 0
     for r_idx, players in enumerate(rounds, start=1):
         owner_row = owners[r_idx - 1]
         if len(players) != len(owner_row):
             shape_errors.append(f"{year} R{r_idx}: {len(players)} players vs {len(owner_row)} owners")
             continue
-        if len(players) != 12:
-            shape_errors.append(f"{year} R{r_idx}: expected 12 slots, found {len(players)}")
+        if not players:
+            shape_errors.append(f"{year} R{r_idx}: empty round")
+            continue
+        if len(players) > 12:
+            for extra_slot in range(13, len(players) + 1):
+                compensatory_picks.append((year, r_idx, extra_slot))
+
         for s_idx, player in enumerate(players, start=1):
+            overall_counter += 1
             if not player:
                 continue
             owner = owner_row[s_idx - 1] if s_idx - 1 < len(owner_row) else None
             if not owner:
                 owner_errors.append(f"{year} {r_idx}.{s_idx:02d} {player}: missing owner")
                 owner = "UNKNOWN"
-            overall = (r_idx - 1) * 12 + s_idx
+            overall = overall_counter
             if overall > max_slot:
-                raise RuntimeError(f"curve stops at {max_slot}, but league has {year} {r_idx}.{s_idx:02d}")
+                raise RuntimeError(f"curve stops at {max_slot}, but league has {year} {r_idx}.{s_idx:02d} = overall {overall}")
             key = f"{year}|{norm_name(player)}"
             stat = career.get(key) or {}
             excluded = stat.get("excluded") == "veteran"
@@ -131,7 +148,7 @@ for year_text, board in sorted(boards.items(), key=lambda kv: int(kv[0])):
                     "position": pos or stat.get("pos") or "",
                     "career_ppg": float(ppg) if isinstance(ppg, (int, float)) else None,
                     "expected_ppg": expected,
-                    "pos_adj_ppg": residual,
+                    "draft_adj_ppg": residual,
                     "career_games": stat.get("games"),
                     "through": stat.get("through"),
                     "status": status,
@@ -159,7 +176,7 @@ if not scored:
 # Every scored residual must be exactly actual minus frozen external expectation.
 for row in scored:
     check = row["career_ppg"] - row["expected_ppg"]
-    if abs(check - row["pos_adj_ppg"]) > 1e-10:
+    if abs(check - row["draft_adj_ppg"]) > 1e-10:
         raise RuntimeError(f"residual arithmetic mismatch: {row}")
 
 # 2026 rookie outcomes should not leak into a benchmark/results snapshot that is
@@ -172,41 +189,41 @@ for row in scored:
     by_manager[row["manager"]].append(row)
 manager_summary = []
 for manager, rows in by_manager.items():
-    vals = [r["pos_adj_ppg"] for r in rows]
+    vals = [r["draft_adj_ppg"] for r in rows]
     round_values = {}
     for bucket in (1, 2, 3, 4):
-        subset = [r["pos_adj_ppg"] for r in rows if min(4, r["round"]) == bucket]
+        subset = [r["draft_adj_ppg"] for r in rows if min(4, r["round"]) == bucket]
         round_values[bucket] = mean(subset)
     manager_summary.append(
         {
             "manager": manager,
             "n": len(rows),
             "avg_career_ppg": mean([r["career_ppg"] for r in rows]),
-            "pos_adj_ppg": mean(vals),
+            "draft_adj_ppg": mean(vals),
             "round_values": round_values,
-            "best": max(rows, key=lambda r: r["pos_adj_ppg"]),
-            "worst": min(rows, key=lambda r: r["pos_adj_ppg"]),
+            "best": max(rows, key=lambda r: r["draft_adj_ppg"]),
+            "worst": min(rows, key=lambda r: r["draft_adj_ppg"]),
         }
     )
-manager_summary.sort(key=lambda r: r["pos_adj_ppg"], reverse=True)
+manager_summary.sort(key=lambda r: r["draft_adj_ppg"], reverse=True)
 
 # The manager metric must equal the mean of pick-level residuals, with no manager
 # baseline or current-league state entering the expectation calculation.
 for m in manager_summary:
     direct = statistics.mean(r["career_ppg"] - r["expected_ppg"] for r in by_manager[m["manager"]])
-    if abs(direct - m["pos_adj_ppg"]) > 1e-10:
+    if abs(direct - m["draft_adj_ppg"]) > 1e-10:
         raise RuntimeError(f"manager aggregation mismatch for {m['manager']}")
 
 columns = [
     "year", "pick", "overall_slot", "manager", "player", "position",
-    "career_ppg", "expected_ppg", "pos_adj_ppg", "career_games", "through", "status",
+    "career_ppg", "expected_ppg", "draft_adj_ppg", "career_games", "through", "status",
 ]
 out = io.StringIO()
 writer = csv.DictWriter(out, fieldnames=columns, extrasaction="ignore")
 writer.writeheader()
 for row in ledger:
     writable = dict(row)
-    for key in ("career_ppg", "expected_ppg", "pos_adj_ppg"):
+    for key in ("career_ppg", "expected_ppg", "draft_adj_ppg"):
         if writable.get(key) is not None:
             writable[key] = f"{writable[key]:.6f}"
     writer.writerow(writable)
@@ -214,24 +231,25 @@ OUT_CSV.write_text(out.getvalue(), encoding="utf-8")
 
 pos_counts = Counter(r["position"] for r in scored)
 round_counts = Counter(min(4, r["round"]) for r in scored)
-best_overall = max(scored, key=lambda r: r["pos_adj_ppg"])
-worst_overall = min(scored, key=lambda r: r["pos_adj_ppg"])
+best_overall = max(scored, key=lambda r: r["draft_adj_ppg"])
+worst_overall = min(scored, key=lambda r: r["draft_adj_ppg"])
 
 lines = [
-    "# Dynasty Plebs POS ADJ PPG application audit",
+    "# Dynasty Plebs Draft-Adjusted PPG application audit",
     "",
     f"Curve: `{curve_art.get('version')}`",
     "",
     "## Definition",
     "",
-    "**POS ADJ PPG = Career PPG − expected Career PPG for a rookie of the same position at that exact 12-team draft slot.**",
+    "**Draft-Adjusted PPG = Career PPG − expected Career PPG for a rookie at the same position and actual sequential draft slot.**",
     "",
     "The expectation table is frozen before this script reads any Dynasty Plebs manager/result data. Managers only enter after the pick-level residual exists, for aggregation and display.",
     "",
     "## Integrity gates",
     "",
     f"- Draft years present: **{min(int(y) for y in boards)}–{max(int(y) for y in boards)}**",
-    "- Every recovered draft round contains exactly **12 slots** and has a parallel owner row.",
+    "- Every recovered draft round has a parallel owner row; rounds are allowed to exceed 12 picks when compensatory selections exist.",
+    f"- Compensatory selections detected: **{len(compensatory_picks)}** (each shifts every later overall draft slot in that year).",
     f"- Historical pick anchors passed: **{len(anchors)}/{len(anchors)}**.",
     f"- Known veteran selections excluded: **{len(veterans)}**.",
     f"- Eligible scored rookie picks: **{len(scored)}**.",
@@ -247,27 +265,27 @@ lines = [
     "",
     "## Manager results",
     "",
-    "| Rank | Manager | Picks | POS ADJ PPG | Avg Career PPG | R1 | R2 | R3 | R4+ | Best | Worst |",
+    "| Rank | Manager | Picks | Draft-Adjusted PPG | Avg Career PPG | R1 | R2 | R3 | R4+ | Best | Worst |",
     "|---:|---|---:|---:|---:|---:|---:|---:|---:|---|---|",
 ]
 for rank, m in enumerate(manager_summary, start=1):
     b, w = m["best"], m["worst"]
     lines.append(
-        f"| {rank} | {m['manager']} | {m['n']} | {fmt(m['pos_adj_ppg'])} | {m['avg_career_ppg']:.2f} | "
+        f"| {rank} | {m['manager']} | {m['n']} | {fmt(m['draft_adj_ppg'])} | {m['avg_career_ppg']:.2f} | "
         f"{fmt(m['round_values'][1])} | {fmt(m['round_values'][2])} | {fmt(m['round_values'][3])} | {fmt(m['round_values'][4])} | "
-        f"{b['player']} {b['pick']} ({fmt(b['pos_adj_ppg'])}) | {w['player']} {w['pick']} ({fmt(w['pos_adj_ppg'])}) |"
+        f"{b['player']} {b['pick']} ({fmt(b['draft_adj_ppg'])}) | {w['player']} {w['pick']} ({fmt(w['draft_adj_ppg'])}) |"
     )
 
 lines += [
     "",
     "## Extreme pick sanity check",
     "",
-    f"- Highest residual: **{best_overall['player']}**, {best_overall['manager']} {best_overall['year']} {best_overall['pick']}: Career {best_overall['career_ppg']:.2f} − Expected {best_overall['expected_ppg']:.2f} = **{fmt(best_overall['pos_adj_ppg'])}**.",
-    f"- Lowest residual: **{worst_overall['player']}**, {worst_overall['manager']} {worst_overall['year']} {worst_overall['pick']}: Career {worst_overall['career_ppg']:.2f} − Expected {worst_overall['expected_ppg']:.2f} = **{fmt(worst_overall['pos_adj_ppg'])}**.",
+    f"- Highest residual: **{best_overall['player']}**, {best_overall['manager']} {best_overall['year']} {best_overall['pick']}: Career {best_overall['career_ppg']:.2f} − Expected {best_overall['expected_ppg']:.2f} = **{fmt(best_overall['draft_adj_ppg'])}**.",
+    f"- Lowest residual: **{worst_overall['player']}**, {worst_overall['manager']} {worst_overall['year']} {worst_overall['pick']}: Career {worst_overall['career_ppg']:.2f} − Expected {worst_overall['expected_ppg']:.2f} = **{fmt(worst_overall['draft_adj_ppg'])}**.",
     "",
     "## Production rule",
     "",
-    "The website should consume the frozen curve and calculate the same pick residuals. It must not construct peer groups from current or historical Plebs managers. Round 4+ is a display bucket only; each pick retains its exact overall-slot expectation.",
+    "The website should consume the frozen curve and calculate the same pick residuals. It must not construct peer groups from current or historical Plebs managers. Round 4+ is a display bucket only; each pick retains its actual sequential overall-slot expectation, including compensatory-pick shifts.",
     "",
 ]
 OUT_MD.write_text("\n".join(lines), encoding="utf-8")
