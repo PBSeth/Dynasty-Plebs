@@ -86,7 +86,7 @@
     const avgSub=avgClasses.length===1?`${avgClasses[0]} class${avgClasses[0]===1?'':'es'}`:'Career';
     wall.insertAdjacentHTML('beforeend',
       `<div class="kpi"><small>Highest-Scoring Rookie Class</small><b>${fmt(r.top)}</b><span><strong>${esc(highNames)}</strong><em>${esc(highYears)}</em></span></div>`+
-      `<div class="kpi"><small>Avg Rookie Points / Class</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span></div>`
+      `<div class="kpi"><small>Avg Rookie Pts / Class</small><b>${r.topAvg.toFixed(1)}</b><span><strong>${esc(avgNames)}</strong><em>${esc(avgSub)}</em></span></div>`
     );
     wall.dataset.rookieClassRecords='1';
   }
