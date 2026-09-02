@@ -129,13 +129,13 @@ for (year, n), expected_pos in base.conversion_anchors.items():
     if len(hits) != 1 or hits[0]["position"] != expected_pos:
         raise RuntimeError(f"conversion anchor failed after NFL draft audit: {(year,n)} {hits}")
 
-# Final ledger.
+# Final ledger. Force LF line endings so repository whitespace checks are stable.
 fields = [
     "year", "pick", "overall_slot", "manager", "player", "position", "position_source",
     "career_ppg", "expected_ppg", "draft_adj_ppg", "career_games", "through", "status",
 ]
 out = io.StringIO()
-w = csv.DictWriter(out, fieldnames=fields, extrasaction="ignore")
+w = csv.DictWriter(out, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
 w.writeheader()
 for r in rows:
     x = dict(r)
