@@ -56,60 +56,65 @@
   const current=new Set(D.currentManagers||[]);
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  function pickTotals(){
-    const totals={};
+  function pickStats(){
+    const totals={},classes={};
     Object.entries(D.drafts||{}).forEach(([year,board])=>{
       if(+year>2026)return;
       (board.rounds||[]).flat().forEach(p=>{
         if(!p?.owner||!p.player)return;
         totals[p.owner]=(totals[p.owner]||0)+1;
+        (classes[p.owner]??=new Set()).add(+year);
       });
     });
-    return totals;
+    return{totals,classes};
   }
 
   function rows(){
-    const totals=pickTotals();
+    const {totals,classes}=pickStats();
     const managers=new Set([...Object.keys(D.regular||{}),...Object.keys(totals)]);
-    return [...managers].map(manager=>({manager,value:totals[manager]||0}))
-      .filter(x=>x.value>0)
-      .sort((a,b)=>((current.has(a.manager)?0:1)-(current.has(b.manager)?0:1))||b.value-a.value||a.manager.localeCompare(b.manager));
+    return [...managers].map(manager=>{
+      const total=totals[manager]||0,count=classes[manager]?.size||0;
+      return{manager,total,classes:count,value:count?total/count:0};
+    }).filter(x=>x.classes>0)
+      .sort((a,b)=>((current.has(a.manager)?0:1)-(current.has(b.manager)?0:1))||b.value-a.value||b.total-a.total||a.manager.localeCompare(b.manager));
   }
 
   function syncWallCard(){
     const wall=document.getElementById('kpis');if(!wall)return;
-    const card=[...wall.querySelectorAll('.kpi')].find(x=>x.querySelector('small')?.textContent.trim()==='Draft Class Average'||x.querySelector('small')?.textContent.trim()==='Rookie Picks');
+    const card=[...wall.querySelectorAll('.kpi')].find(x=>['Draft Class Average','Rookie Picks','Picks per Class'].includes(x.querySelector('small')?.textContent.trim()));
     if(!card)return;
     const data=rows();if(!data.length)return;
-    const top=data[0].value,names=data.filter(x=>x.value===top).map(x=>x.manager).join(' & ');
+    const top=Math.max(...data.map(x=>x.value));
+    const leaders=data.filter(x=>Math.abs(x.value-top)<1e-9);
+    const names=leaders.map(x=>x.manager).join(' & ');
     const small=card.querySelector('small'),big=card.querySelector('b'),span=card.querySelector('span');
-    if(small)small.textContent='Rookie Picks';
-    if(big)big.textContent=String(top);
+    if(small)small.textContent='Picks per Class';
+    if(big)big.textContent=top.toFixed(1);
     if(span)span.innerHTML=`<strong>${esc(names)}</strong><em>Through 2026</em>`;
   }
 
   function syncButton(){
     const controls=document.getElementById('historyMetricBtns');if(!controls)return;
-    const existing=controls.querySelector('button[data-rookie-history="rookiePicks"]');
-    controls.querySelectorAll('button[data-rookie-history="avgClass"]').forEach((b,i)=>{
+    const existing=controls.querySelector('button[data-rookie-history="picksPerClass"]');
+    controls.querySelectorAll('button[data-rookie-history="avgClass"],button[data-rookie-history="rookiePicks"]').forEach((b,i)=>{
       if(existing||i>0)b.remove();
-      else{b.dataset.rookieHistory='rookiePicks';b.textContent='Rookie Picks'}
+      else{b.dataset.rookieHistory='picksPerClass';b.textContent='Picks per Class'}
     });
-    const button=controls.querySelector('button[data-rookie-history="rookiePicks"]');
-    if(button)button.textContent='Rookie Picks';
+    const button=controls.querySelector('button[data-rookie-history="picksPerClass"]');
+    if(button)button.textContent='Picks per Class';
   }
 
   function render(){
     const controls=document.getElementById('historyMetricBtns'),chart=document.getElementById('historyChart');if(!controls||!chart)return;
     const data=rows(),max=Math.max(1,...data.map(x=>x.value));
-    controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory==='rookiePicks'));
-    chart.innerHTML=data.map((x,i)=>`<div class="archive-bar${current.has(x.manager)?'':' dp-former-history'}"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,x.value/max*100)}%"></div></div><div class="archive-value">${x.value} pick${x.value===1?'':'s'}</div></div>`).join('')+'<div class="dp-history-qualifier">All selections through 2026</div>';
+    controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory==='picksPerClass'));
+    chart.innerHTML=data.map((x,i)=>`<div class="archive-bar${current.has(x.manager)?'':' dp-former-history'}"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,x.value/max*100)}%"></div></div><div class="archive-value">${x.value.toFixed(1)} · ${x.total} picks / ${x.classes} class${x.classes===1?'':'es'}</div></div>`).join('')+'<div class="dp-history-qualifier">All selections through 2026 · classes with at least one pick</div>';
   }
 
   function sync(){syncButton();syncWallCard()}
   const controls=document.getElementById('historyMetricBtns');
   controls?.addEventListener('click',e=>{
-    const button=e.target.closest('button[data-rookie-history="rookiePicks"]');if(!button)return;
+    const button=e.target.closest('button[data-rookie-history="picksPerClass"]');if(!button)return;
     e.preventDefault();e.stopImmediatePropagation();render();
   },true);
   if(controls)new MutationObserver(()=>setTimeout(sync,0)).observe(controls,{childList:true,subtree:true});
