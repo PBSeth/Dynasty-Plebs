@@ -1,5 +1,5 @@
 {
-  "buildCommand": "sh build-vercel-draft-adjusted.sh && node restore-text-header.js",
+  "buildCommand": "sh build-vercel-draft-adjusted.sh && node restore-text-header.js && node public-anonymize.js",
   "outputDirectory": "dist",
   "cleanUrls": false
 }
