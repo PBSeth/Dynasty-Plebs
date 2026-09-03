@@ -192,5 +192,17 @@ else:
         raise RuntimeError('Champions constant not found for legacy insertion')
     src = src[:m.end()] + '\n' + legacy_line + src[m.end():]
 
+# Legacy Score visual comparisons must always share a fixed 0-2500 scale.
+# The History bars begin at zero by construction; this pins their ceiling at 2500.
+dynamic_scale = "max=Math.max(...d.map(m.get));"
+fixed_legacy_scale = "max=metric==='legacy'?2500:Math.max(...d.map(m.get));"
+if fixed_legacy_scale not in src:
+    if dynamic_scale not in src:
+        raise RuntimeError('Could not find History graph scale for Legacy Score')
+    src = src.replace(dynamic_scale, fixed_legacy_scale, 1)
+if fixed_legacy_scale not in src:
+    raise RuntimeError('Legacy Score graph failed 0-2500 scale guard')
+
 INDEX.write_text(src, encoding='utf-8')
 print('Inserted exact Plebs legacy-score inputs and outputs into index.html')
+print('Locked Legacy Score graph scale to 0-2500')
