@@ -8,10 +8,10 @@
   "theme_color": "#17130e",
   "icons": [
     {
-      "src": "/plebs-icon.svg?v=1",
+      "src": "/plebs-icon.svg?v=2",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
