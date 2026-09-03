@@ -18,19 +18,10 @@
     const STEP=500,MIN=0,MAX=2500,top=52,bottom=40,H=390,inner=H-top-bottom;
     const min=MIN,max=MAX;
     const y=v=>top+(max-v)/(max-min)*inner;
-    const tickYs=[];
-    for(let tick=min;tick<=max;tick+=STEP)tickYs.push(y(tick));
-    const tickClearance=v=>Math.min(...tickYs.map(t=>Math.abs(v-t)));
-    rows.forEach((r,i)=>{
+    rows.forEach(r=>{
       const yy=y(r.value);
       r.dot.setAttribute('cy',yy.toFixed(1));
-      const candidates=[yy-24,yy+28].filter(v=>v>=top+10&&v<=top+inner-10);
-      const labelY=candidates.sort((a,b)=>tickClearance(b)-tickClearance(a))[0]??Math.max(top+10,Math.min(top+inner-10,yy-24));
-      r.label.setAttribute('y',labelY.toFixed(1));
-      r.label.setAttribute('text-anchor','middle');
-      if(i===0)r.label.setAttribute('x',(r.x+7).toFixed(1));
-      else if(i===rows.length-1)r.label.setAttribute('x',(r.x-7).toFixed(1));
-      else r.label.setAttribute('x',r.x.toFixed(1));
+      r.label.style.display='none';
     });
     svg.querySelectorAll('circle.dp-champ-halo').forEach(h=>{
       const x=Number(h.getAttribute('cx'));
