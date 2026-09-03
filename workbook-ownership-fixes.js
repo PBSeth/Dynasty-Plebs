@@ -10,9 +10,14 @@
   }
   jefferson.owner='Seth Miller';
 
-  // PF/PA is a uniform-color chart. Keep the PF legend swatch on the same gold
-  // used by the PF line instead of inheriting the selected manager's old color.
-  const pfLegendStyle=document.createElement('style');
-  pfLegendStyle.textContent='#managerTimeline .dp-pfpa-legend i.pf{background:#b88b3e!important}';
-  document.head.appendChild(pfLegendStyle);
+  // PF/PA uses fixed series colors for every manager: Plebs gold for PF and a
+  // cooler silver/steel for PA so the two lines remain clearly distinct.
+  const pfPaStyle=document.createElement('style');
+  pfPaStyle.textContent=`
+    #managerTimeline .dp-pfpa-legend i.pf{background:#b88b3e!important}
+    #managerTimeline .dp-pfpa-legend i.pa{background:#8f98a3!important}
+    #managerTimeline .dp-pa-line{stroke:#8f98a3!important}
+    #managerTimeline .dp-pa-point{stroke:#8f98a3!important}
+  `;
+  document.head.appendChild(pfPaStyle);
 })();
