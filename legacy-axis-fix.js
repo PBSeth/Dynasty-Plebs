@@ -50,3 +50,70 @@
   document.getElementById('managerSelect')?.addEventListener('change',()=>setTimeout(applyLegacyAxis,0));
   setTimeout(applyLegacyAxis,0);
 })();
+
+(()=>{
+  const D=window.DATA;if(!D)return;
+  const current=new Set(D.currentManagers||[]);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function pickTotals(){
+    const totals={};
+    Object.entries(D.drafts||{}).forEach(([year,board])=>{
+      if(+year>2026)return;
+      (board.rounds||[]).flat().forEach(p=>{
+        if(!p?.owner||!p.player)return;
+        totals[p.owner]=(totals[p.owner]||0)+1;
+      });
+    });
+    return totals;
+  }
+
+  function rows(){
+    const totals=pickTotals();
+    const managers=new Set([...Object.keys(D.regular||{}),...Object.keys(totals)]);
+    return [...managers].map(manager=>({manager,value:totals[manager]||0}))
+      .filter(x=>x.value>0)
+      .sort((a,b)=>((current.has(a.manager)?0:1)-(current.has(b.manager)?0:1))||b.value-a.value||a.manager.localeCompare(b.manager));
+  }
+
+  function syncWallCard(){
+    const wall=document.getElementById('kpis');if(!wall)return;
+    const card=[...wall.querySelectorAll('.kpi')].find(x=>x.querySelector('small')?.textContent.trim()==='Draft Class Average'||x.querySelector('small')?.textContent.trim()==='Rookie Picks');
+    if(!card)return;
+    const data=rows();if(!data.length)return;
+    const top=data[0].value,names=data.filter(x=>x.value===top).map(x=>x.manager).join(' & ');
+    const small=card.querySelector('small'),big=card.querySelector('b'),span=card.querySelector('span');
+    if(small)small.textContent='Rookie Picks';
+    if(big)big.textContent=String(top);
+    if(span)span.innerHTML=`<strong>${esc(names)}</strong><em>Through 2026</em>`;
+  }
+
+  function syncButton(){
+    const controls=document.getElementById('historyMetricBtns');if(!controls)return;
+    const existing=controls.querySelector('button[data-rookie-history="rookiePicks"]');
+    controls.querySelectorAll('button[data-rookie-history="avgClass"]').forEach((b,i)=>{
+      if(existing||i>0)b.remove();
+      else{b.dataset.rookieHistory='rookiePicks';b.textContent='Rookie Picks'}
+    });
+    const button=controls.querySelector('button[data-rookie-history="rookiePicks"]');
+    if(button)button.textContent='Rookie Picks';
+  }
+
+  function render(){
+    const controls=document.getElementById('historyMetricBtns'),chart=document.getElementById('historyChart');if(!controls||!chart)return;
+    const data=rows(),max=Math.max(1,...data.map(x=>x.value));
+    controls.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.rookieHistory==='rookiePicks'));
+    chart.innerHTML=data.map((x,i)=>`<div class="archive-bar${current.has(x.manager)?'':' dp-former-history'}"><strong>${i+1}. ${esc(x.manager)}</strong><div class="archive-track"><div class="archive-fill" style="width:${Math.max(3,x.value/max*100)}%"></div></div><div class="archive-value">${x.value} pick${x.value===1?'':'s'}</div></div>`).join('')+'<div class="dp-history-qualifier">All selections through 2026</div>';
+  }
+
+  function sync(){syncButton();syncWallCard()}
+  const controls=document.getElementById('historyMetricBtns');
+  controls?.addEventListener('click',e=>{
+    const button=e.target.closest('button[data-rookie-history="rookiePicks"]');if(!button)return;
+    e.preventDefault();e.stopImmediatePropagation();render();
+  },true);
+  if(controls)new MutationObserver(()=>setTimeout(sync,0)).observe(controls,{childList:true,subtree:true});
+  const wall=document.getElementById('kpis');
+  if(wall)new MutationObserver(()=>setTimeout(syncWallCard,0)).observe(wall,{childList:true,subtree:true});
+  setTimeout(sync,0);
+})();
