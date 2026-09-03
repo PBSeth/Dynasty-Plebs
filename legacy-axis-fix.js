@@ -15,10 +15,8 @@
       value:Number(String(labels[i].textContent||'').replace(/,/g,''))
     })).filter(x=>Number.isFinite(x.x)&&Number.isFinite(x.value));
     if(rows.length!==dots.length)return;
-    const STEP=500,top=52,bottom=40,H=390,inner=H-top-bottom;
-    const lo=Math.min(...rows.map(x=>x.value)),hi=Math.max(...rows.map(x=>x.value));
-    let min=Math.max(0,Math.floor(lo/STEP)*STEP),max=Math.ceil(hi/STEP)*STEP;
-    if(max<=min)max=min+STEP;
+    const STEP=500,MIN=0,MAX=2500,top=52,bottom=40,H=390,inner=H-top-bottom;
+    const min=MIN,max=MAX;
     const y=v=>top+(max-v)/(max-min)*inner;
     rows.forEach(r=>{
       const yy=y(r.value);
@@ -45,6 +43,8 @@
       svg.insertBefore(line,anchor);svg.insertBefore(text,anchor);
     }
     svg.dataset.legacyAxisStep='500';
+    svg.dataset.legacyAxisMin='0';
+    svg.dataset.legacyAxisMax='2500';
   }
   document.getElementById('timelineMetricBtns')?.addEventListener('click',()=>setTimeout(applyLegacyAxis,0));
   document.getElementById('managerSelect')?.addEventListener('change',()=>setTimeout(applyLegacyAxis,0));
@@ -54,7 +54,7 @@
 (()=>{
   const D=window.DATA;if(!D)return;
   const current=new Set(D.currentManagers||[]);
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 
   function pickStats(){
     const totals={},classes={};
