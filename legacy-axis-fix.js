@@ -1,4 +1,8 @@
 (()=>{
+  const graphLabelStyle=document.createElement('style');
+  graphLabelStyle.textContent='#managerTimeline .dp-point-label,#managerTimeline .timeline-label,#managerTimeline .point-label{display:none!important}';
+  document.head.appendChild(graphLabelStyle);
+
   const NS='http://www.w3.org/2000/svg';
   function applyLegacyAxis(){
     const controls=document.getElementById('timelineMetricBtns');
