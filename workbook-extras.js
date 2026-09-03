@@ -26,11 +26,13 @@
     historyBtns.querySelectorAll('button').forEach(b=>b.onclick=()=>{historyMetric=b.dataset.metric;renderHistory()});
     const metric=historyMetrics[historyMetric];
     const managers=Object.keys(DATA.regular).sort((a,b)=>(current.has(a)?0:1)-(current.has(b)?0:1)||metric.sort(a,b)||a.localeCompare(b));
-    const max=Math.max(1,...managers.map(metric.get));
+    const max=historyMetric==='legacy'?2500:Math.max(1,...managers.map(metric.get));
     historyChart.innerHTML=managers.map((m,i)=>{
       const v=metric.get(m),width=Math.max(3,v/max*100);
       return `<div class="archive-bar"><strong>${i+1}. ${esc(m)}</strong><div class="archive-track"><div class="archive-fill" style="width:${width}%"></div></div><div class="archive-value">${esc(metric.fmt(m,v))}</div></div>`;
     }).join('');
+    if(historyMetric==='legacy')historyChart.dataset.legacyScale='0-2500';
+    else delete historyChart.dataset.legacyScale;
   }
   renderHistory();
 
