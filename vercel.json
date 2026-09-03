@@ -1,5 +1,5 @@
 {
-  "buildCommand": "sh build-vercel-draft-adjusted.sh",
+  "buildCommand": "sh build-vercel-draft-adjusted.sh && node restore-text-header.js",
   "outputDirectory": "dist",
   "cleanUrls": false
 }
