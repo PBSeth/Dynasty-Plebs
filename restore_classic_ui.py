@@ -84,6 +84,15 @@ src, n = re.subn(r"const metrics=\{.*?\};let metric='wins';", metrics, src, coun
 if n != 1:
     raise RuntimeError('front-page metrics block not replaced')
 
+# Every Legacy Score graph uses one fixed visual scale: 0-2500. Other History
+# metrics retain their natural data-driven ceiling.
+dynamic_scale = "max=Math.max(...d.map(m.get));"
+fixed_legacy_scale = "max=metric==='legacy'?2500:Math.max(...d.map(m.get));"
+if fixed_legacy_scale not in src:
+    if dynamic_scale not in src:
+        raise RuntimeError('History graph scale marker not found')
+    src = src.replace(dynamic_scale, fixed_legacy_scale, 1)
+
 # Retain the mature manager page: career timeline + per-round rookie PPG/value +
 # year-by-year pick cards. Add a standalone draft-board renderer without touching
 # those manager analytics.
@@ -119,6 +128,7 @@ required = [
     '<h3>Rookie Picks</h3>',
     "label=r===4?'Round 4+'",
     "label:'Legacy Score'",
+    "max=metric==='legacy'?2500:Math.max(...d.map(m.get));",
     'Josh Ponath',
     '2024|frankgorejr',
 ]
@@ -150,6 +160,7 @@ if '2024|frankgorejr":{"ppg":0.0,"points":0.0,"games":0' not in src:
 INDEX.write_text(src, encoding='utf-8')
 print('Restored classic Dynasty Plebs UI.')
 print('Front page: proper Wall of Fame + Champions + ranking tabs including Legacy Score.')
+print('Legacy Score graphs use a fixed 0-2500 scale.')
 print('Top nav: History / Managers / Drafts only; 2027 Picks and Trades removed.')
 print('Manager page: classic timeline, per-round rookie PPG/value, yearly rookie cards restored.')
 print('Josh Ponath restored to 2019 League history and canonical Legacy Score 796.')
