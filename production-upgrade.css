@@ -31,6 +31,6 @@
  .dp-profile-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}.dp-profile-stats .stat{padding:9px 4px}.dp-profile-stats .stat small{font-size:8px;letter-spacing:.04em}.dp-profile-stats .stat b{font-size:18px}
  .dp-chart-svg{height:225px}.dp-timeline-controls button{padding:8px 10px;font-size:11px}
  .dp-rookie-analytics{padding:11px}.dp-rookie-chart{height:152px;gap:5px}.dp-rookie-value{display:none}.dp-draft-value{padding:12px}.dp-draft-value h4{font-size:18px}.dp-draft-score{display:none}
- .dp-draft-summary{gap:10px;padding:7px 8px;font-size:9px}.dp-round-tabs{padding:7px 8px}.dp-round-tabs button{padding:6px 9px}
- #draftBoard.draft-rounds{padding:0;gap:0}.dp-compact-round h3{padding:7px 9px}.dp-compact-row{grid-template-columns:42px minmax(0,1fr) minmax(78px,33%);gap:6px;min-height:39px;padding:4px 8px}.dp-compact-player{font-size:12px}.dp-compact-owner{font-size:9px}.dp-compact-pick{font-size:10px}
+ .dp-draft-summary{display:none!important}.dp-round-tabs{padding:6px 8px}.dp-round-tabs button{padding:6px 9px}
+ #draftBoard.draft-rounds{padding:0;gap:0}.dp-compact-round h3{padding:6px 9px}.dp-compact-row{grid-template-columns:42px minmax(0,1fr) minmax(78px,33%);gap:6px;min-height:34px;padding:2px 8px}.dp-compact-player{font-size:12px}.dp-compact-owner{font-size:9px}.dp-compact-pick{font-size:10px}
 }
