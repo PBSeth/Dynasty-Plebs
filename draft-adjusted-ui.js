@@ -92,7 +92,7 @@
     const activeMetrics=[...current].map(metrics).filter(x=>x.gradedCount);
     const roundCards=[1,2,3,4].map(r=>{
       const x=me.rounds[r], label=r===4?'Round 4+':`Round ${r}`;
-      return`<div class="dp-intel-card" data-round-card="1"><small>${label} Draft-Adjusted</small><b>${signed(x.adj)}</b><strong>${rankLine(manager,x.adj,activeMetrics.map(m=>m.rounds[r].adj))}</strong><span>${one(x.raw)} career PPG · ${x.n} rookie pick${x.n===1?'':'s'}</span></div>`;
+      return`<div class="dp-intel-card" data-round-card="1"><small>${label} Draft-Adjusted</small><b>${signed(x.adj)}</b><strong>${rankLine(manager,x.adj,activeMetrics.map(m=>m.rounds[r].adj))}</strong><span>${one(x.raw)} career PPG</span><span>${x.n} rookie pick${x.n===1?'':'s'}</span></div>`;
     }).join('');
     grid.dataset.draftAdjApplied=A.version;
     grid.innerHTML=`
