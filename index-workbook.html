@@ -17,6 +17,7 @@
 .dp-career-controls{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:6px!important;padding:11px 12px!important;border-bottom:1px solid #dfd0b6}.dp-career-controls button{min-width:0;border:1px solid #cdb994;background:#fffaf1;color:#5e513f;border-radius:9px;padding:10px 4px;font-size:12px;font-weight:900;line-height:1.12;cursor:pointer}.dp-career-controls button.on{background:#211d18;border-color:#211d18;color:#fff}
 .dp-chart-wrap{position:relative;padding:7px 9px 10px!important}.dp-chart-svg{height:350px!important;border:2px solid #b9a580!important}.dp-axis{font-size:12px!important}.dp-point-label{font-size:12px!important}.dp-series{stroke-width:4!important}.dp-dot{stroke-width:3!important}.dp-dot.champ{fill:#e9bd5b!important;stroke:#a77725!important}.dp-champ-halo{fill:#efd47c;opacity:.24}.dp-pf-bar{fill:var(--mc,#7e3125);opacity:.88}.dp-pa-bar{fill:#9a7b49;opacity:.72}.dp-pfpa-legend{position:absolute;z-index:2;left:70px;top:16px;display:flex;gap:14px;font-size:11px;font-weight:900;color:#625746}.dp-pfpa-legend span{display:flex;align-items:center;gap:5px}.dp-pfpa-legend i{display:inline-block;width:12px;height:12px;border-radius:2px}.dp-pfpa-legend i.pf{background:var(--mc,#7e3125)}.dp-pfpa-legend i.pa{background:#9a7b49}
 .dp-analytics-title{font-size:20px!important;margin-bottom:11px!important}.dp-efficiency-title{font-size:25px!important}.dp-manager-picks .pick .ppg-value{font:900 14px/1 Arial,sans-serif!important;letter-spacing:0!important}.dp-rookie-note{font-size:12px!important}
+#managers>.manager-select-toolbar{justify-content:center!important;background:transparent!important;border-bottom:0!important;padding:0 12px 14px!important}#managers>.manager-select-toolbar select{width:min(320px,100%)!important;min-width:0!important}
 @media(max-width:680px){
  #historyMetricBtns.archive-controls{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:9px!important}#historyMetricBtns button{font-size:11px!important;padding:10px 2px!important}
  .career-overview-title h3{font-size:31px!important}.rookie-picks-head h3{font-size:36px!important}.dp-career-controls{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;padding:8px!important}.dp-career-controls button{font-size:9.5px!important;padding:9px 1px!important;min-height:44px;white-space:normal!important}
@@ -47,7 +48,7 @@
 
   <section class="view" id="managers">
     <div class="section-head"><h2>Managers</h2></div>
-    <div class="toolbar"><label for="managerSelect">Manager</label><select id="managerSelect"></select></div>
+    <div class="toolbar manager-select-toolbar"><select id="managerSelect" aria-label="Manager"></select></div>
     <div class="manager-grid manager-profile-only"><div class="panel manager-card" id="managerProfile"></div></div>
     <div id="seasonHistory" hidden aria-hidden="true"></div>
     <div class="section panel career-overview-panel"><div class="subhead career-overview-title"><h3>Career Overview</h3></div><div id="timelineMetricBtns"></div><div id="managerTimeline"></div></div>
