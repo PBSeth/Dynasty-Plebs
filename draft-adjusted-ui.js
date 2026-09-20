@@ -21,7 +21,7 @@
     .dp-draft-intel .dp-intel-card strong,
     .dp-draft-intel .dp-intel-card span{display:block;width:100%;text-align:center!important}
     .dp-draft-intel .dp-intel-card[data-draft-adj-main="1"] b{font-variant-numeric:tabular-nums}
-    .dp-draft-intel .dp-intel-card .dp-adj-detail{line-height:1.3}
+    .dp-draft-intel .dp-intel-card .dp-pick-selection{margin-top:4px;color:var(--muted);font-size:11px;font-weight:800;line-height:1.2}\n    .dp-draft-intel .dp-intel-card .dp-adj-detail{line-height:1.3}
     @media(max-width:680px){.dp-draft-adj-definition{font-size:10px;padding:9px 8px}}
   `;
   document.head.appendChild(style);
@@ -76,7 +76,7 @@
   }
   function bestWorstCard(label,p){
     if(!p)return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">—</b><strong>No graded pick</strong><span></span></div>`;
-    return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">${esc(p.player)}</b><strong>${signed(p.adj)} Draft-Adjusted</strong><span class="dp-adj-detail">${one(p.careerPpg)} career PPG · ${one(p.rec.expectedPpg)} expected · ${p.year} ${esc(p.pick)}</span></div>`;
+    return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">${esc(p.player)}</b><span class="dp-pick-selection">${p.year} ${esc(p.pick)}</span><strong>${signed(p.adj)} Draft-Adjusted</strong><span class="dp-adj-detail">${one(p.careerPpg)} career PPG</span><span class="dp-adj-detail">${one(p.rec.expectedPpg)} expected PPG</span></div>`;
   }
 
   function applyAnalytics(){
