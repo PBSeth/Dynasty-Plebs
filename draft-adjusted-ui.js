@@ -76,7 +76,12 @@
   }
   function bestWorstCard(label,p){
     if(!p)return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">—</b><strong>No graded pick</strong><span></span></div>`;
-    return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">${esc(p.player)}</b><span class="dp-pick-selection">${p.year} ${esc(p.pick)}</span><strong>${signed(p.adj)} Draft-Adjusted</strong><span class="dp-adj-detail">${one(p.careerPpg)} career PPG</span><span class="dp-adj-detail">${one(p.rec.expectedPpg)} expected PPG</span></div>`;
+    // Keep the visible arithmetic internally consistent: the tile shows career and
+    // expected PPG to one decimal, so display their one-decimal difference too.
+    // The underlying full-precision draft-adjusted value remains unchanged for
+    // ranking, aggregation, and model calculations.
+    const displayAdj=(Math.round(p.careerPpg*10)-Math.round(p.rec.expectedPpg*10))/10;
+    return`<div class="dp-intel-card"><small>${label}</small><b class="dp-name-value">${esc(p.player)}</b><span class="dp-pick-selection">${p.year} ${esc(p.pick)}</span><strong>${signed(displayAdj)} Draft-Adjusted</strong><span class="dp-adj-detail">${one(p.careerPpg)} career PPG</span><span class="dp-adj-detail">${one(p.rec.expectedPpg)} expected PPG</span></div>`;
   }
 
   function applyAnalytics(){
