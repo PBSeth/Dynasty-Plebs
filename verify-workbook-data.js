@@ -48,6 +48,35 @@ for (const [manager, [record, winPct]] of Object.entries(regularChecks)) {
   assert(close(D.regular[manager].winPct, winPct), `${manager} win % drifted`);
 }
 
+const playoffChecks = {
+  'Seth Miller': ['12-4', 0.75],
+  'Dave Carnes': ['4-2', 0.6667],
+  'Travis Page': ['6-4', 0.6],
+  'Jordan Martin': ['5-5', 0.5],
+  'Payton Docheff': ['4-4', 0.5],
+  'Matt Metz': ['5-5', 0.5],
+  'Bo Tiller': ['2-3', 0.4],
+  'Alex Agueros': ['1-3', 0.25],
+  'Matt Clawson': ['0-2', 0],
+  'Clint Hudson': ['0-1', 0],
+  'Luke Miller': [null, null],
+  'Ryan Lipkin': [null, null],
+  'Josh Ponath': ['2-1', 0.6667],
+  'Matthew Piontek': ['6-1', 0.8571],
+  'Mason Good': ['1-1', 0.5],
+  'Tim Bell': ['1-1', 0.5],
+  'Kevin Long': ['0-1', 0]
+};
+
+for (const [manager, [record, winPct]] of Object.entries(playoffChecks)) {
+  const p = D.playoffs[manager];
+  assert(p, `missing playoff row for ${manager}`);
+  assert(p.total === record, `${manager} playoff record expected ${record}, got ${p.total}`);
+  if (winPct == null) assert(p.winPct == null, `${manager} playoff win % should be blank`);
+  else assert(close(p.winPct, winPct), `${manager} playoff win % drifted`);
+}
+assert(D.playoffs['Matt Metz'].yearly['2025'] === '2-1', `Matt Metz 2025 playoff record drifted`);
+
 const formulaChecks = {
   'Seth Miller': [0.6087, 12, 7, 2, 1795.665],
   'Travis Page': [0.6522, 6, 7, 1, 1402.23],
