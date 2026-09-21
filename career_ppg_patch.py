@@ -134,7 +134,11 @@ for season in SEASONS:
             continue
         n = norm_name(name)
         stats = rec.get("stats") or {}
-        gp = int(as_num(stats.get("gp") or stats.get("gms_active")))
+        # Only Sleeper's raw gp is eligible as a games-played fallback. gms_active
+        # is active-roster availability, not an appearance count, and previously
+        # created phantom games for IR/inactive seasons.
+        raw_gp = stats.get("gp")
+        gp = int(as_num(raw_gp)) if raw_gp is not None else 0
         row = {
             "name": name,
             "position": position,
