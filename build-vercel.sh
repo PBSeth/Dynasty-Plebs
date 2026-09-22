@@ -77,7 +77,7 @@ EOF
 cat >> dist/regression-fix.js <<'EOF'
 
 (()=>{
-  const D=window.DATA, OUT=window.DRAFT_OUTCOMES||{};
+  const D=window.DATA, OUT=window.DRAFT_OUTCOMES||{}, ADJ=window.DRAFT_ADJUSTED_PPG?.picks||{};
   if(!D)return;
   const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 
@@ -98,10 +98,11 @@ cat >> dist/regression-fix.js <<'EOF'
       if(+year>2025)return;
       (b.rounds||[]).flat().forEach(p=>{
         if(!p||p.owner!==manager||!p.player)return;
-        const stat=OUT[`${year}|${norm(p.player)}`];
-        if(stat?.excluded==='veteran')return;
+        const key=`${year}|${norm(p.player)}`;
+        const stat=OUT[key],adj=ADJ[key];
+        if(adj?.status==='veteran_excluded'||stat?.excluded==='veteran')return;
         rookie++;
-        if(stat&&Number.isFinite(stat.ppg)&&stat.pos)scored++;
+        if(adj?.status==='scored'||(stat&&Number.isFinite(stat.ppg)&&stat.pos))scored++;
       });
     });
     return{rookie,scored};
