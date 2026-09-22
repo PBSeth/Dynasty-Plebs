@@ -10,14 +10,6 @@
   }
   jefferson.owner='Seth Miller';
 
-  // Workbook truth: Matt Metz went 2-1 in the 2025 playoffs, making his
-  // career playoff record 5-5. The bundled DATA record had drifted to 1-1 / 4-4,
-  // even though the Legacy Score inputs already correctly credited five wins.
-  const metzPlayoffs=D.playoffs?.['Matt Metz'];
-  if(!metzPlayoffs?.yearly)throw new Error('Matt Metz playoff record missing from Dynasty Plebs data.');
-  metzPlayoffs.yearly['2025']='2-1';
-  metzPlayoffs.total='5-5';
-  metzPlayoffs.winPct=0.5;
 
   // PF/PA uses fixed series colors for every manager: Plebs gold for PF and a
   // cooler silver/steel for PA so the two lines remain clearly distinct.
