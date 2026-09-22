@@ -54,7 +54,7 @@ const playoffChecks = {
   'Travis Page': ['6-4', 0.6],
   'Jordan Martin': ['5-5', 0.5],
   'Payton Docheff': ['4-4', 0.5],
-  'Matt Metz': ['5-5', 0.5],
+  'Matt Metz': ['4-4', 0.5],
   'Bo Tiller': ['2-3', 0.4],
   'Alex Agueros': ['1-3', 0.25],
   'Matt Clawson': ['0-2', 0],
@@ -75,7 +75,8 @@ for (const [manager, [record, winPct]] of Object.entries(playoffChecks)) {
   if (winPct == null) assert(p.winPct == null, `${manager} playoff win % should be blank`);
   else assert(close(p.winPct, winPct), `${manager} playoff win % drifted`);
 }
-assert(D.playoffs['Matt Metz'].yearly['2025'] === '2-1', `Matt Metz 2025 playoff record drifted`);
+assert(D.playoffs['Matt Metz'].yearly['2025'] === '1-1', `Matt Metz 2025 playoff game record drifted`);
+assert(D.formulaInputs['Matt Metz'].playoffWins === 5, 'Matt Metz Legacy Score must still credit five playoff wins including byes');
 
 const formulaChecks = {
   'Seth Miller': [0.6087, 12, 7, 2, 1795.665],
