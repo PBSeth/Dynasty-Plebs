@@ -48,6 +48,38 @@ for (const [manager, [record, winPct]] of Object.entries(regularChecks)) {
   assert(close(D.regular[manager].winPct, winPct), `${manager} win % drifted`);
 }
 
+// Exact manager-tenure map from the canonical workbook-backed modular rebuild.
+// This intentionally differs from the older index.html reconstruction.
+const expectedManagerYears = {
+  'Alex Agueros': [2019,2020,2021,2022,2023,2024,2025],
+  'Bo Tiller': [2020,2021,2022,2023,2024,2025],
+  'Clint Hudson': [2024,2025],
+  'Dave Carnes': [2019,2020,2021,2022,2023,2024,2025],
+  'Jordan Martin': [2019,2020,2021,2022,2023,2024,2025],
+  'Kevin Long': [2019,2020],
+  'Luke Miller': [2021,2022,2023,2024,2025],
+  'Mason Good': [2019,2020,2021,2022,2023],
+  'Matt Clawson': [2019,2020,2021,2022,2023,2024,2025],
+  'Matt Metz': [2019,2020,2021,2022,2023,2024,2025],
+  'Matthew Piontek': [2019,2020,2021],
+  'Payton Docheff': [2019,2020,2021,2022,2023,2024,2025],
+  'Ryan Lipkin': [2024,2025],
+  'Seth Miller': [2019,2020,2021,2022,2023,2024,2025],
+  'Tim Bell': [2022,2023],
+  'Travis Page': [2019,2020,2021,2022,2023,2024,2025],
+  'Josh Ponath': [2019]
+};
+for (const [manager, years] of Object.entries(expectedManagerYears)) {
+  const yearly = D.regular[manager]?.yearly || {};
+  const actual = Object.entries(yearly).filter(([,v]) => v != null).map(([y]) => Number(y)).sort((a,b)=>a-b);
+  assert(JSON.stringify(actual) === JSON.stringify(years),
+    `${manager} tenure drifted: expected ${years.join(',')}, got ${actual.join(',')}`);
+}
+assert(D.regular['Josh Ponath'].yearly['2019'] === '9-4', 'Josh Ponath must own the 2019 standings row');
+assert(D.regular['Bo Tiller'].yearly['2019'] == null, 'Bo Tiller must not own the 2019 standings row');
+assert(D.regular['Tim Bell'].yearly['2023'] === '5-9', 'Tim Bell must own the 2023 5-9 row');
+assert(D.regular['Clint Hudson'].yearly['2023'] == null, 'Clint Hudson begins in 2024');
+
 const playoffChecks = {
   'Seth Miller': ['12-4', 0.75],
   'Dave Carnes': ['4-2', 0.6667],
