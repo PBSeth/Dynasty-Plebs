@@ -32,7 +32,7 @@ const regularChecks = {
   'Bo Tiller': ['37-42', 0.4684],
   'Dave Carnes': ['41-51', 0.44565],
   'Payton Docheff': ['39-53', 0.4239],
-  'Luke Miller': ['25-39', 0.3906],
+  'Luke Miller': ['25-41', 0.378788],
   'Matt Clawson': ['34-58', 0.3696],
   'Ryan Lipkin': ['4-24', 0.14286],
   'Josh Ponath': ['9-4', 0.6923],
@@ -87,7 +87,7 @@ const playoffChecks = {
   'Jordan Martin': ['5-5', 0.5],
   'Payton Docheff': ['4-4', 0.5],
   'Matt Metz': ['4-4', 0.5],
-  'Bo Tiller': ['2-3', 0.4],
+  'Bo Tiller': ['2-4', 0.333333],
   'Alex Agueros': ['1-3', 0.25],
   'Matt Clawson': ['0-2', 0],
   'Clint Hudson': ['0-1', 0],
@@ -107,6 +107,34 @@ for (const [manager, [record, winPct]] of Object.entries(playoffChecks)) {
   if (winPct == null) assert(p.winPct == null, `${manager} playoff win % should be blank`);
   else assert(close(p.winPct, winPct), `${manager} playoff win % drifted`);
 }
+
+
+// Totals must reconcile to the stored year-by-year records. This catches the
+// Luke/Bo class of drift automatically instead of relying on spot audits.
+function sumYearlyRecords(yearly) {
+  let w = 0, l = 0, games = 0;
+  for (const rec of Object.values(yearly || {})) {
+    if (!rec) continue;
+    const [rw, rl] = String(rec).split('-').map(Number);
+    assert(Number.isFinite(rw) && Number.isFinite(rl), `invalid yearly record ${rec}`);
+    w += rw; l += rl; games += rw + rl;
+  }
+  return { w, l, games };
+}
+for (const [manager, row] of Object.entries(D.regular)) {
+  const s = sumYearlyRecords(row.yearly);
+  assert(row.total === `${s.w}-${s.l}`, `${manager} regular total does not equal yearly sum`);
+  if (s.games) assert(close(row.winPct, s.w / s.games, 0.000001), `${manager} regular win % does not equal yearly sum`);
+}
+for (const [manager, row] of Object.entries(D.playoffs)) {
+  const s = sumYearlyRecords(row.yearly);
+  if (!s.games) {
+    assert(row.total == null && row.winPct == null, `${manager} blank playoff history must have blank career total`);
+  } else {
+    assert(row.total === `${s.w}-${s.l}`, `${manager} playoff total does not equal yearly sum`);
+    assert(close(row.winPct, s.w / s.games, 0.000001), `${manager} playoff win % does not equal yearly sum`);
+  }
+}
 assert(D.playoffs['Matt Metz'].yearly['2025'] === '1-1', `Matt Metz 2025 playoff game record drifted`);
 assert(D.formulaInputs['Matt Metz'].playoffWins === 5, 'Matt Metz Legacy Score must still credit five playoff wins including byes');
 
@@ -121,7 +149,7 @@ const formulaChecks = {
   'Bo Tiller': [0.4684, 2, 6, 0, 655.76],
   'Clint Hudson': [0.5357, 0, 2, 0, 589.27],
   'Matt Clawson': [0.3696, 0, 7, 0, 498.96],
-  'Luke Miller': [0.3906, 0, 5, 0, 488.25],
+  'Luke Miller': [0.378788, 0, 5, 0, 473.485],
   'Ryan Lipkin': [0.14286, 0, 2, 0, 157.146],
   'Matthew Piontek': [0.6842, 6, 3, 2, 1676.29],
   'Josh Ponath': [0.6923, 2, 1, 0, 796.145],
