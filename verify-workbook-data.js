@@ -80,6 +80,21 @@ assert(D.regular['Bo Tiller'].yearly['2019'] == null, 'Bo Tiller must not own th
 assert(D.regular['Tim Bell'].yearly['2023'] === '5-9', 'Tim Bell must own the 2023 5-9 row');
 assert(D.regular['Clint Hudson'].yearly['2023'] == null, 'Clint Hudson begins in 2024');
 
+// Rookie draft ownership corrections must be native to the modular source,
+// not dependent on later browser patch order.
+const ownershipChecks = [
+  ['2020', 0, 5, 'Justin Jefferson', 'Seth Miller'],
+  ['2021', 0, 5, 'Kyle Pitts', 'Seth Miller'],
+  ['2021', 1, 2, 'Trey Lance', 'Seth Miller'],
+  ['2021', 1, 6, 'Dyami Brown', 'Seth Miller'],
+  ['2021', 1, 10, 'Nico Collins', 'Seth Miller']
+];
+for (const [year, roundIndex, slotIndex, player, owner] of ownershipChecks) {
+  const p = D.drafts?.[year]?.rounds?.[roundIndex]?.[slotIndex];
+  assert(p?.player === player, `${year} draft pick expected ${player}, got ${p?.player}`);
+  assert(p?.owner === owner, `${year} ${player} owner expected ${owner}, got ${p?.owner}`);
+}
+
 const playoffChecks = {
   'Seth Miller': ['12-4', 0.75],
   'Dave Carnes': ['4-2', 0.6667],
