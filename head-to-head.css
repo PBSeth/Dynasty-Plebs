@@ -7,8 +7,7 @@
   text-align: center;
 }
 
-#headToHead .subhead h3,
-.h2h-years h4 {
+#headToHead .subhead h3 {
   font: 900 clamp(25px, 4vw, 34px)/1.15 Georgia, serif;
 }
 
@@ -129,8 +128,11 @@
   display: flex;
   gap: 6px;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
   margin-top: 14px;
-  padding: 7px 0 6px;
+  padding: 4px 4px 7px;
 }
 
 .h2h-year-links button {
@@ -142,6 +144,7 @@
   background: #fffaf1;
   color: var(--ink);
   font-weight: 900;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -151,37 +154,17 @@
   font-weight: 700;
 }
 
-.h2h-years h4 {
-  margin: 18px 0 8px;
-  text-align: center;
-}
-
-.h2h-years details {
-  margin-top: 5px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: #fffaf1;
-  scroll-margin-top: 90px;
-}
-
-.h2h-years summary {
-  padding: 11px;
-  cursor: pointer;
-}
-
-.h2h-years summary strong {
-  float: right;
-  font-variant-numeric: tabular-nums;
-}
-
-.h2h-years summary small {
-  margin-left: 4px;
-  color: var(--muted);
+.h2h-year-links button[aria-expanded="true"] {
+  background: #f1e5ce;
+  border-color: var(--gold);
 }
 
 .h2h-years ul {
   padding: 0;
-  margin: 0;
+  margin: 5px 0 0;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fffaf1;
   list-style: none;
 }
 
@@ -191,8 +174,11 @@
   align-items: center;
   gap: 10px;
   padding: 8px 11px;
-  border-top: 1px solid var(--line);
   font-variant-numeric: tabular-nums;
+}
+
+.h2h-years li + li {
+  border-top: 1px solid var(--line);
 }
 
 #headToHead :focus-visible {

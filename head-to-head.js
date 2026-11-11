@@ -81,7 +81,7 @@
     const opponentName = escape(data.managers[opponent]);
     const seriesRecord = record(games);
     const yearlyLinks = [...groups].map(([year, meetings]) =>
-      `<button type="button" data-year="${year}"><span>${year}</span> ${record(meetings)}</button>`
+      `<button type="button" aria-expanded="false" aria-controls="h2h-season-${year}"><span>${year}</span> ${record(meetings)}</button>`
     ).join('');
     summary.innerHTML = `
       <div class="h2h-scoreboard">
@@ -97,14 +97,13 @@
         ${marginMetric('Biggest Win', biggestWin)}
         ${marginMetric('Biggest Loss', biggestLoss)}
       </dl>
-      <div class="h2h-year-links" aria-label="Jump to season">${yearlyLinks}</div>`;
-    years.innerHTML = `<h4>Year by year</h4>${[...groups].map(([year, meetings]) => `
-      <details id="h2h-season-${year}">
-        <summary><span>${year}${data.seasons[year].complete ? '' : ' <small>Partial</small>'}</span><strong>${record(meetings)}</strong></summary>
-        <ul aria-label="${year} matchups">${meetings.map(game => `
+      <div class="h2h-year-links" role="group" aria-label="Year-by-year records">${yearlyLinks}</div>`;
+    years.innerHTML = [...groups].map(([year, meetings]) => `
+      <ul id="h2h-season-${year}" aria-label="${year} matchups" hidden>
+        ${meetings.map(game => `
           <li><span>Week ${game.week}</span><span>${points(game.scored)}–${points(game.allowed)}</span>${resultChip(game)}</li>`
-        ).join('')}</ul>
-      </details>`).join('')}`;
+        ).join('')}
+      </ul>`).join('');
   }
 
   function renderManager() {
@@ -148,12 +147,18 @@
   }
 
   summary.addEventListener('click', event => {
-    const year = event.target.closest('[data-year]')?.dataset.year;
-    if (!year) return;
-    const section = document.getElementById(`h2h-season-${year}`);
-    section.open = true;
-    section.querySelector('summary').focus({ preventScroll: true });
-    section.scrollIntoView({ block: 'start' });
+    const button = event.target.closest('.h2h-year-links button');
+    if (!button) return;
+
+    const openButton = summary.querySelector('.h2h-year-links [aria-expanded="true"]');
+    if (openButton) {
+      openButton.setAttribute('aria-expanded', 'false');
+      document.getElementById(openButton.getAttribute('aria-controls')).hidden = true;
+    }
+    if (button !== openButton) {
+      button.setAttribute('aria-expanded', 'true');
+      document.getElementById(button.getAttribute('aria-controls')).hidden = false;
+    }
   });
   managerSelect.addEventListener('change', () => {
     if (matchups) renderManager();
