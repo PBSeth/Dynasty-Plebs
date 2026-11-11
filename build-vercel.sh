@@ -4,6 +4,7 @@ node verify-workbook-data.js
 mkdir -p dist
 node extract-draft-outcomes.js
 cp site-v2.css workbook-extras.css production-upgrade.css regression-fix.css app-v2.js workbook-extras.js production-upgrade.js regression-fix.js data-v3-*.js dist/
+cp head-to-head.js head-to-head.css head-to-head-data.json dist/
 cp index-workbook.html dist/index.html
 
 # Final mobile chart/layout correction. Appended at build time so it runs after the

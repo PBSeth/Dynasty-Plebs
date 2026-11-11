@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="workbook-extras.css">
 <link rel="stylesheet" href="production-upgrade.css">
 <link rel="stylesheet" href="regression-fix.css?v=1">
+<link rel="stylesheet" href="head-to-head.css">
 <style>
 /* audited 2026-09-02 manager pass */
 #historyMetricBtns.archive-controls{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
@@ -51,6 +52,21 @@
     <div class="toolbar manager-select-toolbar"><select id="managerSelect" aria-label="Manager"></select></div>
     <div class="manager-grid manager-profile-only"><div class="panel manager-card" id="managerProfile"></div></div>
     <div id="seasonHistory" hidden aria-hidden="true"></div>
+    <section class="section panel" id="headToHead" aria-labelledby="headToHeadTitle">
+      <div class="subhead">
+        <h3 id="headToHeadTitle">Head to Head</h3>
+        <p>Regular season</p>
+        <p id="headToHeadCoverage"></p>
+      </div>
+      <div class="h2h-body">
+        <div class="h2h-controls" hidden>
+          <label for="headToHeadOpponent">Opponent</label>
+          <select id="headToHeadOpponent"></select>
+        </div>
+        <div id="headToHeadSummary" aria-live="polite">Loading matchup history…</div>
+        <div id="headToHeadYears" class="h2h-years"></div>
+      </div>
+    </section>
     <div class="section panel career-overview-panel"><div class="subhead career-overview-title"><h3>Career Overview</h3></div><div id="timelineMetricBtns"></div><div id="managerTimeline"></div></div>
     <div class="section panel rookie-picks-panel"><div class="subhead rookie-picks-head"><h3>Rookie Picks</h3></div><div class="draft-rounds" id="managerPicks"></div></div>
   </section>
@@ -130,5 +146,6 @@
  const sel=document.getElementById('managerSelect');const refresh=()=>renderCareer(sel?.value||'Seth Miller');sel?.addEventListener('change',()=>setTimeout(refresh,0));refresh();
 })();
 </script>
+<script src="head-to-head.js"></script>
 </body>
 </html>
