@@ -1,5 +1,7 @@
 (() => {
-  const nav = document.querySelector('[data-view="trades"]');
+  const nav = document.querySelector('[data-view="managers"]');
+  const managerSelect = document.getElementById('managerSelect');
+  const partner = document.getElementById('tradePartner');
   const search = document.getElementById('tradeSearch');
   const season = document.getElementById('tradeSeason');
   const sort = document.getElementById('tradeSort');
@@ -21,10 +23,16 @@
 
   let market, trades, loading, selected, chartObserver;
   let browseScroll = 0;
+  let currentManager;
+  let browseListScroll = 0;
   const fullyPriced = values => values.every(Number.isFinite);
   const label = trade => trade.sides.map(side => side.manager).join(' / ');
-  const hasRoute = () => /^#trades(?:\/|$)/.test(location.hash);
-  const routedId = () => location.hash.split('/')[1];
+  const hasRoute = () => /^#(?:trades|managers)(?:\/|$)/.test(location.hash);
+  const routeParts = () => location.hash.slice(1).split('/');
+  const routedId = () => routeParts()[0] === 'trades' ? routeParts()[1] : routeParts()[3];
+  const managerRoute = (id) => `#managers/${encodeURIComponent(managerSelect.value)}/trades${id ? '/' + id : ''}`;
+  const belongsToManager = trade => trade.sides.some(side => side.manager === managerSelect.value);
+  const counterpart = trade => trade.sides.filter(side => side.manager !== managerSelect.value).map(side => side.manager).join(' / ');
   const marked = (trade, id) => trade.id === id ? ' aria-current="true"' : '';
 
   function margin(values, side) {
@@ -80,6 +88,7 @@
   function renderList() {
     const terms = search.value.trim().toLowerCase().split(/\s+/);
     const visible = trades.filter(trade =>
+      belongsToManager(trade) && (!partner.value || trade.sides.some(side => side.manager === partner.value)) &&
       (!season.value || (season.value === 'estimated' ? trade.dateEstimate :
         (trade.season ?? 'undated') === (Number(season.value) || season.value))) &&
       terms.every(term => trade.search.includes(term))
@@ -89,7 +98,7 @@
     }
     if (!visible.includes(selected)) {
       selected = visible[0];
-      if (routedId()) history.replaceState(null, '', selected ? `#trades/${selected.id}` : '#trades');
+      if (routedId()) history.replaceState(null, '', selected ? managerRoute(selected.id) : managerRoute());
     }
     count.textContent = `${visible.length} trade${visible.length === 1 ? '' : 's'}`;
     results.replaceChildren(...visible.map(trade => {
@@ -104,8 +113,8 @@
       }).join(' ↔ ');
       const caption = (trade.date ? tradeDate(trade) : 'Date unknown') +
         (trade.gradeBlocked ? ' · Unrated' : '');
-      item.innerHTML = `<a href="#trades/${trade.id}"${marked(trade, selected?.id)}>
-        <strong>${esc(label(trade))}</strong><span class="trade-preview">${esc(preview)}</span><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
+      item.innerHTML = `<a href="${managerRoute(trade.id)}"${marked(trade, selected?.id)}>
+        <strong>${esc(counterpart(trade))}</strong><span class="trade-preview">${esc(preview)}</span><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
       </a>`;
       return item;
     }));
@@ -114,12 +123,12 @@
 
   function setSelected(id) {
     const trade = trades.find(row => row.id === id);
-    if (!trade) return;
+    if (!trade || !belongsToManager(trade)) return;
     view.dataset.detailOpen = 'true';
     if (selected === trade) return;
     selected = trade;
     for (const link of results.querySelectorAll('a')) {
-      if (link.getAttribute('href') === `#trades/${id}`) link.setAttribute('aria-current', 'true');
+      if (link.getAttribute('href') === managerRoute(id)) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     }
     renderDetail();
@@ -151,10 +160,13 @@
     }
     const trade = selected;
     const showChart = trade.points.filter(point => fullyPriced(point.values)).length > 1;
+    const thirdAnniversary = new Date(`${trade.date}T00:00:00Z`);
+    thirdAnniversary.setUTCFullYear(thirdAnniversary.getUTCFullYear() + 3);
+    const threeYearEnd = Math.max(0, trade.points.findLastIndex(point => Date.parse(point.date) <= thirdAnniversary.getTime()));
     const bounds = trade.dateEstimate;
     const estimateWindow = bounds ? [bounds.earliest, bounds.latest].filter(Boolean).map(formatDate).join('–') : '';
     detail.innerHTML = `
-      <button type="button" class="trade-back">← All trades</button>
+      <button type="button" class="trade-back">← Back to trades</button>
       <div class="trade-detail-heading">
         <p>${trade.date ? formatDate(trade.date) : 'Date unknown'}${bounds ? ` <details class="trade-date-note"><summary>Estimated date</summary><small>${esc(estimateWindow)}${trade.dateSensitivity?.winnerChanges ? ' · Trade-day lead varies' : ''}</small></details>` : ''}</p>
         <h3>${esc(label(trade).replaceAll(' / ', ' ↔ '))}</h3>
@@ -166,12 +178,16 @@
       <div class="trade-packages"></div>
       ${showChart ? `<details class="trade-chart"><summary>Value over time <span aria-hidden="true">↗</span></summary>
         <div class="trade-chart-body">
+          <div class="trade-chart-windows" role="group" aria-label="Graph time window">
+            <button type="button" data-window="3y" aria-pressed="true">3 years</button>
+            <button type="button" data-window="all" aria-pressed="false">All time</button>
+          </div>
           <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('')}</div>
           <canvas role="img" aria-label="Value of each trade package over time"></canvas>
-          <label>Choose a date <input type="range" min="0" max="${trade.points.length - 1}" value="0"></label>
+          <label>Choose a date <input type="range" min="0" max="${threeYearEnd}" value="0"></label>
           <p class="trade-chart-date"></p>
         </div></details>` : ''}
-      <p class="trade-credit">Plebs estimates · <a href="https://github.com/DynastyProcess/data" rel="noopener">DynastyProcess inputs</a> · <a href="trade-market-LICENSE.txt">License</a></p>`;
+      `;
 
     const canvas = detail.querySelector('canvas');
     const chart = detail.querySelector('.trade-chart');
@@ -179,8 +195,19 @@
     const edge = detail.querySelector('.trade-edge');
     const packages = detail.querySelector('.trade-packages');
     let pointIndex = 0;
+    let graphWindow = '3y';
+    const graphEnd = () => graphWindow === '3y' ? threeYearEnd : trade.points.length - 1;
+    function updateGraphWindow() {
+      detail.querySelectorAll('[data-window]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.window === graphWindow)));
+      if (range) range.max = graphEnd();
+    }
+    const paintSelected = () => paintChart(canvas, trade.points.slice(0, graphEnd() + 1), pointIndex, trade.sides.length);
     function selectPoint(index, lensIndex = -1) {
       pointIndex = index;
+      if (index > graphEnd()) {
+        graphWindow = 'all';
+        updateGraphWindow();
+      }
       const point = trade.points[index];
       detail.querySelectorAll('[data-lens]').forEach(button => {
         button.setAttribute('aria-pressed', String(Number(button.dataset.lens) === lensIndex));
@@ -210,22 +237,29 @@
         ${point?.adjustments?.[i] ? `<small>Includes +${number.format(point.adjustments[i])} consolidation value</small>` : ''}
         ${assetList(trade, side, point)}
       </section>`).join('');
-      if (canvas && chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length);
+      if (canvas && chart.open) paintSelected();
     }
     detail.querySelector('.trade-back').addEventListener('click', () => {
-      history.pushState(null, '', '#trades');
+      history.pushState(null, '', managerRoute());
       view.dataset.detailOpen = 'false';
+      results.scrollTop = browseListScroll;
       window.scrollTo({ top: browseScroll, behavior: 'instant' });
     });
     range?.addEventListener('input', () => selectPoint(Number(range.value)));
-    chart?.addEventListener('toggle', () => { if (chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length); });
+    detail.querySelectorAll('[data-window]').forEach(button => button.addEventListener('click', () => {
+      graphWindow = button.dataset.window;
+      updateGraphWindow();
+      if (pointIndex > graphEnd()) selectPoint(graphEnd());
+      else if (chart.open) paintSelected();
+    }));
+    chart?.addEventListener('toggle', () => { if (chart.open) paintSelected(); });
     detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => {
       const lensIndex = Number(button.dataset.lens);
       selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex);
     }));
     selectPoint(0, trade.day ? 0 : -1);
     if (canvas && typeof ResizeObserver !== 'undefined') {
-      chartObserver = new ResizeObserver(() => { if (chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length); });
+      chartObserver = new ResizeObserver(() => { if (chart.open) paintSelected(); });
       chartObserver.observe(canvas);
     }
   }
@@ -312,46 +346,107 @@
     const seasons = [...new Set(rated.trades.map(trade => trade.season).filter(Boolean))].sort((a, b) => b - a);
     season.innerHTML += seasons.map(year => `<option value="${year}">${year}</option>`).join('');
     season.innerHTML += '<option value="estimated">Estimated dates</option>';
-    selected = trades.find(trade => trade.id === routedId());
+    syncRoute();
+    if (routedId()) view.scrollIntoView({ block: 'start' });
+  }
+
+  function updateManager() {
+    const manager = managerSelect.value;
+    if (currentManager === manager) return;
+    currentManager = manager;
+    const partners = [...new Set(trades.filter(belongsToManager).flatMap(trade =>
+      trade.sides.filter(side => side.manager !== manager).map(side => side.manager)))].sort((a, b) => a.localeCompare(b));
+    partner.replaceChildren(new Option('All managers', ''), ...partners.map(name => new Option(name, name)));
+    search.value = '';
+    season.value = '';
+    sort.value = 'recent';
+    selected = null;
+    results.scrollTop = 0;
+    view.dataset.detailOpen = 'false';
+  }
+
+  function syncRoute() {
+    if (!trades) return;
+    const parts = routeParts();
+    const id = routedId();
+    const trade = id && trades.find(row => row.id === id);
+    let manager;
+    if (parts[0] === 'managers' && parts[1]) {
+      try { manager = decodeURIComponent(parts[1]); } catch { /* Ignore malformed saved links. */ }
+    } else if (trade) manager = trade.sides[0].manager;
+    if (manager && [...managerSelect.options].some(option => option.value === manager) && managerSelect.value !== manager) {
+      managerSelect.value = manager;
+      managerSelect.dispatchEvent(new Event('change'));
+    }
+    updateManager();
+    if (trade && belongsToManager(trade)) {
+      // A shared trade link takes precedence over a previous partner/search filter.
+      if (partner.value && !trade.sides.some(side => side.manager === partner.value)) partner.value = '';
+      search.value = '';
+      season.value = '';
+      selected = trade;
+    }
     renderList();
-    view.dataset.detailOpen = String(Boolean(routedId()));
+    view.dataset.detailOpen = String(Boolean(trade && belongsToManager(trade)));
+    if (hasRoute()) history.replaceState(null, '', managerRoute(trade && belongsToManager(trade) ? trade.id : undefined));
   }
 
   function openArchive() {
-    document.body.classList.add('trade-active');
-    view.dataset.detailOpen = String(Boolean(routedId()));
-    if (!hasRoute()) history.replaceState(null, '', '#trades');
     if (trades) {
-      if (routedId()) setSelected(routedId());
+      updateManager();
       return;
     }
     loading ||= load().catch(() => {
-      count.textContent = 'Trade archive could not load. Select Trades to try again.';
+      count.textContent = 'Trade archive could not load. Select Managers to try again.';
       loading = null;
     });
   }
 
   nav.addEventListener('click', openArchive);
-  document.querySelectorAll('.navtabs button:not([data-view="trades"])').forEach(button =>
+  managerSelect.addEventListener('change', () => {
+    if (trades) {
+      updateManager();
+      if (hasRoute()) history.replaceState(null, '', managerRoute());
+      renderList();
+    } else openArchive();
+  });
+  document.querySelectorAll('.navtabs button:not([data-view="managers"])').forEach(button =>
     button.addEventListener('click', () => {
-      document.body.classList.remove('trade-active');
       if (hasRoute()) history.replaceState(null, '', location.pathname + location.search);
     })
   );
-  window.addEventListener('hashchange', () => { if (hasRoute()) nav.click(); });
-  window.addEventListener('popstate', () => { if (hasRoute()) nav.click(); });
+  function navigateRoute() {
+    if (!hasRoute()) return;
+    nav.click();
+    if (trades) syncRoute();
+    if (routeParts()[2] === 'trades' || routeParts()[0] === 'trades') {
+      requestAnimationFrame(() => view.scrollIntoView({ block: 'start' }));
+    }
+  }
+  window.addEventListener('hashchange', navigateRoute);
+  window.addEventListener('popstate', navigateRoute);
   results.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    const hash = link.getAttribute('href');
     browseScroll = window.scrollY || 0;
-    history.pushState(null, '', hash);
+    browseListScroll = results.scrollTop;
+    history.pushState(null, '', link.getAttribute('href'));
     setSelected(routedId());
-    if (window.matchMedia('(max-width: 760px)').matches) view.scrollIntoView({ block: 'start' });
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      view.scrollIntoView({ block: 'start' });
+      detail.querySelector('.trade-back')?.focus({ preventScroll: true });
+    }
   });
-  search.addEventListener('input', () => { if (trades) renderList(); });
-  season.addEventListener('change', () => { if (trades) renderList(); });
-  sort.addEventListener('change', () => { if (trades) renderList(); });
-  if (hasRoute()) nav.click();
+  const filterTrades = () => {
+    if (!trades) return;
+    if (hasRoute()) history.replaceState(null, '', managerRoute());
+    renderList();
+    results.scrollTop = 0;
+  };
+  search.addEventListener('input', filterTrades);
+  season.addEventListener('change', filterTrades);
+  sort.addEventListener('change', filterTrades);
+  partner.addEventListener('change', filterTrades);
+  if (hasRoute()) navigateRoute();
 })();

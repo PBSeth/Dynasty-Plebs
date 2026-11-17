@@ -36,7 +36,6 @@
       <button class="on" data-view="history">History</button>
       <button data-view="managers">Managers</button>
       <button data-view="drafts">Drafts</button>
-      <button data-view="trades">Trades</button>
     </div>
   </div>
 </header>
@@ -70,20 +69,13 @@
         <div id="headToHeadYears" class="h2h-years"></div>
       </div>
     </section>
-    <div class="section panel rookie-picks-panel"><div class="subhead rookie-picks-head"><h3>Rookie Picks</h3></div><div class="draft-rounds" id="managerPicks"></div></div>
-  </section>
-
-  <section class="view" id="drafts">
-    <div class="section-head"><h2>Rookie Drafts</h2></div>
-    <div class="panel"><div class="toolbar"><label for="draftYear">Year</label><select id="draftYear"></select></div><div class="draft-rounds" id="draftBoard"></div></div>
-  </section>
-
-  <section class="view" id="trades" aria-labelledby="tradesTitle">
-    <div class="section-head"><h2 id="tradesTitle">Trades</h2></div>
+  <section class="section manager-trades" id="trades" aria-labelledby="tradesTitle">
+    <div class="section-head"><h3 id="tradesTitle">Trade History</h3></div>
     <div class="trade-review-layout">
       <aside class="panel trade-browser" aria-label="Trade archive">
         <div class="trade-filters">
-          <label class="trade-search">Find a trade <input id="tradeSearch" type="search" placeholder="Manager, player or pick"></label>
+          <label class="trade-partner">Traded with <select id="tradePartner"><option value="">All managers</option></select></label>
+          <label class="trade-search">Find a trade <input id="tradeSearch" type="search" placeholder="Player or pick"></label>
           <label>Season <select id="tradeSeason"><option value="">All seasons</option></select></label>
           <label>Sort <select id="tradeSort"><option value="recent">Recent first</option><option value="peak">Peak edge</option><option value="day">At-trade edge</option><option value="latest">Current edge</option></select></label>
         </div>
@@ -93,6 +85,15 @@
       <div class="panel trade-detail" id="tradeDetail"></div>
     </div>
   </section>
+    <div class="section panel rookie-picks-panel"><div class="subhead rookie-picks-head"><h3>Rookie Picks</h3></div><div class="draft-rounds" id="managerPicks"></div></div>
+  </section>
+
+  <section class="view" id="drafts">
+    <div class="section-head"><h2>Rookie Drafts</h2></div>
+    <div class="panel"><div class="toolbar"><label for="draftYear">Year</label><select id="draftYear"></select></div><div class="draft-rounds" id="draftBoard"></div></div>
+  </section>
+
+
 </main>
 
 <footer>Dynasty Plebs • Est. 2019</footer>
