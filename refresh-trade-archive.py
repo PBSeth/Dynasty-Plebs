@@ -3,15 +3,17 @@
 import argparse
 import csv
 import json
+import math
 import re
-import time
+import time as clock
 import unicodedata
 import urllib.request
+import urllib.error
 from bisect import bisect_right
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, time
 from pathlib import Path
-from statistics import median
+from statistics import mean
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).parent
@@ -45,7 +47,7 @@ def downloaded(url, path, refresh=False):
         except OSError:
             if attempt == 2:
                 raise
-            time.sleep(attempt + 1)
+            clock.sleep(attempt + 1)
 
 
 def read_json(path):
@@ -67,7 +69,7 @@ def normalize(name):
 
 
 class Snapshot:
-    def __init__(self, commit, path):
+    def __init__(self, commit, path, pick_path=None):
         self.sha = commit["sha"]
         published = commit["commit"]["committer"]["date"]
         self.date = published[:10]
@@ -75,6 +77,7 @@ class Snapshot:
         self.players = {}
         self.names = {}
         self.picks = {}
+        self.pick_policy = "published-legacy"
         with path.open(encoding="utf-8-sig", newline="") as data:
             for row in csv.DictReader(data):
                 name = row.get("player") or row.get("mergename")
@@ -94,6 +97,59 @@ class Snapshot:
                         self.names[key] = None
                     else:
                         self.names[key] = value
+        if pick_path and pick_path.exists():
+            self.calculator_picks(pick_path)
+
+    def calculator_picks(self, path):
+        """Reproduce the source calculator's 1QB, 12-team default controls.
+
+        Historical high/low pick models are blended at 60% optimism. Values
+        are converted before averaging unknown slots, then discounted using
+        the 90% future-pick control and the source's seasonal ramp. Player
+        quotes stay on the same published 0.0235 exponential value scale.
+        Source: dynastyprocess/apps-calculator R/values.R and R/1_ui.R.
+        """
+        rounds = {}
+        source_years = set()
+        with path.open(encoding="utf-8-sig", newline="") as data:
+            for row in csv.DictReader(data):
+                if not row.get("pick", "").isdigit():
+                    continue
+                high, low = row.get("ecr_high_1qb"), row.get("ecr_low_1qb")
+                try:
+                    ecr = .60 * float(high) + .40 * float(low)
+                    if not math.isfinite(ecr):
+                        continue
+                    source_date = row["scrape_date"]
+                    if source_date > self.date:
+                        raise RuntimeError("Pick model was published after its source snapshot")
+                    source_years.add(int(source_date[:4]))
+                    pick = int(row["pick"])
+                    rd, slot = (pick - 1) // 12 + 1, (pick - 1) % 12 + 1
+                    rounds.setdefault(rd, {})[slot] = round(10500 * math.exp(-.0235 * ecr))
+                except (TypeError, KeyError, ValueError):
+                    continue
+        if not rounds or any(len(values) != 12 for values in rounds.values()):
+            return
+        if len(source_years) != 1:
+            raise ValueError("Mixed rookie class years in historical pick inputs")
+        year = source_years.pop()
+        month = int(self.date[5:7])
+        factor = .90 if month < 9 else .925 if month <= 10 else .95 if month == 11 else .975
+        # Rebuild pick quotes consistently, including unknown-slot rounds.
+        self.picks = {}
+        for rd, values in rounds.items():
+            ordinal = {1: "1st", 2: "2nd", 3: "3rd"}.get(rd, f"{rd}th")
+            for slot, value in values.items():
+                self.picks[f"{year} Pick {rd}.{slot:02}"] = value
+            self.picks[f"{year} {ordinal}"] = round(mean(values.values()))
+            for horizon in range(1, 4):
+                discount = factor * .90 ** (horizon - 1)
+                self.picks[f"{year + horizon} {ordinal}"] = round(mean(values.values()) * discount)
+                if horizon == 1:
+                    for label, slots in [("Early", range(1, 5)), ("Mid", range(5, 9)), ("Late", range(9, 13))]:
+                        self.picks[f"{year + 1} {label} {ordinal}"] = round(mean(values[s] for s in slots) * discount)
+        self.pick_policy = "calculator-defaults-60-90"
 
     def player(self, player):
         if player.get("fpId") in self.players:
@@ -119,10 +175,12 @@ class Snapshot:
             value = self.picks.get(exact, self.picks.get(overall))
             if value is not None:
                 exact_round.append(value)
-        return round(median(exact_round)) if len(exact_round) == 12 else None
+        return round(mean(exact_round)) if len(exact_round) == 12 else None
 
 
 def snapshots(cache, offline):
+    unavailable_path = cache / "snapshot-picks" / "unavailable.json"
+    unavailable = set(read_json(unavailable_path)) if unavailable_path.exists() else set()
     commits = {}
     for page in range(1, 100):
         path = cache / f"dp-commits-{page}"
@@ -144,10 +202,24 @@ def snapshots(cache, offline):
         path = cache / "snapshots" / f"{sha}.csv"
         if not offline:
             downloaded(f"{DYNASTY_PROCESS}{sha}/files/values.csv", path)
-        return Snapshot(commit, path)
+        pick_path = cache / "snapshot-picks" / f"{sha}.csv"
+        if not pick_path.exists() and sha not in unavailable:
+            if offline:
+                raise FileNotFoundError(f"Missing historical pick inputs: {sha}")
+            try:
+                downloaded(f"{DYNASTY_PROCESS}{sha}/files/values-picks.csv", pick_path)
+            except urllib.error.HTTPError as error:
+                if error.code != 404:
+                    raise
+                unavailable.add(sha)
+        return Snapshot(commit, path, pick_path)
 
     with ThreadPoolExecutor(max_workers=10) as pool:
-        return list(pool.map(load_snapshot, commits))
+        result = list(pool.map(load_snapshot, commits))
+    if not offline:
+        unavailable_path.parent.mkdir(parents=True, exist_ok=True)
+        unavailable_path.write_text(json.dumps(sorted(unavailable)))
+    return result
 
 
 def sleeper_trades(cache, offline, league_id):
@@ -356,6 +428,16 @@ def main():
     payload = {
         "market": [[snapshot.date, snapshot.sha, snapshot.timestamp] for snapshot in market],
         "trades": archive,
+        "pickPolicy": {
+            "name": "DynastyProcess calculator defaults",
+            "format": "1QB, 12 teams",
+            "rookieOptimism": .60,
+            "futureFactor": .90,
+            "unknownSlotAggregation": "mean of slot values",
+            "source": "https://github.com/dynastyprocess/apps-calculator/blob/master/R/values.R",
+            "legacySnapshots": sum(s.pick_policy == "published-legacy" for s in market),
+            "calculatorSnapshots": sum(s.pick_policy != "published-legacy" for s in market),
+        },
     }
     if history:
         payload["coverage"] = history["coverage"]
