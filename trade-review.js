@@ -19,7 +19,6 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[c]);
   const colors = ['#7e3125', '#415e4f', '#705586'];
-  const signed = value => value === 0 ? 'Even' : (`${value > 0 ? '+' : '−'}${number.format(Math.abs(value))}`);
 
   let market, trades, loading, selected, chartObserver;
   let browseScroll = 0;
@@ -62,7 +61,7 @@
       ...peaks.map((point, side) => {
         const parts = trade.sides[side].manager.split(' ');
         const name = firstNames.filter(first => first === parts[0]).length > 1 ? parts.at(-1) : parts[0];
-        return { name: `${name} peak`, point, side };
+        return { name: `${name}’s best`, point, side };
       })
     ];
     const spread = point => {
@@ -175,8 +174,7 @@
         `<button type="button" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>${esc(lens.name)}</button>`
       ).join('')}</div>
       <div class="trade-edge" aria-live="polite"></div>
-      <div class="trade-packages"></div>
-      ${showChart ? `<details class="trade-chart"><summary>Value over time <span aria-hidden="true">↗</span></summary>
+      ${showChart ? `<section class="trade-chart" aria-label="Trade value over time"><h4>Trade value over time</h4>
         <div class="trade-chart-body">
           <div class="trade-chart-windows" role="group" aria-label="Graph time window">
             <button type="button" data-window="3y" aria-pressed="true">3 years</button>
@@ -184,13 +182,13 @@
           </div>
           <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('')}</div>
           <canvas role="img" aria-label="Value of each trade package over time"></canvas>
-          <label>Choose a date <input type="range" min="0" max="${threeYearEnd}" value="0"></label>
+          <label>Move through time <input type="range" min="0" max="${threeYearEnd}" value="0"></label>
           <p class="trade-chart-date"></p>
-        </div></details>` : ''}
+        </div></section>` : '<p class="trade-empty">Value history unavailable for this trade.</p>'}
+      <div class="trade-packages"></div>
       `;
 
     const canvas = detail.querySelector('canvas');
-    const chart = detail.querySelector('.trade-chart');
     const range = detail.querySelector('input[type="range"]');
     const edge = detail.querySelector('.trade-edge');
     const packages = detail.querySelector('.trade-packages');
@@ -219,25 +217,27 @@
       }
       const lens = trade.lenses[lensIndex];
       if (point && fullyPriced(point.values)) {
-        const side = lens?.side ?? point.values.indexOf(Math.max(...point.values));
+        const side = point.values.indexOf(Math.max(...point.values));
         const gap = margin(point.values, side);
         const name = trade.sides[side].manager;
-        const phase = lensIndex === 0 ? 'At trade' : lensIndex === 1 ? 'Current value' : lens?.side != null ? (gap < 0 ? 'Closest gap' : 'Peak advantage') : 'Value edge';
+        const bestName = lens?.name.replace(/’s best$/, '');
+        const bestPhase = lens?.side != null ? `${bestName}’s ${margin(point.values, lens.side) < 0 ? 'smallest deficit' : 'largest lead'}` : '';
+        const phase = lensIndex === 0 ? 'At trade' : lensIndex === 1 ? 'Now' : bestPhase || 'Selected date';
         const sensitive = point.original && trade.dateSensitivity?.winnerChanges;
-        const close = lens?.side == null && Math.abs(gap) <= .10 * Math.max(...point.values);
-        edge.innerHTML = `<div><span class="trade-edge-label">${esc(phase)}${point.original && bounds ? ' · estimated' : ''}</span>
-          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : close ? 'Close trade' : `${esc(name)} <span>${signed(gap)}</span>`}</strong>
-          <small>${formatDate(point.date)}${sensitive ? ' · Date-sensitive' : ''}</small></div>`;
+        const close = gap <= .10 * Math.max(...point.values);
+        edge.innerHTML = `<div><span class="trade-edge-label">${esc(phase)} · ${formatDate(point.date)}${point.original && bounds ? ' · estimated' : ''}</span>
+          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : close ? 'Close trade' : `Favors ${esc(name)}`}</strong>
+          <small>${gap === 0 ? 'Equal package values' : `${number.format(gap)} value edge${close ? ` to ${esc(name)}` : ''}`}${sensitive ? ' · Date-sensitive' : ''}</small></div>`;
       } else {
         edge.innerHTML = `<div><span class="trade-edge-label">${esc(lens?.name || 'Trade value')}</span><strong>Not rated</strong><small>${trade.gradeBlocked ? 'Incomplete trade details' : 'Values unavailable'}</small></div>`;
       }
       packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}">
         <h4>${esc(side.manager)} <span>received</span></h4>
-        ${point ? `<p class="trade-total">${Number.isFinite(point.values[i]) ? number.format(point.values[i]) : '—'}</p>` : ''}
-        ${point?.adjustments?.[i] ? `<small>Includes +${number.format(point.adjustments[i])} consolidation value</small>` : ''}
+        <p class="trade-total"><span>Package value</span>${point && Number.isFinite(point.values[i]) ? number.format(point.values[i]) : '—'}</p>
+        ${point?.adjustments?.[i] ? `<small>+${number.format(point.adjustments[i])} package adjustment</small>` : ''}
         ${assetList(trade, side, point)}
       </section>`).join('');
-      if (canvas && chart.open) paintSelected();
+      if (canvas) paintSelected();
     }
     detail.querySelector('.trade-back').addEventListener('click', () => {
       history.pushState(null, '', managerRoute());
@@ -245,21 +245,28 @@
       results.scrollTop = browseListScroll;
       window.scrollTo({ top: browseScroll, behavior: 'instant' });
     });
-    range?.addEventListener('input', () => selectPoint(Number(range.value)));
+    // Keep time controls anchored while package rows and draft outcomes update below.
+    function keepPosition(update) {
+      const top = window.scrollY, left = window.scrollX;
+      update();
+      requestAnimationFrame(() => window.scrollTo({ top, left, behavior: 'instant' }));
+    }
+    range?.addEventListener('input', () => keepPosition(() => selectPoint(Number(range.value))));
     detail.querySelectorAll('[data-window]').forEach(button => button.addEventListener('click', () => {
-      graphWindow = button.dataset.window;
-      updateGraphWindow();
-      if (pointIndex > graphEnd()) selectPoint(graphEnd());
-      else if (chart.open) paintSelected();
+      keepPosition(() => {
+        graphWindow = button.dataset.window;
+        updateGraphWindow();
+        if (pointIndex > graphEnd()) selectPoint(graphEnd());
+        else if (canvas) paintSelected();
+      });
     }));
-    chart?.addEventListener('toggle', () => { if (chart.open) paintSelected(); });
     detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => {
       const lensIndex = Number(button.dataset.lens);
-      selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex);
+      keepPosition(() => selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex));
     }));
     selectPoint(0, trade.day ? 0 : -1);
     if (canvas && typeof ResizeObserver !== 'undefined') {
-      chartObserver = new ResizeObserver(() => { if (chart.open) paintSelected(); });
+      chartObserver = new ResizeObserver(paintSelected);
       chartObserver.observe(canvas);
     }
   }
@@ -279,7 +286,7 @@
     const length = maximum - minimum || 1;
     const start = Date.parse(points[0].date), end = Date.parse(points.at(-1).date);
     const x = index => 47 + (width - 61) * (Date.parse(points[index].date) - start) / (end - start || 1);
-    const y = value => height - 13 - (height - 27) * (value - minimum) / length;
+    const y = value => height - 28 - (height - 42) * (value - minimum) / length;
     for (let tick = 0; tick < 4; tick++) {
       const value = minimum + length * tick / 3;
       context.strokeStyle = '#d9c8aa';
@@ -293,8 +300,15 @@
     context.strokeStyle = '#ab9474';
     context.beginPath();
     context.moveTo(x(active), 8);
-    context.lineTo(x(active), height - 9);
+    context.lineTo(x(active), height - 25);
     context.stroke();
+    context.fillStyle = '#655844';
+    const axisDate = value => new Date(value).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    context.textAlign = 'left';
+    context.fillText(axisDate(points[0].date), 47, height - 5);
+    context.textAlign = 'right';
+    context.fillText(axisDate(points.at(-1).date), width - 14, height - 5);
+    context.textAlign = 'left';
     for (let side = 0; side < sides; side++) {
       let gap = true;
       context.strokeStyle = context.fillStyle = colors[side % colors.length];
