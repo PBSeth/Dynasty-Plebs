@@ -19,6 +19,12 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[c]);
   const colors = ['#7e3125', '#415e4f', '#705586'];
+  const metrics = window.PLEBS_TRADE_METRICS;
+  const signed = value => !Number.isFinite(value) ? '—' : `${value > 0 ? '+' : value < 0 ? '−' : ''}${number.format(Math.abs(value))}`;
+  const stackedName = name => {
+    const [first, ...last] = name.split(' ');
+    return `<span>${esc(first)}</span><span>${esc(last.join(' '))}</span>`;
+  };
 
   let market, trades, loading, selected, chartObserver;
   let browseScroll = 0;
@@ -50,27 +56,27 @@
     const day = trade.day;
     if (day) trade.points.push({ i: day[0], date: trade.date, values: day[1], adjustments: trade.dayAdjustments, original: true });
     trade.points.push(...(trade.timeline || []).map(([i, ...values]) => ({ i, date: market[i][0], values, adjustments: adjustments.get(i) })));
-    const after = trade.points.filter(point => !point.original && fullyPriced(point.values));
-    const peaks = trade.sides.map((_, side) => after.reduce((best, point) =>
-      !best || margin(point.values, side) > margin(best.values, side) ? point : best, null));
-    const latest = trade.points.at(-1);
+    const analyzed = metrics.analyze(trade.points, trade.sides);
+    trade.points = analyzed.points;
+    const peaks = analyzed.peaks;
+    const latest = analyzed.latest;
     const firstNames = trade.sides.map(side => side.manager.split(' ')[0]);
     trade.lenses = [
-      { name: 'At trade', point: day ? trade.points[0] : null },
-      { name: 'Now', point: latest && !latest.original ? latest : null },
+      { name: 'At trade', point: analyzed.baseline, originalBalance: true },
+      { name: 'Now', point: latest },
       ...peaks.map((point, side) => {
         const parts = trade.sides[side].manager.split(' ');
         const name = firstNames.filter(first => first === parts[0]).length > 1 ? parts.at(-1) : parts[0];
         return { name: `${name}’s best`, point, side };
       })
     ];
-    const spread = point => {
-      if (!point || !fullyPriced(point.values)) return -1;
-      const top = Math.max(...point.values);
-      return margin(point.values, point.values.indexOf(top));
+    const spread = (point, original = false) => {
+      const values = original ? point?.values : point?.changes;
+      if (!values || !metrics.complete(values)) return -1;
+      return margin(values, values.indexOf(Math.max(...values)));
     };
     trade.spreads = {
-      peak: Math.max(-1, ...peaks.map(spread)), day: spread(trade.lenses[0].point),
+      peak: Math.max(-1, ...peaks.map(spread)), day: spread(trade.lenses[0].point, true),
       latest: spread(trade.lenses[1].point)
     };
     const terms = [label(trade), trade.date, trade.original, trade.dateEstimate ? 'estimated date' : 'recorded date'];
@@ -158,113 +164,101 @@
       return;
     }
     const trade = selected;
-    const showChart = trade.points.filter(point => fullyPriced(point.values)).length > 1;
-    const thirdAnniversary = new Date(`${trade.date}T00:00:00Z`);
-    thirdAnniversary.setUTCFullYear(thirdAnniversary.getUTCFullYear() + 3);
-    const threeYearEnd = Math.max(0, trade.points.findLastIndex(point => Date.parse(point.date) <= thirdAnniversary.getTime()));
+    const latest = trade.lenses[1].point;
+    const showChart = trade.points.filter(point => point.changes.some(Number.isFinite)).length > 1;
+    const anniversary = new Date(`${trade.date}T00:00:00Z`);
+    anniversary.setUTCFullYear(anniversary.getUTCFullYear() + 3);
+    const threeYearEnd = Math.max(0, trade.points.findLastIndex(point => Date.parse(point.date) <= anniversary.getTime()));
     const bounds = trade.dateEstimate;
     const estimateWindow = bounds ? [bounds.earliest, bounds.latest].filter(Boolean).map(formatDate).join('–') : '';
+    const currentValues = latest?.changes;
+    const currentSide = currentValues && metrics.complete(currentValues) ? currentValues.indexOf(Math.max(...currentValues)) : -1;
+    const currentGap = currentSide < 0 ? null : margin(currentValues, currentSide);
+    const summaries = trade.lenses.map((lens, index) => {
+      const values = lens.originalBalance ? lens.point?.values : lens.point?.changes;
+      const available = values && metrics.complete(values);
+      return `<button type="button" class="trade-summary" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>
+        <span class="trade-summary-label">${esc(lens.name)}</span>
+        <span class="trade-summary-kind">${lens.originalBalance ? 'Original edge' : 'Swing since trade'}</span>
+        <span class="trade-summary-values">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}"><small>${stackedName(side.manager)}</small><b>${signed(available ? margin(values, i) : null)}</b></span>`).join('')}</span>
+        <time>${lens.point ? formatDate(lens.point.date) : 'Unavailable'}</time>
+      </button>`;
+    }).join('');
     detail.innerHTML = `
       <button type="button" class="trade-back">← Back to trades</button>
       <div class="trade-detail-heading">
-        <p>${trade.date ? formatDate(trade.date) : 'Date unknown'}${bounds ? ` <details class="trade-date-note"><summary>Estimated date</summary><small>${esc(estimateWindow)}${trade.dateSensitivity?.winnerChanges ? ' · Trade-day lead varies' : ''}</small></details>` : ''}</p>
-        <h3>${esc(label(trade).replaceAll(' / ', ' ↔ '))}</h3>
+        <p>${trade.date ? formatDate(trade.date) : 'Date unknown'}${bounds ? ` <details class="trade-date-note"><summary>Estimated date</summary><small>${esc(estimateWindow)}</small></details>` : ''}</p>
+        <h3 class="trade-manager-names" aria-label="${esc(label(trade))}">${trade.sides.map((side, i) => `<span class="trade-manager-name" style="--side-color:${colors[i % colors.length]}">${stackedName(side.manager)}</span>`).join('<span class="trade-versus" aria-hidden="true">↔</span>')}</h3>
       </div>
-      <div class="trade-lenses" role="group" aria-label="Compare trade values">${trade.lenses.map((lens, index) =>
-        `<button type="button" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>${esc(lens.name)}</button>`
-      ).join('')}</div>
-      <div class="trade-edge" aria-live="polite"></div>
-      ${showChart ? `<section class="trade-chart" aria-label="Trade value over time"><h4>Trade value over time</h4>
+      <div class="trade-current" aria-label="Current swing since trade">
+        <small>Current swing since trade</small>
+        <strong style="--side-color:${currentSide < 0 ? 'var(--ink)' : colors[currentSide % colors.length]}">${currentGap == null ? 'Not rated' : currentGap === 0 ? 'Even' : signed(currentGap)}</strong>
+        <span>${currentGap == null ? 'Values unavailable' : currentGap === 0 ? 'Neither manager leads' : esc(trade.sides[currentSide].manager)}</span>
+        ${latest ? `<time>${formatDate(latest.date)}</time>` : ''}
+      </div>
+      ${showChart ? `<section class="trade-chart" aria-label="Value change since trade">
         <div class="trade-chart-body">
           <div class="trade-chart-windows" role="group" aria-label="Graph time window">
             <button type="button" data-window="3y" aria-pressed="true">3 years</button>
             <button type="button" data-window="all" aria-pressed="false">All time</button>
           </div>
           <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('')}</div>
-          <canvas role="img" aria-label="Value of each trade package over time"></canvas>
-          <label>Move through time <input type="range" min="0" max="${threeYearEnd}" value="0"></label>
-          <p class="trade-chart-date"></p>
-        </div></section>` : '<p class="trade-empty">Value history unavailable for this trade.</p>'}
-      <div class="trade-packages"></div>
-      `;
-
+          <canvas role="img" aria-label="Package gains and losses since trade day"></canvas>
+          <label class="trade-time-control"><input aria-label="Date shown" type="range" min="0" max="${threeYearEnd}" value="0"><span class="trade-chart-date"></span></label>
+        </div></section>` : '<p class="trade-empty">Trade-day value history unavailable.</p>'}
+      <div class="trade-summaries" role="group" aria-label="Trade summaries">${summaries}</div>
+      <div class="trade-package-date"></div>
+      <div class="trade-packages"></div>`;
     const canvas = detail.querySelector('canvas');
     const range = detail.querySelector('input[type="range"]');
-    const edge = detail.querySelector('.trade-edge');
     const packages = detail.querySelector('.trade-packages');
-    let pointIndex = 0;
-    let graphWindow = '3y';
+    let graphWindow = '3y', pointIndex = Math.min(trade.points.length - 1, threeYearEnd);
     const graphEnd = () => graphWindow === '3y' ? threeYearEnd : trade.points.length - 1;
-    function updateGraphWindow() {
+    const paintSelected = () => paintChart(canvas, trade.points.slice(0, graphEnd() + 1).map(point => ({...point, values: point.changes})), pointIndex, trade.sides.length);
+    function updateWindow() {
       detail.querySelectorAll('[data-window]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.window === graphWindow)));
       if (range) range.max = graphEnd();
     }
-    const paintSelected = () => paintChart(canvas, trade.points.slice(0, graphEnd() + 1), pointIndex, trade.sides.length);
     function selectPoint(index, lensIndex = -1) {
       pointIndex = index;
-      if (index > graphEnd()) {
-        graphWindow = 'all';
-        updateGraphWindow();
-      }
+      if (index > graphEnd()) { graphWindow = 'all'; updateWindow(); }
       const point = trade.points[index];
-      detail.querySelectorAll('[data-lens]').forEach(button => {
-        button.setAttribute('aria-pressed', String(Number(button.dataset.lens) === lensIndex));
-      });
+      detail.querySelectorAll('[data-lens]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.lens) === lensIndex)));
       if (range && point) {
         range.value = index;
         range.setAttribute('aria-valuetext', formatDate(point.date));
         detail.querySelector('.trade-chart-date').textContent = formatDate(point.date);
       }
-      const lens = trade.lenses[lensIndex];
-      if (point && fullyPriced(point.values)) {
-        const side = point.values.indexOf(Math.max(...point.values));
-        const gap = margin(point.values, side);
-        const name = trade.sides[side].manager;
-        const bestName = lens?.name.replace(/’s best$/, '');
-        const bestPhase = lens?.side != null ? `${bestName}’s ${margin(point.values, lens.side) < 0 ? 'smallest deficit' : 'largest lead'}` : '';
-        const phase = lensIndex === 0 ? 'At trade' : lensIndex === 1 ? 'Now' : bestPhase || 'Selected date';
-        const sensitive = point.original && trade.dateSensitivity?.winnerChanges;
-        const close = gap <= .10 * Math.max(...point.values);
-        edge.innerHTML = `<div><span class="trade-edge-label">${esc(phase)} · ${formatDate(point.date)}${point.original && bounds ? ' · estimated' : ''}</span>
-          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : close ? 'Close trade' : `Favors ${esc(name)}`}</strong>
-          <small>${gap === 0 ? 'Equal package values' : `${number.format(gap)} value edge${close ? ` to ${esc(name)}` : ''}`}${sensitive ? ' · Date-sensitive' : ''}</small></div>`;
-      } else {
-        edge.innerHTML = `<div><span class="trade-edge-label">${esc(lens?.name || 'Trade value')}</span><strong>Not rated</strong><small>${trade.gradeBlocked ? 'Incomplete trade details' : 'Values unavailable'}</small></div>`;
-      }
+      detail.querySelector('.trade-package-date').textContent = point ? `Package change · ${formatDate(point.date)}` : 'Package details';
       packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}">
-        <h4>${esc(side.manager)} <span>received</span></h4>
-        <p class="trade-total"><span>Package value</span>${point && Number.isFinite(point.values[i]) ? number.format(point.values[i]) : '—'}</p>
-        ${point?.adjustments?.[i] ? `<small>+${number.format(point.adjustments[i])} package adjustment</small>` : ''}
+        <h4 class="trade-package-name">${stackedName(side.manager)}</h4>
+        <p class="trade-total"><span>Since trade</span>${signed(point?.changes[i])}</p>
         ${assetList(trade, side, point)}
       </section>`).join('');
       if (canvas) paintSelected();
     }
+    const keepPosition = update => {
+      const top = window.scrollY, left = window.scrollX;
+      update();
+      requestAnimationFrame(() => window.scrollTo({ top, left, behavior: 'instant' }));
+    };
     detail.querySelector('.trade-back').addEventListener('click', () => {
       history.pushState(null, '', managerRoute());
       view.dataset.detailOpen = 'false';
       results.scrollTop = browseListScroll;
       window.scrollTo({ top: browseScroll, behavior: 'instant' });
     });
-    // Keep time controls anchored while package rows and draft outcomes update below.
-    function keepPosition(update) {
-      const top = window.scrollY, left = window.scrollX;
-      update();
-      requestAnimationFrame(() => window.scrollTo({ top, left, behavior: 'instant' }));
-    }
     range?.addEventListener('input', () => keepPosition(() => selectPoint(Number(range.value))));
-    detail.querySelectorAll('[data-window]').forEach(button => button.addEventListener('click', () => {
-      keepPosition(() => {
-        graphWindow = button.dataset.window;
-        updateGraphWindow();
-        if (pointIndex > graphEnd()) selectPoint(graphEnd());
-        else if (canvas) paintSelected();
-      });
-    }));
-    detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => {
+    detail.querySelectorAll('[data-window]').forEach(button => button.addEventListener('click', () => keepPosition(() => {
+      graphWindow = button.dataset.window; updateWindow();
+      if (pointIndex > graphEnd()) selectPoint(graphEnd());
+      else if (canvas) paintSelected();
+    })));
+    detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => keepPosition(() => {
       const lensIndex = Number(button.dataset.lens);
-      keepPosition(() => selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex));
-    }));
-    selectPoint(0, trade.day ? 0 : -1);
+      selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex);
+    })));
+    selectPoint(pointIndex, pointIndex >= 0 && trade.points[pointIndex] === latest ? 1 : -1);
     if (canvas && typeof ResizeObserver !== 'undefined') {
       chartObserver = new ResizeObserver(paintSelected);
       chartObserver.observe(canvas);
@@ -281,8 +275,9 @@
     context.scale(scale, scale);
     context.font = '11px Arial';
     const values = points.flatMap(point => point.values.filter(Number.isFinite));
-    const maximum = Math.ceil((Math.max(...values) || 1) / 1000) * 1000;
-    const minimum = Math.floor(Math.min(...values) / 1000) * 1000;
+    if (!values.length) return;
+    const maximum = Math.max(100, Math.ceil(Math.max(0, ...values) / 500) * 500);
+    const minimum = Math.min(0, Math.floor(Math.min(0, ...values) / 500) * 500);
     const length = maximum - minimum || 1;
     const start = Date.parse(points[0].date), end = Date.parse(points.at(-1).date);
     const x = index => 47 + (width - 61) * (Date.parse(points[index].date) - start) / (end - start || 1);
@@ -295,7 +290,7 @@
       context.lineTo(width - 14, y(value));
       context.stroke();
       context.fillStyle = '#655844';
-      context.fillText(number.format(Math.round(value)), 1, y(value) + 4);
+      context.fillText(signed(Math.round(value)), 1, y(value) + 4);
     }
     context.strokeStyle = '#ab9474';
     context.beginPath();
