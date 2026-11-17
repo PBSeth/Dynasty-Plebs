@@ -9,7 +9,7 @@ import unicodedata
 import urllib.request
 from bisect import bisect_right
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import datetime, time
 from pathlib import Path
 from statistics import median
 from zoneinfo import ZoneInfo
@@ -284,7 +284,7 @@ def value_trade(trade, market, timestamps):
         trade["day"] = None
         trade["timeline"] = []
         return
-    accepted = trade["acceptedAt"]
+    accepted = trade.get("estimatedAt", trade.get("acceptedAt"))
     index = bisect_right(timestamps, accepted) - 1
     if index >= 0:
         market_day = market[index]
@@ -302,6 +302,26 @@ def value_trade(trade, market, timestamps):
     trade["timeline"] = timeline
     if timeline:
         _, trade["latestMissing"] = grade(market[-1], trade, market[-1].timestamp)
+    bounds = trade.get("dateEstimate")
+    if bounds and bounds["earliest"] and bounds["latest"]:
+        lower = datetime.combine(datetime.fromisoformat(bounds["earliest"]).date(), time.min, CENTRAL).timestamp() * 1000
+        upper = datetime.combine(datetime.fromisoformat(bounds["latest"]).date(), time.max, CENTRAL).timestamp() * 1000
+        first = max(0, bisect_right(timestamps, lower) - 1)
+        last = bisect_right(timestamps, upper) - 1
+        margins, leaders = [], set()
+        for i in range(first, last + 1):
+            values, _ = grade(market[i], trade, accepted, original=True)
+            if any(value is None for value in values):
+                continue
+            margins.append([v - max(values[:s] + values[s + 1:]) for s, v in enumerate(values)])
+            leaders.add(tuple(s for s, value in enumerate(values) if value == max(values)))
+        trade["dateSensitivity"] = {
+            "snapshots": last - first + 1,
+            "pricedSnapshots": len(margins),
+            "marginRanges": [[min(m[s] for m in margins), max(m[s] for m in margins)] for s in range(len(trade["sides"]))] if margins else [],
+            "winnerChanges": len(leaders) > 1,
+            "completeWindow": len(margins) == last - first + 1,
+        }
 
 
 def main():
@@ -316,7 +336,7 @@ def main():
     history_path = ROOT / "trade-history.json"
     history = read_json(history_path) if history_path.exists() else None
     if history:
-        archive.extend(trade for trade in history["trades"] if trade.get("acceptedAt"))
+        archive.extend(trade for trade in history["trades"] if trade.get("acceptedAt") or trade.get("estimatedAt"))
     if args.dated_workbook_trades:
         legacy = read_json(ROOT / "trade-workbook-archive.json")["ledger"]
         rows = {f"workbook-{row}": sides for row, sides, _, _ in legacy}
@@ -329,7 +349,7 @@ def main():
             archive.append(trade)
     if len({trade["id"] for trade in archive}) != len(archive):
         raise ValueError("Duplicate trade IDs")
-    archive.sort(key=lambda trade: trade["acceptedAt"], reverse=True)
+    archive.sort(key=lambda trade: trade.get("estimatedAt", trade.get("acceptedAt", 0)), reverse=True)
     timestamps = [snapshot.timestamp for snapshot in market]
     for trade in archive:
         value_trade(trade, market, timestamps)

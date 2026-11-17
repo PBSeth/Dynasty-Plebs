@@ -5,7 +5,7 @@
     "espnRecordsReconciled": 139,
     "workbookRowsDated": 121,
     "espnOnlyEntries": 16,
-    "undatedWorkbookRows": 44,
+    "undatedWorkbookRows": 0,
     "reversedWorkbookRows": 1,
     "espnPeriods": [
       {
@@ -530,9 +530,135 @@
       }
     ],
     "limitations": [
-      "ESPN does not record the spreadsheet-only pick exchanges. Undated entries retain their full source packages and remain ungraded.",
       "The 2024 ESPN archive is readable through period 11. Later periods returned an HTTP response failure after the league migrated to Sleeper.",
-      "A player draft outcome switches into valuation at its first verified executed roster addition. This is an upper bound on selection time, not an exact draft timestamp."
+      "A player draft outcome switches into valuation at its first verified executed roster addition. This is an upper bound on selection time, not an exact draft timestamp.",
+      "Missing workbook dates are estimates from row order. Their surrounding date windows are not confidence intervals. Observed out-of-sequence ESPN execution dates are retained but omitted as estimation anchors."
+    ],
+    "workbookRowsEstimated": 44,
+    "estimateAnchorRows": [
+      2,
+      3,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      29,
+      30,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      42,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      50,
+      54,
+      55,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      67,
+      68,
+      69,
+      70,
+      72,
+      73,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      106,
+      107,
+      109,
+      110,
+      113,
+      114,
+      115,
+      117,
+      118,
+      120,
+      121,
+      122,
+      123,
+      125,
+      127,
+      129,
+      131,
+      133,
+      139,
+      140,
+      141,
+      142,
+      143,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      154,
+      157,
+      161,
+      164,
+      165
+    ],
+    "outOfSequenceExecutionRows": [
+      27,
+      31,
+      53,
+      57,
+      126,
+      132,
+      158
     ]
   },
   "trades": [
@@ -589,10 +715,24 @@
       ],
       "original": "Clawson trades his 2020 1st (1.06) to Seth for the 2019 1.12",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": null,
+        "latest": "2019-05-01",
+        "anchorRows": [
+          2
+        ],
+        "windowDays": null,
+        "precision": "one-sided",
+        "method": "One-sided estimate: one day per workbook row before the first observed execution; no earlier date bound is known.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-04-30",
+      "estimatedAt": 1556643600000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 2 (2019-05-01)"
     },
     {
       "id": "workbook-2",
@@ -801,10 +941,27 @@
       ],
       "original": "Seth trades the 2019 1.02 to Josh for the 2019 1.07 and his 2020 2nd (2.07)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-05-02",
+        "latest": "2019-05-03",
+        "anchorRows": [
+          3,
+          7
+        ],
+        "windowDays": 1,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2019-05-03"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-05-02",
+      "estimatedAt": 1556816400000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 3 (2019-05-02) and row 7 (2019-05-09)"
     },
     {
       "id": "workbook-5",
@@ -864,10 +1021,25 @@
       ],
       "original": "Seth trades the 2019 3.08 and $60 FAAB to Metz for the 2019 2.10",
       "notes": "Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-05-02",
+        "latest": "2019-05-09",
+        "anchorRows": [
+          3,
+          7
+        ],
+        "windowDays": 7,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-05-06",
+      "estimatedAt": 1557162000000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 3 (2019-05-02) and row 7 (2019-05-09)"
     },
     {
       "id": "workbook-6",
@@ -939,10 +1111,25 @@
       ],
       "original": "Seth trades the 2019 1.07 to Dave for the 2019 1.08 and a 2020 3rd (3.12)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-05-02",
+        "latest": "2019-05-09",
+        "anchorRows": [
+          3,
+          7
+        ],
+        "windowDays": 7,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-05-07",
+      "estimatedAt": 1557248400000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 3 (2019-05-02) and row 7 (2019-05-09)"
     },
     {
       "id": "workbook-7",
@@ -1086,10 +1273,29 @@
       ],
       "original": "Seth trades the 2019 2.10 to Metz for 2019 picks 3.04, and 3.12",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-05-09",
+        "latest": "2019-05-13",
+        "anchorRows": [
+          7,
+          9
+        ],
+        "windowDays": 4,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2019-05-13",
+          "2019-05-14",
+          "2019-05-15"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-05-11",
+      "estimatedAt": 1557594000000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 7 (2019-05-09) and row 9 (2019-06-09)"
     },
     {
       "id": "workbook-9",
@@ -1240,10 +1446,25 @@
       ],
       "original": "Mason trades his 2020 1st (1.02) to Payton for Sammy Watkins",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-08-29",
+        "latest": "2019-10-02",
+        "anchorRows": [
+          10,
+          12
+        ],
+        "windowDays": 34,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-09-15",
+      "estimatedAt": 1568566800000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 10 (2019-08-29) and row 12 (2019-10-02)"
     },
     {
       "id": "workbook-12",
@@ -1457,10 +1678,25 @@
       ],
       "original": "Alex trades 2020 1.09 to Seth for 3 2020 2nds (2.01, 2.07, 2.12)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-10-02",
+        "latest": "2019-10-18",
+        "anchorRows": [
+          13,
+          15
+        ],
+        "windowDays": 16,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-10-10",
+      "estimatedAt": 1570726800000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 13 (2019-10-02) and row 15 (2019-10-18)"
     },
     {
       "id": "workbook-15",
@@ -1820,10 +2056,25 @@
       ],
       "original": "Jordan trades Tony Pollard to Josh for his 2021 2nd (2.07)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-11-14",
+        "latest": "2019-11-20",
+        "anchorRows": [
+          19,
+          21
+        ],
+        "windowDays": 6,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2019-11-17",
+      "estimatedAt": 1574013600000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 19 (2019-11-14) and row 21 (2019-11-20)"
     },
     {
       "id": "workbook-21",
@@ -2188,10 +2439,27 @@
       ],
       "original": "Clawson trades Julio Jones to Travis for Calvin Ridley and his 2021 1st (1.10)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2019-11-27",
+        "latest": "2019-12-17",
+        "anchorRows": [
+          25,
+          28
+        ],
+        "windowDays": 20,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          27
+        ]
+      },
+      "date": "2019-12-04",
+      "estimatedAt": 1575482400000,
+      "season": 2019,
+      "dateSource": "Estimated from workbook order, using row 25 (2019-11-27) and row 28 (2019-12-17)"
     },
     {
       "id": "workbook-27",
@@ -3213,10 +3481,25 @@
       ],
       "original": "Mott trades the 2020 4.08 for Travis' 2021 4th (4.10) and $5 FAAB (this was the all out bid on waiver Gronk, play)",
       "notes": "Travis is inferred from the wording. Confirm the manager. Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2020-04-28",
+        "latest": "2020-04-29",
+        "anchorRows": [
+          40,
+          42
+        ],
+        "windowDays": 1,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2020-04-29",
+      "estimatedAt": 1588179600000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 40 (2020-04-28) and row 42 (2020-04-29)"
     },
     {
       "id": "workbook-42",
@@ -3600,10 +3883,25 @@
       ],
       "original": "Jordan trades 2 2021 2nds (2.05, 2.08) to Clawson for his 2021 1st (1.03)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2020-07-17",
+        "latest": "2020-08-12",
+        "anchorRows": [
+          46,
+          48
+        ],
+        "windowDays": 26,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2020-07-30",
+      "estimatedAt": 1596128400000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 46 (2020-07-17) and row 48 (2020-08-12)"
     },
     {
       "id": "workbook-48",
@@ -3841,10 +4139,27 @@
       ],
       "original": "Metz trades Raheem Mostert to Alex for Ronald Jones and his 2021 2nd (2.02)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2020-08-31",
+        "latest": "2020-09-05",
+        "anchorRows": [
+          50,
+          54
+        ],
+        "windowDays": 5,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          53
+        ]
+      },
+      "date": "2020-09-01",
+      "estimatedAt": 1598979600000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 50 (2020-08-31) and row 54 (2020-09-05)"
     },
     {
       "id": "workbook-52",
@@ -3880,11 +4195,29 @@
       "original": "Clawson trades Devin Singletary to Alex for his 2021 1st (1.02) (As I scrolled further, this was actually reversed becasue Alex did not own his 2021 1st)",
       "notes": "Reversed per the workbook. Exclude from completed trade reviews.",
       "issues": [
-        "Reversed per the original workbook. Excluded from completed-trade grades.",
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
+        "Reversed per the original workbook. Excluded from completed-trade grades."
       ],
       "status": "reversed",
-      "gradeBlocked": true
+      "gradeBlocked": true,
+      "dateEstimate": {
+        "earliest": "2020-08-31",
+        "latest": "2020-09-05",
+        "anchorRows": [
+          50,
+          54
+        ],
+        "windowDays": 5,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          53
+        ]
+      },
+      "date": "2020-09-03",
+      "estimatedAt": 1599152400000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 50 (2020-08-31) and row 54 (2020-09-05)"
     },
     {
       "id": "workbook-53",
@@ -4129,10 +4462,27 @@
       ],
       "original": "Travis trades Giovani Bernard, Samaje Perine and his 2022 4th (4.02) to Bo for Colin Johnson and Deon Cain",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2020-09-10",
+        "latest": "2020-09-15",
+        "anchorRows": [
+          55,
+          58
+        ],
+        "windowDays": 5,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          57
+        ]
+      },
+      "date": "2020-09-12",
+      "estimatedAt": 1599930000000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 55 (2020-09-10) and row 58 (2020-09-15)"
     },
     {
       "id": "workbook-57",
@@ -4753,10 +5103,25 @@
       ],
       "original": "Mason trades Taysom Hill to Dave for Andy Dalton, and overcomes the QB adversity Seth created",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2020-12-15",
+        "latest": "2021-01-12",
+        "anchorRows": [
+          65,
+          67
+        ],
+        "windowDays": 28,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2020-12-29",
+      "estimatedAt": 1609264800000,
+      "season": 2020,
+      "dateSource": "Estimated from workbook order, using row 65 (2020-12-15) and row 67 (2021-01-12)"
     },
     {
       "id": "workbook-67",
@@ -5244,10 +5609,27 @@
       ],
       "original": "Payton trades the 2021 1.01 to Jordan for 2021 1.02 and 2.06",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2021-04-29",
+        "latest": "2021-04-30",
+        "anchorRows": [
+          70,
+          72
+        ],
+        "windowDays": 1,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2021-04-30"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2021-04-30",
+      "estimatedAt": 1619802000000,
+      "season": 2021,
+      "dateSource": "Estimated from workbook order, using row 70 (2021-04-29) and row 72 (2021-05-02)"
     },
     {
       "id": "workbook-72",
@@ -5466,10 +5848,27 @@
       ],
       "original": "Payton trades the 2021 2.11 to Seth for the 2021 3.04 and his 2022 3rd (3.11)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2021-05-02",
+        "latest": "2021-05-05",
+        "anchorRows": [
+          73,
+          77
+        ],
+        "windowDays": 3,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2021-05-05"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2021-05-03",
+      "estimatedAt": 1620061200000,
+      "season": 2021,
+      "dateSource": "Estimated from workbook order, using row 73 (2021-05-02) and row 77 (2021-05-25)"
     },
     {
       "id": "workbook-75",
@@ -5518,10 +5917,27 @@
       ],
       "original": "Travis trades $10 FAAB and his 2023 3rd (TBD) to Luke for 2021 3.05",
       "notes": "One or more pick slots are unresolved. Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2021-05-02",
+        "latest": "2021-05-05",
+        "anchorRows": [
+          73,
+          77
+        ],
+        "windowDays": 3,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2021-05-05"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2021-05-04",
+      "estimatedAt": 1620147600000,
+      "season": 2021,
+      "dateSource": "Estimated from workbook order, using row 73 (2021-05-02) and row 77 (2021-05-25)"
     },
     {
       "id": "workbook-76",
@@ -5576,10 +5992,25 @@
       ],
       "original": "Bo trades the 2021 4.07 to Mott for his 2022 4th (4.12)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2021-05-02",
+        "latest": "2021-05-25",
+        "anchorRows": [
+          73,
+          77
+        ],
+        "windowDays": 23,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2021-05-19",
+      "estimatedAt": 1621443600000,
+      "season": 2021,
+      "dateSource": "Estimated from workbook order, using row 73 (2021-05-02) and row 77 (2021-05-25)"
     },
     {
       "id": "workbook-77",
@@ -6706,10 +7137,25 @@
       ],
       "original": "Dave trades James Conner, his 23 2nd (2.03), and 4th (4.03) to Luke for Darrell Henderson and a 22 3rd (3.03)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2021-10-27",
+        "latest": "2021-11-02",
+        "anchorRows": [
+          92,
+          94
+        ],
+        "windowDays": 6,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2021-10-30",
+      "estimatedAt": 1635613200000,
+      "season": 2021,
+      "dateSource": "Estimated from workbook order, using row 92 (2021-10-27) and row 94 (2021-11-02)"
     },
     {
       "id": "workbook-94",
@@ -7495,10 +7941,28 @@
       ],
       "original": "Travis trades the 22 1.10 and 2.02 to Alex for the 22 1.05",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-04-26",
+        "latest": "2022-05-01",
+        "anchorRows": [
+          104,
+          106
+        ],
+        "windowDays": 5,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2022-05-01",
+          "2022-05-02"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-04-29",
+      "estimatedAt": 1651251600000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 104 (2022-04-26) and row 106 (2022-05-05)"
     },
     {
       "id": "workbook-106",
@@ -7765,10 +8229,25 @@
       ],
       "original": "Travis trades the 22 2.06 and 2.08 to Dave for his 24 1st (1.03)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-05-05",
+        "latest": "2022-05-06",
+        "anchorRows": [
+          107,
+          109
+        ],
+        "windowDays": 1,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-05-06",
+      "estimatedAt": 1651856400000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 107 (2022-05-05) and row 109 (2022-05-06)"
     },
     {
       "id": "workbook-109",
@@ -7948,10 +8427,28 @@
       ],
       "original": "Seth trades the 3.03 and 3.05 to Mason for his 23 2nd (2.04)",
       "notes": "The years of 3.03 and 3.05 are missing.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-05-07",
+        "latest": "2022-05-13",
+        "anchorRows": [
+          110,
+          113
+        ],
+        "windowDays": 6,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2022-05-13",
+          "2022-07-03"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-05-09",
+      "estimatedAt": 1652115600000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 110 (2022-05-07) and row 113 (2022-07-10)"
     },
     {
       "id": "workbook-112",
@@ -8021,10 +8518,28 @@
       ],
       "original": "Seth trades the 22 4.11 and his 23 4th (4.12) to Luke for the 22 4.03",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-05-07",
+        "latest": "2022-05-13",
+        "anchorRows": [
+          110,
+          113
+        ],
+        "windowDays": 6,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2022-05-13",
+          "2022-07-03"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-05-11",
+      "estimatedAt": 1652288400000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 110 (2022-05-07) and row 113 (2022-07-10)"
     },
     {
       "id": "workbook-113",
@@ -8310,10 +8825,25 @@
       ],
       "original": "Dave trades DJ Moore, Trey Lance, KJ Osborn, and Elijah Mitchell to Travis for Amari Cooper, George Pickens, Dak Prescott, and Kenneth Gainwell",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-08-05",
+        "latest": "2022-10-20",
+        "anchorRows": [
+          115,
+          117
+        ],
+        "windowDays": 76,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-09-12",
+      "estimatedAt": 1663002000000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 115 (2022-08-05) and row 117 (2022-10-20)"
     },
     {
       "id": "workbook-117",
@@ -8476,10 +9006,25 @@
       ],
       "original": "Dave trades Hunter Renfrow to Travis for D'Onta Foreman",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-10-27",
+        "latest": "2022-11-02",
+        "anchorRows": [
+          118,
+          120
+        ],
+        "windowDays": 6,
+        "precision": "within a week",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2022-10-30",
+      "estimatedAt": 1667149200000,
+      "season": 2022,
+      "dateSource": "Estimated from workbook order, using row 118 (2022-10-27) and row 120 (2022-11-02)"
     },
     {
       "id": "workbook-120",
@@ -8841,10 +9386,25 @@
       ],
       "original": "Dave trades Tyreek Hill and his 23 5th and 6th (5.05, 6.05) to Metz for Chris Olave and Khalil Herbert",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2022-12-13",
+        "latest": "2023-02-10",
+        "anchorRows": [
+          123,
+          125
+        ],
+        "windowDays": 59,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-01-12",
+      "estimatedAt": 1673546400000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 123 (2022-12-13) and row 125 (2023-02-10)"
     },
     {
       "id": "workbook-125",
@@ -9110,10 +9670,25 @@
       ],
       "original": "Dave trades David Montgomery and Darnell Mooney to Jordan for Cam Akers and LaViska Shenault",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-02-16",
+        "latest": "2023-02-25",
+        "anchorRows": [
+          127,
+          129
+        ],
+        "windowDays": 9,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-02-21",
+      "estimatedAt": 1677002400000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 127 (2023-02-16) and row 129 (2023-02-25)"
     },
     {
       "id": "workbook-129",
@@ -9278,10 +9853,25 @@
       ],
       "original": "Travis trades the 23 1.12 to Dave for his 25 1st (TBD)",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-02-25",
+        "latest": "2023-03-26",
+        "anchorRows": [
+          129,
+          131
+        ],
+        "windowDays": 29,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-03-12",
+      "estimatedAt": 1678640400000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 129 (2023-02-25) and row 131 (2023-03-26)"
     },
     {
       "id": "workbook-131",
@@ -9549,10 +10139,28 @@
       ],
       "original": "Payton trades the 2023 3.06 to Travis for the 2023 3.08 and his 24 3rd (3.10)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-05-05",
+        "latest": "2023-05-26",
+        "anchorRows": [
+          133,
+          139
+        ],
+        "windowDays": 21,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [
+          "2023-05-26",
+          "2023-09-21"
+        ],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-05-09",
+      "estimatedAt": 1683651600000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 133 (2023-05-05) and row 139 (2023-10-26)"
     },
     {
       "id": "workbook-135",
@@ -9602,10 +10210,25 @@
       ],
       "original": "Luke trades the 4.05 to Alex for the 4.07 and his 24 4th (4.06)",
       "notes": "The years of 4.05 and 4.07 are missing.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-05-05",
+        "latest": "2023-10-26",
+        "anchorRows": [
+          133,
+          139
+        ],
+        "windowDays": 174,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-07-02",
+      "estimatedAt": 1688317200000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 133 (2023-05-05) and row 139 (2023-10-26)"
     },
     {
       "id": "workbook-136",
@@ -9671,10 +10294,25 @@
       ],
       "original": "Bo trades the 2023 4.10 to Seth for the 2023 5.12 and his 24 4th (4.11)",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-05-05",
+        "latest": "2023-10-26",
+        "anchorRows": [
+          133,
+          139
+        ],
+        "windowDays": 174,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-07-31",
+      "estimatedAt": 1690822800000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 133 (2023-05-05) and row 139 (2023-10-26)"
     },
     {
       "id": "workbook-137",
@@ -9715,10 +10353,25 @@
       ],
       "original": "Bo trades the 2023 6.10 to Seth for $10 FAAB",
       "notes": "Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-05-05",
+        "latest": "2023-10-26",
+        "anchorRows": [
+          133,
+          139
+        ],
+        "windowDays": 174,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-08-29",
+      "estimatedAt": 1693328400000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 133 (2023-05-05) and row 139 (2023-10-26)"
     },
     {
       "id": "workbook-138",
@@ -9759,10 +10412,25 @@
       ],
       "original": "Metz trades the 2023 6.11 to Jordan for $10 FAAB",
       "notes": "Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-05-05",
+        "latest": "2023-10-26",
+        "anchorRows": [
+          133,
+          139
+        ],
+        "windowDays": 174,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2023-09-27",
+      "estimatedAt": 1695834000000,
+      "season": 2023,
+      "dateSource": "Estimated from workbook order, using row 133 (2023-05-05) and row 139 (2023-10-26)"
     },
     {
       "id": "workbook-139",
@@ -10193,10 +10861,25 @@
       ],
       "original": "Dave trades 1.08, Sam Howell, Amari Cooper, and Darius Slayton to Mason for the 1.04 and 2.04",
       "notes": "The years of 1.08, 1.04 and 2.04 are missing.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2023-12-21",
+        "latest": "2024-02-11",
+        "anchorRows": [
+          143,
+          145
+        ],
+        "windowDays": 52,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-01-16",
+      "estimatedAt": 1705428000000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 143 (2023-12-21) and row 145 (2024-02-11)"
     },
     {
       "id": "workbook-145",
@@ -10698,10 +11381,25 @@
       ],
       "original": "Travis trades the 24 2.04 & 4.10 to Clawson for his 25 2nd (TBD) and the 24 3.03",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-04-26",
+        "latest": "2024-05-31",
+        "anchorRows": [
+          150,
+          154
+        ],
+        "windowDays": 35,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-05-05",
+      "estimatedAt": 1714928400000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 150 (2024-04-26) and row 154 (2024-05-31)"
     },
     {
       "id": "workbook-152",
@@ -10768,10 +11466,25 @@
       ],
       "original": "Travis trades the 2024 2.10 to Seth for the 2024 3.02 and 3.12",
       "notes": "",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-04-26",
+        "latest": "2024-05-31",
+        "anchorRows": [
+          150,
+          154
+        ],
+        "windowDays": 35,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-05-14",
+      "estimatedAt": 1715706000000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 150 (2024-04-26) and row 154 (2024-05-31)"
     },
     {
       "id": "workbook-153",
@@ -10814,10 +11527,25 @@
       ],
       "original": "Alex trades the 2024 3.06 to Dave for a 2025 2nd (TBD)",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-04-26",
+        "latest": "2024-05-31",
+        "anchorRows": [
+          150,
+          154
+        ],
+        "windowDays": 35,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-05-22",
+      "estimatedAt": 1716397200000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 150 (2024-04-26) and row 154 (2024-05-31)"
     },
     {
       "id": "workbook-154",
@@ -10930,10 +11658,25 @@
       ],
       "original": "Dave trades his 25 4th (TBD), and 26 4th and 5th (TBD, TBD) to Clint for the 2024 4.05",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-05-31",
+        "latest": "2024-06-11",
+        "anchorRows": [
+          154,
+          157
+        ],
+        "windowDays": 11,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-06-04",
+      "estimatedAt": 1717520400000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 154 (2024-05-31) and row 157 (2024-06-11)"
     },
     {
       "id": "workbook-156",
@@ -10976,10 +11719,25 @@
       ],
       "original": "Luke trades the 2024 4.06 to Ryan for his 25 3rd (TBD)",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-05-31",
+        "latest": "2024-06-11",
+        "anchorRows": [
+          154,
+          157
+        ],
+        "windowDays": 11,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-06-07",
+      "estimatedAt": 1717779600000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 154 (2024-05-31) and row 157 (2024-06-11)"
     },
     {
       "id": "workbook-157",
@@ -11143,10 +11901,27 @@
       ],
       "original": "Seth trades $10 FAAB to Bo for the 2024 5.07",
       "notes": "Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-06-11",
+        "latest": "2024-07-08",
+        "anchorRows": [
+          157,
+          161
+        ],
+        "windowDays": 27,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          158
+        ]
+      },
+      "date": "2024-06-25",
+      "estimatedAt": 1719334800000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 157 (2024-06-11) and row 161 (2024-07-08)"
     },
     {
       "id": "workbook-160",
@@ -11189,10 +11964,27 @@
       ],
       "original": "Seth trades the 2024 5.07 to Clawson for his 25 4th (TBD)",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-06-11",
+        "latest": "2024-07-08",
+        "anchorRows": [
+          157,
+          161
+        ],
+        "windowDays": 27,
+        "precision": "within a month",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": [
+          158
+        ]
+      },
+      "date": "2024-07-01",
+      "estimatedAt": 1719853200000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 157 (2024-06-11) and row 161 (2024-07-08)"
     },
     {
       "id": "workbook-161",
@@ -11285,10 +12077,25 @@
       ],
       "original": "Seth trades $10 FAAB to Alex for the 2024 6.06",
       "notes": "Include the FAAB shown in the exchange.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-07-08",
+        "latest": "2024-09-04",
+        "anchorRows": [
+          161,
+          164
+        ],
+        "windowDays": 58,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-07-27",
+      "estimatedAt": 1722099600000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 161 (2024-07-08) and row 164 (2024-09-04)"
     },
     {
       "id": "workbook-163",
@@ -11331,10 +12138,25 @@
       ],
       "original": "Payton trades the 2024 6.08 to Travis for his 2025 5th (TBD)",
       "notes": "One or more pick slots are unresolved.",
-      "issues": [
-        "Exact execution date is not present in the recovered ESPN record. Historical grades remain unavailable."
-      ],
-      "status": "completed"
+      "issues": [],
+      "status": "completed",
+      "dateEstimate": {
+        "earliest": "2024-07-08",
+        "latest": "2024-09-04",
+        "anchorRows": [
+          161,
+          164
+        ],
+        "windowDays": 58,
+        "precision": "broad window",
+        "method": "Linear interpolation by workbook row between surrounding date-consistent ESPN executions.",
+        "pickSelectionUpperBounds": [],
+        "excludedProcessingDateRows": []
+      },
+      "date": "2024-08-16",
+      "estimatedAt": 1723827600000,
+      "season": 2024,
+      "dateSource": "Estimated from workbook order, using row 161 (2024-07-08) and row 164 (2024-09-04)"
     },
     {
       "id": "workbook-164",
