@@ -280,6 +280,10 @@ def grade(snapshot, trade, at, original=False):
 
 
 def value_trade(trade, market, timestamps):
+    if trade.get("gradeBlocked"):
+        trade["day"] = None
+        trade["timeline"] = []
+        return
     accepted = trade["acceptedAt"]
     index = bisect_right(timestamps, accepted) - 1
     if index >= 0:
@@ -309,6 +313,10 @@ def main():
     args = parser.parse_args()
     market = snapshots(args.cache, args.offline)
     archive = sleeper_trades(args.cache, args.offline, args.league_id)
+    history_path = ROOT / "trade-history.json"
+    history = read_json(history_path) if history_path.exists() else None
+    if history:
+        archive.extend(trade for trade in history["trades"] if trade.get("acceptedAt"))
     if args.dated_workbook_trades:
         legacy = read_json(ROOT / "trade-workbook-archive.json")["ledger"]
         rows = {f"workbook-{row}": sides for row, sides, _, _ in legacy}
@@ -329,6 +337,8 @@ def main():
         "market": [[snapshot.date, snapshot.sha, snapshot.timestamp] for snapshot in market],
         "trades": archive,
     }
+    if history:
+        payload["coverage"] = history["coverage"]
     path = ROOT / "trade-valuations.json"
     path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
     print(f"{len(archive)} dated trades priced against {len(market)} source snapshots")

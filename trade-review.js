@@ -17,7 +17,7 @@
   const colors = ['#7e3125', '#415e4f', '#705586'];
   const signed = value => value === 0 ? 'Even' : (`${value > 0 ? '+' : '−'}${number.format(Math.abs(value))}`);
 
-  let market, trades, loading, selected, chartObserver;
+  let market, trades, loading, selected, chartObserver, coverage;
   const fullyPriced = values => values.every(Number.isFinite);
   const label = trade => trade.sides.map(side => side.manager).join(' / ');
   const hasRoute = () => /^#trades(?:\/|$)/.test(location.hash);
@@ -31,7 +31,7 @@
   function pickLabel(asset) {
     const origin = asset.origin ? ` · ${asset.origin} original` : '';
     const slot = asset.slotKnownAtTrade || `Round ${asset.round}`;
-    return `${asset.season} ${slot}${origin}`;
+    return `${asset.season ?? 'Year unknown'} ${slot}${origin}`;
   }
 
   function learnTrade(trade) {
@@ -85,7 +85,8 @@
     results.replaceChildren(...visible.map(trade => {
       const item = document.createElement('li');
       const sortedGap = trade.spreads[sort.value];
-      const caption = trade.date ? formatDate(trade.date) : `Workbook row ${trade.row} · date missing`;
+      const caption = (trade.date ? formatDate(trade.date) : `Workbook row ${trade.row} · date missing`) +
+        (trade.status === 'reversed' ? ' · reversed' : trade.gradeBlocked ? ' · needs review' : '');
       item.innerHTML = `<a href="#trades/${trade.id}"${marked(trade, selected?.id)}>
         <strong>${esc(label(trade))}</strong><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
       </a>`;
@@ -118,7 +119,8 @@
       const outcome = asset.outcome;
       const afterDraft = point && !point.original && outcome &&
         market[point.i][2] >= asset.afterDraft;
-      return `<li>${esc(pickLabel(asset))}${afterDraft ? `<small>${esc(outcome.slot)} became ${esc(outcome.name)}</small>` : ''}</li>`;
+      return `<li>${esc(pickLabel(asset))}${afterDraft ? `<small>${esc(outcome.slot)} became ${esc(outcome.name)}</small>` :
+        outcome && (!asset.afterDraft || !point) ? `<small>Draft result: ${esc(outcome.slot)} ${esc(outcome.name)}${!asset.afterDraft ? ' · selection date unverified' : ''}</small>` : ''}</li>`;
     }).join('')}</ul>`;
   }
 
@@ -141,7 +143,8 @@
       return;
     }
     const trade = selected;
-    const sourceLabel = trade.leagueId ? `Sleeper · ${trade.season} season` : `League workbook · Row ${trade.row}`;
+    const sourceLabel = trade.leagueId ? `Sleeper · ${trade.season} season` : trade.source === 'espn' ?
+      `ESPN · ${trade.season} season` : `League workbook · Row ${trade.row}`;
     const showChart = trade.points.filter(point => fullyPriced(point.values)).length > 1;
     const hasData = trade.points.length > 0;
     detail.innerHTML = `
@@ -166,6 +169,8 @@
       <div class="trade-snapshot"></div>
       <div class="trade-packages"></div>
       ${trade.notes ? `<p class="trade-unpriced">${esc(trade.notes)}</p>` : ''}
+      ${trade.issues?.length ? `<ul class="trade-unpriced">${trade.issues.map(issue => `<li>${esc(issue)}</li>`).join('')}</ul>` : ''}
+      ${trade.dateSource ? `<details class="trade-original"><summary>Date evidence</summary><p>${esc(trade.dateSource)}</p><p>Dates reflect the platform execution record. Manually processed transfers may have been agreed earlier.</p></details>` : ''}
       ${trade.original ? `<details class="trade-original"><summary>Original workbook entry</summary><p>${esc(trade.original)}</p></details>` : ''}`;
 
     const canvas = detail.querySelector('canvas');
@@ -194,6 +199,7 @@
         ${point ? `<p class="trade-total">${Number.isFinite(point.values[i]) ? number.format(point.values[i]) :
           side.assets?.every(asset => asset.kind === 'faab') ? 'FAAB only' : 'Incomplete value'}</p>` : ''}
         ${assetList(trade, side, point)}
+        ${side.originalPackage ? `<details class="trade-original"><summary>Workbook package</summary><p>${esc(side.originalPackage)}</p></details>` : ''}
         ${missing?.[i]?.length ? `<p class="trade-missing">Unpriced assets include ${esc(missing[i].join(', '))}.</p>` : ''}
       </section>`).join('');
       if (canvas) paintChart(canvas, trade.points, pointIndex, trade.sides.length);
@@ -266,14 +272,16 @@
   }
 
   async function load() {
-    const response = await Promise.all(['trade-workbook-archive.json', 'trade-valuations.json'].map(async path => {
+    const response = await Promise.all(['trade-workbook-archive.json', 'trade-valuations.json', 'trade-history.json'].map(async path => {
       const fetched = await fetch(path);
       if (!fetched.ok) throw new Error(path);
       return fetched.json();
     }));
-    const [workbook, rated] = response;
+    const [workbook, rated, historical] = response;
+    coverage = historical.coverage;
     market = rated.market;
-    const dated = new Map(rated.trades.map(trade => [trade.id, trade]));
+    const dated = new Map(historical.trades.map(trade => [trade.id, trade]));
+    for (const trade of rated.trades) dated.set(trade.id, trade);
     const undated = [];
     const picks = new Map();
     for (const [row, ...outcome] of workbook.outcomes) {
@@ -287,6 +295,9 @@
       else undated.unshift({ ...base, sides: sides.map(([manager, pack]) => ({ manager, package: pack })) });
     }
     trades = [...dated.values(), ...undated].map(learnTrade);
+    trades.sort((a, b) => (b.acceptedAt || 0) - (a.acceptedAt || 0) || (b.row || 0) - (a.row || 0));
+    const audit = document.getElementById('tradeCoverage');
+    if (audit) audit.textContent = `${coverage.workbookRows} workbook rows entered · ${coverage.espnRecordsReconciled}/${coverage.espnExecutedRecords} recovered ESPN records reconciled · ${coverage.workbookRowsDated} workbook execution dates matched · ${coverage.undatedWorkbookRows} dates missing. One reversed entry is retained for the audit.`;
     const seasons = [...new Set(rated.trades.map(trade => trade.season).filter(Boolean))].sort((a, b) => b - a);
     season.innerHTML += seasons.map(year => `<option value="${year}">${year}</option>`).join('');
     season.innerHTML += '<option value="undated">Date missing</option>';

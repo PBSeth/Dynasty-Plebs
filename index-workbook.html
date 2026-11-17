@@ -83,9 +83,10 @@
     <details class="trade-method">
       <summary>How trade values are calculated</summary>
       <p>Each side is the sum of its published DynastyProcess 1QB asset values. Trade day uses the last snapshot published before the trade. Each manager’s peak is their best margin over the strongest other side on the same post-trade snapshot.</p>
-      <p>Unspent picks use their round price, or a known slot when it was documented on trade day. If the source lists only exact slots, the round price is the median of its 12 slots. A pick switches to its drafted player after the documented draft completion. FAAB is shown separately. An unpriced asset leaves that package ungraded.</p>
+      <p>Unspent picks use their round price, or a known slot when it was documented on trade day. If the source lists only exact slots, the round price is the median of its 12 slots. Original trade-day calculations always value the pick itself. Later calculations use the selected player after the recorded Sleeper draft completion or first verified ESPN roster addition. ESPN additions provide an upper bound on selection time. FAAB is shown separately. An unpriced asset leaves that package ungraded.</p>
       <p>Values describe the original packages over time. <a href="https://github.com/DynastyProcess/data" rel="noopener">DynastyProcess source archive</a> · <a href="trade-market-LICENSE.txt">Data license</a></p>
     </details>
+    <p class="trade-count" id="tradeCoverage" role="status"></p>
     <div class="trade-review-layout">
       <aside class="panel trade-browser" aria-label="Trade archive">
         <div class="trade-filters">

@@ -1,0 +1,4826 @@
+{
+  "leagueId": 30017097,
+  "coverage": [
+    {
+      "season": 2019,
+      "period": 1,
+      "total": 220
+    },
+    {
+      "season": 2019,
+      "period": 2,
+      "total": 32
+    },
+    {
+      "season": 2019,
+      "period": 3,
+      "total": 37
+    },
+    {
+      "season": 2019,
+      "period": 4,
+      "total": 60
+    },
+    {
+      "season": 2019,
+      "period": 5,
+      "total": 44
+    },
+    {
+      "season": 2019,
+      "period": 6,
+      "total": 52
+    },
+    {
+      "season": 2019,
+      "period": 7,
+      "total": 40
+    },
+    {
+      "season": 2019,
+      "period": 8,
+      "total": 35
+    },
+    {
+      "season": 2019,
+      "period": 9,
+      "total": 25
+    },
+    {
+      "season": 2019,
+      "period": 10,
+      "total": 55
+    },
+    {
+      "season": 2019,
+      "period": 11,
+      "total": 42
+    },
+    {
+      "season": 2019,
+      "period": 12,
+      "total": 54
+    },
+    {
+      "season": 2019,
+      "period": 13,
+      "total": 56
+    },
+    {
+      "season": 2019,
+      "period": 14,
+      "total": 31
+    },
+    {
+      "season": 2019,
+      "period": 15,
+      "total": 11
+    },
+    {
+      "season": 2019,
+      "period": 16,
+      "total": 38
+    },
+    {
+      "season": 2019,
+      "period": 17,
+      "total": 7
+    },
+    {
+      "season": 2019,
+      "period": 18,
+      "total": 111
+    },
+    {
+      "season": 2020,
+      "period": 1,
+      "total": 382
+    },
+    {
+      "season": 2020,
+      "period": 2,
+      "total": 32
+    },
+    {
+      "season": 2020,
+      "period": 3,
+      "total": 43
+    },
+    {
+      "season": 2020,
+      "period": 4,
+      "total": 59
+    },
+    {
+      "season": 2020,
+      "period": 5,
+      "total": 44
+    },
+    {
+      "season": 2020,
+      "period": 6,
+      "total": 43
+    },
+    {
+      "season": 2020,
+      "period": 7,
+      "total": 36
+    },
+    {
+      "season": 2020,
+      "period": 8,
+      "total": 25
+    },
+    {
+      "season": 2020,
+      "period": 9,
+      "total": 55
+    },
+    {
+      "season": 2020,
+      "period": 10,
+      "total": 36
+    },
+    {
+      "season": 2020,
+      "period": 11,
+      "total": 33
+    },
+    {
+      "season": 2020,
+      "period": 12,
+      "total": 28
+    },
+    {
+      "season": 2020,
+      "period": 13,
+      "total": 28
+    },
+    {
+      "season": 2020,
+      "period": 14,
+      "total": 16
+    },
+    {
+      "season": 2020,
+      "period": 15,
+      "total": 22
+    },
+    {
+      "season": 2020,
+      "period": 16,
+      "total": 16
+    },
+    {
+      "season": 2020,
+      "period": 17,
+      "total": 13
+    },
+    {
+      "season": 2020,
+      "period": 18,
+      "total": 65
+    },
+    {
+      "season": 2021,
+      "period": 1,
+      "total": 353
+    },
+    {
+      "season": 2021,
+      "period": 2,
+      "total": 41
+    },
+    {
+      "season": 2021,
+      "period": 3,
+      "total": 28
+    },
+    {
+      "season": 2021,
+      "period": 4,
+      "total": 32
+    },
+    {
+      "season": 2021,
+      "period": 5,
+      "total": 35
+    },
+    {
+      "season": 2021,
+      "period": 6,
+      "total": 41
+    },
+    {
+      "season": 2021,
+      "period": 7,
+      "total": 38
+    },
+    {
+      "season": 2021,
+      "period": 8,
+      "total": 44
+    },
+    {
+      "season": 2021,
+      "period": 9,
+      "total": 40
+    },
+    {
+      "season": 2021,
+      "period": 10,
+      "total": 26
+    },
+    {
+      "season": 2021,
+      "period": 11,
+      "total": 18
+    },
+    {
+      "season": 2021,
+      "period": 12,
+      "total": 10
+    },
+    {
+      "season": 2021,
+      "period": 13,
+      "total": 15
+    },
+    {
+      "season": 2021,
+      "period": 14,
+      "total": 12
+    },
+    {
+      "season": 2021,
+      "period": 15,
+      "total": 8
+    },
+    {
+      "season": 2021,
+      "period": 16,
+      "total": 14
+    },
+    {
+      "season": 2021,
+      "period": 17,
+      "total": 4
+    },
+    {
+      "season": 2021,
+      "period": 18,
+      "total": 4
+    },
+    {
+      "season": 2021,
+      "period": 19,
+      "total": 91
+    },
+    {
+      "season": 2022,
+      "period": 1,
+      "total": 648
+    },
+    {
+      "season": 2022,
+      "period": 2,
+      "total": 32
+    },
+    {
+      "season": 2022,
+      "period": 3,
+      "total": 32
+    },
+    {
+      "season": 2022,
+      "period": 4,
+      "total": 18
+    },
+    {
+      "season": 2022,
+      "period": 5,
+      "total": 15
+    },
+    {
+      "season": 2022,
+      "period": 6,
+      "total": 23
+    },
+    {
+      "season": 2022,
+      "period": 7,
+      "total": 32
+    },
+    {
+      "season": 2022,
+      "period": 8,
+      "total": 31
+    },
+    {
+      "season": 2022,
+      "period": 9,
+      "total": 30
+    },
+    {
+      "season": 2022,
+      "period": 10,
+      "total": 20
+    },
+    {
+      "season": 2022,
+      "period": 11,
+      "total": 26
+    },
+    {
+      "season": 2022,
+      "period": 12,
+      "total": 18
+    },
+    {
+      "season": 2022,
+      "period": 13,
+      "total": 30
+    },
+    {
+      "season": 2022,
+      "period": 14,
+      "total": 19
+    },
+    {
+      "season": 2022,
+      "period": 15,
+      "total": 16
+    },
+    {
+      "season": 2022,
+      "period": 16,
+      "total": 18
+    },
+    {
+      "season": 2022,
+      "period": 17,
+      "total": 5
+    },
+    {
+      "season": 2022,
+      "period": 18,
+      "total": 82
+    },
+    {
+      "season": 2022,
+      "period": 19,
+      "total": 82
+    },
+    {
+      "season": 2023,
+      "period": 1,
+      "total": 154
+    },
+    {
+      "season": 2023,
+      "period": 2,
+      "total": 23
+    },
+    {
+      "season": 2023,
+      "period": 3,
+      "total": 19
+    },
+    {
+      "season": 2023,
+      "period": 4,
+      "total": 17
+    },
+    {
+      "season": 2023,
+      "period": 5,
+      "total": 12
+    },
+    {
+      "season": 2023,
+      "period": 6,
+      "total": 24
+    },
+    {
+      "season": 2023,
+      "period": 7,
+      "total": 22
+    },
+    {
+      "season": 2023,
+      "period": 8,
+      "total": 10
+    },
+    {
+      "season": 2023,
+      "period": 9,
+      "total": 24
+    },
+    {
+      "season": 2023,
+      "period": 10,
+      "total": 21
+    },
+    {
+      "season": 2023,
+      "period": 11,
+      "total": 30
+    },
+    {
+      "season": 2023,
+      "period": 12,
+      "total": 15
+    },
+    {
+      "season": 2023,
+      "period": 13,
+      "total": 15
+    },
+    {
+      "season": 2023,
+      "period": 14,
+      "total": 22
+    },
+    {
+      "season": 2023,
+      "period": 15,
+      "total": 10
+    },
+    {
+      "season": 2023,
+      "period": 16,
+      "total": 19
+    },
+    {
+      "season": 2023,
+      "period": 17,
+      "total": 9
+    },
+    {
+      "season": 2023,
+      "period": 18,
+      "total": 9
+    },
+    {
+      "season": 2023,
+      "period": 19,
+      "total": 63
+    },
+    {
+      "season": 2024,
+      "period": 1,
+      "total": 197
+    },
+    {
+      "season": 2024,
+      "period": 2,
+      "total": 31
+    },
+    {
+      "season": 2024,
+      "period": 3,
+      "total": 10
+    },
+    {
+      "season": 2024,
+      "period": 4,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 5,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 6,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 7,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 8,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 9,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 10,
+      "total": 7
+    },
+    {
+      "season": 2024,
+      "period": 11,
+      "total": 7
+    }
+  ],
+  "transactions": [
+    {
+      "season": 2019,
+      "id": "ece679cf-c3bf-45b8-b065-b067a6e8c973",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1557450793550,
+      "proposedDate": 1557450793278,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122449,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "01758c11-8756-4710-9400-658bfd73f3a8",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1558235050907,
+      "proposedDate": 1558235050571,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916148,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "8a0c04f7-d044-4a49-bdd2-9abc500a72e6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1556730691934,
+      "proposedDate": 1556730691784,
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3925357,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "01689a5c-01b1-41eb-9da3-2cdaa6473610",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1558236429994,
+      "proposedDate": 1558236429162,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916148,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "0b50c4c5-545c-4f29-986d-e6b23a6f5c37",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1556821912992,
+      "proposedDate": 1556821912709,
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3886377,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "fac28d59-f50b-42eb-a95f-99d6b1dc8fbe",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1567116634133,
+      "proposedDate": 1567116634006,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122449,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "7020e203-84d6-43d5-9c15-2d7aadc60e93",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1560109871766,
+      "proposedDate": 1560109871489,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4039359,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "09e695b5-761b-4551-9d3c-cb2c8a967ec4",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1570028358960,
+      "proposedDate": 1570028358817,
+      "relatedTransactionId": "1dd34c5c-2539-4611-b7cd-e6069861c388",
+      "teamId": 8,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3045138,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2576925,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121422,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4047365,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115252,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 10456,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "1ce257ef-e686-46b8-9d9c-db8ca0160871",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1569913200000,
+      "proposedDate": 1569913318685,
+      "relatedTransactionId": "3e17e96a-e5ca-46b6-8de4-2ded531fc186",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916945,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2576395,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "c87d2ec7-a458-4018-9ddb-df732b0dd934",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1570065044341,
+      "proposedDate": 1570065044005,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3139925,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115365,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "e1d1acc2-eadc-485b-968a-f6acab55ebe2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1571429508472,
+      "proposedDate": 1571429508126,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2979477,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3119195,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "ce635127-f256-4c5e-95a9-b8571b0c8a07",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1571744939800,
+      "proposedDate": 1571744939400,
+      "relatedTransactionId": "c9f21d4d-0fe3-43a9-b274-9a5f362e76bf",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115306,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3917846,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "dcf1e5fc-dd2c-4ec6-ab81-0abb31ab7b62",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1571791150860,
+      "proposedDate": 1571791150698,
+      "relatedTransactionId": "1a880418-035c-446f-9930-c580396ee8a9",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3128451,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2576623,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "7c4ac5c9-8e66-443e-a2d9-acaab3611e7a",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1572957438457,
+      "proposedDate": 1572957437905,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3139605,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "f5f9c5b3-289a-4ec5-ba43-3732e61abe4d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1573048118221,
+      "proposedDate": 1573048117862,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2577417,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2574511,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "941bc505-51a1-4307-8b68-1303439f66ab",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1573048081311,
+      "proposedDate": 1573048081127,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976499,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916925,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2978124,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "f6d2fc71-1987-4b3a-8aa2-dea0ac675f6f",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1573778260207,
+      "proposedDate": 1573778260035,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2330,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "808cefff-7725-48ed-95b3-8b662d0592fb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574286545735,
+      "proposedDate": 1574286545548,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3049916,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 8664,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 14880,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3843603,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "4fd9afd2-26a9-4dc9-a904-fbf8060a06cf",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574286453726,
+      "proposedDate": 1574286453559,
+      "teamId": 3,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 14924,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3045138,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "e5dd93bd-b864-4749-910e-c5df6a428582",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574462280592,
+      "proposedDate": 1574462280405,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035072,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "897d23c9-4bd4-45eb-8199-bed91dee419d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574920630494,
+      "proposedDate": 1574920630308,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3125404,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2991662,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "883b6315-7fbe-4a21-9c3a-d9ec296e48bd",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574893432590,
+      "proposedDate": 1574893432413,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916945,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "1726cc7d-713f-457b-b2ba-69f87ce88e3e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1574772793733,
+      "proposedDate": 1574772793560,
+      "relatedTransactionId": "73100349-bcb6-4045-9206-b5d25a959e92",
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3126367,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042778,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "c566cc91-857a-4cce-a4b4-eef70d736b31",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1576797375914,
+      "proposedDate": 1576797375711,
+      "relatedTransactionId": "e58fc756-afb2-42d5-a923-fecc81b9c629",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16733,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3120348,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3128451,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2975674,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "42838ada-f0e5-41d5-9424-5937a77d75d4",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1576712941429,
+      "proposedDate": 1576712941096,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16799,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3843750,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16782,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042778,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "bc0434a8-637e-49c9-979f-25965a911255",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1576623642523,
+      "proposedDate": 1576623642164,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3057987,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3923397,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "d79cf7bc-c163-4032-8656-471887fb4e9f",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1577029023680,
+      "proposedDate": 1577029023327,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 12649,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "902af1d0-ad93-4e51-ac8d-8be7562c5bcc",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1582548287366,
+      "proposedDate": 1582548287038,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116721,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "478ae8e2-d61c-4564-a2aa-a9db34f46e17",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1582548262870,
+      "proposedDate": 1582548262525,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3060022,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "0d9c2731-8657-4fba-8aa0-da953998fb0d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1582840481268,
+      "proposedDate": 1582840480933,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4047365,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "af9039c0-ba1b-47ea-b249-72e676cbeab5",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1583185718221,
+      "proposedDate": 1583185717880,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3052177,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2019,
+      "id": "c800a93d-d99f-48f1-8d48-f02c4d4b180e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1581997016994,
+      "proposedDate": 1581997016668,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122672,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2574808,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "3ecfb975-2244-4204-be2d-1bfec1a19002",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1597341353425,
+      "proposedDate": 1597341353325,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122449,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "9f40413f-d909-465e-b405-0e904b488739",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1588112851278,
+      "proposedDate": 1588112851037,
+      "teamId": 9,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116136,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "ae6acfe9-377a-4da7-8b45-462c45f9793b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1594076137878,
+      "proposedDate": 1594076137625,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3895856,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3045138,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "7231a15c-841a-4194-936d-9ba05bef4b0e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1597292694104,
+      "proposedDate": 1597292693797,
+      "relatedTransactionId": "12dd16de-fe54-4c88-840a-2acfd0cb8e11",
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16799,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4046692,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121023,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3915416,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3917940,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2971618,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "9df70549-5fae-4d4e-871b-cb1bc05f6634",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1598150256496,
+      "proposedDate": 1598150256150,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3123050,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "04b6a0b2-c2dc-4614-ad5d-0ef43144183c",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1587874659385,
+      "proposedDate": 1587874659143,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16733,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "5b701420-0aaf-443b-a205-e82b5b4ec7f1",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1599778726686,
+      "proposedDate": 1599778726558,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 13295,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "d3c56ae0-3642-4de0-af24-a7305fd7dd28",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1598911273766,
+      "proposedDate": 1598911273665,
+      "teamId": 9,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2573401,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "fb9eaea6-b74f-4da8-93b8-f54fa3606ad2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1591582614797,
+      "proposedDate": 1591582614318,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4048244,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "a983ade0-5a6e-42cb-b2a2-87c6ae596144",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1588196639304,
+      "proposedDate": 1588196639208,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3914397,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "a9b5a7e9-26b8-4912-b5ad-36f0827ba55d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1599308531862,
+      "proposedDate": 1599308531752,
+      "teamId": 6,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3918639,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "af389e8b-527d-454b-a187-84567889096b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1585747459142,
+      "proposedDate": 1585747459038,
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3932423,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16731,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "c40cc38b-fb28-4860-90d1-74e51305dc5b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1591829806541,
+      "proposedDate": 1591829806054,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3126486,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241389,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "1bfa84a1-151a-4acc-9fbd-9e05b15f9ebb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1597272906362,
+      "proposedDate": 1597272906130,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360294,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "90e22ad0-6cf5-46de-869a-ade7d9f9dc42",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1588022109009,
+      "proposedDate": 1588022108686,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976212,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3049916,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "f6e34b96-bd5a-4f86-b094-79ed5953b549",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1587630880991,
+      "proposedDate": 1587630880755,
+      "relatedTransactionId": "25cdcece-7ae3-4aee-a47d-102601eea83d",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4036131,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15853,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "76f355ab-5c52-40c0-a73c-fc937e221a38",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1590700597548,
+      "proposedDate": 1590700597450,
+      "relatedTransactionId": "acb7c83b-cdca-4978-a983-5dfa0cb87f45",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121410,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241479,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "48d4eaf5-fe1d-41b4-b2e8-be6a38b6abf2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1595044779896,
+      "proposedDate": 1595044779605,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4047365,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116593,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4048244,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "d8c2db10-09c2-43be-a046-e4c3bd1eec34",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1600382717428,
+      "proposedDate": 1600382717049,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3066158,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "1b8640e9-9690-433b-bed0-f67083ac66c4",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1600224539281,
+      "proposedDate": 1600224538927,
+      "teamId": 9,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2980453,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "20d1b6a3-db5d-4b64-b367-a9655557c478",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1601560560547,
+      "proposedDate": 1601560560396,
+      "relatedTransactionId": "8b2332b3-7a1b-44f7-8874-0424fd8f880e",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3117251,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976212,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976499,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4034950,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3120659,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "a819d4a8-6915-4439-ab18-68a0a996eeb2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1602344583459,
+      "proposedDate": 1602344583330,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16799,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360438,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "441d164d-83f9-4e28-b42c-558ef95e1f3b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1604415150658,
+      "proposedDate": 1604415150386,
+      "relatedTransactionId": "9e901440-880e-41f0-9e72-f352c22cfc49",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16786,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3928925,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "3155722a-48de-4ce3-9935-818c0b962642",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1604752045506,
+      "proposedDate": 1604752045115,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16757,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "0c3291d9-5ba7-4960-ae2f-5df531f2d03a",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1606995099002,
+      "proposedDate": 1606995098600,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121422,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116165,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116385,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121410,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241802,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "db17372c-ddad-47e0-8ed6-6ce4c26df620",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1607205093259,
+      "proposedDate": 1607205092955,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122866,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916433,
+          "toLineupSlotId": -1,
+          "toTeamId": 6,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "8466e515-af55-4fed-9132-ccbc13dd9d6b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1607550309372,
+      "proposedDate": 1607550309209,
+      "relatedTransactionId": "fb652fb5-b2db-4e95-b32c-84235fae2bfa",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3918639,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3050487,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3025433,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16813,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122899,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "c5170cf2-8325-4f15-8ffe-90f43dd689a6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1608079423297,
+      "proposedDate": 1608079422995,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035676,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2020,
+      "id": "6bbb61af-c3fb-4c47-bd29-7bec6f12876b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1610493490354,
+      "proposedDate": 1610493490006,
+      "relatedTransactionId": "c6686b2a-46ed-42a8-8459-dd4458112425",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3929630,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3117251,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "d6a94cc7-8a5c-4bee-ae50-acd3dce90463",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1630175662944,
+      "proposedDate": 1630175662841,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 8664,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4361577,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "5ef562da-5021-4cdf-8f15-f2adcd289a92",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1617333084378,
+      "proposedDate": 1617333084283,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035403,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "9c638cd7-ec84-44dd-9755-a54e5f6f5b58",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1621968964152,
+      "proposedDate": 1621968963910,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16460,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16800,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3052876,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "ddd5453e-bfb5-491f-a803-3c97325ceb7d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1619992186841,
+      "proposedDate": 1619992186591,
+      "teamId": 3,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3045144,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3052876,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "8ce38268-f9f9-4c88-9c51-3543bf336ff2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1625104692462,
+      "proposedDate": 1625104692130,
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4243315,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3043275,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "7824ca4a-14c7-4076-8d60-67c9e9cd37d3",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1619710884965,
+      "proposedDate": 1619710884612,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3059915,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4242214,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "d388c6e7-b4c1-4363-9512-ff71a492095e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1617333055147,
+      "proposedDate": 1617333054775,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122840,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3917315,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "2cf6e199-e337-4fa3-8c55-46dbe995fe61",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1629911416238,
+      "proposedDate": 1629911416116,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3068267,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 13982,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4046692,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241985,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "d477b134-a4cd-4c83-9f82-325279e3784e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1631155495464,
+      "proposedDate": 1631155495359,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15880,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916945,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "68e61a6c-1fe6-49a5-9843-c6a9d97bf3dd",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1628710133844,
+      "proposedDate": 1628710133563,
+      "relatedTransactionId": "ccd64c58-7b91-40d2-a1c7-74eb9f3a7f00",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360248,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 8,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3040151,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "b389aafc-48de-40cc-bf46-9c27666d48e4",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1619710939980,
+      "proposedDate": 1619710939673,
+      "teamId": 3,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241463,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "d3dae7de-ece8-4e9d-8cb7-92904c3777c6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1619992149478,
+      "proposedDate": 1619992149178,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3120348,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "2ad14e2c-90f5-49eb-aec3-f60f868c5301",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1629991247085,
+      "proposedDate": 1629991246991,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4371733,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3919596,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "807a34e9-944b-4b4c-ac0c-1459f03c7af6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1630175921238,
+      "proposedDate": 1630175921138,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3912547,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 8664,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "25ec1f3a-cd24-4352-9fba-73166d4ce64e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1624666155349,
+      "proposedDate": 1624666155106,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4243537,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "23bc1ed1-b264-4fb3-9018-17b17a70db49",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1630584231743,
+      "proposedDate": 1630584231639,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4036133,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2576925,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "8c2db353-04a3-4921-bd9b-795d76a39cd0",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1622504138241,
+      "proposedDate": 1622504138004,
+      "teamId": 3,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116593,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3886818,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4048244,
+          "toLineupSlotId": -1,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4045163,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3045144,
+          "toLineupSlotId": -1,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "1addc9dd-8f0b-493d-9135-80118fc5426a",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1632323432410,
+      "proposedDate": 1632323432108,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2330,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916566,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4361411,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2975674,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2577417,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2979477,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "5e70eabe-bc97-4d8d-8f32-94819775d365",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1634176000367,
+      "proposedDate": 1634176000011,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3139605,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "ce25e59c-20f0-48f6-9a84-621d312f83cd",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1634679878964,
+      "proposedDate": 1634679878655,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122866,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "4b35873d-ac1e-4871-b06b-4fc8d7534bff",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1635247811089,
+      "proposedDate": 1635247810649,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360294,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2330,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241555,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4383351,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "69a04648-095b-4a0f-9c99-a244abb9aa6e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1635272516828,
+      "proposedDate": 1635272516533,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4240657,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "ffe155bf-352c-4822-860c-e7965d4b970a",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1635364134621,
+      "proposedDate": 1635364134300,
+      "teamId": 12,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4239934,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241464,
+          "toLineupSlotId": -1,
+          "toTeamId": 6,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "81d496b4-10ee-41dc-9736-5003f6fafae0",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1635861736792,
+      "proposedDate": 1635861736434,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3925357,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360294,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "ebe9b06f-4aef-44ac-9c7a-3e8847d33e25",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1637505744631,
+      "proposedDate": 1637505744320,
+      "teamId": 11,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976499,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16737,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "1e89a03b-e17f-410f-b33b-48b21c8056db",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1637505576875,
+      "proposedDate": 1637505576371,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16799,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115378,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035170,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4039274,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "acde886b-4463-4d50-ad25-0ffa21f3e462",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1637670792299,
+      "proposedDate": 1637670791859,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4040715,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "e70096f6-f512-48fd-b2c1-5a46a5f5c560",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1637728282337,
+      "proposedDate": 1637728281843,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15807,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3119195,
+          "toLineupSlotId": -1,
+          "toTeamId": 6,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "f27aeb24-7b4a-4da2-ae62-037fc1a9ad2d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1647001158930,
+      "proposedDate": 1647001158626,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15818,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "aac4a886-ca00-44b1-99d0-2524c5ebe141",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1644769006298,
+      "proposedDate": 1644769006124,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15880,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4258173,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "ca9d20cd-b676-4c50-9c04-57b1d36dc8dd",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1643412239766,
+      "proposedDate": 1643412239424,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116165,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "e4a1972c-ee11-4d1a-bd6c-465d4e11caa1",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1644768977262,
+      "proposedDate": 1644768976886,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16799,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2021,
+      "id": "bdfbbd6f-92c9-4719-8fee-7237ad88e7f7",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1648070886189,
+      "proposedDate": 1648070885891,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4383351,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115378,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4050373,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "109246ff-03b4-42d5-b1d0-bfb914941ffc",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1651021784642,
+      "proposedDate": 1651021784410,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241985,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3120348,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3932905,
+          "toLineupSlotId": -1,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "a12db98a-182e-476b-ae45-2a5d8075798b",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1648824181479,
+      "proposedDate": 1648824181007,
+      "teamId": 10,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15818,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "7699a018-547a-4603-b1bd-89e334b24bcb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1648840457620,
+      "proposedDate": 1648840457338,
+      "teamId": 10,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4239992,
+          "toLineupSlotId": -1,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "d1075ffd-7e6e-460f-961e-56f4535d6a62",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1659612450347,
+      "proposedDate": 1659612450092,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3135321,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115378,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241941,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2979843,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4567096,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4258595,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15835,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "962c473e-008e-454f-bb06-dac163742efd",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1651882640412,
+      "proposedDate": 1651882640114,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15880,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "d179532f-91ab-42a4-9d7b-ffbe78c1a690",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1649854313837,
+      "proposedDate": 1649854313540,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3039707,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "73cc846e-54c4-42dc-8c22-87a501bef4ce",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1651758157150,
+      "proposedDate": 1651758156853,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241985,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042519,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "60c54d1e-ba62-495d-9614-e4e2c12cdc4d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1657486823101,
+      "proposedDate": 1657486822854,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976212,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4040715,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4039359,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4697815,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3915416,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4383351,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "7fe7ddfe-fb47-41cc-8896-eb34449f423e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1648687808082,
+      "proposedDate": 1648687807672,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3115378,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "886afcc6-7cbc-485b-893e-bce3e01b2855",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1651946523609,
+      "proposedDate": 1651946523294,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15835,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3930086,
+          "toLineupSlotId": -1,
+          "toTeamId": 9,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "3731cc40-1392-4047-b8d7-8c551d11a026",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1651788119830,
+      "proposedDate": 1651788119589,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4046692,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "5d9d9da6-754a-4458-8690-f5e8476afc68",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1659730364994,
+      "proposedDate": 1659730364627,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035115,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "eebe05c2-d70c-44af-932d-458c2a5d144e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1648673616025,
+      "proposedDate": 1648673615744,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4383351,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "c7f483f6-3a94-4cc6-9bbe-c6f3ddd0b807",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1664646998160,
+      "proposedDate": 1664646998097,
+      "relatedTransactionId": "4ca04285-faee-4e65-a6e0-8692b7506033",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3068267,
+          "toLineupSlotId": -1,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4569618,
+          "toLineupSlotId": -1,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "ce508d29-52c9-4b5d-bd3c-dc1312d385c3",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1666299606560,
+      "proposedDate": 1666299606492,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4039359,
+          "toLineupSlotId": -1,
+          "toTeamId": 8,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "66340c04-494b-4219-baf8-d31bc3c548fb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1666870359870,
+      "proposedDate": 1666870359799,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035538,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042519,
+          "toLineupSlotId": -1,
+          "toTeamId": 12,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "8f0bc3f1-0e9a-4b9f-8c19-12b541c881d1",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1667441740202,
+      "proposedDate": 1667441740131,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3116406,
+          "toLineupSlotId": -1,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": -1,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4243537,
+          "toLineupSlotId": -1,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "1a3b9eaf-2446-40fa-b401-2d8b7b735ed2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1668520683606,
+      "proposedDate": 1668520683532,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16737,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4240657,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3122840,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241820,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "9a01ea87-60b1-48f3-823c-c23e02380fdf",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1669768896643,
+      "proposedDate": 1669768896561,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3054850,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "8a4fddb7-95d4-4631-9fcb-ed1003fe8ef5",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1670953099985,
+      "proposedDate": 1670953099909,
+      "relatedTransactionId": "abc30938-2ecf-44bd-8022-f8ecc9475f4b",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 16737,
+          "toLineupSlotId": 23,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15818,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "d377d1eb-9473-47f1-ad44-61a15e953c0e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1671585600549,
+      "proposedDate": 1671585600469,
+      "teamId": 6,
+      "items": [
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15920,
+          "toLineupSlotId": 20,
+          "toTeamId": 6,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "b135bf1f-070b-4955-8b2c-ba3fc6a528db",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1677351494254,
+      "proposedDate": 1677351494173,
+      "relatedTransactionId": "50dcd247-a46b-4367-b7e8-441904c1834e",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3054850,
+          "toLineupSlotId": 2,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042519,
+          "toLineupSlotId": 2,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "875884a6-1951-4bfd-ad7c-acd98e955855",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1677166713620,
+      "proposedDate": 1677166713535,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360635,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "06abb88c-2471-4083-8a43-4049b82326bb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1676607194966,
+      "proposedDate": 1676607194884,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": 4,
+          "fromTeamId": 10,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241478,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3125116,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2022,
+      "id": "1aa5acef-3b9a-4bfa-a956-00e69f0d247d",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1676079066409,
+      "proposedDate": 1676079066323,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 9,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4035004,
+          "toLineupSlotId": 20,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "77b6ec87-0b8d-4302-ae87-c0aede8797a6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1683287914373,
+      "proposedDate": 1683287914314,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4258173,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4242540,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "4bdb881c-44ef-4637-9d75-6c84462c1e28",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1683425717901,
+      "proposedDate": 1683425717847,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3128390,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "16a1e2a1-51e6-441c-916c-21aa0f116173",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1679880431915,
+      "proposedDate": 1679880431852,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 4,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4241463,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "8d7ea23d-8f6b-4bf6-9813-6c59a62c31b6",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1698362482254,
+      "proposedDate": 1698362482198,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4426875,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3916945,
+          "toLineupSlotId": 23,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4360078,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3915511,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4361370,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4242431,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "d66406bf-3131-448a-956a-3267890a45db",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1700169206710,
+      "proposedDate": 1700169206653,
+      "relatedTransactionId": "6c865e2f-bd3c-45c6-a762-0d46a85d672c",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 4,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2976212,
+          "toLineupSlotId": 20,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 6,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4430027,
+          "toLineupSlotId": 20,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4688813,
+          "toLineupSlotId": 4,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15847,
+          "toLineupSlotId": 6,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "1d0265b2-213f-4190-9503-e7152211a23a",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1702257754515,
+      "proposedDate": 1702257754447,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4688813,
+          "toLineupSlotId": 20,
+          "toTeamId": 10,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "99307170-20ac-4071-86f3-1735b5c6a7b2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1703212745088,
+      "proposedDate": 1703212745020,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4361777,
+          "toLineupSlotId": 2,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4242355,
+          "toLineupSlotId": 20,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4697815,
+          "toLineupSlotId": 20,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "764dbb90-8c74-43db-9dd8-20bc77606295",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1703212785241,
+      "proposedDate": 1703212785175,
+      "teamId": 2,
+      "items": [
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2576414,
+          "toLineupSlotId": 20,
+          "toTeamId": 2,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "1429d356-ba0c-46e9-be83-3e650321cbfb",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1711206175301,
+      "proposedDate": 1711206175188,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3052587,
+          "toLineupSlotId": 20,
+          "toTeamId": 2,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 2,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3886812,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "daa2a6e5-4d33-442b-9658-eeeea875f180",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1707689144966,
+      "proposedDate": 1707689144899,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 6,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 15847,
+          "toLineupSlotId": 20,
+          "toTeamId": 4,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 4,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4567156,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2023,
+      "id": "ac29dfef-672b-476d-bff8-40ee72056e47",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1710379098223,
+      "proposedDate": 1710379098156,
+      "teamId": 4,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 11,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3932905,
+          "toLineupSlotId": 20,
+          "toTeamId": 4,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "3dcd1fc2-053c-4e99-9675-6f61a77a3f4c",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1725503012779,
+      "proposedDate": 1725503012747,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 4,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4047650,
+          "toLineupSlotId": 23,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3121422,
+          "toLineupSlotId": 4,
+          "toTeamId": 3,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "4e50277f-34b5-4406-9fb1-5e101699beef",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1725499673425,
+      "proposedDate": 1725499673396,
+      "relatedTransactionId": "b144bc49-e680-4d23-b552-01e1de197a28",
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3929630,
+          "toLineupSlotId": 2,
+          "toTeamId": 6,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 2,
+          "fromTeamId": 6,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4361579,
+          "toLineupSlotId": 2,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "ef507f61-d2a5-4a85-9b3f-0fe160c3065e",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1713533661589,
+      "proposedDate": 1713533661552,
+      "teamId": 7,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4373626,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "1e5410ce-7cd2-476c-94c2-cf5f977a39ab",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1714158458188,
+      "proposedDate": 1714158458148,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4426386,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4430871,
+          "toLineupSlotId": 20,
+          "toTeamId": 7,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "b82c14e5-2190-4c4a-9cd5-25770b905057",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1714003372620,
+      "proposedDate": 1714003372575,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 4,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3925357,
+          "toLineupSlotId": 20,
+          "toTeamId": 12,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 12,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4429084,
+          "toLineupSlotId": 20,
+          "toTeamId": 1,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "09e6496e-2b02-4244-8b70-a91eb7582bb2",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1720492251567,
+      "proposedDate": 1720492251497,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4567156,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "8c7865de-229e-4c9c-abb6-57aa91dfcfd5",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1717156577253,
+      "proposedDate": 1717156577213,
+      "teamId": 1,
+      "items": [
+        {
+          "fromLineupSlotId": 0,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4040715,
+          "toLineupSlotId": 20,
+          "toTeamId": 11,
+          "type": "TRADE"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "4b61f657-5ec7-4385-ae8c-11cc20399dc4",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1724500378156,
+      "proposedDate": 1724500378124,
+      "teamId": 3,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 7,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4430388,
+          "toLineupSlotId": 20,
+          "toTeamId": 3,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 3,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 2969962,
+          "toLineupSlotId": -1,
+          "toTeamId": 0,
+          "type": "DROP"
+        }
+      ]
+    },
+    {
+      "season": 2024,
+      "id": "48bd7a2e-8f89-4d5e-be6c-20e110d60843",
+      "type": "TRADE_ACCEPT",
+      "status": "EXECUTED",
+      "processDate": 1718137556773,
+      "proposedDate": 1718137556735,
+      "relatedTransactionId": "aa04a7a9-76bc-4824-a74b-5b2be6fc1982",
+      "teamId": 5,
+      "items": [
+        {
+          "fromLineupSlotId": 20,
+          "fromTeamId": 5,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 4722893,
+          "toLineupSlotId": 23,
+          "toTeamId": 1,
+          "type": "TRADE"
+        },
+        {
+          "fromLineupSlotId": 23,
+          "fromTeamId": 1,
+          "isKeeper": false,
+          "overallPickNumber": 0,
+          "playerId": 3042519,
+          "toLineupSlotId": 20,
+          "toTeamId": 5,
+          "type": "TRADE"
+        }
+      ]
+    }
+  ]
+}
