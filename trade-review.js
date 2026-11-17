@@ -6,6 +6,7 @@
   const count = document.getElementById('tradeCount');
   const results = document.getElementById('tradeResults');
   const detail = document.getElementById('tradeDetail');
+  const view = document.getElementById('trades');
   const number = new Intl.NumberFormat('en-US');
   const date = new Intl.DateTimeFormat('en-US', {
     month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'
@@ -18,7 +19,8 @@
   const colors = ['#7e3125', '#415e4f', '#705586'];
   const signed = value => value === 0 ? 'Even' : (`${value > 0 ? '+' : '−'}${number.format(Math.abs(value))}`);
 
-  let market, trades, loading, selected, chartObserver, coverage;
+  let market, trades, loading, selected, chartObserver;
+  let browseScroll = 0;
   const fullyPriced = values => values.every(Number.isFinite);
   const label = trade => trade.sides.map(side => side.manager).join(' / ');
   const hasRoute = () => /^#trades(?:\/|$)/.test(location.hash);
@@ -30,7 +32,7 @@
   }
 
   function pickLabel(asset) {
-    const origin = asset.origin ? ` · ${asset.origin} original` : '';
+    const origin = asset.origin ? ` · ${asset.origin}` : '';
     const slot = asset.slotKnownAtTrade || `Round ${asset.round}`;
     return `${asset.season ?? 'Year unknown'} ${slot}${origin}`;
   }
@@ -44,10 +46,15 @@
     const peaks = trade.sides.map((_, side) => after.reduce((best, point) =>
       !best || margin(point.values, side) > margin(best.values, side) ? point : best, null));
     const latest = trade.points.at(-1);
+    const firstNames = trade.sides.map(side => side.manager.split(' ')[0]);
     trade.lenses = [
-      { name: trade.dateEstimate ? 'Estimated trade day' : 'Trade day', point: day ? trade.points[0] : null },
-      ...peaks.map((point, side) => ({ name: `${trade.sides[side].manager} peak`, point, side })),
-      { name: 'Latest value', point: latest && !latest.original ? latest : null }
+      { name: 'At trade', point: day ? trade.points[0] : null },
+      { name: 'Now', point: latest && !latest.original ? latest : null },
+      ...peaks.map((point, side) => {
+        const parts = trade.sides[side].manager.split(' ');
+        const name = firstNames.filter(first => first === parts[0]).length > 1 ? parts.at(-1) : parts[0];
+        return { name: `${name} peak`, point, side };
+      })
     ];
     const spread = point => {
       if (!point || !fullyPriced(point.values)) return -1;
@@ -56,7 +63,7 @@
     };
     trade.spreads = {
       peak: Math.max(-1, ...peaks.map(spread)), day: spread(trade.lenses[0].point),
-      latest: spread(trade.lenses.at(-1).point)
+      latest: spread(trade.lenses[1].point)
     };
     const terms = [label(trade), trade.date, trade.original, trade.dateEstimate ? 'estimated date' : 'recorded date'];
     for (const side of trade.sides) {
@@ -83,14 +90,21 @@
       selected = visible[0];
       if (routedId()) history.replaceState(null, '', selected ? `#trades/${selected.id}` : '#trades');
     }
-    count.textContent = `${visible.length} of ${trades.length} entries`;
+    count.textContent = `${visible.length} trade${visible.length === 1 ? '' : 's'}`;
     results.replaceChildren(...visible.map(trade => {
       const item = document.createElement('li');
       const sortedGap = trade.spreads[sort.value];
-      const caption = (trade.date ? tradeDate(trade) : `Workbook row ${trade.row} · date missing`) +
-        (trade.status === 'reversed' ? ' · reversed' : trade.gradeBlocked ? ' · needs review' : '');
+      const preview = trade.sides.map(side => {
+        if (side.package) return side.package;
+        const first = side.assets?.[0];
+        if (!first) return '—';
+        const name = first.kind === 'pick' ? `${first.season ?? '?'} R${first.round}` : first.kind === 'faab' ? `$${first.amount} FAAB` : first.name;
+        return name + (side.assets.length > 1 ? ` + ${side.assets.length - 1}` : '');
+      }).join(' ↔ ');
+      const caption = (trade.date ? tradeDate(trade) : 'Date unknown') +
+        (trade.gradeBlocked ? ' · Unrated' : '');
       item.innerHTML = `<a href="#trades/${trade.id}"${marked(trade, selected?.id)}>
-        <strong>${esc(label(trade))}</strong><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
+        <strong>${esc(label(trade))}</strong><span class="trade-preview">${esc(preview)}</span><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
       </a>`;
       return item;
     }));
@@ -99,7 +113,9 @@
 
   function setSelected(id) {
     const trade = trades.find(row => row.id === id);
-    if (!trade || selected === trade) return;
+    if (!trade) return;
+    view.dataset.detailOpen = 'true';
+    if (selected === trade) return;
     selected = trade;
     for (const link of results.querySelectorAll('a')) {
       if (link.getAttribute('href') === `#trades/${id}`) link.setAttribute('aria-current', 'true');
@@ -122,78 +138,44 @@
       const afterDraft = point && !point.original && outcome &&
         market[point.i][2] >= asset.afterDraft;
       return `<li>${esc(pickLabel(asset))}${afterDraft ? `<small>${esc(outcome.slot)} became ${esc(outcome.name)}</small>` :
-        outcome && (!asset.afterDraft || !point) ? `<small>Draft result: ${esc(outcome.slot)} ${esc(outcome.name)}${!asset.afterDraft ? ' · selection date unverified' : ''}</small>` : ''}</li>`;
+        outcome && (!asset.afterDraft || !point) ? `<small>Drafted: ${esc(outcome.name)}</small>` : ''}</li>`;
     }).join('')}</ul>`;
-  }
-
-  function metric(trade, lens) {
-    const { point, side } = lens;
-    if (!point || !fullyPriced(point.values)) {
-      return ['—', point ? 'Incomplete values' : 'Unavailable'];
-    }
-    const leading = side ?? point.values.indexOf(Math.max(...point.values));
-    const gap = margin(point.values, leading);
-    const name = trade.sides[leading].manager;
-    const qualifier = gap < 0 ? 'Closest gap' : gap === 0 ? 'Level' : side == null ? name : 'Largest lead';
-    return [signed(gap), qualifier];
-  }
-
-  function estimatedDateNote(trade) {
-    const bounds = trade.dateEstimate;
-    if (!bounds) return '';
-    const window = bounds.earliest && bounds.latest ? `${formatDate(bounds.earliest)}–${formatDate(bounds.latest)} (${bounds.windowDays} days)` :
-      bounds.latest ? `On or before ${formatDate(bounds.latest)}; earlier bound unknown` : `On or after ${formatDate(bounds.earliest)}; later bound unknown`;
-    const sensitivity = trade.dateSensitivity;
-    const gaps = sensitivity?.pricedSnapshots ? trade.sides.map((side, i) =>
-      `${esc(side.manager)}: ${signed(sensitivity.marginRanges[i][0])} to ${signed(sensitivity.marginRanges[i][1])}`
-    ).join(' · ') : '';
-    return `<div class="trade-unpriced"><p><strong>Estimated date · ${formatDate(trade.date)}</strong><br>Possible window: ${esc(window)}. Trade-day and peak views use this estimated start.</p>
-      ${bounds.pickSelectionUpperBounds?.length ? '<p>The window is also capped by a documented roster addition for a traded pick’s selected player. Original trade-day values still use the pick.</p>' : ''}
-      ${bounds.excludedProcessingDateRows?.length ? `<p>Nearby ESPN processing dates are out of sequence in rows ${esc(bounds.excludedProcessingDateRows.join(', '))}; those dates are preserved and omitted as estimation anchors.</p>` : ''}
-      ${sensitivity ? `<p>Trade-day gap across ${sensitivity.pricedSnapshots} of ${sensitivity.snapshots} priced source snapshots: ${gaps || 'complete asset quotes unavailable'}.${sensitivity.winnerChanges ? ' The leading manager changes within this window.' : sensitivity.completeWindow && sensitivity.pricedSnapshots ? ' The leading side is unchanged across these snapshots.' : ''}</p>` : ''}</div>`;
   }
 
   function renderDetail() {
     chartObserver?.disconnect();
     if (!selected) {
-      detail.innerHTML = '<p class="trade-empty">No trades match these filters.</p>';
+      detail.innerHTML = '<p class="trade-empty">No trades found.</p>';
       return;
     }
     const trade = selected;
-    const sourceLabel = trade.leagueId ? `Sleeper · ${trade.season} season` : trade.source === 'espn' ?
-      `ESPN · ${trade.season} season` : `League workbook · Row ${trade.row}`;
     const showChart = trade.points.filter(point => fullyPriced(point.values)).length > 1;
-    const hasData = trade.points.length > 0;
+    const bounds = trade.dateEstimate;
+    const estimateWindow = bounds ? [bounds.earliest, bounds.latest].filter(Boolean).map(formatDate).join('–') : '';
     detail.innerHTML = `
+      <button type="button" class="trade-back">← All trades</button>
       <div class="trade-detail-heading">
-        <p>${esc(sourceLabel)}${trade.date ? ` · ${tradeDate(trade)}` : ''}</p>
-        <h3>${esc(label(trade))}</h3>
+        <p>${trade.date ? formatDate(trade.date) : 'Date unknown'}${bounds ? ` <details class="trade-date-note"><summary>Estimated date</summary><small>${esc(estimateWindow)}${trade.dateSensitivity?.winnerChanges ? ' · Trade-day lead varies' : ''}</small></details>` : ''}</p>
+        <h3>${esc(label(trade).replaceAll(' / ', ' ↔ '))}</h3>
       </div>
-      ${trade.dateSource ? `<p class="trade-unpriced">Trade date source · ${esc(trade.dateSource)}</p>` : ''}
-      ${estimatedDateNote(trade)}
-      <div class="trade-lenses" aria-label="Trade value views">${trade.lenses.map((lens, index) => {
-        const [value, note] = metric(trade, lens);
-        return `<button type="button" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>
-          <span>${esc(lens.name)}</span><strong>${value}</strong>
-          <small>${esc(note)}${lens.point ? ` · ${formatDate(lens.point.date)}` : ''}</small>
-        </button>`;
-      }).join('')}</div>
-      ${!hasData ? `<p class="trade-unpriced">${trade.gradeBlocked ? 'Grades are withheld for the unresolved source or package issues listed below.' : 'A trade date is needed for historical value grades.'}</p>` : ''}
-      ${showChart ? `<section class="trade-chart">
-        <h4>Market value over time</h4>
-        <canvas role="img" aria-label="Total market value of each original trade package over time"></canvas>
-        <label>Market snapshot <input type="range" min="0" max="${trade.points.length - 1}" value="0"></label>
-      </section>` : ''}
-      <div class="trade-snapshot"></div>
+      <div class="trade-lenses" role="group" aria-label="Compare trade values">${trade.lenses.map((lens, index) =>
+        `<button type="button" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>${esc(lens.name)}</button>`
+      ).join('')}</div>
+      <div class="trade-edge" aria-live="polite"></div>
       <div class="trade-packages"></div>
-      ${trade.notes ? `<p class="trade-unpriced">${esc(trade.notes)}</p>` : ''}
-      ${trade.issues?.length ? `<ul class="trade-unpriced">${trade.issues.map(issue => `<li>${esc(issue)}</li>`).join('')}</ul>` : ''}
-      ${trade.dateSource ? `<details class="trade-original"><summary>Date evidence</summary><p>${esc(trade.dateSource)}</p><p>${trade.dateEstimate ? esc(trade.dateEstimate.method) + ' This is an estimate, not an exact platform timestamp.' : 'Dates reflect the platform execution record. Manually processed transfers may have been agreed earlier.'}</p></details>` : ''}
-      ${trade.original ? `<details class="trade-original"><summary>Original workbook entry</summary><p>${esc(trade.original)}</p></details>` : ''}`;
+      ${showChart ? `<details class="trade-chart"><summary>Value over time <span aria-hidden="true">↗</span></summary>
+        <div class="trade-chart-body">
+          <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('')}</div>
+          <canvas role="img" aria-label="Value of each trade package over time"></canvas>
+          <label>Choose a date <input type="range" min="0" max="${trade.points.length - 1}" value="0"></label>
+          <p class="trade-chart-date"></p>
+        </div></details>` : ''}
+      <p class="trade-credit"><a href="https://github.com/DynastyProcess/data" rel="noopener">Values: DynastyProcess</a> · <a href="trade-market-LICENSE.txt">License</a></p>`;
 
     const canvas = detail.querySelector('canvas');
+    const chart = detail.querySelector('.trade-chart');
     const range = detail.querySelector('input[type="range"]');
-    const snapshot = detail.querySelector('.trade-snapshot');
+    const edge = detail.querySelector('.trade-edge');
     const packages = detail.querySelector('.trade-packages');
     let pointIndex = 0;
     function selectPoint(index, lensIndex = -1) {
@@ -202,34 +184,45 @@
       detail.querySelectorAll('[data-lens]').forEach(button => {
         button.setAttribute('aria-pressed', String(Number(button.dataset.lens) === lensIndex));
       });
-      if (range) {
+      if (range && point) {
         range.value = index;
         range.setAttribute('aria-valuetext', formatDate(point.date));
+        detail.querySelector('.trade-chart-date').textContent = formatDate(point.date);
       }
-      if (point) {
-        const [sourceDate, revision] = market[point.i];
-        const source = `<a href="https://github.com/dynastyprocess/data/blob/${esc(revision)}/files/values.csv" rel="noopener">Market snapshot ${formatDate(sourceDate)}</a>`;
-        snapshot.innerHTML = `<p><strong>${point.original ? (trade.dateEstimate ? 'Estimated trade day · ' : 'Trade day · ') : ''}${formatDate(point.date)}</strong>${source}</p>`;
+      const lens = trade.lenses[lensIndex];
+      if (point && fullyPriced(point.values)) {
+        const side = lens?.side ?? point.values.indexOf(Math.max(...point.values));
+        const gap = margin(point.values, side);
+        const name = trade.sides[side].manager;
+        const phase = lensIndex === 0 ? 'At trade' : lensIndex === 1 ? 'Current value' : lens?.side != null ? (gap < 0 ? 'Closest gap' : 'Peak advantage') : 'Value edge';
+        const sensitive = point.original && trade.dateSensitivity?.winnerChanges;
+        edge.innerHTML = `<div><span class="trade-edge-label">${esc(phase)}${point.original && bounds ? ' · estimated' : ''}</span>
+          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : `${esc(name)} <span>${signed(gap)}</span>`}</strong>
+          <small>${formatDate(point.date)}${sensitive ? ' · Date-sensitive' : ''}</small></div>`;
+      } else {
+        edge.innerHTML = `<div><span class="trade-edge-label">${esc(lens?.name || 'Trade value')}</span><strong>Not rated</strong><small>${trade.gradeBlocked ? 'Incomplete trade details' : 'Values unavailable'}</small></div>`;
       }
-      const missing = point?.original ? trade.day?.[2] : point === trade.points.at(-1) ? trade.latestMissing : null;
       packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}">
-        <h4>${esc(side.manager)} received</h4>
-        ${point ? `<p class="trade-total">${Number.isFinite(point.values[i]) ? number.format(point.values[i]) :
-          side.assets?.every(asset => asset.kind === 'faab') ? 'FAAB only' : 'Incomplete value'}</p>` : ''}
+        <h4>${esc(side.manager)} <span>received</span></h4>
+        ${point ? `<p class="trade-total">${Number.isFinite(point.values[i]) ? number.format(point.values[i]) : '—'}</p>` : ''}
         ${assetList(trade, side, point)}
-        ${side.originalPackage ? `<details class="trade-original"><summary>Workbook package</summary><p>${esc(side.originalPackage)}</p></details>` : ''}
-        ${missing?.[i]?.length ? `<p class="trade-missing">Unpriced assets include ${esc(missing[i].join(', '))}.</p>` : ''}
       </section>`).join('');
-      if (canvas) paintChart(canvas, trade.points, pointIndex, trade.sides.length);
+      if (canvas && chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length);
     }
+    detail.querySelector('.trade-back').addEventListener('click', () => {
+      history.pushState(null, '', '#trades');
+      view.dataset.detailOpen = 'false';
+      window.scrollTo({ top: browseScroll, behavior: 'instant' });
+    });
     range?.addEventListener('input', () => selectPoint(Number(range.value)));
+    chart?.addEventListener('toggle', () => { if (chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length); });
     detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => {
       const lensIndex = Number(button.dataset.lens);
       selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex);
     }));
     selectPoint(0, trade.day ? 0 : -1);
     if (canvas && typeof ResizeObserver !== 'undefined') {
-      chartObserver = new ResizeObserver(() => paintChart(canvas, trade.points, pointIndex, trade.sides.length));
+      chartObserver = new ResizeObserver(() => { if (chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length); });
       chartObserver.observe(canvas);
     }
   }
@@ -296,7 +289,6 @@
       return fetched.json();
     }));
     const [workbook, rated, historical] = response;
-    coverage = historical.coverage;
     market = rated.market;
     const dated = new Map(historical.trades.map(trade => [trade.id, trade]));
     for (const trade of rated.trades) dated.set(trade.id, trade);
@@ -312,19 +304,19 @@
       if (dated.has(id)) Object.assign(dated.get(id), base);
       else undated.unshift({ ...base, sides: sides.map(([manager, pack]) => ({ manager, package: pack })) });
     }
-    trades = [...dated.values(), ...undated].map(learnTrade);
+    trades = [...dated.values(), ...undated].filter(trade => trade.status !== 'reversed').map(learnTrade);
     trades.sort((a, b) => (b.estimatedAt || b.acceptedAt || 0) - (a.estimatedAt || a.acceptedAt || 0) || (b.row || 0) - (a.row || 0));
-    const audit = document.getElementById('tradeCoverage');
-    if (audit) audit.textContent = `${coverage.workbookRows} workbook rows entered · ${coverage.espnRecordsReconciled}/${coverage.espnExecutedRecords} recovered ESPN records reconciled · ${coverage.workbookRowsDated} recorded workbook dates · ${coverage.workbookRowsEstimated || 0} estimated dates · ${coverage.undatedWorkbookRows} dates missing. One reversed entry is retained for the audit.`;
     const seasons = [...new Set(rated.trades.map(trade => trade.season).filter(Boolean))].sort((a, b) => b - a);
     season.innerHTML += seasons.map(year => `<option value="${year}">${year}</option>`).join('');
-    season.innerHTML += '<option value="undated">Date missing</option>';
     season.innerHTML += '<option value="estimated">Estimated dates</option>';
     selected = trades.find(trade => trade.id === routedId());
     renderList();
+    view.dataset.detailOpen = String(Boolean(routedId()));
   }
 
   function openArchive() {
+    document.body.classList.add('trade-active');
+    view.dataset.detailOpen = String(Boolean(routedId()));
     if (!hasRoute()) history.replaceState(null, '', '#trades');
     if (trades) {
       if (routedId()) setSelected(routedId());
@@ -339,18 +331,21 @@
   nav.addEventListener('click', openArchive);
   document.querySelectorAll('.navtabs button:not([data-view="trades"])').forEach(button =>
     button.addEventListener('click', () => {
+      document.body.classList.remove('trade-active');
       if (hasRoute()) history.replaceState(null, '', location.pathname + location.search);
     })
   );
   window.addEventListener('hashchange', () => { if (hasRoute()) nav.click(); });
+  window.addEventListener('popstate', () => { if (hasRoute()) nav.click(); });
   results.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     const hash = link.getAttribute('href');
-    history.replaceState(null, '', hash);
+    browseScroll = window.scrollY || 0;
+    history.pushState(null, '', hash);
     setSelected(routedId());
-    if (window.matchMedia('(max-width: 760px)').matches) detail.scrollIntoView({ block: 'start' });
+    if (window.matchMedia('(max-width: 760px)').matches) view.scrollIntoView({ block: 'start' });
   });
   search.addEventListener('input', () => { if (trades) renderList(); });
   season.addEventListener('change', () => { if (trades) renderList(); });
