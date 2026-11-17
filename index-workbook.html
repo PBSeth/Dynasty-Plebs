@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="production-upgrade.css">
 <link rel="stylesheet" href="regression-fix.css?v=1">
 <link rel="stylesheet" href="head-to-head.css?v=2">
+<link rel="stylesheet" href="trade-review.css">
 <style>
 /* audited 2026-09-02 manager pass */
 #historyMetricBtns.archive-controls{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
@@ -35,6 +36,7 @@
       <button class="on" data-view="history">History</button>
       <button data-view="managers">Managers</button>
       <button data-view="drafts">Drafts</button>
+      <button data-view="trades">Trades</button>
     </div>
   </div>
 </header>
@@ -74,6 +76,28 @@
   <section class="view" id="drafts">
     <div class="section-head"><h2>Rookie Drafts</h2></div>
     <div class="panel"><div class="toolbar"><label for="draftYear">Year</label><select id="draftYear"></select></div><div class="draft-rounds" id="draftBoard"></div></div>
+  </section>
+
+  <section class="view" id="trades" aria-labelledby="tradesTitle">
+    <div class="section-head"><h2 id="tradesTitle">Trade Review</h2></div>
+    <details class="trade-method">
+      <summary>How trade values are calculated</summary>
+      <p>Each side is the sum of its published DynastyProcess 1QB asset values. Trade day uses the last snapshot published before the trade. Each manager’s peak is their best margin over the strongest other side on the same post-trade snapshot.</p>
+      <p>Unspent picks use their round price, or a known slot when it was documented on trade day. If the source lists only exact slots, the round price is the median of its 12 slots. A pick switches to its drafted player after the documented draft completion. FAAB is shown separately. An unpriced asset leaves that package ungraded.</p>
+      <p>Values describe the original packages over time. <a href="https://github.com/DynastyProcess/data" rel="noopener">DynastyProcess source archive</a> · <a href="trade-market-LICENSE.txt">Data license</a></p>
+    </details>
+    <div class="trade-review-layout">
+      <aside class="panel trade-browser" aria-label="Trade archive">
+        <div class="trade-filters">
+          <label class="trade-search">Search trades <input id="tradeSearch" type="search" placeholder="Manager, player or pick"></label>
+          <label>Season <select id="tradeSeason"><option value="">All seasons</option></select></label>
+          <label>Sort <select id="tradeSort"><option value="recent">Recent first</option><option value="peak">Biggest peak</option><option value="day">Biggest at trade</option><option value="latest">Biggest latest</option></select></label>
+        </div>
+        <p class="trade-count" id="tradeCount" role="status">Loading trade archive…</p>
+        <ul class="trade-results" id="tradeResults"></ul>
+      </aside>
+      <div class="panel trade-detail" id="tradeDetail"></div>
+    </div>
   </section>
 </main>
 
@@ -147,5 +171,6 @@
 })();
 </script>
 <script src="head-to-head.js?v=2"></script>
+<script src="trade-review.js"></script>
 </body>
 </html>
