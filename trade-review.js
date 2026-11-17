@@ -39,9 +39,10 @@
 
   function learnTrade(trade) {
     trade.points = [];
+    const adjustments = new Map((trade.timelineAdjustments || []).map(([i, ...values]) => [i, values]));
     const day = trade.day;
-    if (day) trade.points.push({ i: day[0], date: trade.date, values: day[1], original: true });
-    trade.points.push(...(trade.timeline || []).map(([i, ...values]) => ({ i, date: market[i][0], values })));
+    if (day) trade.points.push({ i: day[0], date: trade.date, values: day[1], adjustments: trade.dayAdjustments, original: true });
+    trade.points.push(...(trade.timeline || []).map(([i, ...values]) => ({ i, date: market[i][0], values, adjustments: adjustments.get(i) })));
     const after = trade.points.filter(point => !point.original && fullyPriced(point.values));
     const peaks = trade.sides.map((_, side) => after.reduce((best, point) =>
       !best || margin(point.values, side) > margin(best.values, side) ? point : best, null));
@@ -170,7 +171,7 @@
           <label>Choose a date <input type="range" min="0" max="${trade.points.length - 1}" value="0"></label>
           <p class="trade-chart-date"></p>
         </div></details>` : ''}
-      <p class="trade-credit"><a href="https://github.com/DynastyProcess/data" rel="noopener">Values: DynastyProcess</a> · <a href="trade-market-LICENSE.txt">License</a></p>`;
+      <p class="trade-credit">Plebs estimates · <a href="https://github.com/DynastyProcess/data" rel="noopener">DynastyProcess inputs</a> · <a href="trade-market-LICENSE.txt">License</a></p>`;
 
     const canvas = detail.querySelector('canvas');
     const chart = detail.querySelector('.trade-chart');
@@ -196,8 +197,9 @@
         const name = trade.sides[side].manager;
         const phase = lensIndex === 0 ? 'At trade' : lensIndex === 1 ? 'Current value' : lens?.side != null ? (gap < 0 ? 'Closest gap' : 'Peak advantage') : 'Value edge';
         const sensitive = point.original && trade.dateSensitivity?.winnerChanges;
+        const close = lens?.side == null && Math.abs(gap) <= .10 * Math.max(...point.values);
         edge.innerHTML = `<div><span class="trade-edge-label">${esc(phase)}${point.original && bounds ? ' · estimated' : ''}</span>
-          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : `${esc(name)} <span>${signed(gap)}</span>`}</strong>
+          <strong style="--side-color:${colors[side % colors.length]}">${gap === 0 ? 'Even trade' : close ? 'Close trade' : `${esc(name)} <span>${signed(gap)}</span>`}</strong>
           <small>${formatDate(point.date)}${sensitive ? ' · Date-sensitive' : ''}</small></div>`;
       } else {
         edge.innerHTML = `<div><span class="trade-edge-label">${esc(lens?.name || 'Trade value')}</span><strong>Not rated</strong><small>${trade.gradeBlocked ? 'Incomplete trade details' : 'Values unavailable'}</small></div>`;
@@ -205,6 +207,7 @@
       packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}">
         <h4>${esc(side.manager)} <span>received</span></h4>
         ${point ? `<p class="trade-total">${Number.isFinite(point.values[i]) ? number.format(point.values[i]) : '—'}</p>` : ''}
+        ${point?.adjustments?.[i] ? `<small>Includes +${number.format(point.adjustments[i])} consolidation value</small>` : ''}
         ${assetList(trade, side, point)}
       </section>`).join('');
       if (canvas && chart.open) paintChart(canvas, trade.points, pointIndex, trade.sides.length);

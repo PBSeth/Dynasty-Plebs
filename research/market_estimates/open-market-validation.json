@@ -1,0 +1,102 @@
+{
+  "source": "CC0 SafeLeagues completed trades; historical DynastyProcess inputs",
+  "counts": {
+    "uniqueTrades": 5492,
+    "incompleteOrUnsupported": 2484,
+    "noFreshPriorRanks": 481,
+    "completeTrades": 2527
+  },
+  "format": "12-team 1QB dynasty; source leagues use full PPR",
+  "parameters": {
+    "eliteWeight": 0.6057137531928946,
+    "eliteDecay": 0.05375273593288471,
+    "consolidationPerPiece": 0.3486647965131324,
+    "replacementRank": 444
+  },
+  "marketSpotChecks": {
+    "families": [
+      "FantasyCalc",
+      "KeepTradeCut"
+    ],
+    "assets": 16,
+    "quoteDate": "2026-11-17",
+    "rankInputDate": "2026-11-13",
+    "role": "Broad curve calibration; not a licensed historical feed or exact quote reproduction"
+  },
+  "splits": {
+    "training": {
+      "candidate": {
+        "n": 1517,
+        "medianAbsoluteLogGap": 0.16826192792069075,
+        "within25Percent": 0.6209624258404747,
+        "within50Percent": 0.8108108108108109
+      },
+      "publishedCurve": {
+        "n": 1517,
+        "medianAbsoluteLogGap": 0.5705448584676134,
+        "within25Percent": 0.23796967699406724,
+        "within50Percent": 0.3843111404087014
+      }
+    },
+    "unseenLeagues": {
+      "candidate": {
+        "n": 685,
+        "medianAbsoluteLogGap": 0.16331595239642513,
+        "within25Percent": 0.6116788321167883,
+        "within50Percent": 0.8072992700729927
+      },
+      "publishedCurve": {
+        "n": 685,
+        "medianAbsoluteLogGap": 0.5217249142240264,
+        "within25Percent": 0.2759124087591241,
+        "within50Percent": 0.42043795620437957
+      }
+    },
+    "laterDates": {
+      "candidate": {
+        "n": 325,
+        "medianAbsoluteLogGap": 0.1424594811944133,
+        "within25Percent": 0.6492307692307693,
+        "within50Percent": 0.8338461538461538
+      },
+      "publishedCurve": {
+        "n": 325,
+        "medianAbsoluteLogGap": 0.4936578201436257,
+        "within25Percent": 0.25846153846153846,
+        "within50Percent": 0.4307692307692308
+      }
+    }
+  },
+  "limitations": [
+    "Trade equality is not a community winner label; this is a market-clearing diagnostic.",
+    "Not a half-PPR-specific training sample.",
+    "Historical reconstructions are estimates, not archived quotes from another calculator.",
+    "Curve shape uses retrospective 2026 market comparisons. Later-date cases were excluded from consolidation fitting, not from every aspect of model selection."
+  ],
+  "openDataFiles": {
+    "league-2019.parquet": {
+      "sha256": "fc665f1f781aa7ac163e337e08e5e440304b4b34051cb7b601da98f3d0c0e3ad",
+      "bytes": 12687
+    },
+    "league-2020.parquet": {
+      "sha256": "b87e643dd145546cf05a54570bef6d4deb99444af8b5720a729959302d8891dd",
+      "bytes": 20327
+    },
+    "league-2021.parquet": {
+      "sha256": "b8d629230c971842ec31550bd82613b49742aa5cd0d09689744a26f7a3335070",
+      "bytes": 20001
+    },
+    "transactions-2019.parquet": {
+      "sha256": "b981dd00ce1c972b4228bebc88a2d30c2f39671973f9dd5be10ce93bdfaf0b7c",
+      "bytes": 1882031
+    },
+    "transactions-2020.parquet": {
+      "sha256": "af779b5a745437f6e52e86771aed6b08a50009d02431952b8a402c75934cf53c",
+      "bytes": 3743171
+    },
+    "transactions-2021.parquet": {
+      "sha256": "590e17808b14d5bb423677e8fe6b333ac538e6c5ae852b01d34fe10ec9f5855d",
+      "bytes": 852429
+    }
+  }
+}

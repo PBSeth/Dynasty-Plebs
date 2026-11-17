@@ -68,8 +68,22 @@ def normalize(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
 
 
+def estimate_value(value, model):
+    """Apply one independent, monotone curve to dated source rank proxies."""
+    if value is None or value <= 0:
+        return value
+    rank = max(1.0, -math.log(value / model["sourceScale"]) / model["sourceExponent"])
+    if rank >= model["replacementRank"]:
+        return 0
+    distance = rank - 1
+    elite = math.exp(-model["eliteDecay"] * distance)
+    depth = max(0.0, 1 - distance / (model["replacementRank"] - 1))
+    return round(model["scale"] * (model["eliteWeight"] * elite + (1 - model["eliteWeight"]) * depth))
+
+
 class Snapshot:
-    def __init__(self, commit, path, pick_path=None):
+    def __init__(self, commit, path, pick_path=None, model=None):
+        self.model = model
         self.sha = commit["sha"]
         published = commit["commit"]["committer"]["date"]
         self.date = published[:10]
@@ -99,6 +113,10 @@ class Snapshot:
                         self.names[key] = value
         if pick_path and pick_path.exists():
             self.calculator_picks(pick_path)
+        if model:
+            self.players = {key: estimate_value(value, model) for key, value in self.players.items()}
+            self.names = {key: estimate_value(value, model) for key, value in self.names.items()}
+            self.picks = {key: estimate_value(value, model) for key, value in self.picks.items()}
 
     def calculator_picks(self, path):
         """Reproduce the source calculator's 1QB, 12-team default controls.
@@ -178,7 +196,7 @@ class Snapshot:
         return round(mean(exact_round)) if len(exact_round) == 12 else None
 
 
-def snapshots(cache, offline):
+def snapshots(cache, offline, model=None):
     unavailable_path = cache / "snapshot-picks" / "unavailable.json"
     unavailable = set(read_json(unavailable_path)) if unavailable_path.exists() else set()
     commits = {}
@@ -212,7 +230,7 @@ def snapshots(cache, offline):
                 if error.code != 404:
                     raise
                 unavailable.add(sha)
-        return Snapshot(commit, path, pick_path)
+        return Snapshot(commit, path, pick_path, model)
 
     with ThreadPoolExecutor(max_workers=10) as pool:
         result = list(pool.map(load_snapshot, commits))
@@ -321,17 +339,19 @@ def sleeper_trades(cache, offline, league_id):
     return archive
 
 
-def grade(snapshot, trade, at, original=False):
-    totals, missing = [], []
+def grade(snapshot, trade, at, original=False, breakdown=False):
+    totals, missing, strengths = [], [], []
     for side in trade["sides"]:
         values = []
         absent = []
+        player_values = []
         for asset in side["assets"]:
             if asset["kind"] == "faab":
                 continue
             if asset["kind"] == "player":
                 value = snapshot.player(asset)
                 label = asset["name"]
+                player_values.append(value)
             elif asset["kind"] == "pick":
                 label = f"{asset['season']} round {asset['round']} ({asset['origin']})"
                 if not original and asset.get("afterDraft", float("inf")) <= at:
@@ -339,6 +359,7 @@ def grade(snapshot, trade, at, original=False):
                     value = snapshot.player(outcome) if outcome else None
                     if outcome:
                         label = outcome["name"]
+                        player_values.append(value)
                 else:
                     value = snapshot.pick(asset)
             else:
@@ -348,7 +369,19 @@ def grade(snapshot, trade, at, original=False):
                 absent.append(label)
         totals.append(sum(values) if values and not absent else None)
         missing.append(absent)
-    return totals, missing
+        positive = [v for v in values if v is not None and v > 0]
+        strengths.append((len(positive), max(positive, default=0),
+                          max((v for v in player_values if v is not None), default=0)))
+    adjustments = [0] * len(totals)
+    if snapshot.model and len(totals) == 2 and all(value is not None for value in totals):
+        for side, other in [(0, 1), (1, 0)]:
+            count, _, strongest_player = strengths[side]
+            other_count, other_best, _ = strengths[other]
+            if count < other_count and strongest_player > other_best:
+                adjustments[side] = round(strongest_player * snapshot.model["consolidationPerPiece"]
+                                          * (other_count - count))
+                totals[side] += adjustments[side]
+    return (totals, missing, adjustments) if breakdown else (totals, missing)
 
 
 def value_trade(trade, market, timestamps):
@@ -360,18 +393,24 @@ def value_trade(trade, market, timestamps):
     index = bisect_right(timestamps, accepted) - 1
     if index >= 0:
         market_day = market[index]
-        totals, missing = grade(market_day, trade, accepted, original=True)
+        totals, missing, adjustment = grade(market_day, trade, accepted, original=True, breakdown=True)
         trade["day"] = [index, totals, missing]
+        if market_day.model:
+            trade["dayAdjustments"] = adjustment
     else:
         trade["day"] = None
-    timeline = []
+    timeline, timeline_adjustments = [], []
     for i in range(index + 1, len(market)):
         snapshot = market[i]
         if i < len(market) - 1 and snapshot.date == market[i + 1].date:
             continue
-        totals, _ = grade(snapshot, trade, snapshot.timestamp)
+        totals, _, adjustment = grade(snapshot, trade, snapshot.timestamp, breakdown=True)
         timeline.append([i, *totals])
+        if snapshot.model and any(adjustment):
+            timeline_adjustments.append([i, *adjustment])
     trade["timeline"] = timeline
+    if market[-1].model:
+        trade["timelineAdjustments"] = timeline_adjustments
     if timeline:
         _, trade["latestMissing"] = grade(market[-1], trade, market[-1].timestamp)
     bounds = trade.get("dateEstimate")
@@ -401,9 +440,12 @@ def main():
     parser.add_argument("--cache", required=True, type=Path)
     parser.add_argument("--league-id", default=LEAGUE, help="Newest Dynasty Plebs Sleeper league ID")
     parser.add_argument("--offline", action="store_true", help="Rebuild using the downloaded inputs")
+    parser.add_argument("--source-values", action="store_true", help="Audit baseline: use the original source value curve")
+    parser.add_argument("--output", type=Path, default=ROOT / "trade-valuations.json")
     parser.add_argument("--dated-workbook-trades", type=Path, help="Verified archived IDs, dates and asset packages")
     args = parser.parse_args()
-    market = snapshots(args.cache, args.offline)
+    model = None if args.source_values else read_json(ROOT / "trade-value-model.json")
+    market = snapshots(args.cache, args.offline, model)
     archive = sleeper_trades(args.cache, args.offline, args.league_id)
     history_path = ROOT / "trade-history.json"
     history = read_json(history_path) if history_path.exists() else None
@@ -429,19 +471,21 @@ def main():
         "market": [[snapshot.date, snapshot.sha, snapshot.timestamp] for snapshot in market],
         "trades": archive,
         "pickPolicy": {
-            "name": "DynastyProcess calculator defaults",
+            "name": "Dated DynastyProcess pick inputs",
             "format": "1QB, 12 teams",
             "rookieOptimism": .60,
             "futureFactor": .90,
-            "unknownSlotAggregation": "mean of slot values",
+            "unknownSlotAggregation": "mean of source slot values before independent rank-proxy conversion" if model else "mean of slot values",
             "source": "https://github.com/dynastyprocess/apps-calculator/blob/master/R/values.R",
             "legacySnapshots": sum(s.pick_policy == "published-legacy" for s in market),
             "calculatorSnapshots": sum(s.pick_policy != "published-legacy" for s in market),
         },
     }
+    if model:
+        payload["valueModel"] = model
     if history:
         payload["coverage"] = history["coverage"]
-    path = ROOT / "trade-valuations.json"
+    path = args.output
     path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
     print(f"{len(archive)} dated trades priced against {len(market)} source snapshots")
 
