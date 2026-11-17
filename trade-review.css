@@ -1,9 +1,11 @@
 #trades { scroll-margin-top: 85px; }
-#trades > .section-head { justify-content:center; margin-bottom:20px; }
-#trades > .section-head h3 { font-size:clamp(32px,4vw,42px); }
-.trade-review-layout { display:grid; grid-template-columns:minmax(240px,300px) minmax(0,1fr); gap:18px; align-items:start; }
-.trade-browser { position:sticky; top:82px; min-width:0; }
-.trade-filters { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:15px; background:#f1e5ce; border-bottom:1px solid var(--line); }
+#managers #trades { margin-top:14px!important; }
+#trades > .subhead { text-align:center; }
+#trades > .subhead h3 { margin:0; font:900 clamp(25px,4vw,34px)/1.15 Georgia,serif; }
+.trade-review-layout { display:grid; grid-template-columns:minmax(240px,300px) minmax(0,1fr); gap:12px; align-items:start; padding:12px; }
+.trade-browser { position:static; min-width:0; }
+#trades .trade-browser,#trades .trade-detail { border:0; border-radius:0; box-shadow:none; background:transparent; }
+.trade-filters { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px; background:#f1e5ce; border-bottom:1px solid var(--line); }
 .trade-filters label { display:grid; gap:5px; min-width:0; color:#5a4b38; font-size:.78rem; font-weight:700; }
 .trade-search,.trade-partner { grid-column:1/-1; }
 .trade-filters input,.trade-filters select { width:100%; min-width:0; min-height:42px; padding:8px 10px; border:1px solid var(--line); border-radius:8px; color:var(--ink); background:#fffaf0; font:inherit; font-size:.9rem; }
@@ -59,11 +61,9 @@
 }
 @media(max-width:760px) {
   #trades { scroll-margin-top:120px; }
-  #trades > .section-head { margin:4px 0 17px; }
-  #trades > .section-head h3 { font-size:32px!important; }
-  .trade-review-layout { display:block; }
+  .trade-review-layout { display:block; padding:0; }
   .trade-browser { position:static; }
-  .trade-filters { padding:12px; gap:9px; }
+  .trade-filters { padding:12px; gap:8px; }
   .trade-filters input { min-height:44px; font-size:16px; }
   .trade-filters select { font-size:14px; }
   .trade-results { max-height:360px; overflow-y:auto; overscroll-behavior:contain; padding:0 9px 9px; }
