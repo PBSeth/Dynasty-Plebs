@@ -44,8 +44,8 @@
     return values[side] - Math.max(...values.filter((_, index) => index !== side));
   }
 
-  function pickLabel(asset) {
-    const origin = asset.origin ? ` · ${asset.origin}` : '';
+  function pickLabel(asset, includeOrigin = false) {
+    const origin = includeOrigin && asset.origin ? ` · ${asset.origin}` : '';
     const slot = asset.slotKnownAtTrade || `Round ${asset.round}`;
     return `${asset.season ?? 'Year unknown'} ${slot}${origin}`;
   }
@@ -82,7 +82,7 @@
     const terms = [label(trade), trade.date, trade.original, trade.dateEstimate ? 'estimated date' : 'recorded date'];
     for (const side of trade.sides) {
       for (const asset of side.assets || []) {
-        terms.push(asset.kind === 'pick' ? pickLabel(asset) : asset.name, asset.outcome?.name, asset.outcome?.slot);
+        terms.push(asset.kind === 'pick' ? pickLabel(asset, true) : asset.name, asset.outcome?.name, asset.outcome?.slot);
       }
     }
     terms.push(...(trade.outcomes || []).flat());
