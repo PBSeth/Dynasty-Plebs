@@ -102,6 +102,12 @@ fifth = next(a for a in seth['assets'] if a['kind'] == 'pick' and a.get('season'
 assert fifth['origin'] == 'Dave Carnes' and fifth['resolvedSlot'] == '5.02'
 assert fifth['outcome']['name'] == 'Chimere Dike'
 assert not fifth.get('slotKnownAtTrade')  # Still a future fifth in April 2024.
+seth = next(s for s in by_id['workbook-165']['sides'] if s['manager'] == 'Seth Miller')
+fourth = next(a for a in seth['assets'] if a['kind'] == 'pick' and a.get('season') == 2025 and a['round'] == 4)
+assert fourth['origin'] == 'Dave Carnes' and fourth['resolvedSlot'] == '4.02'
+assert fourth['outcome']['name'] == 'Ollie Gordon II'
+assert not fourth.get('slotKnownAtTrade')  # Still a future fourth in September 2024.
+assert not read(ROOT / 'research/pick_slots/recovery-audit.json')['unresolvedAnonymousPicks']
 
 if args.baseline:
     old = read(args.baseline)

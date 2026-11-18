@@ -258,23 +258,7 @@
       "inference": "Metz has these two fourths before the first recorded Sleeper trade when later transfers are reversed. The other fourth he drafted (4.11, G13, Shedeur Sanders) arrived later via sleeper-1157818940492546048."
     }
   ],
-  "unresolved": [
-    {
-      "tradeId": "workbook-165",
-      "receivedBy": "Seth Miller",
-      "pick": "2025 fourth",
-      "candidateSlots": [
-        "4.02",
-        "4.06"
-      ],
-      "candidatePlayers": [
-        "Ollie Gordon II",
-        "Jordan James"
-      ],
-      "evidence": "Clint held his own fourth and had received Dave's fourth in workbook-155. Colors show Seth drafted 4.02 and Clint drafted 4.06. Reversing later transfers leaves neither pick with Seth at migration. A missing return/assignment prevents a unique historical identification.",
-      "likelyCandidate": "4.02, inferred only; not inserted into valuation inputs."
-    }
-  ],
+  "unresolved": [],
   "limitations": "Colors establish who made the final pick. They cannot independently prove which earlier exchange contained a repeatedly traded pick. The worksheet left-hand manager labels differ from Sleeper original slots at the end of the round; they were not substituted for the recorded draft-order mapping.",
   "userConfirmed": [
     {
@@ -284,6 +268,16 @@
       "slot": "5.02",
       "player": "Chimere Dike",
       "confirmation": "The fifth was Dave's."
+    },
+    {
+      "tradeId": "workbook-165",
+      "receivedBy": "Seth Miller",
+      "origin": "Dave Carnes",
+      "slot": "4.02",
+      "player": "Ollie Gordon II",
+      "confirmation": "I'd lock in 4.02 too",
+      "confirmationType": "User-approved reconstruction",
+      "support": "Dave to Clint in workbook-155, then Clint to Seth in workbook-165. Unrecorded intervening ownership changes remain historical gaps; no extra transactions are invented."
     }
   ]
 }

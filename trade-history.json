@@ -12267,7 +12267,9 @@
               "kind": "pick",
               "season": 2025,
               "round": 4,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "User approved 4.02 reconstruction: \"I'd lock in 4.02 too\"; Dave sent his 2025 fourth to Clint in workbook-155 before Clint sent a 2025 fourth to Seth in workbook-165.",
+              "originConfidence": "User-approved reconstruction"
             }
           ],
           "originalPackage": "DK Metcalf and a 2025 4th (TBD)"
