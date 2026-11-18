@@ -150,15 +150,15 @@
 .trade-packages .trade-package-name{text-align:center;min-height:2.2em;font:700 clamp(17px,2.2vw,20px)/1.1 Georgia,serif}
 .trade-packages .trade-package-name span{color:var(--ink);font:inherit;margin:0}
 .trade-packages .trade-total{text-align:center;margin:8px 0 0;font-size:1.1rem}
-.trade-packages ul{margin:3px 0 10px;font-size:.8rem;line-height:1.3}
-.trade-packages li{padding:7px 0}
+.trade-packages ul{display:flex;flex:1;flex-direction:column;margin:3px 0 0;font-size:.8rem;line-height:1.3}
+.trade-packages li{display:flex;flex:1;flex-direction:column;justify-content:center;padding:7px 0}
 @media(min-width:1100px){.trade-summaries{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 .trade-summary-values small span{display:block}
 
 .trade-packages h5{margin:8px 0 3px;color:var(--side-color);font:800 .67rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
 .trade-packages .trade-received{display:flex;flex:1;flex-direction:column;min-width:0}
-.trade-packages .trade-received .trade-total{margin-top:auto;padding-top:8px;border-top:1px solid #d7c5a3}
+.trade-packages .trade-received .trade-total{margin-top:0;padding-top:8px;border-top:1px solid #d7c5a3}
 .trade-packages .trade-total span{font-size:.67rem}
 .trade-packages .trade-unrecorded{color:var(--muted);font-size:.75rem}
 
