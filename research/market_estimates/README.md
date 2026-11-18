@@ -27,9 +27,17 @@ The same fixed asset curve prices all four lenses. No new calculator joining the
 
 ## March 11, 2025 trade audit
 
-Trade `sleeper-1205285790439981056` compares Seth Miller's first-round pick with Dave Carnes' Derrick Henry, first-round pick and third-round pick. The original snapshot contains no verified `slotKnownAtTrade` fields for these picks. The final draft outcomes identify 1.01/Jeanty, 1.02/Hampton and 3.06/Hunter, but the captured draft-order object does not establish when that order was fixed. Do not backfill the original grade from the eventual player selections or assume the draft creation/start timestamp records the order-setting time.
+Trade `sleeper-1205285790439981056` is now priced as 2025 1.01 versus Derrick Henry + 2025 1.02 + 2025 3.06. The recovered positions come from the original-roster draft order, with the manager confirming that offseason positions were already known. Jeanty, Hampton and Hunter do not contribute their player values to the original grade.
 
-At the March 7, 2025 preceding snapshot, generic pick/player values total 4,005 for Seth and 9,892 for Dave. At the November 13, 2026 snapshot, actual asset values total 6,908 and 8,220 respectively. Therefore the received-asset changes are +2,903 and -1,672; the net swing since trade is +4,575 to Seth. Dave's current asset package still leads by 1,312. The previous +9,392 swing mistakenly included a 4,817-point consolidation allowance on Seth's package. Original-grade sensitivity to the unconfirmed slots remains a separate input limitation, not a reason to insert hindsight values.
+At the March 7, 2025 preceding snapshot, exact pick/player values total 6,413 for Seth and 11,744 for Dave. At the November 13, 2026 snapshot, actual asset values total 6,908 and 8,220 respectively. Therefore the received-asset changes are +495 and -3,524; the net swing since trade is +4,019 to Seth. Dave's current asset package still leads by 1,312. The former +9,392 swing included a 4,817-point consolidation allowance and generic rather than exact original slots.
+
+## Pick-slot recovery
+
+`research/pick_slots/recovery-audit.json` records the recovery totals and remaining unresolved inputs. Missing slots are restored from the workbook outcome table or the original-roster positions in completed Sleeper drafts. January 1 of the pick year is the conservative offseason boundary used for resolved positions, based on the manager's confirmation that offseason slots were known. A future pick traded in the preceding season remains generic in its original grade and switches to a slot-specific pick quote only after that boundary. An estimated execution window that crosses the boundary is not marked as definitely slot-known at trade; its sensitivity analysis evaluates both sides of the boundary. Existing explicitly recorded slots are retained.
+
+The dated source calculator reconstruction also retains discounted exact-slot projections for future years. This supports early-offseason trades when the available preceding source snapshot still uses the previous rookie class. It uses the same dated source curve and future discount, never a later player valuation.
+
+Explicit possessives in the workbook recover 19 previously unlinked future picks. Three more 2025 seconds have unique ownership paths across all recorded workbook/Sleeper transfers, verified against every recorded sender. Workbook row 133's future third is restored to Luke's received package, as the original wording states. Four anonymous older TBD picks have gaps in their ownership history; no origin, slot or player is fabricated for them.
 
 ## Validation and reproduction
 

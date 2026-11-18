@@ -49,8 +49,8 @@ for(const t of archive.trades){
  }
  if(t.id==='sleeper-1205285790439981056'){
   assert.deepEqual(a.latest.assetValues,[6908,8220]);
-  assert.deepEqual(a.latest.changes,[2903,-1672]);
-  assert.equal(margin(a.latest.changes,0),4575);
+  assert.deepEqual(a.latest.changes,[495,-3524]);
+  assert.equal(margin(a.latest.changes,0),4019);
   assert.equal(margin(a.latest.assetValues,0),-1312);
  }
  checked++;

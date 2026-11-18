@@ -164,6 +164,10 @@ class Snapshot:
             for horizon in range(1, 4):
                 discount = factor * .90 ** (horizon - 1)
                 self.picks[f"{year + horizon} {ordinal}"] = round(mean(values.values()) * discount)
+                # Retain slot-specific projections for an offseason whose
+                # order is known before the source refreshes its class year.
+                for slot, value in values.items():
+                    self.picks[f"{year + horizon} Pick {rd}.{slot:02}"] = round(value * discount)
                 if horizon == 1:
                     for label, slots in [("Early", range(1, 5)), ("Mid", range(5, 9)), ("Late", range(9, 13))]:
                         self.picks[f"{year + 1} {label} {ordinal}"] = round(mean(values[s] for s in slots) * discount)
@@ -174,9 +178,12 @@ class Snapshot:
             return self.players[player["fpId"]]
         return self.names.get(normalize(player["name"]))
 
-    def pick(self, asset):
+    def pick(self, asset, at=None):
         season, round_number = asset["season"], asset["round"]
-        if slot := asset.get("slotKnownAtTrade"):
+        slot = asset.get("slotKnownAtTrade")
+        if not slot and (self.timestamp if at is None else at) >= asset.get("slotKnownFrom", float("inf")):
+            slot = asset.get("resolvedSlot")
+        if slot:
             round_pick = int(slot.split(".")[1])
             exact = f"{season} Pick {slot}"
             overall = f"{season} Pick {(round_number - 1) * 12 + round_pick}"
@@ -240,7 +247,7 @@ def snapshots(cache, offline, model=None):
     return result
 
 
-def sleeper_trades(cache, offline, league_id):
+def sleeper_trades(cache, offline, league_id, outcomes_by_origin=None):
     def sleeper(route):
         path = cache / "sleeper" / (route.replace("/", "-") + ".json")
         if not offline:
@@ -308,6 +315,11 @@ def sleeper_trades(cache, offline, league_id):
                             **player(player_id), "slot": f"{round_number}.{slot:02}",
                             "afterDraft": draft["last_picked"],
                         }
+                        if outcomes_by_origin is not None:
+                            outcomes_by_origin[season, manager_names[roster_id], round_number] = {
+                                **outcomes[season, roster_id, round_number],
+                                "draftId": draft["draft_id"],
+                            }
         league_id = league.get("previous_league_id")
 
     archive = []
@@ -339,6 +351,41 @@ def sleeper_trades(cache, offline, league_id):
     return archive
 
 
+def recover_pick_slots(trade):
+    """Recover draft positions independently of the selected player's value.
+
+    The manager confirmed offseason positions were already known. Use January
+    1 of the draft year as a conservative, reproducible offseason boundary;
+    a pick traded during the prior season remains generic until that boundary.
+    Existing explicitly recorded slots keep their original timing. Workbook
+    dates that straddle the boundary retain their date-sensitivity treatment.
+    """
+    at = trade.get("estimatedAt", trade.get("acceptedAt"))
+    for side in trade["sides"]:
+        for asset in side.get("assets", []):
+            if asset["kind"] != "pick" or asset.get("slotKnownAtTrade"):
+                continue
+            slot = asset.get("outcome", {}).get("slot")
+            year = asset.get("season")
+            if not slot or not year:
+                continue
+            if int(slot.split(".")[0]) != asset["round"]:
+                raise ValueError(f"Mismatched pick round in {trade['id']}: {slot}")
+            boundary = int(datetime(year, 1, 1, tzinfo=CENTRAL).timestamp() * 1000)
+            asset["resolvedSlot"] = slot
+            asset["slotKnownFrom"] = boundary
+            asset["slotResolutionSource"] = (
+                f"Sleeper {year} original-roster draft order" if trade["id"].startswith("sleeper-")
+                else "Workbook recorded pick slot and draft-outcome table"
+            )
+            lower = trade.get("dateEstimate", {}).get("earliest")
+            order_known = at is not None and at >= boundary
+            if trade.get("dateEstimate"):
+                order_known = order_known and lower is not None and lower >= f"{year}-01-01"
+            if order_known:
+                asset["slotKnownAtTrade"] = slot
+
+
 def grade(snapshot, trade, at, original=False, breakdown=False):
     totals, missing, strengths = [], [], []
     for side in trade["sides"]:
@@ -361,7 +408,7 @@ def grade(snapshot, trade, at, original=False, breakdown=False):
                         label = outcome["name"]
                         player_values.append(value)
                 else:
-                    value = snapshot.pick(asset)
+                    value = snapshot.pick(asset, at)
             else:
                 raise ValueError(f"Unknown asset kind {asset['kind']}")
             values.append(value)
@@ -385,6 +432,7 @@ def grade(snapshot, trade, at, original=False, breakdown=False):
 
 
 def value_trade(trade, market, timestamps):
+    recover_pick_slots(trade)
     if trade.get("gradeBlocked"):
         trade["day"] = None
         trade["timeline"] = []
@@ -421,7 +469,7 @@ def value_trade(trade, market, timestamps):
         last = bisect_right(timestamps, upper) - 1
         margins, leaders = [], set()
         for i in range(first, last + 1):
-            values, _ = grade(market[i], trade, accepted, original=True)
+            values, _ = grade(market[i], trade, market[i].timestamp, original=True)
             if any(value is None for value in values):
                 continue
             margins.append([v - max(values[:s] + values[s + 1:]) for s, v in enumerate(values)])
@@ -446,10 +494,21 @@ def main():
     args = parser.parse_args()
     model = None if args.source_values else read_json(ROOT / "trade-value-model.json")
     market = snapshots(args.cache, args.offline, model)
-    archive = sleeper_trades(args.cache, args.offline, args.league_id)
+    outcomes_by_origin = {}
+    archive = sleeper_trades(args.cache, args.offline, args.league_id, outcomes_by_origin)
     history_path = ROOT / "trade-history.json"
     history = read_json(history_path) if history_path.exists() else None
     if history:
+        for trade in history["trades"]:
+            for side in trade["sides"]:
+                for asset in side.get("assets", []):
+                    if asset["kind"] != "pick" or asset.get("outcome"):
+                        continue
+                    key = (asset.get("season"), asset.get("origin"), asset.get("round"))
+                    if outcome := outcomes_by_origin.get(key):
+                        asset["outcome"] = outcome
+                        asset["afterDraft"] = outcome["afterDraft"]
+                        asset["outcomeTimingSource"] = f"Completed Sleeper draft {outcome['draftId']}"
         archive.extend(trade for trade in history["trades"] if trade.get("acceptedAt") or trade.get("estimatedAt"))
     if args.dated_workbook_trades:
         legacy = read_json(ROOT / "trade-workbook-archive.json")["ledger"]

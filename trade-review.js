@@ -44,9 +44,10 @@
     return values[side] - Math.max(...values.filter((_, index) => index !== side));
   }
 
-  function pickLabel(asset, includeOrigin = false) {
+  function pickLabel(asset, includeOrigin = false, at = null) {
     const origin = includeOrigin && asset.origin ? ` · ${asset.origin}` : '';
-    const slot = asset.slotKnownAtTrade || `Round ${asset.round}`;
+    const resolved = at != null && at >= asset.slotKnownFrom ? asset.resolvedSlot : null;
+    const slot = asset.slotKnownAtTrade || resolved || `Round ${asset.round}`;
     return `${asset.season ?? 'Year unknown'} ${slot}${origin}`;
   }
 
@@ -82,7 +83,7 @@
     const terms = [label(trade), trade.date, trade.original, trade.dateEstimate ? 'estimated date' : 'recorded date'];
     for (const side of trade.sides) {
       for (const asset of side.assets || []) {
-        terms.push(asset.kind === 'pick' ? pickLabel(asset, true) : asset.name, asset.outcome?.name, asset.outcome?.slot);
+        terms.push(asset.kind === 'pick' ? pickLabel(asset, true) : asset.name, asset.outcome?.name, asset.outcome?.slot, asset.resolvedSlot);
       }
     }
     terms.push(...(trade.outcomes || []).flat());
@@ -152,7 +153,8 @@
       const outcome = asset.outcome;
       const afterDraft = point && !point.original && outcome &&
         market[point.i][2] >= asset.afterDraft;
-      return `<li>${esc(pickLabel(asset))}${afterDraft ? `<span class="trade-pick-outcome"> (${esc(outcome.name)})</span>` :
+      const at = point?.original ? (trade.estimatedAt ?? trade.acceptedAt) : point ? market[point.i][2] : null;
+      return `<li>${esc(pickLabel(asset, false, at))}${afterDraft ? `<span class="trade-pick-outcome"> (${esc(outcome.name)})</span>` :
         outcome && (!asset.afterDraft || !point) ? `<span class="trade-pick-outcome"> (${esc(outcome.name)})</span>` : ''}</li>`;
     }).join('')}</ul>`;
   }

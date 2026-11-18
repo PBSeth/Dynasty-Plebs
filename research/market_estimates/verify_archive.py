@@ -25,17 +25,17 @@ def main():
     assert new["market"] == old["market"] and len(new["market"]) == 371
     for before, after in zip(old["trades"], new["trades"]):
         for key, value in before.items():
-            if key not in ["day", "timeline", "dateSensitivity"]:
+            if key not in ["day", "timeline", "dateSensitivity", "sides", "latestMissing"]:
                 assert after.get(key) == value, (after["id"], key)
         if before.get("gradeBlocked"):
             assert after["day"] is None and after["timeline"] == []
         if after["day"]:
             index = after["day"][0]
             assert new["market"][index][2] <= after.get("estimatedAt", after.get("acceptedAt"))
-            assert [v is None for v in before["day"][1]] == [v is None for v in after["day"][1]]
+            assert all(a is None or b is not None for a, b in zip(before["day"][1], after["day"][1]))
         assert len(before["timeline"]) == len(after["timeline"])
         for a, b in zip(before["timeline"], after["timeline"]):
-            assert [v is None for v in a] == [v is None for v in b]
+            assert all(x is None or y is not None for x, y in zip(a, b))
 
     model = read(ROOT / "trade-value-model.json")
     values = [ARCHIVE.estimate_value(10500 * math.exp(-.0235 * rank), model)

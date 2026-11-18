@@ -9822,7 +9822,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 1,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 130: explicit 'his' in original package: his 25 1st (TBD)"
             }
           ],
           "originalPackage": "his 25 1st (TBD)"
@@ -9902,7 +9903,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 131: explicit 'his' in original package: the 2022 1.12 and his 2025 2nd (TBD)"
             }
           ],
           "originalPackage": "the 2022 1.12 and his 2025 2nd (TBD)"
@@ -10025,6 +10027,13 @@
               "fpId": "20130",
               "sleeperId": "7569",
               "espnId": "4258173"
+            },
+            {
+              "kind": "pick",
+              "season": 2025,
+              "round": 3,
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 133: explicit 'his' in original package: Nico Collins, Isaiah Hodgins, and his 2025 3rd (TBD)"
             }
           ],
           "originalPackage": "Nico Collins, Isaiah Hodgins, and his 2025 3rd (TBD)"
@@ -10048,12 +10057,6 @@
               "slotKnownAtTrade": "2.05",
               "afterDraft": 1683322575882,
               "outcomeTimingSource": "First executed ESPN roster addition; an upper bound on selection time."
-            },
-            {
-              "kind": "pick",
-              "season": 2025,
-              "round": 3,
-              "origin": ""
             }
           ],
           "originalPackage": "the 2023 2.05"
@@ -10069,7 +10072,8 @@
       "dateSource": "ESPN executed transaction 77b6ec87-0b8d-4302-ae87-c0aede8797a6",
       "espnTransactionIds": [
         "77b6ec87-0b8d-4302-ae87-c0aede8797a6"
-      ]
+      ],
+      "assetCorrectionSource": "Workbook row 133 original text: Dave sent his 2025 third to Luke, with Nico Collins and Isaiah Hodgins."
     },
     {
       "id": "workbook-134",
@@ -10781,7 +10785,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 1,
-              "origin": ""
+              "origin": "Payton Docheff",
+              "originSource": "Workbook row 143: explicit 'his' in original package: his 24 and 25 1st (1.08, TBD), and Zamir White"
             }
           ],
           "originalPackage": "his 24 and 25 1st (1.08, TBD), and Zamir White"
@@ -11188,7 +11193,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Unique 2025 second-round ownership chain across workbook trades and all completed Sleeper transfers; original-owner inventory and every recorded sender/receiver constraint agree."
             }
           ],
           "originalPackage": "Calvin Ridley, 2024 2.11 and 2.12, and a 25 2nd (TBD)"
@@ -11274,25 +11280,29 @@
               "kind": "pick",
               "season": 2025,
               "round": 1,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Workbook row 150: explicit 'his' in original package: his 25 and 26 first and seconds (TBD, TBD, TBD, TBD), Roschon Johnson, and Sean Tucker"
             },
             {
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Workbook row 150: explicit 'his' in original package: his 25 and 26 first and seconds (TBD, TBD, TBD, TBD), Roschon Johnson, and Sean Tucker"
             },
             {
               "kind": "pick",
               "season": 2026,
               "round": 1,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Workbook row 150: explicit 'his' in original package: his 25 and 26 first and seconds (TBD, TBD, TBD, TBD), Roschon Johnson, and Sean Tucker"
             },
             {
               "kind": "pick",
               "season": 2026,
               "round": 2,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Workbook row 150: explicit 'his' in original package: his 25 and 26 first and seconds (TBD, TBD, TBD, TBD), Roschon Johnson, and Sean Tucker"
             }
           ],
           "originalPackage": "his 25 and 26 first and seconds (TBD, TBD, TBD, TBD), Roschon Johnson, and Sean Tucker"
@@ -11337,7 +11347,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Matt Clawson",
+              "originSource": "Workbook row 151: explicit 'his' in original package: his 25 2nd (TBD) and the 24 3.03"
             }
           ],
           "originalPackage": "his 25 2nd (TBD) and the 24 3.03"
@@ -11498,7 +11509,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Unique 2025 second-round ownership chain across workbook trades and all completed Sleeper transfers; original-owner inventory and every recorded sender/receiver constraint agree."
             }
           ],
           "originalPackage": "a 2025 2nd (TBD)"
@@ -11574,7 +11586,8 @@
               "kind": "pick",
               "season": 2026,
               "round": 1,
-              "origin": ""
+              "origin": "Travis Page",
+              "originSource": "Workbook row 154: explicit 'his' in original package: the 2024 3.12 and his 2026 1st (TBD)"
             }
           ],
           "originalPackage": "the 2024 3.12 and his 2026 1st (TBD)"
@@ -11638,19 +11651,22 @@
               "kind": "pick",
               "season": 2025,
               "round": 4,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 155: explicit 'his' in original package: his 25 4th (TBD), and 26 4th and 5th (TBD, TBD)"
             },
             {
               "kind": "pick",
               "season": 2026,
               "round": 4,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 155: explicit 'his' in original package: his 25 4th (TBD), and 26 4th and 5th (TBD, TBD)"
             },
             {
               "kind": "pick",
               "season": 2026,
               "round": 5,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "Workbook row 155: explicit 'his' in original package: his 25 4th (TBD), and 26 4th and 5th (TBD, TBD)"
             }
           ],
           "originalPackage": "his 25 4th (TBD), and 26 4th and 5th (TBD, TBD)"
@@ -11690,7 +11706,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 3,
-              "origin": ""
+              "origin": "Ryan Lipkin",
+              "originSource": "Workbook row 156: explicit 'his' in original package: his 25 3rd (TBD)"
             }
           ],
           "originalPackage": "his 25 3rd (TBD)"
@@ -11758,7 +11775,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Ryan Lipkin",
+              "originSource": "Workbook row 157: explicit 'his' in original package: Jaleel Mclaughlin and his 25 2nd (TBD)"
             }
           ],
           "originalPackage": "Jaleel Mclaughlin and his 25 2nd (TBD)"
@@ -11792,7 +11810,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 3,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "Workbook row 157: explicit 'his' in original package: Aaron Jones, his 25 3rd (TBD), and 25 3.13"
             }
           ],
           "originalPackage": "Aaron Jones, his 25 3rd (TBD), and 25 3.13"
@@ -11935,7 +11954,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 4,
-              "origin": ""
+              "origin": "Matt Clawson",
+              "originSource": "Workbook row 160: explicit 'his' in original package: his 25 4th (TBD)"
             }
           ],
           "originalPackage": "his 25 4th (TBD)"
@@ -12109,7 +12129,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 5,
-              "origin": ""
+              "origin": "Travis Page",
+              "originSource": "Workbook row 163: explicit 'his' in original package: his 2025 5th (TBD)"
             }
           ],
           "originalPackage": "his 2025 5th (TBD)"
@@ -12177,7 +12198,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Matt Metz",
+              "originSource": "Workbook row 164: explicit 'his' in original package: Javonte Williams and his 2025 2nd (TBD)"
             }
           ],
           "originalPackage": "Javonte Williams and his 2025 2nd (TBD)"
@@ -12258,7 +12280,8 @@
               "kind": "pick",
               "season": 2025,
               "round": 2,
-              "origin": ""
+              "origin": "Matt Metz",
+              "originSource": "Unique 2025 second-round ownership chain across workbook trades and all completed Sleeper transfers; original-owner inventory and every recorded sender/receiver constraint agree."
             }
           ],
           "originalPackage": "Terry McLaurin and a 2025 2nd (TBD)"
