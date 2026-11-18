@@ -143,7 +143,7 @@
     if (side.package) {
       const outcomes = (trade.outcomes || []).filter(([manager]) => manager === side.manager);
       return `<p>${esc(side.package)}</p>${outcomes.length ? `<ul class="trade-pick-outcomes">${outcomes.map(([, year, slot, player]) =>
-        `<li>${year} ${esc(slot)} <span>became ${esc(player)}</span></li>`
+        `<li>${year} ${esc(slot)} <span class="trade-pick-outcome">(${esc(player)})</span></li>`
       ).join('')}</ul>` : ''}`;
     }
     return `<ul>${side.assets.map(asset => {
@@ -152,8 +152,8 @@
       const outcome = asset.outcome;
       const afterDraft = point && !point.original && outcome &&
         market[point.i][2] >= asset.afterDraft;
-      return `<li>${esc(pickLabel(asset))}${afterDraft ? `<small>${esc(outcome.slot)} became ${esc(outcome.name)}</small>` :
-        outcome && (!asset.afterDraft || !point) ? `<small>Drafted: ${esc(outcome.name)}</small>` : ''}</li>`;
+      return `<li>${esc(pickLabel(asset))}${afterDraft ? `<span class="trade-pick-outcome"> (${esc(outcome.name)})</span>` :
+        outcome && (!asset.afterDraft || !point) ? `<span class="trade-pick-outcome"> (${esc(outcome.name)})</span>` : ''}</li>`;
     }).join('')}</ul>`;
   }
 

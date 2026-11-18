@@ -160,3 +160,6 @@
 .trade-stepper button{min-height:36px;padding:6px 9px;border:1px solid #d7c5a3;border-radius:7px;background:#fff9ed;color:#66543d;font:700 .73rem Arial,sans-serif;cursor:pointer;touch-action:manipulation}
 .trade-stepper button:disabled{opacity:.35;cursor:default}
 .trade-stepper button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+.trade-packages .trade-received h5{text-align:center}
+.trade-packages .trade-pick-outcome{color:var(--muted);font-size:.88em}
