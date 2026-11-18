@@ -137,7 +137,7 @@
 .trade-summary:disabled{cursor:default;opacity:.7}
 .trade-package-date{text-align:center;color:var(--muted);font-size:.69rem;margin:12px 0 7px}
 .trade-packages{margin-top:0;gap:7px}
-.trade-packages section{padding:10px 8px}
+.trade-packages section{padding:10px 8px;text-align:center}
 .trade-packages .trade-package-name{text-align:center;font:700 clamp(17px,2.2vw,22px)/1.07 Georgia,serif}
 .trade-packages .trade-package-name span{color:var(--ink);font:inherit;margin:0}
 .trade-packages .trade-total{text-align:center;margin:8px 0 3px;font-size:1.15rem}
@@ -162,4 +162,4 @@
 .trade-stepper button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 
 .trade-packages h5{text-align:center}
-.trade-packages .trade-pick-outcome{color:var(--muted);font-size:.88em}
+.trade-packages .trade-pick-outcome{display:block;margin-top:3px;color:var(--muted);font-size:.88em}

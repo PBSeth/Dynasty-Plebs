@@ -19,21 +19,39 @@ assert.deepEqual(missing.latest.changes,[20,null]);
 assert.equal(missing.peaks[0],null);
 assert.equal(missing.peaks[1],null);
 assert.deepEqual(analyze([{values:[120,210]}],sides).points[0].changes,[null,null]);
+const allowances = analyze([
+ {original:true,values:[150,200],adjustments:[50,0]},
+ {values:[220,210],adjustments:[100,0]},
+ {values:[160,220]}
+],sides);
+assert.deepEqual(allowances.points.map(p=>p.changes),[[0,0],[20,10],[60,20]]);
+assert.deepEqual(allowances.baseline.values,[150,200]);
+assert.equal(allowances.peaks[0],allowances.points[2]);
+assert.deepEqual(analyze([{original:true,values:[100,null],adjustments:[10,0]},
+ {values:[120,210],adjustments:[20,0]}],sides).latest.changes,[10,null]);
 const archive = JSON.parse(fs.readFileSync('trade-valuations.json','utf8'));
 let checked=0;
 for(const t of archive.trades){
  const points=[];
- if(t.day) points.push({original:true,date:t.date,values:t.day[1]});
- points.push(...(t.timeline||[]).map(([i,...values])=>({date:archive.market[i][0],values})));
+ const adjustments=new Map((t.timelineAdjustments||[]).map(([i,...values])=>[i,values]));
+ if(t.day) points.push({original:true,date:t.date,values:t.day[1],adjustments:t.dayAdjustments});
+ points.push(...(t.timeline||[]).map(([i,...values])=>({date:archive.market[i][0],values,adjustments:adjustments.get(i)})));
  const a=analyze(points,t.sides);
  if(a.baseline) a.baseline.changes.forEach(v=>assert.ok(v===null||v===0));
  for(const p of a.points) p.changes.forEach((v,i)=>{
-  if(v!==null) assert.equal(v,p.values[i]-a.baseline.values[i]);
+  if(v!==null) assert.equal(v,p.values[i]-(p.adjustments?.[i]??0)-
+    (a.baseline.values[i]-(a.baseline.adjustments?.[i]??0)));
  });
  if(t.id==='sleeper-1412868254434676736'){
-  assert.deepEqual(a.latest.changes,[1428,115]);
-  assert.equal(margin(a.latest.changes,0),1313);
+  assert.deepEqual(a.latest.changes,[841,115]);
+  assert.equal(margin(a.latest.changes,0),726);
   assert.equal(margin(a.baseline.values,0),1378);
+ }
+ if(t.id==='sleeper-1205285790439981056'){
+  assert.deepEqual(a.latest.assetValues,[6908,8220]);
+  assert.deepEqual(a.latest.changes,[2903,-1672]);
+  assert.equal(margin(a.latest.changes,0),4575);
+  assert.equal(margin(a.latest.assetValues,0),-1312);
  }
  checked++;
 }

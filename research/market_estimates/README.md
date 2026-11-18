@@ -17,13 +17,19 @@ Published source values are converted back to their implied ranking proxy. A fit
 
 The curve has two fitted parameters. A third parameter, learned separately from completed trade packages, supplies a consolidation allowance. In a fully priced two-sided trade, it applies only when the side receiving fewer positive-value pieces also receives the strongest player. Its allowance is the strongest player's value times the per-extra-piece coefficient times the piece-count difference. Pure-pick swaps and incomplete or multiway packages receive no invented consolidation allowance. Zero-value pieces do not create extra allowance.
 
-The resulting adjusted totals are comparative trade values; an allowance is not another asset owned by the manager. The UI explicitly identifies it below the total. This is our own estimated package rule, not an implementation of KTC's proprietary adjustment. A 10% close-trade band avoids naming a clear leader for small model differences in the standard at-trade/current views.
+The resulting adjusted totals are comparative trade values; an allowance is not another asset owned by the manager. The original trade-grade comparison retains this allowance. The graph, received-value changes, current swing and manager-best swings subtract the allowance from each snapshot before comparing with the trade-day asset baseline. This prevents a changing package allowance from masquerading as asset appreciation. This is our own estimated package rule, not an implementation of KTC's proprietary adjustment.
 
 ## Historical safeguards
 
 Trade-day inputs come from the most recent source published before execution or the existing labeled date estimate. At trade time, an unmade pick stays a pick regardless of its eventual selection. Only post-draft observations can switch to the documented player. FAAB remains separately listed. Existing incomplete-trade and missing-price guards, original packages, recorded dates, date-estimation windows, source revisions and pick outcomes remain intact.
 
-The same fixed model prices all four lenses. No new calculator joining the source mix can create an artificial historical peak. Peaks are the largest observed adjusted comparison at available source snapshots, not proof of an unobserved daily maximum.
+The same fixed asset curve prices all four lenses. No new calculator joining the source mix can create an artificial historical peak. Growth peaks are the largest observed asset-only swings since the trade-day baseline at available source snapshots, not proof of an unobserved daily maximum.
+
+## March 11, 2025 trade audit
+
+Trade `sleeper-1205285790439981056` compares Seth Miller's first-round pick with Dave Carnes' Derrick Henry, first-round pick and third-round pick. The original snapshot contains no verified `slotKnownAtTrade` fields for these picks. The final draft outcomes identify 1.01/Jeanty, 1.02/Hampton and 3.06/Hunter, but the captured draft-order object does not establish when that order was fixed. Do not backfill the original grade from the eventual player selections or assume the draft creation/start timestamp records the order-setting time.
+
+At the March 7, 2025 preceding snapshot, generic pick/player values total 4,005 for Seth and 9,892 for Dave. At the November 13, 2026 snapshot, actual asset values total 6,908 and 8,220 respectively. Therefore the received-asset changes are +2,903 and -1,672; the net swing since trade is +4,575 to Seth. Dave's current asset package still leads by 1,312. The previous +9,392 swing mistakenly included a 4,817-point consolidation allowance on Seth's package. Original-grade sensitivity to the unconfirmed slots remains a separate input limitation, not a reason to insert hindsight values.
 
 ## Validation and reproduction
 
