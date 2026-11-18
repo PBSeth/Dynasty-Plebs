@@ -43,6 +43,14 @@ The live spreadsheet's original cell fills supply final drafting ownership, with
 
 The manager confirmed that the fifth Seth received from Dave in workbook row 150 was Dave's own pick. It is restored as 2025 5.02 (Chimere Dike), while the missing intervening ownership event remains a historical-log gap. The manager also approved locking in the fourth Seth received from Clint in workbook row 165 as Dave's 2025 4.02 (Ollie Gordon II). Dave had sent this fourth to Clint in workbook row 155 on June 4, 2024, before Clint's September 4 trade with Seth. All four previously anonymous pick identities are now resolved. The unrecorded intervening ownership events remain historical-log gaps; no extra trades are invented to fill them. The 4.02 linkage is recorded as a user-approved reconstruction.
 
+## Missing current quotes and 2024 selections
+
+A previously quoted player who disappears from a later ranking feed covering at least 444 identified players receives an explicit zero estimate. This applies only after the player has appeared in a dated source; unknown identities and missing quotes before first appearance remain unavailable. No later player quote is imported into an earlier snapshot. Trade details disclose these current zero estimates, and the archive records their names. This resolves out-of-feed veterans such as Robert Woods without treating every missing identity as worthless.
+
+For documented 2024 pick outcomes missing a selection timestamp, completed Sleeper roster-setup player lists provide a conservative upper bound. The setup cannot supply rookie slots or the actual selection date. A pick switches to its documented player only after that upper bound, while original grades continue to use pick values. This repairs the 2024 5.07/Clyde Edwards-Helaire transition and the same gap in other 2024 selections.
+
+The list previews use the latest known slot, independently of whether that slot was known when traded. Workbook row 160 therefore displays 2025 4.05 (Tory Horton in details), while its 2024 original grade continues to use a future fourth. Row 122 remains blocked: its November 29, 2022 execution conflicts with its written 2022 pick years. Neither the year nor its eventual player selections are changed without evidence.
+
 ## Validation and reproduction
 
 `open-market-validation.json` contains all aggregate diagnostics. The metric is the absolute log gap between the two sides of actual completed trades, which measures market-clearing consistency. It is not winner-prediction accuracy or a community-consensus label.

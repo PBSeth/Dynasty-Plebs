@@ -95,7 +95,7 @@
     if (side.package) return side.package;
     const first = side.assets?.[0];
     if (!first) return '—';
-    const name = first.kind === 'pick' ? `${first.season ?? '?'} ${first.slotKnownAtTrade || 'R' + first.round}` :
+    const name = first.kind === 'pick' ? pickLabel(first, false, market.at(-1)?.[2]) :
       first.kind === 'faab' ? `$${number.format(first.amount)} FAAB` : first.name;
     return name + (side.assets.length > 1 ? ` + ${side.assets.length - 1}` : '');
   }
@@ -103,7 +103,8 @@
   function currentStanding(trade) {
     const values = trade.lenses[1].point?.assetValues;
     const side = trade.sides.findIndex(side => side.manager === managerSelect.value);
-    if (!values || !metrics.complete(values) || side < 0) return { value: '—', label: 'Unrated', state: 'unrated' };
+    if (!values || !metrics.complete(values) || side < 0) return { value: '—',
+      label: trade.gradeBlocked && trade.issues?.some(issue => /pick.*year|pick year/i.test(issue)) ? 'Check pick year' : 'Unrated', state: 'unrated' };
     const edge = metrics.margin(values, side);
     const leaders = trade.sides.filter((_, index) => values[index] === Math.max(...values));
     const name = leaders[0].manager.split(' ');
@@ -225,6 +226,8 @@
       </div>
       <div class="trade-detail-heading">
         <h3 class="trade-manager-names" aria-label="${esc(label(trade))}">${trade.sides.map((side, i) => `<span class="trade-manager-name" style="--side-color:${colors[i % colors.length]}">${stackedName(side.manager)}</span>`).join('<span class="trade-versus" aria-hidden="true">↔</span>')}</h3>
+        ${trade.gradeBlocked ? `<p>${esc((trade.issues || []).join(' '))}</p>` : ''}
+        ${trade.latestZeroEstimates?.length ? `<p>${esc(trade.latestZeroEstimates.join(', '))}: unranked; current value estimated at 0.</p>` : ''}
       </div>
       <div class="trade-current" aria-label="Since trade">
         <small>Since trade</small>

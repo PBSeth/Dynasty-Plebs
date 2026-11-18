@@ -89,6 +89,7 @@ class Snapshot:
         self.date = published[:10]
         self.timestamp = milliseconds(published)
         self.players = {}
+        self.player_names = {}
         self.names = {}
         self.picks = {}
         self.pick_policy = "published-legacy"
@@ -105,6 +106,7 @@ class Snapshot:
                     fp = row.get("fp_id")
                     if fp and fp != "NA":
                         self.players[fp] = value
+                        self.player_names[fp] = normalize(name)
                     # Keep names usable in the older files that did not store IDs.
                     key = normalize(name)
                     if key in self.names and self.names[key] != value:
@@ -241,13 +243,29 @@ def snapshots(cache, offline, model=None):
 
     with ThreadPoolExecutor(max_workers=10) as pool:
         result = list(pool.map(load_snapshot, commits))
+    # A previously identified player who leaves a full ranking feed has no
+    # ranked market value. This is an explicit zero estimate, not an unmatched
+    # identity. Never use future appearances to fill earlier missing quotes.
+    known_ids, known_names = {}, set()
+    for snapshot in result:
+        observed_ids, observed_names = dict(snapshot.players), set(snapshot.names)
+        snapshot.unranked_zero_names = []
+        if model and len(observed_ids) >= model["replacementRank"]:
+            for fp_id, name in known_ids.items():
+                if fp_id not in observed_ids and name not in observed_names:
+                    snapshot.players[fp_id] = 0
+                    snapshot.unranked_zero_names.append(name)
+            for name in known_names - observed_names:
+                snapshot.names[name] = 0
+        known_ids.update(snapshot.player_names)
+        known_names.update(observed_names)
     if not offline:
         unavailable_path.parent.mkdir(parents=True, exist_ok=True)
         unavailable_path.write_text(json.dumps(sorted(unavailable)))
     return result
 
 
-def sleeper_trades(cache, offline, league_id, outcomes_by_origin=None):
+def sleeper_trades(cache, offline, league_id, outcomes_by_origin=None, outcome_bounds=None):
     def sleeper(route):
         path = cache / "sleeper" / (route.replace("/", "-") + ".json")
         if not offline:
@@ -297,6 +315,12 @@ def sleeper_trades(cache, offline, league_id, outcomes_by_origin=None):
 
         # 2024's live drafts were roster setup drafts after the ESPN rookie draft.
         for draft in sleeper(f"league/{league_id}/drafts"):
+            # A 2024 roster-setup draft cannot supply rookie slots. Its completed
+            # player list does prove those documented selections existed by then.
+            if outcome_bounds is not None and draft.get("status") == "complete" and draft.get("last_picked"):
+                for pick in sleeper(f"draft/{draft['draft_id']}/picks"):
+                    outcome_bounds[season, pick["player_id"]] = {
+                        "afterDraft": draft["last_picked"], "draftId": draft["draft_id"]}
             if season < 2025 or draft["status"] != "complete" or draft["type"] != "linear":
                 continue
             order = draft.get("draft_order") or {}
@@ -461,6 +485,13 @@ def value_trade(trade, market, timestamps):
         trade["timelineAdjustments"] = timeline_adjustments
     if timeline:
         _, trade["latestMissing"] = grade(market[-1], trade, market[-1].timestamp)
+        trade["latestZeroEstimates"] = sorted({
+            player["name"] for side in trade["sides"] for asset in side["assets"]
+            for player in ([asset] if asset["kind"] == "player" else
+                           [asset["outcome"]] if asset.get("outcome") and
+                           asset.get("afterDraft", float("inf")) <= market[-1].timestamp else [])
+            if normalize(player["name"]) in market[-1].unranked_zero_names
+        })
     bounds = trade.get("dateEstimate")
     if bounds and bounds["earliest"] and bounds["latest"]:
         lower = datetime.combine(datetime.fromisoformat(bounds["earliest"]).date(), time.min, CENTRAL).timestamp() * 1000
@@ -494,14 +525,19 @@ def main():
     args = parser.parse_args()
     model = None if args.source_values else read_json(ROOT / "trade-value-model.json")
     market = snapshots(args.cache, args.offline, model)
-    outcomes_by_origin = {}
-    archive = sleeper_trades(args.cache, args.offline, args.league_id, outcomes_by_origin)
+    outcomes_by_origin, outcome_bounds = {}, {}
+    archive = sleeper_trades(args.cache, args.offline, args.league_id, outcomes_by_origin, outcome_bounds)
     history_path = ROOT / "trade-history.json"
     history = read_json(history_path) if history_path.exists() else None
     if history:
         for trade in history["trades"]:
             for side in trade["sides"]:
                 for asset in side.get("assets", []):
+                    if asset["kind"] == "pick" and asset.get("outcome") and not asset.get("afterDraft"):
+                        bound = outcome_bounds.get((asset.get("season"), asset["outcome"].get("sleeperId")))
+                        if bound:
+                            asset["afterDraft"] = bound["afterDraft"]
+                            asset["outcomeTimingSource"] = f"Completed Sleeper roster setup {bound['draftId']}; upper bound on selection time, not the rookie draft date."
                     if asset["kind"] != "pick" or asset.get("outcome"):
                         continue
                     key = (asset.get("season"), asset.get("origin"), asset.get("round"))
@@ -542,6 +578,10 @@ def main():
     }
     if model:
         payload["valueModel"] = model
+        payload["playerQuotePolicy"] = {
+            "unranked": "Previously quoted players absent from a later feed covering at least replacementRank identified players receive an estimated zero. Unknown identities and earlier missing quotes remain unavailable.",
+            "latestUnrankedZeroNames": sorted(set(market[-1].unranked_zero_names)),
+        }
     if history:
         payload["coverage"] = history["coverage"]
     path = args.output
