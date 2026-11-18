@@ -229,12 +229,23 @@
         range.setAttribute('aria-valuetext', formatDate(point.date));
         detail.querySelector('.trade-chart-date').textContent = formatDate(point.date);
       }
-      detail.querySelector('.trade-package-date').textContent = point ? `Package change · ${formatDate(point.date)}` : 'Package details';
-      packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}">
-        <h4 class="trade-package-name">${stackedName(side.manager)}</h4>
-        <p class="trade-total"><span>Since trade</span>${signed(point?.changes[i])}</p>
-        ${assetList(trade, side, point)}
-      </section>`).join('');
+      detail.querySelector('.trade-package-date').textContent = point ? `Change since trade · ${formatDate(point.date)}` : 'Package details';
+      const packageContent = side => side.package || side.assets?.length
+        ? assetList(trade, side, point) : '<p class="trade-unrecorded">Not recorded</p>';
+      packages.innerHTML = trade.sides.map((side, i) => {
+        // A two-manager exchange identifies the outgoing package exactly. A
+        // multi-manager receipt alone does not identify who supplied each asset.
+        const sent = trade.sides.length === 2 ? trade.sides[1 - i] : null;
+        return `<section style="--side-color:${colors[i % colors.length]}" aria-label="${esc(side.manager)}’s side of the trade">
+          <h4 class="trade-package-name">${stackedName(side.manager)}</h4>
+          <div class="trade-received" aria-label="${esc(side.manager)} received">
+            <h5>Received</h5>
+            ${packageContent(side)}
+            <p class="trade-total"><span>Received value change</span>${signed(point?.changes[i])}</p>
+          </div>
+          ${sent ? `<div class="trade-sent" aria-label="${esc(side.manager)} sent"><h5>Sent</h5>${packageContent(sent)}</div>` : ''}
+        </section>`;
+      }).join('');
       if (canvas) paintSelected();
     }
     const keepPosition = update => {

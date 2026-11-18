@@ -140,3 +140,10 @@
 @media(min-width:1100px){.trade-summaries{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 .trade-summary-values small span{display:block}
+
+.trade-packages h5{margin:10px 0 3px;color:var(--side-color);font:800 .7rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.trade-packages .trade-sent{margin-top:10px;padding-top:1px;border-top:1px solid #d7c5a3}
+.trade-packages .trade-sent h5{color:var(--muted)}
+.trade-packages .trade-sent ul{color:#75664f}
+.trade-packages .trade-received .trade-total{margin-top:7px;padding-top:7px;border-top:1px solid #e5d5ba}
+.trade-packages .trade-unrecorded{color:var(--muted);font-size:.75rem}
