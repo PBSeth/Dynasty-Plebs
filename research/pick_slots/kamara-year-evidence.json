@@ -1,0 +1,106 @@
+{
+  "sourceUrl": "https://docs.google.com/spreadsheets/d/1RrmDFluxUJlbxRfWx6aGY-5R-n349bEqXqvPHZpB3Mw/edit",
+  "sourceExportSha256": "cf4bb8a881c7adddb1132eb6b8e7162c06a1b878f719e1a9bd1b0fa8baa830ff",
+  "status": "Evidence-based reconstruction; original wording and ESPN dates retained",
+  "cells": [
+    {
+      "sheet": "2023",
+      "cell": "B3",
+      "text": "Matt Clawson",
+      "fill": "FFC27BA0"
+    },
+    {
+      "sheet": "2023",
+      "cell": "D7",
+      "text": "Quentin Johnson",
+      "fill": "FFC27BA0"
+    },
+    {
+      "sheet": "2023",
+      "cell": "E12",
+      "text": "Marvin Mims Jr",
+      "fill": "FFC27BA0"
+    },
+    {
+      "sheet": "2023",
+      "cell": "B7",
+      "text": "Dave Carnes",
+      "fill": "FFFFFF00"
+    },
+    {
+      "sheet": "2023",
+      "cell": "B12",
+      "text": "Bo Tiller",
+      "fill": "FFE6B8AF"
+    },
+    {
+      "sheet": "2022",
+      "cell": "B4",
+      "text": "Travis Page",
+      "fill": "FFBF9000"
+    },
+    {
+      "sheet": "2022",
+      "cell": "D7",
+      "text": "Jameson Williams",
+      "fill": "FFBF9000"
+    },
+    {
+      "sheet": "2022",
+      "cell": "B6",
+      "text": "Matt Clawson",
+      "fill": "FFC27BA0"
+    },
+    {
+      "sheet": "2022",
+      "cell": "E12",
+      "text": "Kenny Pickett",
+      "fill": "FFC27BA0"
+    },
+    {
+      "sheet": "Trade Log",
+      "cell": "A86",
+      "text": "Travis trades Robert Woods to Dave for Darius Slayton and a 2023 1st (1.05)",
+      "fill": "FFCCCCCC"
+    },
+    {
+      "sheet": "Trade Log",
+      "cell": "A98",
+      "text": "Travis trades a 22 1st (1.05) to Seth for Chris Godwin",
+      "fill": "FFCCCCCC"
+    },
+    {
+      "sheet": "Trade Log",
+      "cell": "A117",
+      "text": "Seth trades Darrell Henderson and his 23 3rd (3.12) to Bo for his 23 2nd (2.10)",
+      "fill": "FFCCCCCC"
+    },
+    {
+      "sheet": "Trade Log",
+      "cell": "A122",
+      "text": "Seth trades the 22 1.05 and 22 2.10 to Clawson for Alvin Kamara and his 24 1st (1.01)",
+      "fill": "FFCCCCCC"
+    }
+  ],
+  "findings": [
+    "The 2023 1.05 (Quentin Johnston) and 2.10 (Marvin Mims) cells both use Clawson’s FFC27BA0 fill.",
+    "The 2022 1.05 (Jameson Williams) uses Travis’s FFBF9000 fill, and row 105 transfers that 2022 pick from Alex to Travis.",
+    "Row 86 transfers Dave’s 2023 first, retrospectively identified as 1.05, to Travis. Row 98 transfers a first recorded as 2022 1.05 from Travis to Seth. Correcting row 98 to 2023 connects the existing ownership trail without inventing an intervening trade.",
+    "Row 117 sends Bo’s 2023 second, identified as 2.10, to Seth. Row 122 transfers 1.05 and 2.10 from Seth to Clawson. Correcting both years to 2023 agrees with both acquisition trails and the final drafting colors.",
+    "The November 29, 2022 ESPN Kamara transfer and surrounding chronological workbook rows agree on the date. The pick year is the inconsistent field."
+  ],
+  "chains": {
+    "2023 1.05": [
+      "Dave Carnes",
+      "Travis Page (row 86)",
+      "Seth Miller (row 98, year corrected)",
+      "Matt Clawson (row 122, year corrected)"
+    ],
+    "2023 2.10": [
+      "Bo Tiller",
+      "Seth Miller (row 117)",
+      "Matt Clawson (row 122, year corrected)"
+    ]
+  },
+  "originalGrading": "Both 2023 picks remain generic future-round picks in the November 2022 original grade. Future slots and selected players cannot affect that grade."
+}

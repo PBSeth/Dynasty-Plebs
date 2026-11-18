@@ -49,7 +49,9 @@ A previously quoted player who disappears from a later ranking feed covering at 
 
 For documented 2024 pick outcomes missing a selection timestamp, completed Sleeper roster-setup player lists provide a conservative upper bound. The setup cannot supply rookie slots or the actual selection date. A pick switches to its documented player only after that upper bound, while original grades continue to use pick values. This repairs the 2024 5.07/Clyde Edwards-Helaire transition and the same gap in other 2024 selections.
 
-The list previews use the latest known slot, independently of whether that slot was known when traded. Workbook row 160 therefore displays 2025 4.05 (Tory Horton in details), while its 2024 original grade continues to use a future fourth. Row 122 remains blocked: its November 29, 2022 execution conflicts with its written 2022 pick years. Neither the year nor its eventual player selections are changed without evidence.
+The list previews use the latest known slot, independently of whether that slot was known when traded. Workbook row 160 therefore displays 2025 4.05 (Tory Horton in details), while its 2024 original grade continues to use a future fourth.
+
+`research/pick_slots/kamara-year-evidence.json` resolves the year typos in rows 98 and 122. Dave's 2023 first passes to Travis in row 86, to Seth in the Godwin trade (row 98), and to Clawson in the November 2022 Kamara trade (row 122). Bo's 2023 second passes to Seth in row 117, then to Clawson in row 122. The 2023 draft's 1.05 (Quentin Johnston) and 2.10 (Marvin Mims) cells both use Clawson's ownership fill. The 2022 1.05 uses Travis's fill and follows a separate recorded Alex-to-Travis transfer. Together the source colors and acquisition chains support correcting the two trades' mislabeled pick years to 2023 while retaining the ESPN dates. Original workbook wording is preserved alongside correction provenance. Both November 2022 original pick values remain generic future-round values; exact slots and eventual players do not affect the original grade.
 
 ## Validation and reproduction
 

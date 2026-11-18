@@ -39,6 +39,13 @@ for side in changed["sides"]:
 snapshot = market[fourth["day"][0]]
 assert archive.grade(snapshot, changed, fourth["estimatedAt"], original=True)[0] == fourth["day"][1]
 kamara = trades["workbook-122"]
-assert kamara["gradeBlocked"] and kamara["day"] is None and kamara["timeline"] == []
-assert [pick["season"] for pick in kamara["sides"][1]["assets"]] == [2022, 2022]
-print("Verified recovered fourth, conservative selection timing, disclosed zero estimate, unknown identity, no future quote or selection leakage, and unresolved pick-year guard.")
+assert not kamara.get("gradeBlocked") and kamara["day"] and kamara["timeline"]
+assert [pick["season"] for pick in kamara["sides"][1]["assets"]] == [2023, 2023]
+assert [pick["outcome"]["name"] for pick in kamara["sides"][1]["assets"]] == ["Quentin Johnston", "Marvin Mims"]
+assert kamara["timeline"][-1][1:] == [5321, 4376]
+assert all("slotKnownAtTrade" not in pick for pick in kamara["sides"][1]["assets"])
+assert trades["workbook-98"]["sides"][1]["assets"][0]["season"] == 2023
+# A different contradictory record stays blocked; resolving one case cannot
+# disable the historical guards for every trade.
+assert trades["workbook-131"]["gradeBlocked"]
+print("Verified recovered fourth, conservative selection timing, disclosed zero estimate, unknown identity, no future quote or selection leakage, evidence-based Kamara/Godwin corrections, and remaining pick-year guard.")

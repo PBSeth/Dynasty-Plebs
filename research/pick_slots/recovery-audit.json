@@ -1,6 +1,6 @@
 {
   "knownAtTradeSlotsRestored": 53,
-  "resolvedSlotEntries": 258,
+  "resolvedSlotEntries": 260,
   "futurePickOutcomesLinked": 26,
   "explicitWorkbookOrigins": 19,
   "uniqueOwnershipChainOrigins": 3,
@@ -26,5 +26,15 @@
   "sheetColorReconstructedOrigins": 2,
   "colorEvidence": "research/pick_slots/sheet-color-evidence.json",
   "userConfirmedOrigins": 1,
-  "userApprovedReconstructedOrigins": 1
+  "userApprovedReconstructedOrigins": 1,
+  "correctedPickYears": {
+    "tradeIds": [
+      "workbook-98",
+      "workbook-122"
+    ],
+    "assets": 3,
+    "from": 2022,
+    "to": 2023,
+    "evidence": "research/pick_slots/kamara-year-evidence.json"
+  }
 }

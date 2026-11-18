@@ -35,7 +35,9 @@ const woods=controls.tradeResults.rows.find(row=>row.innerHTML.includes('trades/
 assert.match(woods.innerHTML,/2023 2\.01/);
 assert.match(woods.innerHTML,/\+2,887/);
 const kamara=controls.tradeResults.rows.find(row=>row.innerHTML.includes('trades/workbook-122"'));
-assert.match(kamara.innerHTML,/Check pick year/);
+assert.match(kamara.innerHTML,/2023 1\.05/);
+assert.match(kamara.innerHTML,/\+945/);
+assert.doesNotMatch(kamara.innerHTML,/Check pick year|Unrated|2022 1\.05/);
 // The current package edge is a different question from the gain since trade.
 const trade=api.getTrade('sleeper-1205285790439981056');
 assert.equal(trade.spreads.latest,1312);

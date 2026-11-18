@@ -7436,18 +7436,18 @@
           "assets": [
             {
               "kind": "pick",
-              "season": 2022,
+              "season": 2023,
               "round": 1,
-              "origin": "",
+              "origin": "Dave Carnes",
               "outcome": {
                 "kind": "player",
-                "name": "Jameson Williams",
-                "fpId": "23677",
-                "sleeperId": "8148",
-                "espnId": "4426388",
+                "name": "Quentin Johnston",
+                "fpId": "23123",
+                "sleeperId": "9754",
+                "espnId": "4429025",
                 "slot": "1.05"
               },
-              "afterDraft": 1651448778157,
+              "afterDraft": 1682908380065,
               "outcomeTimingSource": "First executed ESPN roster addition; an upper bound on selection time."
             }
           ],
@@ -7464,6 +7464,15 @@
       "dateSource": "ESPN executed transaction ca9d20cd-b676-4c50-9c04-57b1d36dc8dd",
       "espnTransactionIds": [
         "ca9d20cd-b676-4c50-9c04-57b1d36dc8dd"
+      ],
+      "corrections": [
+        {
+          "field": "sides[1].assets[0].season",
+          "from": 2022,
+          "to": 2023,
+          "reason": "Year reconstructed as 2023 from draft-sheet ownership colors and the recorded acquisition chain; the original workbook text is preserved.",
+          "evidence": "research/pick_slots/kamara-year-evidence.json"
+        }
       ]
     },
     {
@@ -9188,7 +9197,7 @@
               "kind": "pick",
               "season": 2024,
               "round": 1,
-              "origin": "",
+              "origin": "Matt Clawson",
               "outcome": {
                 "kind": "player",
                 "name": "Marvin Harrison Jr.",
@@ -9206,36 +9215,34 @@
           "assets": [
             {
               "kind": "pick",
-              "season": 2022,
+              "season": 2023,
               "round": 1,
-              "origin": "",
+              "origin": "Dave Carnes",
               "outcome": {
                 "kind": "player",
-                "name": "Jameson Williams",
-                "fpId": "23677",
-                "sleeperId": "8148",
-                "espnId": "4426388",
+                "name": "Quentin Johnston",
+                "fpId": "23123",
+                "sleeperId": "9754",
+                "espnId": "4429025",
                 "slot": "1.05"
               },
-              "slotKnownAtTrade": "1.05",
-              "afterDraft": 1651448778157,
+              "afterDraft": 1682908380065,
               "outcomeTimingSource": "First executed ESPN roster addition; an upper bound on selection time."
             },
             {
               "kind": "pick",
-              "season": 2022,
+              "season": 2023,
               "round": 2,
-              "origin": "",
+              "origin": "Bo Tiller",
               "outcome": {
                 "kind": "player",
-                "name": "Kenny Pickett",
-                "fpId": "22722",
-                "sleeperId": "8160",
-                "espnId": "4240703",
+                "name": "Marvin Mims",
+                "fpId": "23080",
+                "sleeperId": "9494",
+                "espnId": "4686472",
                 "slot": "2.10"
               },
-              "slotKnownAtTrade": "2.10",
-              "afterDraft": 1652016769416,
+              "afterDraft": 1683426893689,
               "outcomeTimingSource": "First executed ESPN roster addition; an upper bound on selection time."
             }
           ],
@@ -9244,9 +9251,7 @@
       ],
       "original": "Seth trades the 22 1.05 and 22 2.10 to Clawson for Alvin Kamara and his 24 1st (1.01)",
       "notes": "",
-      "issues": [
-        "The workbook names 2022 picks in a November 2022 trade. The intended pick year needs correction."
-      ],
+      "issues": [],
       "status": "completed",
       "acceptedAt": 1669768896643,
       "date": "2022-11-29",
@@ -9255,7 +9260,15 @@
       "espnTransactionIds": [
         "9a01ea87-60b1-48f3-823c-c23e02380fdf"
       ],
-      "gradeBlocked": true
+      "corrections": [
+        {
+          "field": "sides[1].assets[*].season",
+          "from": 2022,
+          "to": 2023,
+          "reason": "Year reconstructed as 2023 from draft-sheet ownership colors and the recorded acquisition chain; the original workbook text is preserved.",
+          "evidence": "research/pick_slots/kamara-year-evidence.json"
+        }
+      ]
     },
     {
       "id": "workbook-123",
