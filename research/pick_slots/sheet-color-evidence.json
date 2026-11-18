@@ -1,0 +1,286 @@
+{
+  "sourceUrl": "https://docs.google.com/spreadsheets/d/1RrmDFluxUJlbxRfWx6aGY-5R-n349bEqXqvPHZpB3Mw/edit",
+  "sourceExportSha256": "cf4bb8a881c7adddb1132eb6b8e7162c06a1b878f719e1a9bd1b0fa8baa830ff",
+  "sheet": "2025",
+  "legend": [
+    {
+      "cell": "B3",
+      "text": "Ryan Lipkin",
+      "color": "FF9900FF"
+    },
+    {
+      "cell": "B4",
+      "text": "Dave Carnes",
+      "color": "FFFFFF00"
+    },
+    {
+      "cell": "B5",
+      "text": "Alex Agueros",
+      "color": "FF38761D"
+    },
+    {
+      "cell": "B6",
+      "text": "Luke Miller",
+      "color": "FF00FFFF"
+    },
+    {
+      "cell": "B7",
+      "text": "Matt Clawson",
+      "color": "FFC27BA0"
+    },
+    {
+      "cell": "B8",
+      "text": "Clint Hudson",
+      "color": "FF93C47D"
+    },
+    {
+      "cell": "B9",
+      "text": "Bo Tiller",
+      "color": "FFE6B8AF"
+    },
+    {
+      "cell": "B10",
+      "text": "Payton Docheff",
+      "color": "FFF6B26B"
+    },
+    {
+      "cell": "B11",
+      "text": "Seth Miller",
+      "color": "FF6FA8DC"
+    },
+    {
+      "cell": "B12",
+      "text": "Matt Metz",
+      "color": "FFCC4125"
+    },
+    {
+      "cell": "B13",
+      "text": "Jordan Martin",
+      "color": "FFFF00FF"
+    },
+    {
+      "cell": "B14",
+      "text": "Travis Page",
+      "color": "FFBF9000"
+    }
+  ],
+  "draftCells": [
+    {
+      "cell": "G3",
+      "slot": "4.01",
+      "text": "Tahj Brooks",
+      "color": "FF6FA8DC",
+      "draftedBy": "Seth Miller"
+    },
+    {
+      "cell": "G4",
+      "slot": "4.02",
+      "text": "Ollie Gordon",
+      "color": "FF6FA8DC",
+      "draftedBy": "Seth Miller"
+    },
+    {
+      "cell": "G5",
+      "slot": "4.03",
+      "text": "Trevor Etienne",
+      "color": "FF6FA8DC",
+      "draftedBy": "Seth Miller"
+    },
+    {
+      "cell": "G6",
+      "slot": "4.04",
+      "text": "Jalen Milroe",
+      "color": "FF9900FF",
+      "draftedBy": "Ryan Lipkin"
+    },
+    {
+      "cell": "G7",
+      "slot": "4.05",
+      "text": "Tory Horton",
+      "color": "FF00FFFF",
+      "draftedBy": "Luke Miller"
+    },
+    {
+      "cell": "G8",
+      "slot": "4.06",
+      "text": "Jordon James",
+      "color": "FF93C47D",
+      "draftedBy": "Clint Hudson"
+    },
+    {
+      "cell": "G9",
+      "slot": "4.07",
+      "text": "Elijah Arroyo",
+      "color": "FFE6B8AF",
+      "draftedBy": "Bo Tiller"
+    },
+    {
+      "cell": "G10",
+      "slot": "4.08",
+      "text": "Savion Williams",
+      "color": "FFF6B26B",
+      "draftedBy": "Payton Docheff"
+    },
+    {
+      "cell": "G11",
+      "slot": "4.09",
+      "text": "Damien Martinez",
+      "color": "FFCC4125",
+      "draftedBy": "Matt Metz"
+    },
+    {
+      "cell": "G12",
+      "slot": "4.10",
+      "text": "Brashard Smith",
+      "color": "FF6FA8DC",
+      "draftedBy": "Seth Miller"
+    },
+    {
+      "cell": "G13",
+      "slot": "4.11",
+      "text": "Shedeur Sanders",
+      "color": "FFCC4125",
+      "draftedBy": "Matt Metz"
+    },
+    {
+      "cell": "G14",
+      "slot": "4.12",
+      "text": "Tai Felton",
+      "color": "FFCC4125",
+      "draftedBy": "Matt Metz"
+    },
+    {
+      "cell": "H3",
+      "slot": "5.01",
+      "text": "Jacory Croskey-Meritt",
+      "color": "FF6FA8DC",
+      "draftedBy": "Seth Miller"
+    },
+    {
+      "cell": "H4",
+      "slot": "5.02",
+      "text": "Chimere Dike",
+      "color": "FF38761D",
+      "draftedBy": "Alex Agueros"
+    },
+    {
+      "cell": "H5",
+      "slot": "5.03",
+      "text": "Kyle Monangai",
+      "color": "FF38761D",
+      "draftedBy": "Alex Agueros"
+    },
+    {
+      "cell": "H6",
+      "slot": "5.04",
+      "text": "Will Howard",
+      "color": "FF00FFFF",
+      "draftedBy": "Luke Miller"
+    },
+    {
+      "cell": "H7",
+      "slot": "5.05",
+      "text": "Jaylin Lane",
+      "color": "FFBF9000",
+      "draftedBy": "Travis Page"
+    },
+    {
+      "cell": "H8",
+      "slot": "5.06",
+      "text": "Arian Smith",
+      "color": "FF93C47D",
+      "draftedBy": "Clint Hudson"
+    },
+    {
+      "cell": "H9",
+      "slot": "5.07",
+      "text": "Dillon Gabriel",
+      "color": "FFE6B8AF",
+      "draftedBy": "Bo Tiller"
+    },
+    {
+      "cell": "H10",
+      "slot": "5.08",
+      "text": "Isaiah Bond",
+      "color": "FFF6B26B",
+      "draftedBy": "Payton Docheff"
+    },
+    {
+      "cell": "H11",
+      "slot": "5.09",
+      "text": "Oronde Gadsden",
+      "color": "FFCC4125",
+      "draftedBy": "Matt Metz"
+    },
+    {
+      "cell": "H12",
+      "slot": "5.10",
+      "text": "KeAndre Lambert-Smith",
+      "color": "FF9900FF",
+      "draftedBy": "Ryan Lipkin"
+    },
+    {
+      "cell": "H13",
+      "slot": "5.11",
+      "text": "Khalil Herbert",
+      "color": "FFF6B26B",
+      "draftedBy": "Payton Docheff"
+    },
+    {
+      "cell": "H14",
+      "slot": "5.12",
+      "text": "Raheim Sanders",
+      "color": "FF9900FF",
+      "draftedBy": "Ryan Lipkin"
+    }
+  ],
+  "checks": {
+    "allMatchedDraftCellOwnersAgreeWithSleeper": true,
+    "managerLabelOrderIsNotUsedAsOriginalPickOwnership": true,
+    "originalPickPositionsComeFromSleeperDraftOrder": true
+  },
+  "recoveries": [
+    {
+      "tradeId": "workbook-164",
+      "receivedBy": "Matt Metz",
+      "slots": [
+        "4.09",
+        "4.12"
+      ],
+      "cells": [
+        "G11",
+        "G14"
+      ],
+      "players": [
+        "Damien Martinez",
+        "Tai Felton"
+      ],
+      "inference": "Metz has these two fourths before the first recorded Sleeper trade when later transfers are reversed. The other fourth he drafted (4.11, G13, Shedeur Sanders) arrived later via sleeper-1157818940492546048."
+    }
+  ],
+  "unresolved": [
+    {
+      "tradeId": "workbook-165",
+      "receivedBy": "Seth Miller",
+      "pick": "2025 fourth",
+      "candidateSlots": [
+        "4.02",
+        "4.06"
+      ],
+      "candidatePlayers": [
+        "Ollie Gordon II",
+        "Jordan James"
+      ],
+      "evidence": "Clint held his own fourth and had received Dave's fourth in workbook-155. Colors show Seth drafted 4.02 and Clint drafted 4.06. Reversing later transfers leaves neither pick with Seth at migration. A missing return/assignment prevents a unique historical identification.",
+      "likelyCandidate": "4.02, inferred only; not inserted into valuation inputs."
+    },
+    {
+      "tradeId": "workbook-150",
+      "receivedBy": "Seth Miller",
+      "pick": "2025 fifth",
+      "likelyCandidate": "5.02 (Chimere Dike), inferred only; not inserted into valuation inputs.",
+      "evidence": "Dave's own fifth is the only fifth he is shown holding before this trade, but he sends that same original pick to Seth again in sleeper-1159280660981403648. The sheet color shows Alex ultimately drafted Dike after Seth's later transfer. An unrecorded return or migration assignment is needed to reconcile the repeated receipt."
+    }
+  ],
+  "limitations": "Colors establish who made the final pick. They cannot independently prove which earlier exchange contained a repeatedly traded pick. The worksheet left-hand manager labels differ from Sleeper original slots at the end of the round; they were not substituted for the recorded draft-order mapping."
+}

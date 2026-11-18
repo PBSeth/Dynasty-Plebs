@@ -37,7 +37,11 @@ At the March 7, 2025 preceding snapshot, exact pick/player values total 6,413 fo
 
 The dated source calculator reconstruction also retains discounted exact-slot projections for future years. This supports early-offseason trades when the available preceding source snapshot still uses the previous rookie class. It uses the same dated source curve and future discount, never a later player valuation.
 
-Explicit possessives in the workbook recover 19 previously unlinked future picks. Three more 2025 seconds have unique ownership paths across all recorded workbook/Sleeper transfers, verified against every recorded sender. Workbook row 133's future third is restored to Luke's received package, as the original wording states. Four anonymous older TBD picks have gaps in their ownership history; no origin, slot or player is fabricated for them.
+Explicit possessives in the workbook recover 19 previously unlinked future picks. Three more 2025 seconds have unique ownership paths across all recorded workbook/Sleeper transfers, verified against every recorded sender. Workbook row 133's future third is restored to Luke's received package, as the original wording states.
+
+The live spreadsheet's original cell fills supply final drafting ownership, with the color legend taken from manager-name cells. These owners agree with the Sleeper draft results. Reversing all later recorded pick transfers identifies the pair of fourths in workbook row 164 as 4.09 (Damien Martinez) and 4.12 (Tai Felton): Metz's third drafted fourth, 4.11 (Shedeur Sanders), arrived in a separate later recorded trade. This is a reconstruction from final ownership and recorded transfers. `sheet-color-evidence.json` preserves the cell references, fills, source hash and inference. Left-hand manager labels in the sheet are not treated as original pick identities because some differ from Sleeper's recorded order.
+
+Two older TBD picks remain unresolved. The fourth Seth received from Clint in workbook row 165 is likely 4.02 (Ollie Gordon II), but the later history requires an unrecorded return or assignment. The fifth Seth received from Dave in row 150 is likely 5.02 (Chimere Dike), yet Dave sends that same original pick to Seth again in a later recorded trade. Final colors cannot explain these repeated ownership changes. Neither candidate is inserted into valuation inputs as confirmed.
 
 ## Validation and reproduction
 

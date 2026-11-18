@@ -88,6 +88,16 @@ for trade in sorted(values['trades'], key=lambda t: t.get('estimatedAt', t.get('
             owners[origin] = side['manager']
             chain_checks += 1
 
+# Final drafting ownership from actual cell colors agrees with Sleeper picks.
+colors = read(ROOT / 'research/pick_slots/sheet-color-evidence.json')
+picked = {(p['round'], p['draft_slot']): p for p in read(cache / 'draft-1180190434163908609-picks.json')}
+owners_by_user = {r['owner_id']: names[r['roster_id']] for r in read(cache / 'league-1180190434163908608-rosters.json')}
+for cell in colors['draftCells']:
+    rd, slot = map(int, cell['slot'].split('.'))
+    assert owners_by_user[picked[rd, slot]['picked_by']] == cell['draftedBy']
+metz = next(s for s in by_id['workbook-164']['sides'] if s['manager'] == 'Matt Metz')
+assert sorted(a['resolvedSlot'] for a in metz['assets'] if a['kind'] == 'pick') == ['4.09', '4.12']
+
 if args.baseline:
     old = read(args.baseline)
     assert old['market'] == values['market']

@@ -12218,13 +12218,17 @@
               "kind": "pick",
               "season": 2025,
               "round": 4,
-              "origin": ""
+              "origin": "Matt Metz",
+              "originSource": "2025 sheet draft-cell colors and reversal of all later recorded Sleeper pick transfers: Metz used 4.09, 4.11 and 4.12; 4.11 arrived in the later Walker trade, leaving 4.09 and 4.12 for workbook row 164.",
+              "originConfidence": "Reconstructed from final ownership and recorded later transfers"
             },
             {
               "kind": "pick",
               "season": 2025,
               "round": 4,
-              "origin": ""
+              "origin": "Seth Miller",
+              "originSource": "2025 sheet draft-cell colors and reversal of all later recorded Sleeper pick transfers: Metz used 4.09, 4.11 and 4.12; 4.11 arrived in the later Walker trade, leaving 4.09 and 4.12 for workbook row 164.",
+              "originConfidence": "Reconstructed from final ownership and recorded later transfers"
             }
           ],
           "originalPackage": "Saquon Barkley and 2 2025 4th round picks (TBD, TBD)"
