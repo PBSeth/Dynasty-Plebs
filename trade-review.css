@@ -147,3 +147,10 @@
 .trade-packages .trade-sent ul{color:#75664f}
 .trade-packages .trade-received .trade-total{margin-top:7px;padding-top:7px;border-top:1px solid #e5d5ba}
 .trade-packages .trade-unrecorded{color:var(--muted);font-size:.75rem}
+
+.trade-detail-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.trade-detail-nav .trade-back{margin:0;white-space:nowrap;font-size:.8rem}
+.trade-stepper{display:flex;gap:5px;margin-left:auto}
+.trade-stepper button{min-height:36px;padding:6px 9px;border:1px solid #d7c5a3;border-radius:7px;background:#fff9ed;color:#66543d;font:700 .73rem Arial,sans-serif;cursor:pointer;touch-action:manipulation}
+.trade-stepper button:disabled{opacity:.35;cursor:default}
+.trade-stepper button:focus-visible{outline:2px solid var(--red);outline-offset:2px}

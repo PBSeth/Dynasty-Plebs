@@ -170,7 +170,10 @@
     anniversary.setUTCFullYear(anniversary.getUTCFullYear() + 3);
     const threeYearEnd = Math.max(0, trade.points.findLastIndex(point => Date.parse(point.date) <= anniversary.getTime()));
     const bounds = trade.dateEstimate;
-    const estimateWindow = bounds ? [bounds.earliest, bounds.latest].filter(Boolean).map(formatDate).join('–') : '';
+    const routes = [...results.querySelectorAll('a')].map(link => link.getAttribute('href'));
+    const position = routes.indexOf(managerRoute(trade.id));
+    const previousRoute = position > 0 ? routes[position - 1] : null;
+    const nextRoute = position >= 0 ? routes[position + 1] : null;
     const currentValues = latest?.changes;
     const currentSide = currentValues && metrics.complete(currentValues) ? currentValues.indexOf(Math.max(...currentValues)) : -1;
     const currentGap = currentSide < 0 ? null : margin(currentValues, currentSide);
@@ -181,20 +184,24 @@
         <span class="trade-summary-label">${esc(lens.name)}</span>
         <span class="trade-summary-kind">${lens.originalBalance ? 'Original edge' : 'Swing since trade'}</span>
         <span class="trade-summary-values">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}"><small>${stackedName(side.manager)}</small><b>${signed(available ? margin(values, i) : null)}</b></span>`).join('')}</span>
-        <time>${lens.point ? formatDate(lens.point.date) : 'Unavailable'}</time>
+        <time>${lens.point ? `${lens.point.original && bounds ? 'Est. ' : ''}${formatDate(lens.point.date)}` : 'Unavailable'}</time>
       </button>`;
     }).join('');
     detail.innerHTML = `
-      <button type="button" class="trade-back">← Back to trades</button>
+      <div class="trade-detail-nav">
+        <button type="button" class="trade-back">← Back to trades</button>
+        <div class="trade-stepper" role="group" aria-label="Browse trades">
+          <button type="button" data-step="previous" aria-label="Previous trade"${previousRoute ? '' : ' disabled'}>‹ Prev</button>
+          <button type="button" data-step="next" aria-label="Next trade"${nextRoute ? '' : ' disabled'}>Next ›</button>
+        </div>
+      </div>
       <div class="trade-detail-heading">
-        <p>${trade.date ? formatDate(trade.date) : 'Date unknown'}${bounds ? ` <details class="trade-date-note"><summary>Estimated date</summary><small>${esc(estimateWindow)}</small></details>` : ''}</p>
         <h3 class="trade-manager-names" aria-label="${esc(label(trade))}">${trade.sides.map((side, i) => `<span class="trade-manager-name" style="--side-color:${colors[i % colors.length]}">${stackedName(side.manager)}</span>`).join('<span class="trade-versus" aria-hidden="true">↔</span>')}</h3>
       </div>
-      <div class="trade-current" aria-label="Current swing since trade">
-        <small>Current swing since trade</small>
+      <div class="trade-current" aria-label="Since trade">
+        <small>Since trade</small>
         <strong style="--side-color:${currentSide < 0 ? 'var(--ink)' : colors[currentSide % colors.length]}">${currentGap == null ? 'Not rated' : currentGap === 0 ? 'Even' : signed(currentGap)}</strong>
         <span>${currentGap == null ? 'Values unavailable' : currentGap === 0 ? 'Neither manager leads' : esc(trade.sides[currentSide].manager)}</span>
-        ${latest ? `<time>${formatDate(latest.date)}</time>` : ''}
       </div>
       ${showChart ? `<section class="trade-chart" aria-label="Value change since trade">
         <div class="trade-chart-body">
@@ -253,6 +260,17 @@
       update();
       requestAnimationFrame(() => window.scrollTo({ top, left, behavior: 'instant' }));
     };
+    detail.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
+      const step = button.dataset.step;
+      const target = step === 'previous' ? previousRoute : nextRoute;
+      if (!target) return;
+      keepPosition(() => {
+        history.pushState(null, '', target);
+        setSelected(routedId());
+        const replacement = detail.querySelector(`[data-step="${step}"]`);
+        if (replacement && !replacement.disabled) replacement.focus({ preventScroll: true });
+      });
+    }));
     detail.querySelector('.trade-back').addEventListener('click', () => {
       history.pushState(null, '', managerRoute());
       view.dataset.detailOpen = 'false';
