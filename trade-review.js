@@ -71,14 +71,14 @@
         return { name: `${name}’s best`, point, side };
       })
     ];
-    const spread = (point, original = false) => {
-      const values = original ? point?.values : point?.changes;
+    const spread = (point, basis = 'changes') => {
+      const values = point?.[basis];
       if (!values || !metrics.complete(values)) return -1;
       return margin(values, values.indexOf(Math.max(...values)));
     };
     trade.spreads = {
-      peak: Math.max(-1, ...peaks.map(spread)), day: spread(trade.lenses[0].point, true),
-      latest: spread(trade.lenses[1].point)
+      peak: Math.max(-1, ...peaks.map(point => spread(point))), day: spread(trade.lenses[0].point, 'values'),
+      latest: spread(latest, 'assetValues')
     };
     const terms = [label(trade), trade.date, trade.original, trade.dateEstimate ? 'estimated date' : 'recorded date'];
     for (const side of trade.sides) {
@@ -89,6 +89,28 @@
     terms.push(...(trade.outcomes || []).flat());
     trade.search = terms.join(' ').toLowerCase();
     return trade;
+  }
+
+  function packagePreview(side) {
+    if (side.package) return side.package;
+    const first = side.assets?.[0];
+    if (!first) return '—';
+    const name = first.kind === 'pick' ? `${first.season ?? '?'} ${first.slotKnownAtTrade || 'R' + first.round}` :
+      first.kind === 'faab' ? `$${number.format(first.amount)} FAAB` : first.name;
+    return name + (side.assets.length > 1 ? ` + ${side.assets.length - 1}` : '');
+  }
+
+  function currentStanding(trade) {
+    const values = trade.lenses[1].point?.assetValues;
+    const side = trade.sides.findIndex(side => side.manager === managerSelect.value);
+    if (!values || !metrics.complete(values) || side < 0) return { value: '—', label: 'Unrated', state: 'unrated' };
+    const edge = metrics.margin(values, side);
+    const leaders = trade.sides.filter((_, index) => values[index] === Math.max(...values));
+    const name = leaders[0].manager.split(' ');
+    const shortName = trade.sides.filter(side => side.manager.split(' ')[0] === name[0]).length > 1 ? name.at(-1) : name[0];
+    return { value: edge === 0 ? 'Even' : signed(edge),
+      label: leaders.length > 1 ? 'Tied lead' : `${shortName} leads`,
+      state: edge > 0 ? 'ahead' : edge < 0 ? 'behind' : 'even' };
   }
 
   function renderList() {
@@ -109,18 +131,22 @@
     count.textContent = `${visible.length} trade${visible.length === 1 ? '' : 's'}`;
     results.replaceChildren(...visible.map(trade => {
       const item = document.createElement('li');
-      const sortedGap = trade.spreads[sort.value];
-      const preview = trade.sides.map(side => {
-        if (side.package) return side.package;
-        const first = side.assets?.[0];
-        if (!first) return '—';
-        const name = first.kind === 'pick' ? `${first.season ?? '?'} R${first.round}` : first.kind === 'faab' ? `$${first.amount} FAAB` : first.name;
-        return name + (side.assets.length > 1 ? ` + ${side.assets.length - 1}` : '');
-      }).join(' ↔ ');
-      const caption = (trade.date ? tradeDate(trade) : 'Date unknown') +
-        (trade.gradeBlocked ? ' · Unrated' : '');
-      item.innerHTML = `<a href="${managerRoute(trade.id)}"${marked(trade, selected?.id)}>
-        <strong>${esc(counterpart(trade))}</strong><span class="trade-preview">${esc(preview)}</span><small>${esc(caption)}${Number.isFinite(sortedGap) && sortedGap >= 0 ? ` · ${number.format(sortedGap)} gap` : ''}</small>
+      const received = packagePreview(trade.sides.find(side => side.manager === managerSelect.value));
+      const others = trade.sides.filter(side => side.manager !== managerSelect.value);
+      const outgoingLabel = others.length === 1 ? 'Sent' : 'Others';
+      const outgoing = others.map(packagePreview).join(' / ');
+      const caption = trade.date ? tradeDate(trade) : 'Date unknown';
+      const standing = currentStanding(trade);
+      const showPartner = !partner.value || others.length > 1;
+      const accessible = `${counterpart(trade)}; ${caption}; received ${received}; ${outgoingLabel.toLowerCase()} ${outgoing}; ${managerSelect.value} current value edge: ${standing.value}; ${standing.label}`;
+      item.innerHTML = `<a href="${managerRoute(trade.id)}" aria-label="${esc(accessible)}"${marked(trade, selected?.id)}>
+        <span class="trade-list-main">
+          ${showPartner ? `<span class="trade-list-partner">${esc(counterpart(trade))}</span>` : ''}
+          <span class="trade-list-date">${esc(caption)}</span>
+          <span class="trade-list-package"><small>Received</small><span title="${esc(received)}">${esc(received)}</span></span>
+          <span class="trade-list-package"><small>${outgoingLabel}</small><span title="${esc(outgoing)}">${esc(outgoing)}</span></span>
+        </span>
+        <span class="trade-list-edge" data-state="${standing.state}"><small>Now</small><strong>${standing.value}</strong><span>${esc(standing.label)}</span></span>
       </a>`;
       return item;
     }));
