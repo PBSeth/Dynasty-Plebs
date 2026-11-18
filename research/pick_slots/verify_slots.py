@@ -97,6 +97,11 @@ for cell in colors['draftCells']:
     assert owners_by_user[picked[rd, slot]['picked_by']] == cell['draftedBy']
 metz = next(s for s in by_id['workbook-164']['sides'] if s['manager'] == 'Matt Metz')
 assert sorted(a['resolvedSlot'] for a in metz['assets'] if a['kind'] == 'pick') == ['4.09', '4.12']
+seth = next(s for s in by_id['workbook-150']['sides'] if s['manager'] == 'Seth Miller')
+fifth = next(a for a in seth['assets'] if a['kind'] == 'pick' and a.get('season') == 2025 and a['round'] == 5)
+assert fifth['origin'] == 'Dave Carnes' and fifth['resolvedSlot'] == '5.02'
+assert fifth['outcome']['name'] == 'Chimere Dike'
+assert not fifth.get('slotKnownAtTrade')  # Still a future fifth in April 2024.
 
 if args.baseline:
     old = read(args.baseline)

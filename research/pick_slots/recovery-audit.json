@@ -1,7 +1,7 @@
 {
   "knownAtTradeSlotsRestored": 53,
-  "resolvedSlotEntries": 256,
-  "futurePickOutcomesLinked": 24,
+  "resolvedSlotEntries": 257,
+  "futurePickOutcomesLinked": 25,
   "explicitWorkbookOrigins": 19,
   "uniqueOwnershipChainOrigins": 3,
   "correctedPackageAssignment": "workbook-133: Dave sent his future third to Luke",
@@ -11,13 +11,6 @@
       "receivedBy": "Seth Miller",
       "season": 2025,
       "round": 4,
-      "reason": "Original pick owner is anonymous in the workbook; recorded ownership history has gaps."
-    },
-    {
-      "tradeId": "workbook-150",
-      "receivedBy": "Seth Miller",
-      "season": 2025,
-      "round": 5,
       "reason": "Original pick owner is anonymous in the workbook; recorded ownership history has gaps."
     }
   ],
@@ -39,5 +32,6 @@
     "swingSinceTrade": 4019
   },
   "sheetColorReconstructedOrigins": 2,
-  "colorEvidence": "research/pick_slots/sheet-color-evidence.json"
+  "colorEvidence": "research/pick_slots/sheet-color-evidence.json",
+  "userConfirmedOrigins": 1
 }

@@ -273,14 +273,17 @@
       ],
       "evidence": "Clint held his own fourth and had received Dave's fourth in workbook-155. Colors show Seth drafted 4.02 and Clint drafted 4.06. Reversing later transfers leaves neither pick with Seth at migration. A missing return/assignment prevents a unique historical identification.",
       "likelyCandidate": "4.02, inferred only; not inserted into valuation inputs."
-    },
+    }
+  ],
+  "limitations": "Colors establish who made the final pick. They cannot independently prove which earlier exchange contained a repeatedly traded pick. The worksheet left-hand manager labels differ from Sleeper original slots at the end of the round; they were not substituted for the recorded draft-order mapping.",
+  "userConfirmed": [
     {
       "tradeId": "workbook-150",
       "receivedBy": "Seth Miller",
-      "pick": "2025 fifth",
-      "likelyCandidate": "5.02 (Chimere Dike), inferred only; not inserted into valuation inputs.",
-      "evidence": "Dave's own fifth is the only fifth he is shown holding before this trade, but he sends that same original pick to Seth again in sleeper-1159280660981403648. The sheet color shows Alex ultimately drafted Dike after Seth's later transfer. An unrecorded return or migration assignment is needed to reconcile the repeated receipt."
+      "origin": "Dave Carnes",
+      "slot": "5.02",
+      "player": "Chimere Dike",
+      "confirmation": "The fifth was Dave's."
     }
-  ],
-  "limitations": "Colors establish who made the final pick. They cannot independently prove which earlier exchange contained a repeatedly traded pick. The worksheet left-hand manager labels differ from Sleeper original slots at the end of the round; they were not substituted for the recorded draft-order mapping."
+  ]
 }

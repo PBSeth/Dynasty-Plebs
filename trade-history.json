@@ -11254,7 +11254,9 @@
               "kind": "pick",
               "season": 2025,
               "round": 5,
-              "origin": ""
+              "origin": "Dave Carnes",
+              "originSource": "User confirmation: \"The fifth was Dave's.\"",
+              "originConfidence": "User-confirmed"
             }
           ],
           "originalPackage": "the 2024 1.04, 6.03, and a 2025 5th (TBD)"
