@@ -85,7 +85,13 @@
 .trade-date-note small { display:block; position:absolute; z-index:2; left:0; width:220px; padding:10px; margin-top:4px; border:1px solid var(--line); border-radius:7px; background:#fffaf0; box-shadow:0 3px 12px #2b21141a; }
 .trade-packages h4 span { display:block; margin-top:3px; color:var(--muted); font:400 .72rem Arial,sans-serif; }
 
-@media(max-width:680px){.navtabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%;gap:5px!important}.navtabs button{min-width:0!important}}
+.headbar .brand strong{white-space:nowrap}
+@media(max-width:680px){
+  .headbar{align-items:center}
+  .headbar .brand{min-width:0;flex:0 0 auto;padding-top:0}
+  .headbar .navtabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:auto;min-width:0;flex:1 1 auto;gap:3px!important}
+  .headbar .navtabs button{min-width:0!important;padding:8px 5px}
+}
 
 .trade-chart-windows{display:flex;justify-content:flex-end;gap:4px;margin:0 0 12px}
 .trade-chart-windows button{border:1px solid #d7c5a3;border-radius:7px;padding:7px 11px;background:transparent;color:var(--muted);font:700 .75rem Arial,sans-serif;cursor:pointer;min-height:36px}
