@@ -83,7 +83,33 @@
     if (window.stale) analyzed.latest = null;
     return { ...analyzed, window };
   }
-  const api = { analyze, evaluate, evaluationWindow, margin, complete, MAX_SNAPSHOT_AGE_DAYS };
+  // Milestones use the last published observation on or before the target.
+  // Never borrow a future price, skip an incomplete row, or duplicate the
+  // three-year anniversary when it is also the closed window's cutoff.
+  function checkpoints(evaluation) {
+    const { points, baseline, latest, window } = evaluation;
+    const start = dateValue(window.startDate), end = dateValue(window.endDate);
+    const at = (target, key, name) => {
+      const targetDate = target == null ? null : isoDate(target);
+      const upcoming = target != null && end != null && target > end;
+      const candidate = !upcoming && targetDate
+        ? points.filter(point => !point.original && point.date <= targetDate).at(-1) : null;
+      const point = candidate && (target - dateValue(candidate.date)) / DAY <= MAX_SNAPSHOT_AGE_DAYS ? candidate : null;
+      return { key, name, targetDate, point, upcoming };
+    };
+    const result = [{ key: 'original', name: 'At trade', point: baseline, targetDate: window.startDate, originalBalance: true }];
+    result.push(at(start == null ? null : anniversary(start, 1), 'year1', '1 year'));
+    const third = start == null ? null : anniversary(start, 3);
+    const endpoint = { key: 'endpoint', name: !window.valid ? 'Window end' : window.closed
+      ? (window.estimated ? 'Est. cutoff' : 'At cutoff') : 'Now', point: latest,
+      targetDate: window.endDate };
+    if (window.closed && third != null && isoDate(third) === window.cutoffDate) {
+      endpoint.milestone = '3 years';
+    } else result.push(at(third, 'year3', '3 years'));
+    result.push(endpoint);
+    return result;
+  }
+  const api = { analyze, evaluate, evaluationWindow, checkpoints, margin, complete, MAX_SNAPSHOT_AGE_DAYS };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PLEBS_TRADE_METRICS = api;
 })(typeof window === 'undefined' ? globalThis : window);

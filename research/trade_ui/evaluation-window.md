@@ -45,6 +45,28 @@ future rollup must consume these bounded evaluations, retain unavailable values
 as unavailable, and distinguish active from ended windows. Do not sum peaks
 as realized gains or assume received assets were held throughout the window.
 
+## Date checkpoints and navigation
+
+The main comparison area contains At trade, 1 year, 3 years and the window
+endpoint (Now while active, At cutoff when closed). An anniversary uses the
+last published row on or before its calendar date, subject to the same 45-day
+freshness limit. It never uses a later quote or skips a missing price in favor
+of a complete row. Unreached anniversaries are disabled and labeled Not reached.
+When the closed three-year anniversary is the cutoff, show a single At cutoff
+tile marked 3 years; pick-extended windows retain both distinct checkpoints.
+
+At trade retains its original package edge. All later checkpoint tiles report
+the swing since trade, explicitly labeled. Peak moments are separate compact
+buttons, one for each manager, and remain bounded to the same window. Every
+date control, checkpoint and peak jump selects the same graph observation and
+package detail state. The graph legend reports each package's own change; the
+checkpoint and peak figures compare that change against the other side.
+
+A sticky trade toolbar supplies previous/next and a picker scoped to the
+current filters. Returning to the archive preserves filters and list position.
+Choosing the next trade returns to its checkpoints instead of leaving the
+reader at the previous trade's lower package section.
+
 ## Ranking omissions
 
 A missing quote is not zero. Previously observed names receive an estimated
@@ -61,8 +83,8 @@ rather than selecting an endpoint that improves individual outcomes.
 
 ## Checks
 
-Run `node research/trade_ui/verify-window.cjs`, `verify-relative.cjs`, and
-`verify-list.cjs`, plus `python research/market_estimates/verify_quote_recovery.py
+Run `node research/trade_ui/verify-window.cjs`, `verify-relative.cjs`,
+`verify-list.cjs`, and `verify-checkpoints.cjs`, plus `python research/market_estimates/verify_quote_recovery.py
 --cache <source-cache>`. Window tests cover post-cutoff spikes, future classes,
 outcome independence, leap years, missing/invalid dates, estimated dates,
 active windows, missing/stale endpoints, multi-manager trades and source

@@ -21,16 +21,13 @@
   const colors = ['#7e3125', '#415e4f', '#705586'];
   const metrics = window.PLEBS_TRADE_METRICS;
   const signed = value => !Number.isFinite(value) ? '—' : `${value > 0 ? '+' : value < 0 ? '−' : ''}${number.format(Math.abs(value))}`;
-  const stackedName = name => {
-    const [first, ...last] = name.split(' ');
-    return `<span>${esc(first)}</span><span>${esc(last.join(' '))}</span>`;
-  };
 
   let market, trades, loading, selected, chartObserver;
-  let browseScroll = 0;
+  let filteredTrades = [];
+  let preferredCheckpoint = 'endpoint';
+  let browseScroll = null;
   let currentManager;
   let browseListScroll = 0;
-  const fullyPriced = values => values.every(Number.isFinite);
   const label = trade => trade.sides.map(side => side.manager).join(' / ');
   const hasRoute = () => /^#(?:trades|managers)(?:\/|$)/.test(location.hash);
   const routeParts = () => location.hash.slice(1).split('/');
@@ -55,12 +52,14 @@
     const analyzed = metrics.evaluate(trade, market);
     trade.points = analyzed.points;
     trade.window = analyzed.window;
+    trade.checkpoints = metrics.checkpoints(analyzed);
+    trade.peaks = analyzed.peaks;
     const peaks = analyzed.peaks;
     const latest = analyzed.latest;
     const firstNames = trade.sides.map(side => side.manager.split(' ')[0]);
     trade.lenses = [
       { name: 'At trade', point: analyzed.baseline, originalBalance: true },
-      { name: trade.window.closed ? (trade.window.estimated ? 'Est. cutoff' : 'At cutoff') : 'Now', point: latest },
+      { name: trade.checkpoints.at(-1).name, point: latest },
       ...peaks.map((point, side) => {
         const parts = trade.sides[side].manager.split(' ');
         const name = firstNames.filter(first => first === parts[0]).length > 1 ? parts.at(-1) : parts[0];
@@ -110,7 +109,7 @@
       state: edge > 0 ? 'ahead' : edge < 0 ? 'behind' : 'even' };
   }
 
-  function renderList() {
+  function matchingTrades() {
     const terms = search.value.trim().toLowerCase().split(/\s+/);
     const visible = trades.filter(trade =>
       belongsToManager(trade) && (!partner.value || trade.sides.some(side => side.manager === partner.value)) &&
@@ -121,6 +120,11 @@
     if (sort.value !== 'recent') {
       visible.sort((a, b) => b.spreads[sort.value] - a.spreads[sort.value]);
     }
+    return visible;
+  }
+
+  function renderList() {
+    const visible = filteredTrades = matchingTrades();
     if (!visible.includes(selected)) {
       selected = visible[0];
       if (routedId()) history.replaceState(null, '', selected ? managerRoute(selected.id) : managerRoute());
@@ -192,110 +196,159 @@
       return;
     }
     const trade = selected;
-    const latest = trade.lenses[1].point;
-    const showChart = trade.points.filter(point => point.changes.some(Number.isFinite)).length > 1;
-    const bounds = trade.dateEstimate;
-    const routes = [...results.querySelectorAll('a')].map(link => link.getAttribute('href'));
-    const position = routes.indexOf(managerRoute(trade.id));
-    const previousRoute = position > 0 ? routes[position - 1] : null;
-    const nextRoute = position >= 0 ? routes[position + 1] : null;
-    const currentValues = latest?.changes;
-    const currentSide = currentValues && metrics.complete(currentValues) ? currentValues.indexOf(Math.max(...currentValues)) : -1;
-    const currentGap = currentSide < 0 ? null : margin(currentValues, currentSide);
-    const summaries = trade.lenses.map((lens, index) => {
-      const values = lens.originalBalance ? lens.point?.values : lens.point?.changes;
+    const position = filteredTrades.indexOf(trade);
+    const shortNames = trade.sides.map(side => {
+      const parts = side.manager.split(' ');
+      return trade.sides.filter(other => other.manager.split(' ')[0] === parts[0]).length > 1 ? parts.at(-1) : parts[0];
+    });
+    const showChart = trade.points.some(point => point.changes.some(Number.isFinite));
+    const summaries = trade.checkpoints.map(checkpoint => {
+      const values = checkpoint.originalBalance ? checkpoint.point?.values : checkpoint.point?.changes;
       const available = values && metrics.complete(values);
-      return `<button type="button" class="trade-summary" data-lens="${index}" aria-pressed="false"${lens.point ? '' : ' disabled'}>
-        <span class="trade-summary-label">${esc(lens.name)}</span>
-        <span class="trade-summary-kind">${lens.originalBalance ? 'Original edge' : 'Swing since trade'}</span>
-        <span class="trade-summary-values">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}"><small>${stackedName(side.manager)}</small><b>${signed(available ? margin(values, i) : null)}</b></span>`).join('')}</span>
-        <time>${lens.point ? `${lens.point.original && bounds ? 'Est. ' : ''}${formatDate(lens.point.date)}` : 'Unavailable'}</time>
+      const dateLabel = checkpoint.point ? `${checkpoint.originalBalance && trade.dateEstimate ? 'Est. ' : ''}${formatDate(checkpoint.point.date)}`
+        : checkpoint.upcoming ? 'Not reached' : 'Values unavailable';
+      return `<button type="button" class="trade-summary" data-checkpoint="${checkpoint.key}" aria-pressed="false"${checkpoint.point ? '' : ' disabled'}>
+        <span class="trade-summary-label">${esc(checkpoint.name)}${checkpoint.milestone ? `<small>${esc(checkpoint.milestone)}</small>` : ''}</span>
+        <time>${esc(dateLabel)}</time>
+        <span class="trade-summary-values" style="--side-count:${trade.sides.length}">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}"><small>${esc(shortNames[i])}</small><b>${signed(available ? margin(values, i) : null)}</b></span>`).join('')}</span>
+        <span class="trade-summary-kind">${checkpoint.originalBalance ? 'Original edge' : 'Swing since trade'}</span>
       </button>`;
     }).join('');
+    const peakRows = trade.peaks.map((point, side) => {
+      const edge = point && metrics.margin(point.changes, side);
+      return `<button type="button" class="trade-peak" data-peak="${side}" aria-pressed="false" style="--side-color:${colors[side % colors.length]}"${point ? '' : ' disabled'}>
+        <span class="trade-peak-name">${esc(shortNames[side])}’s best</span>
+        <strong>${signed(edge)}</strong>
+        <time>${point ? formatDate(point.date) : 'Unavailable'}</time>
+      </button>`;
+    }).join('');
+    const windowStatus = trade.gradeBlocked ? 'Not rated' : !trade.window.valid ? 'Window unavailable' : trade.window.closed ? 'Window ended' : 'In progress';
     detail.innerHTML = `
       <div class="trade-detail-nav">
-        <button type="button" class="trade-back">← Back to trades</button>
+        <button type="button" class="trade-back">Browse trades</button>
+        <label class="trade-jump"><span class="trade-sr-only">Jump to trade</span><select aria-label="Jump to trade">${filteredTrades.map((row, i) => `<option value="${esc(row.id)}"${row === trade ? ' selected' : ''}>${i + 1} / ${filteredTrades.length} · ${row.date ? tradeDate(row) : 'Undated'} · ${esc(counterpart(row))}</option>`).join('')}</select></label>
         <div class="trade-stepper" role="group" aria-label="Browse trades">
-          <button type="button" data-step="previous" aria-label="Previous trade"${previousRoute ? '' : ' disabled'}>‹ Prev</button>
-          <button type="button" data-step="next" aria-label="Next trade"${nextRoute ? '' : ' disabled'}>Next ›</button>
+          <button type="button" data-step="previous" aria-label="Previous trade"${position > 0 ? '' : ' disabled'}>Prev</button>
+          <button type="button" data-step="next" aria-label="Next trade"${position >= 0 && position < filteredTrades.length - 1 ? '' : ' disabled'}>Next</button>
         </div>
       </div>
       <div class="trade-detail-heading">
-        <h3 class="trade-manager-names" aria-label="${esc(label(trade))}">${trade.sides.map((side, i) => `<span class="trade-manager-name" style="--side-color:${colors[i % colors.length]}">${stackedName(side.manager)}</span>`).join('<span class="trade-versus" aria-hidden="true">↔</span>')}</h3>
-        ${trade.gradeBlocked ? `<p>${esc((trade.issues || []).join(' '))}</p>` : ''}
+        <p class="trade-execution-date">${trade.date ? tradeDate(trade) : 'Date unknown'}</p>
+        <h3 class="trade-manager-names" aria-label="${esc(label(trade))}">${trade.sides.map((side, i) => `<span class="trade-manager-name" style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('<span class="trade-versus" aria-hidden="true">/</span>')}</h3>
+        ${trade.gradeBlocked ? `<p class="trade-data-note">${esc((trade.issues || []).join(' '))}</p>` : ''}
       </div>
-      <div class="trade-current" aria-label="Since trade">
-        <small>Since trade</small>
-        <strong style="--side-color:${currentSide < 0 ? 'var(--ink)' : colors[currentSide % colors.length]}">${currentGap == null ? 'Not rated' : currentGap === 0 ? 'Even' : signed(currentGap)}</strong>
-        <span>${currentGap == null ? 'Values unavailable' : currentGap === 0 ? 'Neither manager leads' : esc(trade.sides[currentSide].manager)}</span>
-      </div>
+      <section class="trade-checkpoints" aria-label="Date checkpoints">
+        <div class="trade-section-label"><h4>Checkpoints</h4><span>${esc(windowStatus)}</span></div>
+        <div class="trade-summaries" role="group" aria-label="Date checkpoints" data-sides="${trade.sides.length}">${summaries}</div>
+      </section>
       ${showChart ? `<section class="trade-chart" aria-label="Value change since trade">
         <div class="trade-chart-body">
-          <p class="trade-window-status">${trade.window.extended ? 'Pick-adjusted window' : '3-year window'} · ${trade.window.stale ? 'Data incomplete' : trade.window.closed ? 'Window ended' : 'In progress'}${trade.window.estimated ? ' · Estimated dates' : ''}${trade.window.hasGaps && !trade.window.stale ? ' · Some values unavailable' : ''}</p>
-          <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(side.manager)}</span>`).join('')}</div>
+          <div class="trade-section-label"><h4>Value change since trade</h4></div>
+          <div class="trade-date-navigation">
+            <button type="button" data-date-step="-1" aria-label="Earlier valuation date">Earlier</button>
+            <select aria-label="Valuation date">${trade.points.map((point, i) => `<option value="${i}">${point.original ? 'At trade · ' : ''}${formatDate(point.date)}</option>`).join('')}</select>
+            <button type="button" data-date-step="1" aria-label="Later valuation date">Later</button>
+          </div>
+          <div class="trade-chart-legend">${trade.sides.map((side, i) => `<span style="--side-color:${colors[i % colors.length]}">${esc(shortNames[i])}<b data-chart-value="${i}"></b></span>`).join('')}</div>
           <canvas role="img" aria-label="Package gains and losses since trade day"></canvas>
-          <label class="trade-time-control"><input aria-label="Date shown" type="range" min="0" max="${trade.points.length - 1}" value="0"><span class="trade-chart-date"></span></label>
+          <label class="trade-time-control"><span class="trade-sr-only">Explore valuation dates</span><input aria-label="Date shown" type="range" min="0" max="${trade.points.length - 1}" value="0"></label>
+          <p class="trade-window-status">${trade.window.valid ? `${trade.window.extended ? 'Pick-adjusted window' : '3-year window'} · ${trade.window.closed ? 'Cutoff' : 'Ends'} ${trade.window.estimated ? 'approx. ' : ''}${formatDate(trade.window.cutoffDate)}` : esc(trade.window.reason)}${trade.window.stale || trade.window.hasGaps ? ' · Some values unavailable' : ''}</p>
         </div></section>` : '<p class="trade-empty">Trade-day value history unavailable.</p>'}
-      <div class="trade-summaries" role="group" aria-label="Trade summaries">${summaries}</div>
-      <div class="trade-package-date"></div>
-      <div class="trade-packages"></div>`;
+      <section class="trade-peaks" aria-label="Peak moments">
+        <div class="trade-section-label"><h4>Peak moments</h4><span>Best swing within the window</span></div>
+        <div class="trade-peak-list" role="group" aria-label="Jump to a peak moment">${peakRows}</div>
+      </section>
+      <div class="trade-package-date" role="status" aria-live="polite"></div>
+      <div class="trade-packages" data-sides="${trade.sides.length}"></div>`;
     const canvas = detail.querySelector('canvas');
     const range = detail.querySelector('input[type="range"]');
+    const dateSelect = detail.querySelector('[aria-label="Valuation date"]');
     const packages = detail.querySelector('.trade-packages');
-    let pointIndex = trade.points.length - 1;
-    const paintSelected = () => paintChart(canvas, trade.points.map(point => ({...point, values: point.changes})), pointIndex, trade.sides.length);
-    function selectPoint(index, lensIndex = -1) {
+    let pointIndex;
+    const chartPoints = trade.points.map(point => ({ ...point, values: point.changes }));
+    const paintSelected = () => paintChart(canvas, chartPoints, pointIndex, trade.sides.length);
+    function selectPoint(index, checkpointKey = null, peakSide = null) {
       pointIndex = index;
       const point = trade.points[index];
-      detail.querySelectorAll('[data-lens]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.lens) === lensIndex)));
+      detail.querySelectorAll('[data-checkpoint]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.checkpoint === checkpointKey)));
+      detail.querySelectorAll('[data-peak]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.peak) === peakSide)));
       if (range && point) {
         range.value = index;
         range.setAttribute('aria-valuetext', formatDate(point.date));
-        detail.querySelector('.trade-chart-date').textContent = formatDate(point.date);
+        dateSelect.value = index;
+        detail.querySelectorAll('[data-date-step]').forEach(button => {
+          button.disabled = Number(button.dataset.dateStep) < 0 ? index <= 0 : index >= trade.points.length - 1;
+        });
+        detail.querySelectorAll('[data-chart-value]').forEach(element => {
+          element.textContent = signed(point.changes[Number(element.dataset.chartValue)]);
+        });
       }
-      detail.querySelector('.trade-package-date').textContent = point ? `Change since trade · ${formatDate(point.date)}` : 'Package details';
+      const basis = point?.original ? 'Trade-day value' : 'Value change since trade';
+      detail.querySelector('.trade-package-date').textContent = point ? `${basis} · ${point.original && trade.dateEstimate ? 'Est. ' : ''}${formatDate(point.date)}` : 'Package details · Values unavailable';
       const packageContent = side => side.package || side.assets?.length
         ? assetList(trade, side, point) : '<p class="trade-unrecorded">Not recorded</p>';
-      packages.innerHTML = trade.sides.map((side, i) => {
-        return `<section style="--side-color:${colors[i % colors.length]}" aria-label="${esc(side.manager)}’s side of the trade">
-          <h4 class="trade-package-name">${stackedName(side.manager)}</h4>
+      packages.innerHTML = trade.sides.map((side, i) => `<section style="--side-color:${colors[i % colors.length]}" aria-label="${esc(side.manager)}’s side of the trade">
+          <h4 class="trade-package-name">${esc(side.manager)}</h4>
           <div class="trade-received" aria-label="${esc(side.manager)} received">
-            <h5>Received</h5>
-            ${packageContent(side)}
-            <p class="trade-total"><span>Value change</span>${signed(point?.changes[i])}</p>
+            <h5>Received</h5>${packageContent(side)}
+            <p class="trade-total"><span>${point?.original ? 'Trade-day value' : 'Value change'}</span>${point?.original ? signed(point.values[i]) : signed(point?.changes[i])}</p>
           </div>
-        </section>`;
-      }).join('');
-      if (canvas) paintSelected();
+        </section>`).join('');
+      if (canvas && point) paintSelected();
     }
     const keepPosition = update => {
       const top = window.scrollY, left = window.scrollX;
       update();
       requestAnimationFrame(() => window.scrollTo({ top, left, behavior: 'instant' }));
     };
+    const navigateTrade = id => {
+      const row = filteredTrades.find(row => row.id === id);
+      if (!row) return;
+      history.pushState(null, '', managerRoute(id));
+      setSelected(id);
+      // Always land at the next trade's checkpoints, even when switching from
+      // its predecessor's package details near the bottom of the page.
+      detail.scrollIntoView({ block: 'start', behavior: 'instant' });
+    };
     detail.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
-      const step = button.dataset.step;
-      const target = step === 'previous' ? previousRoute : nextRoute;
+      const target = filteredTrades[position + (button.dataset.step === 'previous' ? -1 : 1)];
       if (!target) return;
-      keepPosition(() => {
-        history.pushState(null, '', target);
-        setSelected(routedId());
-        const replacement = detail.querySelector(`[data-step="${step}"]`);
-        if (replacement && !replacement.disabled) replacement.focus({ preventScroll: true });
-      });
+      const step = button.dataset.step;
+      navigateTrade(target.id);
+      const replacement = detail.querySelector(`[data-step="${step}"]`);
+      if (replacement && !replacement.disabled) replacement.focus({ preventScroll: true });
     }));
+    detail.querySelector('[aria-label="Jump to trade"]').addEventListener('change', event => navigateTrade(event.target.value));
     detail.querySelector('.trade-back').addEventListener('click', () => {
       history.pushState(null, '', managerRoute());
       view.dataset.detailOpen = 'false';
       results.scrollTop = browseListScroll;
-      window.scrollTo({ top: browseScroll, behavior: 'instant' });
+      if (window.matchMedia('(max-width: 760px)').matches && browseScroll != null) {
+        window.scrollTo({ top: browseScroll, behavior: 'instant' });
+      } else view.scrollIntoView({ block: 'start', behavior: 'instant' });
+      results.querySelector('[aria-current="true"]')?.focus({ preventScroll: true });
     });
-    range?.addEventListener('input', () => keepPosition(() => selectPoint(Number(range.value))));
-    detail.querySelectorAll('[data-lens]').forEach(button => button.addEventListener('click', () => keepPosition(() => {
-      const lensIndex = Number(button.dataset.lens);
-      selectPoint(trade.points.indexOf(trade.lenses[lensIndex].point), lensIndex);
+    const chooseDate = index => keepPosition(() => {
+      const clamped = Math.max(0, Math.min(trade.points.length - 1, index));
+      preferredCheckpoint = 'endpoint';
+      selectPoint(clamped, trade.checkpoints.find(checkpoint => checkpoint.point === trade.points[clamped])?.key);
+    });
+    range?.addEventListener('input', () => chooseDate(Number(range.value)));
+    dateSelect?.addEventListener('change', () => chooseDate(Number(dateSelect.value)));
+    detail.querySelectorAll('[data-date-step]').forEach(button => button.addEventListener('click', () => chooseDate(pointIndex + Number(button.dataset.dateStep))));
+    detail.querySelectorAll('[data-checkpoint]').forEach(button => button.addEventListener('click', () => keepPosition(() => {
+      const checkpoint = trade.checkpoints.find(checkpoint => checkpoint.key === button.dataset.checkpoint);
+      preferredCheckpoint = checkpoint.key;
+      selectPoint(trade.points.indexOf(checkpoint.point), checkpoint.key);
     })));
-    selectPoint(pointIndex, pointIndex >= 0 && trade.points[pointIndex] === latest ? 1 : -1);
+    detail.querySelectorAll('[data-peak]').forEach(button => button.addEventListener('click', () => keepPosition(() => {
+      const side = Number(button.dataset.peak);
+      preferredCheckpoint = 'endpoint';
+      selectPoint(trade.points.indexOf(trade.peaks[side]), null, side);
+    })));
+    const initial = trade.checkpoints.find(checkpoint => checkpoint.key === preferredCheckpoint && checkpoint.point)
+      || trade.checkpoints.find(checkpoint => checkpoint.key === 'endpoint' && checkpoint.point);
+    selectPoint(initial ? trade.points.indexOf(initial.point) : trade.points.length - 1, initial?.key);
     if (canvas && typeof ResizeObserver !== 'undefined') {
       chartObserver = new ResizeObserver(paintSelected);
       chartObserver.observe(canvas);
@@ -303,6 +356,7 @@
   }
 
   function paintChart(canvas, points, active, sides) {
+    if (!points[active]) return;
     const context = canvas.getContext?.('2d');
     const width = canvas.clientWidth, height = canvas.clientHeight;
     if (!context || !width || !height) return;
@@ -310,7 +364,7 @@
     canvas.width = Math.round(width * scale);
     canvas.height = Math.round(height * scale);
     context.scale(scale, scale);
-    context.font = '11px Arial';
+    context.font = '12px Arial';
     const values = points.flatMap(point => point.values.filter(Number.isFinite));
     if (!values.length) return;
     const maximum = Math.max(100, Math.ceil(Math.max(0, ...values) / 500) * 500);
@@ -427,9 +481,11 @@
     updateManager();
     if (trade && belongsToManager(trade)) {
       // A shared trade link takes precedence over a previous partner/search filter.
-      if (partner.value && !trade.sides.some(side => side.manager === partner.value)) partner.value = '';
-      search.value = '';
-      season.value = '';
+      if (!matchingTrades().includes(trade)) {
+        partner.value = '';
+        search.value = '';
+        season.value = '';
+      }
       selected = trade;
     }
     renderList();
@@ -488,11 +544,18 @@
     if (!trades) return;
     if (hasRoute()) history.replaceState(null, '', managerRoute());
     renderList();
+    view.dataset.detailOpen = 'false';
     results.scrollTop = 0;
   };
   search.addEventListener('input', filterTrades);
   season.addEventListener('change', filterTrades);
   sort.addEventListener('change', filterTrades);
   partner.addEventListener('change', filterTrades);
+  const siteHeader = document.querySelector('body > header');
+  if (siteHeader) {
+    const measureHeader = () => view.style.setProperty('--trade-header-height', `${siteHeader.getBoundingClientRect().height}px`);
+    measureHeader();
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(measureHeader).observe(siteHeader);
+  }
   if (hasRoute()) navigateRoute();
 })();
