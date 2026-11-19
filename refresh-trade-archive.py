@@ -22,6 +22,7 @@ SLEEPER = "https://api.sleeper.app/v1/"
 DYNASTY_PROCESS = "https://raw.githubusercontent.com/dynastyprocess/data/"
 COMMIT_HISTORY = "https://api.github.com/repos/dynastyprocess/data/commits"
 CENTRAL = ZoneInfo("America/Chicago")
+UNRANKED_ZERO_MIN_DAYS = 30
 HANDLES = {
     "abagueros": "Alex Agueros", "clawdaddy69": "Matt Clawson",
     "imjustluke": "Luke Miller", "justintreyreed": "Bo Tiller",
@@ -205,6 +206,37 @@ class Snapshot:
         return round(mean(exact_round)) if len(exact_round) == 12 else None
 
 
+def recover_unranked_quotes(result, model):
+    """Estimate sustained unranked value without turning brief outages into zero.
+
+    Only evidence already published at each snapshot is used. A missing player
+    stays unavailable until absent for 30 days across at least two broad feeds.
+    A reappearance resets the clock; earlier gaps are never backfilled.
+    """
+    known_ids, known_names, absences = {}, set(), {}
+    for snapshot in result:
+        observed_ids, observed_names = dict(snapshot.players), set(snapshot.names)
+        snapshot.unranked_zero_names = []
+        for name in observed_names:
+            absences.pop(name, None)
+        if model and len(observed_ids) >= model["replacementRank"]:
+            zero_names = set()
+            for name in known_names - observed_names:
+                since, count = absences.get(name, (snapshot.timestamp, 0))
+                count += 1
+                absences[name] = (since, count)
+                if count >= 2 and snapshot.timestamp - since >= UNRANKED_ZERO_MIN_DAYS * 86400000:
+                    zero_names.add(name)
+                    snapshot.names[name] = 0
+            for fp_id, name in known_ids.items():
+                if fp_id not in observed_ids and name in zero_names:
+                    snapshot.players[fp_id] = 0
+            snapshot.unranked_zero_names = sorted(zero_names)
+        known_ids.update(snapshot.player_names)
+        known_names.update(observed_names)
+    return result
+
+
 def snapshots(cache, offline, model=None):
     unavailable_path = cache / "snapshot-picks" / "unavailable.json"
     unavailable = set(read_json(unavailable_path)) if unavailable_path.exists() else set()
@@ -243,22 +275,7 @@ def snapshots(cache, offline, model=None):
 
     with ThreadPoolExecutor(max_workers=10) as pool:
         result = list(pool.map(load_snapshot, commits))
-    # A previously identified player who leaves a full ranking feed has no
-    # ranked market value. This is an explicit zero estimate, not an unmatched
-    # identity. Never use future appearances to fill earlier missing quotes.
-    known_ids, known_names = {}, set()
-    for snapshot in result:
-        observed_ids, observed_names = dict(snapshot.players), set(snapshot.names)
-        snapshot.unranked_zero_names = []
-        if model and len(observed_ids) >= model["replacementRank"]:
-            for fp_id, name in known_ids.items():
-                if fp_id not in observed_ids and name not in observed_names:
-                    snapshot.players[fp_id] = 0
-                    snapshot.unranked_zero_names.append(name)
-            for name in known_names - observed_names:
-                snapshot.names[name] = 0
-        known_ids.update(snapshot.player_names)
-        known_names.update(observed_names)
+    recover_unranked_quotes(result, model)
     if not offline:
         unavailable_path.parent.mkdir(parents=True, exist_ok=True)
         unavailable_path.write_text(json.dumps(sorted(unavailable)))
@@ -579,7 +596,9 @@ def main():
     if model:
         payload["valueModel"] = model
         payload["playerQuotePolicy"] = {
-            "unranked": "Previously quoted players absent from a later feed covering at least replacementRank identified players receive an estimated zero. Unknown identities and earlier missing quotes remain unavailable.",
+            "unranked": "Previously quoted players absent for at least 30 days across two or more broad feeds covering at least replacementRank identified players receive an estimated zero. Brief absences, unknown identities and earlier missing quotes remain unavailable; gaps are never backfilled.",
+            "minimumAbsentDays": UNRANKED_ZERO_MIN_DAYS,
+            "minimumBroadFeeds": 2,
             "latestUnrankedZeroNames": sorted(set(market[-1].unranked_zero_names)),
         }
     if history:

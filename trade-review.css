@@ -110,6 +110,7 @@
 .trade-detail { overflow-anchor:none; }
 .trade-packages .trade-total span { display:block; margin-bottom:4px; color:var(--muted); font:400 .7rem Arial,sans-serif; }
 .trade-chart-windows button { touch-action:manipulation; }
+.trade-window-status{margin:0 0 8px;text-align:center;color:var(--muted);font-size:.75rem;line-height:1.4}
 
 /* Compact comparison: fixed current swing, visible graph, four priced summaries. */
 #trades > .subhead{padding:10px 12px}

@@ -12,7 +12,7 @@ const window={PLEBS_TRADE_METRICS:metrics};
 const document={querySelector:()=>({}),getElementById:id=>controls[id],createElement:()=>({innerHTML:''})};
 const script=source.slice(0,source.indexOf('  function renderDetail()'))+`
   function renderDetail() {}
-  window.listTest={prepare(data){market=data.market;trades=data.trades.filter(t=>t.status!=='reversed').map(learnTrade);},renderList,currentStanding,learnTrade,getTrade(id){return trades.find(t=>t.id===id);}};
+  window.listTest={prepare(data){market=data.market;trades=data.trades.filter(t=>t.status!=='reversed').map(learnTrade);},setMarket(value){market=value;},renderList,currentStanding,learnTrade,getTrade(id){return trades.find(t=>t.id===id);}};
 })();`;
 vm.runInNewContext(script,{document,window,Intl,location:{hash:'#managers/Seth%20Miller/trades'},history:{replaceState(){}}});
 const api=window.listTest;
@@ -22,7 +22,7 @@ api.renderList();
 assert.equal(controls.tradeCount.textContent,'13 trades');
 for(const row of controls.tradeResults.rows){
  assert.match(row.innerHTML,/trade-list-edge/);
- assert.match(row.innerHTML,/>Now<\/small>/);
+ assert.match(row.innerHTML,/>(?:Now|At cutoff|Est\. cutoff)<\/small>/);
  if(!row.innerHTML.includes('Matthew Piontek')) assert.doesNotMatch(row.innerHTML,/class="trade-list-partner"/);
 }
 controls.tradePartner.value='';
@@ -33,10 +33,11 @@ assert.match(recoveredFourth.innerHTML,/2025 4\.05/);
 assert.match(recoveredFourth.innerHTML,/\+1,551/);
 const woods=controls.tradeResults.rows.find(row=>row.innerHTML.includes('trades/workbook-109"'));
 assert.match(woods.innerHTML,/2023 2\.01/);
-assert.match(woods.innerHTML,/\+2,887/);
+assert.match(woods.innerHTML,/\+1,906/);
+assert.match(woods.innerHTML,/>At cutoff<\/small>/);
 const kamara=controls.tradeResults.rows.find(row=>row.innerHTML.includes('trades/workbook-122"'));
 assert.match(kamara.innerHTML,/2023 1\.05/);
-assert.match(kamara.innerHTML,/\+945/);
+assert.match(kamara.innerHTML,/\+2,101/);
 assert.doesNotMatch(kamara.innerHTML,/Check pick year|Unrated|2022 1\.05/);
 // The current package edge is a different question from the gain since trade.
 const trade=api.getTrade('sleeper-1205285790439981056');
@@ -49,6 +50,7 @@ assert.equal(api.currentStanding(trade).value,'+1,312');
 assert.equal(api.currentStanding(trade).state,'ahead');
 // Never let an allowance create a current lead, or missing prices create zero.
 controls.managerSelect.value='A';
+api.setMarket(['2026-01-01','2026-01-08'].map(date=>[date,'',Date.parse(date+'T12:00:00Z')]));
 const tie=api.learnTrade({date:'2026-01-01',sides:[{manager:'A',assets:[]},{manager:'B',assets:[]}],day:[0,[20,30]],timeline:[[1,111,100]],timelineAdjustments:[[1,11,0]]});
 assert.equal(api.currentStanding(tie).value,'Even');
 const missing=api.learnTrade({date:'2026-01-01',sides:[{manager:'A',assets:[]},{manager:'B',assets:[]}],day:[0,[20,30]],timeline:[[1,null,100]]});
@@ -57,6 +59,7 @@ const multi=api.learnTrade({date:'2026-01-01',sides:[{manager:'A',assets:[]},{ma
 assert.equal(api.currentStanding(multi).value,'−10');
 assert.equal(api.currentStanding(multi).label,'B leads');
 // Current-edge sorting follows the very same value shown in the list.
+api.prepare(archive);
 controls.managerSelect.value='Seth Miller';
 controls.tradeSort.value='latest';
 api.renderList();
@@ -65,4 +68,4 @@ const edges=controls.tradeResults.rows.map(row=>{
  return api.getTrade(id).spreads.latest;
 });
 assert.ok(edges.every((edge,i)=>i===0||edges[i-1]>=edge));
-console.log('Passed filtered/all-manager rows, received/sent previews, current value vs since-trade swing, signed perspective, missing values, ties, multiway leads and current-edge sorting.');
+console.log('Passed filtered/all-manager rows, received/sent previews, cutoff vs active labels, window-end value vs since-trade swing, signed perspective, missing values, ties, multiway leads and window-edge sorting.');
